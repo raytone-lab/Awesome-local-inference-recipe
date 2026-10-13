@@ -1,25 +1,26 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>本地推理配方 · Infer Recipes</title><link rel="stylesheet" href="style.css"></head><body>
-<header><div class="brand">⚡ 本地推理配方 <small>Infer Recipes · 原型</small></div>
-<nav><a href="index.html" class="on">配方库</a><a href="submit.html">提交配方</a></nav></header>
-<main>
-<section class="hero"><h1>什么模型 × 什么硬件 × 什么引擎 = 多快、多贵</h1>
-<p>聚焦 3 万美元以内的本地推理方案。每条数据附来源与可信等级，未知字段一律显示「未见公开数据」。</p>
-<div class="stats" id="stats"></div></section>
-<section class="filters">
-<input id="q" placeholder="搜索模型 / 硬件 / 引擎 / 量化…">
-<select id="cat"><option value="">全部类别</option><option value="text">文字</option><option value="image">图像</option><option value="video-audio">影音</option></select>
-<select id="eng"><option value="">全部引擎</option></select>
-<select id="fam"><option value="">全部硬件</option></select>
-<select id="lvl"><option value="">全部来源等级</option><option>官方</option><option>实测</option><option>转述</option><option>宣称</option></select>
-<label class="budget">预算 ≤ <b id="bv">$30,000</b><input id="budget" type="range" min="500" max="30000" step="500" value="30000"></label>
-<label class="chk"><input type="checkbox" id="unk" checked>含成本未知</label>
-</section>
-<section class="grid2"><div class="card"><h3>tok/s vs 硬件成本（文字模型，两项均已知）</h3><svg id="chart" viewBox="0 0 640 300"></svg></div>
-<div class="card legend"><h3>说明</h3><ul><li><b>美元/tok/s</b> = 硬件成本 ÷ 单流 tok/s，越低越划算</li><li>成本取来源区间下限；多卡按张计价的行不自动折算（显示原文）</li><li>来源等级：<span class="lv 官方">官方</span><span class="lv 实测">实测</span><span class="lv 转述">转述</span><span class="lv 宣称">宣称</span></li><li>点击任意行查看详情、启动命令和来源</li></ul></div></section>
-<div class="card"><div class="tbar"><span id="count"></span></div><div class="tw"><table><thead><tr>
-<th data-k="category">类别</th><th data-k="model">模型</th><th data-k="quant">量化/优化</th><th data-k="engine">引擎</th><th data-k="hardware">硬件</th><th data-k="tok_s" class="n">tok/s</th><th data-k="metric">指标原文</th><th data-k="hardware_cost_usd" class="n">成本 $</th><th data-k="cpt" class="n">$/tok/s</th><th data-k="context">上下文</th><th data-k="source_level">来源</th></tr></thead><tbody id="tb"></tbody></table></div></div>
-</main>
-<aside id="drawer"><button id="x">✕</button><div id="dc"></div></aside><div id="mask"></div>
-<footer>数据来自 2026-10 的 X / GitHub / 价格站整理 · 欢迎 <a href="submit.html">提交 PR</a></footer>
-<script src="app.js"></script></body></html>
+<title>RecipeBench · 本地推理配方</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="landing.css"></head><body>
+<header><div class="brand">⚡ RecipeBench <small>本地推理配方</small></div><nav><a href="index.html" class="on">首页</a><a href="explore.html">配方库</a><a href="submit.html">提交配方</a></nav></header>
+<section class="lh"><div class="in">
+<p class="eyebrow">Local inference recipes — model × engine × hardware, every number sourced.</p>
+<h1>同一张卡，换个配方<br><span>速度差 10 倍</span></h1>
+<p class="lead">收集社区里真实跑出来的本地推理配方：哪个模型、什么量化、哪个引擎、什么硬件，跑出多少 tok/s、花多少钱。</p>
+<div class="pills"><span>🔀 跨引擎：Strata · oMLX · DFlash2 · TensorFold · llama.cpp</span><span>🖥️ 消费级 / 二手硬件</span><span>🔗 每个数字标来源</span><span>💰 聚焦 ≤ $30k</span></div>
+<div class="cta"><a class="btn p" href="explore.html">浏览配方库 →</a><a class="btn" href="submit.html">提交你的配方</a></div>
+<div class="ks" id="ks"></div></div></section>
+<main class="lm">
+<h2>🔥 本周 X 上的热门配方 <small>按点赞+转发排序 · 点击查看原帖</small></h2><div class="hot" id="hot"></div>
+<h2>按预算进入</h2><div class="tiers">
+<a href="explore.html?max=2500"><b>≤ $2.5k</b><span>二手 3090 / 4090、MI50、V100、Strix Halo</span></a>
+<a href="explore.html?max=7000"><b>≤ $7k</b><span>单张 5090、单台 DGX Spark、Mac Studio Max</span></a>
+<a href="explore.html?max=14000"><b>≤ $14k</b><span>双 Spark、Mac Studio M5 Ultra</span></a>
+<a href="explore.html?max=30000"><b>≤ $30k</b><span>3–4 台 Spark 集群、多卡工作站</span></a></div>
+<h2>来源等级怎么看</h2><div class="lvls">
+<div><span class="lv 官方">官方</span><p>项目方或厂商发布的数字，通常是最佳条件。</p></div>
+<div><span class="lv 实测">实测</span><p>作者本人在自己的机器上跑出来，附截图或日志。</p></div>
+<div><span class="lv 转述">转述</span><p>二手引用别人的结果，需要回原帖核对。</p></div>
+<div><span class="lv 宣称">宣称</span><p>预测值或无复现条件，仅供参考。</p></div></div>
+<p class="note">未知字段统一显示「未见公开数据」，不估算、不补数。</p>
+<div class="final"><h2>你跑过一个好配方？</h2><p>一个 YAML 文件，一个 PR，就能让下一个人少折腾一周。</p><a class="btn p" href="submit.html">提交配方</a></div>
+</main><footer>RecipeBench（暂定名）· 数据整理自 X / GitHub / 价格站，截至 2026-10-13</footer>
+<script src="landing.js"></script></body></html>

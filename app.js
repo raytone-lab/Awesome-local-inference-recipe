@@ -31,3 +31,6 @@ function open(id){const r=D.find(x=>x.id==id);$('dc').innerHTML=`<h2 style="marg
 <h3>来源</h3><p><a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.source_url)}</a></p><p><a href="submit.html">✎ 提交修正 / 补充</a></p>`;
  $('drawer').classList.add('open');$('mask').classList.add('open');}
 $('x').onclick=$('mask').onclick=()=>{$('drawer').classList.remove('open');$('mask').classList.remove('open')};
+// deep-link: explore.html?max=3000&fam=Mac&q=...
+const U=new URLSearchParams(location.search);
+setTimeout(()=>{if(U.get('max'))$('budget').value=U.get('max');if(U.get('fam'))$('fam').value=U.get('fam');if(U.get('q'))$('q').value=U.get('q');if(U.get('id'))open(U.get('id'));render()},300);

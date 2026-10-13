@@ -1,5 +1,5 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>提交配方 · Infer Recipes</title><link rel="stylesheet" href="style.css"></head><body>
-<header><div class="brand">⚡ 本地推理配方 <small>Infer Recipes · 原型</small></div><nav><a href="index.html">配方库</a><a href="submit.html" class="on">提交配方</a></nav></header>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>提交配方 · RecipeBench</title><link rel="stylesheet" href="style.css"></head><body>
+<header><div class="brand">⚡ 本地推理配方 <small>RecipeBench · 原型</small></div><nav><a href="index.html">首页</a><a href="explore.html">配方库</a><a href="submit.html" class="on">提交配方</a></nav></header>
 <main class="doc"><h1>提交一条配方</h1><p>所有配方都以 PR 的方式进入仓库，经校验和人工审核后上线。</p>
 <div class="card"><h3>流程</h3><ol><li>Fork 仓库，新建分支</li><li>在 <code>data/recipes.json</code> 追加一条（后续会拆成 <code>recipes/*.yaml</code>）</li><li>本地运行 <code>node scripts/validate.mjs</code> 通过校验</li><li>提交 PR，附原帖/日志链接；自测请附截图或完整命令输出</li><li>维护者核对来源等级后合并</li></ol></div>
 <div class="card"><h3>YAML 模板</h3><pre>id: text-qwen38-27b-m4max-omlx
