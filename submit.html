@@ -1,0 +1,22 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>提交配方 · Infer Recipes</title><link rel="stylesheet" href="style.css"></head><body>
+<header><div class="brand">⚡ 本地推理配方 <small>Infer Recipes · 原型</small></div><nav><a href="index.html">配方库</a><a href="submit.html" class="on">提交配方</a></nav></header>
+<main class="doc"><h1>提交一条配方</h1><p>所有配方都以 PR 的方式进入仓库，经校验和人工审核后上线。</p>
+<div class="card"><h3>流程</h3><ol><li>Fork 仓库，新建分支</li><li>在 <code>data/recipes.json</code> 追加一条（后续会拆成 <code>recipes/*.yaml</code>）</li><li>本地运行 <code>node scripts/validate.mjs</code> 通过校验</li><li>提交 PR，附原帖/日志链接；自测请附截图或完整命令输出</li><li>维护者核对来源等级后合并</li></ol></div>
+<div class="card"><h3>YAML 模板</h3><pre>id: text-qwen38-27b-m4max-omlx
+category: text            # text | image | video-audio
+model: Qwen3.8-27B
+quant: UD-Q4_K_XL         # 未知写 null
+engine: oMLX 0.7          # 引擎 + 版本
+hardware: Mac Studio M4 Max 128GB
+hardware_family: Mac      # Mac | NVIDIA 消费级 | DGX Spark | AMD | 二手数据中心卡 | 其他
+hardware_cost_usd: 3499   # 未知写 null，不要估
+metric: "62 tok/s 生成；850 tok/s 读入（8K 提示）"
+tok_s: 62
+concurrency: "1 路"
+context: 128K
+launch_command: |
+  omlx serve --model ... --ctx 131072
+source_url: https://x.com/...
+source_level: 实测        # 官方 | 实测 | 转述 | 宣称
+date: 2026-10-13</pre></div>
+<div class="card"><h3>规则</h3><ul><li>不估算、不编造；拿不到的字段写 <code>null</code>，页面显示「未见公开数据」</li><li>只存链接与摘要，不搬运 X 帖子全文</li><li>来源等级：官方 = 项目方/厂商；实测 = 作者本人跑出；转述 = 二手引用；宣称 = 预测或未给出复现条件</li></ul></div></main></body></html>

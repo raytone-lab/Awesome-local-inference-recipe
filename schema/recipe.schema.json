@@ -1,0 +1,14 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"Inference Recipe","type":"object",
+"required":["id","category","model","engine","hardware","source_url","source_level"],
+"properties":{
+"id":{"type":"string","pattern":"^[a-z-]+-[0-9a-z-]+$"},
+"category":{"enum":["text","image","video-audio"]},
+"model":{"type":"string"},"quant":{"type":["string","null"]},"engine":{"type":"string"},
+"hardware":{"type":"string"},"hardware_family":{"enum":["Mac","NVIDIA 消费级","DGX Spark","AMD","二手数据中心卡","其他"]},
+"hardware_cost_text":{"type":["string","null"]},"hardware_cost_usd":{"type":["number","null"]},
+"metric":{"type":["string","null"]},"tok_s":{"type":["number","null"]},
+"concurrency":{"type":["string","null"]},"context":{"type":["string","null"]},
+"launch_command":{"type":["string","null"]},
+"source_url":{"type":"string","pattern":"^https?://"},"source_note":{"type":["string","null"]},
+"source_level":{"enum":["官方","实测","转述","宣称"]},
+"date":{"type":["string","null"],"pattern":"^\\d{4}-\\d{2}-\\d{2}$"}},"additionalProperties":false}
