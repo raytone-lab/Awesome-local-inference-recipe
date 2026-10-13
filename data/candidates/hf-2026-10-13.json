@@ -1,0 +1,645 @@
+{
+ "generated": "2026-10-13T23:15:16.298411+08:00",
+ "scanned": 135,
+ "filtered": {
+  "dup": 0,
+  "noise": [
+   {
+    "id": "jialinyyzz/humanizer",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "AtomicChat/Qwen-Image-2.1-Turbo-Uncensored-GGUF",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "nerkyor/Qwen3.8-27B-Coder390-EfficientThink-Opus5.5-GPT6Astra-Grok4.7-DSV4Pro-K3-SFT-RLOO-MTP-DFlash2",
+    "reason": "id 堆砌多个模型名（疑似 merge/刷榜）"
+   },
+   {
+    "id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+    "reason": "id 堆砌多个模型名（疑似 merge/刷榜）"
+   },
+   {
+    "id": "orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "SC117/Qwen3.8-Flash-Next-GSQ-RCO-abliterated-GGUF",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "HauhauCS/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF",
+    "reason": "id 堆砌多个模型名（疑似 merge/刷榜）"
+   },
+   {
+    "id": "JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "orcarouter/OrcaSAQ-2-Cyber-27B-Uncensored-GGUF",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "HauhauCS/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "orcarouter/Qwen3.8-27B-Uncensored-GGUF",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "HauhauCS/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "KasugaiSakura/Qwen-Image-2.1-Uncensored-Abenzerps-GGUF",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "alesha-pro/Qwen3.8-Flash-Next-abliterated-GSQ-RCO-Strata-GGUF",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "mradermacher/Ornith-1.5-9B-uncensored-GGUF",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "orcarouter/Qwen3.8-27B-Uncensored-MLX",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "butterf1ying/Qwen3.8-Flash-Next-Uncensored-REAP288-MTP-MLX-4bit",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   },
+   {
+    "id": "orcarouter/DeepSeek-V4.1-Flash-Uncensored-MLX",
+    "reason": "非性能向变体（uncensored/角色扮演等）"
+   }
+  ],
+  "no_speed": 102,
+  "no_card": 1
+ },
+ "candidates": [
+  {
+   "id": "hf-prism-ml--Ternary-Bonsai-2-27B-gguf",
+   "category": "text",
+   "model": "Ternary-Bonsai-2-27B",
+   "quant": "2-bit, IQ2_XXS, UD-Q4_K_XL, 4-bit, Q8_0, 2bit",
+   "engine": "llama.cpp, MLX, llama-bench, vLLM",
+   "hardware": "M5 Max, RTX 5090, RTX 6000, RTX 4090, M5 Pro, M4 Pro",
+   "hardware_family": null,
+   "hardware_cost_text": null,
+   "hardware_cost_usd": null,
+   "metric": "生成 130.0 tok/s (卡内最大值); 读入 765.0 tok/s",
+   "tok_s": 130.0,
+   "gen_tok_s_all": [
+    47.0,
+    125.0,
+    28.0,
+    130.0,
+    30.0,
+    47.0,
+    28.7,
+    18.0
+   ],
+   "prefill_tok_s_all": [
+    47.0,
+    765.0,
+    393.0,
+    125.0
+   ],
+   "concurrency": null,
+   "context": "Context length | 262K, 262K context",
+   "launch_command": null,
+   "source_url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf",
+   "source_note": "HF 模型卡（作者自报）",
+   "source_level": "宣称",
+   "date": "2026-09-16",
+   "model_url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf",
+   "downloads": 4686252,
+   "likes": 2672,
+   "pipeline_tag": "text-generation",
+   "raw_snippet": [
+    "> **\\~9.3x** smaller than FP16 (ideal) | **98.2%** of FP16 intelligence retained | **\\~47 tok/s** on an Apple M5 Max laptop",
+    "On the wider M5 Max the model reaches \\~47 tok/s; on the M4 Pro, prefill (\\~125 tok/s) rather than decode is the practical limit for very long prompts.",
+    "- **Laptop-local 27B agents**: full 27B reasoning and tool use on a standard laptop at \\~28 tok/s, with the 262K context available for long-document analysis, full-repository code work, and other tasks that depend on holding a large working set in context",
+    "- **Single-GPU and commodity-GPU serving**: 27B-class quality from a single consumer or entry-level datacenter GPU — \\~130 tok/s on an RTX 5090, \\~30 tok/s on a 72 W L4 — with headroom for larger batches, longer contexts, or co-resident models",
+    "| Laptop (Apple M5 Max, Metal) | 7.2 GB    | 47.0          | 765           |",
+    "| Laptop (Apple M5 Pro, Metal) | 7.2 GB    | 28.7          | 393           |",
+    "| Laptop (Apple M4 Pro, Metal) | 7.2 GB    | 18.0          | 125           |"
+   ],
+   "extracted_confidence": 1.0,
+   "needs_review": [
+    "launch_command",
+    "concurrency",
+    "hardware_cost_usd"
+   ]
+  },
+  {
+   "id": "hf-cdiamond--Qwen3.8-27B-iMatrix-NVFP4-MTP-GGUF",
+   "category": "text",
+   "model": "Qwen3.8-27B-iMatrix-NVFP4-MTP",
+   "quant": "nvfp4, Q4_0, F16, Q5_K, Q6_K, Q8_0",
+   "engine": "mtp, llama.cpp, llama-server",
+   "hardware": "RTX 2000",
+   "hardware_family": null,
+   "hardware_cost_text": null,
+   "hardware_cost_usd": null,
+   "metric": "生成 815.64 tok/s (卡内最大值); 读入 226.75 tok/s",
+   "tok_s": 815.64,
+   "gen_tok_s_all": [
+    50.0,
+    50.441,
+    55.402,
+    21.189,
+    59.456,
+    12.606,
+    55.402,
+    50.441,
+    45.866,
+    55.402,
+    815.64,
+    38.23,
+    30.6,
+    48.733,
+    37.024
+   ],
+   "prefill_tok_s_all": [
+    34.19,
+    45.422,
+    226.75,
+    55.402
+   ],
+   "concurrency": null,
+   "context": "context fill | 261,500",
+   "launch_command": null,
+   "source_url": "https://huggingface.co/cdiamond/Qwen3.8-27B-iMatrix-NVFP4-MTP-GGUF",
+   "source_note": "HF 模型卡（作者自报）",
+   "source_level": "宣称",
+   "date": "2026-08-17",
+   "model_url": "https://huggingface.co/cdiamond/Qwen3.8-27B-iMatrix-NVFP4-MTP-GGUF",
+   "downloads": 3516165,
+   "likes": 39,
+   "pipeline_tag": "image-text-to-text",
+   "raw_snippet": [
+    "I built this quant because the ready-made FP4 file answered the wrong question. It was fast, but on my short WikiText-2 control it scored 6.4949 PPL. Plain Q4_0 scored 6.3798. The first higher-quality hybrid went too far the other way: good perplexity, 34.19 tok/s, and no comfortable room for 256K p",
+    "The complete experiment, including the builds that lost, is here: [Qwen3.8 27B at 256K: 50 TPS on a 24 GB GPU](https://piszczek.pl/blog/qwen38-27b-256k-50-tps-24gb-gpu).",
+    "| Production series, 10 runs | 50.441 tok/s mean, 49.420-51.397 |",
+    "| Clean llama.cpp b10454 | 45.422 tok/s |",
+    "| Measured custom runtime on RTX PRO 4000 Blackwell SFF | 55.402 tok/s, +21.97% |",
+    "| Target-only greedy | 21.189 tok/s |",
+    "| Embedded MTP | 59.456 tok/s, 2.81x target-only |",
+    "| Full-cache prefill | 226.750 tok/s |",
+    "| Full-cache decode | 12.606 tok/s |",
+    "These are separate measurements. The 55.402 tok/s runtime A/B is not the same run as the 50.441 tok/s production series. I am keeping the rows separate because multiplying unrelated best cases produces a nice number and a useless benchmark.",
+    "## The llama.cpp branch behind 55.402 tok/s",
+    "The first three patches moved the controlled run from 45.422 to 45.866 tok/s. Adding #27173 reached 55.402 tok/s. Patch #25635 separately moved 32K prefill from 759.38 to 815.64 tok/s and hot decode from 37.26 to 38.23 tok/s. Patch #24891 is a correctness fix for long agent sessions, not a speed cla"
+   ],
+   "extracted_confidence": 1.0,
+   "needs_review": [
+    "launch_command",
+    "concurrency",
+    "hardware_cost_usd"
+   ]
+  },
+  {
+   "id": "hf-peculiar-ragdoll--Tiel-Coder-35B-A3B-GGUF-MTP",
+   "category": "text",
+   "model": "Tiel-Coder-35B-A3B-GGUF-MTP",
+   "quant": "4-bit, UD-Q4, Q4, q8_0, UD-Q2_K_XL, 2-bit",
+   "engine": "llama.cpp, mtp, MLX, llama-server",
+   "hardware": "5 GB RAM",
+   "hardware_family": null,
+   "hardware_cost_text": null,
+   "hardware_cost_usd": null,
+   "metric": "生成 94.4 tok/s (卡内最大值)",
+   "tok_s": 94.4,
+   "gen_tok_s_all": [
+    77.4,
+    94.4,
+    89.9,
+    46.5,
+    85.3,
+    86.0,
+    82.3
+   ],
+   "prefill_tok_s_all": [],
+   "concurrency": null,
+   "context": "context KV small in RAM (<5, 262k context, context (131k",
+   "launch_command": null,
+   "source_url": "https://huggingface.co/peculiar-ragdoll/Tiel-Coder-35B-A3B-GGUF-MTP",
+   "source_note": "HF 模型卡（作者自报）",
+   "source_level": "宣称",
+   "date": "2026-08-24",
+   "model_url": "https://huggingface.co/peculiar-ragdoll/Tiel-Coder-35B-A3B-GGUF-MTP",
+   "downloads": 1791762,
+   "likes": 270,
+   "pipeline_tag": "image-text-to-text",
+   "raw_snippet": [
+    "| — (off) | — | 77.4 | 1.00x | — |",
+    "| 1 | 0.0 | 94.4 | 1.22x | 83.3% |",
+    "| 3 | 0.0 | 89.9 | 1.16x | 59.9% |",
+    "| 8 | 0.0 | 46.5 | 0.60x | 30.2% |",
+    "| 1 | 0.8 | 85.3 | 1.10x | 96.0% |",
+    "| 3 | 0.8 | 86.0 | 1.11x | 92.7% |",
+    "| 8 | 0.8 | 82.3 | 1.06x | 90.1% |"
+   ],
+   "extracted_confidence": 1.0,
+   "needs_review": [
+    "launch_command",
+    "concurrency",
+    "hardware_cost_usd"
+   ]
+  },
+  {
+   "id": "hf-prism-ml--Ternary-Bonsai-27B-mlx-2bit",
+   "category": "text",
+   "model": "Ternary-Bonsai-27B",
+   "quant": "2-bit, IQ2_XXS, 4-bit, 1-bit, 1bit, Q4_1",
+   "engine": "mlx, llama.cpp, vLLM",
+   "hardware": "M5 Pro, M5 Max, M4 Pro",
+   "hardware_family": null,
+   "hardware_cost_text": null,
+   "hardware_cost_usd": null,
+   "metric": "生成 131.8 tok/s (卡内最大值); 读入 2596.0 tok/s",
+   "tok_s": 131.8,
+   "gen_tok_s_all": [
+    104.8,
+    131.8,
+    26.0,
+    44.0,
+    26.2,
+    18.0,
+    98.0
+   ],
+   "prefill_tok_s_all": [
+    26.0,
+    830.0,
+    393.0,
+    125.0,
+    2596.0
+   ],
+   "concurrency": null,
+   "context": "Context length | 262K, 4K ctx, 10K ctx",
+   "launch_command": null,
+   "source_url": "https://huggingface.co/prism-ml/Ternary-Bonsai-27B-mlx-2bit",
+   "source_note": "HF 模型卡（作者自报）",
+   "source_level": "宣称",
+   "date": "2026-07-04",
+   "model_url": "https://huggingface.co/prism-ml/Ternary-Bonsai-27B-mlx-2bit",
+   "downloads": 1100159,
+   "likes": 208,
+   "pipeline_tag": "text-generation",
+   "raw_snippet": [
+    "> **\\~9.4x** smaller than FP16 (ideal) | **95%** of FP16 intelligence retained | **\\~26 tok/s** on an Apple M5 Pro laptop",
+    "On the laptop, the FP16 baseline (\\~54 GB) and even conventional \"4-bit\" builds (17.6 GB) do not fit at all — the meaningful statement is not a speedup ratio but that a 27B model runs interactively on an everyday laptop. The measured decode streams \\~186 GB/s of weights on the M5 Pro, confirming the",
+    "On the CUDA serving path the drafter is a measured net win — an accepted length of τ ≈ 3.7 at draft depth k = 4 turns into a **1.34x** end-to-end decode speedup on H100 (98 → 131.8 tok/s). On Apple Silicon the batch-1 verification pass does not yet amortize, so the drafter layer is not enabled by de",
+    "- **Laptop-local 27B agents**: full 27B reasoning and tool use on a standard laptop at \\~26 tok/s, with the 262K context available for long-document analysis, full-repository code work, and other tasks that depend on holding a large working set in context",
+    "| Laptop (Apple M5 Max, Metal) | 7.2 GB    | 44.0          | 830           |",
+    "| Laptop (Apple M5 Pro, Metal) | 7.2 GB    | 26.2          | 393           |",
+    "| Laptop (Apple M4 Pro, Metal) | 7.2 GB    | 18.0          | 125           |",
+    "| Single GPU (H100, CUDA)      | 7.2 GB    | 98.0          | 2596          |"
+   ],
+   "extracted_confidence": 1.0,
+   "needs_review": [
+    "launch_command",
+    "concurrency",
+    "hardware_cost_usd"
+   ]
+  },
+  {
+   "id": "hf-prism-ml--Bonsai-27B-mlx-1bit",
+   "category": "text",
+   "model": "Bonsai-27B",
+   "quant": "1-bit, 4-bit, 2bit, 2-bit, Q4_1, bf16",
+   "engine": "mlx, llama.cpp, vLLM",
+   "hardware": "M5 Pro, M5 Max, M4 Pro",
+   "hardware_family": null,
+   "hardware_cost_text": null,
+   "hardware_cost_usd": null,
+   "metric": "生成 143.8 tok/s (卡内最大值); 读入 2755.0 tok/s",
+   "tok_s": 143.8,
+   "gen_tok_s_all": [
+    11.0,
+    11.0,
+    44.0,
+    10.8,
+    98.0,
+    143.8,
+    66.0,
+    66.4,
+    44.2,
+    26.0,
+    104.8
+   ],
+   "prefill_tok_s_all": [
+    874.0,
+    421.0,
+    133.0,
+    111.0,
+    2755.0
+   ],
+   "concurrency": null,
+   "context": "Context length | 262K, 4K ctx, 10K ctx",
+   "launch_command": null,
+   "source_url": "https://huggingface.co/prism-ml/Bonsai-27B-mlx-1bit",
+   "source_note": "HF 模型卡（作者自报）",
+   "source_level": "宣称",
+   "date": "2026-07-04",
+   "model_url": "https://huggingface.co/prism-ml/Bonsai-27B-mlx-1bit",
+   "downloads": 1087848,
+   "likes": 274,
+   "pipeline_tag": "text-generation",
+   "raw_snippet": [
+    "> **~14.2x** smaller than FP16 | **~90%** of FP16 intelligence retained | **~11 tok/s** on iPhone 17 Pro Max",
+    "- **First interactive 27B-class generation on a phone**: ~11 tok/s on iPhone 17 Pro Max; ~44 tok/s on an Apple M5 Pro laptop",
+    "¹ On the phone, decode is thermally limited: sustained generation settles slightly below the cold peak — a continuous battery-drain run sustained 10.8 tok/s and generated 672 tokens per 1% of battery (roughly 67,000 tokens on a full charge).",
+    "On the edge platforms the FP16 baseline (~54 GB) and even conventional \"4-bit\" builds (17.6 GB) do not fit at all — the meaningful statement is not a speedup ratio but that a 27B model runs on the device in the first place. The H100 row is the exception that proves the rule: at batch size 1 a datace",
+    "On the CUDA serving path the drafter is a measured net win — an accepted length of τ ≈ 3.6 at draft depth k = 4 turns into a **1.37x** end-to-end decode speedup on H100 (104.8 → 143.8 tok/s). On Apple Silicon the batch-1 verification pass does not yet amortize, so the drafter layer is not enabled by",
+    "- **Laptop-local 27B agents**: full 27B reasoning and tool use on any standard laptop at ~26–66 tok/s (M4 Pro through M5 Max), with the 262K context available for long-document analysis and full-repository code work",
+    "| Laptop (Apple M5 Max, Metal) | 3.9 GB    | 66.4          | 874           |",
+    "| Laptop (Apple M5 Pro, Metal) | 3.9 GB    | 44.2          | 421           |",
+    "| Laptop (Apple M4 Pro, Metal) | 3.9 GB    | 26.0          | 133           |",
+    "| iPhone 17 Pro Max (A19 Pro)  | 3.9 GB    | 11.0¹         | 111           |",
+    "| Single GPU (H100, CUDA)      | 3.9 GB    | 104.8         | 2755          |"
+   ],
+   "extracted_confidence": 1.0,
+   "needs_review": [
+    "launch_command",
+    "concurrency",
+    "hardware_cost_usd"
+   ]
+  },
+  {
+   "id": "hf-prism-ml--Ternary-Bonsai-2-27B-mlx-2bit",
+   "category": "text",
+   "model": "Ternary-Bonsai-2-27B",
+   "quant": "2-bit, IQ2_XXS, UD-Q4_K_XL, 4-bit, 2bit",
+   "engine": "mlx, llama.cpp, vLLM",
+   "hardware": "M5 Max, RTX 5090, RTX 6000, RTX 4090, M5 Pro, M4 Pro",
+   "hardware_family": null,
+   "hardware_cost_text": null,
+   "hardware_cost_usd": null,
+   "metric": "生成 130.0 tok/s (卡内最大值); 读入 765.0 tok/s",
+   "tok_s": 130.0,
+   "gen_tok_s_all": [
+    47.0,
+    125.0,
+    28.0,
+    130.0,
+    30.0,
+    47.0,
+    28.7,
+    18.0
+   ],
+   "prefill_tok_s_all": [
+    47.0,
+    765.0,
+    393.0,
+    125.0
+   ],
+   "concurrency": null,
+   "context": "Context length | 262K, 262K context",
+   "launch_command": null,
+   "source_url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-mlx-2bit",
+   "source_note": "HF 模型卡（作者自报）",
+   "source_level": "宣称",
+   "date": "2026-09-16",
+   "model_url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-mlx-2bit",
+   "downloads": 81932,
+   "likes": 447,
+   "pipeline_tag": "text-generation",
+   "raw_snippet": [
+    "> **8.60 GB** on disk, language model + vision tower | **98.2%** of FP16 intelligence retained | **\\~47 tok/s** on an Apple M5 Max laptop",
+    "On the wider M5 Max the model reaches \\~47 tok/s; on the M4 Pro, prefill (\\~125 tok/s) rather than decode is the practical limit for very long prompts.",
+    "- **Laptop-local 27B agents**: full 27B reasoning and tool use on a standard laptop at \\~28 tok/s, with the 262K context available for long-document analysis, full-repository code work, and other tasks that depend on holding a large working set in context",
+    "- **Single-GPU and commodity-GPU serving**: 27B-class quality from a single consumer or entry-level datacenter GPU — \\~130 tok/s on an RTX 5090, \\~30 tok/s on a 72 W L4 — with headroom for larger batches, longer contexts, or co-resident models",
+    "| Laptop (Apple M5 Max, Metal) | 7.2 GB    | 47.0          | 765           |",
+    "| Laptop (Apple M5 Pro, Metal) | 7.2 GB    | 28.7          | 393           |",
+    "| Laptop (Apple M4 Pro, Metal) | 7.2 GB    | 18.0          | 125           |"
+   ],
+   "extracted_confidence": 1.0,
+   "needs_review": [
+    "launch_command",
+    "concurrency",
+    "hardware_cost_usd"
+   ]
+  },
+  {
+   "id": "hf-FluidInference--unlimited-ocr-mlx-coreml",
+   "category": "text",
+   "model": "unlimited-ocr",
+   "quant": "8-bit, 4-bit, f16",
+   "engine": "mlx",
+   "hardware": "M5 Pro",
+   "hardware_family": null,
+   "hardware_cost_text": null,
+   "hardware_cost_usd": null,
+   "metric": "生成 270.0 tok/s (卡内最大值)",
+   "tok_s": 270.0,
+   "gen_tok_s_all": [
+    260.0,
+    270.0,
+    50.0
+   ],
+   "prefill_tok_s_all": [],
+   "concurrency": null,
+   "context": null,
+   "launch_command": null,
+   "source_url": "https://huggingface.co/FluidInference/unlimited-ocr-mlx-coreml",
+   "source_note": "HF 模型卡（作者自报）",
+   "source_level": "宣称",
+   "date": "2026-10-11",
+   "model_url": "https://huggingface.co/FluidInference/unlimited-ocr-mlx-coreml",
+   "downloads": 81,
+   "likes": 13,
+   "pipeline_tag": "image-text-to-text",
+   "raw_snippet": [
+    "- **MLX decoder** (`mlx/`, recommended): 8-bit, upstream's R-SWA cache, ~200–260 tokens/s on an M5 Pro. Baidu's",
+    "~50 s, ~270 tokens/s); text within ~1 point of the 8-bit decoder, with small differences in formulas and tables.",
+    "- **Core ML decoder** (`UnlimitedOcrDecoder.mlpackage`): stateful 8-bit, ~50 tokens/s."
+   ],
+   "extracted_confidence": 1.0,
+   "needs_review": [
+    "context",
+    "launch_command",
+    "concurrency",
+    "hardware_cost_usd"
+   ]
+  },
+  {
+   "id": "hf-harshatheg--Qwen-2.5-1B-RLCD",
+   "category": "text",
+   "model": "Qwen-2.5-1B-RLCD",
+   "quant": "4bit",
+   "engine": "mlx",
+   "hardware": "M4 Max, M1, M2, M3, M4",
+   "hardware_family": null,
+   "hardware_cost_text": null,
+   "hardware_cost_usd": null,
+   "metric": "生成 131.2 tok/s (卡内最大值); 读入 130.0 tok/s",
+   "tok_s": 131.2,
+   "gen_tok_s_all": [
+    120.0,
+    125.0,
+    118.0,
+    122.4,
+    131.2,
+    116.5
+   ],
+   "prefill_tok_s_all": [
+    130.0
+   ],
+   "concurrency": null,
+   "context": null,
+   "launch_command": null,
+   "source_url": "https://huggingface.co/harshatheg/Qwen-2.5-1B-RLCD",
+   "source_note": "HF 模型卡（作者自报）",
+   "source_level": "宣称",
+   "date": "2026-09-16",
+   "model_url": "https://huggingface.co/harshatheg/Qwen-2.5-1B-RLCD",
+   "downloads": 0,
+   "likes": 585,
+   "pipeline_tag": "text-generation",
+   "raw_snippet": [
+    "| **Fintech Fraud Routing** | 4 fields | 420 ms (120 tok/s) | **75 ms** | **5.6x** | 100% guaranteed |",
+    "| **Code Security Audit** | 4 fields | 380 ms (125 tok/s) | **68 ms** | **5.6x** | 100% guaranteed |",
+    "| **High-Cardinality Tariff** | 1 field (255 choices) | 500 ms (118 tok/s) | **89 ms** | **5.6x** | 100% guaranteed |",
+    "| **Enterprise Support Triage** | 28 fields | 1,900 ms (130 tok/s) | **270 ms** | **7.0x** | 100% guaranteed |",
+    "Autoregressive Baseline :    421.3 ms | 148 tokens (122.4 tok/s) | Passes: 148",
+    "Autoregressive Baseline :   1894.2 ms | 312 tokens (131.2 tok/s) | Passes: 312",
+    "Autoregressive Baseline :    498.7 ms |  42 tokens (116.5 tok/s) | Passes: 42"
+   ],
+   "extracted_confidence": 1.0,
+   "needs_review": [
+    "context",
+    "launch_command",
+    "concurrency",
+    "hardware_cost_usd"
+   ]
+  },
+  {
+   "id": "hf-ISTA-DASLab--Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+   "category": "text",
+   "model": "Qwen3.8-Flash-Next-GSQ-RCO",
+   "quant": "BF16, IQ4_NL, Q2_0, IQ2_XS, IQ3_XXS, IQ3_S",
+   "engine": "llama.cpp, Ollama, LM Studio, Strata",
+   "hardware": null,
+   "hardware_family": null,
+   "hardware_cost_text": null,
+   "hardware_cost_usd": null,
+   "metric": "生成 94.5 tok/s (卡内最大值); 读入 367.49 tok/s",
+   "tok_s": 94.5,
+   "gen_tok_s_all": [
+    94.5,
+    2.0,
+    94.5,
+    45.1,
+    93.79,
+    70.3
+   ],
+   "prefill_tok_s_all": [
+    367.49,
+    108.19
+   ],
+   "concurrency": null,
+   "context": null,
+   "launch_command": null,
+   "source_url": "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+   "source_note": "HF 模型卡（作者自报）",
+   "source_level": "宣称",
+   "date": "2026-09-07",
+   "model_url": "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+   "downloads": 4675423,
+   "likes": 847,
+   "pipeline_tag": "image-text-to-text",
+   "raw_snippet": [
+    "The gap comes from the quantization formats rather than the size: the two files differ by only 1.6 GB, and Q2_0 is the smaller of the two. Q2_0's decode rate is also far more stable across categories, 92.5 to 94.5 t/s (a 2.0 t/s spread), where IQ2_XS swings from 49.4 to 94.5 t/s (a 45.1 t/s spread),",
+    "| `Q2_0` | **367.49** | **93.79** | **6.70 s** |",
+    "| `IQ2_XS` | 108.19 | 70.30 | 12.68 s |"
+   ],
+   "extracted_confidence": 0.8,
+   "needs_review": [
+    "hardware",
+    "context",
+    "launch_command",
+    "concurrency",
+    "hardware_cost_usd"
+   ]
+  },
+  {
+   "id": "hf-LessThanThreeAI--Qwen3.8-27B-Humanlike-Chat-GGUF",
+   "category": "text",
+   "model": "Qwen3.8-27B-Humanlike-Chat",
+   "quant": "IQ4_XS, BF16, GPTQ, FP8, Q4_K_M, Q6_K",
+   "engine": "llama.cpp, vLLM, sglang, llama-server, LM Studio, Ollama",
+   "hardware": null,
+   "hardware_family": null,
+   "hardware_cost_text": null,
+   "hardware_cost_usd": null,
+   "metric": "生成 86.0 tok/s (卡内最大值)",
+   "tok_s": 86.0,
+   "gen_tok_s_all": [
+    86.0,
+    72.0,
+    46.0,
+    43.0,
+    50.0,
+    56.0,
+    46.0,
+    55.0,
+    36.0
+   ],
+   "prefill_tok_s_all": [],
+   "concurrency": null,
+   "context": "Context: 32768, 8k context, Context | 262,144",
+   "launch_command": null,
+   "source_url": "https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-GGUF",
+   "source_note": "HF 模型卡（作者自报）",
+   "source_level": "宣称",
+   "date": "2026-08-26",
+   "model_url": "https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-GGUF",
+   "downloads": 79513,
+   "likes": 187,
+   "pipeline_tag": "text-generation",
+   "raw_snippet": [
+    "| [GPTQ-Int4](https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-2.0-GPTQ-Int4) | 20.62 GB | 24 GB card, 8k context | 0.0274 | 86 | all pass |",
+    "| [FP8](https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-2.0-FP8) | 30.89 GB | 48 GB card | 0.0079 | 72 | all pass |",
+    "| [BF16](https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-2.0) | 55.59 GB | 80 GB card | 0.0032 | 46 | all pass |",
+    "| [IQ4_XS](https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-GGUF/resolve/main/Qwen3.8-27B-Humanlike-Chat-IQ4_XS.gguf) | 15.10 GB | 0.0219 | 43 | all pass |",
+    "| [Q4_K_M](https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-GGUF/resolve/main/Qwen3.8-27B-Humanlike-Chat-Q4_K_M.gguf) | 16.56 GB | 0.0218 | 50 | all pass but one tool turn |",
+    "| [Q5_K_M](https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-GGUF/resolve/main/Qwen3.8-27B-Humanlike-Chat-Q5_K_M.gguf) | 19.24 GB | 0.0086 | 56 | all pass but one tool turn |",
+    "| [Q6_K](https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-GGUF/resolve/main/Qwen3.8-27B-Humanlike-Chat-Q6_K.gguf) | 22.09 GB | 0.0047 | 46 | all pass |",
+    "| [Q8_0](https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-GGUF/resolve/main/Qwen3.8-27B-Humanlike-Chat-Q8_0.gguf) | 28.60 GB | 0.0028 | 55 | all pass |",
+    "| BF16, two shards ([1](https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-GGUF/resolve/main/Qwen3.8-27B-Humanlike-Chat-BF16-00001-of-00002.gguf), [2](https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-GGUF/resolve/main/Qwen3.8-27B-Humanlike-Chat-BF16-00002-of-00002.ggu",
+    "| [Safetensors BF16](https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-2.0) (vLLM, SGLang, transformers) | 55.59 GB | 0.0032 | | all pass |",
+    "| [Safetensors FP8](https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-2.0-FP8) (vLLM, SGLang) | 30.89 GB | 0.0079 | | all pass |",
+    "| [Safetensors GPTQ-Int4](https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-2.0-GPTQ-Int4) (vLLM, SGLang) | 20.62 GB | 0.0274 | | all pass |"
+   ],
+   "extracted_confidence": 0.8,
+   "needs_review": [
+    "hardware",
+    "launch_command",
+    "concurrency",
+    "hardware_cost_usd"
+   ]
+  }
+ ]
+}

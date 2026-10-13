@@ -4,3 +4,6 @@
 3. PR 描述附来源链接；自测附命令与输出
 4. 不估算、不编造：未知写 null。不搬运帖子全文，只留链接与摘要
 5. 来源等级：官方 / 实测 / 转述 / 宣称
+
+## 自动候选（Hugging Face）/ Auto candidates
+维护者每周运行 `python3 scripts/ingest_hf.py`，再用 `python3 scripts/review_candidates.py` 人工审核；只有 approve 后才进入 `data/recipes.json`。详见 `docs/sources.md`。
