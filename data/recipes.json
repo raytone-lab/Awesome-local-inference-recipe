@@ -3547,7 +3547,8 @@
    "author": "jayleaton",
    "likes": 10,
    "reposts": 0
-  }
+  },
+  "metric_en": "1344×768 5s with audio: 81 s (stock ComfyUI, 20 steps: 623 s)"
  },
  {
   "id": "x-015",
@@ -3572,7 +3573,8 @@
    "author": "LightX2V",
    "likes": 8,
    "reposts": 2
-  }
+  },
+  "metric_en": "768×1344 15s video + audio ≈72 s (steady state, excl. MP4 export; baseline ~26 min)"
  },
  {
   "id": "x-016",
@@ -3597,6 +3599,7 @@
    "author": "EndFolding79421",
    "likes": 149,
    "reposts": 16
-  }
+  },
+  "metric_en": "Three 5s chained clips: 17 min total"
  }
 ]

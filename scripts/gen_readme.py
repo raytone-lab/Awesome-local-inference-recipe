@@ -1,73 +1,90 @@
 #!/usr/bin/env python3
-"""Generate README.md from data/recipes.json. Run: python3 scripts/gen_readme.py"""
+"""Generate README.md (English) and README.zh-CN.md (Chinese) from data/. Run: python3 scripts/gen_readme.py"""
 import json, re
 from pathlib import Path
 R = Path(__file__).resolve().parent.parent
 D = json.load(open(R/'data/recipes.json'))
-LV = {'官方':'🏛️','实测':'✅','转述':'🔁','宣称':'📣'}
-TIERS = [('tier-1-25k','Tier 1 · ≤ $2.5k',0,2500,'Used 3090/4090, MI50/V100 cards, Strix Halo, R9700'),
-         ('tier-2-7k','Tier 2 · $2.5k–7k',2500,7000,'One RTX 5090, one DGX Spark, Mac Studio Max'),
-         ('tier-3-14k','Tier 3 · $7k–14k',7000,14000,'Two Sparks, Mac Studio Ultra'),
-         ('tier-4-30k','Tier 4 · $14k–30k',14000,30000,'3–4 Spark clusters, multi-GPU workstations')]
-CATS = [('text','📝 Text'),('image','🖼️ Image'),('video-audio','🎬 Video & Audio')]
-MAXTEXT = 10
+REPOS = json.load(open(R/'data/repos.json'))
+try: UPD = json.load(open(R/'data/repos.meta.json'))['updated_at']
+except Exception: UPD = None
+LVI = {'官方':'🏛️','实测':'✅','转述':'🔁','宣称':'📣'}
+CJK = re.compile(r'[\u3000-\u303f\u3400-\u9fff\uff00-\uffef“”]')
+L = {
+ 'en': dict(file='README.md', tpl='readme_static.en.md',
+   tiers=['Tier 1 · up to $2.5k','Tier 2 · $2.5k–7k','Tier 3 · $7k–14k','Tier 4 · $14k–30k'],
+   tdesc=['Used 3090/4090, MI50/V100 cards, Strix Halo, R9700','One RTX 5090, one DGX Spark, Mac Studio Max','Two Sparks, Mac Studio Ultra','3–4 Spark clusters, multi-GPU workstations'],
+   cats={'text':'📝 Text','image':'🖼️ Image','video-audio':'🎬 Video & Audio'},
+   hot='Hot This Month', hotdesc='Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).',
+   unk='Cost Not Published', unkdesc='Multi-card builds priced per card, Macs without a listed price, and other rows without a single published price · {n} recipes. Top text recipes by tok/s:',
+   more='…and {n} more in the [explorer](explore.html).', all='…browse all {n} in the [explorer](explore.html).', count='{n} recipes',
+   src='source', see='see source', legend='Legend', eng='Engines & Tools', rel='Related Lists & Benchmarks', contrib='Contributing', lic='License',
+   th='| Project | ⭐ Stars | Live | Last push | What |', site='*(site/blog)*', desc='desc',
+   note='⭐ Snapshot updated {u} (UTC) by `scripts/update_stars.py` · *Live* badges are rendered by shields.io at view time.'),
+ 'zh': dict(file='README.zh-CN.md', tpl='readme_static.zh-CN.md',
+   tiers=['第 1 档 · 2,500 美元以内','第 2 档 · 2,500–7,000 美元','第 3 档 · 7,000–14,000 美元','第 4 档 · 14,000–30,000 美元'],
+   tdesc=['二手 3090/4090、MI50/V100、Strix Halo、R9700','单张 RTX 5090、单台 DGX Spark、Mac Studio Max','双 Spark、Mac Studio Ultra','3–4 台 Spark 集群、多卡工作站'],
+   cats={'text':'📝 文字','image':'🖼️ 图像','video-audio':'🎬 影音'},
+   hot='本月热门', hotdesc='X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 排序）。',
+   unk='价格未公开', unkdesc='按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 {n} 条。按 tok/s 排名靠前的文字配方：',
+   more='……另有 {n} 条，见 [配方库](explore.html)。', all='……全部 {n} 条见 [配方库](explore.html)。', count='共 {n} 条',
+   src='来源', see='见来源', legend='图例', eng='引擎与工具', rel='相关榜单与清单', contrib='参与贡献', lic='许可证',
+   th='| 项目 | ⭐ Star | 实时 | 最后推送 | 简介 |', site='*（网站/博客）*', desc='desc_zh',
+   note='⭐ 快照由 `scripts/update_stars.py` 更新于 {u}（UTC）· 「实时」徽章由 shields.io 在打开页面时实时渲染。'),
+}
+BOUNDS=[(0,2500),(2500,7000),(7000,14000),(14000,30000)]
 def clip(s,n=90): s=(s or '').replace('|','/').replace('\n',' '); return s if len(s)<=n else s[:n-1]+'…'
-def key(r):
-    return f"**{r['tok_s']:g} tok/s**" if r['tok_s'] is not None else clip(r['metric'] or '未见公开数据',70)
-def line(r):
-    q = f" `{clip(r['quant'],28)}`" if r['quant'] else ''
-    eng = '' if r['engine'].startswith('其他') else f" · {r['engine']}"
-    return f"- **{r['model']}**{eng}{q} — {clip(r['hardware'],60)} → {key(r)} {LV.get(r['source_level'],'')} [source]({r['source_url']})"
-def slug(s): return re.sub(r'[^a-z0-9 \-]','',s.lower()).replace(' ','-')
-out=[]; toc=[]
-def sec(level,title,anchor_title=None):
-    out.append(f"\n{'#'*level} {title}\n")
-    toc.append(('  '*(level-2))+f"- [{re.sub(r'^[^A-Za-z]+','',title)}](#{slug(anchor_title or title)})")
-# --- body
-seen=set();hot=[r for r in sorted([r for r in D if r.get('x_post')],key=lambda r:-(r['x_post']['likes']+3*r['x_post']['reposts'])) if not (r['source_url'] in seen or seen.add(r['source_url']))][:8]
-sec(2,'Hot This Month')
-out.append('Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).\n')
-out += [f"- **{r['model']}** · {r['engine']} — {clip(r['hardware'],50)} → {key(r)} {LV[r['source_level']]} [@{r['x_post']['author']}]({r['source_url']}) ♥{r['x_post']['likes']}" for r in hot]
-for a,t,lo,hi,desc in TIERS:
-    sec(2,t)
-    rs=[r for r in D if r['hardware_cost_usd'] is not None and lo<r['hardware_cost_usd']<=hi]
-    out.append(f"*{desc}* · {len(rs)} recipes\n")
-    for c,ct in CATS:
-        cr=[r for r in rs if r['category']==c]
-        if not cr: continue
-        cr.sort(key=lambda r:-(r['tok_s'] or 0))
-        out.append(f"\n**{ct}**\n")
-        shown=cr[:MAXTEXT] if c=='text' else cr
-        out += [line(r) for r in shown]
-        if len(cr)>len(shown): out.append(f"- *…and {len(cr)-len(shown)} more in the [explorer](explore.html).*")
-unk=[r for r in D if r['hardware_cost_usd'] is None]
-sec(2,'Cost Not Published')
-out.append(f"*Multi-card builds priced per card, Macs without a listed price, and other rows with no single published price* · {len(unk)} recipes. Top text recipes by tok/s:\n")
-out += [line(r) for r in sorted([r for r in unk if r['tok_s']],key=lambda r:-r['tok_s'])[:12]]
-out.append(f"- *…browse all {len(unk)} in the [explorer](explore.html).*")
-body='\n'.join(out)
-n={c:sum(r['category']==c for r in D) for c,_ in CATS}
-STATIC=open(R/'scripts/readme_static.md').read()
-head, tail = STATIC.split('<!--RECIPES-->')
-toc_top = ['- [Legend](#legend)','- [Hot This Month](#hot-this-month)']+[x for x in toc if 'Hot This' not in x]+['- [Engines & Tools](#engines--tools)','- [Related Lists & Benchmarks](#related-lists--benchmarks)','- [Contributing](#contributing)','- [License](#license)']
-head = head.replace('{{TOC}}','\n'.join(toc_top)).replace('{{N}}',str(len(D))).replace('{{NT}}',str(n['text'])).replace('{{NI}}',str(n['image'])).replace('{{NV}}',str(n['video-audio']))
-import datetime
-REPOS=json.load(open(R/'data/repos.json'))
-try: upd=json.load(open(R/'data/repos.meta.json'))['updated_at']
-except Exception: upd=None
+def en(s):
+    """Drop Chinese fragments so English lines stay single-language (proper nouns kept)."""
+    if not s: return s
+    s=re.sub(r'（[^）]*）|\([^)]*[\u3400-\u9fff][^)]*\)','',s)
+    s=' '.join(w for w in re.split(r'\s+',s) if not CJK.search(w))
+    return re.sub(r'\s+',' ',s).strip(' ·+/,') or None
+def slug(s): return re.sub(r'[^\w \-]','',s.lower()).replace(' ','-')
 def fmt(n): return f"{n/1000:.1f}k" if n>=1000 else str(n)
-def rtable(sec):
-    rows=["| Project | ⭐ Stars | Live | Last push | What |","|---|--:|---|---|---|"]
-    for r in sorted([r for r in REPOS if r['section']==sec],key=lambda r:-(r.get('stars') or -1)):
-        url=r.get('url') or f"https://github.com/{r['repo']}"
-        if r.get('repo'):
-            st=fmt(r['stars']) if r.get('stars') is not None else '—'
-            live=f"![stars](https://img.shields.io/github/stars/{r['repo']}?style=flat&label=)"
-            pu=(r.get('pushed_at') or '')[:10] or '—'
-        else: st,live,pu='—','*(site/blog)*','—'
-        rows.append(f"| [{r['name']}]({url}) | {st} | {live} | {pu} | {r['desc']} |")
-    note=f"\n\n<sub>⭐ snapshot 更新于 {upd} (UTC) by `scripts/update_stars.py` · *Live* badges are rendered by shields.io at view time.</sub>" if upd else ''
-    return '\n'.join(rows)+note
-tail=tail.replace('<!--ENGINES-->',rtable('engines')).replace('<!--RELATED-->',rtable('related'))
-open(R/'README.md','w').write(head+body+'\n'+tail)
-print('README.md written,',len(D),'recipes')
+def build(lang):
+    T=L[lang]; E=(lambda s:en(s)) if lang=='en' else (lambda s:s)
+    def key(r):
+        if r['tok_s'] is not None: return f"**{r['tok_s']:g} tok/s**"
+        m=(r.get('metric_en') or r['metric']) if lang=='en' else r['metric']
+        if lang=='en' and m and CJK.search(m): m=None  # don't show mangled partial translations
+        return clip(m,70) if m else T['see']
+    def ln(r):
+        q=E(r['quant']); q=f" `{clip(q,28)}`" if q else ''
+        eg=E(r['engine']); eg='' if (not eg or r['engine'].startswith('其他')) else f" · {eg}"
+        return f"- **{E(r['model'])}**{eg}{q} — {clip(E(r['hardware']) or r['hardware_family'],60)} → {key(r)} {LVI.get(r['source_level'],'')} [{T['src']}]({r['source_url']})"
+    out=[];toc=[]
+    def sec(t): out.append(f"\n## {t}\n"); toc.append(f"- [{t}](#{slug(t)})")
+    seen=set();hot=[r for r in sorted([r for r in D if r.get('x_post')],key=lambda r:-(r['x_post']['likes']+3*r['x_post']['reposts'])) if not (r['source_url'] in seen or seen.add(r['source_url']))][:8]
+    sec(T['hot']); out.append(T['hotdesc']+'\n')
+    for r in hot:
+        eg=E(r['engine']); eg=f" · {eg}" if eg and not r['engine'].startswith('其他') else ''
+        out.append(f"- **{E(r['model'])}**{eg} — {clip(E(r['hardware']),50)} → {key(r)} {LVI[r['source_level']]} [@{r['x_post']['author']}]({r['source_url']}) ♥{r['x_post']['likes']}")
+    for t,d,(lo,hi) in zip(T['tiers'],T['tdesc'],BOUNDS):
+        sec(t); rs=[r for r in D if r['hardware_cost_usd'] is not None and lo<r['hardware_cost_usd']<=hi]
+        out.append(f"*{d}* · {T['count'].format(n=len(rs))}\n")
+        for c,ct in T['cats'].items():
+            cr=sorted([r for r in rs if r['category']==c],key=lambda r:-(r['tok_s'] or 0))
+            if not cr: continue
+            out.append(f"\n**{ct}**\n"); sh=cr[:10] if c=='text' else cr
+            out+= [ln(r) for r in sh]
+            if len(cr)>len(sh): out.append('- *'+T['more'].format(n=len(cr)-len(sh))+'*')
+    unk=[r for r in D if r['hardware_cost_usd'] is None]
+    sec(T['unk']); out.append(T['unkdesc'].format(n=len(unk))+'\n')
+    out+= [ln(r) for r in sorted([r for r in unk if r['tok_s']],key=lambda r:-r['tok_s'])[:12]]
+    out.append('- *'+T['all'].format(n=len(unk))+'*')
+    def rtable(s):
+        rows=[T['th'],"|---|--:|---|---|---|"]
+        for r in sorted([r for r in REPOS if r['section']==s],key=lambda r:-(r.get('stars') or -1)):
+            url=r.get('url') or f"https://github.com/{r['repo']}"
+            if r.get('repo'): st=fmt(r['stars']) if r.get('stars') is not None else '—'; lv=f"![stars](https://img.shields.io/github/stars/{r['repo']}?style=flat&label=)"; pu=(r.get('pushed_at') or '')[:10] or '—'
+            else: st,lv,pu='—',T['site'],'—'
+            rows.append(f"| [{r['name']}]({url}) | {st} | {lv} | {pu} | {r[T['desc']]} |")
+        return '\n'.join(rows)+(f"\n\n<sub>{T['note'].format(u=UPD)}</sub>" if UPD else '')
+    tpl=open(R/'scripts'/T['tpl']).read(); head,tail=tpl.split('<!--RECIPES-->')
+    n={c:sum(r['category']==c for r in D) for c in T['cats']}
+    toc=[f"- [{T['legend']}](#{slug(T['legend'])})"]+toc+[f"- [{x}](#{slug(x)})" for x in (T['eng'],T['rel'],T['contrib'],T['lic'])]
+    head=head.replace('{{TOC}}','\n'.join(toc)).replace('{{N}}',str(len(D))).replace('{{NT}}',str(n['text'])).replace('{{NI}}',str(n['image'])).replace('{{NV}}',str(n['video-audio']))
+    tail=tail.replace('<!--ENGINES-->',rtable('engines')).replace('<!--RELATED-->',rtable('related'))
+    open(R/T['file'],'w').write(head+'\n'.join(out)+'\n'+tail)
+    return T['file']
+for lang in L: print('written', build(lang))
