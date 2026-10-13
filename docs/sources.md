@@ -43,3 +43,8 @@
 - 上下文取数值 tokens（`context_tokens`）
 - `--ids a/b,c/d` 只重抓指定 repo；`scripts/eval_extract.py` 对比 v1/v2；`scripts/approve_review.py` 把 review.json 的「收录」批量写入
 已知不足：卡级量化名（只在正文说明的）不会传给每行；任务/延迟表里的数字仍可能被当成生成速度；上下文偶尔取到表格行里的测试长度。
+
+### 抽取器 v3（2026-10-14，修复第二批审查的 16 条错误）
+规则说明见 `scripts/hf_extract.py` 顶部文档字符串。要点：对照列（FP16/4-bit/original/ref）跳过；"113 / 140"、区间、带单位/脚注单元格可解析；延迟表、评测任务表整体跳过；聚合吞吐列 → `aggregate`（并发），peak 列 → `peak`；投机 关/开 等多生成列拆成多行（`variant`）；转置表（指标在首列）按列出记录；硬件优先取行标签 → 表前最近的声明（含 `Machine:` / `## Measured` 标题下一行）→ 卡级声明 → 表后声明；Xeon/EPYC 归入排除；表前出现 "their numbers / community benchmark / by X" → `level=转述`；"up to" → `peak_claim`；行内上下文 → `row.context_tokens`；`seen_rows` 行级跨卡去重；非通用 LLM 直接进噪声。
+评估：`python3 scripts/eval_extract.py data/candidates/hf-2026-10-13.review.json data/candidates/hf-2026-10-14.review.json --old <旧候选1> <旧候选2> -v`
+测试：`python3 -m unittest tests/test_ingest_hf.py tests/test_ingest_hf_batch2.py`（39 张卡 fixtures）

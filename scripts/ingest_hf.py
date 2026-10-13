@@ -58,13 +58,15 @@ def main():
     a = ap.parse_args()
     tok = os.environ.get("HF_TOKEN")
     seen_urls = {r.get("source_url") for r in json.load(open(f"{ROOT}/data/recipes.json"))}
-    seen_fp = {}
+    seen_fp = {}; seen_rows = set()
     for f in glob.glob(f"{ROOT}/data/candidates/*.json"):
         if a.out and os.path.abspath(f) == os.path.abspath(a.out): continue
         try:
             for c in json.load(open(f))["candidates"]:
                 seen_urls.add(c["model_url"])
                 if c.get("table_fingerprint"): seen_fp[c["table_fingerprint"]] = c["id"]
+                for r in c.get("rows", []):
+                    if r.get("dup_key"): seen_rows.add(r["dup_key"])
         except Exception: pass
     models = {}
     if a.ids:
@@ -85,9 +87,12 @@ def main():
         if why: filtered["noise"].append({"id": mid, "reason": why}); continue
         card = get(f"{url}/raw/main/README.md", tok, as_json=False); time.sleep(a.delay)
         if not card: filtered["no_card"] += 1; continue
-        x = extract(mid, card, include_nonconsumer=a.include_nonconsumer)
+        x = extract(mid, card, include_nonconsumer=a.include_nonconsumer, seen_rows=seen_rows)
         if not x["rows"]: filtered["no_speed"] += 1; continue
-        if not x["primary"]: filtered["only_nonconsumer"].append(mid); continue
+        if any("非通用" in f for f in x["flags"]): filtered["noise"].append({"id": mid, "reason": x["flags"][0]}); continue
+        if not x["primary"]:
+            if all(r.get("duplicate") for r in x["rows"] if r["gen"] is not None): filtered["dup_table"].append({"id": mid, "same_as": "行级重复"}); continue
+            filtered["only_nonconsumer"].append(mid); continue
         fp = x["table_fingerprint"]
         if fp in seen_fp:
             filtered["dup_table"].append({"id": mid, "same_as": seen_fp[fp]}); continue
@@ -100,7 +105,8 @@ def main():
             "id": f"hf-{mid.replace('/', '--')}", "category": "text", "model": re.sub(r"(?i)[-_](gguf|mlx.*)$", "", name),
             "quant": p["quant"], "engine": ", ".join(uniq(ENG, card)) or None, "hardware": p["hardware"],
             "metric": f"生成 {p['gen']} tok/s" + (f"；读入 {p['prefill']} tok/s" if p["prefill"] else ""),
-            "tok_s": p["gen"], "context_tokens": x["context_tokens"], "source_url": url, "source_level": "宣称",
+            "tok_s": p["gen"], "context_tokens": p.get("context_tokens") or x["context_tokens"], "source_url": url, "source_level": p.get("level", "宣称"),
+            "concurrency": (f"聚合 {p['aggregate']} tok/s" if p.get("aggregate") else None), "peak_claim": p.get("peak_claim"),
             "date": (m.get("createdAt") or "")[:10] or None, "model_url": url, "downloads": m.get("downloads"), "likes": m.get("likes"),
             "rows": kept, "excluded_rows": [r for r in x["rows"] if r["excluded"]], "caveats": x["caveats"], "flags": x["flags"],
             "table_fingerprint": fp, "raw_snippet": [r["raw"] for r in kept][:12],
