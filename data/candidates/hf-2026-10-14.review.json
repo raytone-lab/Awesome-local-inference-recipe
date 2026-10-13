@@ -861,7 +861,7 @@
   "Kujira：硬件在 '## Measured (one machine)' 下一行 'RTX 3080 12 GB, WSL2…'，声明句规则未覆盖标题后首行；日文句也有硬件",
   "OpensourceWTF：硬件在 'Machine: Apple M5 Max, 128 GiB'，DECL 规则缺 'Machine:'",
   "cloudyu：取了任务结果表的 Tok/s 列（每题），应识别 'ID | Task | Verdict' 类评测表并降级",
-  "surya-ocr：OCR 未被识别（名字含 ocr 但规则用 \\bocr\\b，'surya-ocr-2' 中 ocr 两侧是 '-'，应命中——需检查 flags 生成顺序/仅句子分支）",
+  "surya-ocr：已正确打上 OCR 标记，但仍作为候选输出（可信度 0.55）；被标非通用 LLM 的卡应直接移入过滤列表",
   "esatapedico：卡内转载的社区数据（'These are their numbers, not ours'）应自动标转述",
   "POCKET / Bonsai：Xeon CPU、H100 行已排除，但 'CPU generate' 类行应标记为 CPU 推理",
   "peasantsmith / gpt-oss-20b-tq3：'up to' 峰值说法应进 caveats",
