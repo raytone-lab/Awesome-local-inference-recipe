@@ -324,7 +324,9 @@
     "launch_command",
     "concurrency",
     "hardware_cost_usd"
-   ]
+   ],
+   "status": "merged",
+   "merged_into": "hf-prism-ml--Ternary-Bonsai-27B-gguf"
   },
   {
    "id": "hf-prism-ml--Bonsai-27B-mlx-1bit",

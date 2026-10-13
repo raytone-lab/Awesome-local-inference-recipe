@@ -58,7 +58,9 @@
    "source_level": "宣称",
    "context": "262,144（原生）；测试 180K/192K/32K",
    "concurrency": "未写（单请求）",
-   "launch_command": "llama-server ... --ctx-size 262144（卡内示例）"
+   "launch_command": "llama-server ... --ctx-size 262144（卡内示例）",
+   "card_date": "2026-08-14",
+   "note_all": "prefill 随上下文下降，不同上下文不可直接比"
   },
   {
    "id": "hf-meta-models--Muse-Glimmer-30B-GGUF",
@@ -103,7 +105,8 @@
     "发布方身份"
    ],
    "launch_command": "llama-server -ngl 99 -c 131072 -np 4（需 llama.cpp ≥ b10353）",
-   "concurrency": "示例 -np 4"
+   "concurrency": "示例 -np 4",
+   "card_date": "2026-08-09"
   },
   {
    "id": "hf-prism-ml--Ternary-Bonsai-27B-gguf",
@@ -142,7 +145,9 @@
    "source_level": "宣称",
    "context": "262K（卡称）",
    "concurrency": "batch 1",
-   "closes": "hf-prism-ml--Ternary-Bonsai-27B-mlx-2bit"
+   "closes": "hf-prism-ml--Ternary-Bonsai-27B-mlx-2bit",
+   "card_date": "2026-07-04",
+   "note_all": "需 PrismML llama.cpp fork"
   },
   {
    "id": "hf-Jackrong--Qwopus3.8-27B-Flash-V2-GGUF",
@@ -164,7 +169,8 @@
    "missing": [
     "hardware 归属",
     "llama.cpp 版本"
-   ]
+   ],
+   "card_date": "2026-09-19"
   },
   {
    "id": "hf-prism-ml--Bonsai-27B-gguf",
@@ -172,7 +178,8 @@
    "decision": "拒绝",
    "reason": "与已收录的 Bonsai-27B-mlx-1bit 是同一张表（66.4/874 等），重复",
    "recipes": [],
-   "source_level": "宣称"
+   "source_level": "宣称",
+   "card_date": "2026-07-04"
   },
   {
    "id": "hf-prism-ml--Bonsai-8B-gguf",
@@ -218,7 +225,9 @@
     }
    ],
    "source_level": "宣称",
-   "concurrency": "batch 1"
+   "concurrency": "batch 1",
+   "card_date": "2026-03-18",
+   "note_all": "需 PrismML llama.cpp fork"
   },
   {
    "id": "hf-Edge0--Edge0-35B-A3B-preview",
@@ -237,7 +246,8 @@
      "level": "宣称"
     }
    ],
-   "source_level": "宣称"
+   "source_level": "宣称",
+   "card_date": "2026-09-08"
   },
   {
    "id": "hf-Youssofal--Qwen3.8-27B-MTPLX-Optimized-Speed",
@@ -266,7 +276,9 @@
     }
    ],
    "source_level": "宣称",
-   "concurrency": "single stream"
+   "concurrency": "single stream",
+   "card_date": "2026-08-14",
+   "note_all": "87.6 为改写刚写过文件的有利场景"
   },
   {
    "id": "hf-Youssofal--Qwen3.8-Flash-Next-MTPLX-Optimized-Speed",
@@ -305,7 +317,8 @@
    ],
    "source_level": "宣称",
    "concurrency": "single stream",
-   "context": "200K+ 实测"
+   "context": "200K+ 实测",
+   "card_date": "2026-08-28"
   },
   {
    "id": "hf-prism-ml--Ternary-Bonsai-8B-mlx-2bit",
@@ -332,7 +345,8 @@
      "level": "宣称"
     }
    ],
-   "source_level": "宣称"
+   "source_level": "宣称",
+   "card_date": "2026-04-13"
   },
   {
    "id": "hf-prism-ml--Bonsai-8B-mlx-1bit",
@@ -359,7 +373,9 @@
      "level": "宣称"
     }
    ],
-   "source_level": "宣称"
+   "source_level": "宣称",
+   "card_date": "2026-03-18",
+   "note_all": "需 PrismML MLX / mlx-swift fork"
   },
   {
    "id": "hf-alesha-pro--Qwen3.8-27B-S-mirai-GGUF",
@@ -380,7 +396,8 @@
    ],
    "source_level": "宣称",
    "context": "128K（q4_0 KV）",
-   "concurrency": "未写"
+   "concurrency": "未写",
+   "card_date": "2026-09-26"
   },
   {
    "id": "hf-Youssofal--Qwen3.8-27B-MTPLX-Optimized-Quality",
@@ -399,7 +416,8 @@
     }
    ],
    "source_level": "宣称",
-   "concurrency": "single stream"
+   "concurrency": "single stream",
+   "card_date": "2026-08-14"
   },
   {
    "id": "hf-mlx-community--Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
@@ -418,7 +436,8 @@
      "level": "宣称"
     }
    ],
-   "source_level": "宣称"
+   "source_level": "宣称",
+   "card_date": "2026-03-04"
   },
   {
    "id": "hf-CaryPalmer--Ternary-Bonsai-2-27B-262k-GGUF",
@@ -469,7 +488,8 @@
    ],
    "source_level": "宣称",
    "context": "262K（全窗口）",
-   "concurrency": "one slot"
+   "concurrency": "one slot",
+   "card_date": "2026-10-07"
   },
   {
    "id": "hf-Youssofal--Ternary-Bonsai-2-27B-MTPLX-Optimized-Speed",
@@ -498,7 +518,8 @@
      "level": "宣称"
     }
    ],
-   "source_level": "宣称"
+   "source_level": "宣称",
+   "card_date": "2026-09-22"
   },
   {
    "id": "hf-Edge0--Edge0-8B-A1B-preview",
@@ -517,7 +538,8 @@
      "level": "宣称"
     }
    ],
-   "source_level": "宣称"
+   "source_level": "宣称",
+   "card_date": "2026-09-08"
   },
   {
    "id": "hf-EschaLabs--Qwen3.6-35B-A3B-Escha-W2",
@@ -581,7 +603,9 @@
    "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh（5090 加 INT8=on ATTN_BACKEND=triton MEM=0.82）",
    "caveats": [
     "4090 temperature 0 vs 0.6：218 vs 102 tok/s，温度影响大"
-   ]
+   ],
+   "card_date": "2026-07-22",
+   "note_all": "每行均在对应实体卡上用卡内命令测得"
   },
   {
    "id": "hf-ConwayResearch--Underdog-27B-1.0",
@@ -609,7 +633,8 @@
      "level": "宣称"
     }
    ],
-   "source_level": "宣称"
+   "source_level": "宣称",
+   "card_date": "2026-09-30"
   },
   {
    "id": "hf-mlx-community--AREX-2-6bit",
@@ -638,7 +663,9 @@
      "level": "宣称"
     }
    ],
-   "source_level": "宣称"
+   "source_level": "宣称",
+   "card_date": "2026-10-06",
+   "note_all": "作者注: 'This is a small test on one Mac, not a benchmark'；speed helper 未说明"
   },
   {
    "id": "hf-peculiar-ragdoll--Cyber-Tiel-Coder-35B-A3B-GGUF-MTP",
@@ -668,7 +695,8 @@
    "source_level": "宣称",
    "missing": [
     "hardware"
-   ]
+   ],
+   "card_date": "2026-08-31"
   },
   {
    "id": "hf-Kujira--Underdog-Saluki-27B-1.0-MTP-GGUF",
@@ -697,7 +725,8 @@
    ],
    "source_level": "宣称",
    "context": "32K",
-   "concurrency": "-np 1"
+   "concurrency": "-np 1",
+   "card_date": "2026-10-08"
   },
   {
    "id": "hf-cloudyu--gpt-oss-120b-Fable-5-Distilled",
@@ -718,7 +747,8 @@
    "source_level": "宣称",
    "missing": [
     "具体芯片/内存"
-   ]
+   ],
+   "card_date": "2026-06-14"
   },
   {
    "id": "hf-OpensourceWTF--DeepSeek-V4.1-Flash-streaming-repack-exl3-3.0bpw",
@@ -759,7 +789,8 @@
    ],
    "source_level": "宣称",
    "context": "1,047,488 实测",
-   "concurrency": "HumanEval 164 题聚合 31.8 tok/s"
+   "concurrency": "HumanEval 164 题聚合 31.8 tok/s",
+   "card_date": "2026-10-06"
   },
   {
    "id": "hf-datalab-to--surya-ocr-2-gguf",
@@ -767,7 +798,8 @@
    "decision": "拒绝",
    "reason": "OCR 模型，超出分类（'5 pages/s on an RTX 5090'，128 并发 12,884 tok/s）",
    "recipes": [],
-   "source_level": "宣称"
+   "source_level": "宣称",
+   "card_date": "2026-05-14"
   },
   {
    "id": "hf-FINAL-Bench--POCKET-35B-GGUF",
@@ -786,7 +818,8 @@
      "level": "宣称"
     }
    ],
-   "source_level": "宣称"
+   "source_level": "宣称",
+   "card_date": "2026-07-22"
   },
   {
    "id": "hf-peasantsmith--GLM-5.3-Flash-Maya-GGUF",
@@ -816,7 +849,9 @@
     }
    ],
    "source_level": "宣称",
-   "context": "60K 测试"
+   "context": "60K 测试",
+   "card_date": "2026-10-07",
+   "note_all": "原文为 'up to'（峰值）"
   },
   {
    "id": "hf-DavidAU--LFM2.5-8B-A1B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF",
@@ -824,7 +859,8 @@
    "decision": "拒绝",
    "reason": "名字堆砌的 merge；'400-500 t/s (5090)' 是一句随口说法，没有量化/引擎/条件",
    "recipes": [],
-   "source_level": "宣称"
+   "source_level": "宣称",
+   "card_date": "2026-10-02"
   },
   {
    "id": "hf-manjunathshiva--gpt-oss-20b-tq3",
@@ -846,7 +882,8 @@
    "missing": [
     "内存配置",
     "6 项测试的硬件"
-   ]
+   ],
+   "card_date": "2026-04-08"
   }
  ],
  "extraction_errors": [

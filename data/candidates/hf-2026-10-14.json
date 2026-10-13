@@ -450,7 +450,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-meta-models--Muse-Glimmer-30B-GGUF",
@@ -520,7 +521,14 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "pending",
+   "missing": [
+    "quant",
+    "engine/version",
+    "脚注",
+    "发布方身份"
+   ]
   },
   {
    "id": "hf-prism-ml--Ternary-Bonsai-27B-gguf",
@@ -602,7 +610,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-Jackrong--Qwopus3.8-27B-Flash-V2-GGUF",
@@ -648,7 +657,12 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "pending",
+   "missing": [
+    "hardware 归属",
+    "llama.cpp 版本"
+   ]
   },
   {
    "id": "hf-prism-ml--Bonsai-27B-gguf",
@@ -730,7 +744,9 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "rejected",
+   "reject_reason": "与已收录的 Bonsai-27B-mlx-1bit 是同一张表（66.4/874 等），重复"
   },
   {
    "id": "hf-prism-ml--Bonsai-8B-gguf",
@@ -824,7 +840,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-Edge0--Edge0-35B-A3B-preview",
@@ -871,7 +888,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-Youssofal--Qwen3.8-27B-MTPLX-Optimized-Speed",
@@ -977,7 +995,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-Youssofal--Qwen3.8-Flash-Next-MTPLX-Optimized-Speed",
@@ -1131,7 +1150,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-prism-ml--Ternary-Bonsai-8B-mlx-2bit",
@@ -1201,7 +1221,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-prism-ml--Bonsai-8B-mlx-1bit",
@@ -1307,7 +1328,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-alesha-pro--Qwen3.8-27B-S-mirai-GGUF",
@@ -1389,7 +1411,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-Youssofal--Qwen3.8-27B-MTPLX-Optimized-Quality",
@@ -1483,7 +1506,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-mlx-community--Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit",
@@ -1542,7 +1566,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-CaryPalmer--Ternary-Bonsai-2-27B-262k-GGUF",
@@ -1672,7 +1697,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-Youssofal--Ternary-Bonsai-2-27B-MTPLX-Optimized-Speed",
@@ -1730,7 +1756,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-Edge0--Edge0-8B-A1B-preview",
@@ -1776,7 +1803,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-EschaLabs--Qwen3.6-35B-A3B-Escha-W2",
@@ -1930,7 +1958,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-ConwayResearch--Underdog-27B-1.0",
@@ -2001,7 +2030,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-mlx-community--AREX-2-6bit",
@@ -2120,7 +2150,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-peculiar-ragdoll--Cyber-Tiel-Coder-35B-A3B-GGUF-MTP",
@@ -2242,7 +2273,11 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "pending",
+   "missing": [
+    "hardware"
+   ]
   },
   {
    "id": "hf-Kujira--Underdog-Saluki-27B-1.0-MTP-GGUF",
@@ -2289,7 +2324,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-cloudyu--gpt-oss-120b-Fable-5-Distilled",
@@ -2480,7 +2516,11 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "pending",
+   "missing": [
+    "具体芯片/内存"
+   ]
   },
   {
    "id": "hf-OpensourceWTF--DeepSeek-V4.1-Flash-streaming-repack-exl3-3.0bpw",
@@ -2647,7 +2687,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-datalab-to--surya-ocr-2-gguf",
@@ -2708,7 +2749,9 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "rejected",
+   "reject_reason": "OCR 模型，超出分类（'5 pages/s on an RTX 5090'，128 并发 12,884 tok/s）"
   },
   {
    "id": "hf-FINAL-Bench--POCKET-35B-GGUF",
@@ -2757,7 +2800,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-peasantsmith--GLM-5.3-Flash-Maya-GGUF",
@@ -2817,7 +2861,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-DavidAU--LFM2.5-8B-A1B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF",
@@ -2865,7 +2910,9 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "rejected",
+   "reject_reason": "名字堆砌的 merge；'400-500 t/s (5090)' 是一句随口说法，没有量化/引擎/条件"
   },
   {
    "id": "hf-manjunathshiva--gpt-oss-20b-tq3",
@@ -2913,7 +2960,12 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "pending",
+   "missing": [
+    "内存配置",
+    "6 项测试的硬件"
+   ]
   }
  ]
 }
