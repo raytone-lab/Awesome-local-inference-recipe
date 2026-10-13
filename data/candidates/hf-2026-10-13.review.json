@@ -1,0 +1,307 @@
+{
+ "reviewed": "2026-10-14",
+ "source_file": "hf-2026-10-13.json",
+ "reviews": [
+  {
+   "id": "hf-prism-ml--Ternary-Bonsai-2-27B-gguf",
+   "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf",
+   "card_date": "2026-09-16",
+   "decision": "收录",
+   "reason": "卡内有逐硬件 tg128/pp512 表，可拆多条；剔除 H100/A100/L40S/L4/RTX PRO 6000 等机房/工作站行",
+   "context": "262K（卡称）；示例命令 -c 32768",
+   "concurrency": "batch 1（单路）",
+   "launch_command": "llama-cli ... -ngl 99 -fa on -c 32768（需 PrismML llama.cpp fork，原生 llama.cpp 不可用）",
+   "source_level": "宣称",
+   "recipes": [
+    {
+     "hardware": "RTX 5090 32GB",
+     "gen_tok_s": 129.9,
+     "prefill_tok_s": 3893,
+     "quant": "PQ2_0",
+     "engine": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+     "quote": "| RTX 5090 (32 GB) | **129.9** | 3893 | **1.95** | 120.5 | 1805 | 2.15 |"
+    },
+    {
+     "hardware": "RTX 5090 32GB",
+     "gen_tok_s": 120.5,
+     "prefill_tok_s": 1805,
+     "quant": "PTQ1_0",
+     "engine": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+     "quote": "同上行"
+    },
+    {
+     "hardware": "RTX 4090 24GB",
+     "gen_tok_s": 81.2,
+     "prefill_tok_s": 3124,
+     "quant": "PQ2_0",
+     "engine": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+     "quote": "| RTX 4090 (24 GB) | 81.2 | 3124 | 2.99 | **91.1** | 1645 | 2.58 |"
+    },
+    {
+     "hardware": "RTX 4090 24GB",
+     "gen_tok_s": 91.1,
+     "prefill_tok_s": 1645,
+     "quant": "PTQ1_0",
+     "engine": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+     "quote": "同上行"
+    },
+    {
+     "hardware": "MacBook M5 Pro",
+     "gen_tok_s": 28.1,
+     "prefill_tok_s": 387,
+     "quant": "PQ2_0",
+     "engine": "PrismML llama.cpp fork（Metal）",
+     "quote": "| Laptop (Apple M5 Pro, Metal) | 28.1 | 387 | — |"
+    },
+    {
+     "hardware": "MacBook M5 Max",
+     "gen_tok_s": 47.0,
+     "prefill_tok_s": 765,
+     "quant": "PQ2_0（旧 pre-rotation build）",
+     "engine": "llama.cpp Metal",
+     "quote": "| Laptop (Apple M5 Max, Metal) | 7.2 GB | 47.0 | 765 |",
+     "note": "卡注：Measured on the earlier pre-rotation build and reported pending re-measurement"
+    },
+    {
+     "hardware": "MacBook M4 Pro",
+     "gen_tok_s": 18.0,
+     "prefill_tok_s": 125,
+     "quant": "PQ2_0（旧 pre-rotation build）",
+     "engine": "llama.cpp Metal",
+     "quote": "| Laptop (Apple M4 Pro, Metal) | 7.2 GB | 18.0 | 125 |",
+     "note": "同上，待重测"
+    }
+   ]
+  },
+  {
+   "id": "hf-cdiamond--Qwen3.8-27B-iMatrix-NVFP4-MTP-GGUF",
+   "url": "https://huggingface.co/cdiamond/Qwen3.8-27B-iMatrix-NVFP4-MTP-GGUF",
+   "card_date": "2026-08-17（作者称 2026-08-18 准备发布）",
+   "decision": "收录",
+   "reason": "硬件、llama.cpp 版本、完整启动命令、256K 实填都有；附博客 https://piszczek.pl/blog/qwen38-27b-256k-50-tps-24gb-gpu 佐证。注意 RTX PRO 4000 Blackwell SFF 是工作站卡（非消费级），价格需补。原 815.64 是 32K 读入，不是生成",
+   "context": "262,144（实填 261,500 输入 + 256 输出无 OOM，GPU0 用 23,952/24,467 MiB）",
+   "concurrency": "--parallel 1",
+   "launch_command": "llama-server --n-gpu-layers 999 --ctx-size 262144 --parallel 1 --flash-attn on --cache-type-k q4_0 --cache-type-v q4_0 --spec-type draft-mtp ...（卡内完整）",
+   "source_level": "宣称",
+   "recipes": [
+    {
+     "hardware": "RTX PRO 4000 Blackwell SFF 24GB（70W）",
+     "gen_tok_s": 50.441,
+     "prefill_tok_s": null,
+     "quant": "iMatrix NVFP4 混合 5.01 BPW + 内嵌 MTP",
+     "engine": "llama.cpp + 6 个未合并 PR（自定义）",
+     "quote": "| Production series, 10 runs | 50.441 tok/s mean, 49.420-51.397 |"
+    },
+    {
+     "hardware": "RTX PRO 4000 Blackwell SFF 24GB",
+     "gen_tok_s": 45.422,
+     "prefill_tok_s": null,
+     "quant": "同上",
+     "engine": "llama.cpp b10454（commit 4df29be4f，原版）",
+     "quote": "| Clean llama.cpp b10454 | 45.422 tok/s |"
+    },
+    {
+     "hardware": "RTX PRO 4000 Blackwell SFF 24GB",
+     "gen_tok_s": 12.606,
+     "prefill_tok_s": 226.75,
+     "quant": "同上",
+     "engine": "llama.cpp 自定义",
+     "quote": "| Full-cache prefill | 226.750 tok/s | / | Full-cache decode | 12.606 tok/s |",
+     "note": "256K 满上下文时"
+    }
+   ]
+  },
+  {
+   "id": "hf-peculiar-ragdoll--Tiel-Coder-35B-A3B-GGUF-MTP",
+   "url": "https://huggingface.co/peculiar-ragdoll/Tiel-Coder-35B-A3B-GGUF-MTP",
+   "card_date": "2026-08-24",
+   "decision": "补充后收录",
+   "reason": "MTP 开/关对比清楚，但硬件未写（原文 'Those are our numbers on our box'）；需向作者询问硬件",
+   "missing": [
+    "hardware",
+    "engine 版本"
+   ],
+   "context": "262K（卡称 KV <5GB RAM）",
+   "concurrency": "未写",
+   "launch_command": "llama-server -m Tiel-MTP/Tiel-Coder-35B-A3B-MTP-UD-Q4_K_XL.gguf -ngl 99 --jinja ...",
+   "source_level": "宣称",
+   "recipes": [
+    {
+     "hardware": "未写",
+     "gen_tok_s": 77.4,
+     "prefill_tok_s": null,
+     "quant": "UD-Q4_K_XL（MTP 关）",
+     "engine": "llama.cpp",
+     "quote": "| — (off) | — | 77.4 | 1.00x | — |"
+    },
+    {
+     "hardware": "未写",
+     "gen_tok_s": 94.4,
+     "prefill_tok_s": null,
+     "quant": "UD-Q4_K_XL（MTP n_max=1, p_min=0）",
+     "engine": "llama.cpp",
+     "quote": "| 1 | 0.0 | 94.4 | 1.22x | 83.3% |"
+    },
+    {
+     "hardware": "未写",
+     "gen_tok_s": 46.5,
+     "prefill_tok_s": null,
+     "quant": "UD-Q4_K_XL（MTP n_max=8，反而变慢）",
+     "engine": "llama.cpp",
+     "quote": "| 8 | 0.0 | 46.5 | 0.60x | 30.2% |"
+    }
+   ]
+  },
+  {
+   "id": "hf-prism-ml--Ternary-Bonsai-27B-mlx-2bit",
+   "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-27B-mlx-2bit",
+   "card_date": "2026-07-04",
+   "decision": "补充后收录",
+   "reason": "上一代（v1）Ternary Bonsai；Mac 行可用，但表注 'Rows are measured with llama.cpp (M...' 被截断，需确认 Mac 行是 MLX 还是 llama.cpp Metal；H100 行(98/131.8)剔除",
+   "missing": [
+    "engine 确认"
+   ],
+   "context": "262K（卡称）",
+   "concurrency": "batch 1",
+   "launch_command": "见 Bonsai-demo 仓库",
+   "source_level": "宣称",
+   "recipes": [
+    {
+     "hardware": "MacBook M5 Max",
+     "gen_tok_s": 44.0,
+     "prefill_tok_s": 830,
+     "quant": "Ternary 2-bit",
+     "engine": "待确认",
+     "quote": "| Laptop (Apple M5 Max, Metal) | 7.2 GB | 44.0 | 830 |"
+    },
+    {
+     "hardware": "MacBook M5 Pro",
+     "gen_tok_s": 26.2,
+     "prefill_tok_s": 393,
+     "quant": "Ternary 2-bit",
+     "engine": "待确认",
+     "quote": "| Laptop (Apple M5 Pro, Metal) | 7.2 GB | 26.2 | 393 |"
+    },
+    {
+     "hardware": "MacBook M4 Pro",
+     "gen_tok_s": 18.0,
+     "prefill_tok_s": 125,
+     "quant": "Ternary 2-bit",
+     "engine": "待确认",
+     "quote": "| Laptop (Apple M4 Pro, Metal) | 7.2 GB | 18.0 | 125 |"
+    }
+   ]
+  },
+  {
+   "id": "hf-prism-ml--Bonsai-27B-mlx-1bit",
+   "url": "https://huggingface.co/prism-ml/Bonsai-27B-mlx-1bit",
+   "card_date": "2026-07-04",
+   "decision": "收录",
+   "reason": "表注明确：笔记本行 llama.cpp（Metal，自定义低位内核），iPhone 行 MLX Swift；H100 行剔除",
+   "context": "262K（卡称）；100K 上下文峰值 11.6–12.2 GB",
+   "concurrency": "batch 1",
+   "launch_command": "见 Bonsai-demo / Bonsai-27B-gguf",
+   "source_level": "宣称",
+   "recipes": [
+    {
+     "hardware": "MacBook M5 Max",
+     "gen_tok_s": 66.4,
+     "prefill_tok_s": 874,
+     "quant": "1-bit g128",
+     "engine": "PrismML llama.cpp fork（Metal）",
+     "quote": "| Laptop (Apple M5 Max, Metal) | 3.9 GB | 66.4 | 874 |"
+    },
+    {
+     "hardware": "MacBook M5 Pro",
+     "gen_tok_s": 44.2,
+     "prefill_tok_s": 421,
+     "quant": "1-bit g128",
+     "engine": "PrismML llama.cpp fork（Metal）",
+     "quote": "| Laptop (Apple M5 Pro, Metal) | 3.9 GB | 44.2 | 421 |"
+    },
+    {
+     "hardware": "MacBook M4 Pro",
+     "gen_tok_s": 26.0,
+     "prefill_tok_s": 133,
+     "quant": "1-bit g128",
+     "engine": "PrismML llama.cpp fork（Metal）",
+     "quote": "| Laptop (Apple M4 Pro, Metal) | 3.9 GB | 26.0 | 133 |"
+    },
+    {
+     "hardware": "iPhone 17 Pro Max (A19 Pro)",
+     "gen_tok_s": 11.0,
+     "prefill_tok_s": 111,
+     "quant": "1-bit g128",
+     "engine": "MLX Swift fork",
+     "quote": "| iPhone 17 Pro Max (A19 Pro) | 3.9 GB | 11.0¹ | 111 |",
+     "note": "持续生成 10.8 tok/s（发热降频）"
+    }
+   ]
+  },
+  {
+   "id": "hf-prism-ml--Ternary-Bonsai-2-27B-mlx-2bit",
+   "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-mlx-2bit",
+   "card_date": "2026-09-16",
+   "decision": "拒绝",
+   "reason": "与 Ternary-Bonsai-2-27B-gguf 同一张测速表（数字完全相同，也是 llama.cpp 测的），重复；作为第 1 条的附加链接即可",
+   "recipes": []
+  },
+  {
+   "id": "hf-FluidInference--unlimited-ocr-mlx-coreml",
+   "url": "https://huggingface.co/FluidInference/unlimited-ocr-mlx-coreml",
+   "card_date": "2026-10-11",
+   "decision": "拒绝",
+   "reason": "OCR 专用模型，超出现有文字/图像/影音分类；数字为 '~200–260 tokens/s on an M5 Pro'（MLX 8-bit）。若以后加 OCR 类可再收",
+   "recipes": []
+  },
+  {
+   "id": "hf-harshatheg--Qwen-2.5-1B-RLCD",
+   "url": "https://huggingface.co/harshatheg/Qwen-2.5-1B-RLCD",
+   "card_date": "2026-09-16",
+   "decision": "拒绝",
+   "reason": "1B 小模型的约束解码演示，tok/s 是对照基线（'420 ms (120 tok/s)'，M4 Max）；安装说明是占位地址 github.com/your-org/...，可信度低",
+   "recipes": []
+  },
+  {
+   "id": "hf-ISTA-DASLab--Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+   "url": "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+   "card_date": "2026-09-07",
+   "decision": "补充后收录",
+   "reason": "量化对比清楚（55 条提示），但硬件、llama.cpp 版本、上下文均未写；需查 arXiv 2604.18556 / 2605.00649 或问作者",
+   "missing": [
+    "hardware",
+    "engine 版本",
+    "context"
+   ],
+   "concurrency": "未写",
+   "launch_command": "未写",
+   "source_level": "宣称",
+   "recipes": [
+    {
+     "hardware": "未写",
+     "gen_tok_s": 93.79,
+     "prefill_tok_s": 367.49,
+     "quant": "GSQ-RCO Q2_0",
+     "engine": "llama.cpp",
+     "quote": "| `Q2_0` | **367.49** | **93.79** | **6.70 s** |"
+    },
+    {
+     "hardware": "未写",
+     "gen_tok_s": 70.3,
+     "prefill_tok_s": 108.19,
+     "quant": "GSQ-RCO IQ2_XS",
+     "engine": "llama.cpp",
+     "quote": "| `IQ2_XS` | 108.19 | 70.30 | 12.68 s |"
+    }
+   ]
+  },
+  {
+   "id": "hf-LessThanThreeAI--Qwen3.8-27B-Humanlike-Chat-GGUF",
+   "url": "https://huggingface.co/LessThanThreeAI/Qwen3.8-27B-Humanlike-Chat-GGUF",
+   "card_date": "2026-08-26",
+   "decision": "拒绝",
+   "reason": "GGUF 测速在机房卡上：'tok/s: decode speed on one H100 NVL (llama.cpp, single request, 256-token decode)'；vLLM 那列（GPTQ-Int4 86）没写具体卡；另属风格微调，非推理优化",
+   "recipes": []
+  }
+ ]
+}
