@@ -30,3 +30,16 @@
 - 输出 `data/candidates/hf-YYYY-MM-DD.json`，**不写** recipes.json；按 source_url / 历史候选去重；过滤 merge 堆名、uncensored 等噪声及无测速卡。
 - 默认 source_level=宣称；`tok_s` 为卡内**最大**生成数，常混入其他硬件/模型/对比行，务必看 `raw_snippet` 与 `gen_tok_s_all`。
 - 审核：`python3 scripts/review_candidates.py list | show <id> | approve <id> | reject <id> 原因`。approve 逐字段提示（回车保留、`-` 置空），hardware 与 tok_s 必填。
+
+### 抽取器 v2（2026-10-14）
+逻辑在 `scripts/hf_extract.py`（纯函数），测试 `python3 -m unittest tests/test_ingest_hf.py`（10 张卡的 fixtures 在 tests/fixtures/hf/）。
+- 表格逐行：一行 = 硬件 × 量化；多量化表头（`PQ2_0 TG128 | PTQ1_0 TG128`）拆成多条；键值表（`| 测试 | 50.4 tok/s |`）也支持
+- 表头判定：tg128/decode/generation → 生成；pp512/prefill/prompt → 读入（`\bpp\d+\b`，避免 "llama.cpp" 误中）；J/tok、latency、vs off 列忽略
+- 硬件只取表格行标签或声明句（measured on / Hardware: / GPU0: / on one X）
+- 机房卡（H100/A100/L40S/L4…）与工作站卡（RTX PRO/RTX 6000 Ada/A6000）默认排除，`--include-nonconsumer` 保留；被排除的行存在 `excluded_rows`
+- 同一张测速表跨 repo 去重（`table_fingerprint`），历史候选文件里的指纹也参与
+- 保留说明（pending re-measurement / not a specification / thermally limited…）写入 `caveats`
+- OCR/嵌入/语音、<3B、占位链接、仅句子抽取 → `flags`，可信度扣分
+- 上下文取数值 tokens（`context_tokens`）
+- `--ids a/b,c/d` 只重抓指定 repo；`scripts/eval_extract.py` 对比 v1/v2；`scripts/approve_review.py` 把 review.json 的「收录」批量写入
+已知不足：卡级量化名（只在正文说明的）不会传给每行；任务/延迟表里的数字仍可能被当成生成速度；上下文偶尔取到表格行里的测试长度。

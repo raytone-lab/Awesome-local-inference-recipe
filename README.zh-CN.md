@@ -4,7 +4,7 @@
 
 > 模型 × 引擎 × 硬件 → 实测速度与成本，每个数字都链接到来源。聚焦消费级与二手硬件，预算 3 万美元以内。
 
-<sub>暂定名：**RecipeBench** · 共 176 条配方（文字 135 · 图像 16 · 影音 25）· 数据截至 2026-10-13 · <a href="explore.html">配方库</a> · <a href="submit.html">提交配方</a></sub>
+<sub>暂定名：**RecipeBench** · 共 190 条配方（文字 149 · 图像 16 · 影音 25）· 数据截至 2026-10-13 · <a href="explore.html">配方库</a> · <a href="submit.html">提交配方</a></sub>
 
 ## 目录
 
@@ -44,7 +44,7 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 
 ## 第 1 档 · 2,500 美元以内
 
-*二手 3090/4090、MI50/V100、Strix Halo、R9700* · 共 31 条
+*二手 3090/4090、MI50/V100、Strix Halo、R9700* · 共 33 条
 
 
 **📝 文字**
@@ -55,11 +55,11 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 - **Qwen3.8-27B** · DFlash `EXL3 4.0bpw + DFlash2 草稿（r0…` — RTX 4090 24GB → **121 tok/s** ✅ [来源](https://x.com/yume_arasaki/status/2100595901006008791)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S（GSQ-RCO）` — 单 RTX 3090 24GB（+64GB RAM 同作者前帖） → **120.8 tok/s** ✅ [来源](https://x.com/needmorevram/status/2105050786938118599)
 - **Qwen3.8-Flash-Next** · Strata（PR #262） `Q2_0` — AMD Radeon AI PRO R9700 → **100 tok/s** ✅ [来源](https://x.com/TechPractice1/status/2105338176055509376)
+- **Ternary Bonsai 2 27B** · PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0） `PTQ1_0` — RTX 4090 24GB → **91.1 tok/s** 📣 [来源](https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf)
 - **Qwen3.8-27B** · llama.cpp `llama.cpp + MTP（Vulkan，Wind…` — AMD RX 7900 XTX → **85.4 tok/s** ✅ [来源](https://x.com/sudoingX/status/2094673741125140658)
+- **Ternary Bonsai 2 27B** · PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0） `PQ2_0` — RTX 4090 24GB → **81.2 tok/s** 📣 [来源](https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf)
 - **Qwen3.8-Flash-Next** · Strata `GSQ-RCO IQ3_XXS` — RTX 4090 24GB + RAM（专家 39.97GiB 放内存） → **78.6 tok/s** ✅ [来源](https://x.com/BrianMRey/status/2103789711311413320)
-- **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S（GSQ-RCO）` — RTX 3090 24GB → **72 tok/s** ✅ [来源](https://x.com/needmorevram/status/2104898095318544540)
-- **Qwen3.8-Flash-Next** · llama.cpp `llama.cpp PR #29887 MoE 专家 …` — RTX 4090 / RTX 5090 + 系统内存 → **68 tok/s** 🏛️ [来源](https://github.com/ggml-org/llama.cpp/pull/29887)
-- *……另有 13 条，见 [配方库](explore.html)。*
+- *……另有 15 条，见 [配方库](explore.html)。*
 
 **🖼️ 图像**
 
@@ -77,7 +77,7 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 
 ## 第 2 档 · 2,500–7,000 美元
 
-*单张 RTX 5090、单台 DGX Spark、Mac Studio Max* · 共 61 条
+*单张 RTX 5090、单台 DGX Spark、Mac Studio Max* · 共 63 条
 
 
 **📝 文字**
@@ -88,11 +88,11 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090（RAM 未注明） → **160 tok/s** 🔁 [来源](https://x.com/yume_arasaki/status/2107293459556225446)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090（功耗限制）+ 96GB DDR5-6400 → **150 tok/s** 🔁 [来源](https://x.com/kreia/status/2106054715373212025)
 - **Qwen3.8-Flash-Next** · TensorFold `TensorFold 0.3.4.x + PR 29/…` — Mac Studio M3 Ultra → **130 tok/s** ✅ [来源](https://x.com/ivanfioravanti/status/2104183112611614780)
+- **Ternary Bonsai 2 27B** · PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0） `PQ2_0` — RTX 5090 32GB → **129.9 tok/s** 📣 [来源](https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090 → **123.4 tok/s** ✅ [来源](https://x.com/needmorevram/status/2104995992273871104)
+- **Ternary Bonsai 2 27B** · PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0） `PTQ1_0` — RTX 5090 32GB → **120.5 tok/s** 📣 [来源](https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf)
 - **Qwen3.8-27B** · TensorFold — DGX Spark → **102.9 tok/s** 🔁 [来源](https://x.com/HandwerkAiLab/status/2104169723684679799)
-- **Qwen3.8-Flash-Next** · oMLX `4-bit MTP（oMLX PR / OMP）` — Mac Studio M3 Ultra → **97.1 tok/s** ✅ [来源](https://x.com/Oluwaphilemon1/status/2099312823025496405)
-- **Qwen3.8-Flash-Next** · ExLlama `Cruz exllamav3 fork · EXL3 …` — 1× DGX Spark → **71.7 tok/s** ✅ [来源](https://x.com/yume_arasaki/status/2101741448811229219)
-- *……另有 33 条，见 [配方库](explore.html)。*
+- *……另有 35 条，见 [配方库](explore.html)。*
 
 **🖼️ 图像**
 
@@ -155,7 +155,7 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 
 ## 价格未公开
 
-按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 61 条。按 tok/s 排名靠前的文字配方：
+按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 71 条。按 tok/s 排名靠前的文字配方：
 
 - **Qwen3.6-35B-A3B** `Splash` — Mac M5 Pro 48GB → **210 tok/s** 🔁 [来源](https://x.com/TeksEdge/status/2101735798567764421)
 - **Qwen3.6-35B-A3B** · oMLX `oMLX 0.7.1.dev1 融合解码内核` — Mac M5 Max → **205 tok/s** 🏛️ [来源](https://x.com/jundotkim/status/2108584837590495246)
@@ -169,7 +169,7 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 - **GLM 5.3（帖文原话 “GLM 5.3 Code”）** · oMLX（作者调优） — Mac Studio M5 Ultra → **87 tok/s** ✅ [来源](https://x.com/JamesMcPherson/status/2104028051285672431)
 - **Qwen3.8-Flash-Next** — Mac Studio M5 Ultra → **85.9 tok/s** 🔁 [来源](https://x.com/wei_wang/status/2103459506944344323)
 - **Qwen3.8-Flash-Next** · oMLX `oMLX 0.6.4 · MTP depth 6` — Mac M4 Max 128GB → **83 tok/s** 🔁 [来源](https://x.com/yume_arasaki/status/2108359576966094952)
-- *……全部 61 条见 [配方库](explore.html)。*
+- *……全部 71 条见 [配方库](explore.html)。*
 
 
 ## 引擎与工具

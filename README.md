@@ -4,7 +4,7 @@
 
 > Model × engine × hardware → measured speed and cost, with every number linked to its source. Consumer and used hardware, up to $30k.
 
-<sub>Working name: **RecipeBench** (placeholder) · 176 recipes (135 text · 16 image · 25 video/audio) · data as of 2026-10-13 · <a href="explore.html">Explorer</a> · <a href="submit.html">Submit</a></sub>
+<sub>Working name: **RecipeBench** (placeholder) · 190 recipes (149 text · 16 image · 25 video/audio) · data as of 2026-10-13 · <a href="explore.html">Explorer</a> · <a href="submit.html">Submit</a></sub>
 
 ## Contents
 
@@ -44,7 +44,7 @@ Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).
 
 ## Tier 1 · up to $2.5k
 
-*Used 3090/4090, MI50/V100 cards, Strix Halo, R9700* · 31 recipes
+*Used 3090/4090, MI50/V100 cards, Strix Halo, R9700* · 33 recipes
 
 
 **📝 Text**
@@ -55,11 +55,11 @@ Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).
 - **Qwen3.8-27B** · DFlash `EXL3 4.0bpw + DFlash2 3-bit…` — RTX 4090 24GB → **121 tok/s** ✅ [source](https://x.com/yume_arasaki/status/2100595901006008791)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 3090 24GB → **120.8 tok/s** ✅ [source](https://x.com/needmorevram/status/2105050786938118599)
 - **Qwen3.8-Flash-Next** · Strata `Q2_0` — AMD Radeon AI PRO R9700 → **100 tok/s** ✅ [source](https://x.com/TechPractice1/status/2105338176055509376)
+- **Ternary Bonsai 2 27B** · PrismML-Eng/llama.cpp fork `PTQ1_0` — RTX 4090 24GB → **91.1 tok/s** 📣 [source](https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf)
 - **Qwen3.8-27B** · llama.cpp `llama.cpp + MTP` — AMD RX 7900 XTX → **85.4 tok/s** ✅ [source](https://x.com/sudoingX/status/2094673741125140658)
+- **Ternary Bonsai 2 27B** · PrismML-Eng/llama.cpp fork `PQ2_0` — RTX 4090 24GB → **81.2 tok/s** 📣 [source](https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf)
 - **Qwen3.8-Flash-Next** · Strata `GSQ-RCO IQ3_XXS` — RTX 4090 24GB + RAM → **78.6 tok/s** ✅ [source](https://x.com/BrianMRey/status/2103789711311413320)
-- **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 3090 24GB → **72 tok/s** ✅ [source](https://x.com/needmorevram/status/2104898095318544540)
-- **Qwen3.8-Flash-Next** · llama.cpp `llama.cpp PR #29887 MoE GPU…` — RTX 4090 / RTX 5090 → **68 tok/s** 🏛️ [source](https://github.com/ggml-org/llama.cpp/pull/29887)
-- *…and 13 more in the [explorer](explore.html).*
+- *…and 15 more in the [explorer](explore.html).*
 
 **🖼️ Image**
 
@@ -77,7 +77,7 @@ Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).
 
 ## Tier 2 · $2.5k–7k
 
-*One RTX 5090, one DGX Spark, Mac Studio Max* · 61 recipes
+*One RTX 5090, one DGX Spark, Mac Studio Max* · 63 recipes
 
 
 **📝 Text**
@@ -88,11 +88,11 @@ Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090 → **160 tok/s** 🔁 [source](https://x.com/yume_arasaki/status/2107293459556225446)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090+ 96GB DDR5-6400 → **150 tok/s** 🔁 [source](https://x.com/kreia/status/2106054715373212025)
 - **Qwen3.8-Flash-Next** · TensorFold `TensorFold 0.3.4.x + PR 29/…` — Mac Studio M3 Ultra → **130 tok/s** ✅ [source](https://x.com/ivanfioravanti/status/2104183112611614780)
+- **Ternary Bonsai 2 27B** · PrismML-Eng/llama.cpp fork `PQ2_0` — RTX 5090 32GB → **129.9 tok/s** 📣 [source](https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090 → **123.4 tok/s** ✅ [source](https://x.com/needmorevram/status/2104995992273871104)
+- **Ternary Bonsai 2 27B** · PrismML-Eng/llama.cpp fork `PTQ1_0` — RTX 5090 32GB → **120.5 tok/s** 📣 [source](https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf)
 - **Qwen3.8-27B** · TensorFold — DGX Spark → **102.9 tok/s** 🔁 [source](https://x.com/HandwerkAiLab/status/2104169723684679799)
-- **Qwen3.8-Flash-Next** · oMLX `4-bit MTP` — Mac Studio M3 Ultra → **97.1 tok/s** ✅ [source](https://x.com/Oluwaphilemon1/status/2099312823025496405)
-- **Qwen3.8-Flash-Next** · ExLlama `Cruz exllamav3 fork · EXL3 …` — 1× DGX Spark → **71.7 tok/s** ✅ [source](https://x.com/yume_arasaki/status/2101741448811229219)
-- *…and 33 more in the [explorer](explore.html).*
+- *…and 35 more in the [explorer](explore.html).*
 
 **🖼️ Image**
 
@@ -155,7 +155,7 @@ Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).
 
 ## Cost Not Published
 
-Multi-card builds priced per card, Macs without a listed price, and other rows without a single published price · 61 recipes. Top text recipes by tok/s:
+Multi-card builds priced per card, Macs without a listed price, and other rows without a single published price · 71 recipes. Top text recipes by tok/s:
 
 - **Qwen3.6-35B-A3B** `Splash` — Mac M5 Pro 48GB → **210 tok/s** 🔁 [source](https://x.com/TeksEdge/status/2101735798567764421)
 - **Qwen3.6-35B-A3B** · oMLX `oMLX 0.7.1.dev1` — Mac M5 Max → **205 tok/s** 🏛️ [source](https://x.com/jundotkim/status/2108584837590495246)
@@ -169,7 +169,7 @@ Multi-card builds priced per card, Macs without a listed price, and other rows w
 - **GLM 5.3** · oMLX — Mac Studio M5 Ultra → **87 tok/s** ✅ [source](https://x.com/JamesMcPherson/status/2104028051285672431)
 - **Qwen3.8-Flash-Next** — Mac Studio M5 Ultra → **85.9 tok/s** 🔁 [source](https://x.com/wei_wang/status/2103459506944344323)
 - **Qwen3.8-Flash-Next** · oMLX `oMLX 0.6.4 · MTP depth 6` — Mac M4 Max 128GB → **83 tok/s** 🔁 [source](https://x.com/yume_arasaki/status/2108359576966094952)
-- *…browse all 61 in the [explorer](explore.html).*
+- *…browse all 71 in the [explorer](explore.html).*
 
 
 ## Engines & Tools

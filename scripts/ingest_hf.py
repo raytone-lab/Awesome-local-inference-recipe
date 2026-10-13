@@ -2,6 +2,8 @@
 """Hugging Face 模型卡 -> 候选配方（不会写入 data/recipes.json）。
 用法: python3 scripts/ingest_hf.py [--limit 40] [--libs gguf,mlx] [--sorts trendingScore,downloads]
 可选环境变量 HF_TOKEN。仅用标准库。"""
+import argparse  # v2: 抽取逻辑见 scripts/hf_extract.py
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))
 import argparse, datetime, glob, json, os, re, sys, time, urllib.request, urllib.parse
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 API = "https://huggingface.co/api/models"
@@ -37,30 +39,6 @@ def noise(mid):
     if re.search(r"(?i)uncensored|abliterat|nsfw|roleplay|humanizer", name): return "非性能向变体（uncensored/角色扮演等）"
     return None
 
-def extract(text):
-    gen, pre, snippets = [], [], []
-    for line in text.splitlines():
-        if not SPEED.search(line): continue
-        s = line.strip()[:300]
-        nums = [float(m.group(1)) for m in SPEED.finditer(line)]
-        if s.startswith("|") and not nums: continue
-        (pre if PREFILL.search(line) and not GEN.search(line) else gen).extend(nums)
-        snippets.append(s)
-    # 表格: 表头里有 t/s 列
-    lines = text.splitlines()
-    for i, l in enumerate(lines):
-        if l.strip().startswith("|") and re.search(r"t/s|tok/s|tokens/s", l, re.I):
-            hdr = [c.strip() for c in l.strip().strip("|").split("|")]
-            for row in lines[i + 2:i + 30]:
-                if not row.strip().startswith("|"): break
-                cells = [c.strip(" *`") for c in row.strip().strip("|").split("|")]
-                snippets.append(row.strip()[:300])
-                for h, c in zip(hdr, cells):
-                    m = re.match(r"^(\d+(?:\.\d+)?)$", c.replace(",", ""))
-                    if m and re.search(r"t/s|tok|tps", h, re.I):
-                        (pre if PREFILL.search(h) else gen).append(float(m.group(1)))
-    return gen, pre, list(dict.fromkeys(snippets))[:12]
-
 def uniq(rx, text, n=6):
     out = []
     for m in rx.finditer(text):
@@ -74,52 +52,64 @@ def main():
     ap.add_argument("--libs", default="gguf,mlx")
     ap.add_argument("--sorts", default="trendingScore,downloads")
     ap.add_argument("--delay", type=float, default=1.0)
+    ap.add_argument("--ids", help="逗号分隔的 repo id，只抓这些（重测用，不按历史去重）")
+    ap.add_argument("--include-nonconsumer", action="store_true", help="保留机房/工作站卡行")
+    ap.add_argument("--out", help="输出文件（默认 data/candidates/hf-YYYY-MM-DD.json）")
     a = ap.parse_args()
     tok = os.environ.get("HF_TOKEN")
     seen_urls = {r.get("source_url") for r in json.load(open(f"{ROOT}/data/recipes.json"))}
+    seen_fp = {}
     for f in glob.glob(f"{ROOT}/data/candidates/*.json"):
-        try: seen_urls |= {c["model_url"] for c in json.load(open(f))["candidates"]}
+        if a.out and os.path.abspath(f) == os.path.abspath(a.out): continue
+        try:
+            for c in json.load(open(f))["candidates"]:
+                seen_urls.add(c["model_url"])
+                if c.get("table_fingerprint"): seen_fp[c["table_fingerprint"]] = c["id"]
         except Exception: pass
     models = {}
-    for lib in a.libs.split(","):
+    if a.ids:
+        for mid in a.ids.split(","):
+            models[mid] = get(f"{API}/{mid}", tok) or {"id": mid}; time.sleep(a.delay)
+    for lib in ([] if a.ids else a.libs.split(",")):
         for s in a.sorts.split(","):
             q = urllib.parse.urlencode({"filter": lib, "sort": s, "direction": -1, "limit": a.limit})
             for m in get(f"{API}?{q}", tok) or []:
                 models.setdefault(m["id"], m)
             time.sleep(a.delay)
-    cands, filtered = [], {"dup": 0, "noise": [], "no_speed": 0, "no_card": 0}
+    from hf_extract import extract
+    cands, filtered = [], {"dup": 0, "dup_table": [], "noise": [], "no_speed": 0, "no_card": 0, "only_nonconsumer": []}
     for mid, m in models.items():
         url = f"https://huggingface.co/{mid}"
-        if url in seen_urls: filtered["dup"] += 1; continue
+        if url in seen_urls and not a.ids: filtered["dup"] += 1; continue
         why = noise(mid)
         if why: filtered["noise"].append({"id": mid, "reason": why}); continue
         card = get(f"{url}/raw/main/README.md", tok, as_json=False); time.sleep(a.delay)
         if not card: filtered["no_card"] += 1; continue
-        gen, pre, snip = extract(card)
-        if not gen and not pre: filtered["no_speed"] += 1; continue
-        hw, eng, qu = uniq(HW, card), uniq(ENG, card), uniq(QUANT, card)
-        ctx = [c for c in uniq(CTX, card, 3)]
-        need = [k for k, v in {"hardware": hw, "engine": eng, "context": ctx, "launch_command": None, "concurrency": None, "hardware_cost_usd": None}.items() if not v]
-        if not gen: need.append("generation_tok_s")
-        conf = round(min(1.0, 0.3 + 0.2 * bool(gen) + 0.2 * bool(hw) + 0.15 * bool(eng) + 0.15 * bool(qu)), 2)
+        x = extract(mid, card, include_nonconsumer=a.include_nonconsumer)
+        if not x["rows"]: filtered["no_speed"] += 1; continue
+        if not x["primary"]: filtered["only_nonconsumer"].append(mid); continue
+        fp = x["table_fingerprint"]
+        if fp in seen_fp:
+            filtered["dup_table"].append({"id": mid, "same_as": seen_fp[fp]}); continue
+        seen_fp[fp] = mid
+        p = x["primary"]; kept = [r for r in x["rows"] if not r["excluded"]]
+        need = [k for k, v in {"hardware": p["hardware"], "quant": p["quant"], "context": x["context_tokens"]}.items() if not v]
+        need += ["engine 版本", "launch_command", "concurrency", "hardware_cost_usd"]
         name = mid.split("/")[-1]
         cands.append({
-            "id": f"hf-{mid.replace('/', '--')}", "category": "text" if "text" in (m.get("pipeline_tag") or "text") else m.get("pipeline_tag"),
-            "model": re.sub(r"(?i)[-_](gguf|mlx.*)$", "", name), "quant": ", ".join(qu) or None,
-            "engine": ", ".join(eng) or None, "hardware": ", ".join(hw) or None, "hardware_family": None,
-            "hardware_cost_text": None, "hardware_cost_usd": None,
-            "metric": "; ".join(filter(None, [gen and f"生成 {max(gen)} tok/s (卡内最大值)", pre and f"读入 {max(pre)} tok/s"])),
-            "tok_s": max(gen) if gen else None, "gen_tok_s_all": gen[:20], "prefill_tok_s_all": pre[:20],
-            "concurrency": None, "context": ", ".join(ctx) or None, "launch_command": None,
-            "source_url": url, "source_note": "HF 模型卡（作者自报）", "source_level": "宣称",
-            "date": (m.get("createdAt") or "")[:10] or None,
-            "model_url": url, "downloads": m.get("downloads"), "likes": m.get("likes"), "pipeline_tag": m.get("pipeline_tag"),
-            "raw_snippet": snip, "extracted_confidence": conf, "needs_review": need})
+            "id": f"hf-{mid.replace('/', '--')}", "category": "text", "model": re.sub(r"(?i)[-_](gguf|mlx.*)$", "", name),
+            "quant": p["quant"], "engine": ", ".join(uniq(ENG, card)) or None, "hardware": p["hardware"],
+            "metric": f"生成 {p['gen']} tok/s" + (f"；读入 {p['prefill']} tok/s" if p["prefill"] else ""),
+            "tok_s": p["gen"], "context_tokens": x["context_tokens"], "source_url": url, "source_level": "宣称",
+            "date": (m.get("createdAt") or "")[:10] or None, "model_url": url, "downloads": m.get("downloads"), "likes": m.get("likes"),
+            "rows": kept, "excluded_rows": [r for r in x["rows"] if r["excluded"]], "caveats": x["caveats"], "flags": x["flags"],
+            "table_fingerprint": fp, "raw_snippet": [r["raw"] for r in kept][:12],
+            "extracted_confidence": x["confidence"], "needs_review": need, "extractor": "v2"})
     cands.sort(key=lambda c: (-c["extracted_confidence"], -(c["downloads"] or 0)))
     today = datetime.date.today().isoformat()
-    out = f"{ROOT}/data/candidates/hf-{today}.json"
+    out = a.out or f"{ROOT}/data/candidates/hf-{today}.json"
     json.dump({"generated": datetime.datetime.now().astimezone().isoformat(), "scanned": len(models), "filtered": filtered, "candidates": cands},
               open(out, "w"), ensure_ascii=False, indent=1)
-    print(f"扫描 {len(models)} 个模型 | 候选 {len(cands)} | 去重 {filtered['dup']} | 噪声 {len(filtered['noise'])} | 无测速 {filtered['no_speed']} | 无模型卡 {filtered['no_card']}\n-> {out}")
+    print(f"扫描 {len(models)} 个模型 | 候选 {len(cands)} | 去重 {filtered['dup']}+同表 {len(filtered['dup_table'])} | 仅机房/工作站 {len(filtered['only_nonconsumer'])} | 噪声 {len(filtered['noise'])} | 无测速 {filtered['no_speed']} | 无模型卡 {filtered['no_card']}\n-> {out}")
 
 if __name__ == "__main__": main()

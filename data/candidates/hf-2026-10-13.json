@@ -150,7 +150,8 @@
     "launch_command",
     "concurrency",
     "hardware_cost_usd"
-   ]
+   ],
+   "status": "approved"
   },
   {
    "id": "hf-cdiamond--Qwen3.8-27B-iMatrix-NVFP4-MTP-GGUF",
@@ -217,7 +218,8 @@
     "launch_command",
     "concurrency",
     "hardware_cost_usd"
-   ]
+   ],
+   "status": "approved"
   },
   {
    "id": "hf-peculiar-ragdoll--Tiel-Coder-35B-A3B-GGUF-MTP",
@@ -385,7 +387,8 @@
     "launch_command",
     "concurrency",
     "hardware_cost_usd"
-   ]
+   ],
+   "status": "approved"
   },
   {
    "id": "hf-prism-ml--Ternary-Bonsai-2-27B-mlx-2bit",
@@ -440,7 +443,9 @@
     "launch_command",
     "concurrency",
     "hardware_cost_usd"
-   ]
+   ],
+   "status": "rejected",
+   "reject_reason": "与 Ternary-Bonsai-2-27B-gguf 同一张测速表（数字完全相同，也是 llama.cpp 测的），重复；作为第 1 条的附加链接即可"
   },
   {
    "id": "hf-FluidInference--unlimited-ocr-mlx-coreml",
@@ -482,7 +487,9 @@
     "launch_command",
     "concurrency",
     "hardware_cost_usd"
-   ]
+   ],
+   "status": "rejected",
+   "reject_reason": "OCR 专用模型，超出现有文字/图像/影音分类；数字为 '~200–260 tokens/s on an M5 Pro'（MLX 8-bit）。若以后加 OCR 类可再收"
   },
   {
    "id": "hf-harshatheg--Qwen-2.5-1B-RLCD",
@@ -533,7 +540,9 @@
     "launch_command",
     "concurrency",
     "hardware_cost_usd"
-   ]
+   ],
+   "status": "rejected",
+   "reject_reason": "1B 小模型的约束解码演示，tok/s 是对照基线（'420 ms (120 tok/s)'，M4 Max）；安装说明是占位地址 github.com/your-org/...，可信度低"
   },
   {
    "id": "hf-ISTA-DASLab--Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
@@ -639,7 +648,9 @@
     "launch_command",
     "concurrency",
     "hardware_cost_usd"
-   ]
+   ],
+   "status": "rejected",
+   "reject_reason": "GGUF 测速在机房卡上：'tok/s: decode speed on one H100 NVL (llama.cpp, single request, 256-token decode)'；vLLM 那列（GPTQ-Int4 86）没写具体卡；另属风格微调，非推理优化"
   }
  ]
 }
