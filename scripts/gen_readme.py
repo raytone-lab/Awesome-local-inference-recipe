@@ -51,5 +51,23 @@ STATIC=open(R/'scripts/readme_static.md').read()
 head, tail = STATIC.split('<!--RECIPES-->')
 toc_top = ['- [Legend](#legend)','- [Hot This Month](#hot-this-month)']+[x for x in toc if 'Hot This' not in x]+['- [Engines & Tools](#engines--tools)','- [Related Lists & Benchmarks](#related-lists--benchmarks)','- [Contributing](#contributing)','- [License](#license)']
 head = head.replace('{{TOC}}','\n'.join(toc_top)).replace('{{N}}',str(len(D))).replace('{{NT}}',str(n['text'])).replace('{{NI}}',str(n['image'])).replace('{{NV}}',str(n['video-audio']))
+import datetime
+REPOS=json.load(open(R/'data/repos.json'))
+try: upd=json.load(open(R/'data/repos.meta.json'))['updated_at']
+except Exception: upd=None
+def fmt(n): return f"{n/1000:.1f}k" if n>=1000 else str(n)
+def rtable(sec):
+    rows=["| Project | ⭐ Stars | Live | Last push | What |","|---|--:|---|---|---|"]
+    for r in sorted([r for r in REPOS if r['section']==sec],key=lambda r:-(r.get('stars') or -1)):
+        url=r.get('url') or f"https://github.com/{r['repo']}"
+        if r.get('repo'):
+            st=fmt(r['stars']) if r.get('stars') is not None else '—'
+            live=f"![stars](https://img.shields.io/github/stars/{r['repo']}?style=flat&label=)"
+            pu=(r.get('pushed_at') or '')[:10] or '—'
+        else: st,live,pu='—','*(site/blog)*','—'
+        rows.append(f"| [{r['name']}]({url}) | {st} | {live} | {pu} | {r['desc']} |")
+    note=f"\n\n<sub>⭐ snapshot 更新于 {upd} (UTC) by `scripts/update_stars.py` · *Live* badges are rendered by shields.io at view time.</sub>" if upd else ''
+    return '\n'.join(rows)+note
+tail=tail.replace('<!--ENGINES-->',rtable('engines')).replace('<!--RELATED-->',rtable('related'))
 open(R/'README.md','w').write(head+body+'\n'+tail)
 print('README.md written,',len(D),'recipes')

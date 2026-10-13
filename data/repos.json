@@ -1,0 +1,170 @@
+[
+ {
+  "name": "Strata",
+  "repo": "Niko1221/Strata",
+  "section": "engines",
+  "desc": "MoE engine that splits experts across GPU, RAM and SSD for 12–24GB cards; most Flash-Next recipes here.",
+  "stars": 23459,
+  "pushed_at": "2026-10-12T17:28:20Z",
+  "url": "https://github.com/Niko1221/Strata",
+  "archived": false
+ },
+ {
+  "name": "oMLX",
+  "repo": "jundot/omlx",
+  "section": "engines",
+  "desc": "Apple Silicon MLX server with continuous batching and tiered KV/SSD cache.",
+  "stars": 22759,
+  "pushed_at": "2026-10-13T14:24:26Z",
+  "url": "https://github.com/jundot/omlx",
+  "archived": false
+ },
+ {
+  "name": "DFlash / DFlash 2",
+  "repo": "z-lab/dflash",
+  "section": "engines",
+  "desc": "Block-diffusion speculative decoding; DFlash 2 drafts for Qwen3.8-27B.",
+  "stars": 6152,
+  "pushed_at": "2026-08-18T21:14:10Z",
+  "url": "https://github.com/z-lab/dflash",
+  "archived": false
+ },
+ {
+  "name": "dflash-mlx",
+  "repo": "bstnxbt/dflash-mlx",
+  "section": "engines",
+  "desc": "DFlash speculative decoding for MLX on Apple Silicon.",
+  "stars": 788,
+  "pushed_at": "2026-08-20T09:36:36Z",
+  "url": "https://github.com/bstnxbt/dflash-mlx",
+  "archived": false
+ },
+ {
+  "name": "TensorFold",
+  "repo": "ashhart/TensorFold",
+  "section": "engines",
+  "desc": "OpenAI-compatible MoE runtime with speculative decoding; also used for MiniMax H3 in ComfyUI.",
+  "stars": 1298,
+  "pushed_at": "2026-10-12T12:18:35Z",
+  "url": "https://github.com/ashhart/TensorFold",
+  "archived": false
+ },
+ {
+  "name": "FastH3",
+  "repo": null,
+  "url": "https://haoailab.com/blogs/fasth3-rtx/",
+  "section": "engines",
+  "desc": "Hao AI Lab's 8-step distilled MiniMax H3 for RTX cards (blog)."
+ },
+ {
+  "name": "LightX2V",
+  "repo": "ModelTC/LightX2V",
+  "section": "engines",
+  "desc": "Video generation inference framework; MiniMax H3 results on a 5090.",
+  "stars": 2901,
+  "pushed_at": "2026-10-13T10:37:21Z",
+  "url": "https://github.com/ModelTC/LightX2V",
+  "archived": false
+ },
+ {
+  "name": "halogen",
+  "repo": "peonist-ai/halogen-flash-server",
+  "section": "engines",
+  "desc": "Flash-Next server tuned for Strix Halo.",
+  "stars": 954,
+  "pushed_at": "2026-10-13T13:09:34Z",
+  "url": "https://github.com/peonist-ai/halogen-flash-server",
+  "archived": false
+ },
+ {
+  "name": "llama.cpp",
+  "repo": "ggml-org/llama.cpp",
+  "section": "engines",
+  "desc": "The baseline GGUF engine (CPU/CUDA/ROCm/Vulkan/Metal).",
+  "stars": 131018,
+  "pushed_at": "2026-10-13T14:34:40Z",
+  "url": "https://github.com/ggml-org/llama.cpp",
+  "archived": false
+ },
+ {
+  "name": "MLX",
+  "repo": "ml-explore/mlx",
+  "section": "engines",
+  "desc": "Apple's array framework behind most Mac recipes.",
+  "stars": 28756,
+  "pushed_at": "2026-10-13T14:07:13Z",
+  "url": "https://github.com/ml-explore/mlx",
+  "archived": false
+ },
+ {
+  "name": "vLLM",
+  "repo": "vllm-project/vllm",
+  "section": "engines",
+  "desc": "High-throughput server; MTP and multi-stream recipes on Spark.",
+  "stars": 93715,
+  "pushed_at": "2026-10-13T14:42:55Z",
+  "url": "https://github.com/vllm-project/vllm",
+  "archived": false
+ },
+ {
+  "name": "SGLang",
+  "repo": "sgl-project/sglang",
+  "section": "engines",
+  "desc": "Serving framework; paired with DFlash2 on DGX Spark.",
+  "stars": 37084,
+  "pushed_at": "2026-10-13T14:43:34Z",
+  "url": "https://github.com/sgl-project/sglang",
+  "archived": false
+ },
+ {
+  "name": "llamabench.ai",
+  "repo": null,
+  "url": "https://llamabench.ai/",
+  "section": "related",
+  "desc": "llama.cpp results with full launch commands."
+ },
+ {
+  "name": "llamaperf",
+  "repo": null,
+  "url": "https://llamaperf.com/leaderboard",
+  "section": "related",
+  "desc": "Community-reported leaderboard (medians)."
+ },
+ {
+  "name": "LocalScore",
+  "repo": "cjpais/LocalScore",
+  "section": "related",
+  "desc": "Standardized single-GPU benchmark CLI.",
+  "stars": 134,
+  "pushed_at": "2026-10-09T05:00:28Z",
+  "url": "https://github.com/cjpais/LocalScore",
+  "archived": false
+ },
+ {
+  "name": "canirun.ai",
+  "repo": null,
+  "url": "https://canirun.ai/",
+  "section": "related",
+  "desc": "Estimates whether and how fast a model fits your hardware."
+ },
+ {
+  "name": "awesome-local-llm",
+  "repo": "rafska/awesome-local-llm",
+  "section": "related",
+  "desc": "Directory of local LLM platforms and tools.",
+  "stars": 2965,
+  "pushed_at": "2026-10-12T17:19:41Z",
+  "url": "https://github.com/rafska/awesome-local-llm",
+  "archived": false
+ },
+ {
+  "name": "Awesome-LLM-Inference",
+  "repo": "xlite-dev/Awesome-LLM-Inference",
+  "section": "related",
+  "desc": "Inference papers with code.",
+  "stars": 5528,
+  "pushed_at": "2026-08-14T12:23:49Z",
+  "url": "https://github.com/xlite-dev/Awesome-LLM-Inference",
+  "archived": false
+ }
+]

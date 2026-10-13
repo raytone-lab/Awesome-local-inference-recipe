@@ -173,26 +173,35 @@ Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).
 
 ## Engines & Tools
 
-- [Strata](https://github.com/Niko1221/Strata) - MoE engine that splits experts across GPU, RAM and SSD for 12–24GB cards. Most Flash-Next recipes here use it.
-- [oMLX](https://github.com/jundot/omlx) - Apple Silicon MLX server with continuous batching and tiered KV/SSD cache.
-- [DFlash / DFlash 2](https://github.com/z-lab/dflash) - Block-diffusion speculative decoding with drafts for Qwen3.8-27B. MLX port: [dflash-mlx](https://github.com/bstnxbt/dflash-mlx).
-- [TensorFold](https://github.com/ashhart/TensorFold) - OpenAI-compatible MoE runtime with speculative decoding. Also used for MiniMax H3 in ComfyUI.
-- [FastH3](https://haoailab.com/blogs/fasth3-rtx/) - Hao AI Lab's 8-step distilled MiniMax H3 for RTX cards.
-- [LightX2V](https://github.com/ModelTC/LightX2V) - Video generation inference framework, with MiniMax H3 results on a 5090.
-- [halogen](https://github.com/peonist-ai/halogen-flash-server/) - Flash-Next server tuned for Strix Halo.
-- [llama.cpp](https://github.com/ggml-org/llama.cpp) - The baseline GGUF engine for CPU, CUDA, ROCm, Vulkan and Metal.
-- [MLX](https://github.com/ml-explore/mlx) - Apple's array framework behind most Mac recipes.
-- [vLLM](https://github.com/vllm-project/vllm) - High-throughput server. MTP and multi-stream recipes on Spark.
-- [SGLang](https://github.com/sgl-project/sglang) - Serving framework, paired with DFlash2 on DGX Spark.
+| Project | ⭐ Stars | Live | Last push | What |
+|---|--:|---|---|---|
+| [llama.cpp](https://github.com/ggml-org/llama.cpp) | 131.0k | ![stars](https://img.shields.io/github/stars/ggml-org/llama.cpp?style=flat&label=) | 2026-10-13 | The baseline GGUF engine (CPU/CUDA/ROCm/Vulkan/Metal). |
+| [vLLM](https://github.com/vllm-project/vllm) | 93.7k | ![stars](https://img.shields.io/github/stars/vllm-project/vllm?style=flat&label=) | 2026-10-13 | High-throughput server; MTP and multi-stream recipes on Spark. |
+| [SGLang](https://github.com/sgl-project/sglang) | 37.1k | ![stars](https://img.shields.io/github/stars/sgl-project/sglang?style=flat&label=) | 2026-10-13 | Serving framework; paired with DFlash2 on DGX Spark. |
+| [MLX](https://github.com/ml-explore/mlx) | 28.8k | ![stars](https://img.shields.io/github/stars/ml-explore/mlx?style=flat&label=) | 2026-10-13 | Apple's array framework behind most Mac recipes. |
+| [Strata](https://github.com/Niko1221/Strata) | 23.5k | ![stars](https://img.shields.io/github/stars/Niko1221/Strata?style=flat&label=) | 2026-10-12 | MoE engine that splits experts across GPU, RAM and SSD for 12–24GB cards; most Flash-Next recipes here. |
+| [oMLX](https://github.com/jundot/omlx) | 22.8k | ![stars](https://img.shields.io/github/stars/jundot/omlx?style=flat&label=) | 2026-10-13 | Apple Silicon MLX server with continuous batching and tiered KV/SSD cache. |
+| [DFlash / DFlash 2](https://github.com/z-lab/dflash) | 6.2k | ![stars](https://img.shields.io/github/stars/z-lab/dflash?style=flat&label=) | 2026-08-18 | Block-diffusion speculative decoding; DFlash 2 drafts for Qwen3.8-27B. |
+| [LightX2V](https://github.com/ModelTC/LightX2V) | 2.9k | ![stars](https://img.shields.io/github/stars/ModelTC/LightX2V?style=flat&label=) | 2026-10-13 | Video generation inference framework; MiniMax H3 results on a 5090. |
+| [TensorFold](https://github.com/ashhart/TensorFold) | 1.3k | ![stars](https://img.shields.io/github/stars/ashhart/TensorFold?style=flat&label=) | 2026-10-12 | OpenAI-compatible MoE runtime with speculative decoding; also used for MiniMax H3 in ComfyUI. |
+| [halogen](https://github.com/peonist-ai/halogen-flash-server) | 954 | ![stars](https://img.shields.io/github/stars/peonist-ai/halogen-flash-server?style=flat&label=) | 2026-10-13 | Flash-Next server tuned for Strix Halo. |
+| [dflash-mlx](https://github.com/bstnxbt/dflash-mlx) | 788 | ![stars](https://img.shields.io/github/stars/bstnxbt/dflash-mlx?style=flat&label=) | 2026-08-20 | DFlash speculative decoding for MLX on Apple Silicon. |
+| [FastH3](https://haoailab.com/blogs/fasth3-rtx/) | — | *(site/blog)* | — | Hao AI Lab's 8-step distilled MiniMax H3 for RTX cards (blog). |
+
+<sub>⭐ snapshot 更新于 2026-10-13T14:44Z (UTC) by `scripts/update_stars.py` · *Live* badges are rendered by shields.io at view time.</sub>
 
 ## Related Lists & Benchmarks
 
-- [llamabench.ai](https://llamabench.ai/) - llama.cpp results with full launch commands.
-- [llamaperf](https://llamaperf.com/leaderboard) - Community-reported leaderboard (medians).
-- [LocalScore](https://github.com/cjpais/LocalScore) - Standardized single-GPU benchmark CLI.
-- [canirun.ai](https://canirun.ai/) - Estimates whether and how fast a model fits your hardware.
-- [awesome-local-llm](https://github.com/rafska/awesome-local-llm) - Directory of local LLM platforms and tools.
-- [Awesome-LLM-Inference](https://github.com/xlite-dev/Awesome-LLM-Inference) - Inference papers with code.
+| Project | ⭐ Stars | Live | Last push | What |
+|---|--:|---|---|---|
+| [Awesome-LLM-Inference](https://github.com/xlite-dev/Awesome-LLM-Inference) | 5.5k | ![stars](https://img.shields.io/github/stars/xlite-dev/Awesome-LLM-Inference?style=flat&label=) | 2026-08-14 | Inference papers with code. |
+| [awesome-local-llm](https://github.com/rafska/awesome-local-llm) | 3.0k | ![stars](https://img.shields.io/github/stars/rafska/awesome-local-llm?style=flat&label=) | 2026-10-12 | Directory of local LLM platforms and tools. |
+| [LocalScore](https://github.com/cjpais/LocalScore) | 134 | ![stars](https://img.shields.io/github/stars/cjpais/LocalScore?style=flat&label=) | 2026-10-09 | Standardized single-GPU benchmark CLI. |
+| [llamabench.ai](https://llamabench.ai/) | — | *(site/blog)* | — | llama.cpp results with full launch commands. |
+| [llamaperf](https://llamaperf.com/leaderboard) | — | *(site/blog)* | — | Community-reported leaderboard (medians). |
+| [canirun.ai](https://canirun.ai/) | — | *(site/blog)* | — | Estimates whether and how fast a model fits your hardware. |
+
+<sub>⭐ snapshot 更新于 2026-10-13T14:44Z (UTC) by `scripts/update_stars.py` · *Live* badges are rendered by shields.io at view time.</sub>
 
 ## Contributing
 
@@ -209,4 +218,5 @@ Dev: `python3 -m http.server 5190` → `index.html` (landing) · `explore.html` 
 
 ## License
 
-Not chosen yet. Suggested: MIT for code, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) for `data/`.
+- Code: [MIT](LICENSE)
+- Data (`data/`): [CC BY 4.0](LICENSE-DATA). Reuse it freely with attribution to RecipeBench and the original sources linked in each recipe.

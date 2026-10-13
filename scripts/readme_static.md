@@ -21,26 +21,11 @@
 
 ## Engines & Tools
 
-- [Strata](https://github.com/Niko1221/Strata) - MoE engine that splits experts across GPU, RAM and SSD for 12–24GB cards. Most Flash-Next recipes here use it.
-- [oMLX](https://github.com/jundot/omlx) - Apple Silicon MLX server with continuous batching and tiered KV/SSD cache.
-- [DFlash / DFlash 2](https://github.com/z-lab/dflash) - Block-diffusion speculative decoding with drafts for Qwen3.8-27B. MLX port: [dflash-mlx](https://github.com/bstnxbt/dflash-mlx).
-- [TensorFold](https://github.com/ashhart/TensorFold) - OpenAI-compatible MoE runtime with speculative decoding. Also used for MiniMax H3 in ComfyUI.
-- [FastH3](https://haoailab.com/blogs/fasth3-rtx/) - Hao AI Lab's 8-step distilled MiniMax H3 for RTX cards.
-- [LightX2V](https://github.com/ModelTC/LightX2V) - Video generation inference framework, with MiniMax H3 results on a 5090.
-- [halogen](https://github.com/peonist-ai/halogen-flash-server/) - Flash-Next server tuned for Strix Halo.
-- [llama.cpp](https://github.com/ggml-org/llama.cpp) - The baseline GGUF engine for CPU, CUDA, ROCm, Vulkan and Metal.
-- [MLX](https://github.com/ml-explore/mlx) - Apple's array framework behind most Mac recipes.
-- [vLLM](https://github.com/vllm-project/vllm) - High-throughput server. MTP and multi-stream recipes on Spark.
-- [SGLang](https://github.com/sgl-project/sglang) - Serving framework, paired with DFlash2 on DGX Spark.
+<!--ENGINES-->
 
 ## Related Lists & Benchmarks
 
-- [llamabench.ai](https://llamabench.ai/) - llama.cpp results with full launch commands.
-- [llamaperf](https://llamaperf.com/leaderboard) - Community-reported leaderboard (medians).
-- [LocalScore](https://github.com/cjpais/LocalScore) - Standardized single-GPU benchmark CLI.
-- [canirun.ai](https://canirun.ai/) - Estimates whether and how fast a model fits your hardware.
-- [awesome-local-llm](https://github.com/rafska/awesome-local-llm) - Directory of local LLM platforms and tools.
-- [Awesome-LLM-Inference](https://github.com/xlite-dev/Awesome-LLM-Inference) - Inference papers with code.
+<!--RELATED-->
 
 ## Contributing
 
@@ -57,4 +42,5 @@ Dev: `python3 -m http.server 5190` → `index.html` (landing) · `explore.html` 
 
 ## License
 
-Not chosen yet. Suggested: MIT for code, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) for `data/`.
+- Code: [MIT](LICENSE)
+- Data (`data/`): [CC BY 4.0](LICENSE-DATA). Reuse it freely with attribution to RecipeBench and the original sources linked in each recipe.
