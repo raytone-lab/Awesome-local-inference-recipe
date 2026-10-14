@@ -4,7 +4,7 @@
 
 > 模型 × 引擎 × 硬件 → 实测速度与成本，每个数字都链接到来源。聚焦消费级与二手硬件，预算 3 万美元以内。
 
-<sub>暂定名：**RecipeBench** · 共 255 条配方（文字 214 · 图像 16 · 影音 25）· 数据截至 2026-10-13 · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html">配方库</a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html">提交配方</a></sub>
+<sub>共 255 条配方（文字 214 · 图像 16 · 影音 25）· 数据截至 2026-10-13 · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html">配方库</a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html">提交配方</a></sub>
 
 <sub>站内链接指向 GitHub Pages；若尚未上线，可克隆仓库后在本地打开 <code>explore.html</code>（<code>python3 -m http.server</code>）。</sub>
 
@@ -277,11 +277,11 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 
 <details><summary>网站预览</summary>
 
-<img src="docs/screenshot.png" width="760" alt="RecipeBench">
+<img src="docs/screenshot.png" width="760" alt="Awesome Local Inference Recipes">
 
 </details>
 
 ## 许可证
 
 - 代码：[MIT](LICENSE)
-- 数据（`data/`）：[CC BY 4.0](LICENSE-DATA)。可自由使用，需署名 RecipeBench 并保留每条配方的原始来源链接。
+- 数据（`data/`）：[CC BY 4.0](LICENSE-DATA)。可自由使用，需署名 Awesome Local Inference Recipes 并保留每条配方的原始来源链接。

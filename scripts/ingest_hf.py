@@ -8,7 +8,7 @@ from normalize_engines import canon  # 统一引擎名
 import argparse, datetime, glob, json, os, re, sys, time, urllib.request, urllib.parse
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 API = "https://huggingface.co/api/models"
-UA = "RecipeBench-ingest/0.1 (+local research)"
+UA = "awesome-local-inference-recipes-ingest/0.1 (+local research)"
 SPEED = re.compile(r"(\d+(?:\.\d+)?)\s*\**\s*(tok/s|tokens?/s(?:ec)?|t/s|tps)\b", re.I)
 PREFILL = re.compile(r"prompt|prefill|pp\d*|read|ingest|处理|读入", re.I)
 GEN = re.compile(r"decode|generat|tg\d*|output|eval|生成", re.I)

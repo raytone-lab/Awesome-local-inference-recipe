@@ -4,7 +4,7 @@
 
 > モデル × エンジン × ハードウェア → 実測の速度とコスト。すべての数字に出典リンクを付けています。対象はコンシューマー機と中古ハードウェア、予算 3 万ドルまで。
 
-<sub>仮称：**RecipeBench** · レシピ {{N}} 件（テキスト {{NT}} · 画像 {{NI}} · 動画・音声 {{NV}}）· 2026-10-13 時点のデータ · <a href="explore.html">エクスプローラー</a> · <a href="submit.html">レシピを投稿</a></sub>
+<sub>レシピ {{N}} 件（テキスト {{NT}} · 画像 {{NI}} · 動画・音声 {{NV}}）· 2026-10-13 時点のデータ · <a href="explore.html">エクスプローラー</a> · <a href="submit.html">レシピを投稿</a></sub>
 
 <sub>サイトへのリンクは GitHub Pages を指しています。表示されない場合は、リポジトリをクローンしてローカルで <code>explore.html</code> を開いてください（<code>python3 -m http.server</code>）。</sub>
 
@@ -42,11 +42,11 @@
 
 <details><summary>サイトのプレビュー</summary>
 
-<img src="docs/screenshot.png" width="760" alt="RecipeBench">
+<img src="docs/screenshot.png" width="760" alt="Awesome Local Inference Recipes">
 
 </details>
 
 ## ライセンス
 
 - コード：[MIT](LICENSE)
-- データ（`data/`）：[CC BY 4.0](LICENSE-DATA)。RecipeBench と、各レシピに記載された元の出典を明記すれば自由に再利用できます。
+- データ（`data/`）：[CC BY 4.0](LICENSE-DATA)。Awesome Local Inference Recipes と、各レシピに記載された元の出典を明記すれば自由に再利用できます。

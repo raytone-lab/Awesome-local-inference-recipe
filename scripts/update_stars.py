@@ -6,7 +6,7 @@ P = Path(__file__).resolve().parent.parent/'data/repos.json'
 R = json.load(open(P)); tok = os.environ.get('GITHUB_TOKEN')
 for r in R:
     if not r.get('repo'): continue
-    req = urllib.request.Request(f"https://api.github.com/repos/{r['repo']}", headers={'Accept':'application/vnd.github+json','User-Agent':'recipebench'})
+    req = urllib.request.Request(f"https://api.github.com/repos/{r['repo']}", headers={'Accept':'application/vnd.github+json','User-Agent':'awesome-local-inference-recipes'})
     if tok: req.add_header('Authorization', f'Bearer {tok}')
     try:
         d = json.load(urllib.request.urlopen(req, timeout=20))
