@@ -1,3 +1,4 @@
+let GUIDES=new Set();fetch('data/guides.json').then(r=>r.ok?r.json():[]).then(a=>{GUIDES=new Set(a)}).catch(()=>{});
 const NA='<span class="na">未见公开数据</span>',CAT={text:'文字',image:'图像','video-audio':'影音'};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const v=x=>x==null||x===''?NA:esc(x);let D=[],sk='tok_s',sd=-1;const $=id=>document.getElementById(id);
@@ -37,7 +38,7 @@ function chart(L){const P=L.filter(r=>r.tok_s&&r.hardware_cost_usd),W=640,H=300,
 function open(id){const r=D.find(x=>x.id==id);$('dc').innerHTML=`<h2 style="margin-top:0">${esc(r.model)}</h2><p><span class="tag">${CAT[r.category]}</span> <span class="lv ${r.source_level}">${r.source_level}</span> <span class="tag">${r.id}</span></p>
 <dl><dt>量化/优化</dt><dd>${v(r.quant)}</dd><dt>模型系列</dt><dd>${esc(r.model_family)}</dd><dt>标签</dt><dd>${r.tags.map(t=>`<span class="tg">${t}</span>`).join('')||'—'}</dd><dt>引擎</dt><dd>${esc(r.engine)}${r.engine_note?`（原文：${esc(r.engine_note)}）`:''}</dd><dt>硬件</dt><dd>${esc(r.hardware)}（${r.hardware_family}）</dd><dt>性能</dt><dd>${v(r.metric)}</dd><dt>单流 tok/s</dt><dd>${v(r.tok_s)}</dd><dt>并发</dt><dd>${v(r.concurrency)}</dd><dt>上下文</dt><dd>${v(r.context)}</dd><dt>硬件成本</dt><dd>${v(r.hardware_cost_text)}</dd><dt>$/tok/s</dt><dd>${v(r.cpt)}</dd><dt>日期</dt><dd>${v(r.date)}</dd><dt>来源说明</dt><dd>${v(r.source_note)}</dd></dl>
 <h3>启动命令</h3>${r.launch_command?`<pre>${esc(r.launch_command)}</pre>`:`<pre># 未见公开数据\n# 你跑过这个配置？欢迎提交 PR 补全启动命令</pre>`}
-<h3>来源</h3><p><a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.source_url)}</a></p><p><a href="submit.html">✎ 提交修正 / 补充</a></p>`;
+<h3>来源</h3><p><a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.source_url)}</a></p>${GUIDES.has(r.id)?`<p><a href="https://github.com/raytone-lab/Awesome-local-inference-recipe/blob/main/recipes/${esc(r.id)}.zh-CN.md" target="_blank" rel="noopener">📘 运行指南 / How-to guide</a></p>`:""}<p><a href="submit.html">✎ 提交修正 / 补充</a></p>`;
  $('drawer').classList.add('open');$('mask').classList.add('open');}
 $('x').onclick=$('mask').onclick=()=>{$('drawer').classList.remove('open');$('mask').classList.remove('open')};
 // deep-link: explore.html?family=Qwen&tag=MoE,4bit&engine=llama.cpp&fam=Mac&cat=text&level=实测&max=3000&q=...

@@ -8,6 +8,8 @@
 
 <sub>Site links point to GitHub Pages; if it is not live yet, clone the repo and open <code>explore.html</code> locally (<code>python3 -m http.server</code>).</sub>
 
+**New:** step-by-step [recipe guides](recipes/README.md) · [Getting started](docs/getting-started.md)
+
 ## Contents
 
 {{TOC}}

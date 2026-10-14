@@ -9,6 +9,7 @@ try: UPD = json.load(open(R/'data/repos.meta.json'))['updated_at']
 except Exception: UPD = None
 HWF_EN = {'NVIDIA 消费级':'NVIDIA consumer','二手数据中心卡':'Used datacenter GPU','其他':'Other'}
 PAGES = 'https://raytone-lab.github.io/Awesome-local-inference-recipe/'
+GUIDES = set(json.load(open(R/'data/guides.json'))) if (R/'data/guides.json').exists() else set()
 LVI = {'官方':'🏛️','实测':'✅','转述':'🔁','宣称':'📣'}
 CJK = re.compile(r'[\u3000-\u303f\u3400-\u9fff\uff00-\uffef“”]')
 L = {
@@ -19,7 +20,7 @@ L = {
    fam='Browse by Model Family', famdesc='Click a family to open the explorer pre-filtered. Tags: {tags}.', engidx='Browse by Engine', engdesc='Engine names are normalized (`scripts/normalize_engines.py`); original strings are kept in `engine_note`.', th2='| Family | Recipes | Text | Image | Video & Audio |', th3='| Engine | Recipes |',
    hot='Hot This Month', hotdesc='Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).',
    unk='Cost Not Published', unkdesc='Multi-card builds priced per card, Macs without a listed price, and other rows without a single published price · {n} recipes. Top text recipes by tok/s:',
-   more='…and {n} more in the [explorer](explore.html).', all='…browse all {n} in the [explorer](explore.html).', count='{n} recipes',
+   guide='guide', gsuf='.md', more='…and {n} more in the [explorer](explore.html).', all='…browse all {n} in the [explorer](explore.html).', count='{n} recipes',
    src='source', see='see source', legend='Legend', eng='Engines & Tools', rel='Related Lists & Benchmarks', contrib='Contributing', lic='License',
    th='| Project | ⭐ Stars | Live | Last push | What |', site='*(site/blog)*', desc='desc',
    note='⭐ Snapshot updated {u} (UTC) by `scripts/update_stars.py` · *Live* badges are rendered by shields.io at view time.'),
@@ -30,7 +31,7 @@ L = {
    fam='按模型系列浏览', famdesc='点击系列名即可打开已筛选的配方库。标签：{tags}。', engidx='按引擎浏览', engdesc='引擎名已统一（`scripts/normalize_engines.py`），原始写法保留在 `engine_note` 字段。', th2='| 系列 | 配方数 | 文字 | 图像 | 影音 |', th3='| 引擎 | 配方数 |',
    hot='本月热门', hotdesc='X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 排序）。',
    unk='价格未公开', unkdesc='按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 {n} 条。按 tok/s 排名靠前的文字配方：',
-   more='……另有 {n} 条，见 [配方库](explore.html)。', all='……全部 {n} 条见 [配方库](explore.html)。', count='共 {n} 条',
+   guide='指南', gsuf='.zh-CN.md', more='……另有 {n} 条，见 [配方库](explore.html)。', all='……全部 {n} 条见 [配方库](explore.html)。', count='共 {n} 条',
    src='来源', see='见来源', legend='图例', eng='引擎与工具', rel='相关榜单与清单', contrib='参与贡献', lic='许可证',
    th='| 项目 | ⭐ Star | 实时 | 最后推送 | 简介 |', site='*（网站/博客）*', desc='desc_zh',
    note='⭐ 快照由 `scripts/update_stars.py` 更新于 {u}（UTC）· 「实时」徽章由 shields.io 在打开页面时实时渲染。'),
@@ -55,7 +56,7 @@ def build(lang):
     def ln(r):
         q=E(r['quant']); q=f" `{clip(q,28)}`" if q else ''
         eg=E(r['engine']); eg='' if (not eg or r['engine']=='Unspecified') else f" · {eg}"
-        return f"- **{E(r['model'])}**{eg}{q} — {clip(E(r['hardware']) or (HWF_EN.get(r['hardware_family'],r['hardware_family']) if lang=='en' else r['hardware_family']),60)} → {key(r)} {LVI.get(r['source_level'],'')} [{T['src']}]({r['source_url']})"
+        return f"- **{E(r['model'])}**{eg}{q} — {clip(E(r['hardware']) or (HWF_EN.get(r['hardware_family'],r['hardware_family']) if lang=='en' else r['hardware_family']),60)} → {key(r)} {LVI.get(r['source_level'],'')} [{T['src']}]({r['source_url']})"+(f" · [{T['guide']}](recipes/{r['id']}{T['gsuf']})" if r['id'] in GUIDES else '')
     out=[];toc=[]
     def sec(t): out.append(f"\n## {t}\n"); toc.append(f"- [{t}](#{slug(t)})")
     seen=set();hot=[r for r in sorted([r for r in D if r.get('x_post')],key=lambda r:-(r['x_post']['likes']+3*r['x_post']['reposts'])) if not (r['source_url'] in seen or seen.add(r['source_url']))][:8]

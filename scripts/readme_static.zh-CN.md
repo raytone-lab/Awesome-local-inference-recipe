@@ -8,6 +8,8 @@
 
 <sub>站内链接指向 GitHub Pages；若尚未上线，可克隆仓库后在本地打开 <code>explore.html</code>（<code>python3 -m http.server</code>）。</sub>
 
+**新增：** 分步 [配方指南](recipes/README.zh-CN.md) · [入门指南](docs/getting-started.zh-CN.md)
+
 ## 目录
 
 {{TOC}}

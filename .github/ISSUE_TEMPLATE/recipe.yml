@@ -1,0 +1,45 @@
+name: Recipe submission / 提交配方
+description: Add a model × engine × hardware result with its source.
+title: "[recipe] <model> on <hardware>"
+labels: [recipe]
+body:
+  - type: markdown
+    attributes:
+      value: "Only fill what the source shows. Unknown → leave blank (null). 只填来源写明的内容，未知留空。"
+  - type: input
+    id: source_url
+    attributes: { label: Source URL / 来源链接, placeholder: "https://x.com/... or HF model card" }
+    validations: { required: true }
+  - type: dropdown
+    id: category
+    attributes: { label: Category / 类别, options: [text, image, video/audio] }
+    validations: { required: true }
+  - type: input
+    id: model
+    attributes: { label: Model (+ quant) / 模型（量化）, placeholder: "Qwen3.8-27B UD-Q4_K_XL" }
+    validations: { required: true }
+  - type: input
+    id: engine
+    attributes: { label: Engine + version / 引擎及版本, placeholder: "llama.cpp b6800" }
+  - type: input
+    id: hardware
+    attributes: { label: Hardware / 硬件, placeholder: "RTX 3090 24GB + 64GB DDR5" }
+    validations: { required: true }
+  - type: input
+    id: metric
+    attributes: { label: Result / 结果, placeholder: "42 tok/s decode @ 8K ctx; or 1024² in 3.1 s" }
+    validations: { required: true }
+  - type: dropdown
+    id: level
+    attributes: { label: Source level / 来源等级, options: ["measured (实测)", "official (官方)", "relayed (转述)", "claimed (宣称)"] }
+    validations: { required: true }
+  - type: textarea
+    id: command
+    attributes: { label: Launch command (optional) / 启动命令（可选）, render: shell }
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Rules
+      options:
+        - label: Numbers are copied from the source, not estimated. 数字来自原文，未估算。
+          required: true
