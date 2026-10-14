@@ -18,6 +18,10 @@
 .meta{display:flex;justify-content:space-between;font-size:12px;color:#8a90a2;margin-top:6px;font-variant-numeric:tabular-nums}
 .pg{height:4px;background:#eef0f5;border-radius:99px;margin-top:6px;overflow:hidden}.pg i{display:block;height:100%;width:0;background:#4f46e5}
 .note{color:#8a90a2;font-size:12px;margin-top:14px}
+body.embed header,body.embed .ctl,body.embed .note,body.embed footer,body.embed .hero p,body.embed .real,body.embed .meta .tm{display:none}
+body.embed main{padding:14px 16px;max-width:none}body.embed .hero h1{font-size:22px;margin:0 0 10px}
+body.embed .lanes{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}body.embed .lh{flex-wrap:wrap;gap:2px 6px}body.embed .badge{font-size:11px;padding:1px 7px}body.embed .out .cur{animation:none}body.embed .lane{padding:10px}
+body.embed .out{height:240px;overflow:hidden;font-size:12.5px;line-height:1.45;padding:8px}body.embed .read{font-size:13px}
 </style></head><body>
 <header><div class="brand">⚡ <span data-t="brand"></span> <small>Awesome Local Inference Recipes</small></div>
 <nav><a href="index.html" data-t="home"></a><a href="explore.html" data-t="explore"></a><a href="speed.html" class="on" data-t="speed"></a><span class="lang"><a href="?lang=en" data-l="en">EN</a><a href="?lang=zh-CN" data-l="zh-CN">中文</a><a href="?lang=ja" data-l="ja">日本語</a></span></nav></header>
@@ -62,7 +66,8 @@ const NL=(navigator.language||'').toLowerCase(); let LANG=P.get('lang')||(NL.sta
 if(!I18N[LANG])LANG='en'; const T=I18N[LANG]; document.documentElement.lang=LANG;
 document.querySelectorAll('[data-t]').forEach(e=>e.textContent=T[e.dataset.t]);
 document.querySelectorAll('[data-l]').forEach(e=>e.classList.toggle('on',e.dataset.l===LANG));
-const RATES=[5,10,20,50,100,300]; const READ=6, TTFT=0.6;
+const EMBED=P.has('embed'); if(EMBED)document.body.classList.add('embed');
+const RATES=EMBED?[10,20,50,100,300]:[5,10,20,50,100,300]; const LOOP=+(P.get('loop')||8); const READ=6, TTFT=0.6;
 let TOKS=[], RECIPES=[], lanes=[], raf=0, t0=0, running=false;
 const $=id=>document.getElementById(id);
 function badge(r){return r<5?0:r<=8?1:r<150?2:3}
@@ -74,7 +79,7 @@ function times(rate){ // per-token emission times (s); jitter keeps the mean rat
   const k=n/s, out=[]; let acc=$('ttft').checked?TTFT:0; for(let i=0;i<n;i++){acc+=w[i]*k*dt; out.push(acc)} return out}
 function build(){
   $('lanes').innerHTML=''; lanes=[];
-  for(const r of [...RATES,'c']){
+  for(const r of EMBED?RATES:[...RATES,'c']){
     const el=document.createElement('div'); el.className='lane';
     el.innerHTML=`<div class="lh"><b><span class="rv"></span> <small>tok/s</small></b><span class="badge"></span></div><div class="real"></div><div class="out"></div><div class="pg"><i></i></div><div class="meta"><span class="cnt"></span><span class="tm"></span></div>`;
     $('lanes').appendChild(el); lanes.push({el,r});
@@ -101,6 +106,7 @@ function frame(now){
     L.el.querySelector('.cnt').textContent=`${L.i} / ${n} ${T.tok}`;
     L.el.querySelector('.tm').textContent=L.end!==null?`${T.done} ${L.end.toFixed(1)} s`:`${e.toFixed(1)} s`}
   $('rb').style.width=Math.min(100,e*READ/TOKS.length*100)+'%';
+  if(EMBED&&e>=LOOP){start();return}
   if(alive||e*READ<TOKS.length)raf=requestAnimationFrame(frame); else running=false}
 $('go').onclick=start; $('stop').onclick=()=>{cancelAnimationFrame(raf);running=false};
 $('cr').oninput=()=>{$('cv').textContent=$('cr').value; label()};
@@ -108,6 +114,6 @@ $('go').textContent=T.go; $('stop').textContent=T.stop; $('rlab').textContent=T.
 Promise.all([fetch('data/speed-tokens.json').then(r=>r.json()),fetch('data/recipes.json').then(r=>r.json()).catch(()=>[])]).then(([tk,rc])=>{
   TOKS=tk.texts[LANG]||tk.texts.en;
   RECIPES=rc.filter(r=>r.category==='text'&&r.tok_s&&r.source_level==='实测');
-  build(); if(P.has('autostart'))start();
+  build(); if(P.has('autostart')||EMBED)start();
 });
 </script></body></html>
