@@ -23,17 +23,16 @@
 - [价格未公开](#价格未公开)
 - [引擎与工具](#引擎与工具)
 - [相关榜单与清单](#相关榜单与清单)
-- [参与贡献](#参与贡献)
 - [许可证](#许可证)
 
 ## 图例
 
-| 来源等级 | 含义 | 格式 |
-|---|---|---|
-| 🏛️ **官方** | 项目方或厂商发布的数字 | **模型** · 引擎 `量化` — 硬件 → **关键数字** 等级 [来源] |
-| ✅ **实测** | 作者本人跑出，附日志或截图 | **tok/s** 指单路生成速度（不含读入，不含多路合计） |
-| 🔁 **转述** | 二手引用，请回原帖核对 | 预算档按公开的最低硬件价格（美元）划分 |
-| 📣 **宣称** | 预测值，无复现条件 | 未知字段一律不估算，显示「未见公开数据」 |
+| 来源等级       | 含义            | 格式                                         |
+| ---------- | ------------- | ------------------------------------------ |
+| 🏛️ **官方** | 项目方或厂商发布的数字   | **模型** · 引擎 `量化` — 硬件 → **关键数字** 等级 \[来源\] |
+| ✅ **实测**   | 作者本人跑出，附日志或截图 | **tok/s** 指单路生成速度（不含读入，不含多路合计）             |
+| 🔁 **转述**  | 二手引用，请回原帖核对   | 预算档按公开的最低硬件价格（美元）划分                        |
+| 📣 **宣称**  | 预测值，无复现条件     | 未知字段一律不估算，显示「未见公开数据」                       |
 
 ## 本月热门
 
@@ -52,61 +51,61 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 
 点击系列名即可打开已筛选的配方库。标签：[`dense`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=dense) 85, [`long-context`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=long-context) 81, [`speculative`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=speculative) 64, [`4bit`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=4bit) 58, [`MTP`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=MTP) 42, [`MoE`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=MoE) 33, [`3bit`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=3bit) 32, [`multi-GPU`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=multi-GPU) 32, [`2bit`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=2bit) 24, [`ternary`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=ternary) 22, [`8bit`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=8bit) 21, [`1bit`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=1bit) 12, [`few-step`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=few-step) 12, [`offload`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=offload) 11, [`bf16`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=bf16) 6, [`6bit`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=6bit) 6, [`abliterated`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=abliterated) 2, [`5bit`](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?tag=5bit) 1。
 
-| 系列 | 配方数 | 文字 | 图像 | 影音 |
-|---|--:|--:|--:|--:|
-| [Qwen](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Qwen) | 138 | 138 |  |  |
-| [Bonsai](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Bonsai) | 28 | 28 |  |  |
-| [GLM](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=GLM) | 20 | 20 |  |  |
-| [DeepSeek](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=DeepSeek) | 18 | 18 |  |  |
-| [MiniMax H3](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=MiniMax%20H3) | 17 |  |  | 17 |
-| [Qwen-Image](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Qwen-Image) | 13 |  | 13 |  |
-| [LTX](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=LTX) | 4 |  |  | 4 |
-| [Z-Image](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Z-Image) | 3 |  | 3 |  |
-| [ACE-Step](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=ACE-Step) | 2 |  |  | 2 |
-| [Edge0](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Edge0) | 2 | 2 |  |  |
-| [Wan](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Wan) | 2 |  |  | 2 |
-| [Other](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Other) | 8 | 8 |  |  |
+| 系列                                                                                                          | 配方数 | 文字  | 图像  | 影音  |
+| ----------------------------------------------------------------------------------------------------------- | --- | --- | --- | --- |
+| [Qwen](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Qwen)               | 138 | 138 |     |     |
+| [Bonsai](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Bonsai)           | 28  | 28  |     |     |
+| [GLM](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=GLM)                 | 20  | 20  |     |     |
+| [DeepSeek](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=DeepSeek)       | 18  | 18  |     |     |
+| [MiniMax H3](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=MiniMax%20H3) | 17  |     |     | 17  |
+| [Qwen-Image](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Qwen-Image)   | 13  |     | 13  |     |
+| [LTX](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=LTX)                 | 4   |     |     | 4   |
+| [Z-Image](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Z-Image)         | 3   |     | 3   |     |
+| [ACE-Step](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=ACE-Step)       | 2   |     |     | 2   |
+| [Edge0](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Edge0)             | 2   | 2   |     |     |
+| [Wan](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Wan)                 | 2   |     |     | 2   |
+| [Other](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?family=Other)             | 8   | 8   |     |     |
 
 ## 按引擎浏览
 
 引擎名已统一（`scripts/normalize_engines.py`），原始写法保留在 `engine_note` 字段。
 
-| 引擎 | 配方数 |
-|---|--:|
-| [Strata](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Strata) | 29 |
-| [llama.cpp](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=llama.cpp) | 27 |
-| [oMLX](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=oMLX) | 27 |
-| [MLX](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=MLX) | 16 |
-| [TensorFold](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=TensorFold) | 14 |
-| [llama.cpp (PrismML fork)](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=llama.cpp%20%28PrismML%20fork%29) | 14 |
-| [ComfyUI](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=ComfyUI) | 12 |
-| [MTPLX](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=MTPLX) | 11 |
-| [DFlash](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=DFlash) | 7 |
-| [SGLang](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=SGLang) | 7 |
-| [Splash](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Splash) | 5 |
-| [mlx-serve](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=mlx-serve) | 5 |
-| [Project Maya](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Project%20Maya) | 4 |
-| [mirai-s-ada](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=mirai-s-ada) | 4 |
-| [ds4 (DwarfStar)](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=ds4%20%28DwarfStar%29) | 3 |
-| [llama.cpp (agentionai fork)](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=llama.cpp%20%28agentionai%20fork%29) | 3 |
-| [vLLM](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=vLLM) | 3 |
-| [Halogen](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Halogen) | 2 |
-| [MLX Swift](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=MLX%20Swift) | 2 |
-| [Ollama](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Ollama) | 2 |
-| [Radiance (fork)](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Radiance%20%28fork%29) | 2 |
-| [edge0](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=edge0) | 2 |
-| [DS41RT](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=DS41RT) | 1 |
-| [ExLlama](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=ExLlama) | 1 |
-| [FreeToken](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=FreeToken) | 1 |
-| [LightX2V](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=LightX2V) | 1 |
-| [MLX Swift (PrismML fork)](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=MLX%20Swift%20%28PrismML%20fork%29) | 1 |
-| [NVIDIA Sol](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=NVIDIA%20Sol) | 1 |
-| [Osaurus](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Osaurus) | 1 |
-| [TabbyAPI](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=TabbyAPI) | 1 |
-| [llama.cpp (mirai-s fork)](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=llama.cpp%20%28mirai-s%20fork%29) | 1 |
-| [mflux](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=mflux) | 1 |
-| [sparkinfer](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=sparkinfer) | 1 |
-| [Unspecified](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Unspecified) | 43 |
+| 引擎                                                                                                                                                  | 配方数 |
+| --------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| [Strata](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Strata)                                                   | 29  |
+| [llama.cpp](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=llama.cpp)                                             | 27  |
+| [oMLX](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=oMLX)                                                       | 27  |
+| [MLX](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=MLX)                                                         | 16  |
+| [TensorFold](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=TensorFold)                                           | 14  |
+| [llama.cpp (PrismML fork)](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=llama.cpp%20%28PrismML%20fork%29)       | 14  |
+| [ComfyUI](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=ComfyUI)                                                 | 12  |
+| [MTPLX](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=MTPLX)                                                     | 11  |
+| [DFlash](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=DFlash)                                                   | 7   |
+| [SGLang](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=SGLang)                                                   | 7   |
+| [Splash](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Splash)                                                   | 5   |
+| [mlx-serve](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=mlx-serve)                                             | 5   |
+| [Project Maya](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Project%20Maya)                                     | 4   |
+| [mirai-s-ada](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=mirai-s-ada)                                         | 4   |
+| [ds4 (DwarfStar)](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=ds4%20%28DwarfStar%29)                           | 3   |
+| [llama.cpp (agentionai fork)](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=llama.cpp%20%28agentionai%20fork%29) | 3   |
+| [vLLM](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=vLLM)                                                       | 3   |
+| [Halogen](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Halogen)                                                 | 2   |
+| [MLX Swift](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=MLX%20Swift)                                           | 2   |
+| [Ollama](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Ollama)                                                   | 2   |
+| [Radiance (fork)](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Radiance%20%28fork%29)                           | 2   |
+| [edge0](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=edge0)                                                     | 2   |
+| [DS41RT](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=DS41RT)                                                   | 1   |
+| [ExLlama](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=ExLlama)                                                 | 1   |
+| [FreeToken](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=FreeToken)                                             | 1   |
+| [LightX2V](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=LightX2V)                                               | 1   |
+| [MLX Swift (PrismML fork)](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=MLX%20Swift%20%28PrismML%20fork%29)     | 1   |
+| [NVIDIA Sol](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=NVIDIA%20Sol)                                         | 1   |
+| [Osaurus](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Osaurus)                                                 | 1   |
+| [TabbyAPI](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=TabbyAPI)                                               | 1   |
+| [llama.cpp (mirai-s fork)](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=llama.cpp%20%28mirai-s%20fork%29)       | 1   |
+| [mflux](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=mflux)                                                     | 1   |
+| [sparkinfer](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=sparkinfer)                                           | 1   |
+| [Unspecified](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Unspecified)                                         | 43  |
 
 ## 第 1 档 · 2,500 美元以内
 
@@ -240,33 +239,33 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 
 ## 引擎与工具
 
-| 项目 | ⭐ Star | 实时 | 最后推送 | 简介 |
-|---|--:|---|---|---|
-| [llama.cpp](https://github.com/ggml-org/llama.cpp) | 131.0k | ![stars](https://img.shields.io/github/stars/ggml-org/llama.cpp?style=flat&label=) | 2026-10-13 | 基准 GGUF 引擎，支持 CPU/CUDA/ROCm/Vulkan/Metal。 |
-| [vLLM](https://github.com/vllm-project/vllm) | 93.7k | ![stars](https://img.shields.io/github/stars/vllm-project/vllm?style=flat&label=) | 2026-10-13 | 高吞吐推理服务；Spark 上的 MTP 和多路并发配方。 |
-| [SGLang](https://github.com/sgl-project/sglang) | 37.1k | ![stars](https://img.shields.io/github/stars/sgl-project/sglang?style=flat&label=) | 2026-10-13 | 推理服务框架；DGX Spark 上与 DFlash2 搭配。 |
-| [MLX](https://github.com/ml-explore/mlx) | 28.8k | ![stars](https://img.shields.io/github/stars/ml-explore/mlx?style=flat&label=) | 2026-10-13 | Apple 的数组框架，多数 Mac 配方基于它。 |
-| [Strata](https://github.com/Niko1221/Strata) | 23.5k | ![stars](https://img.shields.io/github/stars/Niko1221/Strata?style=flat&label=) | 2026-10-12 | 把 MoE 专家拆到显存、内存和 SSD 的推理引擎，面向 12–24GB 显卡；本库多数 Flash-Next 配方用它。 |
-| [oMLX](https://github.com/jundot/omlx) | 22.8k | ![stars](https://img.shields.io/github/stars/jundot/omlx?style=flat&label=) | 2026-10-13 | Apple Silicon 上的 MLX 推理服务，支持连续批处理和分层 KV/SSD 缓存。 |
-| [DFlash / DFlash 2](https://github.com/z-lab/dflash) | 6.2k | ![stars](https://img.shields.io/github/stars/z-lab/dflash?style=flat&label=) | 2026-08-18 | 块扩散投机解码；DFlash 2 提供 Qwen3.8-27B 草稿模型。 |
-| [LightX2V](https://github.com/ModelTC/LightX2V) | 2.9k | ![stars](https://img.shields.io/github/stars/ModelTC/LightX2V?style=flat&label=) | 2026-10-13 | 视频生成推理框架，有 5090 上的 MiniMax H3 结果。 |
-| [TensorFold](https://github.com/ashhart/TensorFold) | 1.3k | ![stars](https://img.shields.io/github/stars/ashhart/TensorFold?style=flat&label=) | 2026-10-12 | 兼容 OpenAI 接口的 MoE 运行时，带投机解码；也用于 ComfyUI 里的 MiniMax H3。 |
-| [halogen](https://github.com/peonist-ai/halogen-flash-server) | 954 | ![stars](https://img.shields.io/github/stars/peonist-ai/halogen-flash-server?style=flat&label=) | 2026-10-13 | 针对 Strix Halo 调优的 Flash-Next 服务。 |
-| [dflash-mlx](https://github.com/bstnxbt/dflash-mlx) | 788 | ![stars](https://img.shields.io/github/stars/bstnxbt/dflash-mlx?style=flat&label=) | 2026-08-20 | Apple Silicon（MLX）上的 DFlash 投机解码。 |
-| [FastH3](https://haoailab.com/blogs/fasth3-rtx/) | — | *（网站/博客）* | — | Hao AI Lab 的 8 步蒸馏版 MiniMax H3，面向 RTX 显卡（博客）。 |
+| 项目                                                            | ⭐ Star | 实时                                                                                              | 最后推送       | 简介                                                             |
+| ------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------- | ---------- | -------------------------------------------------------------- |
+| [llama.cpp](https://github.com/ggml-org/llama.cpp)            | 131.0k | ![stars](https://img.shields.io/github/stars/ggml-org/llama.cpp?style=flat&label=)              | 2026-10-13 | 基准 GGUF 引擎，支持 CPU/CUDA/ROCm/Vulkan/Metal。                      |
+| [vLLM](https://github.com/vllm-project/vllm)                  | 93.7k  | ![stars](https://img.shields.io/github/stars/vllm-project/vllm?style=flat&label=)               | 2026-10-13 | 高吞吐推理服务；Spark 上的 MTP 和多路并发配方。                                  |
+| [SGLang](https://github.com/sgl-project/sglang)               | 37.1k  | ![stars](https://img.shields.io/github/stars/sgl-project/sglang?style=flat&label=)              | 2026-10-13 | 推理服务框架；DGX Spark 上与 DFlash2 搭配。                                |
+| [MLX](https://github.com/ml-explore/mlx)                      | 28.8k  | ![stars](https://img.shields.io/github/stars/ml-explore/mlx?style=flat&label=)                  | 2026-10-13 | Apple 的数组框架，多数 Mac 配方基于它。                                      |
+| [Strata](https://github.com/Niko1221/Strata)                  | 23.5k  | ![stars](https://img.shields.io/github/stars/Niko1221/Strata?style=flat&label=)                 | 2026-10-12 | 把 MoE 专家拆到显存、内存和 SSD 的推理引擎，面向 12–24GB 显卡；本库多数 Flash-Next 配方用它。 |
+| [oMLX](https://github.com/jundot/omlx)                        | 22.8k  | ![stars](https://img.shields.io/github/stars/jundot/omlx?style=flat&label=)                     | 2026-10-13 | Apple Silicon 上的 MLX 推理服务，支持连续批处理和分层 KV/SSD 缓存。                |
+| [DFlash / DFlash 2](https://github.com/z-lab/dflash)          | 6.2k   | ![stars](https://img.shields.io/github/stars/z-lab/dflash?style=flat&label=)                    | 2026-08-18 | 块扩散投机解码；DFlash 2 提供 Qwen3.8-27B 草稿模型。                          |
+| [LightX2V](https://github.com/ModelTC/LightX2V)               | 2.9k   | ![stars](https://img.shields.io/github/stars/ModelTC/LightX2V?style=flat&label=)                | 2026-10-13 | 视频生成推理框架，有 5090 上的 MiniMax H3 结果。                              |
+| [TensorFold](https://github.com/ashhart/TensorFold)           | 1.3k   | ![stars](https://img.shields.io/github/stars/ashhart/TensorFold?style=flat&label=)              | 2026-10-12 | 兼容 OpenAI 接口的 MoE 运行时，带投机解码；也用于 ComfyUI 里的 MiniMax H3。         |
+| [halogen](https://github.com/peonist-ai/halogen-flash-server) | 954    | ![stars](https://img.shields.io/github/stars/peonist-ai/halogen-flash-server?style=flat&label=) | 2026-10-13 | 针对 Strix Halo 调优的 Flash-Next 服务。                               |
+| [dflash-mlx](https://github.com/bstnxbt/dflash-mlx)           | 788    | ![stars](https://img.shields.io/github/stars/bstnxbt/dflash-mlx?style=flat&label=)              | 2026-08-20 | Apple Silicon（MLX）上的 DFlash 投机解码。                              |
+| [FastH3](https://haoailab.com/blogs/fasth3-rtx/)              | —      | *（网站/博客）*                                                                                       | —          | Hao AI Lab 的 8 步蒸馏版 MiniMax H3，面向 RTX 显卡（博客）。                  |
 
 <sub>⭐ 快照由 `scripts/update_stars.py` 更新于 2026-10-13T14:44Z（UTC）· 「实时」徽章由 shields.io 在打开页面时实时渲染。</sub>
 
 ## 相关榜单与清单
 
-| 项目 | ⭐ Star | 实时 | 最后推送 | 简介 |
-|---|--:|---|---|---|
-| [Awesome-LLM-Inference](https://github.com/xlite-dev/Awesome-LLM-Inference) | 5.5k | ![stars](https://img.shields.io/github/stars/xlite-dev/Awesome-LLM-Inference?style=flat&label=) | 2026-08-14 | 推理方向论文与代码合集。 |
-| [awesome-local-llm](https://github.com/rafska/awesome-local-llm) | 3.0k | ![stars](https://img.shields.io/github/stars/rafska/awesome-local-llm?style=flat&label=) | 2026-10-12 | 本地大模型平台与工具目录。 |
-| [LocalScore](https://github.com/cjpais/LocalScore) | 134 | ![stars](https://img.shields.io/github/stars/cjpais/LocalScore?style=flat&label=) | 2026-10-09 | 标准化的单卡跑分 CLI。 |
-| [llamabench.ai](https://llamabench.ai/) | — | *（网站/博客）* | — | llama.cpp 跑分结果，附完整启动命令。 |
-| [llamaperf](https://llamaperf.com/leaderboard) | — | *（网站/博客）* | — | 社区自报排行榜（给中位数）。 |
-| [canirun.ai](https://canirun.ai/) | — | *（网站/博客）* | — | 估算模型能否在你的硬件上运行、跑多快。 |
+| 项目                                                                          | ⭐ Star | 实时                                                                                              | 最后推送       | 简介                      |
+| --------------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------- | ---------- | ----------------------- |
+| [Awesome-LLM-Inference](https://github.com/xlite-dev/Awesome-LLM-Inference) | 5.5k   | ![stars](https://img.shields.io/github/stars/xlite-dev/Awesome-LLM-Inference?style=flat&label=) | 2026-08-14 | 推理方向论文与代码合集。            |
+| [awesome-local-llm](https://github.com/rafska/awesome-local-llm)            | 3.0k   | ![stars](https://img.shields.io/github/stars/rafska/awesome-local-llm?style=flat&label=)        | 2026-10-12 | 本地大模型平台与工具目录。           |
+| [LocalScore](https://github.com/cjpais/LocalScore)                          | 134    | ![stars](https://img.shields.io/github/stars/cjpais/LocalScore?style=flat&label=)               | 2026-10-09 | 标准化的单卡跑分 CLI。           |
+| [llamabench.ai](https://llamabench.ai/)                                     | —      | *（网站/博客）*                                                                                       | —          | llama.cpp 跑分结果，附完整启动命令。 |
+| [llamaperf](https://llamaperf.com/leaderboard)                              | —      | *（网站/博客）*                                                                                       | —          | 社区自报排行榜（给中位数）。          |
+| [canirun.ai](https://canirun.ai/)                                           | —      | *（网站/博客）*                                                                                       | —          | 估算模型能否在你的硬件上运行、跑多快。     |
 
 <sub>⭐ 快照由 `scripts/update_stars.py` 更新于 2026-10-13T14:44Z（UTC）· 「实时」徽章由 shields.io 在打开页面时实时渲染。</sub>
 

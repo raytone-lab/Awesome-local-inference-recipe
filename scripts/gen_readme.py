@@ -46,6 +46,34 @@ def en(s):
     return re.sub(r'\s+',' ',s).strip(' ·+/,') or None
 def slug(s): return re.sub(r'[^\w \-]','',s.lower()).replace(' ','-')
 def fmt(n): return f"{n/1000:.1f}k" if n>=1000 else str(n)
+import unicodedata
+def _w(s): return len(s.encode('utf-16-le'))//2  # JS string length, as remark-lint measures
+def _pad(s,w): return s+' '*(w-_w(s))
+def _cells(l):
+    l=l.strip()[1:-1]; out=[];cur='';i=0
+    while i<len(l):
+        c=l[i]
+        if c=='\\' and i+1<len(l): cur+=l[i:i+2]; i+=2; continue
+        if c=='|': out.append(cur.strip()); cur=''
+        else: cur+=c
+        i+=1
+    out.append(cur.strip()); return out
+def align_tables(txt):
+    """Pad markdown tables so pipes align (remark-lint table-pipe-alignment / cell-padding)."""
+    lines=txt.split('\n'); res=[]; i=0
+    while i<len(lines):
+        if lines[i].startswith('|') and i+1<len(lines) and re.match(r'^\|[\s:|-]+\|$',lines[i+1].strip()):
+            j=i
+            while j<len(lines) and lines[j].startswith('|'): j+=1
+            rows=[_cells(l) for l in lines[i:j]]; n=max(map(len,rows))
+            rows=[r+['']*(n-len(r)) for r in rows]
+            w=[max(3,max(_w(r[k]) for k_,r in enumerate(rows) if k_!=1)) for k in range(n)]
+            for k_,r in enumerate(rows):
+                if k_==1: res.append('| '+' | '.join('-'*w[k] for k in range(n))+' |')
+                else: res.append('| '+' | '.join(_pad(r[k],w[k]) for k in range(n))+' |')
+            i=j
+        else: res.append(lines[i]); i+=1
+    return '\n'.join(res)
 def build(lang):
     T=L[lang]; E=(lambda s:en(s)) if lang=='en' else (lambda s:s)
     def key(r):
@@ -98,12 +126,13 @@ def build(lang):
         return '\n'.join(rows)+(f"\n\n<sub>{T['note'].format(u=UPD)}</sub>" if UPD else '')
     tpl=open(R/'scripts'/T['tpl']).read(); head,tail=tpl.split('<!--RECIPES-->')
     n={c:sum(r['category']==c for r in D) for c in T['cats']}
-    toc=[f"- [{T['legend']}](#{slug(T['legend'])})"]+toc+[f"- [{x}](#{slug(x)})" for x in (T['eng'],T['rel'],T['contrib'],T['lic'])]
+    toc=[f"- [{T['legend']}](#{slug(T['legend'])})"]+toc+[f"- [{x}](#{slug(x)})" for x in (T['eng'],T['rel'],T['lic'])]
     head=head.replace('{{TOC}}','\n'.join(toc)).replace('{{N}}',str(len(D))).replace('{{NT}}',str(n['text'])).replace('{{NI}}',str(n['image'])).replace('{{NV}}',str(n['video-audio']))
     tail=tail.replace('<!--ENGINES-->',rtable('engines')).replace('<!--RELATED-->',rtable('related'))
     txt=head+'\n'.join(out)+'\n'+tail
     for pg in ('explore.html','submit.html'):
         txt=txt.replace(f'](%s'%pg,f']({PAGES}{pg}').replace(f'href="{pg}','href="'+PAGES+pg)
+    txt=align_tables(txt)
     open(R/T['file'],'w').write(txt)
     return T['file']
 for lang in L: print('written', build(lang))
