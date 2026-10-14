@@ -6,6 +6,8 @@
 
 <sub>暂定名：**RecipeBench** · 共 {{N}} 条配方（文字 {{NT}} · 图像 {{NI}} · 影音 {{NV}}）· 数据截至 2026-10-13 · <a href="explore.html">配方库</a> · <a href="submit.html">提交配方</a></sub>
 
+<sub>站内链接指向 GitHub Pages；若尚未上线，可克隆仓库后在本地打开 <code>explore.html</code>（<code>python3 -m http.server</code>）。</sub>
+
 ## 目录
 
 {{TOC}}

@@ -7,6 +7,8 @@ D = json.load(open(R/'data/recipes.json'))
 REPOS = json.load(open(R/'data/repos.json'))
 try: UPD = json.load(open(R/'data/repos.meta.json'))['updated_at']
 except Exception: UPD = None
+HWF_EN = {'NVIDIA 消费级':'NVIDIA consumer','二手数据中心卡':'Used datacenter GPU','其他':'Other'}
+PAGES = 'https://raytone-lab.github.io/Awesome-local-inference-recipe/'
 LVI = {'官方':'🏛️','实测':'✅','转述':'🔁','宣称':'📣'}
 CJK = re.compile(r'[\u3000-\u303f\u3400-\u9fff\uff00-\uffef“”]')
 L = {
@@ -53,7 +55,7 @@ def build(lang):
     def ln(r):
         q=E(r['quant']); q=f" `{clip(q,28)}`" if q else ''
         eg=E(r['engine']); eg='' if (not eg or r['engine']=='Unspecified') else f" · {eg}"
-        return f"- **{E(r['model'])}**{eg}{q} — {clip(E(r['hardware']) or r['hardware_family'],60)} → {key(r)} {LVI.get(r['source_level'],'')} [{T['src']}]({r['source_url']})"
+        return f"- **{E(r['model'])}**{eg}{q} — {clip(E(r['hardware']) or (HWF_EN.get(r['hardware_family'],r['hardware_family']) if lang=='en' else r['hardware_family']),60)} → {key(r)} {LVI.get(r['source_level'],'')} [{T['src']}]({r['source_url']})"
     out=[];toc=[]
     def sec(t): out.append(f"\n## {t}\n"); toc.append(f"- [{t}](#{slug(t)})")
     seen=set();hot=[r for r in sorted([r for r in D if r.get('x_post')],key=lambda r:-(r['x_post']['likes']+3*r['x_post']['reposts'])) if not (r['source_url'] in seen or seen.add(r['source_url']))][:8]
@@ -98,6 +100,9 @@ def build(lang):
     toc=[f"- [{T['legend']}](#{slug(T['legend'])})"]+toc+[f"- [{x}](#{slug(x)})" for x in (T['eng'],T['rel'],T['contrib'],T['lic'])]
     head=head.replace('{{TOC}}','\n'.join(toc)).replace('{{N}}',str(len(D))).replace('{{NT}}',str(n['text'])).replace('{{NI}}',str(n['image'])).replace('{{NV}}',str(n['video-audio']))
     tail=tail.replace('<!--ENGINES-->',rtable('engines')).replace('<!--RELATED-->',rtable('related'))
-    open(R/T['file'],'w').write(head+'\n'.join(out)+'\n'+tail)
+    txt=head+'\n'.join(out)+'\n'+tail
+    for pg in ('explore.html','submit.html'):
+        txt=txt.replace(f'](%s'%pg,f']({PAGES}{pg}').replace(f'href="{pg}','href="'+PAGES+pg)
+    open(R/T['file'],'w').write(txt)
     return T['file']
 for lang in L: print('written', build(lang))

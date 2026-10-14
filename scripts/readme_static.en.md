@@ -6,6 +6,8 @@
 
 <sub>Working name: **RecipeBench** (placeholder) · {{N}} recipes ({{NT}} text · {{NI}} image · {{NV}} video/audio) · data as of 2026-10-13 · <a href="explore.html">Explorer</a> · <a href="submit.html">Submit</a></sub>
 
+<sub>Site links point to GitHub Pages; if it is not live yet, clone the repo and open <code>explore.html</code> locally (<code>python3 -m http.server</code>).</sub>
+
 ## Contents
 
 {{TOC}}
