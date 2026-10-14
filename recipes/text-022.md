@@ -1,6 +1,6 @@
 # Qwen3.8-Flash-Next · ExLlama · 1× DGX Spark
 
-[English](text-022.md) | [简体中文](text-022.zh-CN.md) · [← All recipes](../README.md)
+**English** | [简体中文](text-022.zh-CN.md) | [日本語](text-022.ja.md) · [← All recipes](../README.md)
 
 > Source level: **✅ Measured** · Date: — · Numbers are quoted from the source and have not been re-run by this repo.
 

@@ -1,6 +1,6 @@
 # 入门指南
 
-[English](getting-started.md) | [简体中文](getting-started.zh-CN.md)
+[English](getting-started.md) | **简体中文** | [日本語](getting-started.ja.md)
 
 如何按预算和硬件挑选配方，并把它跑起来。
 

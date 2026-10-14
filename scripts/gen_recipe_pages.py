@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate how-to guide pages (recipes/<id>.md + recipes/<id>.zh-CN.md) for a curated batch.
+"""Generate how-to guide pages (recipes/<id>.md, .zh-CN.md, .ja.md) for a curated batch.
 Only uses fields in data/recipes.json; never invents commands or numbers.
 Run: python3 scripts/gen_recipe_pages.py"""
 import json, re
@@ -16,7 +16,13 @@ ENGINE_URL = {
  'SGLang':'https://github.com/sgl-project/sglang','ExLlama':'https://github.com/turboderp-org/exllamav3','Strata':'https://github.com/Niko1221/Strata',
  'oMLX':'https://github.com/jundot/omlx','TensorFold':'https://github.com/ashhart/TensorFold','LightX2V':'https://github.com/ModelTC/LightX2V',
  'Halogen':'https://github.com/peonist-ai/halogen-flash-server','ComfyUI':'https://github.com/comfyanonymous/ComfyUI'}
-LV = {'官方':('🏛️ Official','🏛️ 官方'),'实测':('✅ Measured','✅ 实测'),'转述':('🔁 Relayed','🔁 转述'),'宣称':('📣 Claimed','📣 宣称')}
+LV = {'官方':('🏛️ Official','🏛️ 官方','🏛️ 公式'),'实测':('✅ Measured','✅ 实测','✅ 実測'),'转述':('🔁 Relayed','🔁 转述','🔁 伝聞'),'宣称':('📣 Claimed','📣 宣称','📣 主張')}
+HWF_JA = {'NVIDIA 消费级':'NVIDIA コンシューマー','二手数据中心卡':'中古データセンター GPU','其他':'その他'}
+JA = {'Source level':'出典レベル','Date':'日付','Numbers are quoted from the source and have not been re-run by this repo.':'数値は出典からの引用で、このリポジトリでは再計測していません。','Hardware':'ハードウェア','Reference cost':'参考価格','Model':'モデル','Download':'ダウンロード','Engine':'エンジン','install:':'インストール：','Note':'備考','Launch command':'起動コマンド','Excerpt from the source (contains `...`/placeholders); see the source for full arguments.':'出典からの抜粋です（`...` やプレースホルダーを含みます）。全引数は出典を参照してください。','Command not published — see source.':'コマンドは公開されていません。出典を参照してください。','Key parameters':'主なパラメータ','Context':'コンテキスト','Concurrency':'同時実行','Tags':'タグ','Expected speed':'想定速度','Caveats':'注意点','Not a first-hand measurement (claimed/relayed); your results may differ.':'本人による実測ではありません（主張・伝聞）。実際の速度は異なる場合があります。','Speed varies with drivers, engine version, context length and prompt length.':'速度はドライバー、エンジンのバージョン、コンテキスト長、プロンプト長によって変わります。','Source & attribution':'出典とクレジット','Credit to the original author; this page only summarizes and links. Data under CC BY 4.0.':'権利は元の投稿者にあります。このページは要約とリンクのみです。データは CC BY 4.0。'}
+SUF = {'en':'.md','zh':'.zh-CN.md','ja':'.ja.md'}
+def switch(base, cur):
+    names = [('en','English'),('zh','简体中文'),('ja','日本語')]
+    return ' | '.join(f'**{n}**' if k==cur else f'[{n}]({base}{SUF[k]})' for k,n in names)
 HWF = {'NVIDIA 消费级':'NVIDIA consumer','二手数据中心卡':'Used datacenter GPU','其他':'Other'}
 CJK = re.compile(r'[\u3400-\u9fff\uff00-\uffef\u3000-\u303f]')
 def en(s):
@@ -33,24 +39,24 @@ def engine_url(e):
         if e == k or e.startswith(k+' '): return u
 def page(r, lang):
     Z = lang == 'zh'; T = (lambda s: s) if Z else en
-    lvl = LV.get(r['source_level'], ('',''))[1 if Z else 0]
-    na = '未公开，见来源' if Z else 'not published, see source'
+    lvl = LV.get(r['source_level'], ('','',''))[{'en':0,'zh':1,'ja':2}[lang]]
+    na = '未公开，见来源' if Z else ('未公開（出典を参照）' if lang=='ja' else 'not published, see source')
     repo = hf_repo(r); eu = engine_url(r.get('engine'))
     if Z: metric = r.get('metric')
     else: metric = r.get('metric_en') or (f"{r['tok_s']} tok/s (generation)" if r.get('tok_s') else None)
     cmd = r.get('launch_command')
     if cmd and cmd.startswith('见'): cmd = None
-    other = 'README.md' if not Z else 'README.zh-CN.md'
+    other = 'README'+SUF[lang]
     L = []
     L.append(f"# {T(r['model']) or r['model']} · {T(r.get('engine')) or '—'} · {T(r['hardware']) or r['hardware']}")
     L.append('')
-    L.append(f"[English]({r['id']}.md) | [简体中文]({r['id']}.zh-CN.md) · [← {'返回列表' if Z else 'All recipes'}](../{other})")
+    L.append(f"{switch(r['id'], lang)} · [← {({'zh':'返回列表','ja':'一覧に戻る'}).get(lang,'All recipes')}](../{other})")
     L.append('')
-    h = (lambda zh, e: zh if Z else e)
+    h = (lambda zh, e: zh if Z else (JA[e] if lang=='ja' else e))
     L.append(f"> {h('来源等级','Source level')}: **{lvl}** · {h('日期','Date')}: {r.get('date') or '—'} · {h('数字均摘自来源，未经本仓库复测。','Numbers are quoted from the source and have not been re-run by this repo.')}")
     L.append('')
     L.append(f"## {h('硬件','Hardware')}\n")
-    L.append(f"- {T(r['hardware']) or r['hardware']} ({r['hardware_family'] if Z else HWF.get(r['hardware_family'], r['hardware_family'])})")
+    L.append(f"- {T(r['hardware']) or r['hardware']} ({r['hardware_family'] if Z else (HWF_JA if lang=='ja' else HWF).get(r['hardware_family'], r['hardware_family'])})")
     cost = r.get('hardware_cost_text') if Z else (f"≈ ${r['hardware_cost_usd']:,}" if r.get('hardware_cost_usd') else None)
     L.append(f"- {h('参考价格','Reference cost')}: {cost or na}\n")
     L.append(f"## {h('模型','Model')}\n")
@@ -87,14 +93,16 @@ def page(r, lang):
 def main():
     out = R/'recipes'; out.mkdir(exist_ok=True)
     for f in out.glob('*.md'): f.unlink()
-    idx_en = ['# Recipe guides', '', '[English](README.md) | [简体中文](README.zh-CN.md)', '', 'Step-by-step pages for a first batch of well-sourced recipes. New here? Read [Getting started](../docs/getting-started.md).', '', '| Recipe | Hardware | Level |', '|---|---|---|']
-    idx_zh = ['# 配方指南', '', '[English](README.md) | [简体中文](README.zh-CN.md)', '', '首批来源可靠配方的分步页面。第一次来？先看 [入门指南](../docs/getting-started.zh-CN.md)。', '', '| 配方 | 硬件 | 来源等级 |', '|---|---|---|']
+    idx_en = ['# Recipe guides', '', switch('README','en'), '', 'Step-by-step pages for a first batch of well-sourced recipes. New here? Read [Getting started](../docs/getting-started.md).', '', '| Recipe | Hardware | Level |', '|---|---|---|']
+    idx_zh = ['# 配方指南', '', switch('README','zh'), '', '首批来源可靠配方的分步页面。第一次来？先看 [入门指南](../docs/getting-started.zh-CN.md)。', '', '| 配方 | 硬件 | 来源等级 |', '|---|---|---|']
+    idx_ja = ['# レシピガイド', '', switch('README','ja'), '', '出典のしっかりしたレシピを、手順付きでまとめた最初のページ群です。初めての方は[はじめに](../docs/getting-started.ja.md)をどうぞ。', '', '| レシピ | ハードウェア | 出典レベル |', '|---|---|---|']
     for i in GUIDES:
         r = D[i]
-        (out/f'{i}.md').write_text(page(r, 'en')); (out/f'{i}.zh-CN.md').write_text(page(r, 'zh'))
+        (out/f'{i}.md').write_text(page(r, 'en')); (out/f'{i}.zh-CN.md').write_text(page(r, 'zh')); (out/f'{i}.ja.md').write_text(page(r, 'ja'))
         idx_en.append(f"| [{en(r['model'])} · {en(r.get('engine')) or '—'}]({i}.md) | {en(r['hardware']) or r['hardware']} | {LV[r['source_level']][0]} |")
         idx_zh.append(f"| [{r['model']} · {r.get('engine') or '—'}]({i}.zh-CN.md) | {r['hardware']} | {LV[r['source_level']][1]} |")
-    (out/'README.md').write_text('\n'.join(idx_en)+'\n'); (out/'README.zh-CN.md').write_text('\n'.join(idx_zh)+'\n')
+        idx_ja.append(f"| [{en(r['model'])} · {en(r.get('engine')) or '—'}]({i}.ja.md) | {en(r['hardware']) or r['hardware']} | {LV[r['source_level']][2]} |")
+    (out/'README.ja.md').write_text('\n'.join(idx_ja)+'\n'); (out/'README.md').write_text('\n'.join(idx_en)+'\n'); (out/'README.zh-CN.md').write_text('\n'.join(idx_zh)+'\n')
     json.dump(GUIDES, open(R/'data/guides.json','w'))
     print(len(GUIDES), 'guides written')
 if __name__ == '__main__': main()

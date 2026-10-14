@@ -1,6 +1,6 @@
 # Qwen3.8-Flash-Next Abliterated · Strata · V100 32GB + RTX 5060 Ti 16GB + 32GB DDR5
 
-[English](text-018.md) | [简体中文](text-018.zh-CN.md) · [← All recipes](../README.md)
+**English** | [简体中文](text-018.zh-CN.md) | [日本語](text-018.ja.md) · [← All recipes](../README.md)
 
 > Source level: **✅ Measured** · Date: — · Numbers are quoted from the source and have not been re-run by this repo.
 

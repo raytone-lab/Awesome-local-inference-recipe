@@ -1,6 +1,6 @@
 # FastH3 V2 · Unspecified · RTX 5090 32GB
 
-[English](video-audio-001.md) | [简体中文](video-audio-001.zh-CN.md) · [← All recipes](../README.md)
+**English** | [简体中文](video-audio-001.zh-CN.md) | [日本語](video-audio-001.ja.md) · [← All recipes](../README.md)
 
 > Source level: **🏛️ Official** · Date: 2026-10-06 · Numbers are quoted from the source and have not been re-run by this repo.
 

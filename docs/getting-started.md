@@ -1,6 +1,6 @@
 # Getting started
 
-[English](getting-started.md) | [简体中文](getting-started.zh-CN.md)
+**English** | [简体中文](getting-started.zh-CN.md) | [日本語](getting-started.ja.md)
 
 How to pick a recipe for your budget and hardware, then run it.
 

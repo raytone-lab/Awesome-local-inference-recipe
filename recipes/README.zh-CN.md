@@ -1,6 +1,6 @@
 # 配方指南
 
-[English](README.md) | [简体中文](README.zh-CN.md)
+[English](README.md) | **简体中文** | [日本語](README.ja.md)
 
 首批来源可靠配方的分步页面。第一次来？先看 [入门指南](../docs/getting-started.zh-CN.md)。
 

@@ -1,6 +1,6 @@
 # Qwen-Image 2.1 · ComfyUI · RTX 4090 24GB
 
-[English](image-001.md) | [简体中文](image-001.zh-CN.md) · [← All recipes](../README.md)
+**English** | [简体中文](image-001.zh-CN.md) | [日本語](image-001.ja.md) · [← All recipes](../README.md)
 
 > Source level: **✅ Measured** · Date: — · Numbers are quoted from the source and have not been re-run by this repo.
 

@@ -1,6 +1,6 @@
 # FastH3 V2（MiniMax H3 8 步蒸馏） · Unspecified · RTX 5090 32GB
 
-[English](video-audio-001.md) | [简体中文](video-audio-001.zh-CN.md) · [← 返回列表](../README.zh-CN.md)
+[English](video-audio-001.md) | **简体中文** | [日本語](video-audio-001.ja.md) · [← 返回列表](../README.zh-CN.md)
 
 > 来源等级: **🏛️ 官方** · 日期: 2026-10-06 · 数字均摘自来源，未经本仓库复测。
 

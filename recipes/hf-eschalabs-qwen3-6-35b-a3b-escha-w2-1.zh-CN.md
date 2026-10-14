@@ -1,6 +1,6 @@
 # Qwen3.6-35B-A3B-Escha-W2 · SGLang · RTX 5090 32GB
 
-[English](hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.md) | [简体中文](hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.zh-CN.md) · [← 返回列表](../README.zh-CN.md)
+[English](hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.md) | **简体中文** | [日本語](hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.ja.md) · [← 返回列表](../README.zh-CN.md)
 
 > 来源等级: **📣 宣称** · 日期: 2026-07-22 · 数字均摘自来源，未经本仓库复测。
 

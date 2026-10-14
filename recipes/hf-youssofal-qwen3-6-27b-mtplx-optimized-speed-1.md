@@ -1,6 +1,6 @@
 # Qwen3.6-27B-MTPLX-Optimized-Speed · MTPLX · MacBook M5 Max
 
-[English](hf-youssofal-qwen3-6-27b-mtplx-optimized-speed-1.md) | [简体中文](hf-youssofal-qwen3-6-27b-mtplx-optimized-speed-1.zh-CN.md) · [← All recipes](../README.md)
+**English** | [简体中文](hf-youssofal-qwen3-6-27b-mtplx-optimized-speed-1.zh-CN.md) | [日本語](hf-youssofal-qwen3-6-27b-mtplx-optimized-speed-1.ja.md) · [← All recipes](../README.md)
 
 > Source level: **📣 Claimed** · Date: 2026-05-03 · Numbers are quoted from the source and have not been re-run by this repo.
 

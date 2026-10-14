@@ -1,6 +1,6 @@
 # Ternary Bonsai 2 27B · llama.cpp (PrismML fork) · RTX 5090 32GB
 
-[English](hf-prism-ml-ternary-bonsai-2-27b-gguf-1.md) | [简体中文](hf-prism-ml-ternary-bonsai-2-27b-gguf-1.zh-CN.md) · [← 返回列表](../README.zh-CN.md)
+[English](hf-prism-ml-ternary-bonsai-2-27b-gguf-1.md) | **简体中文** | [日本語](hf-prism-ml-ternary-bonsai-2-27b-gguf-1.ja.md) · [← 返回列表](../README.zh-CN.md)
 
 > 来源等级: **📣 宣称** · 日期: 2026-09-16 · 数字均摘自来源，未经本仓库复测。
 

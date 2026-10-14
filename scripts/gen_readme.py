@@ -43,7 +43,7 @@ L = {
    fam='モデルファミリー別', famdesc='ファミリー名をクリックすると、絞り込み済みのエクスプローラーが開きます。タグ：{tags}。', engidx='エンジン別', engdesc='エンジン名は表記を統一しています（`scripts/normalize_engines.py`）。元の表記は `engine_note` に残しています。', th2='| ファミリー | レシピ数 | テキスト | 画像 | 動画・音声 |', th3='| エンジン | レシピ数 |',
    hot='今月の注目', hotdesc='2026-09-15〜10-13 に X で反応が多かったレシピ投稿（いいね + リポスト×3 の順）。',
    unk='価格非公開', unkdesc='1 枚単位で価格が出ているマルチ GPU 構成、価格の記載がない Mac など、単一の公開価格がないレシピ · {n} 件。tok/s 上位のテキストレシピ：',
-   guide='手順', gsuf='.md', more='…ほか {n} 件は[エクスプローラー](explore.html)で。', all='…全 {n} 件は[エクスプローラー](explore.html)で見られます。', count='{n} 件',
+   guide='手順', gsuf='.ja.md', more='…ほか {n} 件は[エクスプローラー](explore.html)で。', all='…全 {n} 件は[エクスプローラー](explore.html)で見られます。', count='{n} 件',
    src='出典', see='出典を参照', legend='凡例', eng='エンジンとツール', rel='関連リスト・ベンチマーク', contrib='コントリビュート', lic='ライセンス',
    th='| プロジェクト | ⭐ Star | ライブ | 最終 push | 概要 |', site='*（サイト・ブログ）*', desc='desc_ja',
    note='⭐ スナップショットは `scripts/update_stars.py` で {u}（UTC）に更新 · 「ライブ」バッジは表示時に shields.io が描画します。'),

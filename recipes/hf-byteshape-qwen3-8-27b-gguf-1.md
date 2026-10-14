@@ -1,6 +1,6 @@
 # Qwen3.8-27B · llama.cpp · RTX 5090 32GB
 
-[English](hf-byteshape-qwen3-8-27b-gguf-1.md) | [简体中文](hf-byteshape-qwen3-8-27b-gguf-1.zh-CN.md) · [← All recipes](../README.md)
+**English** | [简体中文](hf-byteshape-qwen3-8-27b-gguf-1.zh-CN.md) | [日本語](hf-byteshape-qwen3-8-27b-gguf-1.ja.md) · [← All recipes](../README.md)
 
 > Source level: **📣 Claimed** · Date: 2026-08-18 · Numbers are quoted from the source and have not been re-run by this repo.
 

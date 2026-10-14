@@ -1,6 +1,6 @@
 # Qwen3.8-Flash-Next-MLX-Serve-mixed-4 · mlx-serve · Mac Studio/MBP M4 Max 128GB
 
-[English](hf-ddalcu-qwen3-8-flash-next-mlx-serve-mixed-4-8bit-1.md) | [简体中文](hf-ddalcu-qwen3-8-flash-next-mlx-serve-mixed-4-8bit-1.zh-CN.md) · [← 返回列表](../README.zh-CN.md)
+[English](hf-ddalcu-qwen3-8-flash-next-mlx-serve-mixed-4-8bit-1.md) | **简体中文** | [日本語](hf-ddalcu-qwen3-8-flash-next-mlx-serve-mixed-4-8bit-1.ja.md) · [← 返回列表](../README.zh-CN.md)
 
 > 来源等级: **📣 宣称** · 日期: 2026-08-27 · 数字均摘自来源，未经本仓库复测。
 

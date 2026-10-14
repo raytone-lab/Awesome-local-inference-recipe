@@ -1,6 +1,6 @@
 # Qwen-Image 2.1（7B + 8B 文本编码器） · ComfyUI · RTX 4090 24GB
 
-[English](image-001.md) | [简体中文](image-001.zh-CN.md) · [← 返回列表](../README.zh-CN.md)
+[English](image-001.md) | **简体中文** | [日本語](image-001.ja.md) · [← 返回列表](../README.zh-CN.md)
 
 > 来源等级: **✅ 实测** · 日期: — · 数字均摘自来源，未经本仓库复测。
 

@@ -1,6 +1,6 @@
 # Ternary Bonsai 2 27B · llama.cpp (PrismML fork) · MacBook M5 Pro
 
-[English](hf-prism-ml-ternary-bonsai-2-27b-gguf-5.md) | [简体中文](hf-prism-ml-ternary-bonsai-2-27b-gguf-5.zh-CN.md) · [← All recipes](../README.md)
+**English** | [简体中文](hf-prism-ml-ternary-bonsai-2-27b-gguf-5.zh-CN.md) | [日本語](hf-prism-ml-ternary-bonsai-2-27b-gguf-5.ja.md) · [← All recipes](../README.md)
 
 > Source level: **📣 Claimed** · Date: 2026-09-16 · Numbers are quoted from the source and have not been re-run by this repo.
 

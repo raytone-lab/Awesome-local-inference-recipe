@@ -8,7 +8,7 @@
 
 <sub>サイトへのリンクは GitHub Pages を指しています。表示されない場合は、リポジトリをクローンしてローカルで <code>explore.html</code> を開いてください（<code>python3 -m http.server</code>）。</sub>
 
-**新着：** 手順付きの[レシピガイド](recipes/README.md)（英語）· [はじめに](docs/getting-started.md)（英語）
+**新着：** 手順付きの[レシピガイド](recipes/README.ja.md) · [はじめに](docs/getting-started.ja.md)
 
 > 各レシピのモデル名・ハードウェア・数値は元の投稿から引用しています。日本語訳のない説明文は「出典を参照」と表示します。
 

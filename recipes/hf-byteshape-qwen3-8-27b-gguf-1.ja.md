@@ -1,0 +1,48 @@
+# Qwen3.8-27B · llama.cpp · RTX 5090 32GB
+
+[English](hf-byteshape-qwen3-8-27b-gguf-1.md) | [简体中文](hf-byteshape-qwen3-8-27b-gguf-1.zh-CN.md) | **日本語** · [← 一覧に戻る](../README.ja.md)
+
+> 出典レベル: **📣 主張** · 日付: 2026-08-18 · 数値は出典からの引用で、このリポジトリでは再計測していません。
+
+## ハードウェア
+
+- RTX 5090 32GB (NVIDIA コンシューマー)
+- 参考価格: ≈ $5,400
+
+## モデル
+
+- Qwen3.8-27B · `ShapeLearn GPU-1`
+- ダウンロード: [huggingface.co/byteshape/Qwen3.8-27B-GGUF](https://huggingface.co/byteshape/Qwen3.8-27B-GGUF)
+
+## エンジン
+
+- llama.cpp — インストール： https://github.com/ggml-org/llama.cpp
+- 備考: llama.cpp
+
+## 起動コマンド
+
+```bash
+llama-server -hf byteshape/Qwen3.8-27B-GGUF:<tag> --spec-type draft-mtp --spec-draft-n-max 3
+```
+
+出典からの抜粋です（`...` やプレースホルダーを含みます）。全引数は出典を参照してください。
+
+## 主なパラメータ
+
+- コンテキスト: —
+- 同時実行: —
+- タグ: `2bit`, `dense`
+
+## 想定速度
+
+- 119.0 tok/s decode (📣 主張)
+
+## 注意点
+
+- 本人による実測ではありません（主張・伝聞）。実際の速度は異なる場合があります。
+- 速度はドライバー、エンジンのバージョン、コンテキスト長、プロンプト長によって変わります。
+
+## 出典とクレジット
+
+- [https://huggingface.co/byteshape/Qwen3.8-27B-GGUF](https://huggingface.co/byteshape/Qwen3.8-27B-GGUF)
+- 権利は元の投稿者にあります。このページは要約とリンクのみです。データは CC BY 4.0。
