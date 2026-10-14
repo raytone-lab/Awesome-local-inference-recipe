@@ -1,27 +1,32 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Token speed feel · Awesome Local Inference Recipes</title><link rel="stylesheet" href="style.css">
 <style>
-.ctl{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:#fff;border:1px solid #e6e8ef;border-radius:12px;padding:12px;margin:14px 0}
+.ctl{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;background:#fff;border:1px solid #e6e8ef;border-radius:12px;padding:12px;margin:14px 0}
 .ctl button{background:#4f46e5;color:#fff;border:0;border-radius:8px;padding:8px 18px;font:inherit;font-weight:600;cursor:pointer}
-.ctl button.sec{background:#f1f2f8;color:#334}.ctl label{display:flex;align-items:center;gap:6px;color:#556}
+.ctl button.sec{background:#f1f2f8;color:#334}.ctl label{display:flex;align-items:center;gap:6px;color:#556}.ctl select{padding:5px 8px}
+.ttftv{color:#8a90a2;font-size:12px}
 .lang a{margin-left:8px;color:#555;text-decoration:none}.lang a.on{color:#4f46e5;font-weight:600}
-.read{background:#fff;border:1px solid #e6e8ef;border-radius:12px;padding:10px 14px;margin-bottom:14px;color:#556;font-size:13px}
-.rbar{height:6px;background:#eef0f5;border-radius:99px;margin-top:6px;overflow:hidden}.rbar i{display:block;height:100%;width:0;background:#94a3b8}
+.read{background:#fff;border:1px solid #e6e8ef;border-radius:12px;padding:10px 14px;margin-bottom:14px;color:#556;font-size:13px;display:grid;grid-template-columns:1fr 1fr;gap:6px 20px}
+.read a{color:#4f46e5;text-decoration:none}.rbar{height:6px;background:#eef0f5;border-radius:99px;margin-top:4px;overflow:hidden}.rbar i{display:block;height:100%;width:0;background:#94a3b8}.rbar.al i{background:#cbd5e1}
 .lanes{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
 .lane{background:#fff;border:1px solid #e6e8ef;border-radius:12px;padding:12px;display:flex;flex-direction:column}
 .lh{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.lh b{font-size:22px;color:#1f2430}.lh b small{font-size:13px;color:#8a90a2;font-weight:400}
 .badge{font-size:12px;padding:2px 9px;border-radius:99px;white-space:nowrap}
 .b0{background:#fee2e2;color:#991b1b}.b1{background:#fef3c7;color:#92400e}.b2{background:#dcfce7;color:#166534}.b3{background:#e0e7ff;color:#3730a3}
-.real{font-size:12px;color:#667;min-height:18px;margin:4px 0}.real a{color:#4f46e5;text-decoration:none}
+.real,.cloud{font-size:12px;color:#667;min-height:18px;margin:2px 0}.real a,.cloud a{color:#4f46e5;text-decoration:none}.cloud a{color:#0e7490}
 .out{height:220px;overflow:auto;white-space:pre-wrap;background:#fafbfe;border:1px solid #eef0f5;border-radius:8px;padding:10px;font-size:13.5px;line-height:1.6}
 .out .cur{display:inline-block;width:7px;height:1em;background:#4f46e5;vertical-align:text-bottom;animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.out .pf{color:#a0a5b4;font-style:italic}
 .meta{display:flex;justify-content:space-between;font-size:12px;color:#8a90a2;margin-top:6px;font-variant-numeric:tabular-nums}
 .pg{height:4px;background:#eef0f5;border-radius:99px;margin-top:6px;overflow:hidden}.pg i{display:block;height:100%;width:0;background:#4f46e5}
-.note{color:#8a90a2;font-size:12px;margin-top:14px}
-body.embed header,body.embed .ctl,body.embed .note,body.embed footer,body.embed .hero p,body.embed .real,body.embed .meta .tm{display:none}
-body.embed main{padding:14px 16px;max-width:none}body.embed .hero h1{font-size:22px;margin:0 0 10px}
-body.embed .lanes{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}body.embed .lh{flex-wrap:wrap;gap:2px 6px}body.embed .badge{font-size:11px;padding:1px 7px}body.embed .out .cur{animation:none}body.embed .lane{padding:10px}
-body.embed .out{height:240px;overflow:hidden;font-size:12.5px;line-height:1.45;padding:8px}body.embed .read{font-size:13px}
+.card h2{font-size:16px;margin:4px 0 8px}#chart{width:100%;height:auto;display:block}#chart text{font:11px sans-serif;fill:#667}
+.src{font-size:12.5px;color:#556}.src li{margin:3px 0}.src a{color:#4f46e5}
+body.embed header,body.embed .ctl,body.embed .noembed,body.embed footer,body.embed .hero p,body.embed .real,body.embed .meta .tm{display:none}
+body.embed main{padding:12px 14px;max-width:none}body.embed .hero h1{font-size:21px;margin:0 0 8px}
+body.embed .read{grid-template-columns:1fr;padding:8px 12px;margin-bottom:10px}body.embed .read .al{display:none}
+body.embed .lanes{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}body.embed .lane{padding:9px 10px}
+body.embed .out{height:112px;overflow:hidden;font-size:12.5px;line-height:1.45;padding:6px 8px}body.embed .out .cur{animation:none}
+body.embed .cloud{min-height:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 </style></head><body>
 <header><div class="brand">⚡ <span data-t="brand"></span> <small>Awesome Local Inference Recipes</small></div>
 <nav><a href="index.html" data-t="home"></a><a href="explore.html" data-t="explore"></a><a href="speed.html" class="on" data-t="speed"></a><span class="lang"><a href="?lang=en" data-l="en">EN</a><a href="?lang=zh-CN" data-l="zh-CN">中文</a><a href="?lang=ja" data-l="ja">日本語</a></span></nav></header>
@@ -29,91 +34,143 @@ body.embed .out{height:240px;overflow:hidden;font-size:12.5px;line-height:1.45;p
 <section class="hero"><h1 data-t="h1"></h1><p data-t="intro"></p></section>
 <div class="ctl">
 <button id="go"></button><button id="stop" class="sec"></button>
-<label><input type="checkbox" id="jit" checked><span data-t="jitter"></span></label>
-<label><input type="checkbox" id="ttft"><span data-t="ttft"></span></label>
-<label><span data-t="custom"></span> <input type="range" id="cr" min="1" max="500" value="35"> <b id="cv">35</b> tok/s</label>
+<label><span data-t="model"></span><select id="dm"><option value="steady"></option><option value="jitter" selected></option><option value="mtp"></option></select></label>
+<label><span data-t="prompt"></span><select id="pl"><option value="0">—</option><option value="1024">1K</option><option value="8192">8K</option><option value="32768">32K</option></select></label>
+<label><span data-t="prefill"></span><select id="pp"></select></label><span class="ttftv" id="ttftv"></span>
+<label><span data-t="custom"></span> <input type="range" id="cr" min="0" max="1000" value="500"> <b id="cv"></b> tok/s</label>
 </div>
-<div class="read"><span id="rlab"></span><div class="rbar"><i id="rb"></i></div></div>
+<div class="read">
+<div><span id="rlab"></span><div class="rbar"><i id="rb"></i></div></div>
+<div class="al"><span id="alab"></span><div class="rbar al"><i id="ab"></i></div></div>
+</div>
 <div class="lanes" id="lanes"></div>
-<p class="note" id="note"></p>
+<section class="card noembed" style="margin-top:16px"><h2 data-t="ch"></h2><svg id="chart" viewBox="0 0 900 330"></svg><p class="src" data-t="chnote"></p></section>
+<section class="card noembed"><h2 data-t="mh"></h2><ul class="src" id="method"></ul></section>
 </main>
 <footer><span data-t="foot"></span> · <a href="explore.html" data-t="explore"></a></footer>
 <script>
 const I18N={
-en:{brand:'Local Inference Recipes',home:'Home',explore:'Explorer',speed:'Speed feel',h1:'What does 10, 50 or 300 tokens per second feel like?',
- intro:'Each lane streams the same answer, tokenized with the real Qwen3 tokenizer, at an exact rate. Press start and watch.',
- go:'▶ Start',again:'↻ Restart',stop:'■ Stop',jitter:'Realistic jitter',ttft:'Prefill delay (TTFT 0.6 s)',custom:'Custom lane',
- read:'Human reading pace ≈ 5–8 tok/s (≈ 250 words/min). Grey bar = where a reader at 6 tok/s would be.',
- b:['slower than reading','about reading pace','faster than you can read','instant'],tok:'tokens',done:'done in',real:'≈ real setup:',
- foot:'Data: measured recipes from data/recipes.json',
- note:'Token boundaries come from the Qwen3 tokenizer (Qwen/Qwen3-8B) applied to the sample text; timing uses requestAnimationFrame with elapsed-time accumulation, so lanes do not drift. "Real setup" shows the closest measured single-stream recipe within ±12%, if any.'},
-'zh-CN':{brand:'本地推理配方',home:'首页',explore:'配方库',speed:'速度体感',h1:'每秒 10、50、300 个 token 到底是什么感觉？',
- intro:'每条通道用真实的 Qwen3 分词器切分同一段回答，并按精确速率逐 token 输出。点开始，直观感受一下。',
- go:'▶ 开始',again:'↻ 重新开始',stop:'■ 停止',jitter:'模拟真实抖动',ttft:'预填充延迟（首 token 0.6 秒）',custom:'自定义通道',
- read:'人类阅读速度 ≈ 5–8 tok/s（中文约每分钟 300–500 字）。灰色进度条 = 以 6 tok/s 阅读的人读到哪里。',
- b:['比阅读还慢','和阅读差不多','比你读得快','瞬间完成'],tok:'tokens',done:'用时',real:'≈ 真实配置：',
- foot:'数据：data/recipes.json 中的实测配方',
- note:'token 边界来自 Qwen3 分词器（Qwen/Qwen3-8B）对示例文本的真实切分；计时使用 requestAnimationFrame 按已过时间累计，各通道不会漂移。「真实配置」显示 tok/s 相差 ±12% 以内、最接近的单流实测配方（如有）。'},
-ja:{brand:'ローカル推論レシピ',home:'ホーム',explore:'エクスプローラー',speed:'速度体感',h1:'毎秒 10・50・300 トークンはどれくらいの速さ？',
- intro:'各レーンは同じ回答を実際の Qwen3 トークナイザーで分割し、正確なレートで 1 トークンずつ表示します。スタートを押してみてください。',
- go:'▶ スタート',again:'↻ もう一度',stop:'■ 停止',jitter:'実際に近い揺らぎ',ttft:'プリフィル遅延（TTFT 0.6 秒）',custom:'カスタムレーン',
- read:'人が読む速さ ≈ 5〜8 tok/s。灰色のバー = 6 tok/s で読む人の位置。',
- b:['読むより遅い','読む速さと同じくらい','読むより速い','一瞬'],tok:'トークン',done:'所要',real:'≈ 実構成：',
- foot:'データ：data/recipes.json の実測レシピ',
- note:'トークン境界はサンプル文に Qwen3 トークナイザー（Qwen/Qwen3-8B）を適用したものです。タイミングは requestAnimationFrame で経過時間を積算するため、レーン間でずれません。「実構成」は ±12% 以内で最も近い 1 ストリーム実測レシピ（ある場合）。'}};
+en:{brand:'Local Inference Recipes',home:'Home',explore:'Explorer',speed:'Speed feel',h1:'What does 10, 50 or 500 tokens per second feel like?',
+ intro:'Every lane streams the same answer, cut into real Qwen3 tokens, at an exact average rate. Lanes are log-spaced (1-2-5 series) because perceived speed scales roughly with the ratio, not the difference.',
+ go:'▶ Start',again:'↻ Restart',stop:'■ Stop',model:'Decode',steady:'steady',jitter:'realistic jitter',mtp:'jitter + MTP/speculative bursts',prompt:'Prompt',prefill:'Prefill',custom:'Custom',
+ ttft:(p,pp,t)=>`TTFT ≈ ${p} / ${pp} tok/s = ${t} s`,
+ silent:(r,s)=>`Silent reading ≈ <b>${r} tok/s</b> (${s})`,aloud:(r,s)=>`Reading aloud / speech ≈ <b>${r} tok/s</b> (${s})`,est:'estimate',
+ b:['slower than reading aloud','about reading pace','faster than you can read','feels instant'],tok:'tokens',done:'done in',pf:'prefill…',
+ real:'≈ local, measured:',cloud:'≈ cloud API:',
+ ch:'Time to stream a 500-token answer vs. speed',chnote:'Time = 500 / speed (a 1/x curve; on a log axis equal steps feel equal). Grey lines: time a human needs to read the same 500 tokens. Dots under the axis: measured local single-stream setups from data/recipes.json; teal ticks: cloud API medians (Artificial Analysis).',
+ mh:'Method & sources',foot:'Data: measured recipes from data/recipes.json'},
+'zh-CN':{brand:'本地推理配方',home:'首页',explore:'配方库',speed:'速度体感',h1:'每秒 10、50、500 个 token 到底是什么感觉？',
+ intro:'每条通道用真实 Qwen3 分词器切分同一段回答，按精确的平均速率输出。通道按对数间隔（1-2-5 序列）设置，因为人对速度的感知大致取决于倍数而不是差值。',
+ go:'▶ 开始',again:'↻ 重新开始',stop:'■ 停止',model:'解码',steady:'匀速',jitter:'真实抖动',mtp:'抖动 + MTP/投机解码突发',prompt:'提示词',prefill:'预填充',custom:'自定义',
+ ttft:(p,pp,t)=>`首 token ≈ ${p} / ${pp} tok/s = ${t} 秒`,
+ silent:(r,s)=>`默读 ≈ <b>${r} tok/s</b>（${s}）`,aloud:(r,s)=>`朗读 / 说话 ≈ <b>${r} tok/s</b>（${s}）`,est:'估算',
+ b:['比朗读还慢','和阅读差不多','比你读得快','几乎瞬间'],tok:'tokens',done:'用时',pf:'预填充中…',
+ real:'≈ 本地实测：',cloud:'≈ 云端 API：',
+ ch:'输出 500 token 回答所需时间 vs 速度',chnote:'时间 = 500 / 速度（1/x 曲线；对数坐标上等距 = 感觉等距）。灰线：人读完同样 500 token 所需时间。轴下圆点：data/recipes.json 中的本地单流实测；青色刻度：云端 API 中位数（Artificial Analysis）。',
+ mh:'方法与来源',foot:'数据：data/recipes.json 中的实测配方'},
+ja:{brand:'ローカル推論レシピ',home:'ホーム',explore:'エクスプローラー',speed:'速度体感',h1:'毎秒 10・50・500 トークンはどれくらいの速さ？',
+ intro:'各レーンは同じ回答を実際の Qwen3 トークンに分割し、正確な平均レートで表示します。レーンは対数間隔（1-2-5 系列）。速さの感覚は差ではなく比でほぼ決まるためです。',
+ go:'▶ スタート',again:'↻ もう一度',stop:'■ 停止',model:'デコード',steady:'一定',jitter:'実際に近い揺らぎ',mtp:'揺らぎ + MTP/投機的デコード',prompt:'プロンプト',prefill:'プリフィル',custom:'カスタム',
+ ttft:(p,pp,t)=>`TTFT ≈ ${p} / ${pp} tok/s = ${t} 秒`,
+ silent:(r,s)=>`黙読 ≈ <b>${r} tok/s</b>（${s}）`,aloud:(r,s)=>`音読・会話 ≈ <b>${r} tok/s</b>（${s}）`,est:'推定',
+ b:['音読より遅い','読む速さと同じくらい','読むより速い','ほぼ一瞬'],tok:'トークン',done:'所要',pf:'プリフィル中…',
+ real:'≈ ローカル実測：',cloud:'≈ クラウド API：',
+ ch:'500 トークンの回答を出し切る時間 vs 速度',chnote:'時間 = 500 / 速度（1/x 曲線。対数軸では等間隔＝体感も等間隔）。灰色の線：人が同じ 500 トークンを読む時間。軸下の点：data/recipes.json のローカル単一ストリーム実測。青緑の目盛：クラウド API の中央値（Artificial Analysis）。',
+ mh:'方法と出典',foot:'データ：data/recipes.json の実測レシピ'}};
 const P=new URLSearchParams(location.search);
 const NL=(navigator.language||'').toLowerCase(); let LANG=P.get('lang')||(NL.startsWith('ja')?'ja':NL.startsWith('zh')?'zh-CN':'en');
 if(!I18N[LANG])LANG='en'; const T=I18N[LANG]; document.documentElement.lang=LANG;
 document.querySelectorAll('[data-t]').forEach(e=>e.textContent=T[e.dataset.t]);
 document.querySelectorAll('[data-l]').forEach(e=>e.classList.toggle('on',e.dataset.l===LANG));
+document.querySelectorAll('#dm option').forEach(o=>o.textContent=T[o.value]);
 const EMBED=P.has('embed'); if(EMBED)document.body.classList.add('embed');
-const RATES=EMBED?[10,20,50,100,300]:[5,10,20,50,100,300]; const LOOP=+(P.get('loop')||8); const READ=6, TTFT=0.6;
-let TOKS=[], RECIPES=[], lanes=[], raf=0, t0=0, running=false;
+// 1-2-5 series: ~0.3-0.4 decade steps, equal perceptual spacing (Weber-Fechner)
+const RATES=EMBED?[10,20,50,100,200,500]:[5,10,20,50,100,200,500]; const LOOP=+(P.get('loop')||8);
+const SMIN=1,SMAX=2000; const sl2r=v=>Math.round(SMIN*Math.pow(SMAX/SMIN,v/1000)); const r2sl=r=>Math.round(1000*Math.log(r/SMIN)/Math.log(SMAX/SMIN));
+let TOKS=[],ST=null,REF=null,RECIPES=[],lanes=[],raf=0,t0=0,READ=5,ALOUD=4,Q2O=1;
 const $=id=>document.getElementById(id);
-function badge(r){return r<5?0:r<=8?1:r<150?2:3}
-function closest(r){let best=null;for(const x of RECIPES){const d=Math.abs(x.tok_s-r)/r;if(d<=.12&&(!best||d<best.d))best={d,x}}return best&&best.x}
+const f1=x=>x>=100?Math.round(x):x>=10?x.toFixed(0):x.toFixed(1);
+function badge(r){return r<ALOUD?0:r<=READ*1.5?1:r<250?2:3}
+function closest(r){let best=null;for(const x of RECIPES){const d=Math.abs(Math.log(x.tok_s/r));if(d<=Math.log(1.12)&&(!best||d<best.d))best={d,x}}return best&&best.x}
+function cloudNear(r){let best=null;for(const c of REF.cloud.items){const q=c.tps*Q2O,d=Math.abs(Math.log(q/r));if(d<=Math.log(1.2)&&(!best||d<best.d))best={d,c,q}}return best}
 function hwShort(s){return s.replace(/[（(][^）)]*[）)]/g,'').replace(/[\u4e00-\u9fff，、；：]+/g,' ').replace(/\s+/g,' ').trim()}
-function times(rate){ // per-token emission times (s); jitter keeps the mean rate exact
-  const n=TOKS.length, dt=1/rate, w=[]; let s=0;
-  for(let i=0;i<n;i++){let f=1; if($('jit').checked){f=Math.exp((Math.random()+Math.random()+Math.random()-1.5)*.5);} w.push(f); s+=f}
-  const k=n/s, out=[]; let acc=$('ttft').checked?TTFT:0; for(let i=0;i<n;i++){acc+=w[i]*k*dt; out.push(acc)} return out}
+function gauss(){let u=0,v=0;while(!u)u=Math.random();while(!v)v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)}
+function ttft(){const p=+$('pl').value,pp=+$('pp').value;return p&&pp?p/pp:0}
+// per-token emission times (s). Steps = verify passes; MTP: 1 + accepted drafts (depth d, acceptance a).
+// Step durations ~ lognormal(sigma .35) then rescaled so n tokens take exactly n/rate s after the first token.
+function times(rate){
+  const n=TOKS.length,m=$('dm').value,steps=[];let c=0;
+  while(c<n){let k=1;if(m==='mtp'){for(let j=0;j<REF.mtp.depth&&Math.random()<REF.mtp.accept;j++)k++}k=Math.min(k,n-c);steps.push(k);c+=k}
+  const w=steps.map(()=>m==='steady'?1:Math.exp(.35*gauss()));const W=w.reduce((a,b)=>a+b,0)-w[0]+1e-9;
+  const D=(n-1)/rate,out=[];let t=ttft();
+  steps.forEach((k,i)=>{if(i>0)t+=w[i]/W*D;for(let j=0;j<k;j++)out.push(t)});return out}
 function build(){
-  $('lanes').innerHTML=''; lanes=[];
+  $('lanes').innerHTML='';lanes=[];
   for(const r of EMBED?RATES:[...RATES,'c']){
-    const el=document.createElement('div'); el.className='lane';
-    el.innerHTML=`<div class="lh"><b><span class="rv"></span> <small>tok/s</small></b><span class="badge"></span></div><div class="real"></div><div class="out"></div><div class="pg"><i></i></div><div class="meta"><span class="cnt"></span><span class="tm"></span></div>`;
-    $('lanes').appendChild(el); lanes.push({el,r});
-  }
-  label();
-}
-function rateOf(L){return L.r==='c'?+$('cr').value:L.r}
-function label(){for(const L of lanes){const r=rateOf(L),b=badge(r),q=L.el.querySelector('.badge');
-  L.el.querySelector('.rv').textContent=r; q.className='badge b'+b; q.textContent=T.b[b];
-  const x=closest(r),re=L.el.querySelector('.real');
-  re.innerHTML=x?`${T.real} <a href="${x.source_url}" target="_blank" rel="noopener">${hwShort(x.hardware)} · ${x.model} · ${x.tok_s} tok/s</a>`:'';
+    const el=document.createElement('div');el.className='lane';
+    el.innerHTML=`<div class="lh"><b><span class="rv"></span> <small>tok/s</small></b><span class="badge"></span></div><div class="real"></div><div class="cloud"></div><div class="out"></div><div class="pg"><i></i></div><div class="meta"><span class="cnt"></span><span class="tm"></span></div>`;
+    $('lanes').appendChild(el);lanes.push({el,r})}
+  label()}
+const rateOf=L=>L.r==='c'?sl2r(+$('cr').value):L.r;
+function label(){$('cv').textContent=sl2r(+$('cr').value);
+  const tt=ttft();$('ttftv').textContent=tt?T.ttft(+$('pl').value,+$('pp').value,tt.toFixed(1)):'';
+  for(const L of lanes){const r=rateOf(L),b=badge(r),q=L.el.querySelector('.badge');
+  L.el.querySelector('.rv').textContent=r;q.className='badge b'+b;q.textContent=T.b[b];
+  const x=closest(r);L.el.querySelector('.real').innerHTML=x?`${T.real} <a href="${x.source_url}" target="_blank" rel="noopener">${hwShort(x.hardware)} · ${x.model} · ${x.tok_s}</a>`:'';
+  const c=cloudNear(r);L.el.querySelector('.cloud').innerHTML=c?`${T.cloud} <a href="${c.c.url}" target="_blank" rel="noopener">${c.c.label}${c.c.variant==="provider"||EMBED?"":" ("+c.c.variant+")"} ≈ ${f1(c.q)}</a>`:'';
   L.el.querySelector('.cnt').textContent=`0 / ${TOKS.length} ${T.tok}`}}
 function start(){
-  cancelAnimationFrame(raf); label();
-  for(const L of lanes){L.ts=times(rateOf(L)); L.i=0; L.o=L.el.querySelector('.out'); L.o.innerHTML='<span class="cur"></span>'; L.txt=document.createTextNode(''); L.o.insertBefore(L.txt,L.o.firstChild); L.end=null}
-  t0=performance.now(); running=true; $('go').textContent=T.again; raf=requestAnimationFrame(frame)}
+  cancelAnimationFrame(raf);label();
+  for(const L of lanes){L.ts=times(rateOf(L));L.i=0;L.o=L.el.querySelector('.out');L.o.innerHTML=(L.ts[0]>0?`<span class="pf">${T.pf}</span>`:'')+'<span class="cur"></span>';L.txt=document.createTextNode('');L.o.insertBefore(L.txt,L.o.querySelector('.cur'));L.end=null}
+  t0=performance.now();$('go').textContent=T.again;raf=requestAnimationFrame(frame)}
 function frame(now){
-  const e=(now-t0)/1000; let alive=false;
-  for(const L of lanes){const n=TOKS.length; let add='';
+  const e=(now-t0)/1000;let alive=false;
+  for(const L of lanes){const n=TOKS.length;let add='';
     while(L.i<n&&L.ts[L.i]<=e){add+=TOKS[L.i];L.i++}
-    if(add){L.txt.appendData(add); L.o.scrollTop=L.o.scrollHeight}
-    if(L.i<n)alive=true; else if(L.end===null){L.end=L.ts[n-1]; L.o.querySelector('.cur')?.remove()}
+    if(add){L.o.querySelector('.pf')?.remove();L.txt.appendData(add);L.o.scrollTop=L.o.scrollHeight}
+    if(L.i<n)alive=true;else if(L.end===null){L.end=L.ts[n-1];L.o.querySelector('.cur')?.remove()}
     L.el.querySelector('.pg i').style.width=(L.i/n*100)+'%';
     L.el.querySelector('.cnt').textContent=`${L.i} / ${n} ${T.tok}`;
     L.el.querySelector('.tm').textContent=L.end!==null?`${T.done} ${L.end.toFixed(1)} s`:`${e.toFixed(1)} s`}
-  $('rb').style.width=Math.min(100,e*READ/TOKS.length*100)+'%';
+  $('rb').style.width=Math.min(100,e*READ/TOKS.length*100)+'%';$('ab').style.width=Math.min(100,e*ALOUD/TOKS.length*100)+'%';
   if(EMBED&&e>=LOOP){start();return}
-  if(alive||e*READ<TOKS.length)raf=requestAnimationFrame(frame); else running=false}
-$('go').onclick=start; $('stop').onclick=()=>{cancelAnimationFrame(raf);running=false};
-$('cr').oninput=()=>{$('cv').textContent=$('cr').value; label()};
-$('go').textContent=T.go; $('stop').textContent=T.stop; $('rlab').textContent=T.read; $('note').textContent=T.note;
-Promise.all([fetch('data/speed-tokens.json').then(r=>r.json()),fetch('data/recipes.json').then(r=>r.json()).catch(()=>[])]).then(([tk,rc])=>{
-  TOKS=tk.texts[LANG]||tk.texts.en;
+  if(alive||e*ALOUD<TOKS.length)raf=requestAnimationFrame(frame)}
+function chart(){
+  const W=900,H=330,L0=56,R0=W-16,T0=14,B0=H-84,N=500,X=r=>L0+(R0-L0)*Math.log(r/SMIN)/Math.log(SMAX/SMIN),YM=150,Y=s=>B0-(B0-T0)*Math.min(s,YM)/YM;
+  let s='';
+  for(const v of [1,2,5,10,20,50,100,200,500,1000,2000])s+=`<line x1="${X(v)}" x2="${X(v)}" y1="${T0}" y2="${B0}" stroke="#eef0f5"/><text x="${X(v)}" y="${B0+14}" text-anchor="middle">${v}</text>`;
+  for(const v of [0,30,60,90,120,150])s+=`<line x1="${L0}" x2="${R0}" y1="${Y(v)}" y2="${Y(v)}" stroke="#eef0f5"/><text x="${L0-6}" y="${Y(v)+4}" text-anchor="end">${v}s</text>`;
+  let d='';for(let i=0;i<=200;i++){const r=SMIN*Math.pow(SMAX/SMIN,i/200);d+=(i?'L':'M')+X(r).toFixed(1)+','+Y(N/r).toFixed(1)}
+  s+=`<path d="${d}" fill="none" stroke="#4f46e5" stroke-width="2.5"/>`;
+  for(const [v,lab,dash] of [[READ,'silent',''],[ALOUD,'aloud','4 3']]){const y=Y(N/v);s+=`<line x1="${L0}" x2="${R0}" y1="${y}" y2="${y}" stroke="#94a3b8" stroke-dasharray="${dash}"/><text x="${R0-4}" y="${y-4}" text-anchor="end">${lab}: ${Math.round(N/v)} s @ ${v.toFixed(1)} tok/s</text>`}
+  for(const r of RATES)s+=`<circle cx="${X(r)}" cy="${Y(N/r)}" r="4" fill="#4f46e5"/><text x="${X(r)+6}" y="${Y(N/r)-6}">${(N/r).toFixed(r>=100?1:0)}s</text>`;
+  for(const x of RECIPES)s+=`<circle cx="${X(x.tok_s)}" cy="${B0+30+((x.id.charCodeAt(x.id.length-1)%5)*3)}" r="2.5" fill="#22c55e" opacity=".55"><title>${hwShort(x.hardware)} · ${x.model} · ${x.tok_s} tok/s</title></circle>`;
+  s+=`<text x="${L0}" y="${B0+74}" fill="#16a34a">● local measured (n=${RECIPES.length})</text>`;
+  for(const c of REF.cloud.items){const x=X(c.tps*Q2O);s+=`<line x1="${x}" x2="${x}" y1="${T0}" y2="${T0+10}" stroke="#0e7490" stroke-width="2"><title>${c.label} (${c.variant}) ${c.tps} o200k tok/s</title></line>`}
+  s+=`<text x="${R0}" y="${B0+74}" text-anchor="end" fill="#0e7490">▮ cloud API median (top ticks)</text><text x="${(L0+R0)/2}" y="${B0+74}" text-anchor="middle">tok/s (log)</text>`;
+  $('chart').innerHTML=s}
+function method(){
+  const st=ST[LANG],rd=REF.reading[LANG],u=st.unit==='word'?'word':'char';
+  const li=[];
+  li.push(`Tokenizer: Qwen/Qwen3-8B. Sample (${LANG}): ${st.tokens} tokens / ${st.units} ${u}s = <b>${st.tok_per_unit}</b> tokens per ${u} (measured, scripts/gen_speed_tokens.py).`);
+  for(const k of ['silent','aloud']){const x=rd[k];li.push(`${k}: ${x.rate} ${x.unit} × ${st.tok_per_unit} / 60 = <b>${(x.rate*st.tok_per_unit/60).toFixed(2)} tok/s</b> — ${x.what}. <a href="${x.url}" target="_blank" rel="noopener">${x.src}</a>`)}
+  li.push(`Cloud: ${REF.cloud.note} Converted to Qwen3 tokens with this text's ratio ${st.tokens}/${st.o200k_tokens} (o200k). <a href="${REF.cloud.method_url}" target="_blank" rel="noopener">AA methodology</a> · `+REF.cloud.items.map(c=>`<a href="${c.url}" target="_blank" rel="noopener">${c.label}</a> ${c.tps}`).join(', '));
+  li.push(`Prefill / TTFT: ${REF.prefill.note} `+REF.prefill.items.map(p=>`${p.id} ${p.label} ${p.pp}`).join(' · ')+`. Check: x-001 reports TTFT 11.8 s for an 8K prompt at 699 tok/s; 8192/699 = 11.7 s.`);
+  li.push(`Decode model: ${REF.mtp.note} Step times are lognormal (σ = 0.35, illustrative — no public inter-token-latency distribution in our data) and rescaled so the mean rate is exact. Timing uses requestAnimationFrame against elapsed time, so lanes never drift.`);
+  li.push(`Lanes 5-10-20-50-100-200-500 follow the 1-2-5 preferred-number series (steps of 2–2.5×). Perceived magnitude grows roughly with the logarithm of the stimulus (Weber–Fechner), so equal ratios read as equal steps; 10/30/50 would put two lanes only 1.7× apart and leave 50→500 empty, where cloud APIs (≈80–140) and fast providers (≈300–1,700) sit.`);
+  $('method').innerHTML=li.map(x=>`<li>${x}</li>`).join('')}
+$('go').onclick=start;$('stop').onclick=()=>cancelAnimationFrame(raf);
+$('cr').oninput=label;$('pl').onchange=label;$('pp').onchange=label;
+$('go').textContent=T.go;$('stop').textContent=T.stop;
+Promise.all([fetch('data/speed-tokens.json').then(r=>r.json()),fetch('data/speed-refs.json').then(r=>r.json()),fetch('data/recipes.json').then(r=>r.json()).catch(()=>[])]).then(([tk,rf,rc])=>{
+  TOKS=tk.texts[LANG]||tk.texts.en;ST=tk.stats;REF=rf;const st=ST[LANG];
+  Q2O=st.tokens/st.o200k_tokens;
+  const rd=REF.reading[LANG],cv=x=>x.rate*st.tok_per_unit/60;READ=cv(rd.silent);ALOUD=cv(rd.aloud);
+  const tag=x=>`<a href="${x.url}" target="_blank" rel="noopener">${x.estimate?T.est+' · ':''}${x.rate} ${x.unit}</a>`;
+  $('rlab').innerHTML=T.silent(READ.toFixed(1),tag(rd.silent));$('alab').innerHTML=T.aloud(ALOUD.toFixed(1),tag(rd.aloud));
+  $('pp').innerHTML=REF.prefill.items.map(p=>`<option value="${p.pp}"${p.id==='x-005'?' selected':''}>${p.label} · ${p.pp} tok/s</option>`).join('');
   RECIPES=rc.filter(r=>r.category==='text'&&r.tok_s&&r.source_level==='实测');
-  build(); if(P.has('autostart')||EMBED)start();
+  $('cr').value=r2sl(35);
+  build();chart();method();if(P.has('autostart')||EMBED)start();
 });
 </script></body></html>

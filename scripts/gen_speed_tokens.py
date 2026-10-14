@@ -3,7 +3,12 @@
 Uses the Qwen3 tokenizer (Hugging Face `Qwen/Qwen3-8B`, tokenizer.json only). Needs: pip install tokenizers
 Each token is the exact slice of the source text covered by that token's offsets; byte-level tokens that
 split a multi-byte character yield '' (they still count as one token, like a real stream).
-Run: python3 scripts/gen_speed_tokens.py"""
+Also records per-language unit counts (English words; for zh/ja CJK characters + embedded Latin words,
+matching IReST's character-based reading rates) and, if `tiktoken` is installed, the o200k_base token count
+(Artificial Analysis measures API speed in o200k tokens) so speed.html can convert reading rates and
+cloud API speeds into Qwen3 tokens/s for the same text.
+Run: python3 scripts/gen_speed_tokens.py   (needs: pip install tokenizers tiktoken)"""
+import re
 import json
 from pathlib import Path
 from tokenizers import Tokenizer
@@ -48,5 +53,16 @@ for lang, s in TEXT.items():
     if pos < len(s): toks[-1] += s[pos:]
     assert ''.join(toks) == s, lang
     out['texts'][lang] = toks
-    print(lang, len(toks), 'tokens')
+    words = len(re.findall(r"[A-Za-z0-9]+(?:['’.-][A-Za-z0-9]+)*", s))
+    cjk = len(re.findall(r'[\u3040-\u30ff\u3400-\u9fff]', s))
+    units = words if lang == 'en' else cjk + words
+    st = {'tokens': len(toks), 'unit': 'word' if lang == 'en' else 'char', 'units': units,
+          'tok_per_unit': round(len(toks) / units, 4)}
+    try:
+        import tiktoken
+        st['o200k_tokens'] = len(tiktoken.get_encoding('o200k_base').encode(s))
+    except ImportError:
+        pass
+    out.setdefault('stats', {})[lang] = st
+    print(lang, st)
 (R/'data/speed-tokens.json').write_text(json.dumps(out, ensure_ascii=False, separators=(',', ':')) + '\n')

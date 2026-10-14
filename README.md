@@ -12,9 +12,9 @@
 
 ### How fast is X tok/s?
 
-<p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/speed.html"><img src="docs/speed-feel.gif" width="860" alt="Token streaming speed demo: 10, 20, 50, 100 and 300 tokens per second compared with human reading pace"></a></p>
+<p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/speed.html"><img src="docs/speed-feel.gif" width="860" alt="Token streaming speed demo: 10, 20, 50, 100, 200 and 500 tokens per second compared with human silent reading pace"></a></p>
 
-<p align="center">Same answer, real Qwen3 tokens, streamed at 10 / 20 / 50 / 100 / 300 tok/s vs. human reading pace (~5–8 tok/s). <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/speed.html"><b>Try it interactively →</b></a></p>
+<p align="center">Same answer, real Qwen3 tokens, streamed at 10 / 20 / 50 / 100 / 200 / 500 tok/s (log-spaced) vs. silent reading (≈5 tok/s, Brysbaert 2019), with cloud-API medians from Artificial Analysis for comparison. <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/speed.html"><b>Try it interactively →</b></a></p>
 
 **288 recipes** (247 text · 16 image · 25 video & audio) · **6 hardware families** · **34 engines** · **11 model families** · every number linked to its source · budget up to **$30k**
 
