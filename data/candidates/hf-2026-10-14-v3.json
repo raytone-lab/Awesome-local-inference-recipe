@@ -621,7 +621,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-unsloth--Muse-Glimmer-30B-GGUF",
@@ -784,7 +785,9 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "rejected",
+   "reject_reason": "重复：表格与上批 meta-models/Muse-Glimmer-30B-GGUF（补充后收录）逐字相同，是转载上游卡；并入上批待补项，不另立"
   },
   {
    "id": "hf-agentionai--Qwen3.8-Flash-Next-Gyro-GGUF",
@@ -988,7 +991,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-mlx-community--CLM-v0.1-8B-MLX-8bit",
@@ -1046,7 +1050,9 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "rejected",
+   "reject_reason": "336.1 是 encoder throughput（嵌入/编码吞吐），不是生成速度；不属于本库指标"
   },
   {
    "id": "hf-umixer--Qwen3.8-Flash-Next-oQ4e-mix6-mtp",
@@ -1104,7 +1110,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-OsaurusAI--Allosaurus-v0.1-125B-A6B-JANGH2",
@@ -1161,7 +1168,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-AtomicChat--Qwen3.8-Flash-Next-GGUF",
@@ -1222,7 +1230,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-ddalcu--Qwen3.8-Flash-Next-MLX-Serve-mixed-4-8bit",
@@ -1281,7 +1290,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-Youssofal--Qwen3.6-27B-MTPLX-Optimized-Speed",
@@ -1341,7 +1351,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-ddalcu--Qwen3.8-Flash-Next-MLX-Serve-iQ-MLX-4.7bpw",
@@ -1400,7 +1411,8 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "approved"
   },
   {
    "id": "hf-tfwnotops--Ternary-Bonsai-2-27B-ConstantKV",
@@ -1480,7 +1492,9 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "rejected",
+   "reject_reason": "470 tok/s 属于卡里链接的另一个模型 Qwen2.5-1.5B-Instruct-HCGM（Neural Engine），不是本模型"
   },
   {
    "id": "hf-mlx-community--clef-omni-4bit",
@@ -1540,7 +1554,9 @@
     "concurrency",
     "hardware_cost_usd"
    ],
-   "extractor": "v2"
+   "extractor": "v2",
+   "status": "rejected",
+   "reject_reason": "'150–260 tokens per second' 指每秒视频消耗的 token 数，不是速度；且卡称不是聊天模型"
   }
  ]
 }

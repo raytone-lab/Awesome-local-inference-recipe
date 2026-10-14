@@ -4,7 +4,7 @@
 
 > 模型 × 引擎 × 硬件 → 实测速度与成本，每个数字都链接到来源。聚焦消费级与二手硬件，预算 3 万美元以内。
 
-<sub>暂定名：**RecipeBench** · 共 238 条配方（文字 197 · 图像 16 · 影音 25）· 数据截至 2026-10-13 · <a href="explore.html">配方库</a> · <a href="submit.html">提交配方</a></sub>
+<sub>暂定名：**RecipeBench** · 共 255 条配方（文字 214 · 图像 16 · 影音 25）· 数据截至 2026-10-13 · <a href="explore.html">配方库</a> · <a href="submit.html">提交配方</a></sub>
 
 ## 目录
 
@@ -77,7 +77,7 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 
 ## 第 2 档 · 2,500–7,000 美元
 
-*单张 RTX 5090、单台 DGX Spark、Mac Studio Max* · 共 66 条
+*单张 RTX 5090、单台 DGX Spark、Mac Studio Max* · 共 75 条
 
 
 **📝 文字**
@@ -86,13 +86,13 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang（sglang/serve.sh） `Escha W2（INT8=on）` — RTX 5090 32GB → **283 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** ✅ [来源](https://x.com/tinybluedev/status/2089910202606764530)
 - **Qwen3.8-Flash-Next** · Strata v0.1.27 `IQ2_XS` — RTX 5090 + 256GB RAM → **176 tok/s** ✅ [来源](https://x.com/TechPractice1/status/2105087037363884483)
+- **Qwen3.8-27B** · llama.cpp ≥ b10658 `GPU-1（2.56 bpw）+ DFlash2（7 …` — RTX 5090 32GB → **176 tok/s** 📣 [来源](https://huggingface.co/byteshape/Qwen3.8-27B-GGUF)
+- **Qwen3.8-27B** · llama.cpp ≥ b10658 `GPU-5（3.84 bpw）+ DFlash2（7 …` — RTX 5090 32GB → **167 tok/s** 📣 [来源](https://huggingface.co/byteshape/Qwen3.8-27B-GGUF)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090（RAM 未注明） → **160 tok/s** 🔁 [来源](https://x.com/yume_arasaki/status/2107293459556225446)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090（功耗限制）+ 96GB DDR5-6400 → **150 tok/s** 🔁 [来源](https://x.com/kreia/status/2106054715373212025)
 - **Qwen3.8-27B-NVFP4-MTP** · llama.cpp b10434 `LOW + MTP（--spec-draft-n-ma…` — RTX 5090 32GB → **148.3 tok/s** 🔁 [来源](https://huggingface.co/esatapedico/Qwen3.8-27B-NVFP4-MTP-GGUF)
-- **Qwen3.8-Flash-Next** · TensorFold `TensorFold 0.3.4.x + PR 29/…` — Mac Studio M3 Ultra → **130 tok/s** ✅ [来源](https://x.com/ivanfioravanti/status/2104183112611614780)
-- **Ternary Bonsai 2 27B** · PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0） `PQ2_0` — RTX 5090 32GB → **129.9 tok/s** 📣 [来源](https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf)
-- **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090 → **123.4 tok/s** ✅ [来源](https://x.com/needmorevram/status/2104995992273871104)
-- *……另有 38 条，见 [配方库](explore.html)。*
+- **Qwen3.8-Flash-Next-Gyro** · Strata rc1（agentionai，候选版） `Gyro-S TQ1_0（27.64 GiB）` — RTX 5090 32GB → **140 tok/s** 📣 [来源](https://huggingface.co/agentionai/Qwen3.8-Flash-Next-Gyro-GGUF)
+- *……另有 47 条，见 [配方库](explore.html)。*
 
 **🖼️ 图像**
 
@@ -155,11 +155,12 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 
 ## 价格未公开
 
-按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 108 条。按 tok/s 排名靠前的文字配方：
+按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 116 条。按 tok/s 排名靠前的文字配方：
 
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2（16GB 配方）` — RTX 5080 16GB → **212 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **Qwen3.6-35B-A3B** `Splash` — Mac M5 Pro 48GB → **210 tok/s** 🔁 [来源](https://x.com/TeksEdge/status/2101735798567764421)
 - **Qwen3.6-35B-A3B** · oMLX `oMLX 0.7.1.dev1 融合解码内核` — Mac M5 Max → **205 tok/s** 🏛️ [来源](https://x.com/jundotkim/status/2108584837590495246)
+- **Qwen3.8-Flash-Next-MLX-Serve-iQ-MLX-4.7bpw** · mlx-serve 26.10.1（MTP on） `iQ-MLX 4.7 bpw（校准 4-bit 专家 …` — Mac Studio M5 Ultra → **157 tok/s** 📣 [来源](https://huggingface.co/ddalcu/Qwen3.8-Flash-Next-MLX-Serve-iQ-MLX-4.7bpw)
 - **Qwen3.8-27B** · vLLM `vLLM 等（Reddit u/tonnyygama）` — CMP 170HX（解锁 64GB 矿卡） → **147 tok/s** 🔁 [来源](https://x.com/LFrefman/status/2101572845017178243)
 - **Qwen3.8-27B** `Splash` — Mac M5 Max → **144 tok/s** 🏛️ [来源](https://x.com/zhijianliu/status/2101102949158302001)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2（16GB 配方）` — RTX 5060 Ti 16GB → **128 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
@@ -168,8 +169,7 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 - **Qwen3.8-Flash-Next** · Strata `q3 xs（Strata 教程）` — 2× Tesla V100 32GB PCIe（无 NVLink） → **120 tok/s** ✅ [来源](https://x.com/rewin123/status/2108669905616736529)
 - **Ternary-Bonsai-2-27B-262k** · mirai-s-ada `Ternary Bonsai 2 27B + MTP，…` — RTX 4070 12GB → **102 tok/s** 📣 [来源](https://huggingface.co/CaryPalmer/Ternary-Bonsai-2-27B-262k-GGUF)
 - **Qwen3.8-Flash-Next** · Strata `Strata · Q2_0（MTP 投机解码）` — RTX 5070 12GB + Ryzen 5 7600 + 64GB DDR5 → **94 tok/s** 🏛️ [来源](https://github.com/Niko1221/Strata)
-- **Qwen3.8-Flash-Next** · MLX `mlx-serve · Sushi-4 混合精度包` — Mac M5 Max 128GB → **90 tok/s** 🔁 [来源](https://x.com/yume_arasaki/status/2108359576966094952)
-- *……全部 108 条见 [配方库](explore.html)。*
+- *……全部 116 条见 [配方库](explore.html)。*
 
 
 ## 引擎与工具
