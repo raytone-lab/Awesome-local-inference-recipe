@@ -1,9 +1,21 @@
-# 贡献指南
-1. Fork → 新分支 → 在 `data/recipes.json` 追加记录（字段见 `schema/recipe.schema.json`，模板见 submit.html）
-2. `node scripts/validate.mjs` 必须通过
-3. PR 描述附来源链接；自测附命令与输出
-4. 不估算、不编造：未知写 null。不搬运帖子全文，只留链接与摘要
-5. 来源等级：官方 / 实测 / 转述 / 宣称
+# Contributing / 贡献指南
 
-## 自动候选（Hugging Face）/ Auto candidates
-维护者每周运行 `python3 scripts/ingest_hf.py`，再用 `python3 scripts/review_candidates.py` 人工审核；只有 approve 后才进入 `data/recipes.json`。详见 `docs/sources.md`。
+Please read the [Code of Conduct](CODE_OF_CONDUCT.md) first.
+
+## Add a recipe
+1. Easiest: open a **[Recipe submission](../../issues/new?template=recipe.yml)** issue. Or fork → branch → append to `data/recipes.json` (fields: `schema/recipe.schema.json`, template: `submit.html`).
+2. `node scripts/validate.mjs` must pass (CI runs it on every PR).
+3. Regenerate READMEs: `python3 scripts/gen_readme.py`.
+4. Link the original source; for your own runs include the command and output.
+5. No estimates, no invented values: unknown → `null`. Link and summarize, don't copy posts.
+6. Source level: official / measured / relayed / claimed (see [docs/sources.md](docs/sources.md)).
+
+## 中文
+1. 最简单：提一个「Recipe submission」issue；或 Fork 后在 `data/recipes.json` 追加记录。
+2. `node scripts/validate.mjs` 必须通过（PR 会自动跑 CI）。
+3. 运行 `python3 scripts/gen_readme.py` 重新生成两份 README。
+4. 附原始来源链接；自测请附命令与输出。
+5. 不估算、不编造，未知写 `null`；只留链接与摘要。
+6. 来源等级：官方 / 实测 / 转述 / 宣称，详见 [docs/sources.md](docs/sources.md)。
+
+Maintainers: Hugging Face candidate ingestion is described in [docs/sources.md](docs/sources.md).

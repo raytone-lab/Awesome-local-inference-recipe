@@ -1,4 +1,4 @@
-"""2026-10-14 v3 批次 12 张卡的回归测试（金标准来自 data/candidates/hf-2026-10-14-v3.review.json）"""
+"""2026-10-14 v3 批次 12 张卡的回归测试（金标准为人工审核结果）"""
 import os, sys, unittest
 H = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(H, "..", "scripts"))
 from hf_extract import extract
