@@ -117,6 +117,8 @@ HL = {
    note='1 ストリームの生成速度で、いずれも出典からの引用です。価格は公開されている最安のハードウェア価格。✅ = 投稿者本人の実測。',
    alt='テキストレシピの散布図：tok/s とハードウェア価格、ハードウェア分類で色分け', cost='約 {c:,} ドル'),
 }
+PNOTE = {'x-006':{'en':'card only, excl. 256GB RAM','zh':'仅显卡，不含 256GB 内存','ja':'GPU のみ、256GB RAM 別'},
+ 'text-113':{'en':'base config price; test machine memory not stated','zh':'起步配置价格，原帖未注明测试机内存','ja':'最小構成価格、検証機のメモリは不明'}}
 def hero(lang, E):
     H=HL[lang]; T=L[lang]; byid={r['id']:r for r in D}
     n={c:sum(r['category']==c for r in D) for c in ('text','image','video-audio')}
@@ -143,6 +145,7 @@ def hero(lang, E):
         r=byid[i]; eg=E(r['engine']) if r['engine']!='Unspecified' else ''
         hw=clip(E(r['hardware']) or r['hardware'],44)
         c=f" · {H['cost'].format(c=r['hardware_cost_usd'])}" if r.get('hardware_cost_usd') else ''
+        if i in PNOTE: c+=(f"（{PNOTE[i][lang]}）" if lang!='en' else f" ({PNOTE[i][lang]})")
         who=(r.get('x_post') or {}).get('author'); src=f'@{who}' if who else T['src']
         out.append(f"| {H['lab'][k]} | {E(r['model'])}{' · '+eg if eg else ''} | {hw}{c} | **{r['tok_s']:g} tok/s** {LVI[r['source_level']]} | [{src}]({r['source_url']}) |")
     out+=['',f"<sub>{H['note']}</sub>"]
