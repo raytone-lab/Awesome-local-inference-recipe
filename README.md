@@ -8,7 +8,7 @@
 
 <p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><b>Explore live</b></a> · <a href="recipes/README.md"><b>Recipe guides</b></a> · <a href="docs/getting-started.md"><b>Getting started</b></a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html"><b>Submit a recipe</b></a></p>
 
-<p align="center"><img src="docs/hero.png" width="860" alt="Scatter chart of text recipes: tok/s against hardware price, colored by hardware family"></p>
+<p align="center"><img src="docs/hero.png" width="860" alt="Bar chart: top 15 measured text setups ranked by tok/s per $1,000 of hardware, colored by hardware family"></p>
 
 **288 recipes** (247 text · 16 image · 25 video & audio) · **6 hardware families** · **34 engines** · **11 model families** · every number linked to its source · budget up to **$30k**
 
@@ -122,6 +122,9 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 | [sparkinfer](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=sparkinfer)                                           | 1       |
 | [sushi](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=sushi)                                                     | 1       |
 | [Unspecified](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Unspecified)                                         | 53      |
+
+<p align="center"><img src="docs/budget-tiers.png" width="860" alt="Bar chart: fastest measured and claimed text setup in each budget tier"></p>
+
 
 ## Tier 1 · up to $2.5k
 

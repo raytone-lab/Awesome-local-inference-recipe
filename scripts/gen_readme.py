@@ -48,7 +48,9 @@ L = {
    th='| プロジェクト | ⭐ Star | ライブ | 最終 push | 概要 |', site='*（サイト・ブログ）*', desc='desc_ja',
    note='⭐ スナップショットは `scripts/update_stars.py` で {u}（UTC）に更新 · 「ライブ」バッジは表示時に shields.io が描画します。'),
 }
-BOUNDS=[(0,2500),(2500,7000),(7000,14000),(14000,30000)]
+BOUNDS=[(0,2500),(2500,7000),(7000,14000),(14000,30000)]  # keep in sync with gen_hero.py
+IMGSUF={'en':'','zh':'.zh-CN','ja':'.ja'}  # charts rendered by scripts/gen_hero.py
+BALT={'en':'Bar chart: fastest measured and claimed text setup in each budget tier','zh':'条形图：各预算档最快的实测与宣称文字配置','ja':'棒グラフ：予算帯ごとの最速テキスト構成（実測と公称）'}
 def clip(s,n=90): s=(s or '').replace('|','/').replace('\n',' '); return s if len(s)<=n else s[:n-1]+'…'
 def en(s):
     """Drop Chinese fragments so English lines stay single-language (proper nouns kept)."""
@@ -99,7 +101,7 @@ HL = {
    hd='### Headline numbers', th='| Record | Model · engine | Hardware | Result | Source |',
    lab={'mac':'Fastest on a Mac','5090':'Fastest on one RTX 5090','amd':'Fastest on AMD','dc':'Used datacenter GPUs','spark':'Fastest on one DGX Spark','cheap':'Cheapest rig in the list'},
    note='Single-stream generation speed, copied from each source; prices are the lowest published hardware price. ✅ = measured by the poster.',
-   alt='Scatter chart of text recipes: tok/s against hardware price, colored by hardware family', cost='≈ ${c:,}'),
+   alt='Bar chart: top 15 measured text setups ranked by tok/s per $1,000 of hardware, colored by hardware family', cost='≈ ${c:,}'),
  'zh': dict(h1='本地推理配方精选', tag='你的硬件到底能跑多快？{n} 条有出处的本地 AI 配方，从 {lo:,} 美元的显卡到 3 万美元的整机。',
    lang='<a href="README.md">English</a> · <b>简体中文</b> · <a href="README.ja.md">日本語</a>',
    nav=[('在线配方库','explore.html'),('配方指南','recipes/README.zh-CN.md'),('入门指南','docs/getting-started.zh-CN.md'),('提交配方','submit.html')],
@@ -107,7 +109,7 @@ HL = {
    hd='### 亮点数据', th='| 记录 | 模型 · 引擎 | 硬件 | 结果 | 来源 |',
    lab={'mac':'Mac 最快','5090':'单张 RTX 5090 最快','amd':'AMD 最快','dc':'二手数据中心卡','spark':'单台 DGX Spark 最快','cheap':'最便宜的配置'},
    note='单路生成速度，均摘自来源；价格为公开的最低硬件价格。✅ = 发帖人实测。',
-   alt='文字配方散点图：tok/s 与硬件价格，按硬件类别着色', cost='约 ${c:,}'),
+   alt='条形图：按每 $1000 硬件对应 tok/s 排名的实测文字配置前 15 名，按硬件类别着色', cost='约 ${c:,}'),
  'ja': dict(h1='ローカル推論レシピ集', tag='あなたのハードウェアで、実際どれくらいの速度が出る？出典付きのローカル AI レシピ {n} 件。{lo:,} ドルの GPU から 3 万ドルの構成まで。',
    lang='<a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a> · <b>日本語</b>',
    nav=[('エクスプローラー','explore.html'),('レシピガイド','recipes/README.ja.md'),('はじめに','docs/getting-started.ja.md'),('レシピを投稿','submit.html')],
@@ -115,7 +117,7 @@ HL = {
    hd='### 注目の記録', th='| 記録 | モデル · エンジン | ハードウェア | 結果 | 出典 |',
    lab={'mac':'Mac で最速','5090':'RTX 5090 1 枚で最速','amd':'AMD で最速','dc':'中古データセンター GPU','spark':'DGX Spark 1 台で最速','cheap':'いちばん安い構成'},
    note='1 ストリームの生成速度で、いずれも出典からの引用です。価格は公開されている最安のハードウェア価格。✅ = 投稿者本人の実測。',
-   alt='テキストレシピの散布図：tok/s とハードウェア価格、ハードウェア分類で色分け', cost='約 {c:,} ドル'),
+   alt='棒グラフ：ハードウェア $1,000 あたりの tok/s で並べた実測テキスト構成トップ 15（ハードウェア分類で色分け）', cost='約 {c:,} ドル'),
 }
 PNOTE = {'x-006':{'en':'card only, excl. 256GB RAM','zh':'仅显卡，不含 256GB 内存','ja':'GPU のみ、256GB RAM 別'},
  'text-113':{'en':'base config price; test machine memory not stated','zh':'起步配置价格，原帖未注明测试机内存','ja':'最小構成価格、検証機のメモリは不明'}}
@@ -138,7 +140,7 @@ def hero(lang, E):
     out=[f'<h1 align="center">{H["h1"]} <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a></h1>','',
          f'<p align="center">{H["tag"].format(n=len(D),lo=lo)}</p>','',f'<p align="center">{H["lang"]}</p>','',
          f'<p align="center">{badges}</p>','',f'<p align="center">{nav}</p>','',
-         f'<p align="center"><img src="docs/hero.png" width="860" alt="{H["alt"]}"></p>','',
+         f'<p align="center"><img src="docs/hero{IMGSUF[lang]}.png" width="860" alt="{H["alt"]}"></p>','',
          H['stats'].format(n=len(D),nt=n['text'],ni=n['image'],nv=n['video-audio'],hf=len({r["hardware_family"] for r in D}),ne=len({r["engine"] for r in D if r["engine"]!="Unspecified"}),mf=len({r["model_family"] for r in D if r["model_family"]!="Other"})),'',
          H['hd'],'',H['th'],'|---|---|---|---|---|']
     for i,k in SHOW:
@@ -179,6 +181,7 @@ def build(lang):
     sec(T['engidx']); out.append(T['engdesc']+'\n'); out.append(T['th3']); out.append('|---|--:|')
     for e,n in sorted(Counter(r['engine'] for r in D).items(),key=lambda x:(x[0]=='Unspecified',-x[1],x[0])):
         out.append(f"| [{e}](explore.html?engine={quote(e)}) | {n} |")
+    out.append(f'\n<p align="center"><img src="docs/budget-tiers{IMGSUF[lang]}.png" width="860" alt="{BALT[lang]}"></p>\n')
     for t,d,(lo,hi) in zip(T['tiers'],T['tdesc'],BOUNDS):
         sec(t); rs=[r for r in D if r['hardware_cost_usd'] is not None and lo<r['hardware_cost_usd']<=hi]
         out.append(f"*{d}* · {T['count'].format(n=len(rs))}\n")

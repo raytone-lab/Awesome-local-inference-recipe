@@ -8,7 +8,7 @@
 
 <p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><b>エクスプローラー</b></a> · <a href="recipes/README.ja.md"><b>レシピガイド</b></a> · <a href="docs/getting-started.ja.md"><b>はじめに</b></a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html"><b>レシピを投稿</b></a></p>
 
-<p align="center"><img src="docs/hero.png" width="860" alt="テキストレシピの散布図：tok/s とハードウェア価格、ハードウェア分類で色分け"></p>
+<p align="center"><img src="docs/hero.ja.png" width="860" alt="棒グラフ：ハードウェア $1,000 あたりの tok/s で並べた実測テキスト構成トップ 15（ハードウェア分類で色分け）"></p>
 
 **レシピ 288 件**（テキスト 247 · 画像 16 · 動画・音声 25）· **ハードウェア 6 分類** · **エンジン 34 種** · **モデルファミリー 11 系統** · すべての数字に出典リンク · 予算 **3 万ドルまで**
 
@@ -122,6 +122,9 @@
 | [sparkinfer](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=sparkinfer)                                           | 1    |
 | [sushi](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=sushi)                                                     | 1    |
 | [Unspecified](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Unspecified)                                         | 53   |
+
+<p align="center"><img src="docs/budget-tiers.ja.png" width="860" alt="棒グラフ：予算帯ごとの最速テキスト構成（実測と公称）"></p>
+
 
 ## 第 1 段階 · 2,500 ドルまで
 

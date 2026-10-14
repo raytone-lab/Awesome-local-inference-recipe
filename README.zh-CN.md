@@ -8,7 +8,7 @@
 
 <p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><b>在线配方库</b></a> · <a href="recipes/README.zh-CN.md"><b>配方指南</b></a> · <a href="docs/getting-started.zh-CN.md"><b>入门指南</b></a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html"><b>提交配方</b></a></p>
 
-<p align="center"><img src="docs/hero.png" width="860" alt="文字配方散点图：tok/s 与硬件价格，按硬件类别着色"></p>
+<p align="center"><img src="docs/hero.zh-CN.png" width="860" alt="条形图：按每 $1000 硬件对应 tok/s 排名的实测文字配置前 15 名，按硬件类别着色"></p>
 
 **288 条配方**（文字 247 · 图像 16 · 影音 25）· **6 类硬件** · **34 种引擎** · **11 个模型系列** · 每个数字都有出处 · 预算 **3 万美元以内**
 
@@ -122,6 +122,9 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 | [sparkinfer](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=sparkinfer)                                           | 1   |
 | [sushi](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=sushi)                                                     | 1   |
 | [Unspecified](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Unspecified)                                         | 53  |
+
+<p align="center"><img src="docs/budget-tiers.zh-CN.png" width="860" alt="条形图：各预算档最快的实测与宣称文字配置"></p>
+
 
 ## 第 1 档 · 2,500 美元以内
 
