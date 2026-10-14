@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate README.md (English) and README.zh-CN.md (Chinese) from data/. Run: python3 scripts/gen_readme.py"""
+"""Generate README.md (English), README.zh-CN.md (Chinese) and README.ja.md (Japanese) from data/. Run: python3 scripts/gen_readme.py"""
 import json, re
 from pathlib import Path
 R = Path(__file__).resolve().parent.parent
@@ -8,6 +8,7 @@ REPOS = json.load(open(R/'data/repos.json'))
 try: UPD = json.load(open(R/'data/repos.meta.json'))['updated_at']
 except Exception: UPD = None
 HWF_EN = {'NVIDIA 消费级':'NVIDIA consumer','二手数据中心卡':'Used datacenter GPU','其他':'Other'}
+HWF_JA = {'NVIDIA 消费级':'NVIDIA コンシューマー','二手数据中心卡':'中古データセンター GPU','其他':'その他'}
 PAGES = 'https://raytone-lab.github.io/Awesome-local-inference-recipe/'
 GUIDES = set(json.load(open(R/'data/guides.json'))) if (R/'data/guides.json').exists() else set()
 LVI = {'官方':'🏛️','实测':'✅','转述':'🔁','宣称':'📣'}
@@ -35,6 +36,17 @@ L = {
    src='来源', see='见来源', legend='图例', eng='引擎与工具', rel='相关榜单与清单', contrib='参与贡献', lic='许可证',
    th='| 项目 | ⭐ Star | 实时 | 最后推送 | 简介 |', site='*（网站/博客）*', desc='desc_zh',
    note='⭐ 快照由 `scripts/update_stars.py` 更新于 {u}（UTC）· 「实时」徽章由 shields.io 在打开页面时实时渲染。'),
+ 'ja': dict(file='README.ja.md', tpl='readme_static.ja.md',
+   tiers=['第 1 段階 · 2,500 ドルまで','第 2 段階 · 2,500〜7,000 ドル','第 3 段階 · 7,000〜14,000 ドル','第 4 段階 · 14,000〜30,000 ドル'],
+   tdesc=['中古の 3090/4090、MI50/V100、Strix Halo、R9700','RTX 5090 1 枚、DGX Spark 1 台、Mac Studio Max','DGX Spark 2 台、Mac Studio Ultra','Spark 3〜4 台のクラスター、マルチ GPU ワークステーション'],
+   cats={'text':'📝 テキスト','image':'🖼️ 画像','video-audio':'🎬 動画・音声'},
+   fam='モデルファミリー別', famdesc='ファミリー名をクリックすると、絞り込み済みのエクスプローラーが開きます。タグ：{tags}。', engidx='エンジン別', engdesc='エンジン名は表記を統一しています（`scripts/normalize_engines.py`）。元の表記は `engine_note` に残しています。', th2='| ファミリー | レシピ数 | テキスト | 画像 | 動画・音声 |', th3='| エンジン | レシピ数 |',
+   hot='今月の注目', hotdesc='2026-09-15〜10-13 に X で反応が多かったレシピ投稿（いいね + リポスト×3 の順）。',
+   unk='価格非公開', unkdesc='1 枚単位で価格が出ているマルチ GPU 構成、価格の記載がない Mac など、単一の公開価格がないレシピ · {n} 件。tok/s 上位のテキストレシピ：',
+   guide='手順', gsuf='.md', more='…ほか {n} 件は[エクスプローラー](explore.html)で。', all='…全 {n} 件は[エクスプローラー](explore.html)で見られます。', count='{n} 件',
+   src='出典', see='出典を参照', legend='凡例', eng='エンジンとツール', rel='関連リスト・ベンチマーク', contrib='コントリビュート', lic='ライセンス',
+   th='| プロジェクト | ⭐ Star | ライブ | 最終 push | 概要 |', site='*（サイト・ブログ）*', desc='desc_ja',
+   note='⭐ スナップショットは `scripts/update_stars.py` で {u}（UTC）に更新 · 「ライブ」バッジは表示時に shields.io が描画します。'),
 }
 BOUNDS=[(0,2500),(2500,7000),(7000,14000),(14000,30000)]
 def clip(s,n=90): s=(s or '').replace('|','/').replace('\n',' '); return s if len(s)<=n else s[:n-1]+'…'
@@ -75,16 +87,16 @@ def align_tables(txt):
         else: res.append(lines[i]); i+=1
     return '\n'.join(res)
 def build(lang):
-    T=L[lang]; E=(lambda s:en(s)) if lang=='en' else (lambda s:s)
+    T=L[lang]; E=(lambda s:en(s)) if lang in ('en','ja') else (lambda s:s)
     def key(r):
         if r['tok_s'] is not None: return f"**{r['tok_s']:g} tok/s**"
-        m=(r.get('metric_en') or r['metric']) if lang=='en' else r['metric']
-        if lang=='en' and m and CJK.search(m): m=None  # don't show mangled partial translations
+        m=(r.get('metric_en') or r['metric']) if lang in ('en','ja') else r['metric']
+        if lang in ('en','ja') and m and CJK.search(m): m=None  # don't show mangled partial translations
         return clip(m,70) if m else T['see']
     def ln(r):
         q=E(r['quant']); q=f" `{clip(q,28)}`" if q else ''
         eg=E(r['engine']); eg='' if (not eg or r['engine']=='Unspecified') else f" · {eg}"
-        return f"- **{E(r['model'])}**{eg}{q} — {clip(E(r['hardware']) or (HWF_EN.get(r['hardware_family'],r['hardware_family']) if lang=='en' else r['hardware_family']),60)} → {key(r)} {LVI.get(r['source_level'],'')} [{T['src']}]({r['source_url']})"+(f" · [{T['guide']}](recipes/{r['id']}{T['gsuf']})" if r['id'] in GUIDES else '')
+        return f"- **{E(r['model'])}**{eg}{q} — {clip(E(r['hardware']) or ({'en':HWF_EN,'ja':HWF_JA}.get(lang,{}).get(r['hardware_family'],r['hardware_family'])),60)} → {key(r)} {LVI.get(r['source_level'],'')} [{T['src']}]({r['source_url']})"+(f" · [{T['guide']}](recipes/{r['id']}{T['gsuf']})" if r['id'] in GUIDES else '')
     out=[];toc=[]
     def sec(t): out.append(f"\n## {t}\n"); toc.append(f"- [{t}](#{slug(t)})")
     seen=set();hot=[r for r in sorted([r for r in D if r.get('x_post')],key=lambda r:-(r['x_post']['likes']+3*r['x_post']['reposts'])) if not (r['source_url'] in seen or seen.add(r['source_url']))][:8]
