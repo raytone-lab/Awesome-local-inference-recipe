@@ -44,17 +44,44 @@ for r in U: r['_v']=r['tok_s']/r['hardware_cost_usd']*1000; r['_m']=r['source_le
 
 def style(ax):
     for s in ('top','right'): ax.spines[s].set_visible(False)
+def _asof():
+    m=re.search(r"DATA_ASOF\s*=\s*'([^']+)'",open(R/'scripts/gen_readme.py').read()); return m.group(1) if m else ''
+def _used(r): return '二手' in (r.get('hardware_cost_text') or '') or '二手' in r['hardware']
+HT={'en':dict(t='A {p} {u}{hw} runs {tok:g} tok/s',used='used ',
+      sub='tok/s per $1,000 of hardware = single-stream tok/s ÷ (price / 1000) · measured results only · lowest published price, Oct 2026 · models differ per row',
+      base='single RTX 3090 ≈{v:.0f}',note='Data as of {d} · CC BY 4.0 · Awesome Local Inference Recipes'),
+    'zh-CN':dict(t='{p} 的{u}{hw} 就能跑 {tok:g} tok/s',used='二手 ',
+      sub='每 $1000 的 tok/s = 单流 tok/s ÷（价格 / 1000）· 仅实测 · 价格取 2026 年 10 月公开最低价 · 各行模型不同',
+      base='单张 RTX 3090 ≈{v:.0f}',note='数据截至 {d} · CC BY 4.0 · Awesome Local Inference Recipes'),
+    'ja':dict(t='{p} の{u}{hw} で {tok:g} tok/s',used='中古 ',
+      sub='$1,000 あたり tok/s = 1 ストリーム tok/s ÷（価格 / 1000）· 実測のみ · 2026 年 10 月の公開最安価格 · 行ごとにモデルは異なる',
+      base='RTX 3090 1 枚 ≈{v:.0f}',note='データ時点 {d} · CC BY 4.0 · Awesome Local Inference Recipes')}
 def hero(lang):
-    t=TX[lang]; top=sorted([r for r in U if r['_m']],key=lambda r:(-r['_v'],r['id']))[:15][::-1]
-    fig,ax=plt.subplots(figsize=(11,6.2),dpi=150)
+    t=TX[lang]; h=HT[lang]
+    meas=[r for r in U if r['_m']]; top=sorted(meas,key=lambda r:(-r['_v'],r['id']))[:15]
+    first=top[0]; top=top[::-1]
+    fig,ax=plt.subplots(figsize=(11.5,7.4),dpi=150)
+    vmax=max(r['_v'] for r in top)
     for i,r in enumerate(top):
-        ax.barh(i,r['_v'],color=FAM[r['hardware_family']],alpha=.9)
-        ax.text(r['_v']+.6,i,f"{r['tok_s']:g} tok/s @ {money(r['hardware_cost_usd'])}",va='center',fontsize=9,color='#334155')
-    ax.set_yticks(range(len(top))); ax.set_yticklabels([f"{clean(r['hardware'],30)} · {clean(r['model'],24)}" for r in top],fontsize=9)
-    ax.set_xlabel(t['h_x']); ax.set_xlim(0,max(r['_v'] for r in top)*1.35)
-    ax.set_title(t['h_title'],loc='left',fontsize=13,color='#0f172a'); style(ax); ax.grid(axis='x',alpha=.2)
+        ax.barh(i,r['_v'],color=FAM[r['hardware_family']],alpha=.9,height=.72)
+        ax.text(r['_v']+vmax*.01,i,f"≈{r['_v']:.0f} tok/s/$1k",va='center',fontsize=9.5,fontweight='bold',color='#0f172a')
+        ax.annotate(f"({r['tok_s']:g} tok/s · {money(r['hardware_cost_usd'])})",(r['_v']+vmax*.01,i),xytext=(len(f"≈{r['_v']:.0f} tok/s/$1k")*6.4+4,0),textcoords='offset points',va='center',fontsize=8.5,color='#475569')
+        ax.text(-.012,i+.13,f"{clean(r['hardware'],30)} [{money(r['hardware_cost_usd'])}]",transform=ax.get_yaxis_transform(),ha='right',va='center',fontsize=9.2,color='#0f172a')
+        ax.text(-.012,i-.24,clean(r['model'],34),transform=ax.get_yaxis_transform(),ha='right',va='center',fontsize=7.3,color='#94a3b8')
+    ax.set_yticks([]); ax.set_ylim(-.7,len(top)-.3)
+    b=[r for r in meas if re.fullmatch(r'(单 )?RTX 3090( 24GB)?',clean(r['hardware'],80))]
+    if b:
+        bv=max(r['_v'] for r in b); ax.axvline(bv,ls='--',lw=1,color='#334155',alpha=.7)
+        ax.text(bv,len(top)-.35,' '+h['base'].format(v=bv),fontsize=8.5,color='#334155',va='bottom')
+    ax.set_xlim(0,vmax*1.6); ax.set_xlabel(t['h_x'],fontsize=10)
+    hw=clean(first['hardware'],40); hw=re.sub(r'^(单 )','',hw)
+    fig.suptitle(h['t'].format(p=money(first['hardware_cost_usd']),u=h['used'] if _used(first) else '',hw=re.sub(r' \d+GB$','',hw),tok=first['tok_s']),x=.012,y=.985,ha='left',fontsize=15,fontweight='bold',color='#0f172a')
+    fig.text(.012,.935,h['sub'],ha='left',fontsize=9,color='#475569')
+    fig.text(.995,.008,h['note'].format(d=_asof()),ha='right',fontsize=7.5,color='#94a3b8')
+    style(ax); ax.spines['left'].set_visible(False); ax.grid(axis='x',alpha=.2)
     fams=[k for k in FAM if any(r['hardware_family']==k for r in top)]
-    ax.legend(handles=[Patch(color=FAM[k],label=t['fam'][k]) for k in fams],frameon=False,loc='lower right',fontsize=9)
+    ax.legend(handles=[Patch(color=FAM[k],label=t['fam'][k]) for k in fams],frameon=False,loc='lower right',fontsize=8.5,ncol=1)
+    fig.tight_layout(rect=(0,.02,1,.935))
     return fig
 def tiers(lang):
     t=TX[lang]; fig,ax=plt.subplots(figsize=(11,5.4),dpi=150); y=0; ticks=[]; xmax=0; used=set()
@@ -76,6 +103,7 @@ def tiers(lang):
     style(ax); ax.grid(axis='x',alpha=.2)
     h=[Patch(color=FAM[k],label=t['fam'][k]) for k in FAM if k in used]+[Patch(facecolor='white',edgecolor='#334155',hatch='///',label=t['claim'])]
     ax.legend(handles=h,frameon=False,loc='lower right',fontsize=9)
+    fig.tight_layout()
     return fig
 if __name__=='__main__':
     have={f.name for f in fm.fontManager.ttflist}
@@ -83,4 +111,4 @@ if __name__=='__main__':
         plt.rcParams['font.family']=['DejaVu Sans']+([CJK[lang]] if lang in CJK and CJK[lang] in have else [])
         if lang in CJK and CJK[lang] not in have: print(f'warning: {CJK[lang]} not installed; CJK labels may render as boxes')
         for name,fn in (('hero',hero),('budget-tiers',tiers)):
-            p=R/f'docs/{name}{suf}.png'; f=fn(lang); f.tight_layout(); f.savefig(p,facecolor='white',metadata={'Software':None}); plt.close(f); print(p.relative_to(R))
+            p=R/f'docs/{name}{suf}.png'; f=fn(lang); f.savefig(p,facecolor='white',metadata={'Software':None}); plt.close(f); print(p.relative_to(R))
