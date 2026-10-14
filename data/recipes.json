@@ -24,7 +24,8 @@
       "long-context",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-bca476fd34"
   },
   {
     "id": "text-002",
@@ -48,7 +49,8 @@
     "model_family": "Qwen",
     "tags": [
       "3bit"
-    ]
+    ],
+    "source_id": "src-bca476fd34"
   },
   {
     "id": "text-003",
@@ -72,7 +74,8 @@
     "model_family": "Qwen",
     "tags": [
       "2bit"
-    ]
+    ],
+    "source_id": "src-bca476fd34"
   },
   {
     "id": "text-004",
@@ -96,7 +99,8 @@
     "model_family": "Qwen",
     "tags": [
       "3bit"
-    ]
+    ],
+    "source_id": "src-87c3eed337"
   },
   {
     "id": "text-005",
@@ -121,7 +125,8 @@
     "tags": [
       "3bit",
       "long-context"
-    ]
+    ],
+    "source_id": "src-e4eb55a0bb"
   },
   {
     "id": "text-006",
@@ -145,7 +150,8 @@
     "model_family": "Qwen",
     "tags": [
       "3bit"
-    ]
+    ],
+    "source_id": "src-6d6cbf1b1e"
   },
   {
     "id": "text-007",
@@ -170,7 +176,8 @@
     "tags": [
       "3bit",
       "long-context"
-    ]
+    ],
+    "source_id": "src-1dcae268a2"
   },
   {
     "id": "text-008",
@@ -195,7 +202,8 @@
     "tags": [
       "3bit",
       "long-context"
-    ]
+    ],
+    "source_id": "src-46c063899f"
   },
   {
     "id": "text-009",
@@ -219,7 +227,8 @@
     "model_family": "Qwen",
     "tags": [
       "3bit"
-    ]
+    ],
+    "source_id": "src-f152825317"
   },
   {
     "id": "text-010",
@@ -244,7 +253,8 @@
     "tags": [
       "2bit",
       "long-context"
-    ]
+    ],
+    "source_id": "src-e814f171a0"
   },
   {
     "id": "text-011",
@@ -268,7 +278,8 @@
     "model_family": "Qwen",
     "tags": [
       "3bit"
-    ]
+    ],
+    "source_id": "src-87c3eed337"
   },
   {
     "id": "text-012",
@@ -293,7 +304,8 @@
     "tags": [
       "4bit",
       "MoE"
-    ]
+    ],
+    "source_id": "src-8aecb1e83d"
   },
   {
     "id": "text-013",
@@ -322,7 +334,8 @@
       "speculative",
       "MTP",
       "offload"
-    ]
+    ],
+    "source_id": "src-87c3eed337"
   },
   {
     "id": "text-014",
@@ -348,7 +361,8 @@
       "3bit",
       "long-context",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-c3a764e860"
   },
   {
     "id": "text-015",
@@ -373,7 +387,8 @@
     "tags": [
       "3bit",
       "long-context"
-    ]
+    ],
+    "source_id": "src-34c8adae1e"
   },
   {
     "id": "text-016",
@@ -398,7 +413,8 @@
     "tags": [
       "3bit",
       "long-context"
-    ]
+    ],
+    "source_id": "src-08a6413ff5"
   },
   {
     "id": "text-017",
@@ -423,7 +439,8 @@
     "tags": [
       "long-context",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-87c3eed337"
   },
   {
     "id": "text-018",
@@ -449,7 +466,8 @@
       "long-context",
       "multi-GPU",
       "abliterated"
-    ]
+    ],
+    "source_id": "src-bc9360492e"
   },
   {
     "id": "text-019",
@@ -475,7 +493,8 @@
       "speculative",
       "MTP",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-0d80b902df"
   },
   {
     "id": "text-020",
@@ -501,7 +520,8 @@
       "1bit",
       "long-context",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-f55421a83d"
   },
   {
     "id": "text-021",
@@ -525,7 +545,8 @@
     "model_family": "Qwen",
     "tags": [
       "3bit"
-    ]
+    ],
+    "source_id": "src-f55421a83d"
   },
   {
     "id": "text-022",
@@ -552,7 +573,8 @@
       "8bit",
       "long-context",
       "speculative"
-    ]
+    ],
+    "source_id": "src-abb408b53c"
   },
   {
     "id": "text-023",
@@ -576,7 +598,8 @@
     "model_family": "Qwen",
     "tags": [
       "long-context"
-    ]
+    ],
+    "source_id": "src-03f081c85a"
   },
   {
     "id": "text-024",
@@ -600,7 +623,8 @@
     "model_family": "Qwen",
     "tags": [
       "long-context"
-    ]
+    ],
+    "source_id": "src-5e67752577"
   },
   {
     "id": "text-025",
@@ -625,7 +649,8 @@
     "tags": [
       "long-context",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-63dff07172"
   },
   {
     "id": "text-026",
@@ -651,7 +676,8 @@
       "4bit",
       "MoE",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-8929978dc2"
   },
   {
     "id": "text-027",
@@ -676,7 +702,8 @@
     "model_family": "Qwen",
     "tags": [
       "speculative"
-    ]
+    ],
+    "source_id": "src-f4049241a7"
   },
   {
     "id": "text-028",
@@ -699,7 +726,8 @@
     "date": null,
     "engine_raw": "其他/未注明",
     "model_family": "Qwen",
-    "tags": []
+    "tags": [],
+    "source_id": "src-00bad3d565"
   },
   {
     "id": "text-029",
@@ -727,7 +755,9 @@
       "bf16",
       "long-context",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-987e1bb8bd",
+    "engine_fork": "Radiance"
   },
   {
     "id": "text-030",
@@ -749,7 +779,8 @@
     "source_level": "实测",
     "date": null,
     "model_family": "Qwen",
-    "tags": []
+    "tags": [],
+    "source_id": "src-6d7b2dee32"
   },
   {
     "id": "text-031",
@@ -775,7 +806,8 @@
     "tags": [
       "MoE",
       "offload"
-    ]
+    ],
+    "source_id": "src-77d360cc7f"
   },
   {
     "id": "text-032",
@@ -801,7 +833,8 @@
       "4bit",
       "MoE",
       "speculative"
-    ]
+    ],
+    "source_id": "src-e6ab729823"
   },
   {
     "id": "text-033",
@@ -826,7 +859,8 @@
     "tags": [
       "4bit",
       "MoE"
-    ]
+    ],
+    "source_id": "src-96399c71ec"
   },
   {
     "id": "text-034",
@@ -851,7 +885,8 @@
     "tags": [
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-77d360cc7f"
   },
   {
     "id": "text-035",
@@ -875,7 +910,8 @@
     "model_family": "Qwen",
     "tags": [
       "long-context"
-    ]
+    ],
+    "source_id": "src-77d360cc7f"
   },
   {
     "id": "text-036",
@@ -897,7 +933,8 @@
     "source_level": "转述",
     "date": null,
     "model_family": "Qwen",
-    "tags": []
+    "tags": [],
+    "source_id": "src-77d360cc7f"
   },
   {
     "id": "text-037",
@@ -921,7 +958,8 @@
     "model_family": "Qwen",
     "tags": [
       "long-context"
-    ]
+    ],
+    "source_id": "src-77d360cc7f"
   },
   {
     "id": "text-038",
@@ -945,7 +983,8 @@
     "model_family": "Qwen",
     "tags": [
       "long-context"
-    ]
+    ],
+    "source_id": "src-7a444b72fa"
   },
   {
     "id": "text-039",
@@ -973,7 +1012,8 @@
       "dense",
       "long-context",
       "speculative"
-    ]
+    ],
+    "source_id": "src-5aae4ea96a"
   },
   {
     "id": "text-040",
@@ -997,7 +1037,8 @@
     "model_family": "Qwen",
     "tags": [
       "dense"
-    ]
+    ],
+    "source_id": "src-fffda87c00"
   },
   {
     "id": "text-041",
@@ -1023,7 +1064,8 @@
       "dense",
       "long-context",
       "speculative"
-    ]
+    ],
+    "source_id": "src-5e67752577"
   },
   {
     "id": "text-042",
@@ -1047,7 +1089,8 @@
     "model_family": "Qwen",
     "tags": [
       "dense"
-    ]
+    ],
+    "source_id": "src-5e67752577"
   },
   {
     "id": "text-043",
@@ -1073,7 +1116,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-cd292e7f5c"
   },
   {
     "id": "text-044",
@@ -1099,7 +1143,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-342773ce34"
   },
   {
     "id": "text-045",
@@ -1124,7 +1169,8 @@
     "model_family": "Qwen",
     "tags": [
       "dense"
-    ]
+    ],
+    "source_id": "src-5d2ab530e1"
   },
   {
     "id": "text-046",
@@ -1152,7 +1198,9 @@
       "dense",
       "long-context",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-987e1bb8bd",
+    "engine_fork": "Radiance"
   },
   {
     "id": "text-047",
@@ -1177,7 +1225,8 @@
     "tags": [
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-896caa6ac3"
   },
   {
     "id": "text-048",
@@ -1203,7 +1252,8 @@
     "tags": [
       "6bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-f862b480cb"
   },
   {
     "id": "text-049",
@@ -1230,7 +1280,8 @@
       "8bit",
       "dense",
       "speculative"
-    ]
+    ],
+    "source_id": "src-cd292e7f5c"
   },
   {
     "id": "text-050",
@@ -1256,7 +1307,8 @@
     "tags": [
       "4bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-78fdafba2a"
   },
   {
     "id": "text-051",
@@ -1281,7 +1333,8 @@
     "tags": [
       "4bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-4fbd5a27e5"
   },
   {
     "id": "text-052",
@@ -1306,7 +1359,8 @@
     "tags": [
       "dense",
       "speculative"
-    ]
+    ],
+    "source_id": "src-e518818c3e"
   },
   {
     "id": "text-053",
@@ -1332,7 +1386,8 @@
     "tags": [
       "dense",
       "speculative"
-    ]
+    ],
+    "source_id": "src-9f8ea35d45"
   },
   {
     "id": "text-054",
@@ -1358,7 +1413,8 @@
       "4bit",
       "dense",
       "speculative"
-    ]
+    ],
+    "source_id": "src-e7622d64c8"
   },
   {
     "id": "text-055",
@@ -1382,7 +1438,8 @@
     "model_family": "Qwen",
     "tags": [
       "dense"
-    ]
+    ],
+    "source_id": "src-6ce99efd90"
   },
   {
     "id": "text-056",
@@ -1407,7 +1464,8 @@
     "model_family": "Qwen",
     "tags": [
       "MoE"
-    ]
+    ],
+    "source_id": "src-18f547def3"
   },
   {
     "id": "text-057",
@@ -1433,7 +1491,8 @@
     "tags": [
       "MoE",
       "speculative"
-    ]
+    ],
+    "source_id": "src-ceef60bd18"
   },
   {
     "id": "text-058",
@@ -1459,7 +1518,8 @@
     "tags": [
       "4bit",
       "MoE"
-    ]
+    ],
+    "source_id": "src-deeffdcb58"
   },
   {
     "id": "text-059",
@@ -1483,7 +1543,8 @@
     "model_family": "Qwen",
     "tags": [
       "MoE"
-    ]
+    ],
+    "source_id": "src-dab23f8491"
   },
   {
     "id": "text-060",
@@ -1508,7 +1569,8 @@
     "model_family": "Qwen",
     "tags": [
       "MoE"
-    ]
+    ],
+    "source_id": "src-1c184ba4d7"
   },
   {
     "id": "text-061",
@@ -1532,7 +1594,8 @@
     "model_family": "Qwen",
     "tags": [
       "MoE"
-    ]
+    ],
+    "source_id": "src-4ba524ce5d"
   },
   {
     "id": "text-062",
@@ -1556,7 +1619,8 @@
     "model_family": "Qwen",
     "tags": [
       "MoE"
-    ]
+    ],
+    "source_id": "src-4fbd5a27e5"
   },
   {
     "id": "text-063",
@@ -1580,7 +1644,8 @@
     "model_family": "Qwen",
     "tags": [
       "MoE"
-    ]
+    ],
+    "source_id": "src-e36926fd3b"
   },
   {
     "id": "text-064",
@@ -1605,7 +1670,8 @@
     "model_family": "Qwen",
     "tags": [
       "MoE"
-    ]
+    ],
+    "source_id": "src-f045ad1b4a"
   },
   {
     "id": "text-065",
@@ -1630,7 +1696,8 @@
     "model_family": "GLM",
     "tags": [
       "MoE"
-    ]
+    ],
+    "source_id": "src-f848dce8d1"
   },
   {
     "id": "text-066",
@@ -1659,7 +1726,8 @@
       "speculative",
       "MTP",
       "abliterated"
-    ]
+    ],
+    "source_id": "src-70371789ed"
   },
   {
     "id": "text-067",
@@ -1684,7 +1752,8 @@
     "tags": [
       "long-context",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-5e67752577"
   },
   {
     "id": "text-068",
@@ -1710,7 +1779,8 @@
     "tags": [
       "long-context",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-48ef0bc79f"
   },
   {
     "id": "text-069",
@@ -1736,7 +1806,8 @@
     "tags": [
       "long-context",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-5e67752577"
   },
   {
     "id": "text-070",
@@ -1759,7 +1830,8 @@
     "date": null,
     "engine_raw": "其他/未注明",
     "model_family": "GLM",
-    "tags": []
+    "tags": [],
+    "source_id": "src-1ca0f67909"
   },
   {
     "id": "text-071",
@@ -1786,7 +1858,8 @@
       "speculative",
       "MTP",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-86edf0ecda"
   },
   {
     "id": "text-072",
@@ -1811,7 +1884,8 @@
     "model_family": "GLM",
     "tags": [
       "2bit"
-    ]
+    ],
+    "source_id": "src-733ea7e114"
   },
   {
     "id": "text-073",
@@ -1836,7 +1910,8 @@
     "model_family": "GLM",
     "tags": [
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-bb1775e11b"
   },
   {
     "id": "text-074",
@@ -1860,7 +1935,8 @@
     "model_family": "GLM",
     "tags": [
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-5d0e38175d"
   },
   {
     "id": "text-075",
@@ -1884,7 +1960,8 @@
     "model_family": "GLM",
     "tags": [
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-77d360cc7f"
   },
   {
     "id": "text-076",
@@ -1909,7 +1986,8 @@
     "model_family": "GLM",
     "tags": [
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-930b946323"
   },
   {
     "id": "text-077",
@@ -1936,7 +2014,8 @@
       "3bit",
       "MoE",
       "offload"
-    ]
+    ],
+    "source_id": "src-502d0f3dd0"
   },
   {
     "id": "text-078",
@@ -1964,7 +2043,8 @@
       "long-context",
       "speculative",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-502d0f3dd0"
   },
   {
     "id": "text-079",
@@ -1991,7 +2071,8 @@
       "4bit",
       "8bit",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-502d0f3dd0"
   },
   {
     "id": "text-080",
@@ -2017,7 +2098,8 @@
       "4bit",
       "long-context",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-5e67752577"
   },
   {
     "id": "text-081",
@@ -2042,7 +2124,8 @@
     "model_family": "DeepSeek",
     "tags": [
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-7da284d7bb"
   },
   {
     "id": "text-082",
@@ -2069,7 +2152,8 @@
       "dense",
       "long-context",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-ab69395b83"
   },
   {
     "id": "text-083",
@@ -2094,7 +2178,8 @@
     "model_family": "DeepSeek",
     "tags": [
       "offload"
-    ]
+    ],
+    "source_id": "src-502d0f3dd0"
   },
   {
     "id": "text-084",
@@ -2121,7 +2206,8 @@
       "3bit",
       "speculative",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-8214c306d1"
   },
   {
     "id": "text-085",
@@ -2143,7 +2229,8 @@
     "source_level": "实测",
     "date": null,
     "model_family": "DeepSeek",
-    "tags": []
+    "tags": [],
+    "source_id": "src-e6df8339a4"
   },
   {
     "id": "text-086",
@@ -2168,7 +2255,8 @@
     "model_family": "DeepSeek",
     "tags": [
       "speculative"
-    ]
+    ],
+    "source_id": "src-ef037e8879"
   },
   {
     "id": "text-087",
@@ -2192,7 +2280,8 @@
     "model_family": "DeepSeek",
     "tags": [
       "4bit"
-    ]
+    ],
+    "source_id": "src-502d0f3dd0"
   },
   {
     "id": "text-088",
@@ -2219,7 +2308,8 @@
       "long-context",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-8b83fa6813"
   },
   {
     "id": "text-089",
@@ -2246,7 +2336,8 @@
       "long-context",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-8b83fa6813"
   },
   {
     "id": "text-090",
@@ -2270,7 +2361,8 @@
     "model_family": "Qwen",
     "tags": [
       "4bit"
-    ]
+    ],
+    "source_id": "src-8b83fa6813"
   },
   {
     "id": "text-091",
@@ -2296,7 +2388,8 @@
       "4bit",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-0b4335f1bc"
   },
   {
     "id": "text-092",
@@ -2320,7 +2413,8 @@
     "model_family": "Qwen",
     "tags": [
       "4bit"
-    ]
+    ],
+    "source_id": "src-2cb3f88940"
   },
   {
     "id": "text-093",
@@ -2346,7 +2440,8 @@
     "tags": [
       "2bit",
       "long-context"
-    ]
+    ],
+    "source_id": "src-ef39a29389"
   },
   {
     "id": "text-094",
@@ -2371,7 +2466,8 @@
     "model_family": "Qwen",
     "tags": [
       "4bit"
-    ]
+    ],
+    "source_id": "src-3ac303a9ff"
   },
   {
     "id": "text-095",
@@ -2398,7 +2494,8 @@
       "4bit",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-b2c05e90ab"
   },
   {
     "id": "text-096",
@@ -2420,7 +2517,8 @@
     "source_level": "实测",
     "date": null,
     "model_family": "Qwen",
-    "tags": []
+    "tags": [],
+    "source_id": "src-efeab8b2ad"
   },
   {
     "id": "text-097",
@@ -2445,7 +2543,8 @@
     "tags": [
       "MoE",
       "offload"
-    ]
+    ],
+    "source_id": "src-d8f7513152"
   },
   {
     "id": "text-098",
@@ -2471,7 +2570,8 @@
       "4bit",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-8b83fa6813"
   },
   {
     "id": "text-099",
@@ -2498,7 +2598,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-afb4ca7864"
   },
   {
     "id": "text-100",
@@ -2522,7 +2623,8 @@
     "model_family": "Qwen",
     "tags": [
       "dense"
-    ]
+    ],
+    "source_id": "src-2decea9cb7"
   },
   {
     "id": "text-101",
@@ -2549,7 +2651,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-cdb9259df0"
   },
   {
     "id": "text-102",
@@ -2574,7 +2677,8 @@
     "tags": [
       "dense",
       "speculative"
-    ]
+    ],
+    "source_id": "src-13aaa09d9b"
   },
   {
     "id": "text-103",
@@ -2599,7 +2703,8 @@
     "tags": [
       "4bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-265be1317e"
   },
   {
     "id": "text-104",
@@ -2625,7 +2730,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-13aaa09d9b"
   },
   {
     "id": "text-105",
@@ -2650,7 +2756,8 @@
     "tags": [
       "MoE",
       "speculative"
-    ]
+    ],
+    "source_id": "src-93a15841e4"
   },
   {
     "id": "text-106",
@@ -2678,7 +2785,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-9496872725"
   },
   {
     "id": "text-107",
@@ -2706,7 +2814,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-1fd96fc598"
   },
   {
     "id": "text-108",
@@ -2731,7 +2840,8 @@
     "tags": [
       "dense",
       "speculative"
-    ]
+    ],
+    "source_id": "src-8009989e02"
   },
   {
     "id": "text-109",
@@ -2758,7 +2868,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-cdb9259df0"
   },
   {
     "id": "text-110",
@@ -2785,7 +2896,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-cdb9259df0"
   },
   {
     "id": "text-111",
@@ -2811,7 +2923,8 @@
     "tags": [
       "4bit",
       "MoE"
-    ]
+    ],
+    "source_id": "src-5eb58413c5"
   },
   {
     "id": "text-112",
@@ -2836,7 +2949,8 @@
     "tags": [
       "8bit",
       "MoE"
-    ]
+    ],
+    "source_id": "src-e1cae090f0"
   },
   {
     "id": "text-113",
@@ -2861,7 +2975,8 @@
     "tags": [
       "MoE",
       "speculative"
-    ]
+    ],
+    "source_id": "src-77c9e0b22f"
   },
   {
     "id": "text-114",
@@ -2885,7 +3000,8 @@
     "model_family": "Qwen",
     "tags": [
       "MoE"
-    ]
+    ],
+    "source_id": "src-d8f7513152"
   },
   {
     "id": "text-115",
@@ -2910,7 +3026,8 @@
     "tags": [
       "8bit",
       "long-context"
-    ]
+    ],
+    "source_id": "src-8b83fa6813"
   },
   {
     "id": "text-116",
@@ -2932,7 +3049,8 @@
     "source_level": "官方",
     "date": null,
     "model_family": "GLM",
-    "tags": []
+    "tags": [],
+    "source_id": "src-d8f7513152"
   },
   {
     "id": "text-117",
@@ -2956,7 +3074,8 @@
     "model_family": "GLM",
     "tags": [
       "4bit"
-    ]
+    ],
+    "source_id": "src-d5cd871b07"
   },
   {
     "id": "text-118",
@@ -2982,7 +3101,8 @@
     "tags": [
       "4bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-1f8db0cb46"
   },
   {
     "id": "text-119",
@@ -3008,7 +3128,8 @@
       "speculative",
       "MTP",
       "offload"
-    ]
+    ],
+    "source_id": "src-0621c494c6"
   },
   {
     "id": "text-120",
@@ -3034,7 +3155,8 @@
       "long-context",
       "speculative",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-84c7c47ec7"
   },
   {
     "id": "text-121",
@@ -3060,7 +3182,8 @@
     "tags": [
       "2bit",
       "long-context"
-    ]
+    ],
+    "source_id": "src-2763bc71bb"
   },
   {
     "id": "text-122",
@@ -3084,7 +3207,8 @@
     "model_family": "DeepSeek",
     "tags": [
       "4bit"
-    ]
+    ],
+    "source_id": "src-cdb9259df0"
   },
   {
     "id": "image-001",
@@ -3108,7 +3232,8 @@
     "model_family": "Qwen-Image",
     "tags": [
       "8bit"
-    ]
+    ],
+    "source_id": "src-c7624c906d"
   },
   {
     "id": "image-002",
@@ -3133,7 +3258,8 @@
     "model_family": "Qwen-Image",
     "tags": [
       "8bit"
-    ]
+    ],
+    "source_id": "src-c7624c906d"
   },
   {
     "id": "image-003",
@@ -3160,7 +3286,8 @@
       "4bit",
       "8bit",
       "bf16"
-    ]
+    ],
+    "source_id": "src-9c2f4ce74e"
   },
   {
     "id": "image-004",
@@ -3186,7 +3313,8 @@
       "4bit",
       "6bit",
       "8bit"
-    ]
+    ],
+    "source_id": "src-e7200c22d8"
   },
   {
     "id": "image-005",
@@ -3209,7 +3337,8 @@
     "date": null,
     "engine_raw": "其他/未注明",
     "model_family": "Qwen-Image",
-    "tags": []
+    "tags": [],
+    "source_id": "src-3b30b5aad2"
   },
   {
     "id": "image-006",
@@ -3234,7 +3363,8 @@
     "model_family": "Qwen-Image",
     "tags": [
       "8bit"
-    ]
+    ],
+    "source_id": "src-28caffdc0c"
   },
   {
     "id": "image-007",
@@ -3259,7 +3389,8 @@
     "model_family": "Qwen-Image",
     "tags": [
       "8bit"
-    ]
+    ],
+    "source_id": "src-9c2f4ce74e"
   },
   {
     "id": "image-008",
@@ -3283,7 +3414,8 @@
     "model_family": "Qwen-Image",
     "tags": [
       "bf16"
-    ]
+    ],
+    "source_id": "src-9c2f4ce74e"
   },
   {
     "id": "image-009",
@@ -3308,7 +3440,8 @@
     "model_family": "Qwen-Image",
     "tags": [
       "bf16"
-    ]
+    ],
+    "source_id": "src-9c2f4ce74e"
   },
   {
     "id": "image-010",
@@ -3330,7 +3463,8 @@
     "source_level": "实测",
     "date": null,
     "model_family": "Qwen-Image",
-    "tags": []
+    "tags": [],
+    "source_id": "src-53d02285dc"
   },
   {
     "id": "image-011",
@@ -3355,7 +3489,8 @@
     "model_family": "Qwen-Image",
     "tags": [
       "few-step"
-    ]
+    ],
+    "source_id": "src-57cb09cdc6"
   },
   {
     "id": "image-012",
@@ -3382,7 +3517,8 @@
       "3bit",
       "8bit",
       "few-step"
-    ]
+    ],
+    "source_id": "src-856bdefc1a"
   },
   {
     "id": "image-013",
@@ -3406,7 +3542,8 @@
     "model_family": "Z-Image",
     "tags": [
       "few-step"
-    ]
+    ],
+    "source_id": "src-91fa3d9f02"
   },
   {
     "id": "image-014",
@@ -3430,7 +3567,8 @@
     "model_family": "Z-Image",
     "tags": [
       "few-step"
-    ]
+    ],
+    "source_id": "src-d8194459e8"
   },
   {
     "id": "image-015",
@@ -3454,7 +3592,8 @@
     "model_family": "Z-Image",
     "tags": [
       "few-step"
-    ]
+    ],
+    "source_id": "src-fde02223e8"
   },
   {
     "id": "image-016",
@@ -3479,7 +3618,8 @@
     "model_family": "Qwen-Image",
     "tags": [
       "few-step"
-    ]
+    ],
+    "source_id": "src-96d16094e7"
   },
   {
     "id": "video-audio-001",
@@ -3505,7 +3645,8 @@
     "tags": [
       "4bit",
       "few-step"
-    ]
+    ],
+    "source_id": "src-ad2d13492d"
   },
   {
     "id": "video-audio-002",
@@ -3530,7 +3671,8 @@
     "model_family": "MiniMax H3",
     "tags": [
       "4bit"
-    ]
+    ],
+    "source_id": "src-ad2d13492d"
   },
   {
     "id": "video-audio-003",
@@ -3555,7 +3697,8 @@
     "model_family": "MiniMax H3",
     "tags": [
       "8bit"
-    ]
+    ],
+    "source_id": "src-ad2d13492d"
   },
   {
     "id": "video-audio-004",
@@ -3581,7 +3724,8 @@
     "tags": [
       "4bit",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-ad2d13492d"
   },
   {
     "id": "video-audio-005",
@@ -3605,7 +3749,8 @@
     "model_family": "MiniMax H3",
     "tags": [
       "6bit"
-    ]
+    ],
+    "source_id": "src-ad2d13492d"
   },
   {
     "id": "video-audio-006",
@@ -3632,7 +3777,8 @@
       "6bit",
       "8bit",
       "few-step"
-    ]
+    ],
+    "source_id": "src-6f81c4e8ea"
   },
   {
     "id": "video-audio-007",
@@ -3654,7 +3800,8 @@
     "source_level": "实测",
     "date": null,
     "model_family": "MiniMax H3",
-    "tags": []
+    "tags": [],
+    "source_id": "src-e8cba5222f"
   },
   {
     "id": "video-audio-008",
@@ -3679,7 +3826,8 @@
     "model_family": "MiniMax H3",
     "tags": [
       "few-step"
-    ]
+    ],
+    "source_id": "src-641570f2b0"
   },
   {
     "id": "video-audio-009",
@@ -3703,7 +3851,8 @@
     "model_family": "MiniMax H3",
     "tags": [
       "few-step"
-    ]
+    ],
+    "source_id": "src-566f983fa8"
   },
   {
     "id": "video-audio-010",
@@ -3725,7 +3874,8 @@
     "source_level": "实测",
     "date": null,
     "model_family": "MiniMax H3",
-    "tags": []
+    "tags": [],
+    "source_id": "src-c438cce474"
   },
   {
     "id": "video-audio-011",
@@ -3748,7 +3898,8 @@
     "date": null,
     "engine_raw": "其他/未注明",
     "model_family": "MiniMax H3",
-    "tags": []
+    "tags": [],
+    "source_id": "src-f848dce8d1"
   },
   {
     "id": "video-audio-012",
@@ -3771,7 +3922,8 @@
     "date": null,
     "engine_raw": "其他/未注明",
     "model_family": "MiniMax H3",
-    "tags": []
+    "tags": [],
+    "source_id": "src-05681b1bdc"
   },
   {
     "id": "video-audio-013",
@@ -3795,7 +3947,8 @@
     "model_family": "MiniMax H3",
     "tags": [
       "few-step"
-    ]
+    ],
+    "source_id": "src-1fae2ac294"
   },
   {
     "id": "video-audio-014",
@@ -3818,7 +3971,8 @@
     "date": null,
     "engine_raw": "其他/未注明",
     "model_family": "MiniMax H3",
-    "tags": []
+    "tags": [],
+    "source_id": "src-b28231a9c9"
   },
   {
     "id": "video-audio-015",
@@ -3840,7 +3994,8 @@
     "source_level": "实测",
     "date": null,
     "model_family": "LTX",
-    "tags": []
+    "tags": [],
+    "source_id": "src-721dbc07d3"
   },
   {
     "id": "video-audio-016",
@@ -3863,7 +4018,8 @@
     "date": null,
     "engine_raw": "其他/未注明",
     "model_family": "LTX",
-    "tags": []
+    "tags": [],
+    "source_id": "src-0056c2d9df"
   },
   {
     "id": "video-audio-017",
@@ -3886,7 +4042,8 @@
     "date": null,
     "engine_raw": "其他/未注明",
     "model_family": "LTX",
-    "tags": []
+    "tags": [],
+    "source_id": "src-4b05b6fd29"
   },
   {
     "id": "video-audio-018",
@@ -3908,7 +4065,8 @@
     "source_level": "转述",
     "date": null,
     "model_family": "LTX",
-    "tags": []
+    "tags": [],
+    "source_id": "src-f848dce8d1"
   },
   {
     "id": "video-audio-019",
@@ -3931,7 +4089,8 @@
     "date": null,
     "engine_raw": "其他/未注明",
     "model_family": "ACE-Step",
-    "tags": []
+    "tags": [],
+    "source_id": "src-14f9b369f6"
   },
   {
     "id": "video-audio-020",
@@ -3954,7 +4113,8 @@
     "date": null,
     "engine_raw": "其他/未注明",
     "model_family": "ACE-Step",
-    "tags": []
+    "tags": [],
+    "source_id": "src-f3a0783e9f"
   },
   {
     "id": "video-audio-021",
@@ -3976,7 +4136,8 @@
     "source_level": "实测",
     "date": null,
     "model_family": "Wan",
-    "tags": []
+    "tags": [],
+    "source_id": "src-1c20ac5ff7"
   },
   {
     "id": "video-audio-022",
@@ -4002,7 +4163,8 @@
     "tags": [
       "8bit",
       "few-step"
-    ]
+    ],
+    "source_id": "src-b389ac3d76"
   },
   {
     "id": "x-001",
@@ -4031,7 +4193,8 @@
     "model_family": "Qwen",
     "tags": [
       "4bit"
-    ]
+    ],
+    "source_id": "src-5388fb1c0e"
   },
   {
     "id": "x-002",
@@ -4062,7 +4225,8 @@
     "model_family": "Qwen",
     "tags": [
       "4bit"
-    ]
+    ],
+    "source_id": "src-5388fb1c0e"
   },
   {
     "id": "x-003",
@@ -4091,7 +4255,8 @@
     "model_family": "Qwen",
     "tags": [
       "3bit"
-    ]
+    ],
+    "source_id": "src-03209e2ff6"
   },
   {
     "id": "x-004",
@@ -4124,7 +4289,8 @@
       "3bit",
       "long-context",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-7680de7f5a"
   },
   {
     "id": "x-005",
@@ -4154,7 +4320,8 @@
     "tags": [
       "3bit",
       "long-context"
-    ]
+    ],
+    "source_id": "src-91d222be7c"
   },
   {
     "id": "x-006",
@@ -4186,7 +4353,8 @@
     "tags": [
       "2bit",
       "long-context"
-    ]
+    ],
+    "source_id": "src-d089a2d6d0"
   },
   {
     "id": "x-007",
@@ -4216,7 +4384,8 @@
     "tags": [
       "3bit",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-c9b67109e8"
   },
   {
     "id": "x-008",
@@ -4248,7 +4417,8 @@
     "tags": [
       "3bit",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-9511cdffaa"
   },
   {
     "id": "x-009",
@@ -4279,7 +4449,8 @@
     "model_family": "Qwen",
     "tags": [
       "2bit"
-    ]
+    ],
+    "source_id": "src-92150b203f"
   },
   {
     "id": "x-010",
@@ -4308,7 +4479,8 @@
     "engine_raw": "oMLX（作者调优）",
     "engine_note": "oMLX（作者调优）",
     "model_family": "GLM",
-    "tags": []
+    "tags": [],
+    "source_id": "src-af98d40fb6"
   },
   {
     "id": "x-011",
@@ -4336,7 +4508,8 @@
     },
     "engine_raw": "其他/未注明",
     "model_family": "Qwen",
-    "tags": []
+    "tags": [],
+    "source_id": "src-8fd8ad1e0e"
   },
   {
     "id": "x-012",
@@ -4368,7 +4541,8 @@
     "tags": [
       "speculative",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-4e5df01765"
   },
   {
     "id": "x-013",
@@ -4399,7 +4573,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-c29e1e757f"
   },
   {
     "id": "x-014",
@@ -4429,7 +4604,8 @@
     "engine_raw": "TensorFold（ComfyUI 换 loader）",
     "engine_note": "TensorFold（ComfyUI 换 loader）",
     "model_family": "MiniMax H3",
-    "tags": []
+    "tags": [],
+    "source_id": "src-619cf646ee"
   },
   {
     "id": "x-015",
@@ -4457,7 +4633,8 @@
     },
     "metric_en": "768×1344 15s video + audio ≈72 s (steady state, excl. MP4 export; baseline ~26 min)",
     "model_family": "MiniMax H3",
-    "tags": []
+    "tags": [],
+    "source_id": "src-1e26d04c42"
   },
   {
     "id": "x-016",
@@ -4485,7 +4662,8 @@
     },
     "metric_en": "Three 5s chained clips: 17 min total",
     "model_family": "MiniMax H3",
-    "tags": []
+    "tags": [],
+    "source_id": "src-401a7fee4b"
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-1",
@@ -4514,7 +4692,9 @@
       "ternary",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-6d274f8f57",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-2",
@@ -4543,7 +4723,9 @@
       "ternary",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-6d274f8f57",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-3",
@@ -4572,7 +4754,9 @@
       "ternary",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-6d274f8f57",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-4",
@@ -4601,7 +4785,9 @@
       "ternary",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-6d274f8f57",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-5",
@@ -4630,7 +4816,9 @@
       "ternary",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-6d274f8f57",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-6",
@@ -4659,7 +4847,8 @@
       "ternary",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-6d274f8f57"
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-7",
@@ -4688,7 +4877,8 @@
       "ternary",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-6d274f8f57"
   },
   {
     "id": "hf-cdiamond-qwen3-8-27b-imatrix-nvfp4-mtp-gguf-1",
@@ -4719,7 +4909,8 @@
       "long-context",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-c2f202a4b3"
   },
   {
     "id": "hf-cdiamond-qwen3-8-27b-imatrix-nvfp4-mtp-gguf-2",
@@ -4747,7 +4938,8 @@
     "tags": [
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-c2f202a4b3"
   },
   {
     "id": "hf-cdiamond-qwen3-8-27b-imatrix-nvfp4-mtp-gguf-3",
@@ -4775,7 +4967,8 @@
     "tags": [
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-c2f202a4b3"
   },
   {
     "id": "hf-prism-ml-bonsai-27b-mlx-1bit-1",
@@ -4804,7 +4997,9 @@
       "1bit",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-8858c67440",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-bonsai-27b-mlx-1bit-2",
@@ -4833,7 +5028,9 @@
       "1bit",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-8858c67440",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-bonsai-27b-mlx-1bit-3",
@@ -4862,7 +5059,9 @@
       "1bit",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-8858c67440",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-bonsai-27b-mlx-1bit-4",
@@ -4891,7 +5090,8 @@
       "1bit",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-8858c67440"
   },
   {
     "id": "hf-esatapedico-qwen3-8-27b-nvfp4-mtp-gguf-1",
@@ -4924,7 +5124,8 @@
       "speculative",
       "MTP",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-91a12d7e89"
   },
   {
     "id": "hf-esatapedico-qwen3-8-27b-nvfp4-mtp-gguf-2",
@@ -4955,7 +5156,8 @@
       "speculative",
       "MTP",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-91a12d7e89"
   },
   {
     "id": "hf-esatapedico-qwen3-8-27b-nvfp4-mtp-gguf-3",
@@ -4986,7 +5188,8 @@
       "long-context",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-91a12d7e89"
   },
   {
     "id": "hf-esatapedico-qwen3-8-27b-nvfp4-mtp-gguf-4",
@@ -5018,7 +5221,8 @@
       "long-context",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-91a12d7e89"
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-27b-gguf-1",
@@ -5048,7 +5252,9 @@
       "2bit",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-1d9a41045a",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-27b-gguf-2",
@@ -5078,7 +5284,9 @@
       "2bit",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-1d9a41045a",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-27b-gguf-3",
@@ -5108,7 +5316,9 @@
       "2bit",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-1d9a41045a",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-bonsai-8b-gguf-1",
@@ -5136,7 +5346,9 @@
     "tags": [
       "1bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-562348a0ba",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-bonsai-8b-gguf-2",
@@ -5164,7 +5376,9 @@
     "tags": [
       "1bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-562348a0ba",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-bonsai-8b-gguf-3",
@@ -5192,7 +5406,9 @@
     "tags": [
       "1bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-562348a0ba",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-prism-ml-bonsai-8b-gguf-4",
@@ -5220,7 +5436,8 @@
     "tags": [
       "1bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-562348a0ba"
   },
   {
     "id": "hf-edge0-edge0-35b-a3b-preview-1",
@@ -5249,7 +5466,8 @@
       "4bit",
       "MoE",
       "offload"
-    ]
+    ],
+    "source_id": "src-e0f512a26f"
   },
   {
     "id": "hf-youssofal-qwen3-8-27b-mtplx-optimized-speed-1",
@@ -5278,7 +5496,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-8790632629"
   },
   {
     "id": "hf-youssofal-qwen3-8-27b-mtplx-optimized-speed-2",
@@ -5307,7 +5526,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-8790632629"
   },
   {
     "id": "hf-youssofal-qwen3-8-flash-next-mtplx-optimized-speed-1",
@@ -5336,7 +5556,8 @@
       "long-context",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-f6663b42ef"
   },
   {
     "id": "hf-youssofal-qwen3-8-flash-next-mtplx-optimized-speed-2",
@@ -5365,7 +5586,8 @@
       "long-context",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-f6663b42ef"
   },
   {
     "id": "hf-youssofal-qwen3-8-flash-next-mtplx-optimized-speed-3",
@@ -5394,7 +5616,8 @@
       "long-context",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-f6663b42ef"
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-8b-mlx-2bit-1",
@@ -5423,7 +5646,8 @@
       "ternary",
       "2bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-93d98d177b"
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-8b-mlx-2bit-2",
@@ -5450,7 +5674,8 @@
       "ternary",
       "2bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-93d98d177b"
   },
   {
     "id": "hf-prism-ml-bonsai-8b-mlx-1bit-1",
@@ -5478,7 +5703,8 @@
     "tags": [
       "1bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-76836f5758"
   },
   {
     "id": "hf-prism-ml-bonsai-8b-mlx-1bit-2",
@@ -5506,7 +5732,9 @@
     "tags": [
       "1bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-76836f5758",
+    "engine_fork": "PrismML"
   },
   {
     "id": "hf-alesha-pro-qwen3-8-27b-s-mirai-gguf-1",
@@ -5535,7 +5763,9 @@
       "4bit",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-4118c0fab3",
+    "engine_fork": "mirai-s"
   },
   {
     "id": "hf-youssofal-qwen3-8-27b-mtplx-optimized-quality-1",
@@ -5564,7 +5794,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-2c5444ed9c"
   },
   {
     "id": "hf-mlx-community-qwen3-5-27b-claude-4-6-opus-distilled-mlx-4bit-1",
@@ -5592,7 +5823,8 @@
     "tags": [
       "4bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-8fdfb6d872"
   },
   {
     "id": "hf-carypalmer-ternary-bonsai-2-27b-262k-gguf-1",
@@ -5622,7 +5854,8 @@
       "long-context",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-baa7cd9b32"
   },
   {
     "id": "hf-carypalmer-ternary-bonsai-2-27b-262k-gguf-2",
@@ -5649,7 +5882,8 @@
       "ternary",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-baa7cd9b32"
   },
   {
     "id": "hf-carypalmer-ternary-bonsai-2-27b-262k-gguf-3",
@@ -5676,7 +5910,8 @@
       "ternary",
       "dense",
       "long-context"
-    ]
+    ],
+    "source_id": "src-baa7cd9b32"
   },
   {
     "id": "hf-carypalmer-ternary-bonsai-2-27b-262k-gguf-4",
@@ -5706,7 +5941,8 @@
       "long-context",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-baa7cd9b32"
   },
   {
     "id": "hf-youssofal-ternary-bonsai-2-27b-mtplx-optimized-speed-1",
@@ -5736,7 +5972,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-09a230ad39"
   },
   {
     "id": "hf-youssofal-ternary-bonsai-2-27b-mtplx-optimized-speed-2",
@@ -5766,7 +6003,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-09a230ad39"
   },
   {
     "id": "hf-edge0-edge0-8b-a1b-preview-1",
@@ -5795,7 +6033,8 @@
       "4bit",
       "MoE",
       "offload"
-    ]
+    ],
+    "source_id": "src-ca9a5f73d4"
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1",
@@ -5824,7 +6063,8 @@
       "2bit",
       "8bit",
       "MoE"
-    ]
+    ],
+    "source_id": "src-b536429e70"
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-2",
@@ -5850,7 +6090,8 @@
     "tags": [
       "2bit",
       "MoE"
-    ]
+    ],
+    "source_id": "src-b536429e70"
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-3",
@@ -5876,7 +6117,8 @@
     "tags": [
       "2bit",
       "MoE"
-    ]
+    ],
+    "source_id": "src-b536429e70"
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-4",
@@ -5902,7 +6144,8 @@
     "tags": [
       "2bit",
       "MoE"
-    ]
+    ],
+    "source_id": "src-b536429e70"
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-5",
@@ -5928,7 +6171,8 @@
     "tags": [
       "2bit",
       "MoE"
-    ]
+    ],
+    "source_id": "src-b536429e70"
   },
   {
     "id": "hf-conwayresearch-underdog-27b-1-0-1",
@@ -5956,7 +6200,8 @@
     "tags": [
       "4bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-f0185e4e20"
   },
   {
     "id": "hf-conwayresearch-underdog-27b-1-0-2",
@@ -5985,7 +6230,8 @@
       "4bit",
       "dense",
       "speculative"
-    ]
+    ],
+    "source_id": "src-f0185e4e20"
   },
   {
     "id": "hf-mlx-community-arex-2-6bit-1",
@@ -6012,7 +6258,8 @@
     "model_family": "Other",
     "tags": [
       "6bit"
-    ]
+    ],
+    "source_id": "src-b386fdb464"
   },
   {
     "id": "hf-mlx-community-arex-2-6bit-2",
@@ -6037,7 +6284,8 @@
     "model_family": "Other",
     "tags": [
       "4bit"
-    ]
+    ],
+    "source_id": "src-b386fdb464"
   },
   {
     "id": "hf-kujira-underdog-saluki-27b-1-0-mtp-gguf-1",
@@ -6066,7 +6314,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-5a213b64b5"
   },
   {
     "id": "hf-kujira-underdog-saluki-27b-1-0-mtp-gguf-2",
@@ -6095,7 +6344,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-5a213b64b5"
   },
   {
     "id": "hf-opensourcewtf-deepseek-v4-1-flash-streaming-repack-exl3-3-0bpw-1",
@@ -6125,7 +6375,8 @@
       "MoE",
       "long-context",
       "offload"
-    ]
+    ],
+    "source_id": "src-d86abbb551"
   },
   {
     "id": "hf-opensourcewtf-deepseek-v4-1-flash-streaming-repack-exl3-3-0bpw-2",
@@ -6154,7 +6405,8 @@
       "3bit",
       "long-context",
       "offload"
-    ]
+    ],
+    "source_id": "src-d86abbb551"
   },
   {
     "id": "hf-opensourcewtf-deepseek-v4-1-flash-streaming-repack-exl3-3-0bpw-3",
@@ -6183,7 +6435,8 @@
       "3bit",
       "long-context",
       "offload"
-    ]
+    ],
+    "source_id": "src-d86abbb551"
   },
   {
     "id": "hf-final-bench-pocket-35b-gguf-1",
@@ -6211,7 +6464,8 @@
     "tags": [
       "1bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-e5825a3cef"
   },
   {
     "id": "hf-peasantsmith-glm-5-3-flash-maya-gguf-1",
@@ -6240,7 +6494,8 @@
       "speculative",
       "MTP",
       "multi-GPU"
-    ]
+    ],
+    "source_id": "src-100ca98eeb"
   },
   {
     "id": "hf-peasantsmith-glm-5-3-flash-maya-gguf-2",
@@ -6263,7 +6518,8 @@
     "date": "2026-10-07",
     "metric_en": "19 tok/s decode; 370 tok/s prefill",
     "model_family": "GLM",
-    "tags": []
+    "tags": [],
+    "source_id": "src-100ca98eeb"
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-1",
@@ -6291,7 +6547,8 @@
     "tags": [
       "2bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-5eaf91bb06"
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-2",
@@ -6320,7 +6577,8 @@
       "2bit",
       "3bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-5eaf91bb06"
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-3",
@@ -6348,7 +6606,8 @@
     "tags": [
       "3bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-5eaf91bb06"
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-4",
@@ -6376,7 +6635,8 @@
     "tags": [
       "3bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-5eaf91bb06"
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-5",
@@ -6405,7 +6665,8 @@
       "3bit",
       "4bit",
       "dense"
-    ]
+    ],
+    "source_id": "src-5eaf91bb06"
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-6",
@@ -6434,7 +6695,8 @@
       "2bit",
       "dense",
       "speculative"
-    ]
+    ],
+    "source_id": "src-5eaf91bb06"
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-7",
@@ -6463,7 +6725,8 @@
       "3bit",
       "dense",
       "speculative"
-    ]
+    ],
+    "source_id": "src-5eaf91bb06"
   },
   {
     "id": "hf-agentionai-qwen3-8-flash-next-gyro-gguf-1",
@@ -6491,7 +6754,8 @@
     "tags": [
       "ternary",
       "long-context"
-    ]
+    ],
+    "source_id": "src-4417018204"
   },
   {
     "id": "hf-agentionai-qwen3-8-flash-next-gyro-gguf-2",
@@ -6519,7 +6783,9 @@
     "tags": [
       "ternary",
       "long-context"
-    ]
+    ],
+    "source_id": "src-4417018204",
+    "engine_fork": "agentionai"
   },
   {
     "id": "hf-agentionai-qwen3-8-flash-next-gyro-gguf-3",
@@ -6547,7 +6813,9 @@
     "tags": [
       "ternary",
       "long-context"
-    ]
+    ],
+    "source_id": "src-4417018204",
+    "engine_fork": "agentionai"
   },
   {
     "id": "hf-agentionai-qwen3-8-flash-next-gyro-gguf-4",
@@ -6575,7 +6843,9 @@
     "tags": [
       "ternary",
       "long-context"
-    ]
+    ],
+    "source_id": "src-4417018204",
+    "engine_fork": "agentionai"
   },
   {
     "id": "hf-umixer-qwen3-8-flash-next-oq4e-mix6-mtp-1",
@@ -6605,7 +6875,8 @@
       "6bit",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-e2a5b0313c"
   },
   {
     "id": "hf-osaurusai-allosaurus-v0-1-125b-a6b-jangh2-1",
@@ -6633,7 +6904,8 @@
     "tags": [
       "MoE",
       "long-context"
-    ]
+    ],
+    "source_id": "src-d9418d5e1b"
   },
   {
     "id": "hf-atomicchat-qwen3-8-flash-next-gguf-1",
@@ -6662,7 +6934,8 @@
       "3bit",
       "4bit",
       "long-context"
-    ]
+    ],
+    "source_id": "src-bf6739fe35"
   },
   {
     "id": "hf-ddalcu-qwen3-8-flash-next-mlx-serve-mixed-4-8bit-1",
@@ -6691,7 +6964,8 @@
       "4bit",
       "8bit",
       "long-context"
-    ]
+    ],
+    "source_id": "src-9bd14540d5"
   },
   {
     "id": "hf-youssofal-qwen3-6-27b-mtplx-optimized-speed-1",
@@ -6722,7 +6996,8 @@
       "dense",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-4d5c73e58f"
   },
   {
     "id": "hf-ddalcu-qwen3-8-flash-next-mlx-serve-iq-mlx-4-7bpw-1",
@@ -6754,6 +7029,1281 @@
       "long-context",
       "speculative",
       "MTP"
-    ]
+    ],
+    "source_id": "src-c255c8a5c2"
+  },
+  {
+    "id": "x-017",
+    "category": "text",
+    "model": "GLM-5.3-Flash EXL3 4-bit",
+    "quant": "EXL3 4-bit",
+    "engine": "TensorFold",
+    "hardware": "2× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
+    "hardware_cost_usd": 13900,
+    "metric": "1 流 60.4 tok/s（prose）；4 流合计 108.8；32k 预填充 1,978.9 tok/s",
+    "tok_s": 60.4,
+    "concurrency": null,
+    "context": "1M（4 路共享约 2.7–2.9M KV 池）",
+    "launch_command": null,
+    "source_url": "https://x.com/MiaAI_lab/status/2105598458547646875",
+    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取）",
+    "source_level": "实测",
+    "date": "2026-10-01",
+    "x_post": {
+      "author": "MiaAI_lab",
+      "likes": 683,
+      "reposts": 90
+    },
+    "model_family": "GLM",
+    "tags": [
+      "4bit",
+      "long-context",
+      "speculative",
+      "multi-GPU"
+    ],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 60.4
+      },
+      {
+        "n": 4,
+        "tok_s": 108.8
+      }
+    ],
+    "measured_by": "MiaAI_lab",
+    "source_id": "src-3950f578b9",
+    "engine_raw": "TensorFold + DFlash2",
+    "engine_note": "TensorFold + DFlash2"
+  },
+  {
+    "id": "x-018",
+    "category": "text",
+    "model": "GLM-5.3-Flash EXL3",
+    "quant": "EXL3",
+    "engine": "TensorFold",
+    "hardware": "4× DGX Spark（有/无交换机均可，TP4 分支）",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "≈$27,800（4×$6,950，计算值）",
+    "hardware_cost_usd": 27800,
+    "metric": "1 流 95 tok/s（prose）；4 流 163",
+    "tok_s": 95,
+    "concurrency": null,
+    "context": "KV 约 6M",
+    "launch_command": null,
+    "source_url": "https://x.com/MiaAI_lab/status/2108939694918488183",
+    "source_note": "@MiaAI_lab on X",
+    "source_level": "实测",
+    "date": "2026-10-10",
+    "x_post": {
+      "author": "MiaAI_lab",
+      "likes": 275,
+      "reposts": 17
+    },
+    "model_family": "GLM",
+    "tags": [
+      "long-context",
+      "multi-GPU"
+    ],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 95
+      },
+      {
+        "n": 4,
+        "tok_s": 163
+      }
+    ],
+    "measured_by": "MiaAI_lab",
+    "source_id": "src-a16afa2688",
+    "engine_raw": "TensorFold TP4 分支",
+    "engine_note": "TensorFold TP4 分支"
+  },
+  {
+    "id": "x-019",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next",
+    "quant": "INT4-AutoRound",
+    "engine": "TensorFold",
+    "hardware": "1× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "$6,950（128GB，2026-10-11）",
+    "hardware_cost_usd": 6950,
+    "metric": "1 流 64.4 tok/s（prose）；8 流 200.9；32k 预填充 2,630 tok/s",
+    "tok_s": 64.4,
+    "concurrency": null,
+    "context": "262K，最多 8 路",
+    "launch_command": null,
+    "source_url": "https://x.com/MiaAI_lab/status/2108203605685596490",
+    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取）",
+    "source_level": "实测",
+    "date": "2026-10-08",
+    "x_post": {
+      "author": "MiaAI_lab",
+      "likes": 386,
+      "reposts": 39
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "long-context",
+      "speculative",
+      "MTP"
+    ],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 64.4
+      },
+      {
+        "n": 8,
+        "tok_s": 200.9
+      }
+    ],
+    "measured_by": "MiaAI_lab",
+    "source_id": "src-ccaf216073",
+    "engine_raw": "TensorFold Zig v1.0 + MTP",
+    "engine_note": "TensorFold Zig v1.0 + MTP"
+  },
+  {
+    "id": "x-020",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next",
+    "quant": "NVFP4（可选官方 NVIDIA NVFP4）",
+    "engine": "vLLM",
+    "hardware": "1× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "$6,950（128GB，2026-10-11）",
+    "hardware_cost_usd": 6950,
+    "metric": "1 流 48.7 tok/s（mia-ai.net）；8 流 117 prose / 180 code（帖文）；峰值内存 91 GiB",
+    "tok_s": 48.7,
+    "concurrency": null,
+    "context": "262K（YaRN 512K）",
+    "launch_command": null,
+    "source_url": "https://x.com/MiaAI_lab/status/2101339268203380857",
+    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取）",
+    "source_level": "实测",
+    "date": "2026-09-19",
+    "x_post": {
+      "author": "MiaAI_lab",
+      "likes": 800,
+      "reposts": 56
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "long-context"
+    ],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 48.7
+      },
+      {
+        "n": 8,
+        "tok_s": 117
+      }
+    ],
+    "measured_by": "MiaAI_lab",
+    "source_id": "src-2c6ee16025"
+  },
+  {
+    "id": "x-021",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next",
+    "quant": "NVFP4",
+    "engine": "vLLM",
+    "hardware": "2× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
+    "hardware_cost_usd": 13900,
+    "metric": "1 流 54.4 tok/s；8 流 207；32k 预填充 2,962 tok/s（mia-ai.net）",
+    "tok_s": 54.4,
+    "concurrency": null,
+    "context": "1M（2.5M bf16 KV）",
+    "launch_command": null,
+    "source_url": "https://x.com/MiaAI_lab/status/2094338533909475486",
+    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取）",
+    "source_level": "实测",
+    "date": "2026-08-31",
+    "x_post": {
+      "author": "MiaAI_lab",
+      "likes": 290,
+      "reposts": 22
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "long-context",
+      "multi-GPU"
+    ],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 54.4
+      },
+      {
+        "n": 8,
+        "tok_s": 207
+      }
+    ],
+    "measured_by": "MiaAI_lab",
+    "source_id": "src-125252fa01"
+  },
+  {
+    "id": "x-022",
+    "category": "text",
+    "model": "DeepSeek-V4-Flash (0731 GA)",
+    "quant": "官方 FP8 权重",
+    "engine": "Unspecified",
+    "hardware": "2× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
+    "hardware_cost_usd": 13900,
+    "metric": "单流 82 tok/s（峰值约 95）；3 会话 135 tok/s",
+    "tok_s": 82,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/MiaAI_lab/status/2083326111144906836",
+    "source_note": "@MiaAI_lab on X",
+    "source_level": "实测",
+    "date": "2026-07-31",
+    "x_post": {
+      "author": "MiaAI_lab",
+      "likes": 368,
+      "reposts": 22
+    },
+    "model_family": "DeepSeek",
+    "tags": [
+      "8bit",
+      "multi-GPU"
+    ],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 82
+      },
+      {
+        "n": 3,
+        "tok_s": 135
+      }
+    ],
+    "measured_by": "MiaAI_lab",
+    "source_id": "src-6176a62245"
+  },
+  {
+    "id": "x-023",
+    "category": "text",
+    "model": "Qwen3.6-35B-A3B",
+    "quant": "NVFP4",
+    "engine": "vLLM",
+    "hardware": "1× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "$6,950（128GB，2026-10-11）",
+    "hardware_cost_usd": 6950,
+    "metric": "单会话 95 tok/s；8 会话 317 tok/s",
+    "tok_s": 95,
+    "concurrency": null,
+    "context": "256K，24 路并发",
+    "launch_command": null,
+    "source_url": "https://x.com/MiaAI_lab/status/2082573590529204458",
+    "source_note": "@MiaAI_lab on X",
+    "source_level": "实测",
+    "date": "2026-07-29",
+    "x_post": {
+      "author": "MiaAI_lab",
+      "likes": 311,
+      "reposts": 32
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "MoE",
+      "long-context"
+    ],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 95
+      },
+      {
+        "n": 8,
+        "tok_s": 317
+      }
+    ],
+    "measured_by": "MiaAI_lab",
+    "source_id": "src-aecdae50c6",
+    "engine_raw": "vLLM 0.26",
+    "engine_note": "vLLM 0.26"
+  },
+  {
+    "id": "x-024",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "NVFP4",
+    "engine": "vLLM",
+    "hardware": "RTX 5090 32GB",
+    "hardware_family": "NVIDIA 消费级",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_usd": 5400,
+    "metric": "147 tok/s 解码（mia-ai.net 列约 160）",
+    "tok_s": 147,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/MiaAI_lab/status/2088734058842878037",
+    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取）",
+    "source_level": "实测",
+    "date": "2026-08-15",
+    "x_post": {
+      "author": "MiaAI_lab",
+      "likes": 381,
+      "reposts": 10
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative",
+      "MTP"
+    ],
+    "measured_by": "MiaAI_lab",
+    "source_id": "src-5173bf0d5f",
+    "engine_raw": "vLLM（引擎据 mia-ai.net：vLLM · NVFP4 · MTP）",
+    "engine_note": "vLLM（引擎据 mia-ai.net：vLLM · NVFP4 · MTP）"
+  },
+  {
+    "id": "x-025",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "NVFP4",
+    "engine": "SGLang",
+    "hardware": "RTX PRO 6000",
+    "hardware_family": "其他",
+    "hardware_cost_text": null,
+    "hardware_cost_usd": null,
+    "metric": "约 300 tok/s（帖文）；mia-ai.net 列 240+、8 请求",
+    "tok_s": 300,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/MiaAI_lab/status/2090327658508763516",
+    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取）",
+    "source_level": "实测",
+    "date": "2026-08-20",
+    "x_post": {
+      "author": "MiaAI_lab",
+      "likes": 239,
+      "reposts": 14
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative"
+    ],
+    "measured_by": "MiaAI_lab",
+    "source_id": "src-671103a20a",
+    "engine_raw": "SGLang + DFlash2（据 mia-ai.net）",
+    "engine_note": "SGLang + DFlash2（据 mia-ai.net）"
+  },
+  {
+    "id": "x-026",
+    "category": "text",
+    "model": "Ornith-1.5-35B-A3B",
+    "quant": null,
+    "engine": "Unspecified",
+    "hardware": "1× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "$6,950（128GB，2026-10-11）",
+    "hardware_cost_usd": 6950,
+    "metric": "24 并发会话最高 440 tok/s（合计）",
+    "tok_s": null,
+    "concurrency": null,
+    "context": "256K，24 路",
+    "launch_command": null,
+    "source_url": "https://x.com/MiaAI_lab/status/2090182369101893768",
+    "source_note": "@MiaAI_lab on X；引擎信息：b12x 后端 + MTP",
+    "source_level": "实测",
+    "date": "2026-08-19",
+    "x_post": {
+      "author": "MiaAI_lab",
+      "likes": 189,
+      "reposts": 11
+    },
+    "model_family": "Other",
+    "tags": [
+      "MoE",
+      "long-context"
+    ],
+    "streams": [
+      {
+        "n": 24,
+        "tok_s": 440
+      }
+    ],
+    "measured_by": "MiaAI_lab",
+    "source_id": "src-a0df0f2043"
+  },
+  {
+    "id": "x-027",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "MLX 4-bit",
+    "engine": "TensorFold",
+    "hardware": "1× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "$6,950（128GB，2026-10-11）",
+    "hardware_cost_usd": 6950,
+    "metric": "1 流 58.3 tok/s（prose）；2 流 108.5；8 流 220",
+    "tok_s": 58.3,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/ashxhart/status/2105745818137280545",
+    "source_note": "@ashxhart on X",
+    "source_level": "实测",
+    "date": "2026-10-01",
+    "x_post": {
+      "author": "ashxhart",
+      "likes": 77,
+      "reposts": 2
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative"
+    ],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 58.3
+      },
+      {
+        "n": 2,
+        "tok_s": 108.5
+      },
+      {
+        "n": 8,
+        "tok_s": 220
+      }
+    ],
+    "measured_by": "ashxhart",
+    "source_id": "src-233f5276ae",
+    "engine_raw": "TensorFold + DFlash2（MiaAI_lab recipe）",
+    "engine_note": "TensorFold + DFlash2（MiaAI_lab recipe）"
+  },
+  {
+    "id": "x-028",
+    "category": "text",
+    "model": "DeepSeek-V4.1-Flash",
+    "quant": null,
+    "engine": "Unspecified",
+    "hardware": "2× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
+    "hardware_cost_usd": 13900,
+    "metric": "解码 29 tok/s prose / 41 code；预填充 2,000 tok/s；top-token 一致率 92%，KLD 0.07",
+    "tok_s": 29,
+    "concurrency": null,
+    "context": "262K，8 并发，2M KV 池",
+    "launch_command": null,
+    "source_url": "https://x.com/0xSero/status/2106373861818224907",
+    "source_note": "@0xSero on X",
+    "source_level": "实测",
+    "date": "2026-10-03",
+    "x_post": {
+      "author": "0xSero",
+      "likes": 2470,
+      "reposts": 112
+    },
+    "model_family": "DeepSeek",
+    "tags": [
+      "long-context",
+      "multi-GPU"
+    ],
+    "measured_by": "0xSero",
+    "source_id": "src-06b6c52487"
+  },
+  {
+    "id": "x-029",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next",
+    "quant": null,
+    "engine": "Unspecified",
+    "hardware": "RTX 3090 24GB + 64GB DDR4/5 + 100GB NVMe",
+    "hardware_family": "NVIDIA 消费级",
+    "hardware_cost_text": "仅显卡 二手约 $1,206（2026-10-06 getpcparts，见 prices.json）",
+    "hardware_cost_usd": 1206,
+    "metric": "c1 解码 64 tok/s；预填充 2,000 / 2,800 tok/s",
+    "tok_s": 64,
+    "concurrency": null,
+    "context": "210K fp8 KV",
+    "launch_command": null,
+    "source_url": "https://x.com/0xSero/status/2104865431659892934",
+    "source_note": "@0xSero on X",
+    "source_level": "宣称",
+    "date": "2026-09-29",
+    "x_post": {
+      "author": "0xSero",
+      "likes": 686,
+      "reposts": 31
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "long-context"
+    ],
+    "measured_by": "0xSero",
+    "source_id": "src-54b732e148"
+  },
+  {
+    "id": "x-030",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next",
+    "quant": null,
+    "engine": "Unspecified",
+    "hardware": "Intel Arc B70 + 64GB RAM + NVMe",
+    "hardware_family": "其他",
+    "hardware_cost_text": null,
+    "hardware_cost_usd": null,
+    "metric": "解码 35 tok/s；预填充 800 / 1,200 tok/s",
+    "tok_s": 35,
+    "concurrency": null,
+    "context": "270K fp8 KV",
+    "launch_command": null,
+    "source_url": "https://x.com/0xSero/status/2104865431659892934",
+    "source_note": "@0xSero on X",
+    "source_level": "宣称",
+    "date": "2026-09-29",
+    "x_post": {
+      "author": "0xSero",
+      "likes": 686,
+      "reposts": 31
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "long-context"
+    ],
+    "measured_by": "0xSero",
+    "source_id": "src-54b732e148"
+  },
+  {
+    "id": "x-031",
+    "category": "text",
+    "model": "Bonsai2 27B",
+    "quant": null,
+    "engine": "Unspecified",
+    "hardware": "RTX 5060 Ti 16GB",
+    "hardware_family": "NVIDIA 消费级",
+    "hardware_cost_text": null,
+    "hardware_cost_usd": null,
+    "metric": "带 MTP 头 67 tok/s；262K 上下文 + MTP + 视觉同时加载占 15.2/15.9 GB",
+    "tok_s": 67,
+    "concurrency": null,
+    "context": "262K",
+    "launch_command": null,
+    "source_url": "https://x.com/sudoingX/status/2104256345759445062",
+    "source_note": "@sudoingX on X",
+    "source_level": "实测",
+    "date": "2026-09-27",
+    "x_post": {
+      "author": "sudoingX",
+      "likes": 180,
+      "reposts": 8
+    },
+    "model_family": "Bonsai",
+    "tags": [
+      "dense",
+      "long-context",
+      "speculative",
+      "MTP"
+    ],
+    "measured_by": "sudoingX",
+    "source_id": "src-3b34b15273"
+  },
+  {
+    "id": "x-032",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next 4-bit",
+    "quant": "4-bit MLX",
+    "engine": "oMLX",
+    "hardware": "Mac Studio M3 Ultra",
+    "hardware_family": "Mac",
+    "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
+    "hardware_cost_usd": 5649,
+    "metric": "23k 上下文整体解码 97.1 tok/s；无缓存预填充约 1,131 tok/s",
+    "tok_s": 97.1,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/ashxhart/status/2099219170546028647",
+    "source_note": "@ashxhart on X",
+    "source_level": "实测",
+    "date": "2026-09-13",
+    "x_post": {
+      "author": "ashxhart",
+      "likes": 131,
+      "reposts": 12
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "speculative",
+      "MTP"
+    ],
+    "measured_by": "ashxhart",
+    "source_id": "src-5dc46efb08",
+    "engine_raw": "oMLX（作者 PR）+ MTP",
+    "engine_note": "oMLX（作者 PR）+ MTP"
+  },
+  {
+    "id": "x-033",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next",
+    "quant": "oQ4e 4-bit MLX",
+    "engine": "oMLX",
+    "hardware": "Mac Studio M4 Max",
+    "hardware_family": "Mac",
+    "hardware_cost_text": "已停产；Apple 翻新 128GB/4TB $5,689（2026-10）",
+    "hardware_cost_usd": 5689,
+    "metric": "均值 63.38 tok/s；sequence 68.85、code 52.20、json 69.09",
+    "tok_s": 63.38,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/WescheNex1q/status/2103651224650207607",
+    "source_note": "@WescheNex1q on X",
+    "source_level": "实测",
+    "date": "2026-09-26",
+    "x_post": {
+      "author": "WescheNex1q",
+      "likes": 48,
+      "reposts": 0
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "speculative",
+      "MTP"
+    ],
+    "measured_by": "WescheNex1q",
+    "source_id": "src-9b25c86557",
+    "engine_raw": "oMLX + MTP depth 6",
+    "engine_note": "oMLX + MTP depth 6"
+  },
+  {
+    "id": "x-034",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "oQ4e",
+    "engine": "MLX",
+    "hardware": "Mac Studio M4 Max",
+    "hardware_family": "Mac",
+    "hardware_cost_text": "已停产；Apple 翻新 128GB/4TB $5,689（2026-10）",
+    "hardware_cost_usd": 5689,
+    "metric": "原生栈 65.76 tok/s（MTP depth 3）；同一 GGUF + llama.cpp 无 MTP：21.00",
+    "tok_s": 65.76,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/WescheNex1q/status/2103859386670260261",
+    "source_note": "@WescheNex1q on X",
+    "source_level": "实测",
+    "date": "2026-09-26",
+    "x_post": {
+      "author": "WescheNex1q",
+      "likes": 16,
+      "reposts": 0
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative",
+      "MTP"
+    ],
+    "measured_by": "WescheNex1q",
+    "source_id": "src-c93f0c71bd"
+  },
+  {
+    "id": "x-035",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "NVFP4",
+    "engine": "vLLM",
+    "hardware": "1× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "$6,950（128GB，2026-10-11）",
+    "hardware_cost_usd": 6950,
+    "metric": "原生栈 34.89 tok/s（MTP depth 3）；同一 GGUF + llama.cpp 无 MTP：11.17",
+    "tok_s": 34.89,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/WescheNex1q/status/2103859386670260261",
+    "source_note": "@WescheNex1q on X",
+    "source_level": "实测",
+    "date": "2026-09-26",
+    "x_post": {
+      "author": "WescheNex1q",
+      "likes": 16,
+      "reposts": 0
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative",
+      "MTP"
+    ],
+    "measured_by": "WescheNex1q",
+    "source_id": "src-c93f0c71bd"
+  },
+  {
+    "id": "x-036",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": null,
+    "engine": "SGLang",
+    "hardware": "1× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "$6,950（128GB，2026-10-11）",
+    "hardware_cost_usd": 6950,
+    "metric": "单流 42 tok/s；C8 114；TTFT 0.2s；1.86M KV",
+    "tok_s": 42,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/WescheNex1q/status/2091634749433331979",
+    "source_note": "@WescheNex1q on X",
+    "source_level": "实测",
+    "date": "2026-08-23",
+    "x_post": {
+      "author": "WescheNex1q",
+      "likes": 70,
+      "reposts": 1
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative"
+    ],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 42
+      },
+      {
+        "n": 8,
+        "tok_s": 114
+      }
+    ],
+    "measured_by": "WescheNex1q",
+    "source_id": "src-98d2c9be56",
+    "engine_raw": "SGLang + DFlash2",
+    "engine_note": "SGLang + DFlash2"
+  },
+  {
+    "id": "x-037",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": null,
+    "engine": "oMLX",
+    "hardware": "Mac Studio M4 Max",
+    "hardware_family": "Mac",
+    "hardware_cost_text": "已停产；Apple 翻新 128GB/4TB $5,689（2026-10）",
+    "hardware_cost_usd": 5689,
+    "metric": "53 tok/s prose，72 code，草稿接受率 78%",
+    "tok_s": 53,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/WescheNex1q/status/2091634749433331979",
+    "source_note": "@WescheNex1q on X",
+    "source_level": "实测",
+    "date": "2026-08-23",
+    "x_post": {
+      "author": "WescheNex1q",
+      "likes": 70,
+      "reposts": 1
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative",
+      "MTP"
+    ],
+    "measured_by": "WescheNex1q",
+    "source_id": "src-98d2c9be56",
+    "engine_raw": "oMLX + MTP",
+    "engine_note": "oMLX + MTP"
+  },
+  {
+    "id": "x-038",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": null,
+    "engine": "llama.cpp",
+    "hardware": "AMD Strix Halo",
+    "hardware_family": "AMD",
+    "hardware_cost_text": "$3,149（Framework 128GB，2026-10）",
+    "hardware_cost_usd": 3149,
+    "metric": "最高 65.6 tok/s 解码",
+    "tok_s": 65.6,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/TeksEdge/status/2092673436904489362",
+    "source_note": "@TeksEdge on X",
+    "source_level": "转述",
+    "date": "2026-08-26",
+    "x_post": {
+      "author": "TeksEdge",
+      "likes": 215,
+      "reposts": 20
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative"
+    ],
+    "measured_by": "TeksEdge",
+    "source_id": "src-5b9276f5c2",
+    "engine_raw": "llama.cpp 自适应投机解码 fork",
+    "engine_note": "llama.cpp 自适应投机解码 fork"
+  },
+  {
+    "id": "x-039",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next",
+    "quant": null,
+    "engine": "Unspecified",
+    "hardware": "1× DGX Spark (GB10)",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "$6,950（128GB，2026-10-11）",
+    "hardware_cost_usd": 6950,
+    "metric": "复现 MiaAI_lab recipe，按流合计：1/2/4/8 流 50.3/75.8/117.5/162.0（Mia：48.7/74.6/113.7/…）",
+    "tok_s": 50.3,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/JASONMCNAB/status/2101367210404966460",
+    "source_note": "@JASONMCNAB on X；引擎信息：MiaAI_lab recipe（帖文未写引擎）",
+    "source_level": "实测",
+    "date": "2026-09-19",
+    "x_post": {
+      "author": "JASONMCNAB",
+      "likes": 63,
+      "reposts": 5
+    },
+    "model_family": "Qwen",
+    "tags": [],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 50.3
+      },
+      {
+        "n": 2,
+        "tok_s": 75.8
+      },
+      {
+        "n": 4,
+        "tok_s": 117.5
+      },
+      {
+        "n": 8,
+        "tok_s": 162.0
+      }
+    ],
+    "measured_by": "JASONMCNAB",
+    "source_id": "src-d4cc877e2d"
+  },
+  {
+    "id": "x-040",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": null,
+    "engine": "Unspecified",
+    "hardware": "1× DGX Spark (GB10)",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "$6,950（128GB，2026-10-11）",
+    "hardware_cost_usd": 6950,
+    "metric": "复现 MiaAI_lab recipe：1/2/4/8 流 64.0/104.3/155.1/238.6（Mia：58.3/108.5/135.1/220.6）",
+    "tok_s": 64.0,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/JASONMCNAB/status/2105762102698705365",
+    "source_note": "@JASONMCNAB on X；引擎信息：MiaAI_lab recipe",
+    "source_level": "实测",
+    "date": "2026-10-01",
+    "x_post": {
+      "author": "JASONMCNAB",
+      "likes": 3,
+      "reposts": 0
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "dense"
+    ],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 64.0
+      },
+      {
+        "n": 2,
+        "tok_s": 104.3
+      },
+      {
+        "n": 4,
+        "tok_s": 155.1
+      },
+      {
+        "n": 8,
+        "tok_s": 238.6
+      }
+    ],
+    "measured_by": "JASONMCNAB",
+    "source_id": "src-8a8f996efe"
+  },
+  {
+    "id": "x-041",
+    "category": "text",
+    "model": "GLM-5.3-Flash EXL3",
+    "quant": "EXL3",
+    "engine": "Unspecified",
+    "hardware": "2× DGX Spark (GB10)",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
+    "hardware_cost_usd": 13900,
+    "metric": "复现 MiaAI_lab recipe：1 流 61.43（Mia 60.4）；4 流 107.8（Mia 108.8）",
+    "tok_s": 61.43,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/JASONMCNAB/status/2106367944963842279",
+    "source_note": "@JASONMCNAB on X；引擎信息：MiaAI_lab recipe",
+    "source_level": "实测",
+    "date": "2026-10-03",
+    "x_post": {
+      "author": "JASONMCNAB",
+      "likes": 27,
+      "reposts": 3
+    },
+    "model_family": "GLM",
+    "tags": [
+      "multi-GPU"
+    ],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 61.43
+      },
+      {
+        "n": 4,
+        "tok_s": 107.8
+      }
+    ],
+    "measured_by": "JASONMCNAB",
+    "source_id": "src-616d6abcb0"
+  },
+  {
+    "id": "x-042",
+    "category": "text",
+    "model": "DeepSeek-V4.1-Flash",
+    "quant": null,
+    "engine": "TensorFold",
+    "hardware": "2× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
+    "hardware_cost_usd": 13900,
+    "metric": "TensorFold：1 流 95、3 流 147、预填充 1,400；vLLM 对照：51 / 86 / 870",
+    "tok_s": 95,
+    "concurrency": null,
+    "context": "16 流 × 600K",
+    "launch_command": null,
+    "source_url": "https://x.com/Urthoo/status/2106426248759005362",
+    "source_note": "@Urthoo on X",
+    "source_level": "实测",
+    "date": "2026-10-03",
+    "x_post": {
+      "author": "Urthoo",
+      "likes": 0,
+      "reposts": 0
+    },
+    "model_family": "DeepSeek",
+    "tags": [
+      "long-context",
+      "multi-GPU"
+    ],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 95
+      },
+      {
+        "n": 3,
+        "tok_s": 147
+      }
+    ],
+    "measured_by": "Urthoo",
+    "source_id": "src-1af49987af"
+  },
+  {
+    "id": "x-043",
+    "category": "text",
+    "model": "DeepSeek-V4-Flash (0731)",
+    "quant": null,
+    "engine": "Unspecified",
+    "hardware": "1× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "$6,950（128GB，2026-10-11）",
+    "hardware_cost_usd": 6950,
+    "metric": "x1 31.5 tok/s，TTFT 408ms；x2 合计 29.8",
+    "tok_s": 31.5,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/hnakamur2/status/2090784021630566613",
+    "source_note": "@hnakamur2 on X；引擎信息：MiaAI_lab recipe",
+    "source_level": "实测",
+    "date": "2026-08-21",
+    "x_post": {
+      "author": "hnakamur2",
+      "likes": 12,
+      "reposts": 3
+    },
+    "model_family": "DeepSeek",
+    "tags": [],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 31.5
+      },
+      {
+        "n": 2,
+        "tok_s": 29.8
+      }
+    ],
+    "measured_by": "hnakamur2",
+    "source_id": "src-ad5f918887"
+  },
+  {
+    "id": "x-044",
+    "category": "text",
+    "model": "Qwen3.8-27B-heretic-ara-oQ4e-mtp",
+    "quant": "oQ4e，KV q4",
+    "engine": "mlx-serve",
+    "hardware": "Mac Studio M4 Max",
+    "hardware_family": "Mac",
+    "hardware_cost_text": "已停产；Apple 翻新 128GB/4TB $5,689（2026-10）",
+    "hardware_cost_usd": 5689,
+    "metric": "code 74 / prose 42 tok/s（temp 0，thinking off）",
+    "tok_s": 42,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/CryptoBandit100/status/2106374669477761493",
+    "source_note": "@CryptoBandit100 on X",
+    "source_level": "实测",
+    "date": "2026-10-03",
+    "x_post": {
+      "author": "CryptoBandit100",
+      "likes": 1,
+      "reposts": 0
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative"
+    ],
+    "measured_by": "CryptoBandit100",
+    "source_id": "src-b254d3a781"
+  },
+  {
+    "id": "x-045",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next-hibrid48（uncensored）",
+    "quant": "NVFP4",
+    "engine": "vLLM",
+    "hardware": "2× DGX Spark（TP=2）",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
+    "hardware_cost_usd": 13900,
+    "metric": "prose 51 tok/s",
+    "tok_s": 51,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/CryptoBandit100/status/2106374669477761493",
+    "source_note": "@CryptoBandit100 on X",
+    "source_level": "实测",
+    "date": "2026-10-03",
+    "x_post": {
+      "author": "CryptoBandit100",
+      "likes": 1,
+      "reposts": 0
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "speculative",
+      "MTP",
+      "multi-GPU"
+    ],
+    "measured_by": "CryptoBandit100",
+    "source_id": "src-b254d3a781",
+    "engine_raw": "vLLM 0.30.0 + MTP K=5",
+    "engine_note": "vLLM 0.30.0 + MTP K=5"
+  },
+  {
+    "id": "x-046",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next",
+    "quant": null,
+    "engine": "TensorFold",
+    "hardware": "Gigabyte AI TOP ATOM (GB10)",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": null,
+    "hardware_cost_usd": null,
+    "metric": "复现 MiaAI_lab recipe：1 请求 64.1（README 62.4）；2 请求 83.0（README 90.5）",
+    "tok_s": 64.1,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/niklaslenz_ai/status/2105623763018453099",
+    "source_note": "@niklaslenz_ai on X",
+    "source_level": "实测",
+    "date": "2026-10-01",
+    "x_post": {
+      "author": "niklaslenz_ai",
+      "likes": 15,
+      "reposts": 0
+    },
+    "model_family": "Qwen",
+    "tags": [],
+    "streams": [
+      {
+        "n": 1,
+        "tok_s": 64.1
+      },
+      {
+        "n": 2,
+        "tok_s": 83.0
+      }
+    ],
+    "measured_by": "niklaslenz_ai",
+    "source_id": "src-2af64659c6",
+    "engine_raw": "TensorFold（MiaAI_lab TensorFold recipe）",
+    "engine_note": "TensorFold（MiaAI_lab TensorFold recipe）"
+  },
+  {
+    "id": "x-047",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "MLX 4-bit",
+    "engine": "TensorFold",
+    "hardware": "MacBook M5 Pro 64GB",
+    "hardware_family": "Mac",
+    "hardware_cost_text": null,
+    "hardware_cost_usd": null,
+    "metric": "89.9 tok/s（约 1.9× mlx-serve、2.4× oMLX）",
+    "tok_s": 89.9,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/aartiles24/status/2104179801388884125",
+    "source_note": "@aartiles24 on X",
+    "source_level": "实测",
+    "date": "2026-09-27",
+    "x_post": {
+      "author": "aartiles24",
+      "likes": 12,
+      "reposts": 0
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative"
+    ],
+    "measured_by": "aartiles24",
+    "source_id": "src-72ecd159f1",
+    "engine_raw": "TensorFold + DFlash2",
+    "engine_note": "TensorFold + DFlash2"
+  },
+  {
+    "id": "x-048",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next",
+    "quant": null,
+    "engine": "sushi",
+    "hardware": "Mac Studio M1 Ultra 64GB",
+    "hardware_family": "Mac",
+    "hardware_cost_text": null,
+    "hardware_cost_usd": null,
+    "metric": "245k 上下文下 49 tok/s 输出",
+    "tok_s": 49,
+    "concurrency": null,
+    "context": "245K",
+    "launch_command": null,
+    "source_url": "https://x.com/_Holistech_/status/2109052096473698770",
+    "source_note": "@_Holistech_ on X",
+    "source_level": "实测",
+    "date": "2026-10-10",
+    "x_post": {
+      "author": "_Holistech_",
+      "likes": 0,
+      "reposts": 0
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "long-context"
+    ],
+    "measured_by": "_Holistech_",
+    "source_id": "src-e51991b9f0"
+  },
+  {
+    "id": "x-049",
+    "category": "text",
+    "model": "Qwen3.8-Flash-Next 4/8-bit",
+    "quant": "4/8-bit mixed",
+    "engine": "mlx-serve",
+    "hardware": "Mac Studio M5 Ultra 256GB",
+    "hardware_family": "Mac",
+    "hardware_cost_text": "$9,499（64C/256GB）/ $10,799（80C/256GB）",
+    "hardware_cost_usd": 9499,
+    "metric": "1k 上下文：生成 126 t/s，预填充 >4,500 t/s",
+    "tok_s": 126,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/LocalSilicon/status/2106175358160793817",
+    "source_note": "@LocalSilicon on X",
+    "source_level": "实测",
+    "date": "2026-10-03",
+    "x_post": {
+      "author": "LocalSilicon",
+      "likes": 1,
+      "reposts": 0
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "8bit",
+      "speculative",
+      "MTP"
+    ],
+    "measured_by": "LocalSilicon",
+    "source_id": "src-d2d83155c0",
+    "engine_raw": "mlx-serve 26.10.1 + MTP",
+    "engine_note": "mlx-serve 26.10.1 + MTP"
   }
 ]
