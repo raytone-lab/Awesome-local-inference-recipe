@@ -1,14 +1,4 @@
-# Awesome Local Inference Recipes [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-
-**English** | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
-
-> Model × engine × hardware → measured speed and cost, with every number linked to its source. Consumer and used hardware, up to $30k.
-
-<sub>{{N}} recipes ({{NT}} text · {{NI}} image · {{NV}} video/audio) · data as of 2026-10-13 · <a href="explore.html">Explorer</a> · <a href="submit.html">Submit</a></sub>
-
-<sub>Site links point to GitHub Pages; if it is not live yet, clone the repo and open <code>explore.html</code> locally (<code>python3 -m http.server</code>).</sub>
-
-**New:** step-by-step [recipe guides](recipes/README.md) · [Getting started](docs/getting-started.md)
+{{HERO}}
 
 ## Contents
 

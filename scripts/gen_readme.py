@@ -86,6 +86,67 @@ def align_tables(txt):
             i=j
         else: res.append(lines[i]); i+=1
     return '\n'.join(res)
+
+DATA_ASOF = '2026-10-13'  # date of the last data collection pass
+REPO = 'raytone-lab/Awesome-local-inference-recipe'
+SHOW = [  # (id, label key) — curated records; every value is read from data/recipes.json
+ ('text-113','mac'),('x-006','5090'),('x-009','amd'),('x-007','dc'),('text-022','spark'),('text-021','cheap')]
+HL = {
+ 'en': dict(h1='Awesome Local Inference Recipes', tag='What speed will <b>your</b> hardware actually get? {n} source-backed local AI recipes, from a ${lo:,} GPU to a $30k rig.',
+   lang='<b>English</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ja.md">日本語</a>',
+   nav=[('Explore live','explore.html'),('Recipe guides','recipes/README.md'),('Getting started','docs/getting-started.md'),('Submit a recipe','submit.html')],
+   stats='**{n} recipes** ({nt} text · {ni} image · {nv} video & audio) · **{hf} hardware families** · **{ne} engines** · **{mf} model families** · every number linked to its source · budget up to **$30k**',
+   hd='### Headline numbers', th='| Record | Model · engine | Hardware | Result | Source |',
+   lab={'mac':'Fastest on a Mac','5090':'Fastest on one RTX 5090','amd':'Fastest on AMD','dc':'Used datacenter GPUs','spark':'Fastest on one DGX Spark','cheap':'Cheapest rig in the list'},
+   note='Single-stream generation speed, copied from each source; prices are the lowest published hardware price. ✅ = measured by the poster.',
+   alt='Scatter chart of text recipes: tok/s against hardware price, colored by hardware family', cost='≈ ${c:,}'),
+ 'zh': dict(h1='本地推理配方精选', tag='你的硬件到底能跑多快？{n} 条有出处的本地 AI 配方，从 {lo:,} 美元的显卡到 3 万美元的整机。',
+   lang='<a href="README.md">English</a> · <b>简体中文</b> · <a href="README.ja.md">日本語</a>',
+   nav=[('在线配方库','explore.html'),('配方指南','recipes/README.zh-CN.md'),('入门指南','docs/getting-started.zh-CN.md'),('提交配方','submit.html')],
+   stats='**{n} 条配方**（文字 {nt} · 图像 {ni} · 影音 {nv}）· **{hf} 类硬件** · **{ne} 种引擎** · **{mf} 个模型系列** · 每个数字都有出处 · 预算 **3 万美元以内**',
+   hd='### 亮点数据', th='| 记录 | 模型 · 引擎 | 硬件 | 结果 | 来源 |',
+   lab={'mac':'Mac 最快','5090':'单张 RTX 5090 最快','amd':'AMD 最快','dc':'二手数据中心卡','spark':'单台 DGX Spark 最快','cheap':'最便宜的配置'},
+   note='单路生成速度，均摘自来源；价格为公开的最低硬件价格。✅ = 发帖人实测。',
+   alt='文字配方散点图：tok/s 与硬件价格，按硬件类别着色', cost='约 ${c:,}'),
+ 'ja': dict(h1='ローカル推論レシピ集', tag='あなたのハードウェアで、実際どれくらいの速度が出る？出典付きのローカル AI レシピ {n} 件。{lo:,} ドルの GPU から 3 万ドルの構成まで。',
+   lang='<a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a> · <b>日本語</b>',
+   nav=[('エクスプローラー','explore.html'),('レシピガイド','recipes/README.ja.md'),('はじめに','docs/getting-started.ja.md'),('レシピを投稿','submit.html')],
+   stats='**レシピ {n} 件**（テキスト {nt} · 画像 {ni} · 動画・音声 {nv}）· **ハードウェア {hf} 分類** · **エンジン {ne} 種** · **モデルファミリー {mf} 系統** · すべての数字に出典リンク · 予算 **3 万ドルまで**',
+   hd='### 注目の記録', th='| 記録 | モデル · エンジン | ハードウェア | 結果 | 出典 |',
+   lab={'mac':'Mac で最速','5090':'RTX 5090 1 枚で最速','amd':'AMD で最速','dc':'中古データセンター GPU','spark':'DGX Spark 1 台で最速','cheap':'いちばん安い構成'},
+   note='1 ストリームの生成速度で、いずれも出典からの引用です。価格は公開されている最安のハードウェア価格。✅ = 投稿者本人の実測。',
+   alt='テキストレシピの散布図：tok/s とハードウェア価格、ハードウェア分類で色分け', cost='約 {c:,} ドル'),
+}
+def hero(lang, E):
+    H=HL[lang]; T=L[lang]; byid={r['id']:r for r in D}
+    n={c:sum(r['category']==c for r in D) for c in ('text','image','video-audio')}
+    lo=min(r['hardware_cost_usd'] for r in D if r['hardware_cost_usd'])
+    from urllib.parse import quote as q
+    def b(l,r,c): return f"https://img.shields.io/badge/{q(l)}-{q(r)}-{c}?style=flat-square"
+    upd=DATA_ASOF
+    badges=' '.join([
+      f'<a href="{PAGES}explore.html"><img src="{b("recipes",str(len(D)),"0891B2")}" alt="{len(D)} recipes"></a>',
+      f'<img src="{b("data as of",upd.replace("-","--"),"4B5563")}" alt="data as of {upd}">',
+      f'<a href="https://github.com/{REPO}/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/{REPO}/validate.yml?branch=main&style=flat-square&label=validate" alt="validate"></a>',
+      f'<a href="LICENSE"><img src="{b("code","MIT","22C55E")}" alt="MIT"></a>',
+      f'<a href="LICENSE-DATA"><img src="{b("data","CC BY 4.0","22C55E")}" alt="CC BY 4.0"></a>',
+      f'<a href="https://github.com/{REPO}/stargazers"><img src="https://img.shields.io/github/stars/{REPO}?style=flat-square" alt="GitHub stars"></a>',
+      '<a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-7C3AED?style=flat-square" alt="PRs welcome"></a>'])
+    nav=' · '.join(f'<a href="{u}"><b>{t}</b></a>' for t,u in H['nav'])
+    out=[f'<h1 align="center">{H["h1"]} <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a></h1>','',
+         f'<p align="center">{H["tag"].format(n=len(D),lo=lo)}</p>','',f'<p align="center">{H["lang"]}</p>','',
+         f'<p align="center">{badges}</p>','',f'<p align="center">{nav}</p>','',
+         f'<p align="center"><img src="docs/hero.png" width="860" alt="{H["alt"]}"></p>','',
+         H['stats'].format(n=len(D),nt=n['text'],ni=n['image'],nv=n['video-audio'],hf=len({r["hardware_family"] for r in D}),ne=len({r["engine"] for r in D if r["engine"]!="Unspecified"}),mf=len({r["model_family"] for r in D if r["model_family"]!="Other"})),'',
+         H['hd'],'',H['th'],'|---|---|---|---|---|']
+    for i,k in SHOW:
+        r=byid[i]; eg=E(r['engine']) if r['engine']!='Unspecified' else ''
+        hw=clip(E(r['hardware']) or r['hardware'],44)
+        c=f" · {H['cost'].format(c=r['hardware_cost_usd'])}" if r.get('hardware_cost_usd') else ''
+        who=(r.get('x_post') or {}).get('author'); src=f'@{who}' if who else T['src']
+        out.append(f"| {H['lab'][k]} | {E(r['model'])}{' · '+eg if eg else ''} | {hw}{c} | **{r['tok_s']:g} tok/s** {LVI[r['source_level']]} | [{src}]({r['source_url']}) |")
+    out+=['',f"<sub>{H['note']}</sub>"]
+    return '\n'.join(out)
 def build(lang):
     T=L[lang]; E=(lambda s:en(s)) if lang in ('en','ja') else (lambda s:s)
     def key(r):
@@ -139,7 +200,7 @@ def build(lang):
     tpl=open(R/'scripts'/T['tpl']).read(); head,tail=tpl.split('<!--RECIPES-->')
     n={c:sum(r['category']==c for r in D) for c in T['cats']}
     toc=[f"- [{T['legend']}](#{slug(T['legend'])})"]+toc+[f"- [{x}](#{slug(x)})" for x in (T['eng'],T['rel'],T['lic'])]
-    head=head.replace('{{TOC}}','\n'.join(toc)).replace('{{N}}',str(len(D))).replace('{{NT}}',str(n['text'])).replace('{{NI}}',str(n['image'])).replace('{{NV}}',str(n['video-audio']))
+    head=head.replace('{{HERO}}',hero(lang,E)).replace('{{TOC}}','\n'.join(toc)).replace('{{N}}',str(len(D))).replace('{{NT}}',str(n['text'])).replace('{{NI}}',str(n['image'])).replace('{{NV}}',str(n['video-audio']))
     tail=tail.replace('<!--ENGINES-->',rtable('engines')).replace('<!--RELATED-->',rtable('related'))
     txt=head+'\n'.join(out)+'\n'+tail
     for pg in ('explore.html','submit.html'):

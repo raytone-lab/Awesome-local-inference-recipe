@@ -1,16 +1,4 @@
-# ローカル推論レシピ集 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-
-[English](README.md) | [简体中文](README.zh-CN.md) | **日本語**
-
-> モデル × エンジン × ハードウェア → 実測の速度とコスト。すべての数字に出典リンクを付けています。対象はコンシューマー機と中古ハードウェア、予算 3 万ドルまで。
-
-<sub>レシピ {{N}} 件（テキスト {{NT}} · 画像 {{NI}} · 動画・音声 {{NV}}）· 2026-10-13 時点のデータ · <a href="explore.html">エクスプローラー</a> · <a href="submit.html">レシピを投稿</a></sub>
-
-<sub>サイトへのリンクは GitHub Pages を指しています。表示されない場合は、リポジトリをクローンしてローカルで <code>explore.html</code> を開いてください（<code>python3 -m http.server</code>）。</sub>
-
-**新着：** 手順付きの[レシピガイド](recipes/README.ja.md) · [はじめに](docs/getting-started.ja.md)
-
-> 各レシピのモデル名・ハードウェア・数値は元の投稿から引用しています。日本語訳のない説明文は「出典を参照」と表示します。
+{{HERO}}
 
 ## 目次
 

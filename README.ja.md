@@ -1,16 +1,29 @@
-# ローカル推論レシピ集 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+<h1 align="center">ローカル推論レシピ集 <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a></h1>
 
-[English](README.md) | [简体中文](README.zh-CN.md) | **日本語**
+<p align="center">あなたのハードウェアで、実際どれくらいの速度が出る？出典付きのローカル AI レシピ 255 件。405 ドルの GPU から 3 万ドルの構成まで。</p>
 
-> モデル × エンジン × ハードウェア → 実測の速度とコスト。すべての数字に出典リンクを付けています。対象はコンシューマー機と中古ハードウェア、予算 3 万ドルまで。
+<p align="center"><a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a> · <b>日本語</b></p>
 
-<sub>レシピ 255 件（テキスト 214 · 画像 16 · 動画・音声 25）· 2026-10-13 時点のデータ · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html">エクスプローラー</a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html">レシピを投稿</a></sub>
+<p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><img src="https://img.shields.io/badge/recipes-255-0891B2?style=flat-square" alt="255 recipes"></a> <img src="https://img.shields.io/badge/data%20as%20of-2026--10--13-4B5563?style=flat-square" alt="data as of 2026-10-13"> <a href="https://github.com/raytone-lab/Awesome-local-inference-recipe/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/raytone-lab/Awesome-local-inference-recipe/validate.yml?branch=main&style=flat-square&label=validate" alt="validate"></a> <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-22C55E?style=flat-square" alt="MIT"></a> <a href="LICENSE-DATA"><img src="https://img.shields.io/badge/data-CC%20BY%204.0-22C55E?style=flat-square" alt="CC BY 4.0"></a> <a href="https://github.com/raytone-lab/Awesome-local-inference-recipe/stargazers"><img src="https://img.shields.io/github/stars/raytone-lab/Awesome-local-inference-recipe?style=flat-square" alt="GitHub stars"></a> <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-7C3AED?style=flat-square" alt="PRs welcome"></a></p>
 
-<sub>サイトへのリンクは GitHub Pages を指しています。表示されない場合は、リポジトリをクローンしてローカルで <code>explore.html</code> を開いてください（<code>python3 -m http.server</code>）。</sub>
+<p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><b>エクスプローラー</b></a> · <a href="recipes/README.ja.md"><b>レシピガイド</b></a> · <a href="docs/getting-started.ja.md"><b>はじめに</b></a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html"><b>レシピを投稿</b></a></p>
 
-**新着：** 手順付きの[レシピガイド](recipes/README.ja.md) · [はじめに](docs/getting-started.ja.md)
+<p align="center"><img src="docs/hero.png" width="860" alt="テキストレシピの散布図：tok/s とハードウェア価格、ハードウェア分類で色分け"></p>
 
-> 各レシピのモデル名・ハードウェア・数値は元の投稿から引用しています。日本語訳のない説明文は「出典を参照」と表示します。
+**レシピ 255 件**（テキスト 214 · 画像 16 · 動画・音声 25）· **ハードウェア 6 分類** · **エンジン 33 種** · **モデルファミリー 11 系統** · すべての数字に出典リンク · 予算 **3 万ドルまで**
+
+### 注目の記録
+
+| 記録               | モデル · エンジン                   | ハードウェア                               | 結果               | 出典                                                                       |
+| ---------------- | ---------------------------- | ------------------------------------ | ---------------- | ------------------------------------------------------------------------ |
+| Mac で最速          | Qwen3.6-35B-A3B · DFlash     | Mac Studio M3 Ultra · 約 5,649 ドル     | **251 tok/s** ✅  | [出典](https://x.com/tinybluedev/status/2089910202606764530)               |
+| RTX 5090 1 枚で最速  | Qwen3.8-Flash-Next · Strata  | RTX 5090 + 256GB RAM · 約 5,400 ドル    | **176 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483) |
+| AMD で最速          | Qwen3.8-Flash-Next · Strata  | AMD Radeon AI PRO R9700 · 約 1,600 ドル | **100 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376) |
+| 中古データセンター GPU    | Qwen3.8-Flash-Next · Strata  | 2× Tesla V100 32GB PCIe              | **120 tok/s** ✅  | [@rewin123](https://x.com/rewin123/status/2108669905616736529)           |
+| DGX Spark 1 台で最速 | Qwen3.8-Flash-Next · ExLlama | 1× DGX Spark · 約 6,950 ドル            | **71.7 tok/s** ✅ | [出典](https://x.com/yume_arasaki/status/2101741448811229219)              |
+| いちばん安い構成         | Qwen3.8-Flash-Next · Strata  | Tesla P40 24GB · 約 405 ドル            | **30 tok/s** ✅   | [出典](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md)    |
+
+<sub>1 ストリームの生成速度で、いずれも出典からの引用です。価格は公開されている最安のハードウェア価格。✅ = 投稿者本人の実測。</sub>
 
 ## 目次
 

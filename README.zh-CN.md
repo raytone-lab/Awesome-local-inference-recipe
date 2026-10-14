@@ -1,14 +1,29 @@
-# 本地推理配方精选 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+<h1 align="center">本地推理配方精选 <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a></h1>
 
-[English](README.md) | **简体中文** | [日本語](README.ja.md)
+<p align="center">你的硬件到底能跑多快？255 条有出处的本地 AI 配方，从 405 美元的显卡到 3 万美元的整机。</p>
 
-> 模型 × 引擎 × 硬件 → 实测速度与成本，每个数字都链接到来源。聚焦消费级与二手硬件，预算 3 万美元以内。
+<p align="center"><a href="README.md">English</a> · <b>简体中文</b> · <a href="README.ja.md">日本語</a></p>
 
-<sub>共 255 条配方（文字 214 · 图像 16 · 影音 25）· 数据截至 2026-10-13 · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html">配方库</a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html">提交配方</a></sub>
+<p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><img src="https://img.shields.io/badge/recipes-255-0891B2?style=flat-square" alt="255 recipes"></a> <img src="https://img.shields.io/badge/data%20as%20of-2026--10--13-4B5563?style=flat-square" alt="data as of 2026-10-13"> <a href="https://github.com/raytone-lab/Awesome-local-inference-recipe/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/raytone-lab/Awesome-local-inference-recipe/validate.yml?branch=main&style=flat-square&label=validate" alt="validate"></a> <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-22C55E?style=flat-square" alt="MIT"></a> <a href="LICENSE-DATA"><img src="https://img.shields.io/badge/data-CC%20BY%204.0-22C55E?style=flat-square" alt="CC BY 4.0"></a> <a href="https://github.com/raytone-lab/Awesome-local-inference-recipe/stargazers"><img src="https://img.shields.io/github/stars/raytone-lab/Awesome-local-inference-recipe?style=flat-square" alt="GitHub stars"></a> <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-7C3AED?style=flat-square" alt="PRs welcome"></a></p>
 
-<sub>站内链接指向 GitHub Pages；若尚未上线，可克隆仓库后在本地打开 <code>explore.html</code>（<code>python3 -m http.server</code>）。</sub>
+<p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><b>在线配方库</b></a> · <a href="recipes/README.zh-CN.md"><b>配方指南</b></a> · <a href="docs/getting-started.zh-CN.md"><b>入门指南</b></a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html"><b>提交配方</b></a></p>
 
-**新增：** 分步 [配方指南](recipes/README.zh-CN.md) · [入门指南](docs/getting-started.zh-CN.md)
+<p align="center"><img src="docs/hero.png" width="860" alt="文字配方散点图：tok/s 与硬件价格，按硬件类别着色"></p>
+
+**255 条配方**（文字 214 · 图像 16 · 影音 25）· **6 类硬件** · **33 种引擎** · **11 个模型系列** · 每个数字都有出处 · 预算 **3 万美元以内**
+
+### 亮点数据
+
+| 记录              | 模型 · 引擎                      | 硬件                                 | 结果               | 来源                                                                       |
+| --------------- | ---------------------------- | ---------------------------------- | ---------------- | ------------------------------------------------------------------------ |
+| Mac 最快          | Qwen3.6-35B-A3B · DFlash     | Mac Studio M3 Ultra · 约 $5,649     | **251 tok/s** ✅  | [来源](https://x.com/tinybluedev/status/2089910202606764530)               |
+| 单张 RTX 5090 最快  | Qwen3.8-Flash-Next · Strata  | RTX 5090 + 256GB RAM · 约 $5,400    | **176 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483) |
+| AMD 最快          | Qwen3.8-Flash-Next · Strata  | AMD Radeon AI PRO R9700 · 约 $1,600 | **100 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376) |
+| 二手数据中心卡         | Qwen3.8-Flash-Next · Strata  | 2× Tesla V100 32GB PCIe（无 NVLink）  | **120 tok/s** ✅  | [@rewin123](https://x.com/rewin123/status/2108669905616736529)           |
+| 单台 DGX Spark 最快 | Qwen3.8-Flash-Next · ExLlama | 1× DGX Spark · 约 $6,950            | **71.7 tok/s** ✅ | [来源](https://x.com/yume_arasaki/status/2101741448811229219)              |
+| 最便宜的配置          | Qwen3.8-Flash-Next · Strata  | Tesla P40 24GB（二手） · 约 $405        | **30 tok/s** ✅   | [来源](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md)    |
+
+<sub>单路生成速度，均摘自来源；价格为公开的最低硬件价格。✅ = 发帖人实测。</sub>
 
 ## 目录
 

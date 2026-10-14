@@ -1,14 +1,4 @@
-# 本地推理配方精选 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-
-[English](README.md) | **简体中文** | [日本語](README.ja.md)
-
-> 模型 × 引擎 × 硬件 → 实测速度与成本，每个数字都链接到来源。聚焦消费级与二手硬件，预算 3 万美元以内。
-
-<sub>共 {{N}} 条配方（文字 {{NT}} · 图像 {{NI}} · 影音 {{NV}}）· 数据截至 2026-10-13 · <a href="explore.html">配方库</a> · <a href="submit.html">提交配方</a></sub>
-
-<sub>站内链接指向 GitHub Pages；若尚未上线，可克隆仓库后在本地打开 <code>explore.html</code>（<code>python3 -m http.server</code>）。</sub>
-
-**新增：** 分步 [配方指南](recipes/README.zh-CN.md) · [入门指南](docs/getting-started.zh-CN.md)
+{{HERO}}
 
 ## 目录
 

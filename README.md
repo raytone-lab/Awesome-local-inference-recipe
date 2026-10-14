@@ -1,14 +1,29 @@
-# Awesome Local Inference Recipes [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+<h1 align="center">Awesome Local Inference Recipes <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a></h1>
 
-**English** | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
+<p align="center">What speed will <b>your</b> hardware actually get? 255 source-backed local AI recipes, from a $405 GPU to a $30k rig.</p>
 
-> Model × engine × hardware → measured speed and cost, with every number linked to its source. Consumer and used hardware, up to $30k.
+<p align="center"><b>English</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ja.md">日本語</a></p>
 
-<sub>255 recipes (214 text · 16 image · 25 video/audio) · data as of 2026-10-13 · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html">Explorer</a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html">Submit</a></sub>
+<p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><img src="https://img.shields.io/badge/recipes-255-0891B2?style=flat-square" alt="255 recipes"></a> <img src="https://img.shields.io/badge/data%20as%20of-2026--10--13-4B5563?style=flat-square" alt="data as of 2026-10-13"> <a href="https://github.com/raytone-lab/Awesome-local-inference-recipe/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/raytone-lab/Awesome-local-inference-recipe/validate.yml?branch=main&style=flat-square&label=validate" alt="validate"></a> <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-22C55E?style=flat-square" alt="MIT"></a> <a href="LICENSE-DATA"><img src="https://img.shields.io/badge/data-CC%20BY%204.0-22C55E?style=flat-square" alt="CC BY 4.0"></a> <a href="https://github.com/raytone-lab/Awesome-local-inference-recipe/stargazers"><img src="https://img.shields.io/github/stars/raytone-lab/Awesome-local-inference-recipe?style=flat-square" alt="GitHub stars"></a> <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-7C3AED?style=flat-square" alt="PRs welcome"></a></p>
 
-<sub>Site links point to GitHub Pages; if it is not live yet, clone the repo and open <code>explore.html</code> locally (<code>python3 -m http.server</code>).</sub>
+<p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><b>Explore live</b></a> · <a href="recipes/README.md"><b>Recipe guides</b></a> · <a href="docs/getting-started.md"><b>Getting started</b></a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html"><b>Submit a recipe</b></a></p>
 
-**New:** step-by-step [recipe guides](recipes/README.md) · [Getting started](docs/getting-started.md)
+<p align="center"><img src="docs/hero.png" width="860" alt="Scatter chart of text recipes: tok/s against hardware price, colored by hardware family"></p>
+
+**255 recipes** (214 text · 16 image · 25 video & audio) · **6 hardware families** · **33 engines** · **11 model families** · every number linked to its source · budget up to **$30k**
+
+### Headline numbers
+
+| Record                   | Model · engine               | Hardware                           | Result           | Source                                                                    |
+| ------------------------ | ---------------------------- | ---------------------------------- | ---------------- | ------------------------------------------------------------------------- |
+| Fastest on a Mac         | Qwen3.6-35B-A3B · DFlash     | Mac Studio M3 Ultra · ≈ $5,649     | **251 tok/s** ✅  | [source](https://x.com/tinybluedev/status/2089910202606764530)            |
+| Fastest on one RTX 5090  | Qwen3.8-Flash-Next · Strata  | RTX 5090 + 256GB RAM · ≈ $5,400    | **176 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483)  |
+| Fastest on AMD           | Qwen3.8-Flash-Next · Strata  | AMD Radeon AI PRO R9700 · ≈ $1,600 | **100 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376)  |
+| Used datacenter GPUs     | Qwen3.8-Flash-Next · Strata  | 2× Tesla V100 32GB PCIe            | **120 tok/s** ✅  | [@rewin123](https://x.com/rewin123/status/2108669905616736529)            |
+| Fastest on one DGX Spark | Qwen3.8-Flash-Next · ExLlama | 1× DGX Spark · ≈ $6,950            | **71.7 tok/s** ✅ | [source](https://x.com/yume_arasaki/status/2101741448811229219)           |
+| Cheapest rig in the list | Qwen3.8-Flash-Next · Strata  | Tesla P40 24GB · ≈ $405            | **30 tok/s** ✅   | [source](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md) |
+
+<sub>Single-stream generation speed, copied from each source; prices are the lowest published hardware price. ✅ = measured by the poster.</sub>
 
 ## Contents
 
