@@ -8,7 +8,7 @@
 
 <p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><b>エクスプローラー</b></a> · <a href="recipes/README.ja.md"><b>レシピガイド</b></a> · <a href="docs/getting-started.ja.md"><b>はじめに</b></a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html"><b>レシピを投稿</b></a></p>
 
-<p align="center"><img src="docs/hero.png" width="860" alt="テキストレシピの散布図：tok/s とハードウェア価格、ハードウェア分類で色分け"></p>
+<p align="center"><img src="docs/hero.ja.png" width="860" alt="棒グラフ：ハードウェア $1,000 あたりの tok/s で並べた実測テキスト構成トップ 15（ハードウェア分類で色分け）"></p>
 
 **レシピ 288 件**（テキスト 247 · 画像 16 · 動画・音声 25）· **ハードウェア 6 分類** · **エンジン 34 種** · **モデルファミリー 11 系統** · すべての数字に出典リンク · 予算 **3 万ドルまで**
 
@@ -123,9 +123,12 @@
 | [sushi](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=sushi)                                                     | 1    |
 | [Unspecified](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?engine=Unspecified)                                         | 53   |
 
+<p align="center"><img src="docs/budget-tiers.ja.png" width="860" alt="棒グラフ：予算帯ごとの最速テキスト構成（実測と公称）"></p>
+
+
 ## 第 1 段階 · 2,500 ドルまで
 
-*中古の 3090/4090、MI50/V100、Strix Halo、R9700* · 42 件
+*中古の 3090/4090、MI50/V100、Strix Halo、R9700* · 44 件
 
 
 **📝 テキスト**
@@ -140,7 +143,7 @@
 - **Qwen3.8-27B** · DFlash `EXL3 4.0bpw + DFlash2 3-bit…` — RTX 4090 24GB → **121 tok/s** ✅ [出典](https://x.com/yume_arasaki/status/2100595901006008791)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 3090 24GB → **120.8 tok/s** ✅ [出典](https://x.com/needmorevram/status/2105050786938118599)
 - **Qwen3.8-Flash-Next** · Strata `Q2_0` — AMD Radeon AI PRO R9700 → **100 tok/s** ✅ [出典](https://x.com/TechPractice1/status/2105338176055509376) · [手順](recipes/x-009.ja.md)
-- *…ほか 24 件は[エクスプローラー](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html)で。*
+- *…ほか 26 件は[エクスプローラー](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html)で。*
 
 **🖼️ 画像**
 
@@ -158,7 +161,7 @@
 
 ## 第 2 段階 · 2,500〜7,000 ドル
 
-*RTX 5090 1 枚、DGX Spark 1 台、Mac Studio Max* · 92 件
+*RTX 5090 1 枚、DGX Spark 1 台、Mac Studio Max* · 95 件
 
 
 **📝 テキスト**
@@ -173,7 +176,7 @@
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090+ 96GB DDR5-6400 → **150 tok/s** 🔁 [出典](https://x.com/kreia/status/2106054715373212025)
 - **Qwen3.8-27B-NVFP4-MTP** · llama.cpp `LOW + MTP` — RTX 5090 32GB → **148.3 tok/s** 🔁 [出典](https://huggingface.co/esatapedico/Qwen3.8-27B-NVFP4-MTP-GGUF)
 - **Qwen3.8-27B** · vLLM `NVFP4` — RTX 5090 32GB → **147 tok/s** ✅ [出典](https://x.com/MiaAI_lab/status/2088734058842878037)
-- *…ほか 64 件は[エクスプローラー](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html)で。*
+- *…ほか 67 件は[エクスプローラー](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html)で。*
 
 **🖼️ 画像**
 
@@ -220,11 +223,12 @@
 
 ## 第 4 段階 · 14,000〜30,000 ドル
 
-*Spark 3〜4 台のクラスター、マルチ GPU ワークステーション* · 9 件
+*Spark 3〜4 台のクラスター、マルチ GPU ワークステーション* · 10 件
 
 
 **📝 テキスト**
 
+- **Qwen3.8-27B** · SGLang `NVFP4` — RTX PRO 6000 → **300 tok/s** ✅ [出典](https://x.com/MiaAI_lab/status/2090327658508763516)
 - **GLM-5.3-Flash EXL3** · TensorFold `EXL3` — 4× DGX Spark → **95 tok/s** ✅ [出典](https://x.com/MiaAI_lab/status/2108939694918488183)
 - **Qwen3.8-Flash-Next** · Radiance (fork) `Radiance fork · int4fp8 · B…` — 4× AMD R9700 32GB + TR 9970X + 128GB → 出典を参照 🔁 [出典](https://x.com/richgel999/status/2109515169638326738)
 - **Qwen3.8-27B** · Radiance (fork) `MXFP4 · Radiance fork` — 4× R9700 → 出典を参照 🔁 [出典](https://x.com/richgel999/status/2109515169638326738)
@@ -237,9 +241,8 @@
 
 ## 価格非公開
 
-1 枚単位で価格が出ているマルチ GPU 構成、価格の記載がない Mac など、単一の公開価格がないレシピ · 122 件。tok/s 上位のテキストレシピ：
+1 枚単位で価格が出ているマルチ GPU 構成、価格の記載がない Mac など、単一の公開価格がないレシピ · 116 件。tok/s 上位のテキストレシピ：
 
-- **Qwen3.8-27B** · SGLang `NVFP4` — RTX PRO 6000 → **300 tok/s** ✅ [出典](https://x.com/MiaAI_lab/status/2090327658508763516)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 5080 16GB → **212 tok/s** 📣 [出典](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **Qwen3.6-35B-A3B** · Splash `Splash` — Mac M5 Pro 48GB → **210 tok/s** 🔁 [出典](https://x.com/TeksEdge/status/2101735798567764421)
 - **Qwen3.6-35B-A3B** · oMLX `oMLX 0.7.1.dev1` — Mac M5 Max → **205 tok/s** 🏛️ [出典](https://x.com/jundotkim/status/2108584837590495246)
@@ -251,7 +254,8 @@
 - **Qwen3.8-Flash-Next** · Strata `IQ3_S` — 2× RTX 3090 (48GB) + 64GB DDR5-6000 → **120 tok/s** ✅ [出典](https://x.com/geldeki/status/2109208295957201171) · [手順](recipes/x-004.ja.md)
 - **Qwen3.8-Flash-Next** · Strata `q3 xs` — 2× Tesla V100 32GB PCIe → **120 tok/s** ✅ [出典](https://x.com/rewin123/status/2108669905616736529) · [手順](recipes/x-007.ja.md)
 - **Ternary-Bonsai-2-27B-262k** · mirai-s-ada `Ternary Bonsai 2 27B + KV` — RTX 4070 12GB → **102 tok/s** 📣 [出典](https://huggingface.co/CaryPalmer/Ternary-Bonsai-2-27B-262k-GGUF)
-- *…全 122 件は[エクスプローラー](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html)で見られます。*
+- **Qwen3.8-Flash-Next** · Strata `Strata · Q2_0` — RTX 5070 12GB + Ryzen 5 7600 + 64GB DDR5 → **94 tok/s** 🏛️ [出典](https://github.com/Niko1221/Strata)
+- *…全 116 件は[エクスプローラー](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html)で見られます。*
 
 
 ## エンジンとツール

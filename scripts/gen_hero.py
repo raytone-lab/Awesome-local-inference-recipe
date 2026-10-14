@@ -1,25 +1,114 @@
 #!/usr/bin/env python3
-"""Render docs/hero.png: text-recipe tok/s vs hardware cost, colored by hardware family. Needs matplotlib.
-Run: python3 scripts/gen_hero.py"""
-import json
+"""Render README charts (en / zh-CN / ja). Needs matplotlib + a CJK font (Noto Sans CJK) for zh/ja labels.
+- docs/hero{suf}.png          top 15 measured text setups ranked by tok/s per $1,000 of hardware
+- docs/budget-tiers{suf}.png  fastest text setup per README budget tier (measured vs claimed)
+Data: text recipes with tok_s and hardware_cost_usd; deduped per hardware+model (measured preferred, then best tok/s).
+Not part of the CI up-to-date check (PNG bytes vary across matplotlib/font versions). Run: python3 scripts/gen_hero.py"""
+import json, re
 from pathlib import Path
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
+from matplotlib import font_manager as fm
 R = Path(__file__).resolve().parent.parent
-D = [r for r in json.load(open(R/'data/recipes.json')) if r['category']=='text' and r['tok_s'] and r['hardware_cost_usd']]
-FAM = {'Mac':('Mac','#7c3aed'),'NVIDIA 消费级':('NVIDIA consumer','#16a34a'),'DGX Spark':('DGX Spark','#0ea5e9'),
-       'AMD':('AMD','#dc2626'),'二手数据中心卡':('Used datacenter','#f59e0b'),'其他':('Other','#64748b')}
-fig, ax = plt.subplots(figsize=(12, 5), dpi=150)
-for k,(lab,c) in FAM.items():
-    rs=[r for r in D if r['hardware_family']==k]
-    if not rs: continue
-    m=[r for r in rs if r['source_level']=='实测']; o=[r for r in rs if r['source_level']!='实测']
-    ax.scatter([r['hardware_cost_usd'] for r in m],[r['tok_s'] for r in m],s=46,c=c,alpha=.85,edgecolors='white',linewidths=.6,label=f'{lab} ({len(rs)})')
-    ax.scatter([r['hardware_cost_usd'] for r in o],[r['tok_s'] for r in o],s=46,facecolors='none',edgecolors=c,alpha=.8,linewidths=1.1)
-ax.set_xscale('log'); ax.set_xticks([500,1000,2500,5000,10000,30000]); ax.set_xticklabels(['$500','$1k','$2.5k','$5k','$10k','$30k'])
-ax.set_xlim(300,32000); ax.set_ylim(0,None)
-ax.set_xlabel('Lowest published hardware price (USD, log scale)',fontsize=11); ax.set_ylabel('Single-stream generation (tok/s)',fontsize=11)
-ax.set_title(f'{len(D)} text recipes · tok/s vs hardware cost · filled = measured, hollow = official/relayed/claimed',fontsize=12,loc='left',color='#0f172a')
-for s in ('top','right'): ax.spines[s].set_visible(False)
-ax.grid(alpha=.25); ax.legend(frameon=False,fontsize=10,loc='upper left',ncol=3)
-fig.tight_layout(); fig.savefig(R/'docs/hero.png',facecolor='white'); print('docs/hero.png')
+BOUNDS = [(0,2500),(2500,7000),(7000,14000),(14000,30000)]  # keep in sync with gen_readme.py
+SUF = {'en':'','zh-CN':'.zh-CN','ja':'.ja'}
+CJK = {'zh-CN':'Noto Sans CJK SC','ja':'Noto Sans CJK JP'}
+FAM = {'Mac':'#7c3aed','NVIDIA 消费级':'#16a34a','DGX Spark':'#0ea5e9','AMD':'#dc2626','二手数据中心卡':'#f59e0b','其他':'#64748b'}
+TX = {
+ 'en':dict(fam={'Mac':'Mac','NVIDIA 消费级':'NVIDIA consumer','DGX Spark':'DGX Spark','AMD':'AMD','二手数据中心卡':'Used datacenter','其他':'Other'},
+   h_title='How much speed does $1,000 buy?  Top 15 measured setups',h_x='tok/s per $1,000 of hardware (single stream, measured)',
+   b_title='Fastest setup in each budget tier',b_x='Best single-stream tok/s',meas='measured',claim='claimed / relayed',
+   tiers=['≤ $2.5k','$2.5k–7k','$7k–14k','$14k–30k']),
+ 'zh-CN':dict(fam={'Mac':'Mac','NVIDIA 消费级':'NVIDIA 消费级','DGX Spark':'DGX Spark','AMD':'AMD','二手数据中心卡':'二手数据中心卡','其他':'其他'},
+   h_title='每 $1000 能买到多少 tok/s？实测前 15 名',h_x='每 $1000 硬件对应的 tok/s（单流，实测）',
+   b_title='各预算档最快的配置',b_x='最佳单流 tok/s',meas='实测',claim='宣称 / 转述',
+   tiers=['≤ $2.5k','$2.5k–7k','$7k–14k','$14k–30k']),
+ 'ja':dict(fam={'Mac':'Mac','NVIDIA 消费级':'NVIDIA コンシューマー','DGX Spark':'DGX Spark','AMD':'AMD','二手数据中心卡':'中古データセンター','其他':'その他'},
+   h_title='$1,000 でどれだけ速くなる？実測トップ 15',h_x='ハードウェア $1,000 あたりの tok/s（1 ストリーム、実測）',
+   b_title='予算帯ごとの最速構成',b_x='1 ストリーム最高 tok/s',meas='実測',claim='公称 / 引用',
+   tiers=['≤ $2.5k','$2.5k–7k','$7k–14k','$14k–30k']),
+}
+def clean(s,n):
+    s=re.sub(r'[（(][^）)]*[）)]','',s); s=re.sub(r'[\u3000-\u30ff\u4e00-\u9fff，、；：]+',' ',s); s=re.sub(r'\s+',' ',s).strip(' +/·')
+    return s if len(s)<=n else s[:n-1]+'…'
+def money(x): return f'${x/1000:.1f}k' if x>=1000 else f'${x:.0f}'
+D=[r for r in json.load(open(R/'data/recipes.json')) if r['category']=='text' and r['tok_s'] and r['hardware_cost_usd']]
+best={}
+for r in D:
+    k=(clean(r['hardware'],80).lower(),clean(r['model'],80).lower()); cur=best.get(k)
+    rank=lambda x:(x['source_level']=='实测',x['tok_s'],x['id'])
+    if cur is None or rank(r)>rank(cur): best[k]=r
+U=sorted(best.values(),key=lambda r:r['id'])
+for r in U: r['_v']=r['tok_s']/r['hardware_cost_usd']*1000; r['_m']=r['source_level']=='实测'
+
+def style(ax):
+    for s in ('top','right'): ax.spines[s].set_visible(False)
+def _asof():
+    m=re.search(r"DATA_ASOF\s*=\s*'([^']+)'",open(R/'scripts/gen_readme.py').read()); return m.group(1) if m else ''
+def _used(r): return '二手' in (r.get('hardware_cost_text') or '') or '二手' in r['hardware']
+HT={'en':dict(t='A {p} {u}{hw} runs {tok:g} tok/s',used='used ',
+      sub='tok/s per $1,000 of hardware = single-stream tok/s ÷ (price / 1000) · measured results only · lowest published price, Oct 2026 · models differ per row',
+      base='single RTX 3090 ≈{v:.0f}',note='Data as of {d} · CC BY 4.0 · Awesome Local Inference Recipes'),
+    'zh-CN':dict(t='{p} 的{u}{hw} 就能跑 {tok:g} tok/s',used='二手 ',
+      sub='每 $1000 的 tok/s = 单流 tok/s ÷（价格 / 1000）· 仅实测 · 价格取 2026 年 10 月公开最低价 · 各行模型不同',
+      base='单张 RTX 3090 ≈{v:.0f}',note='数据截至 {d} · CC BY 4.0 · Awesome Local Inference Recipes'),
+    'ja':dict(t='{p} の{u}{hw} で {tok:g} tok/s',used='中古 ',
+      sub='$1,000 あたり tok/s = 1 ストリーム tok/s ÷（価格 / 1000）· 実測のみ · 2026 年 10 月の公開最安価格 · 行ごとにモデルは異なる',
+      base='RTX 3090 1 枚 ≈{v:.0f}',note='データ時点 {d} · CC BY 4.0 · Awesome Local Inference Recipes')}
+def hero(lang):
+    t=TX[lang]; h=HT[lang]
+    meas=[r for r in U if r['_m']]; top=sorted(meas,key=lambda r:(-r['_v'],r['id']))[:15]
+    first=top[0]; top=top[::-1]
+    fig,ax=plt.subplots(figsize=(11.5,7.4),dpi=150)
+    vmax=max(r['_v'] for r in top)
+    for i,r in enumerate(top):
+        ax.barh(i,r['_v'],color=FAM[r['hardware_family']],alpha=.9,height=.72)
+        ax.text(r['_v']+vmax*.01,i,f"≈{r['_v']:.0f} tok/s/$1k",va='center',fontsize=9.5,fontweight='bold',color='#0f172a')
+        ax.annotate(f"({r['tok_s']:g} tok/s · {money(r['hardware_cost_usd'])})",(r['_v']+vmax*.01,i),xytext=(len(f"≈{r['_v']:.0f} tok/s/$1k")*6.4+4,0),textcoords='offset points',va='center',fontsize=8.5,color='#475569')
+        ax.text(-.012,i+.13,f"{clean(r['hardware'],30)} [{money(r['hardware_cost_usd'])}]",transform=ax.get_yaxis_transform(),ha='right',va='center',fontsize=9.2,color='#0f172a')
+        ax.text(-.012,i-.24,clean(r['model'],34),transform=ax.get_yaxis_transform(),ha='right',va='center',fontsize=7.3,color='#94a3b8')
+    ax.set_yticks([]); ax.set_ylim(-.7,len(top)-.3)
+    b=[r for r in meas if re.fullmatch(r'(单 )?RTX 3090( 24GB)?',clean(r['hardware'],80))]
+    if b:
+        bv=max(r['_v'] for r in b); ax.axvline(bv,ls='--',lw=1,color='#334155',alpha=.7)
+        ax.text(bv,len(top)-.35,' '+h['base'].format(v=bv),fontsize=8.5,color='#334155',va='bottom')
+    ax.set_xlim(0,vmax*1.6); ax.set_xlabel(t['h_x'],fontsize=10)
+    hw=clean(first['hardware'],40); hw=re.sub(r'^(单 )','',hw)
+    fig.suptitle(h['t'].format(p=money(first['hardware_cost_usd']),u=h['used'] if _used(first) else '',hw=re.sub(r' \d+GB$','',hw),tok=first['tok_s']),x=.012,y=.985,ha='left',fontsize=15,fontweight='bold',color='#0f172a')
+    fig.text(.012,.935,h['sub'],ha='left',fontsize=9,color='#475569')
+    fig.text(.995,.008,h['note'].format(d=_asof()),ha='right',fontsize=7.5,color='#94a3b8')
+    style(ax); ax.spines['left'].set_visible(False); ax.grid(axis='x',alpha=.2)
+    fams=[k for k in FAM if any(r['hardware_family']==k for r in top)]
+    ax.legend(handles=[Patch(color=FAM[k],label=t['fam'][k]) for k in fams],frameon=False,loc='lower right',fontsize=8.5,ncol=1)
+    fig.tight_layout(rect=(0,.02,1,.935))
+    return fig
+def tiers(lang):
+    t=TX[lang]; fig,ax=plt.subplots(figsize=(11,5.4),dpi=150); y=0; ticks=[]; xmax=0; used=set()
+    for name,(lo,hi) in zip(t['tiers'],BOUNDS):
+        rs=[r for r in U if lo<r['hardware_cost_usd']<=hi]; rows=[]
+        for m in (True,False):
+            pool=[r for r in rs if r['_m']==m]
+            if pool: rows.append(max(pool,key=lambda r:(r['tok_s'],r['id'])))
+        ys=[]
+        for r in rows:
+            c=FAM[r['hardware_family']]; used.add(r['hardware_family']); xmax=max(xmax,r['tok_s'])
+            ax.barh(y,r['tok_s'],height=.8,color=c if r['_m'] else 'white',edgecolor=c,hatch=None if r['_m'] else '///',lw=1.2)
+            ax.text(r['tok_s']+5,y,f"{r['tok_s']:g} tok/s · {clean(r['hardware'],28)} · {clean(r['model'],22)} · {money(r['hardware_cost_usd'])}",va='center',fontsize=8.5,color='#0f172a')
+            ys.append(y); y-=1
+        if ys: ticks.append(((ys[0]+ys[-1])/2,name))
+        y-=.6
+    ax.set_yticks([a for a,_ in ticks]); ax.set_yticklabels([b for _,b in ticks],fontsize=11,fontweight='bold')
+    ax.set_xlim(0,xmax*1.9); ax.set_xlabel(t['b_x']); ax.set_title(t['b_title'],loc='left',fontsize=13,color='#0f172a')
+    style(ax); ax.grid(axis='x',alpha=.2)
+    h=[Patch(color=FAM[k],label=t['fam'][k]) for k in FAM if k in used]+[Patch(facecolor='white',edgecolor='#334155',hatch='///',label=t['claim'])]
+    ax.legend(handles=h,frameon=False,loc='lower right',fontsize=9)
+    fig.tight_layout()
+    return fig
+if __name__=='__main__':
+    have={f.name for f in fm.fontManager.ttflist}
+    for lang,suf in SUF.items():
+        plt.rcParams['font.family']=['DejaVu Sans']+([CJK[lang]] if lang in CJK and CJK[lang] in have else [])
+        if lang in CJK and CJK[lang] not in have: print(f'warning: {CJK[lang]} not installed; CJK labels may render as boxes')
+        for name,fn in (('hero',hero),('budget-tiers',tiers)):
+            p=R/f'docs/{name}{suf}.png'; f=fn(lang); f.savefig(p,facecolor='white',metadata={'Software':None}); plt.close(f); print(p.relative_to(R))

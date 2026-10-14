@@ -130,5 +130,41 @@
   "price": "翻新约 $3,599 起",
   "date": "2026-09",
   "source": "https://www.refurb.me/blog/mac-studio"
+ },
+ {
+  "item": "NVIDIA RTX PRO 6000 Blackwell 96GB（新）",
+  "price": "$15,999 最低追踪报价；B&H Workstation $17,999.99 / Max-Q $17,499；Newegg Max-Q $16,499.99；12 个月中位 $10,458",
+  "date": "2026-10-13/14",
+  "source": "https://gpuprix.com/us/gpus/rtx-pro-6000-blackwell · https://www.bhphotovideo.com/c/product/1895402-REG/nvidia_900_5g144_2200_000_rtx_pro_6000_blackwell.html · https://www.newegg.com/p/pl?d=rtx+pro+6000+blackwell+max+q"
+ },
+ {
+  "item": "Intel Arc Pro B70 32GB（新）",
+  "price": "ASRock B70 CT $1,299.99（Newegg 自营）；Intel 公版 $1,999.99–2,099（Newegg）",
+  "date": "2026-10-14",
+  "source": "https://www.newegg.com/asrock-b70-ct-intel-arc-pro-b70-32gb-graphics-card/p/N82E16814930149 · https://www.newegg.com/p/pl?d=arc+pro+b70"
+ },
+ {
+  "item": "NVIDIA RTX 5060 Ti 16GB（新）",
+  "price": "$740 起（Micro Center PNY OC）；Best Buy/Amazon $789，B&H $790，Newegg $800；90 日中位 $789；MSRP $429",
+  "date": "2026-10-13/14",
+  "source": "https://rtx.live/gpus/geforce-rtx-5060-ti-16gb · https://pctechvault.com/market-watch/geforce-rtx-5060-ti-16-gb/"
+ },
+ {
+  "item": "Gigabyte AI TOP ATOM（GB10，128GB）",
+  "price": "1TB 版 $5,999.99（Newegg 自营，缺货）；4TB 版 CDW $7,999.99，Aftershock $8,699",
+  "date": "2026-10-14",
+  "source": "https://www.newegg.com/gigabyte-atagb10-9002-thin-client/p/N82E16859252049 · https://www.cdw.com/product/gigabyte-ai-top-atom-compact-pc-ai-pc-gb10-grace-blackwell-superchip/9096513"
+ },
+ {
+  "item": "MacBook Pro 14 M5 Pro 18C/20C 64GB/1TB（新）",
+  "price": "Apple $3,699；经销商低至 $3,519",
+  "date": "2026-10-13",
+  "source": "https://prices.appleinsider.com/macbook-pro-14-inch-m5-pro"
+ },
+ {
+  "item": "Mac Studio M1 Ultra 64GB（二手，已停产）",
+  "price": "64GB/2TB eBay 翻新 $3,810.95；全配置二手要价中位 $4,434.64",
+  "date": "2026-10-10",
+  "source": "https://hard.bargains/used-mac-studio-m1-ultra-2022/"
  }
 ]
