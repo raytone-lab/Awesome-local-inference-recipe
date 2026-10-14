@@ -153,6 +153,53 @@
    "items": {
     "type": "string"
    }
+  },
+  "streams": {
+   "type": "array",
+   "description": "per-concurrency aggregate decode throughput as published",
+   "items": {
+    "type": "object",
+    "required": [
+     "n",
+     "tok_s"
+    ],
+    "properties": {
+     "n": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "tok_s": {
+      "type": "number"
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  "measured_by": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "who ran the benchmark (X handle / org); differs from source author for reproductions"
+  },
+  "engine_fork": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "fork owner/name when engine is a fork, e.g. \"PrismML\""
+  },
+  "source_id": {
+   "type": "string",
+   "pattern": "^src-[0-9a-f]{10}$",
+   "description": "stable hash of source_url; rows sharing a source share it"
+  },
+  "superseded_by": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "id of a newer recipe from the same author that replaces this one"
   }
  },
  "additionalProperties": false
