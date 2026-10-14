@@ -1,0 +1,1 @@
+# Awesome-local-inference-recipe
