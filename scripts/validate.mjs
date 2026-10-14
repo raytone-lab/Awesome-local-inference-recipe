@@ -3,7 +3,8 @@ import fs from 'fs';
 const S=JSON.parse(fs.readFileSync(new URL('../schema/recipe.schema.json',import.meta.url)));
 const D=JSON.parse(fs.readFileSync(new URL('../data/recipes.json',import.meta.url)));
 let err=0;const ids=new Set();
-const typeOk=(v,t)=>[].concat(t).some(x=>x==='null'?v===null:x==='number'?typeof v==='number':typeof v===x);
+const typeOk=(v,t)=>[].concat(t).some(x=>x==='null'?v===null:x==='number'?typeof v==='number':x==='array'?Array.isArray(v):typeof v===x);
+const TAGS=new Set(['1bit','ternary','2bit','3bit','4bit','5bit','6bit','8bit','bf16','MoE','dense','long-context','speculative','MTP','multi-GPU','offload','few-step','abliterated']);
 for(const r of D){
   const e=m=>{err++;console.error(`[${r.id}] ${m}`)};
   if(ids.has(r.id))e('duplicate id');ids.add(r.id);
@@ -12,6 +13,10 @@ for(const r of D){
     if(p.enum&&!p.enum.includes(r[k]))e(`${k} not in enum: ${r[k]}`);
     if(p.type&&!typeOk(r[k],p.type))e(`${k} wrong type`);
     if(p.pattern&&typeof r[k]==='string'&&!new RegExp(p.pattern).test(r[k]))e(`${k} pattern`);}
+  if(Array.isArray(r.tags)){for(const t of r.tags)if(!TAGS.has(t))e(`unknown tag ${t}`);if(new Set(r.tags).size!==r.tags.length)e('duplicate tag');}
+  if(/^其他|^同上$/.test(r.engine))e(`engine not normalized: ${r.engine}`);
+  if(r.engine_note!=null&&r.engine_note===r.engine)e('engine_note equals engine');
+  if(r.category!=='text'&&r.tags&&(r.tags.includes('MoE')||r.tags.includes('dense')))e('MoE/dense tag on non-text');
   if(r.hardware_cost_usd!=null&&r.hardware_cost_usd>30000)console.warn(`[${r.id}] warn: cost > $30k`);
 }
 console.log(err?`✗ ${err} errors`:`✓ ${D.length} recipes valid`);process.exit(err?1:0);

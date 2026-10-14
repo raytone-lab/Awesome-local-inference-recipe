@@ -14,6 +14,7 @@ L = {
    tiers=['Tier 1 · up to $2.5k','Tier 2 · $2.5k–7k','Tier 3 · $7k–14k','Tier 4 · $14k–30k'],
    tdesc=['Used 3090/4090, MI50/V100 cards, Strix Halo, R9700','One RTX 5090, one DGX Spark, Mac Studio Max','Two Sparks, Mac Studio Ultra','3–4 Spark clusters, multi-GPU workstations'],
    cats={'text':'📝 Text','image':'🖼️ Image','video-audio':'🎬 Video & Audio'},
+   fam='Browse by Model Family', famdesc='Click a family to open the explorer pre-filtered. Tags: {tags}.', engidx='Browse by Engine', engdesc='Engine names are normalized (`scripts/normalize_engines.py`); original strings are kept in `engine_note`.', th2='| Family | Recipes | Text | Image | Video & Audio |', th3='| Engine | Recipes |',
    hot='Hot This Month', hotdesc='Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).',
    unk='Cost Not Published', unkdesc='Multi-card builds priced per card, Macs without a listed price, and other rows without a single published price · {n} recipes. Top text recipes by tok/s:',
    more='…and {n} more in the [explorer](explore.html).', all='…browse all {n} in the [explorer](explore.html).', count='{n} recipes',
@@ -24,6 +25,7 @@ L = {
    tiers=['第 1 档 · 2,500 美元以内','第 2 档 · 2,500–7,000 美元','第 3 档 · 7,000–14,000 美元','第 4 档 · 14,000–30,000 美元'],
    tdesc=['二手 3090/4090、MI50/V100、Strix Halo、R9700','单张 RTX 5090、单台 DGX Spark、Mac Studio Max','双 Spark、Mac Studio Ultra','3–4 台 Spark 集群、多卡工作站'],
    cats={'text':'📝 文字','image':'🖼️ 图像','video-audio':'🎬 影音'},
+   fam='按模型系列浏览', famdesc='点击系列名即可打开已筛选的配方库。标签：{tags}。', engidx='按引擎浏览', engdesc='引擎名已统一（`scripts/normalize_engines.py`），原始写法保留在 `engine_note` 字段。', th2='| 系列 | 配方数 | 文字 | 图像 | 影音 |', th3='| 引擎 | 配方数 |',
    hot='本月热门', hotdesc='X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 排序）。',
    unk='价格未公开', unkdesc='按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 {n} 条。按 tok/s 排名靠前的文字配方：',
    more='……另有 {n} 条，见 [配方库](explore.html)。', all='……全部 {n} 条见 [配方库](explore.html)。', count='共 {n} 条',
@@ -50,15 +52,26 @@ def build(lang):
         return clip(m,70) if m else T['see']
     def ln(r):
         q=E(r['quant']); q=f" `{clip(q,28)}`" if q else ''
-        eg=E(r['engine']); eg='' if (not eg or r['engine'].startswith('其他')) else f" · {eg}"
+        eg=E(r['engine']); eg='' if (not eg or r['engine']=='Unspecified') else f" · {eg}"
         return f"- **{E(r['model'])}**{eg}{q} — {clip(E(r['hardware']) or r['hardware_family'],60)} → {key(r)} {LVI.get(r['source_level'],'')} [{T['src']}]({r['source_url']})"
     out=[];toc=[]
     def sec(t): out.append(f"\n## {t}\n"); toc.append(f"- [{t}](#{slug(t)})")
     seen=set();hot=[r for r in sorted([r for r in D if r.get('x_post')],key=lambda r:-(r['x_post']['likes']+3*r['x_post']['reposts'])) if not (r['source_url'] in seen or seen.add(r['source_url']))][:8]
     sec(T['hot']); out.append(T['hotdesc']+'\n')
     for r in hot:
-        eg=E(r['engine']); eg=f" · {eg}" if eg and not r['engine'].startswith('其他') else ''
+        eg=E(r['engine']); eg=f" · {eg}" if eg and r['engine']!='Unspecified' else ''
         out.append(f"- **{E(r['model'])}**{eg} — {clip(E(r['hardware']),50)} → {key(r)} {LVI[r['source_level']]} [@{r['x_post']['author']}]({r['source_url']}) ♥{r['x_post']['likes']}")
+    from collections import Counter
+    from urllib.parse import quote
+    sec(T['fam']); fc=Counter(r['model_family'] for r in D); tc=Counter(t for r in D for t in r['tags'])
+    tl=', '.join(f"[`{t}`](explore.html?tag={quote(t)}) {n}" for t,n in tc.most_common())
+    out.append(T['famdesc'].format(tags=tl)+'\n'); out.append(T['th2']); out.append('|---|--:|--:|--:|--:|')
+    for f,n in sorted(fc.items(),key=lambda x:(x[0]=='Other',-x[1],x[0])):
+        cc=[sum(1 for r in D if r['model_family']==f and r['category']==c) or '' for c in ('text','image','video-audio')]
+        out.append(f"| [{f}](explore.html?family={quote(f)}) | {n} | "+' | '.join(map(str,cc))+' |')
+    sec(T['engidx']); out.append(T['engdesc']+'\n'); out.append(T['th3']); out.append('|---|--:|')
+    for e,n in sorted(Counter(r['engine'] for r in D).items(),key=lambda x:(x[0]=='Unspecified',-x[1],x[0])):
+        out.append(f"| [{e}](explore.html?engine={quote(e)}) | {n} |")
     for t,d,(lo,hi) in zip(T['tiers'],T['tdesc'],BOUNDS):
         sec(t); rs=[r for r in D if r['hardware_cost_usd'] is not None and lo<r['hardware_cost_usd']<=hi]
         out.append(f"*{d}* · {T['count'].format(n=len(rs))}\n")

@@ -17,7 +17,14 @@
     "source_url": "https://github.com/Niko1221/Strata",
     "source_note": "Strata README / 论文",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "2bit",
+      "long-context",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-002",
@@ -37,7 +44,11 @@
     "source_url": "https://github.com/Niko1221/Strata",
     "source_note": "Strata README",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit"
+    ]
   },
   {
     "id": "text-003",
@@ -57,7 +68,11 @@
     "source_url": "https://github.com/Niko1221/Strata",
     "source_note": "Strata README",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "2bit"
+    ]
   },
   {
     "id": "text-004",
@@ -77,7 +92,11 @@
     "source_url": "https://x.com/yume_arasaki/status/2107293459556225446",
     "source_note": "@yume_arasaki 转述 EpicMaan",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit"
+    ]
   },
   {
     "id": "text-005",
@@ -97,7 +116,12 @@
     "source_url": "https://x.com/kreia/status/2106054715373212025",
     "source_note": "@kreia 转述 r/LocalLLaMA",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "long-context"
+    ]
   },
   {
     "id": "text-006",
@@ -117,7 +141,11 @@
     "source_url": "https://x.com/needmorevram/status/2104995992273871104",
     "source_note": "@needmorevram",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit"
+    ]
   },
   {
     "id": "text-007",
@@ -137,7 +165,12 @@
     "source_url": "https://x.com/needmorevram/status/2105050786938118599",
     "source_note": "@needmorevram",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "long-context"
+    ]
   },
   {
     "id": "text-008",
@@ -157,7 +190,12 @@
     "source_url": "https://x.com/needmorevram/status/2104898095318544540",
     "source_note": "@needmorevram",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "long-context"
+    ]
   },
   {
     "id": "text-009",
@@ -177,7 +215,11 @@
     "source_url": "https://x.com/Oxtanedotxyz/status/2109914488988414223",
     "source_note": "@Oxtanedotxyz",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit"
+    ]
   },
   {
     "id": "text-010",
@@ -197,7 +239,12 @@
     "source_url": "https://x.com/Knuckles_XBT/status/2105245662657011841",
     "source_note": "@Knuckles_XBT",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "2bit",
+      "long-context"
+    ]
   },
   {
     "id": "text-011",
@@ -217,7 +264,11 @@
     "source_url": "https://x.com/yume_arasaki/status/2107293459556225446",
     "source_note": "@yume_arasaki 转述 5000e12",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit"
+    ]
   },
   {
     "id": "text-012",
@@ -237,7 +288,12 @@
     "source_url": "https://github.com/ggml-org/llama.cpp/pull/29887",
     "source_note": "PR 作者数据（@BTC_Cracker 转述）",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "MoE"
+    ]
   },
   {
     "id": "text-013",
@@ -257,7 +313,16 @@
     "source_url": "https://x.com/yume_arasaki/status/2107293459556225446",
     "source_note": "@yume_arasaki 转述 eirrann_art / r0b0tlab",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "2bit",
+      "MoE",
+      "long-context",
+      "speculative",
+      "MTP",
+      "offload"
+    ]
   },
   {
     "id": "text-014",
@@ -277,7 +342,13 @@
     "source_url": "https://x.com/RRunner144/status/2105427978783986162",
     "source_note": "@RRunner144",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "long-context",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-015",
@@ -297,7 +368,12 @@
     "source_url": "https://x.com/needmorevram/status/2106963233802498262",
     "source_note": "@needmorevram",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "long-context"
+    ]
   },
   {
     "id": "text-016",
@@ -317,7 +393,12 @@
     "source_url": "https://x.com/saewooh/status/2109529154358268275",
     "source_note": "@saewooh",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "long-context"
+    ]
   },
   {
     "id": "text-017",
@@ -337,7 +418,12 @@
     "source_url": "https://x.com/yume_arasaki/status/2107293459556225446",
     "source_note": "@yume_arasaki 转述 ryu15",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "long-context",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-018",
@@ -357,7 +443,13 @@
     "source_url": "https://x.com/Highlylrregular/status/2108289778345292154",
     "source_note": "@Highlylrregular",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "long-context",
+      "multi-GPU",
+      "abliterated"
+    ]
   },
   {
     "id": "text-019",
@@ -377,7 +469,13 @@
     "source_url": "https://x.com/liucl/status/2105784975136272676",
     "source_note": "@liucl · github.com/webzone/strata-gfx906",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "speculative",
+      "MTP",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-020",
@@ -397,7 +495,13 @@
     "source_url": "https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md",
     "source_note": "Strata OLDER_GPUS.md（社区贡献 #677）",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "1bit",
+      "long-context",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-021",
@@ -417,7 +521,11 @@
     "source_url": "https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md",
     "source_note": "Strata OLDER_GPUS.md（#395）",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit"
+    ]
   },
   {
     "id": "text-022",
@@ -437,7 +545,14 @@
     "source_url": "https://x.com/yume_arasaki/status/2101741448811229219",
     "source_note": "@yume_arasaki 自测",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "8bit",
+      "long-context",
+      "speculative"
+    ]
   },
   {
     "id": "text-023",
@@ -457,7 +572,11 @@
     "source_url": "https://x.com/yume_arasaki/status/2106204231191736763",
     "source_note": "@yume_arasaki 自测",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "long-context"
+    ]
   },
   {
     "id": "text-024",
@@ -477,7 +596,11 @@
     "source_url": "https://x.com/yume_arasaki/status/2106837882870886438",
     "source_note": "@yume_arasaki（Mia 数据+复现）",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "long-context"
+    ]
   },
   {
     "id": "text-025",
@@ -497,7 +620,12 @@
     "source_url": "https://x.com/yume_arasaki/status/2104582876956332408",
     "source_note": "@yume_arasaki 自测",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "long-context",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-026",
@@ -517,14 +645,20 @@
     "source_url": "https://x.com/llm_frontier_jp/status/2108884169069916440",
     "source_note": "@llm_frontier_jp 整理 Mia's AI Lab",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "MoE",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-027",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": "开源引擎 + 投机解码",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "AMD Strix Halo 128GB 迷你主机",
     "hardware_family": "AMD",
     "hardware_cost_text": "$3,149（Framework 128GB，缺货，2026-10）",
@@ -537,14 +671,19 @@
     "source_url": "https://x.com/kreia/status/2107156159824371997",
     "source_note": "@kreia 转述 r/LocalLLaMA",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "speculative"
+    ]
   },
   {
     "id": "text-028",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": "Halogen Flash server",
-    "engine": "其他/未注明",
+    "engine": "Halogen",
     "hardware": "Strix Halo 128GB",
     "hardware_family": "AMD",
     "hardware_cost_text": "$3,149（Framework 128GB，缺货，2026-10）",
@@ -557,14 +696,17 @@
     "source_url": "https://x.com/hijoseromero/status/2109796264665870720",
     "source_note": "@hijoseromero",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": []
   },
   {
     "id": "text-029",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": "Radiance fork · int4fp8 · BF16 KV",
-    "engine": "其他/未注明",
+    "engine": "Radiance (fork)",
     "hardware": "4× AMD R9700 32GB + TR 9970X + 128GB",
     "hardware_family": "AMD",
     "hardware_cost_text": "$18,000（整机，帖主报价）",
@@ -577,7 +719,15 @@
     "source_url": "https://x.com/richgel999/status/2109515169638326738",
     "source_note": "@richgel999 转述 r/LocalLLaMA",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "bf16",
+      "long-context",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-030",
@@ -597,14 +747,16 @@
     "source_url": "https://x.com/RSSagent_/status/2108698504445010093",
     "source_note": "@RSSagent_",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": []
   },
   {
     "id": "text-031",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": "stock（专家卸载）",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "Mac mini M4 Pro 64GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -617,7 +769,13 @@
     "source_url": "https://x.com/yume_arasaki/status/2108359576966094952",
     "source_note": "@yume_arasaki",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "MoE",
+      "offload"
+    ]
   },
   {
     "id": "text-032",
@@ -637,7 +795,13 @@
     "source_url": "https://x.com/xueyu1125/status/2094634357604712839",
     "source_note": "@xueyu1125",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "MoE",
+      "speculative"
+    ]
   },
   {
     "id": "text-033",
@@ -657,7 +821,12 @@
     "source_url": "https://x.com/MinExploresAI/status/2094400179617059157",
     "source_note": "@MinExploresAI",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "MoE"
+    ]
   },
   {
     "id": "text-034",
@@ -677,7 +846,12 @@
     "source_url": "https://x.com/yume_arasaki/status/2108359576966094952",
     "source_note": "@yume_arasaki 汇总",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-035",
@@ -697,7 +871,11 @@
     "source_url": "https://x.com/yume_arasaki/status/2108359576966094952",
     "source_note": "@yume_arasaki 汇总",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "long-context"
+    ]
   },
   {
     "id": "text-036",
@@ -717,7 +895,9 @@
     "source_url": "https://x.com/yume_arasaki/status/2108359576966094952",
     "source_note": "@yume_arasaki 汇总",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": []
   },
   {
     "id": "text-037",
@@ -737,7 +917,11 @@
     "source_url": "https://x.com/yume_arasaki/status/2108359576966094952",
     "source_note": "@yume_arasaki 汇总（含 issue #22 独立测试）",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "long-context"
+    ]
   },
   {
     "id": "text-038",
@@ -757,7 +941,11 @@
     "source_url": "https://x.com/sebastavar/status/2107230339231785382",
     "source_note": "@sebastavar",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "long-context"
+    ]
   },
   {
     "id": "text-039",
@@ -777,7 +965,15 @@
     "source_url": "https://x.com/yume_arasaki/status/2100595901006008791",
     "source_note": "@yume_arasaki 自测",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "4bit",
+      "dense",
+      "long-context",
+      "speculative"
+    ]
   },
   {
     "id": "text-040",
@@ -797,7 +993,11 @@
     "source_url": "https://x.com/0xSero/status/2089082565906833756",
     "source_note": "@0xSero",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "dense"
+    ]
   },
   {
     "id": "text-041",
@@ -817,7 +1017,13 @@
     "source_url": "https://x.com/yume_arasaki/status/2106837882870886438",
     "source_note": "@yume_arasaki 转述 Niklas",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "long-context",
+      "speculative"
+    ]
   },
   {
     "id": "text-042",
@@ -837,7 +1043,11 @@
     "source_url": "https://x.com/yume_arasaki/status/2106837882870886438",
     "source_note": "@yume_arasaki 汇总+复现",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "dense"
+    ]
   },
   {
     "id": "text-043",
@@ -857,7 +1067,13 @@
     "source_url": "https://x.com/yume_arasaki/status/2090971775714939097",
     "source_note": "@yume_arasaki 汇总",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-044",
@@ -877,14 +1093,20 @@
     "source_url": "https://x.com/sudoingX/status/2094673741125140658",
     "source_note": "@sudoingX · github.com/sudoingX/qwen38-mtp",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-045",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "未注明（r/LocalLLaMA 帖）",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "AMD R9700 32GB / Strix Halo",
     "hardware_family": "AMD",
     "hardware_cost_text": "$1,600 起（新卡，2026-10-13） / $3,149（Framework 128GB，缺货，2026-10）",
@@ -897,14 +1119,19 @@
     "source_url": "https://x.com/kreia/status/2108388694201909297",
     "source_note": "@kreia 转述 r/LocalLLaMA",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "dense"
+    ]
   },
   {
     "id": "text-046",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "MXFP4 · Radiance fork",
-    "engine": "其他/未注明",
+    "engine": "Radiance (fork)",
     "hardware": "4× R9700（同上 $18k 整机）",
     "hardware_family": "AMD",
     "hardware_cost_text": "$18,000（整机）",
@@ -917,7 +1144,15 @@
     "source_url": "https://x.com/richgel999/status/2109515169638326738",
     "source_note": "@richgel999 转述 r/LocalLLaMA",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "long-context",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-047",
@@ -937,14 +1172,19 @@
     "source_url": "https://x.com/LFrefman/status/2101572845017178243",
     "source_note": "@LFrefman 转述 r/LocalLLaMA",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "text-048",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "Q6",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "Tesla V100 16GB + V100 32GB（48GB 混搭）",
     "hardware_family": "二手数据中心卡",
     "hardware_cost_text": "V100 32GB $650–700/张（二手，2026-09/10）",
@@ -957,7 +1197,13 @@
     "source_url": "https://x.com/TeksEdge/status/2103847057551176107",
     "source_note": "@TeksEdge",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "6bit",
+      "dense"
+    ]
   },
   {
     "id": "text-049",
@@ -977,14 +1223,21 @@
     "source_url": "https://x.com/yume_arasaki/status/2090971775714939097",
     "source_note": "@yume_arasaki 自有机器",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "8bit",
+      "dense",
+      "speculative"
+    ]
   },
   {
     "id": "text-050",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "Splash 4bit（Inco AI）",
-    "engine": "其他/未注明",
+    "engine": "Splash",
     "hardware": "Mac mini M4 Pro 48GB",
     "hardware_family": "Mac",
     "hardware_cost_text": "同芯片 MBP 48GB $2,399",
@@ -997,7 +1250,13 @@
     "source_url": "https://x.com/nenshu52man/status/2104380435908423721",
     "source_note": "@nenshu52man",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense"
+    ]
   },
   {
     "id": "text-051",
@@ -1017,7 +1276,12 @@
     "source_url": "https://x.com/nedzen/status/2095570043845451898",
     "source_note": "@nedzen",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense"
+    ]
   },
   {
     "id": "text-052",
@@ -1037,14 +1301,19 @@
     "source_url": "https://x.com/inco_ai/status/2101100812936290364",
     "source_note": "@inco_ai（项目方）",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative"
+    ]
   },
   {
     "id": "text-053",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "Splash",
-    "engine": "其他/未注明",
+    "engine": "Splash",
     "hardware": "Mac M5 Max",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -1057,7 +1326,13 @@
     "source_url": "https://x.com/zhijianliu/status/2101102949158302001",
     "source_note": "@zhijianliu（作者）",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative"
+    ]
   },
   {
     "id": "text-054",
@@ -1077,7 +1352,13 @@
     "source_url": "https://x.com/WescheNex1q/status/2105743490864869554",
     "source_note": "@WescheNex1q",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative"
+    ]
   },
   {
     "id": "text-055",
@@ -1097,14 +1378,18 @@
     "source_url": "https://x.com/VRAMCalculator/status/2109344267994808619",
     "source_note": "@VRAMCalculator 转述发布说明",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "dense"
+    ]
   },
   {
     "id": "text-056",
     "category": "text",
     "model": "Qwen3.6-35B-A3B",
     "quant": "sparkinfer v0.4.4（Blackwell 原生 CUDA）",
-    "engine": "其他/未注明",
+    "engine": "sparkinfer",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
@@ -1117,14 +1402,19 @@
     "source_url": "https://x.com/kysstalol/status/2105042922643321008",
     "source_note": "@kysstalol",
     "source_level": "宣称",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "MoE"
+    ]
   },
   {
     "id": "text-057",
     "category": "text",
     "model": "Qwen3.6-35B-A3B",
     "quant": "DSpark max 3 草稿",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
@@ -1137,14 +1427,20 @@
     "source_url": "https://x.com/TeksEdge/status/2086150037663539470",
     "source_note": "@TeksEdge",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "MoE",
+      "speculative"
+    ]
   },
   {
     "id": "text-058",
     "category": "text",
     "model": "Qwen3.6-35B-A3B",
     "quant": "FreeToken · NVFP4（无投机）",
-    "engine": "其他/未注明",
+    "engine": "FreeToken",
     "hardware": "RTX 4090",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "≈$2,214（二手成交，2026-10-06）",
@@ -1157,7 +1453,13 @@
     "source_url": "https://x.com/shipfrontierai/status/2092602493213577481",
     "source_note": "@shipfrontierai",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "MoE"
+    ]
   },
   {
     "id": "text-059",
@@ -1177,14 +1479,18 @@
     "source_url": "https://x.com/llamaperf/status/2104723054173790224",
     "source_note": "@llamaperf 转述 r/LocalLLaMA",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "MoE"
+    ]
   },
   {
     "id": "text-060",
     "category": "text",
     "model": "Qwen3.6-35B-A3B",
     "quant": "未注明",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "1× DGX Spark",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
@@ -1197,7 +1503,12 @@
     "source_url": "https://x.com/LocalAITips/status/2090831296897421685",
     "source_note": "@LocalAITips",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "MoE"
+    ]
   },
   {
     "id": "text-061",
@@ -1217,7 +1528,11 @@
     "source_url": "https://x.com/MikeLeiterDev/status/2088734968839053337",
     "source_note": "@MikeLeiterDev",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "MoE"
+    ]
   },
   {
     "id": "text-062",
@@ -1237,7 +1552,11 @@
     "source_url": "https://x.com/nedzen/status/2095570043845451898",
     "source_note": "@nedzen",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "MoE"
+    ]
   },
   {
     "id": "text-063",
@@ -1257,14 +1576,18 @@
     "source_url": "https://x.com/AI_Ghost_Lab/status/2101885237680841095",
     "source_note": "@AI_Ghost_Lab",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "MoE"
+    ]
   },
   {
     "id": "text-064",
     "category": "text",
     "model": "Qwen3.6-35B-A3B",
     "quant": "Splash",
-    "engine": "其他/未注明",
+    "engine": "Splash",
     "hardware": "Mac M5 Pro 48GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -1277,14 +1600,19 @@
     "source_url": "https://x.com/TeksEdge/status/2101735798567764421",
     "source_note": "@TeksEdge",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "MoE"
+    ]
   },
   {
     "id": "text-065",
     "category": "text",
     "model": "GLM-5.3-Flash（320B/18B 激活）",
     "quant": "Cruz 打包 ~91GiB + 内核优化",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "1× DGX Spark",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
@@ -1297,14 +1625,19 @@
     "source_url": "https://x.com/yume_arasaki/status/2100734364908986511",
     "source_note": "@yume_arasaki",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "GLM",
+    "tags": [
+      "MoE"
+    ]
   },
   {
     "id": "text-066",
     "category": "text",
     "model": "RED-SNOW-5.3-FLASH（GLM-5.3-Flash 去拒答版）",
     "quant": "SAGE EXL3 2.49bpw · tabbyAPI · MTP+n-gram",
-    "engine": "其他/未注明",
+    "engine": "TabbyAPI",
     "hardware": "1× DGX Spark",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
@@ -1317,7 +1650,16 @@
     "source_url": "https://x.com/yume_arasaki/status/2109454666933436691",
     "source_note": "@yume_arasaki 自测",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "GLM",
+    "tags": [
+      "2bit",
+      "long-context",
+      "speculative",
+      "MTP",
+      "abliterated"
+    ]
   },
   {
     "id": "text-067",
@@ -1337,14 +1679,19 @@
     "source_url": "https://x.com/yume_arasaki/status/2106837882870886438",
     "source_note": "@yume_arasaki 复现 Mia",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "GLM",
+    "tags": [
+      "long-context",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-068",
     "category": "text",
     "model": "GLM-5.3-Flash",
     "quant": "未注明",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "2× DGX Spark",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
@@ -1357,14 +1704,20 @@
     "source_url": "https://x.com/realWeZZard/status/2099322375770869891",
     "source_note": "@realWeZZard",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "GLM",
+    "tags": [
+      "long-context",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-069",
     "category": "text",
     "model": "GLM-5.3-Flash",
     "quant": "Mia EXL3（TP=3，实验性）",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "3× DGX Spark",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$20,850（3×$6,950，计算值）",
@@ -1377,14 +1730,20 @@
     "source_url": "https://x.com/yume_arasaki/status/2106837882870886438",
     "source_note": "@yume_arasaki 转述 Mia（预览）",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "GLM",
+    "tags": [
+      "long-context",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-070",
     "category": "text",
     "model": "GLM-5.3-Flash",
     "quant": "Maya-S 量化（project-maya）",
-    "engine": "其他/未注明",
+    "engine": "Project Maya",
     "hardware": "AMD R9700 32GB 单卡（+系统内存）",
     "hardware_family": "AMD",
     "hardware_cost_text": "$1,600 起（新卡，2026-10-13）",
@@ -1397,14 +1756,17 @@
     "source_url": "https://x.com/boxwrenchx/status/2108433602614792226",
     "source_note": "@boxwrenchx · github.com/mw00/project-maya",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "GLM",
+    "tags": []
   },
   {
     "id": "text-071",
     "category": "text",
     "model": "GLM-5.3-Flash",
     "quant": "Maya（MTP）",
-    "engine": "其他/未注明",
+    "engine": "Project Maya",
     "hardware": "R9700 + RX 7900 XT 双卡",
     "hardware_family": "AMD",
     "hardware_cost_text": null,
@@ -1417,14 +1779,21 @@
     "source_url": "https://x.com/boxwrenchx/status/2108211917743587660",
     "source_note": "@boxwrenchx",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "GLM",
+    "tags": [
+      "speculative",
+      "MTP",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-072",
     "category": "text",
     "model": "GLM-5.3-Flash",
     "quant": "IQ2",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "Strix Halo（Framework Desktop 395+）",
     "hardware_family": "AMD",
     "hardware_cost_text": "$3,149（Framework 128GB，缺货，2026-10）",
@@ -1437,14 +1806,19 @@
     "source_url": "https://x.com/Italianclownz/status/2095614354192212309",
     "source_note": "@Italianclownz",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "GLM",
+    "tags": [
+      "2bit"
+    ]
   },
   {
     "id": "text-073",
     "category": "text",
     "model": "GLM-5.3-Flash",
     "quant": "@Morrowmake 配方（TP4，Supermicro 4028）",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "4× CMP 170HX 64GB（解锁矿卡）",
     "hardware_family": "二手数据中心卡",
     "hardware_cost_text": "≈$12,780（4×$3,195，仅显卡，计算值）",
@@ -1457,7 +1831,12 @@
     "source_url": "https://x.com/seanphan/status/2105673568914898962",
     "source_note": "@seanphan",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "GLM",
+    "tags": [
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-074",
@@ -1477,7 +1856,11 @@
     "source_url": "https://x.com/EamonMcKiernan5/status/2109203219117187166",
     "source_note": "@EamonMcKiernan5",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "GLM",
+    "tags": [
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-075",
@@ -1497,14 +1880,18 @@
     "source_url": "https://x.com/yume_arasaki/status/2108359576966094952",
     "source_note": "@yume_arasaki 转述演示",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "GLM",
+    "tags": [
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-076",
     "category": "text",
     "model": "GLM-5.3-Flash",
     "quant": "EXL3（@BrandonMusicKy 权重）+ DS 引擎 coordinator",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "4× DGX Spark + RTX 5090",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$33,200+（4×Spark+5090，计算值）⚠️超$30k",
@@ -1517,14 +1904,19 @@
     "source_url": "https://x.com/dangerm00se/status/2104876537367728325",
     "source_note": "@dangerm00se",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "GLM",
+    "tags": [
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-077",
     "category": "text",
     "model": "DeepSeek-V4.1-Flash（510GB 权重）",
     "quant": "0xBakeer 专家画像：热门 ~40% 3-bit 常驻 87GB，其余流式",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "1× DGX Spark",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
@@ -1537,14 +1929,21 @@
     "source_url": "https://x.com/yume_arasaki/status/2099966865326170554",
     "source_note": "@yume_arasaki 转述 0xBakeer · github.com/0xBakeer/deepseek-v41-flash-spark",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "DeepSeek",
+    "tags": [
+      "3bit",
+      "MoE",
+      "offload"
+    ]
   },
   {
     "id": "text-078",
     "category": "text",
     "model": "DeepSeek-V4.1-Flash",
     "quant": "Mia EXL3 2.9bpw · DSpark k=3（TP=2）",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "2× DGX Spark",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
@@ -1557,14 +1956,22 @@
     "source_url": "https://x.com/yume_arasaki/status/2099966865326170554",
     "source_note": "@yume_arasaki 自测",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "DeepSeek",
+    "tags": [
+      "2bit",
+      "long-context",
+      "speculative",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-079",
     "category": "text",
     "model": "DeepSeek-V4.1-Flash",
     "quant": "Mia MXFP4/FP8 · Engram 放 NVMe（TP=3）",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "3× DGX Spark",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$20,850（3×$6,950，计算值）",
@@ -1577,7 +1984,14 @@
     "source_url": "https://x.com/yume_arasaki/status/2099966865326170554",
     "source_note": "@yume_arasaki 汇总",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "DeepSeek",
+    "tags": [
+      "4bit",
+      "8bit",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-080",
@@ -1597,14 +2011,20 @@
     "source_url": "https://x.com/yume_arasaki/status/2106837882870886438",
     "source_note": "@yume_arasaki 汇总（另见 9/15 帖）",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "DeepSeek",
+    "tags": [
+      "4bit",
+      "long-context",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-081",
     "category": "text",
     "model": "DeepSeek-V4.1-Flash",
     "quant": "未注明",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "4× DGX Spark（无交换机直连）",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$27,800（4×$6,950，计算值）",
@@ -1617,14 +2037,19 @@
     "source_url": "https://x.com/hardfanaticos/status/2107225102475813374",
     "source_note": "@hardfanaticos（媒体转述）",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "DeepSeek",
+    "tags": [
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-082",
     "category": "text",
     "model": "DeepSeek-V4.1-Flash（含 Engram 769B）",
     "quant": "DS41RT AFD 引擎，coordinator 在 5090",
-    "engine": "其他/未注明",
+    "engine": "DS41RT",
     "hardware": "4× DGX Spark + RTX 5090",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$33,200+（4×Spark+5090，计算值）⚠️超$30k",
@@ -1637,14 +2062,21 @@
     "source_url": "https://x.com/dangerm00se/status/2099311734226075967",
     "source_note": "@dangerm00se",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "DeepSeek",
+    "tags": [
+      "dense",
+      "long-context",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-083",
     "category": "text",
     "model": "DeepSeek-V4.1-Flash",
     "quant": "SSD/内存流式",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "单 RTX 5090 32GB + 126GB RAM + NVMe",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
@@ -1657,14 +2089,19 @@
     "source_url": "https://x.com/yume_arasaki/status/2099966865326170554",
     "source_note": "@yume_arasaki 转述 TeksEdge & JigSawPT",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "DeepSeek",
+    "tags": [
+      "offload"
+    ]
   },
   {
     "id": "text-084",
     "category": "text",
     "model": "DeepSeek-V4.1-Flash",
     "quant": "EXL3 3.0bpw · TP4+EP4 · DSpark",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "4× CMP 170HX",
     "hardware_family": "二手数据中心卡",
     "hardware_cost_text": "≈$12,780（4 卡，计算值）",
@@ -1677,7 +2114,14 @@
     "source_url": "https://x.com/seanphan/status/2106445678465695910",
     "source_note": "@seanphan",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "DeepSeek",
+    "tags": [
+      "3bit",
+      "speculative",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-085",
@@ -1697,14 +2141,16 @@
     "source_url": "https://x.com/Alexpuric/status/2106508592668971256",
     "source_note": "@Alexpuric",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "DeepSeek",
+    "tags": []
   },
   {
     "id": "text-086",
     "category": "text",
     "model": "DeepSeek-V4-Flash（V4 非 4.1）",
     "quant": "DSpark · Strix Halo + R9700（Lucebox 类产品）",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "Strix Halo + R9700",
     "hardware_family": "AMD",
     "hardware_cost_text": "主页 $5,999 起，满配约 $9,000（帖文）",
@@ -1717,7 +2163,12 @@
     "source_url": "https://x.com/msala9/status/2108612367017722156",
     "source_note": "@msala9（质疑帖）",
     "source_level": "宣称",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "DeepSeek",
+    "tags": [
+      "speculative"
+    ]
   },
   {
     "id": "text-087",
@@ -1737,7 +2188,11 @@
     "source_url": "https://x.com/yume_arasaki/status/2099966865326170554",
     "source_note": "@yume_arasaki 汇总",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "DeepSeek",
+    "tags": [
+      "4bit"
+    ]
   },
   {
     "id": "text-088",
@@ -1757,7 +2212,14 @@
     "source_url": "https://www.macstories.net/stories/m5-ultra-mac-studio-review-the-dream-mac-for-local-ai-agents/",
     "source_note": "MacStories（Viticci）评测",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "long-context",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-089",
@@ -1777,7 +2239,14 @@
     "source_url": "https://www.macstories.net/stories/m5-ultra-mac-studio-review-the-dream-mac-for-local-ai-agents/",
     "source_note": "MacStories（Viticci）评测",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "long-context",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-090",
@@ -1797,7 +2266,11 @@
     "source_url": "https://www.macstories.net/stories/m5-ultra-mac-studio-review-the-dream-mac-for-local-ai-agents/",
     "source_note": "MacStories（Viticci）评测",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit"
+    ]
   },
   {
     "id": "text-091",
@@ -1817,7 +2290,13 @@
     "source_url": "https://x.com/Oluwaphilemon1/status/2099312823025496405",
     "source_note": "@Oluwaphilemon1",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-092",
@@ -1837,14 +2316,18 @@
     "source_url": "https://x.com/ivanfioravanti/status/2104183112611614780",
     "source_note": "@ivanfioravanti",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit"
+    ]
   },
   {
     "id": "text-093",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": "DwarfStar（ds4）· Q2 · Metal PR 分支",
-    "engine": "其他/未注明",
+    "engine": "ds4 (DwarfStar)",
     "hardware": "Mac Studio M3 Ultra",
     "hardware_family": "Mac",
     "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
@@ -1857,14 +2340,20 @@
     "source_url": "https://x.com/ivanfioravanti/status/2096739675041841196",
     "source_note": "@ivanfioravanti（作者）",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "2bit",
+      "long-context"
+    ]
   },
   {
     "id": "text-094",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": "ds4-metal · Q4 混合精度 GGUF · Metal",
-    "engine": "其他/未注明",
+    "engine": "ds4 (DwarfStar)",
     "hardware": "Mac Studio M2 Ultra 192GB",
     "hardware_family": "Mac",
     "hardware_cost_text": "已停产；翻新约 $3,599 起（refurb.me，2026-09）",
@@ -1877,14 +2366,19 @@
     "source_url": "https://x.com/FT_IOxCS/status/2097420352020271194",
     "source_note": "@FT_IOxCS",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit"
+    ]
   },
   {
     "id": "text-095",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": "4-bit · MTP",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "Mac M4 Max / M2 Ultra",
     "hardware_family": "Mac",
     "hardware_cost_text": "已停产；Apple 翻新 128GB/4TB $5,689（2026-10）",
@@ -1897,7 +2391,14 @@
     "source_url": "https://x.com/buildwithak_/status/2096566941674832368",
     "source_note": "@buildwithak_",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-096",
@@ -1917,7 +2418,9 @@
     "source_url": "https://x.com/SholtisLabs/status/2092958534132527527",
     "source_note": "@SholtisLabs",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": []
   },
   {
     "id": "text-097",
@@ -1937,7 +2440,12 @@
     "source_url": "https://x.com/jundotkim/status/2108584837590495246",
     "source_note": "oMLX 发布说明（@jundotkim）",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "MoE",
+      "offload"
+    ]
   },
   {
     "id": "text-098",
@@ -1957,7 +2465,13 @@
     "source_url": "https://www.macstories.net/stories/m5-ultra-mac-studio-review-the-dream-mac-for-local-ai-agents/",
     "source_note": "MacStories（Viticci）评测",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "text-099",
@@ -1977,7 +2491,14 @@
     "source_url": "https://x.com/CGrajnish/status/2106950089373532412",
     "source_note": "@CGrajnish 转述机主",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-100",
@@ -1997,14 +2518,18 @@
     "source_url": "https://x.com/Captainintrigue/status/2106417780895416399",
     "source_note": "@Captainintrigue",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "dense"
+    ]
   },
   {
     "id": "text-101",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "MTPLX（MTP）",
-    "engine": "其他/未注明",
+    "engine": "MTPLX",
     "hardware": "Mac Studio M5 Max",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -2017,7 +2542,14 @@
     "source_url": "https://x.com/yume_arasaki/status/2092767314504802442",
     "source_note": "@yume_arasaki 转述 Youssofal HF 卡",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-102",
@@ -2037,7 +2569,12 @@
     "source_url": "https://x.com/CryptoBandit100/status/2108929163143110983",
     "source_note": "@CryptoBandit100 转述 TensorFold 测试",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative"
+    ]
   },
   {
     "id": "text-103",
@@ -2057,7 +2594,12 @@
     "source_url": "https://x.com/WescheNex1q/status/2104048803699462540",
     "source_note": "@WescheNex1q",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense"
+    ]
   },
   {
     "id": "text-104",
@@ -2077,7 +2619,13 @@
     "source_url": "https://x.com/CryptoBandit100/status/2108929163143110983",
     "source_note": "@CryptoBandit100",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-105",
@@ -2097,14 +2645,19 @@
     "source_url": "https://x.com/Oluwaphilemon1/status/2107649745275719898",
     "source_note": "@Oluwaphilemon1 转述 mlx-serve 基准",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "MoE",
+      "speculative"
+    ]
   },
   {
     "id": "text-106",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "BF16 + 原生 MTP",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "Mac Studio M3 Ultra 96GB",
     "hardware_family": "Mac",
     "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
@@ -2117,7 +2670,15 @@
     "source_url": "https://x.com/JASONMCNAB/status/2088550377595560432",
     "source_note": "@JASONMCNAB",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "bf16",
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-107",
@@ -2137,7 +2698,15 @@
     "source_url": "https://x.com/ykmori/status/2090635965023089024",
     "source_note": "@ykmori",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "8bit",
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-108",
@@ -2157,14 +2726,19 @@
     "source_url": "https://x.com/aaronedell/status/2092016879519068309",
     "source_note": "@aaronedell",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative"
+    ]
   },
   {
     "id": "text-109",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "MTPLX（MTP）",
-    "engine": "其他/未注明",
+    "engine": "MTPLX",
     "hardware": "Mac mini M4 Pro 64GB",
     "hardware_family": "Mac",
     "hardware_cost_text": "上代机型（现售 M6 / M5 Pro），价格未核实",
@@ -2177,7 +2751,14 @@
     "source_url": "https://x.com/yume_arasaki/status/2092767314504802442",
     "source_note": "@yume_arasaki 自有机器",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-110",
@@ -2197,14 +2778,21 @@
     "source_url": "https://x.com/yume_arasaki/status/2092767314504802442",
     "source_note": "@yume_arasaki 转述 oMLX",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "text-111",
     "category": "text",
     "model": "Qwen3.6-35B-A3B",
     "quant": "Splash · 4-bit（20.95GB 权重）",
-    "engine": "其他/未注明",
+    "engine": "Splash",
     "hardware": "Mac mini M4 32GB",
     "hardware_family": "Mac",
     "hardware_cost_text": "上代机型（现售 M6 / M5 Pro），价格未核实",
@@ -2217,7 +2805,13 @@
     "source_url": "https://x.com/tavioto/status/2104674246429671926",
     "source_note": "@tavioto",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "MoE"
+    ]
   },
   {
     "id": "text-112",
@@ -2237,7 +2831,12 @@
     "source_url": "https://x.com/FazalrShah/status/2090453814759628831",
     "source_note": "@FazalrShah",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "8bit",
+      "MoE"
+    ]
   },
   {
     "id": "text-113",
@@ -2257,7 +2856,12 @@
     "source_url": "https://x.com/tinybluedev/status/2089910202606764530",
     "source_note": "@tinybluedev",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "MoE",
+      "speculative"
+    ]
   },
   {
     "id": "text-114",
@@ -2277,7 +2881,11 @@
     "source_url": "https://x.com/jundotkim/status/2108584837590495246",
     "source_note": "oMLX 发布说明（@jundotkim）",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "model_family": "Qwen",
+    "tags": [
+      "MoE"
+    ]
   },
   {
     "id": "text-115",
@@ -2297,7 +2905,12 @@
     "source_url": "https://www.macstories.net/stories/m5-ultra-mac-studio-review-the-dream-mac-for-local-ai-agents/",
     "source_note": "MacStories（Viticci）评测",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "GLM",
+    "tags": [
+      "8bit",
+      "long-context"
+    ]
   },
   {
     "id": "text-116",
@@ -2317,7 +2930,9 @@
     "source_url": "https://x.com/jundotkim/status/2108584837590495246",
     "source_note": "oMLX 发布说明（@jundotkim）",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "model_family": "GLM",
+    "tags": []
   },
   {
     "id": "text-117",
@@ -2337,14 +2952,18 @@
     "source_url": "https://x.com/volatilemarkts/status/2106183507764490444",
     "source_note": "@volatilemarkts",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "GLM",
+    "tags": [
+      "4bit"
+    ]
   },
   {
     "id": "text-118",
     "category": "text",
     "model": "GLM-5.3（744B 全量，非 Flash）",
     "quant": "Unsloth Q4_K_XL · DS4",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "Mac Studio M3 Ultra 512GB",
     "hardware_family": "Mac",
     "hardware_cost_text": "已停产；512GB 二手价未核实",
@@ -2357,7 +2976,13 @@
     "source_url": "https://x.com/djnmrjnvc/status/2093820271903789424",
     "source_note": "@djnmrjnvc",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "GLM",
+    "tags": [
+      "4bit",
+      "dense"
+    ]
   },
   {
     "id": "text-119",
@@ -2377,7 +3002,13 @@
     "source_url": "https://x.com/LocalAiCherry/status/2098438247969931576",
     "source_note": "@LocalAiCherry",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "DeepSeek",
+    "tags": [
+      "speculative",
+      "MTP",
+      "offload"
+    ]
   },
   {
     "id": "text-120",
@@ -2397,14 +3028,20 @@
     "source_url": "https://x.com/malekoo/status/2098566150112100597",
     "source_note": "@malekoo",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "DeepSeek",
+    "tags": [
+      "long-context",
+      "speculative",
+      "multi-GPU"
+    ]
   },
   {
     "id": "text-121",
     "category": "text",
     "model": "DeepSeek-V4-Flash（V4 非 4.1）",
     "quant": "antirez ds4 · 2-bit",
-    "engine": "其他/未注明",
+    "engine": "ds4 (DwarfStar)",
     "hardware": "Mac Studio M4 Max 128GB",
     "hardware_family": "Mac",
     "hardware_cost_text": "已停产；Apple 翻新 128GB/4TB $5,689（2026-10）",
@@ -2417,7 +3054,13 @@
     "source_url": "https://x.com/WescheNex1q/status/2109649549471957206",
     "source_note": "@WescheNex1q",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "DeepSeek",
+    "tags": [
+      "2bit",
+      "long-context"
+    ]
   },
   {
     "id": "text-122",
@@ -2437,7 +3080,11 @@
     "source_url": "https://x.com/yume_arasaki/status/2092767314504802442",
     "source_note": "@yume_arasaki 汇总来源",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "DeepSeek",
+    "tags": [
+      "4bit"
+    ]
   },
   {
     "id": "image-001",
@@ -2457,14 +3104,18 @@
     "source_url": "https://x.com/yume_arasaki/status/2102176739359404499",
     "source_note": "@yume_arasaki 自测",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen-Image",
+    "tags": [
+      "8bit"
+    ]
   },
   {
     "id": "image-002",
     "category": "image",
     "model": "Qwen-Image 2.1",
     "quant": "INT8",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 3090",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$1,206–1,499（二手成交，2026-10-06/12）",
@@ -2477,14 +3128,19 @@
     "source_url": "https://x.com/yume_arasaki/status/2102176739359404499",
     "source_note": "@yume_arasaki 转述",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen-Image",
+    "tags": [
+      "8bit"
+    ]
   },
   {
     "id": "image-003",
     "category": "image",
     "model": "Qwen-Image 2.1",
     "quant": "LightX2V / BennyDaBall NVFP4 / 官方 INT8 / BF16",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
@@ -2497,7 +3153,14 @@
     "source_url": "https://x.com/yume_arasaki/status/2103277400234860878",
     "source_note": "@yume_arasaki 汇总",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen-Image",
+    "tags": [
+      "4bit",
+      "8bit",
+      "bf16"
+    ]
   },
   {
     "id": "image-004",
@@ -2517,14 +3180,20 @@
     "source_url": "https://x.com/niklaslenz_ai/status/2106465941177487871",
     "source_note": "@niklaslenz_ai · github.com/jayleaton/qwen-image21-tensorfold-rtx",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen-Image",
+    "tags": [
+      "4bit",
+      "6bit",
+      "8bit"
+    ]
   },
   {
     "id": "image-005",
     "category": "image",
     "model": "Qwen-Image 2.1",
     "quant": "厂商内核重写+步缓存",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
@@ -2537,14 +3206,17 @@
     "source_url": "https://x.com/fractalyze_io/status/2105207217452695841",
     "source_note": "@fractalyze_io",
     "source_level": "宣称",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen-Image",
+    "tags": []
   },
   {
     "id": "image-006",
     "category": "image",
     "model": "Qwen-Image 2.1",
     "quant": "int8 · 25 步 · 1MP",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 5090 @455W vs CMP 170HX",
     "hardware_family": "二手数据中心卡",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11） / ≈$3,195/张（解锁64GB，2026-10-13）",
@@ -2557,14 +3229,19 @@
     "source_url": "https://x.com/MoonlitMaven/status/2109206953507291214",
     "source_note": "@MoonlitMaven",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen-Image",
+    "tags": [
+      "8bit"
+    ]
   },
   {
     "id": "image-007",
     "category": "image",
     "model": "Qwen-Image 2.1",
     "quant": "GGUF/INT8 + 编码器放内存 / 低显存模式",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 4060 8GB / 3060 12GB / 5070 Ti 16GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": null,
@@ -2577,7 +3254,12 @@
     "source_url": "https://x.com/yume_arasaki/status/2103277400234860878",
     "source_note": "@yume_arasaki 汇总",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen-Image",
+    "tags": [
+      "8bit"
+    ]
   },
   {
     "id": "image-008",
@@ -2597,14 +3279,18 @@
     "source_url": "https://x.com/yume_arasaki/status/2103277400234860878",
     "source_note": "@yume_arasaki 转述（含 SGLang 官方表）",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "Qwen-Image",
+    "tags": [
+      "bf16"
+    ]
   },
   {
     "id": "image-009",
     "category": "image",
     "model": "Qwen-Image 2.1",
     "quant": "mflux（bf16 46GB / 量化 31GB）",
-    "engine": "其他/未注明",
+    "engine": "mflux",
     "hardware": "Mac M5 Max",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -2617,7 +3303,12 @@
     "source_url": "https://x.com/yume_arasaki/status/2103277400234860878",
     "source_note": "@yume_arasaki 汇总",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen-Image",
+    "tags": [
+      "bf16"
+    ]
   },
   {
     "id": "image-010",
@@ -2637,14 +3328,16 @@
     "source_url": "https://x.com/gabeciii/status/2104920039077884324",
     "source_note": "@gabeciii",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Qwen-Image",
+    "tags": []
   },
   {
     "id": "image-011",
     "category": "image",
     "model": "Qwen-Image-2.1-Turbo（官方 8 步）",
     "quant": "Turbo 8 步 vs Base 40 步",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
@@ -2657,14 +3350,19 @@
     "source_url": "https://x.com/niklaslenz_ai/status/2108609693941920176",
     "source_note": "@niklaslenz_ai",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen-Image",
+    "tags": [
+      "few-step"
+    ]
   },
   {
     "id": "image-012",
     "category": "image",
     "model": "Qwen-Image-2.1-Turbo",
     "quant": "GGUF q8_0–q3_k",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 3060",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": null,
@@ -2677,7 +3375,14 @@
     "source_url": "https://x.com/DogukanUrker/status/2108559605018099941",
     "source_note": "@DogukanUrker",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen-Image",
+    "tags": [
+      "3bit",
+      "8bit",
+      "few-step"
+    ]
   },
   {
     "id": "image-013",
@@ -2697,7 +3402,11 @@
     "source_url": "https://x.com/michaelricks/status/2104959036353356058",
     "source_note": "@michaelricks（另见 @Brjen 2106743364716556717）",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Z-Image",
+    "tags": [
+      "few-step"
+    ]
   },
   {
     "id": "image-014",
@@ -2717,7 +3426,11 @@
     "source_url": "https://x.com/Pakgowithai/status/2108611743840604582",
     "source_note": "@Pakgowithai",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Z-Image",
+    "tags": [
+      "few-step"
+    ]
   },
   {
     "id": "image-015",
@@ -2737,14 +3450,18 @@
     "source_url": "https://x.com/gabeciii/status/2104559257899171980",
     "source_note": "@gabeciii",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Z-Image",
+    "tags": [
+      "few-step"
+    ]
   },
   {
     "id": "image-016",
     "category": "image",
     "model": "Z-Image Turbo vs Qwen-Image 2.1",
     "quant": "同 prompt 同 seed 20 轮",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
@@ -2757,14 +3474,19 @@
     "source_url": "https://x.com/princedoesai/status/2109376490009743713",
     "source_note": "@princedoesai",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen-Image",
+    "tags": [
+      "few-step"
+    ]
   },
   {
     "id": "video-audio-001",
     "category": "video-audio",
     "model": "FastH3 V2（MiniMax H3 8 步蒸馏）",
     "quant": "NVFP4",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
@@ -2777,14 +3499,20 @@
     "source_url": "https://haoailab.com/blogs/fasth3-rtx/",
     "source_note": "Hao AI Lab 官方博客 2026-10-06",
     "source_level": "官方",
-    "date": "2026-10-06"
+    "date": "2026-10-06",
+    "engine_raw": "其他/未注明",
+    "model_family": "MiniMax H3",
+    "tags": [
+      "4bit",
+      "few-step"
+    ]
   },
   {
     "id": "video-audio-002",
     "category": "video-audio",
     "model": "FastH3 Trim（42 块剪枝，实验）",
     "quant": "NVFP4",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
@@ -2797,14 +3525,19 @@
     "source_url": "https://haoailab.com/blogs/fasth3-rtx/",
     "source_note": "Hao AI Lab 官方",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "MiniMax H3",
+    "tags": [
+      "4bit"
+    ]
   },
   {
     "id": "video-audio-003",
     "category": "video-audio",
     "model": "FastH3 V2 / Trim",
     "quant": "FP8",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 4090 24GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "≈$2,214（二手成交，2026-10-06）",
@@ -2817,14 +3550,19 @@
     "source_url": "https://haoailab.com/blogs/fasth3-rtx/",
     "source_note": "Hao AI Lab 官方",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "MiniMax H3",
+    "tags": [
+      "8bit"
+    ]
   },
   {
     "id": "video-audio-004",
     "category": "video-audio",
     "model": "FastH3 V2 / Trim",
     "quant": "NVFP4",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "1× / 2× DGX Spark",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11） / ≈$13,900（2×$6,950，计算值）",
@@ -2837,7 +3575,13 @@
     "source_url": "https://haoailab.com/blogs/fasth3-rtx/",
     "source_note": "Hao AI Lab 官方",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "MiniMax H3",
+    "tags": [
+      "4bit",
+      "multi-GPU"
+    ]
   },
   {
     "id": "video-audio-005",
@@ -2857,7 +3601,11 @@
     "source_url": "https://haoailab.com/blogs/fasth3-rtx/",
     "source_note": "Hao AI Lab 官方",
     "source_level": "官方",
-    "date": null
+    "date": null,
+    "model_family": "MiniMax H3",
+    "tags": [
+      "6bit"
+    ]
   },
   {
     "id": "video-audio-006",
@@ -2877,7 +3625,14 @@
     "source_url": "https://haoailab.com/blogs/fasth3-local/",
     "source_note": "Hao AI Lab 官方 2026-09-02",
     "source_level": "官方",
-    "date": "2026-09-02"
+    "date": "2026-09-02",
+    "model_family": "MiniMax H3",
+    "tags": [
+      "4bit",
+      "6bit",
+      "8bit",
+      "few-step"
+    ]
   },
   {
     "id": "video-audio-007",
@@ -2897,14 +3652,16 @@
     "source_url": "https://x.com/RKAScope/status/2084359480926503182",
     "source_note": "@RKAScope",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "MiniMax H3",
+    "tags": []
   },
   {
     "id": "video-audio-008",
     "category": "video-audio",
     "model": "MiniMax H3 vs FastH3 Turbo",
     "quant": "同图同 seed",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
@@ -2917,7 +3674,12 @@
     "source_url": "https://x.com/Sogni_Protocol/status/2097254959729246550",
     "source_note": "@Sogni_Protocol",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "MiniMax H3",
+    "tags": [
+      "few-step"
+    ]
   },
   {
     "id": "video-audio-009",
@@ -2937,7 +3699,11 @@
     "source_url": "https://x.com/yume_arasaki/status/2097790831323427046",
     "source_note": "@yume_arasaki 自测（另见 2103277400234860878）",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "MiniMax H3",
+    "tags": [
+      "few-step"
+    ]
   },
   {
     "id": "video-audio-010",
@@ -2957,14 +3723,16 @@
     "source_url": "https://x.com/natehalko/status/2103538997146611890",
     "source_note": "@natehalko",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "MiniMax H3",
+    "tags": []
   },
   {
     "id": "video-audio-011",
     "category": "video-audio",
     "model": "MiniMax H3（Sol 加速 / 无加速）",
     "quant": "NVIDIA Sol 引擎",
-    "engine": "其他/未注明",
+    "engine": "NVIDIA Sol",
     "hardware": "1× DGX Spark",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
@@ -2977,14 +3745,17 @@
     "source_url": "https://x.com/yume_arasaki/status/2100734364908986511",
     "source_note": "@yume_arasaki 自测 + NVIDIA 数据",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "MiniMax H3",
+    "tags": []
   },
   {
     "id": "video-audio-012",
     "category": "video-audio",
     "model": "MiniMax H3 vs LTX-2.3 Eros",
     "quant": "同条件 3 组 prompt",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "1× DGX Spark",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
@@ -2997,7 +3768,10 @@
     "source_url": "https://x.com/YRSM_Simon/status/2084222856972456336",
     "source_note": "@YRSM_Simon",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "MiniMax H3",
+    "tags": []
   },
   {
     "id": "video-audio-013",
@@ -3017,14 +3791,18 @@
     "source_url": "https://x.com/RhinoQuant/status/2096738488423244172",
     "source_note": "@RhinoQuant",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "MiniMax H3",
+    "tags": [
+      "few-step"
+    ]
   },
   {
     "id": "video-audio-014",
     "category": "video-audio",
     "model": "MiniMax H3",
     "quant": "未注明",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "48GB Apple Silicon Mac（芯片未注明）",
     "hardware_family": "Mac",
     "hardware_cost_text": "M4 Pro 48GB 机型价格见上（芯片未确认）",
@@ -3037,7 +3815,10 @@
     "source_url": "https://x.com/Dlife2026/status/2106305289767322065",
     "source_note": "@Dlife2026",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "MiniMax H3",
+    "tags": []
   },
   {
     "id": "video-audio-015",
@@ -3057,14 +3838,16 @@
     "source_url": "https://x.com/freshstartsnow/status/2092263835591655773",
     "source_note": "@freshstartsnow",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "LTX",
+    "tags": []
   },
   {
     "id": "video-audio-016",
     "category": "video-audio",
     "model": "LTX-2.3",
     "quant": "社区工作流",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 4060 Ti 16GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": null,
@@ -3077,14 +3860,17 @@
     "source_url": "https://x.com/Hichem_IA/status/2107712296676212812",
     "source_note": "@Hichem_IA",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "LTX",
+    "tags": []
   },
   {
     "id": "video-audio-017",
     "category": "video-audio",
     "model": "LTX-2.5（t2v）",
     "quant": "模板 + LoRA",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 5090（500W）",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
@@ -3097,7 +3883,10 @@
     "source_url": "https://x.com/PhotogenicWeekE/status/2087298681137701274",
     "source_note": "@PhotogenicWeekE",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "LTX",
+    "tags": []
   },
   {
     "id": "video-audio-018",
@@ -3117,14 +3906,16 @@
     "source_url": "https://x.com/yume_arasaki/status/2100734364908986511",
     "source_note": "@yume_arasaki",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "model_family": "LTX",
+    "tags": []
   },
   {
     "id": "video-audio-019",
     "category": "video-audio",
     "model": "ACE-Step 1.5（音乐）",
     "quant": null,
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 3090",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$1,206–1,499（二手成交，2026-10-06/12）",
@@ -3137,14 +3928,17 @@
     "source_url": "https://x.com/simplifyinAI/status/2091935190335754493",
     "source_note": "@simplifyinAI",
     "source_level": "转述",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "ACE-Step",
+    "tags": []
   },
   {
     "id": "video-audio-020",
     "category": "video-audio",
     "model": "ACE-Step 1.5（音乐）",
     "quant": null,
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "Mac（芯片未注明）",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -3157,7 +3951,10 @@
     "source_url": "https://x.com/1x3e2/status/2088520365257400449",
     "source_note": "@1x3e2",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "ACE-Step",
+    "tags": []
   },
   {
     "id": "video-audio-021",
@@ -3177,14 +3974,16 @@
     "source_url": "https://x.com/aobane_tsumugu/status/2084779380166033747",
     "source_note": "@aobane_tsumugu",
     "source_level": "实测",
-    "date": null
+    "date": null,
+    "model_family": "Wan",
+    "tags": []
   },
   {
     "id": "video-audio-022",
     "category": "video-audio",
     "model": "Wan2.1 14B（SparkDiffusion）",
     "quant": "97% 稀疏注意力 + 3 步蒸馏 + FP8",
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
@@ -3197,7 +3996,13 @@
     "source_url": "https://x.com/thePandaily/status/2105209996648567243",
     "source_note": "@thePandaily（媒体转述）",
     "source_level": "宣称",
-    "date": null
+    "date": null,
+    "engine_raw": "其他/未注明",
+    "model_family": "Wan",
+    "tags": [
+      "8bit",
+      "few-step"
+    ]
   },
   {
     "id": "x-001",
@@ -3222,14 +4027,18 @@
       "author": "no_stp_on_snek",
       "likes": 73,
       "reposts": 7
-    }
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit"
+    ]
   },
   {
     "id": "x-002",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": "IQ4_XS",
-    "engine": "halogen 0.17.2",
+    "engine": "Halogen",
     "hardware": "AMD Strix Halo 395",
     "hardware_family": "AMD",
     "hardware_cost_text": "$3,149（Framework 128GB，2026-10）",
@@ -3247,7 +4056,13 @@
       "author": "no_stp_on_snek",
       "likes": 73,
       "reposts": 7
-    }
+    },
+    "engine_raw": "halogen 0.17.2",
+    "engine_note": "halogen 0.17.2",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit"
+    ]
   },
   {
     "id": "x-003",
@@ -3272,14 +4087,18 @@
       "author": "jurlycat",
       "likes": 46,
       "reposts": 2
-    }
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "3bit"
+    ]
   },
   {
     "id": "x-004",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": "IQ3_S",
-    "engine": "Strata v0.1.42",
+    "engine": "Strata",
     "hardware": "2× RTX 3090 (48GB) + 64GB DDR5-6000",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "2×$1,206–1,499（二手成交，2026-10-06/12）（按张）",
@@ -3297,7 +4116,15 @@
       "author": "geldeki",
       "likes": 45,
       "reposts": 2
-    }
+    },
+    "engine_raw": "Strata v0.1.42",
+    "engine_note": "Strata v0.1.42",
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "long-context",
+      "multi-GPU"
+    ]
   },
   {
     "id": "x-005",
@@ -3322,14 +4149,19 @@
       "author": "BrianMRey",
       "likes": 5,
       "reposts": 1
-    }
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "long-context"
+    ]
   },
   {
     "id": "x-006",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": "IQ2_XS",
-    "engine": "Strata v0.1.27",
+    "engine": "Strata",
     "hardware": "RTX 5090 + 256GB RAM",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
@@ -3347,7 +4179,14 @@
       "author": "TechPractice1",
       "likes": 2,
       "reposts": 0
-    }
+    },
+    "engine_raw": "Strata v0.1.27",
+    "engine_note": "Strata v0.1.27",
+    "model_family": "Qwen",
+    "tags": [
+      "2bit",
+      "long-context"
+    ]
   },
   {
     "id": "x-007",
@@ -3372,14 +4211,19 @@
       "author": "rewin123",
       "likes": 1,
       "reposts": 0
-    }
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "multi-GPU"
+    ]
   },
   {
     "id": "x-008",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": "IQ3_S",
-    "engine": "Strata 0.1.39",
+    "engine": "Strata",
     "hardware": "2× MI50 32GB（限 150W）",
     "hardware_family": "二手数据中心卡",
     "hardware_cost_text": "≈$734/张 eBay（2026-10-13）",
@@ -3397,14 +4241,21 @@
       "author": "sami3dat",
       "likes": 1,
       "reposts": 0
-    }
+    },
+    "engine_raw": "Strata 0.1.39",
+    "engine_note": "Strata 0.1.39",
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "multi-GPU"
+    ]
   },
   {
     "id": "x-009",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": "Q2_0",
-    "engine": "Strata（PR #262）",
+    "engine": "Strata",
     "hardware": "AMD Radeon AI PRO R9700",
     "hardware_family": "AMD",
     "hardware_cost_text": "$1,600 起（新卡，2026-10-13）",
@@ -3422,14 +4273,20 @@
       "author": "TechPractice1",
       "likes": 1,
       "reposts": 0
-    }
+    },
+    "engine_raw": "Strata（PR #262）",
+    "engine_note": "Strata（PR #262）",
+    "model_family": "Qwen",
+    "tags": [
+      "2bit"
+    ]
   },
   {
     "id": "x-010",
     "category": "text",
     "model": "GLM 5.3（帖文原话 “GLM 5.3 Code”）",
     "quant": null,
-    "engine": "oMLX（作者调优）",
+    "engine": "oMLX",
     "hardware": "Mac Studio M5 Ultra",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -3447,14 +4304,18 @@
       "author": "JamesMcPherson",
       "likes": 106,
       "reposts": 5
-    }
+    },
+    "engine_raw": "oMLX（作者调优）",
+    "engine_note": "oMLX（作者调优）",
+    "model_family": "GLM",
+    "tags": []
   },
   {
     "id": "x-011",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": null,
-    "engine": "其他/未注明",
+    "engine": "Unspecified",
     "hardware": "Mac Studio M5 Ultra",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -3472,14 +4333,17 @@
       "author": "wei_wang",
       "likes": 33,
       "reposts": 1
-    }
+    },
+    "engine_raw": "其他/未注明",
+    "model_family": "Qwen",
+    "tags": []
   },
   {
     "id": "x-012",
     "category": "text",
     "model": "GLM-5.3-Flash",
     "quant": null,
-    "engine": "TensorFold 0.5.0 + DFlash2 草稿",
+    "engine": "TensorFold",
     "hardware": "2× DGX Spark（TP2）",
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
@@ -3497,7 +4361,14 @@
       "author": "easthambuilds",
       "likes": 0,
       "reposts": 0
-    }
+    },
+    "engine_raw": "TensorFold 0.5.0 + DFlash2 草稿",
+    "engine_note": "TensorFold 0.5.0 + DFlash2 草稿",
+    "model_family": "GLM",
+    "tags": [
+      "speculative",
+      "multi-GPU"
+    ]
   },
   {
     "id": "x-013",
@@ -3522,14 +4393,20 @@
       "author": "HandwerkAiLab",
       "likes": 0,
       "reposts": 0
-    }
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "x-014",
     "category": "video-audio",
     "model": "MiniMax H3",
     "quant": null,
-    "engine": "TensorFold（ComfyUI 换 loader）",
+    "engine": "TensorFold",
     "hardware": "RTX 5070 Ti 16GB + 64GB RAM（Windows）",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": null,
@@ -3548,7 +4425,11 @@
       "likes": 10,
       "reposts": 0
     },
-    "metric_en": "1344×768 5s with audio: 81 s (stock ComfyUI, 20 steps: 623 s)"
+    "metric_en": "1344×768 5s with audio: 81 s (stock ComfyUI, 20 steps: 623 s)",
+    "engine_raw": "TensorFold（ComfyUI 换 loader）",
+    "engine_note": "TensorFold（ComfyUI 换 loader）",
+    "model_family": "MiniMax H3",
+    "tags": []
   },
   {
     "id": "x-015",
@@ -3574,7 +4455,9 @@
       "likes": 8,
       "reposts": 2
     },
-    "metric_en": "768×1344 15s video + audio ≈72 s (steady state, excl. MP4 export; baseline ~26 min)"
+    "metric_en": "768×1344 15s video + audio ≈72 s (steady state, excl. MP4 export; baseline ~26 min)",
+    "model_family": "MiniMax H3",
+    "tags": []
   },
   {
     "id": "x-016",
@@ -3600,14 +4483,16 @@
       "likes": 149,
       "reposts": 16
     },
-    "metric_en": "Three 5s chained clips: 17 min total"
+    "metric_en": "Three 5s chained clips: 17 min total",
+    "model_family": "MiniMax H3",
+    "tags": []
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-1",
     "category": "text",
     "model": "Ternary Bonsai 2 27B",
     "quant": "PQ2_0",
-    "engine": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -3621,14 +4506,22 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork（原版 llama.cpp 不可用）; 原文: | RTX 5090 (32 GB) | **129.9** | 3893 | **1.95** | 120.5 | 1805 | 2.15 |",
     "source_level": "宣称",
     "date": "2026-09-16",
-    "metric_en": "129.9 tok/s decode; 3893 tok/s prefill"
+    "metric_en": "129.9 tok/s decode; 3893 tok/s prefill",
+    "engine_raw": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+    "engine_note": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-2",
     "category": "text",
     "model": "Ternary Bonsai 2 27B",
     "quant": "PTQ1_0",
-    "engine": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -3642,14 +4535,22 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork（原版 llama.cpp 不可用）; 原文: 同上行",
     "source_level": "宣称",
     "date": "2026-09-16",
-    "metric_en": "120.5 tok/s decode; 1805 tok/s prefill"
+    "metric_en": "120.5 tok/s decode; 1805 tok/s prefill",
+    "engine_raw": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+    "engine_note": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-3",
     "category": "text",
     "model": "Ternary Bonsai 2 27B",
     "quant": "PQ2_0",
-    "engine": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "RTX 4090 24GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 二手约 $2,214（2026-10-06 eBay 成交，见 prices.json）",
@@ -3663,14 +4564,22 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork（原版 llama.cpp 不可用）; 原文: | RTX 4090 (24 GB) | 81.2 | 3124 | 2.99 | **91.1** | 1645 | 2.58 |",
     "source_level": "宣称",
     "date": "2026-09-16",
-    "metric_en": "81.2 tok/s decode; 3124 tok/s prefill"
+    "metric_en": "81.2 tok/s decode; 3124 tok/s prefill",
+    "engine_raw": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+    "engine_note": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-4",
     "category": "text",
     "model": "Ternary Bonsai 2 27B",
     "quant": "PTQ1_0",
-    "engine": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "RTX 4090 24GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 二手约 $2,214（2026-10-06 eBay 成交，见 prices.json）",
@@ -3684,14 +4593,22 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork（原版 llama.cpp 不可用）; 原文: 同上行",
     "source_level": "宣称",
     "date": "2026-09-16",
-    "metric_en": "91.1 tok/s decode; 1645 tok/s prefill"
+    "metric_en": "91.1 tok/s decode; 1645 tok/s prefill",
+    "engine_raw": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+    "engine_note": "PrismML-Eng/llama.cpp fork（llama-bench，batch 1，depth 0）",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-5",
     "category": "text",
     "model": "Ternary Bonsai 2 27B",
     "quant": "PQ2_0",
-    "engine": "PrismML llama.cpp fork（Metal）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "MacBook M5 Pro",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -3705,14 +4622,22 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork（原版 llama.cpp 不可用）; 原文: | Laptop (Apple M5 Pro, Metal) | 28.1 | 387 | — |",
     "source_level": "宣称",
     "date": "2026-09-16",
-    "metric_en": "28.1 tok/s decode; 387 tok/s prefill"
+    "metric_en": "28.1 tok/s decode; 387 tok/s prefill",
+    "engine_raw": "PrismML llama.cpp fork（Metal）",
+    "engine_note": "PrismML llama.cpp fork（Metal）",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-6",
     "category": "text",
     "model": "Ternary Bonsai 2 27B",
     "quant": "PQ2_0（旧 pre-rotation build）",
-    "engine": "llama.cpp Metal",
+    "engine": "llama.cpp",
     "hardware": "MacBook M5 Max",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -3726,14 +4651,22 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork（原版 llama.cpp 不可用）; 卡注：Measured on the earlier pre-rotation build and reported pending re-measurement; 原文: | Laptop (Apple M5 Max, Metal) | 7.2 GB | 47.0 | 765 |",
     "source_level": "宣称",
     "date": "2026-09-16",
-    "metric_en": "47.0 tok/s decode; 765 tok/s prefill"
+    "metric_en": "47.0 tok/s decode; 765 tok/s prefill",
+    "engine_raw": "llama.cpp Metal",
+    "engine_note": "llama.cpp Metal",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-7",
     "category": "text",
     "model": "Ternary Bonsai 2 27B",
     "quant": "PQ2_0（旧 pre-rotation build）",
-    "engine": "llama.cpp Metal",
+    "engine": "llama.cpp",
     "hardware": "MacBook M4 Pro",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -3747,14 +4680,22 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork（原版 llama.cpp 不可用）; 同上，待重测; 原文: | Laptop (Apple M4 Pro, Metal) | 7.2 GB | 18.0 | 125 |",
     "source_level": "宣称",
     "date": "2026-09-16",
-    "metric_en": "18.0 tok/s decode; 125 tok/s prefill"
+    "metric_en": "18.0 tok/s decode; 125 tok/s prefill",
+    "engine_raw": "llama.cpp Metal",
+    "engine_note": "llama.cpp Metal",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-cdiamond-qwen3-8-27b-imatrix-nvfp4-mtp-gguf-1",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "iMatrix NVFP4 混合 5.01 BPW + 内嵌 MTP",
-    "engine": "llama.cpp + 6 个未合并 PR（自定义）",
+    "engine": "llama.cpp",
     "hardware": "RTX PRO 4000 Blackwell SFF 24GB（70W）",
     "hardware_family": "其他",
     "hardware_cost_text": null,
@@ -3768,14 +4709,24 @@
     "source_note": "HF 模型卡（作者自报）; RTX PRO 4000 Blackwell SFF 为工作站卡，价格未找到可靠来源；博客 https://piszczek.pl/blog/qwen38-27b-256k-50-tps-24gb-gpu; 原文: | Production series, 10 runs | 50.441 tok/s mean, 49.420-51.397 |",
     "source_level": "宣称",
     "date": "2026-08-17",
-    "metric_en": "50.441 tok/s decode"
+    "metric_en": "50.441 tok/s decode",
+    "engine_raw": "llama.cpp + 6 个未合并 PR（自定义）",
+    "engine_note": "llama.cpp + 6 个未合并 PR（自定义）",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "long-context",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-cdiamond-qwen3-8-27b-imatrix-nvfp4-mtp-gguf-2",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "同上",
-    "engine": "llama.cpp b10454（commit 4df29be4f，原版）",
+    "engine": "llama.cpp",
     "hardware": "RTX PRO 4000 Blackwell SFF 24GB",
     "hardware_family": "其他",
     "hardware_cost_text": null,
@@ -3789,14 +4740,21 @@
     "source_note": "HF 模型卡（作者自报）; RTX PRO 4000 Blackwell SFF 为工作站卡，价格未找到可靠来源；博客 https://piszczek.pl/blog/qwen38-27b-256k-50-tps-24gb-gpu; 原文: | Clean llama.cpp b10454 | 45.422 tok/s |",
     "source_level": "宣称",
     "date": "2026-08-17",
-    "metric_en": "45.422 tok/s decode"
+    "metric_en": "45.422 tok/s decode",
+    "engine_raw": "llama.cpp b10454（commit 4df29be4f，原版）",
+    "engine_note": "llama.cpp b10454（commit 4df29be4f，原版）",
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-cdiamond-qwen3-8-27b-imatrix-nvfp4-mtp-gguf-3",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "同上",
-    "engine": "llama.cpp 自定义",
+    "engine": "llama.cpp",
     "hardware": "RTX PRO 4000 Blackwell SFF 24GB",
     "hardware_family": "其他",
     "hardware_cost_text": null,
@@ -3810,14 +4768,21 @@
     "source_note": "HF 模型卡（作者自报）; RTX PRO 4000 Blackwell SFF 为工作站卡，价格未找到可靠来源；博客 https://piszczek.pl/blog/qwen38-27b-256k-50-tps-24gb-gpu; 256K 满上下文时; 原文: | Full-cache prefill | 226.750 tok/s | / | Full-cache decode | 12.606 tok/s |",
     "source_level": "宣称",
     "date": "2026-08-17",
-    "metric_en": "12.606 tok/s decode; 226.75 tok/s prefill"
+    "metric_en": "12.606 tok/s decode; 226.75 tok/s prefill",
+    "engine_raw": "llama.cpp 自定义",
+    "engine_note": "llama.cpp 自定义",
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-prism-ml-bonsai-27b-mlx-1bit-1",
     "category": "text",
     "model": "Bonsai 27B 1-bit",
     "quant": "1-bit g128",
-    "engine": "PrismML llama.cpp fork（Metal）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "MacBook M5 Max",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -3831,14 +4796,22 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp / mlx-swift fork; 原文: | Laptop (Apple M5 Max, Metal) | 3.9 GB | 66.4 | 874 |",
     "source_level": "宣称",
     "date": "2026-07-04",
-    "metric_en": "66.4 tok/s decode; 874 tok/s prefill"
+    "metric_en": "66.4 tok/s decode; 874 tok/s prefill",
+    "engine_raw": "PrismML llama.cpp fork（Metal）",
+    "engine_note": "PrismML llama.cpp fork（Metal）",
+    "model_family": "Bonsai",
+    "tags": [
+      "1bit",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-prism-ml-bonsai-27b-mlx-1bit-2",
     "category": "text",
     "model": "Bonsai 27B 1-bit",
     "quant": "1-bit g128",
-    "engine": "PrismML llama.cpp fork（Metal）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "MacBook M5 Pro",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -3852,14 +4825,22 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp / mlx-swift fork; 原文: | Laptop (Apple M5 Pro, Metal) | 3.9 GB | 44.2 | 421 |",
     "source_level": "宣称",
     "date": "2026-07-04",
-    "metric_en": "44.2 tok/s decode; 421 tok/s prefill"
+    "metric_en": "44.2 tok/s decode; 421 tok/s prefill",
+    "engine_raw": "PrismML llama.cpp fork（Metal）",
+    "engine_note": "PrismML llama.cpp fork（Metal）",
+    "model_family": "Bonsai",
+    "tags": [
+      "1bit",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-prism-ml-bonsai-27b-mlx-1bit-3",
     "category": "text",
     "model": "Bonsai 27B 1-bit",
     "quant": "1-bit g128",
-    "engine": "PrismML llama.cpp fork（Metal）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "MacBook M4 Pro",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -3873,14 +4854,22 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp / mlx-swift fork; 原文: | Laptop (Apple M4 Pro, Metal) | 3.9 GB | 26.0 | 133 |",
     "source_level": "宣称",
     "date": "2026-07-04",
-    "metric_en": "26.0 tok/s decode; 133 tok/s prefill"
+    "metric_en": "26.0 tok/s decode; 133 tok/s prefill",
+    "engine_raw": "PrismML llama.cpp fork（Metal）",
+    "engine_note": "PrismML llama.cpp fork（Metal）",
+    "model_family": "Bonsai",
+    "tags": [
+      "1bit",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-prism-ml-bonsai-27b-mlx-1bit-4",
     "category": "text",
     "model": "Bonsai 27B 1-bit",
     "quant": "1-bit g128",
-    "engine": "MLX Swift fork",
+    "engine": "MLX Swift",
     "hardware": "iPhone 17 Pro Max (A19 Pro)",
     "hardware_family": "其他",
     "hardware_cost_text": null,
@@ -3894,14 +4883,22 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp / mlx-swift fork; 持续生成 10.8 tok/s（发热降频）; 原文: | iPhone 17 Pro Max (A19 Pro) | 3.9 GB | 11.0¹ | 111 |",
     "source_level": "宣称",
     "date": "2026-07-04",
-    "metric_en": "11.0 tok/s decode; 111 tok/s prefill"
+    "metric_en": "11.0 tok/s decode; 111 tok/s prefill",
+    "engine_raw": "MLX Swift fork",
+    "engine_note": "MLX Swift fork",
+    "model_family": "Bonsai",
+    "tags": [
+      "1bit",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-esatapedico-qwen3-8-27b-nvfp4-mtp-gguf-1",
     "category": "text",
     "model": "Qwen3.8-27B-NVFP4-MTP",
     "quant": "NVFP4 骨干 + LOW 档（Q5_0/IQ4_XS）+ MTP",
-    "engine": "llama.cpp（split-mode tensor）",
+    "engine": "llama.cpp",
     "hardware": "RTX 5070 Ti 16GB + RTX 5060 Ti 16GB（双卡 tensor split）",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": null,
@@ -3915,7 +4912,19 @@
     "source_note": "HF 模型卡（作者自报）; prefill 随上下文下降，不同上下文不可直接比; 180K 上下文运行；卡注 prefill 随上下文下降，不同上下文不可直接比; 原文: | LOW (Q5_0 / IQ4_XS / IQ4_XS) | 645.6 | 18.44 | 1,151 | 0.726 | 2.88 | 361 |",
     "source_level": "宣称",
     "date": "2026-08-14",
-    "metric_en": "18.44 tok/s decode; 645.6 tok/s prefill"
+    "metric_en": "18.44 tok/s decode; 645.6 tok/s prefill",
+    "engine_raw": "llama.cpp（split-mode tensor）",
+    "engine_note": "llama.cpp（split-mode tensor）",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "5bit",
+      "dense",
+      "long-context",
+      "speculative",
+      "MTP",
+      "multi-GPU"
+    ]
   },
   {
     "id": "hf-esatapedico-qwen3-8-27b-nvfp4-mtp-gguf-2",
@@ -3936,14 +4945,24 @@
     "source_note": "HF 模型卡（作者自报）; prefill 随上下文下降，不同上下文不可直接比; 32K 上下文; 原文: | **MID-HIGH (Q8_0 / Q8_0 / Q8_0)** | **1451.6** | **25.98** | 0.771 | 2.87 | 108.8 |",
     "source_level": "宣称",
     "date": "2026-08-14",
-    "metric_en": "25.98 tok/s decode; 1451.6 tok/s prefill"
+    "metric_en": "25.98 tok/s decode; 1451.6 tok/s prefill",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "8bit",
+      "dense",
+      "long-context",
+      "speculative",
+      "MTP",
+      "multi-GPU"
+    ]
   },
   {
     "id": "hf-esatapedico-qwen3-8-27b-nvfp4-mtp-gguf-3",
     "category": "text",
     "model": "Qwen3.8-27B-NVFP4-MTP",
     "quant": "LOW + MTP（--spec-draft-n-max 4）",
-    "engine": "llama.cpp b10434",
+    "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -3957,14 +4976,24 @@
     "source_note": "HF 模型卡（卡内转载第三方数据）; prefill 随上下文下降，不同上下文不可直接比; 社区用户 PierpaoloPernici 测，192K ctx，KV q8_0；峰值 203; 原文: | **LOW** (Q5_0 / IQ4_XS / IQ4_XS) | 49.0% | **148.3** | **203** | 25.0 GiB |",
     "source_level": "转述",
     "date": "2026-08-14",
-    "metric_en": "148.3 tok/s decode"
+    "metric_en": "148.3 tok/s decode",
+    "engine_raw": "llama.cpp b10434",
+    "engine_note": "llama.cpp b10434",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "long-context",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-esatapedico-qwen3-8-27b-nvfp4-mtp-gguf-4",
     "category": "text",
     "model": "Qwen3.8-27B-NVFP4-MTP",
     "quant": "VERY-HIGH（BF16 head）+ MTP",
-    "engine": "llama.cpp b10434",
+    "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -3978,14 +5007,25 @@
     "source_note": "HF 模型卡（卡内转载第三方数据）; prefill 随上下文下降，不同上下文不可直接比; 原文: | **VERY-HIGH** (BF16 / BF16 / BF16) | 49.5% | 111.9 | 139 | 26.9 GiB |",
     "source_level": "转述",
     "date": "2026-08-14",
-    "metric_en": "111.9 tok/s decode"
+    "metric_en": "111.9 tok/s decode",
+    "engine_raw": "llama.cpp b10434",
+    "engine_note": "llama.cpp b10434",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "bf16",
+      "dense",
+      "long-context",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-27b-gguf-1",
     "category": "text",
     "model": "Ternary-Bonsai-27B",
     "quant": "Ternary 2-bit",
-    "engine": "PrismML llama.cpp fork（llama-bench, Metal）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "MacBook M5 Max",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -3999,14 +5039,23 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork; 原文: | Laptop (Apple M5 Max, Metal) | 7.2 GB | 44.0 | 830 |",
     "source_level": "宣称",
     "date": "2026-07-04",
-    "metric_en": "44.0 tok/s decode; 830 tok/s prefill"
+    "metric_en": "44.0 tok/s decode; 830 tok/s prefill",
+    "engine_raw": "PrismML llama.cpp fork（llama-bench, Metal）",
+    "engine_note": "PrismML llama.cpp fork（llama-bench, Metal）",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "2bit",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-27b-gguf-2",
     "category": "text",
     "model": "Ternary-Bonsai-27B",
     "quant": "Ternary 2-bit",
-    "engine": "PrismML llama.cpp fork（Metal）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "MacBook M5 Pro",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4020,14 +5069,23 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork; 原文: | Laptop (Apple M5 Pro, Metal) | 7.2 GB | 26.2 | 393 |",
     "source_level": "宣称",
     "date": "2026-07-04",
-    "metric_en": "26.2 tok/s decode; 393 tok/s prefill"
+    "metric_en": "26.2 tok/s decode; 393 tok/s prefill",
+    "engine_raw": "PrismML llama.cpp fork（Metal）",
+    "engine_note": "PrismML llama.cpp fork（Metal）",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "2bit",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-27b-gguf-3",
     "category": "text",
     "model": "Ternary-Bonsai-27B",
     "quant": "Ternary 2-bit",
-    "engine": "PrismML llama.cpp fork（Metal）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "MacBook M4 Pro",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4041,14 +5099,23 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork; 原文: | Laptop (Apple M4 Pro, Metal) | 7.2 GB | 18.0 | 125 |",
     "source_level": "宣称",
     "date": "2026-07-04",
-    "metric_en": "18.0 tok/s decode; 125 tok/s prefill"
+    "metric_en": "18.0 tok/s decode; 125 tok/s prefill",
+    "engine_raw": "PrismML llama.cpp fork（Metal）",
+    "engine_note": "PrismML llama.cpp fork（Metal）",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "2bit",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-prism-ml-bonsai-8b-gguf-1",
     "category": "text",
     "model": "Bonsai-8B",
     "quant": "1-bit Q1_0",
-    "engine": "PrismML llama.cpp fork（CUDA）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "RTX 4090",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 二手约 $2,214（2026-10-06 eBay 成交，见 prices.json）",
@@ -4062,14 +5129,21 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork; 原文: | RTX 4090 | llama.cpp CUDA | 368 | 59 | **6.2x** | 11,809 | 10,453 |",
     "source_level": "宣称",
     "date": "2026-03-18",
-    "metric_en": "368 tok/s decode; 11809 tok/s prefill"
+    "metric_en": "368 tok/s decode; 11809 tok/s prefill",
+    "engine_raw": "PrismML llama.cpp fork（CUDA）",
+    "engine_note": "PrismML llama.cpp fork（CUDA）",
+    "model_family": "Bonsai",
+    "tags": [
+      "1bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-prism-ml-bonsai-8b-gguf-2",
     "category": "text",
     "model": "Bonsai-8B",
     "quant": "1-bit Q1_0",
-    "engine": "PrismML llama.cpp fork（CUDA）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "RTX 3060 Laptop",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": null,
@@ -4083,14 +5157,21 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork; 原文: | RTX 3060 Laptop | llama.cpp CUDA | 81 | 3.5¹ | **23x**¹ | 1,871 | 94¹ |",
     "source_level": "宣称",
     "date": "2026-03-18",
-    "metric_en": "81 tok/s decode; 1871 tok/s prefill"
+    "metric_en": "81 tok/s decode; 1871 tok/s prefill",
+    "engine_raw": "PrismML llama.cpp fork（CUDA）",
+    "engine_note": "PrismML llama.cpp fork（CUDA）",
+    "model_family": "Bonsai",
+    "tags": [
+      "1bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-prism-ml-bonsai-8b-gguf-3",
     "category": "text",
     "model": "Bonsai-8B",
     "quant": "1-bit Q1_0",
-    "engine": "PrismML llama.cpp fork（Metal）",
+    "engine": "llama.cpp (PrismML fork)",
     "hardware": "MacBook M4 Pro 48GB",
     "hardware_family": "Mac",
     "hardware_cost_text": "$2,399（MBP14 M4 Pro 48GB 定价，见 prices.json）",
@@ -4104,14 +5185,21 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork; 原文: | M4 Pro 48 GB | llama.cpp Metal | 85 | 16 | **5.4x** | 498 | 490 |",
     "source_level": "宣称",
     "date": "2026-03-18",
-    "metric_en": "85 tok/s decode; 498 tok/s prefill"
+    "metric_en": "85 tok/s decode; 498 tok/s prefill",
+    "engine_raw": "PrismML llama.cpp fork（Metal）",
+    "engine_note": "PrismML llama.cpp fork（Metal）",
+    "model_family": "Bonsai",
+    "tags": [
+      "1bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-prism-ml-bonsai-8b-gguf-4",
     "category": "text",
     "model": "Bonsai-8B",
     "quant": "1-bit Q1_0",
-    "engine": "llama.cpp OpenCL",
+    "engine": "llama.cpp",
     "hardware": "Samsung S25 Ultra",
     "hardware_family": "其他",
     "hardware_cost_text": null,
@@ -4125,14 +5213,21 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML llama.cpp fork; 原文: | Samsung S25 Ultra | llama.cpp OpenCL | 19.6 | — | — | 30.4 | — |",
     "source_level": "宣称",
     "date": "2026-03-18",
-    "metric_en": "19.6 tok/s decode; 30.4 tok/s prefill"
+    "metric_en": "19.6 tok/s decode; 30.4 tok/s prefill",
+    "engine_raw": "llama.cpp OpenCL",
+    "engine_note": "llama.cpp OpenCL",
+    "model_family": "Bonsai",
+    "tags": [
+      "1bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-edge0-edge0-35b-a3b-preview-1",
     "category": "text",
     "model": "Edge0-35B-A3B-preview",
     "quant": "4-bit（流式专家）",
-    "engine": "edge0（MLX 后端）",
+    "engine": "edge0",
     "hardware": "Mac mini M4 Pro 24GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4146,14 +5241,22 @@
     "source_note": "HF 模型卡（作者自报）; 生成 14.9–17.7；读入冷/热 113/140；峰值活动内存 2.9 GiB; 原文: | 14.9–17.7 tok/s | 113 / 140 tok/s | 2.9 GiB |",
     "source_level": "宣称",
     "date": "2026-09-08",
-    "metric_en": "14.9 tok/s decode; 140 tok/s prefill"
+    "metric_en": "14.9 tok/s decode; 140 tok/s prefill",
+    "engine_raw": "edge0（MLX 后端）",
+    "engine_note": "edge0（MLX 后端）",
+    "model_family": "Edge0",
+    "tags": [
+      "4bit",
+      "MoE",
+      "offload"
+    ]
   },
   {
     "id": "hf-youssofal-qwen3-8-27b-mtplx-optimized-speed-1",
     "category": "text",
     "model": "Qwen3.8-27B-MTPLX-Optimized-Speed",
     "quant": "MTPLX Optimized Speed（MLX + MTP）",
-    "engine": "MTPLX 2.10.0",
+    "engine": "MTPLX",
     "hardware": "MacBook Pro M5 Max",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4167,14 +5270,22 @@
     "source_note": "HF 模型卡（作者自报）; 87.6 为改写刚写过文件的有利场景; 改写已写文件，最有利场景; 原文: | Optimized Speed rewriting a file it just wrote, stock settings (MTPLX 2.10.0) | 87.6 |",
     "source_level": "宣称",
     "date": "2026-08-14",
-    "metric_en": "87.6 tok/s decode"
+    "metric_en": "87.6 tok/s decode",
+    "engine_raw": "MTPLX 2.10.0",
+    "engine_note": "MTPLX 2.10.0",
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-youssofal-qwen3-8-27b-mtplx-optimized-speed-2",
     "category": "text",
     "model": "Qwen3.8-27B-MTPLX-Optimized-Speed",
     "quant": "MTPLX Optimized Speed",
-    "engine": "MTPLX 2.10.0",
+    "engine": "MTPLX",
     "hardware": "MacBook Pro M5 Max",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4188,14 +5299,22 @@
     "source_note": "HF 模型卡（作者自报）; 87.6 为改写刚写过文件的有利场景; 原文: | Optimized Speed on a 3k-token chat answer (MTPLX 2.10.0) | 64.3 |",
     "source_level": "宣称",
     "date": "2026-08-14",
-    "metric_en": "64.3 tok/s decode"
+    "metric_en": "64.3 tok/s decode",
+    "engine_raw": "MTPLX 2.10.0",
+    "engine_note": "MTPLX 2.10.0",
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-youssofal-qwen3-8-flash-next-mtplx-optimized-speed-1",
     "category": "text",
     "model": "Qwen3.8-Flash-Next-MTPLX-Optimized-Speed",
     "quant": "MTPLX Optimized Speed（MTP）",
-    "engine": "MTPLX 2.11.3 serve",
+    "engine": "MTPLX",
     "hardware": "MacBook Pro M5 Max 128GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4209,14 +5328,22 @@
     "source_note": "HF 模型卡（作者自报）; 原文: | Coding task, MTP speculative decode (the default) | 73.5 |",
     "source_level": "宣称",
     "date": "2026-08-28",
-    "metric_en": "73.5 tok/s decode"
+    "metric_en": "73.5 tok/s decode",
+    "engine_raw": "MTPLX 2.11.3 serve",
+    "engine_note": "MTPLX 2.11.3 serve",
+    "model_family": "Qwen",
+    "tags": [
+      "long-context",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-youssofal-qwen3-8-flash-next-mtplx-optimized-speed-2",
     "category": "text",
     "model": "Qwen3.8-Flash-Next-MTPLX-Optimized-Speed",
     "quant": "同上，关 MTP",
-    "engine": "MTPLX 2.11.3 serve",
+    "engine": "MTPLX",
     "hardware": "MacBook Pro M5 Max 128GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4230,14 +5357,22 @@
     "source_note": "HF 模型卡（作者自报）; 原文: | Same task, plain autoregressive | 43.8 |",
     "source_level": "宣称",
     "date": "2026-08-28",
-    "metric_en": "43.8 tok/s decode"
+    "metric_en": "43.8 tok/s decode",
+    "engine_raw": "MTPLX 2.11.3 serve",
+    "engine_note": "MTPLX 2.11.3 serve",
+    "model_family": "Qwen",
+    "tags": [
+      "long-context",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-youssofal-qwen3-8-flash-next-mtplx-optimized-speed-3",
     "category": "text",
     "model": "Qwen3.8-Flash-Next-MTPLX-Optimized-Speed",
     "quant": "MTPLX Optimized Speed",
-    "engine": "MTPLX 2.11.3",
+    "engine": "MTPLX",
     "hardware": "MacBook Pro M5 Max 128GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4251,14 +5386,22 @@
     "source_note": "HF 模型卡（作者自报）; 200K 上下文；2.12.0 下 65K 提示后生成 63.5、读入 1,094; 原文: | 200k-token OpenCode turn, warm, mean of two runs | 50.3 |",
     "source_level": "宣称",
     "date": "2026-08-28",
-    "metric_en": "50.3 tok/s decode"
+    "metric_en": "50.3 tok/s decode",
+    "engine_raw": "MTPLX 2.11.3",
+    "engine_note": "MTPLX 2.11.3",
+    "model_family": "Qwen",
+    "tags": [
+      "long-context",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-8b-mlx-2bit-1",
     "category": "text",
     "model": "Ternary-Bonsai-8B",
     "quant": "Ternary 2-bit",
-    "engine": "MLX (Python)",
+    "engine": "MLX",
     "hardware": "MacBook M4 Pro 48GB",
     "hardware_family": "Mac",
     "hardware_cost_text": "$2,399（MBP14 M4 Pro 48GB 定价，见 prices.json）",
@@ -4272,7 +5415,15 @@
     "source_note": "HF 模型卡（作者自报）; 原文: | M4 Pro 48 GB | MLX (Python) | 460 | 83 | 16 | **5.2x** |",
     "source_level": "宣称",
     "date": "2026-04-13",
-    "metric_en": "83 tok/s decode; 460 tok/s prefill"
+    "metric_en": "83 tok/s decode; 460 tok/s prefill",
+    "engine_raw": "MLX (Python)",
+    "engine_note": "MLX (Python)",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "2bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-8b-mlx-2bit-2",
@@ -4293,14 +5444,20 @@
     "source_note": "HF 模型卡（作者自报）; 原文: | iPhone 17 Pro Max | MLX Swift | 363 | 27 | 14 | **1.9x** |",
     "source_level": "宣称",
     "date": "2026-04-13",
-    "metric_en": "27 tok/s decode; 363 tok/s prefill"
+    "metric_en": "27 tok/s decode; 363 tok/s prefill",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "2bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-prism-ml-bonsai-8b-mlx-1bit-1",
     "category": "text",
     "model": "Bonsai-8B",
     "quant": "1-bit g128",
-    "engine": "MLX (Python)",
+    "engine": "MLX",
     "hardware": "MacBook M4 Pro 48GB",
     "hardware_family": "Mac",
     "hardware_cost_text": "$2,399（MBP14 M4 Pro 48GB 定价，见 prices.json）",
@@ -4314,14 +5471,21 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML MLX / mlx-swift fork; 原文: | M4 Pro 48 GB | MLX (Python) | 131 | 16 | **8.4x** | 472 | 434 |",
     "source_level": "宣称",
     "date": "2026-03-18",
-    "metric_en": "131 tok/s decode; 472 tok/s prefill"
+    "metric_en": "131 tok/s decode; 472 tok/s prefill",
+    "engine_raw": "MLX (Python)",
+    "engine_note": "MLX (Python)",
+    "model_family": "Bonsai",
+    "tags": [
+      "1bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-prism-ml-bonsai-8b-mlx-1bit-2",
     "category": "text",
     "model": "Bonsai-8B",
     "quant": "1-bit g128",
-    "engine": "PrismML mlx-swift fork",
+    "engine": "MLX Swift (PrismML fork)",
     "hardware": "iPhone 17 Pro Max",
     "hardware_family": "其他",
     "hardware_cost_text": null,
@@ -4335,14 +5499,21 @@
     "source_note": "HF 模型卡（作者自报）; 需 PrismML MLX / mlx-swift fork; 原文: | Token generation | 44 | 14 | **3.1x** | / | Prompt processing | 377 | 348 |",
     "source_level": "宣称",
     "date": "2026-03-18",
-    "metric_en": "44 tok/s decode; 377 tok/s prefill"
+    "metric_en": "44 tok/s decode; 377 tok/s prefill",
+    "engine_raw": "PrismML mlx-swift fork",
+    "engine_note": "PrismML mlx-swift fork",
+    "model_family": "Bonsai",
+    "tags": [
+      "1bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-alesha-pro-qwen3-8-27b-s-mirai-gguf-1",
     "category": "text",
     "model": "Qwen3.8-27B-S-mirai",
     "quant": "S-mirai GGUF，128K q4_0 KV",
-    "engine": "llama.cpp-mirai-s fork",
+    "engine": "llama.cpp (mirai-s fork)",
     "hardware": "RTX 3090（显存限制 12GB，PCIe 3.0）",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": null,
@@ -4356,14 +5527,22 @@
     "source_note": "HF 模型卡（作者自报）; 62K 时 34.6；读入为 6.9K 提示; 原文: | 12 GB: 128K, q4_0 KV, `-ub 1024` | 11.3 GB | 39.7 tok/s | 34.6 tok/s | 1008 tok/s |",
     "source_level": "宣称",
     "date": "2026-09-26",
-    "metric_en": "39.7 tok/s decode; 1008 tok/s prefill"
+    "metric_en": "39.7 tok/s decode; 1008 tok/s prefill",
+    "engine_raw": "llama.cpp-mirai-s fork",
+    "engine_note": "llama.cpp-mirai-s fork",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-youssofal-qwen3-8-27b-mtplx-optimized-quality-1",
     "category": "text",
     "model": "Qwen3.8-27B-MTPLX-Optimized-Quality",
     "quant": "MTPLX Optimized Quality",
-    "engine": "MTPLX Mac app（2.11.3 测量节）",
+    "engine": "MTPLX",
     "hardware": "MacBook Pro M5 Max",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4377,14 +5556,22 @@
     "source_note": "HF 模型卡（作者自报）; 原文: | Coding task, medium reasoning, inside the MTPLX Mac app | 48.3 |",
     "source_level": "宣称",
     "date": "2026-08-14",
-    "metric_en": "48.3 tok/s decode"
+    "metric_en": "48.3 tok/s decode",
+    "engine_raw": "MTPLX Mac app（2.11.3 测量节）",
+    "engine_note": "MTPLX Mac app（2.11.3 测量节）",
+    "model_family": "Qwen",
+    "tags": [
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-mlx-community-qwen3-5-27b-claude-4-6-opus-distilled-mlx-4bit-1",
     "category": "text",
     "model": "Qwen3.5-27B-Claude-4.6-Opus-Distilled",
     "quant": "MLX 4-bit（4.501 bpw）",
-    "engine": "mlx-lm 0.30.7",
+    "engine": "MLX",
     "hardware": "Mac M4 Pro 64GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4398,7 +5585,14 @@
     "source_note": "HF 模型卡（作者自报）; 峰值内存 15.6 GB; 原文: | Generation speed | 15.7 tokens/sec | / | Prompt ingestion | 86.5 tokens/sec |",
     "source_level": "宣称",
     "date": "2026-03-04",
-    "metric_en": "15.7 tok/s decode; 86.5 tok/s prefill"
+    "metric_en": "15.7 tok/s decode; 86.5 tok/s prefill",
+    "engine_raw": "mlx-lm 0.30.7",
+    "engine_note": "mlx-lm 0.30.7",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-carypalmer-ternary-bonsai-2-27b-262k-gguf-1",
@@ -4419,7 +5613,16 @@
     "source_note": "HF 模型卡（作者自报）; 4K 上下文; 原文: | 4k tokens of context | **102** | 102 | 1,173 |",
     "source_level": "宣称",
     "date": "2026-10-07",
-    "metric_en": "102 tok/s decode; 1173 tok/s prefill"
+    "metric_en": "102 tok/s decode; 1173 tok/s prefill",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "8bit",
+      "dense",
+      "long-context",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-carypalmer-ternary-bonsai-2-27b-262k-gguf-2",
@@ -4440,7 +5643,13 @@
     "source_note": "HF 模型卡（作者自报）; 32K；代码 175; 原文: | 32k | **78** | 175 | 1,031 |",
     "source_level": "宣称",
     "date": "2026-10-07",
-    "metric_en": "78 tok/s decode; 1031 tok/s prefill"
+    "metric_en": "78 tok/s decode; 1031 tok/s prefill",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-carypalmer-ternary-bonsai-2-27b-262k-gguf-3",
@@ -4461,7 +5670,13 @@
     "source_note": "HF 模型卡（作者自报）; 258K 窗口末端; 原文: | 258k (the window's end) | **8.6** | 12.1 | 436 |",
     "source_level": "宣称",
     "date": "2026-10-07",
-    "metric_en": "8.6 tok/s decode; 436 tok/s prefill"
+    "metric_en": "8.6 tok/s decode; 436 tok/s prefill",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "dense",
+      "long-context"
+    ]
   },
   {
     "id": "hf-carypalmer-ternary-bonsai-2-27b-262k-gguf-4",
@@ -4482,14 +5697,23 @@
     "source_note": "HF 模型卡（作者自报）; 32K 时 43.1；同时驱动桌面; 原文: Measured on an RTX 2060 SUPER ... 51.2 / 43.1 tok/s at 4k / 32k",
     "source_level": "宣称",
     "date": "2026-10-07",
-    "metric_en": "51.2 tok/s decode"
+    "metric_en": "51.2 tok/s decode",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "4bit",
+      "dense",
+      "long-context",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-youssofal-ternary-bonsai-2-27b-mtplx-optimized-speed-1",
     "category": "text",
     "model": "Ternary-Bonsai-2-27B-MTPLX-Optimized-Speed",
     "quant": "MTPLX Optimized Speed",
-    "engine": "MTPLX 2.12.0",
+    "engine": "MTPLX",
     "hardware": "MacBook Pro M5 Max 128GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4503,14 +5727,23 @@
     "source_note": "HF 模型卡（作者自报）; 4K 提示后; 原文: | 4,061 tokens | 64.4 tok/s | 52.6 tok/s | 11.4 and 23.9 GB |",
     "source_level": "宣称",
     "date": "2026-09-22",
-    "metric_en": "64.4 tok/s decode"
+    "metric_en": "64.4 tok/s decode",
+    "engine_raw": "MTPLX 2.12.0",
+    "engine_note": "MTPLX 2.12.0",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-youssofal-ternary-bonsai-2-27b-mtplx-optimized-speed-2",
     "category": "text",
     "model": "Ternary-Bonsai-2-27B-MTPLX-Optimized-Speed",
     "quant": "同上",
-    "engine": "MTPLX 2.12.0",
+    "engine": "MTPLX",
     "hardware": "MacBook Pro M5 Max 128GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4524,14 +5757,23 @@
     "source_note": "HF 模型卡（作者自报）; 16K 提示后; 原文: | 16,350 tokens | 57.1 tok/s | 51.0 tok/s | 14.6 and 27.0 GB |",
     "source_level": "宣称",
     "date": "2026-09-22",
-    "metric_en": "57.1 tok/s decode"
+    "metric_en": "57.1 tok/s decode",
+    "engine_raw": "MTPLX 2.12.0",
+    "engine_note": "MTPLX 2.12.0",
+    "model_family": "Bonsai",
+    "tags": [
+      "ternary",
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-edge0-edge0-8b-a1b-preview-1",
     "category": "text",
     "model": "Edge0-8B-A1B-preview",
     "quant": "4-bit（流式）",
-    "engine": "edge0（MLX 后端）",
+    "engine": "edge0",
     "hardware": "Mac mini M4 Pro 24GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4545,14 +5787,22 @@
     "source_note": "HF 模型卡（作者自报）; 生成 23.9–25.3；读入冷/热 500/1428; 原文: | 23.9–25.3 tok/s | 500 / 1428 tok/s | 1.0 GiB |",
     "source_level": "宣称",
     "date": "2026-09-08",
-    "metric_en": "23.9 tok/s decode; 1428 tok/s prefill"
+    "metric_en": "23.9 tok/s decode; 1428 tok/s prefill",
+    "engine_raw": "edge0（MLX 后端）",
+    "engine_note": "edge0（MLX 后端）",
+    "model_family": "Edge0",
+    "tags": [
+      "4bit",
+      "MoE",
+      "offload"
+    ]
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1",
     "category": "text",
     "model": "Qwen3.6-35B-A3B-Escha-W2",
     "quant": "Escha W2（INT8=on）",
-    "engine": "SGLang（sglang/serve.sh）",
+    "engine": "SGLang",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -4566,7 +5816,15 @@
     "source_note": "HF 模型卡（作者自报）; 每行均在对应实体卡上用卡内命令测得; 4090 temperature 0 vs 0.6：218 vs 102 tok/s，温度影响大; 原文: | RTX 5090 | 32 GB | sm_120 | **283 tok/s**[^int8on] | 0.22 s | **~2,670 tok/s** @ bs 32 | 32k |",
     "source_level": "宣称",
     "date": "2026-07-22",
-    "metric_en": "283 tok/s decode"
+    "metric_en": "283 tok/s decode",
+    "engine_raw": "SGLang（sglang/serve.sh）",
+    "engine_note": "SGLang（sglang/serve.sh）",
+    "model_family": "Qwen",
+    "tags": [
+      "2bit",
+      "8bit",
+      "MoE"
+    ]
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-2",
@@ -4587,7 +5845,12 @@
     "source_note": "HF 模型卡（作者自报）; 每行均在对应实体卡上用卡内命令测得; 4090 temperature 0 vs 0.6：218 vs 102 tok/s，温度影响大; 原文: | RTX 4090 | 24 GB | sm_89 | **225 tok/s** | 0.26 s | **1,321 tok/s** @ bs 32 | 32k |",
     "source_level": "宣称",
     "date": "2026-07-22",
-    "metric_en": "225 tok/s decode"
+    "metric_en": "225 tok/s decode",
+    "model_family": "Qwen",
+    "tags": [
+      "2bit",
+      "MoE"
+    ]
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-3",
@@ -4608,7 +5871,12 @@
     "source_note": "HF 模型卡（作者自报）; 每行均在对应实体卡上用卡内命令测得; 4090 temperature 0 vs 0.6：218 vs 102 tok/s，温度影响大; 原文: | RTX 5080 | 16 GB | sm_120 | **212 tok/s** | 0.18 s @1k | 914 tok/s @ bs 16 | 8k × 16 streams |",
     "source_level": "宣称",
     "date": "2026-07-22",
-    "metric_en": "212 tok/s decode"
+    "metric_en": "212 tok/s decode",
+    "model_family": "Qwen",
+    "tags": [
+      "2bit",
+      "MoE"
+    ]
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-4",
@@ -4629,7 +5897,12 @@
     "source_note": "HF 模型卡（作者自报）; 每行均在对应实体卡上用卡内命令测得; 4090 temperature 0 vs 0.6：218 vs 102 tok/s，温度影响大; 原文: | RTX 3090 | 24 GB | sm_86 | **154 tok/s** | 0.63 s | 390 tok/s @ bs 16 | 32k |",
     "source_level": "宣称",
     "date": "2026-07-22",
-    "metric_en": "154 tok/s decode"
+    "metric_en": "154 tok/s decode",
+    "model_family": "Qwen",
+    "tags": [
+      "2bit",
+      "MoE"
+    ]
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-5",
@@ -4650,14 +5923,19 @@
     "source_note": "HF 模型卡（作者自报）; 每行均在对应实体卡上用卡内命令测得; 4090 temperature 0 vs 0.6：218 vs 102 tok/s，温度影响大; 原文: | RTX 5060 Ti | 16 GB | sm_120 | **128 tok/s** | 0.52 s @1k | 387 tok/s @ bs 16 | 8k × 16 streams |",
     "source_level": "宣称",
     "date": "2026-07-22",
-    "metric_en": "128 tok/s decode"
+    "metric_en": "128 tok/s decode",
+    "model_family": "Qwen",
+    "tags": [
+      "2bit",
+      "MoE"
+    ]
   },
   {
     "id": "hf-conwayresearch-underdog-27b-1-0-1",
     "category": "text",
     "model": "Underdog-27B-1.0",
     "quant": "MLX 4-bit",
-    "engine": "MLX 0.32.0 / MLX-LM 0.31.3",
+    "engine": "MLX",
     "hardware": "MacBook M5 Max 40C 48GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4671,14 +5949,21 @@
     "source_note": "HF 模型卡（作者自报）; 原文: | Email writing | 33.1 tokens/s | 80.6 tokens/s | 2.44x |",
     "source_level": "宣称",
     "date": "2026-09-30",
-    "metric_en": "33.1 tok/s decode"
+    "metric_en": "33.1 tok/s decode",
+    "engine_raw": "MLX 0.32.0 / MLX-LM 0.31.3",
+    "engine_note": "MLX 0.32.0 / MLX-LM 0.31.3",
+    "model_family": "Other",
+    "tags": [
+      "4bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-conwayresearch-underdog-27b-1-0-2",
     "category": "text",
     "model": "Underdog-27B-1.0",
     "quant": "MLX 4-bit + DFlash2",
-    "engine": "Splash 1.1.0 + DFlash2",
+    "engine": "Splash",
     "hardware": "MacBook M5 Max 40C 48GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4692,14 +5977,22 @@
     "source_note": "HF 模型卡（作者自报）; Python 编码 130.1（3.94x），长文摘要 71.4; 原文: | Email writing | 33.1 tokens/s | 80.6 tokens/s | 2.44x |",
     "source_level": "宣称",
     "date": "2026-09-30",
-    "metric_en": "80.6 tok/s decode"
+    "metric_en": "80.6 tok/s decode",
+    "engine_raw": "Splash 1.1.0 + DFlash2",
+    "engine_note": "Splash 1.1.0 + DFlash2",
+    "model_family": "Other",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative"
+    ]
   },
   {
     "id": "hf-mlx-community-arex-2-6bit-1",
     "category": "text",
     "model": "AREX-2",
     "quant": "MLX 6-bit",
-    "engine": "MLX（helper 未说明）",
+    "engine": "MLX",
     "hardware": "Mac mini M4 Pro 64GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4713,7 +6006,13 @@
     "source_note": "HF 模型卡（作者自报）; 作者注: 'This is a small test on one Mac, not a benchmark'；speed helper 未说明; 开 helper 19；读入约 90 tok/s; 原文: | **6-bit** | **10 tokens/s** | **19 tokens/s** | ...",
     "source_level": "宣称",
     "date": "2026-10-06",
-    "metric_en": "10 tok/s decode; 90 tok/s prefill"
+    "metric_en": "10 tok/s decode; 90 tok/s prefill",
+    "engine_raw": "MLX（helper 未说明）",
+    "engine_note": "MLX（helper 未说明）",
+    "model_family": "Other",
+    "tags": [
+      "6bit"
+    ]
   },
   {
     "id": "hf-mlx-community-arex-2-6bit-2",
@@ -4734,14 +6033,18 @@
     "source_note": "HF 模型卡（作者自报）; 作者注: 'This is a small test on one Mac, not a benchmark'；speed helper 未说明; 开 helper 27; 原文: | 4-bit | 14 tokens/s | 27 tokens/s | 91.4% |",
     "source_level": "宣称",
     "date": "2026-10-06",
-    "metric_en": "14 tok/s decode; 90 tok/s prefill"
+    "metric_en": "14 tok/s decode; 90 tok/s prefill",
+    "model_family": "Other",
+    "tags": [
+      "4bit"
+    ]
   },
   {
     "id": "hf-kujira-underdog-saluki-27b-1-0-mtp-gguf-1",
     "category": "text",
     "model": "Underdog-Saluki-27B-1.0-MTP",
     "quant": "MTP GGUF，不开 --spec-type",
-    "engine": "llama.cpp 03aa006（b11493 之后）",
+    "engine": "llama.cpp",
     "hardware": "RTX 3080 12GB（WSL2）",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": null,
@@ -4755,14 +6058,22 @@
     "source_note": "HF 模型卡（作者自报）; 原文: | Generation (mean of 6) | 41.2 tok/s | 40.7 tok/s | **66.2 tok/s** (58–75) |",
     "source_level": "宣称",
     "date": "2026-10-08",
-    "metric_en": "40.7 tok/s decode"
+    "metric_en": "40.7 tok/s decode",
+    "engine_raw": "llama.cpp 03aa006（b11493 之后）",
+    "engine_note": "llama.cpp 03aa006（b11493 之后）",
+    "model_family": "Other",
+    "tags": [
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-kujira-underdog-saluki-27b-1-0-mtp-gguf-2",
     "category": "text",
     "model": "Underdog-Saluki-27B-1.0-MTP",
     "quant": "MTP 开",
-    "engine": "llama.cpp 03aa006",
+    "engine": "llama.cpp",
     "hardware": "RTX 3080 12GB（WSL2）",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": null,
@@ -4776,14 +6087,22 @@
     "source_note": "HF 模型卡（作者自报）; 原文: 同上行，MTP on 66.2（58–75），接受率 62–96%，VRAM 11.5 GB",
     "source_level": "宣称",
     "date": "2026-10-08",
-    "metric_en": "66.2 tok/s decode"
+    "metric_en": "66.2 tok/s decode",
+    "engine_raw": "llama.cpp 03aa006",
+    "engine_note": "llama.cpp 03aa006",
+    "model_family": "Other",
+    "tags": [
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-opensourcewtf-deepseek-v4-1-flash-streaming-repack-exl3-3-0bpw-1",
     "category": "text",
     "model": "DeepSeek-V4.1-Flash-streaming-repack-exl3-3.0bpw",
     "quant": "EXL3 3.0bpw 专家流式（slot cache）",
-    "engine": "mlx-serve + mlx-stream 插件 4f42e79（EXL3 Metal kernels）",
+    "engine": "mlx-serve",
     "hardware": "MacBook M5 Max 128GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4797,14 +6116,23 @@
     "source_note": "HF 模型卡（作者自报）; 1K 提示; 原文: | 1,024 | 81.3 | 12.6 | 39.9 | 148 | 167 | 107.2 |",
     "source_level": "宣称",
     "date": "2026-10-06",
-    "metric_en": "39.9 tok/s decode; 81.3 tok/s prefill"
+    "metric_en": "39.9 tok/s decode; 81.3 tok/s prefill",
+    "engine_raw": "mlx-serve + mlx-stream 插件 4f42e79（EXL3 Metal kernels）",
+    "engine_note": "mlx-serve + mlx-stream 插件 4f42e79（EXL3 Metal kernels）",
+    "model_family": "DeepSeek",
+    "tags": [
+      "3bit",
+      "MoE",
+      "long-context",
+      "offload"
+    ]
   },
   {
     "id": "hf-opensourcewtf-deepseek-v4-1-flash-streaming-repack-exl3-3-0bpw-2",
     "category": "text",
     "model": "DeepSeek-V4.1-Flash-streaming-repack-exl3-3.0bpw",
     "quant": "同上",
-    "engine": "同上",
+    "engine": "mlx-serve",
     "hardware": "MacBook M5 Max 128GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4818,14 +6146,22 @@
     "source_note": "HF 模型卡（作者自报）; 256K 提示，TTFT 574.5 s; 原文: | 262,144 | 456.3 | 574.5 | 27.1 | 115 | 161 | 106.4 |",
     "source_level": "宣称",
     "date": "2026-10-06",
-    "metric_en": "27.1 tok/s decode; 456.3 tok/s prefill"
+    "metric_en": "27.1 tok/s decode; 456.3 tok/s prefill",
+    "engine_raw": "mlx-serve + mlx-stream 插件 4f42e79（EXL3 Metal kernels）",
+    "engine_note": "mlx-serve + mlx-stream 插件 4f42e79（EXL3 Metal kernels）",
+    "model_family": "DeepSeek",
+    "tags": [
+      "3bit",
+      "long-context",
+      "offload"
+    ]
   },
   {
     "id": "hf-opensourcewtf-deepseek-v4-1-flash-streaming-repack-exl3-3-0bpw-3",
     "category": "text",
     "model": "DeepSeek-V4.1-Flash-streaming-repack-exl3-3.0bpw",
     "quant": "同上",
-    "engine": "同上",
+    "engine": "mlx-serve",
     "hardware": "MacBook M5 Max 128GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4839,14 +6175,22 @@
     "source_note": "HF 模型卡（作者自报）; 约 1M 提示，TTFT 3,988.9 s; 原文: | 1,047,488 | 262.6 | 3,988.9 | 11.1 | 82 | 143 | 103.7 |",
     "source_level": "宣称",
     "date": "2026-10-06",
-    "metric_en": "11.1 tok/s decode; 262.6 tok/s prefill"
+    "metric_en": "11.1 tok/s decode; 262.6 tok/s prefill",
+    "engine_raw": "mlx-serve + mlx-stream 插件 4f42e79（EXL3 Metal kernels）",
+    "engine_note": "mlx-serve + mlx-stream 插件 4f42e79（EXL3 Metal kernels）",
+    "model_family": "DeepSeek",
+    "tags": [
+      "3bit",
+      "long-context",
+      "offload"
+    ]
   },
   {
     "id": "hf-final-bench-pocket-35b-gguf-1",
     "category": "text",
     "model": "POCKET-35B",
     "quant": "IQ1_M",
-    "engine": "llama.cpp Metal（tg64/pp128）",
+    "engine": "llama.cpp",
     "hardware": "MacBook M3 Pro 18GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -4860,14 +6204,21 @@
     "source_note": "HF 模型卡（作者自报）; CPU 8 线程 13.8；Q2_K 纯 CPU 19.5; 原文: | Metal generate (tg64) | **25.4 tok/s** | 12.8 | 🟢 1.99× | / | Metal prompt (pp128) | **240.7 tok/s** |",
     "source_level": "宣称",
     "date": "2026-07-22",
-    "metric_en": "25.4 tok/s decode; 240.7 tok/s prefill"
+    "metric_en": "25.4 tok/s decode; 240.7 tok/s prefill",
+    "engine_raw": "llama.cpp Metal（tg64/pp128）",
+    "engine_note": "llama.cpp Metal（tg64/pp128）",
+    "model_family": "Other",
+    "tags": [
+      "1bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-peasantsmith-glm-5-3-flash-maya-gguf-1",
     "category": "text",
     "model": "GLM-5.3-Flash-Maya",
     "quant": "Maya-S + MTP",
-    "engine": "Project Maya（v1.0.15 读入至 670）",
+    "engine": "Project Maya",
     "hardware": "2× Tesla V100 32GB + 30GB RAM",
     "hardware_family": "二手数据中心卡",
     "hardware_cost_text": "仅显卡 2×约 $650 = 约 $1,300（二手，见 prices.json）",
@@ -4881,7 +6232,15 @@
     "source_note": "HF 模型卡（作者自报）; 原文为 'up to'（峰值）; 峰值；60K 上下文仍保持; 原文: Maya-S on two Tesla V100 32 GB (30 GB RAM) with Project Maya: decode ... up to 40 tokens/s ... prefill ... up to 560",
     "source_level": "宣称",
     "date": "2026-10-07",
-    "metric_en": "40 tok/s decode; 560 tok/s prefill"
+    "metric_en": "40 tok/s decode; 560 tok/s prefill",
+    "engine_raw": "Project Maya（v1.0.15 读入至 670）",
+    "engine_note": "Project Maya（v1.0.15 读入至 670）",
+    "model_family": "GLM",
+    "tags": [
+      "speculative",
+      "MTP",
+      "multi-GPU"
+    ]
   },
   {
     "id": "hf-peasantsmith-glm-5-3-flash-maya-gguf-2",
@@ -4902,14 +6261,16 @@
     "source_note": "HF 模型卡（作者自报）; 原文为 'up to'（峰值）; 峰值; 原文: On one Tesla V100 32 GB with 64 GB of RAM: decode up to 19 tokens/s, prefill up to 370 tokens/s",
     "source_level": "宣称",
     "date": "2026-10-07",
-    "metric_en": "19 tok/s decode; 370 tok/s prefill"
+    "metric_en": "19 tok/s decode; 370 tok/s prefill",
+    "model_family": "GLM",
+    "tags": []
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-1",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "ShapeLearn 混合量化 GPU-1（2.56 bpw，标签 IQ2_XXS）",
-    "engine": "llama.cpp（-np 1 -fa on）",
+    "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -4923,14 +6284,21 @@
     "source_note": "HF 模型卡（作者自报）; 思考模式采样；混合 coding/math/IF/常识 prompt; 单流、无投机; 原文: | GPU-1 | 2.56 | 119 | 164 (1.38x) | 176 (1.47x) |",
     "source_level": "宣称",
     "date": "2026-08-18",
-    "metric_en": "119.0 tok/s decode"
+    "metric_en": "119.0 tok/s decode",
+    "engine_raw": "llama.cpp（-np 1 -fa on）",
+    "engine_note": "llama.cpp（-np 1 -fa on）",
+    "model_family": "Qwen",
+    "tags": [
+      "2bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-2",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "ShapeLearn 混合量化 GPU-2（2.88 bpw，标签 IQ3_XXS）",
-    "engine": "llama.cpp（-np 1 -fa on）",
+    "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -4944,14 +6312,22 @@
     "source_note": "HF 模型卡（作者自报）; 思考模式采样；混合 coding/math/IF/常识 prompt; 单流、无投机; 原文: | GPU-2 | 2.88 | 111 | 157 (1.41x) | 176 (1.59x) |",
     "source_level": "宣称",
     "date": "2026-08-18",
-    "metric_en": "111.0 tok/s decode"
+    "metric_en": "111.0 tok/s decode",
+    "engine_raw": "llama.cpp（-np 1 -fa on）",
+    "engine_note": "llama.cpp（-np 1 -fa on）",
+    "model_family": "Qwen",
+    "tags": [
+      "2bit",
+      "3bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-3",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "ShapeLearn 混合量化 GPU-3（3.01 bpw，标签 IQ3_XS）",
-    "engine": "llama.cpp（-np 1 -fa on）",
+    "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -4965,14 +6341,21 @@
     "source_note": "HF 模型卡（作者自报）; 思考模式采样；混合 coding/math/IF/常识 prompt; 单流、无投机; 原文: | GPU-3 | 3.01 | 108 | 155 (1.44x) | 172 (1.59x) |",
     "source_level": "宣称",
     "date": "2026-08-18",
-    "metric_en": "108.0 tok/s decode"
+    "metric_en": "108.0 tok/s decode",
+    "engine_raw": "llama.cpp（-np 1 -fa on）",
+    "engine_note": "llama.cpp（-np 1 -fa on）",
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-4",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "ShapeLearn 混合量化 GPU-4（3.23 bpw，标签 IQ3_S）",
-    "engine": "llama.cpp（-np 1 -fa on）",
+    "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -4986,14 +6369,21 @@
     "source_note": "HF 模型卡（作者自报）; 思考模式采样；混合 coding/math/IF/常识 prompt; 单流、无投机; 原文: | GPU-4 | 3.23 | 104 | 148 (1.43x) | 170 (1.64x) |",
     "source_level": "宣称",
     "date": "2026-08-18",
-    "metric_en": "104.0 tok/s decode"
+    "metric_en": "104.0 tok/s decode",
+    "engine_raw": "llama.cpp（-np 1 -fa on）",
+    "engine_note": "llama.cpp（-np 1 -fa on）",
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-5",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "ShapeLearn 混合量化 GPU-5（3.84 bpw，标签 IQ4_XS）",
-    "engine": "llama.cpp（-np 1 -fa on）",
+    "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -5007,14 +6397,22 @@
     "source_note": "HF 模型卡（作者自报）; 思考模式采样；混合 coding/math/IF/常识 prompt; 单流、无投机; 原文: | GPU-5 | 3.84 |  94 | 147 (1.57x) | 167 (1.78x) |",
     "source_level": "宣称",
     "date": "2026-08-18",
-    "metric_en": "94.0 tok/s decode"
+    "metric_en": "94.0 tok/s decode",
+    "engine_raw": "llama.cpp（-np 1 -fa on）",
+    "engine_note": "llama.cpp（-np 1 -fa on）",
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "4bit",
+      "dense"
+    ]
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-6",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "GPU-1（2.56 bpw）+ DFlash2（7 draft）",
-    "engine": "llama.cpp ≥ b10658",
+    "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -5028,14 +6426,22 @@
     "source_note": "HF 模型卡（作者自报）; 思考模式采样；混合 coding/math/IF/常识 prompt; DFlash2 投机，纯文本; 原文: | GPU-1 | 2.56 | 119 | 164 (1.38x) | 176 (1.47x) |",
     "source_level": "宣称",
     "date": "2026-08-18",
-    "metric_en": "176.0 tok/s decode"
+    "metric_en": "176.0 tok/s decode",
+    "engine_raw": "llama.cpp ≥ b10658",
+    "engine_note": "llama.cpp ≥ b10658",
+    "model_family": "Qwen",
+    "tags": [
+      "2bit",
+      "dense",
+      "speculative"
+    ]
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-7",
     "category": "text",
     "model": "Qwen3.8-27B",
     "quant": "GPU-5（3.84 bpw）+ DFlash2（7 draft）",
-    "engine": "llama.cpp ≥ b10658",
+    "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -5049,14 +6455,22 @@
     "source_note": "HF 模型卡（作者自报）; 思考模式采样；混合 coding/math/IF/常识 prompt; DFlash2 投机，纯文本; 原文: | GPU-5 | 3.84 |  94 | 147 (1.57x) | 167 (1.78x) |",
     "source_level": "宣称",
     "date": "2026-08-18",
-    "metric_en": "167.0 tok/s decode"
+    "metric_en": "167.0 tok/s decode",
+    "engine_raw": "llama.cpp ≥ b10658",
+    "engine_note": "llama.cpp ≥ b10658",
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "dense",
+      "speculative"
+    ]
   },
   {
     "id": "hf-agentionai-qwen3-8-flash-next-gyro-gguf-1",
     "category": "text",
     "model": "Qwen3.8-Flash-Next-Gyro",
     "quant": "Gyro-S TQ1_0（27.64 GiB）",
-    "engine": "Strata rc1（agentionai，候选版）",
+    "engine": "Strata",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -5070,14 +6484,21 @@
     "source_note": "HF 模型卡（作者自报）; prose 140 / code 209 / JSON 221；prefill 为 16k prompt; 原文: | RTX 5090, 32 GB | Strata `rc1` (release candidate) | prose **140**, code 209, JSON 221 | 4,883 (16k prompt) | prose 114 |",
     "source_level": "宣称",
     "date": "2026-09-30",
-    "metric_en": "140.0 tok/s decode; 4883.0 tok/s prefill"
+    "metric_en": "140.0 tok/s decode; 4883.0 tok/s prefill",
+    "engine_raw": "Strata rc1（agentionai，候选版）",
+    "engine_note": "Strata rc1（agentionai，候选版）",
+    "model_family": "Qwen",
+    "tags": [
+      "ternary",
+      "long-context"
+    ]
   },
   {
     "id": "hf-agentionai-qwen3-8-flash-next-gyro-gguf-2",
     "category": "text",
     "model": "Qwen3.8-Flash-Next-Gyro",
     "quant": "Gyro-S TQ1_0（27.64 GiB）",
-    "engine": "agentionai/llama.cpp fork main（CUDA）",
+    "engine": "llama.cpp (agentionai fork)",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
@@ -5091,14 +6512,21 @@
     "source_note": "HF 模型卡（作者自报）; 开 MTP：JSON 210 / code 180；prefill 约值 pp2048; 原文: | RTX 5090, 32 GB | llama.cpp fork main, CUDA | **113** (MTP: JSON 210, code 180, copy 218) | ~3,000 (pp2048) |  |",
     "source_level": "宣称",
     "date": "2026-09-30",
-    "metric_en": "113.0 tok/s decode; 3000.0 tok/s prefill"
+    "metric_en": "113.0 tok/s decode; 3000.0 tok/s prefill",
+    "engine_raw": "agentionai/llama.cpp fork main（CUDA）",
+    "engine_note": "agentionai/llama.cpp fork main（CUDA）",
+    "model_family": "Qwen",
+    "tags": [
+      "ternary",
+      "long-context"
+    ]
   },
   {
     "id": "hf-agentionai-qwen3-8-flash-next-gyro-gguf-3",
     "category": "text",
     "model": "Qwen3.8-Flash-Next-Gyro",
     "quant": "Gyro-S TQ1_0",
-    "engine": "agentionai/llama.cpp fork（Vulkan）",
+    "engine": "llama.cpp (agentionai fork)",
     "hardware": "AMD Radeon AI PRO R9700 32GB",
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": null,
@@ -5112,14 +6540,21 @@
     "source_note": "HF 模型卡（作者自报）; code+MTP 70.6；prefill pp512; 原文: | Radeon AI PRO R9700, 32 GB | llama.cpp fork, Vulkan | 57.8 (code with MTP: 70.6) | 1,246 (pp512) |  |",
     "source_level": "宣称",
     "date": "2026-09-30",
-    "metric_en": "57.8 tok/s decode; 1246.0 tok/s prefill"
+    "metric_en": "57.8 tok/s decode; 1246.0 tok/s prefill",
+    "engine_raw": "agentionai/llama.cpp fork（Vulkan）",
+    "engine_note": "agentionai/llama.cpp fork（Vulkan）",
+    "model_family": "Qwen",
+    "tags": [
+      "ternary",
+      "long-context"
+    ]
   },
   {
     "id": "hf-agentionai-qwen3-8-flash-next-gyro-gguf-4",
     "category": "text",
     "model": "Qwen3.8-Flash-Next-Gyro",
     "quant": "Gyro-S TQ1_0",
-    "engine": "agentionai/llama.cpp fork（Vulkan）",
+    "engine": "llama.cpp (agentionai fork)",
     "hardware": "AMD Strix Halo",
     "hardware_family": "其他",
     "hardware_cost_text": null,
@@ -5133,14 +6568,21 @@
     "source_note": "HF 模型卡（作者自报）; MTP code 50 / JSON 55；Gyro-M 26.4; 原文: | AMD Strix Halo | llama.cpp fork, Vulkan | 31.7 (MTP: code 50, JSON 55) |  | 26.4 |",
     "source_level": "宣称",
     "date": "2026-09-30",
-    "metric_en": "31.7 tok/s decode"
+    "metric_en": "31.7 tok/s decode",
+    "engine_raw": "agentionai/llama.cpp fork（Vulkan）",
+    "engine_note": "agentionai/llama.cpp fork（Vulkan）",
+    "model_family": "Qwen",
+    "tags": [
+      "ternary",
+      "long-context"
+    ]
   },
   {
     "id": "hf-umixer-qwen3-8-flash-next-oq4e-mix6-mtp-1",
     "category": "text",
     "model": "Qwen3.8-Flash-Next-oQ4e-mix6-mtp",
     "quant": "oQ4e-mix6（U 形混合 4/6-bit）+ 6-bit MTP",
-    "engine": "oMLX 0.7.1.dev1",
+    "engine": "oMLX",
     "hardware": "MacBook M5 Max 128GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -5154,14 +6596,23 @@
     "source_note": "HF 模型卡（作者自报）; 有 v2 仓（umixer/...-v2），本仓为 v1; 7 档上下文（pp1199 到 pp122463）的平均；短 prompt tg 136.7，122k 时 67.0; 原文: | **Mean** | **75.7** | **84.4** | **2,581.4** | **2,377.1** | **−7.9%** |",
     "source_level": "宣称",
     "date": "2026-10-10",
-    "metric_en": "84.4 tok/s decode; 2377.1 tok/s prefill"
+    "metric_en": "84.4 tok/s decode; 2377.1 tok/s prefill",
+    "engine_raw": "oMLX 0.7.1.dev1",
+    "engine_note": "oMLX 0.7.1.dev1",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "6bit",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-osaurusai-allosaurus-v0-1-125b-a6b-jangh2-1",
     "category": "text",
     "model": "Allosaurus-v0.1-125B-A6B-JANGH2",
     "quant": "JANGH2（内存驻留 34.8 GiB）",
-    "engine": "Osaurus engine（预发布）",
+    "engine": "Osaurus",
     "hardware": "Apple M5 Max（内存未写，卡称面向 48GB Mac）",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -5175,14 +6626,21 @@
     "source_note": "HF 模型卡（作者自报）; ~4k prompt 后 decode 掉到 31.7（卡称预发布引擎已知问题）；prefill 902 为 ~4k prompt; 原文: | decode, short prompt | 46.5 tok/s | 53.1 tok/s |",
     "source_level": "宣称",
     "date": "2026-10-03",
-    "metric_en": "46.5 tok/s decode; 902.0 tok/s prefill"
+    "metric_en": "46.5 tok/s decode; 902.0 tok/s prefill",
+    "engine_raw": "Osaurus engine（预发布）",
+    "engine_note": "Osaurus engine（预发布）",
+    "model_family": "Other",
+    "tags": [
+      "MoE",
+      "long-context"
+    ]
   },
   {
     "id": "hf-atomicchat-qwen3-8-flash-next-gguf-1",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": "AD-3.84bpw-IQ4_XS-M64（内存 45.8 GB + SSD 39.1 GB）",
-    "engine": "llama.cpp（需支持 Qwen3.8-Flash-Next 的构建）",
+    "engine": "llama.cpp",
     "hardware": "MacBook M5 Max 64GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -5196,14 +6654,22 @@
     "source_note": "HF 模型卡（作者自报）; 文件大于内存，依赖 NVMe 随机读；量化档按 85 GB 总量对应 AD-3.84bpw 推断; 原文: Our 85 GB quant runs on an M5 Max with 64 GB of memory, with vision, at 36 tok/s.",
     "source_level": "宣称",
     "date": "2026-08-26",
-    "metric_en": "36.0 tok/s decode"
+    "metric_en": "36.0 tok/s decode",
+    "engine_raw": "llama.cpp（需支持 Qwen3.8-Flash-Next 的构建）",
+    "engine_note": "llama.cpp（需支持 Qwen3.8-Flash-Next 的构建）",
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "4bit",
+      "long-context"
+    ]
   },
   {
     "id": "hf-ddalcu-qwen3-8-flash-next-mlx-serve-mixed-4-8bit-1",
     "category": "text",
     "model": "Qwen3.8-Flash-Next-MLX-Serve-mixed-4",
     "quant": "mixed 4/8-bit（约 75 GB 驻留）",
-    "engine": "mlx-serve 26.8.11",
+    "engine": "mlx-serve",
     "hardware": "Mac Studio/MBP M4 Max 128GB",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -5217,14 +6683,22 @@
     "source_note": "HF 模型卡（作者自报）; 开 --mtp 78 tok/s（code +41%，prose 略慢）；数值为约值; 原文: Measured on an M4 Max 128 GB with mlx-serve 26.8.11: ~75 GB resident, decode ~60 tok/s serial and 78 tok/s with MTP",
     "source_level": "宣称",
     "date": "2026-08-27",
-    "metric_en": "60.0 tok/s decode; 730.0 tok/s prefill"
+    "metric_en": "60.0 tok/s decode; 730.0 tok/s prefill",
+    "engine_raw": "mlx-serve 26.8.11",
+    "engine_note": "mlx-serve 26.8.11",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "8bit",
+      "long-context"
+    ]
   },
   {
     "id": "hf-youssofal-qwen3-6-27b-mtplx-optimized-speed-1",
     "category": "text",
     "model": "Qwen3.6-27B-MTPLX-Optimized-Speed",
     "quant": "MLXCommunity 4-bit 主干 + 3-bit draft LM head（MTP depth 3）",
-    "engine": "MTPLX v0.1.0-preview",
+    "engine": "MTPLX",
     "hardware": "MacBook M5 Max",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -5238,14 +6712,24 @@
     "source_note": "HF 模型卡（作者自报）; 关思考模式，draft 温度 0.70，fanmax；内存未写; 原文: this artifact reached **63.056 tok/s** and **62.886 tok/s** at depth 3 on the long-code 192-token prompt",
     "source_level": "宣称",
     "date": "2026-05-03",
-    "metric_en": "63.056 tok/s decode"
+    "metric_en": "63.056 tok/s decode",
+    "engine_raw": "MTPLX v0.1.0-preview",
+    "engine_note": "MTPLX v0.1.0-preview",
+    "model_family": "Qwen",
+    "tags": [
+      "3bit",
+      "4bit",
+      "dense",
+      "speculative",
+      "MTP"
+    ]
   },
   {
     "id": "hf-ddalcu-qwen3-8-flash-next-mlx-serve-iq-mlx-4-7bpw-1",
     "category": "text",
     "model": "Qwen3.8-Flash-Next-MLX-Serve-iQ-MLX-4.7bpw",
     "quant": "iQ-MLX 4.7 bpw（校准 4-bit 专家 + 8-bit 其余，约 75 GB）",
-    "engine": "mlx-serve 26.10.1（MTP on）",
+    "engine": "mlx-serve",
     "hardware": "Mac Studio M5 Ultra",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
@@ -5259,6 +6743,17 @@
     "source_note": "HF 模型卡（作者自报）; 范围 149 到 162；内存未写（卡称 128GB Mac 可跑）; 原文: decode 157 tok/s median (149 to 162) against 166 (141 to 173) for the uncalibrated pack, prefill 5411 against 5369 tok/s.",
     "source_level": "宣称",
     "date": "2026-10-01",
-    "metric_en": "157.0 tok/s decode; 5411.0 tok/s prefill"
+    "metric_en": "157.0 tok/s decode; 5411.0 tok/s prefill",
+    "engine_raw": "mlx-serve 26.10.1（MTP on）",
+    "engine_note": "mlx-serve 26.10.1（MTP on）",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "8bit",
+      "MoE",
+      "long-context",
+      "speculative",
+      "MTP"
+    ]
   }
 ]

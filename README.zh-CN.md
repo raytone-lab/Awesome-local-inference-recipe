@@ -10,6 +10,8 @@
 
 - [图例](#图例)
 - [本月热门](#本月热门)
+- [按模型系列浏览](#按模型系列浏览)
+- [按引擎浏览](#按引擎浏览)
 - [第 1 档 · 2,500 美元以内](#第-1-档--2500-美元以内)
 - [第 2 档 · 2,500–7,000 美元](#第-2-档--25007000-美元)
 - [第 3 档 · 7,000–14,000 美元](#第-3-档--700014000-美元)
@@ -34,13 +36,73 @@
 X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 排序）。
 
 - **MiniMax H3** · ComfyUI — 笔记本 RTX 5090 24GB + 64GB RAM → 3 段 5s 衔接片段共 17 分钟 ✅ [@EndFolding79421](https://x.com/EndFolding79421/status/2102448683245502844) ♥149
-- **GLM 5.3（帖文原话 “GLM 5.3 Code”）** · oMLX（作者调优） — Mac Studio M5 Ultra → **87 tok/s** ✅ [@JamesMcPherson](https://x.com/JamesMcPherson/status/2104028051285672431) ♥106
+- **GLM 5.3（帖文原话 “GLM 5.3 Code”）** · oMLX — Mac Studio M5 Ultra → **87 tok/s** ✅ [@JamesMcPherson](https://x.com/JamesMcPherson/status/2104028051285672431) ♥106
 - **Qwen3.8-Flash-Next** · Strata — AMD Strix Halo 395 → **47.7 tok/s** ✅ [@no_stp_on_snek](https://x.com/no_stp_on_snek/status/2108296174994088177) ♥73
 - **Qwen3.8-Flash-Next** · Strata — 笔记本 RTX 5070 Ti 12GB + Intel 275HX + 64GB DDR5 + … → **51 tok/s** 🔁 [@jurlycat](https://x.com/jurlycat/status/2105165498967007621) ♥46
-- **Qwen3.8-Flash-Next** · Strata v0.1.42 — 2× RTX 3090 (48GB) + 64GB DDR5-6000 → **120 tok/s** ✅ [@geldeki](https://x.com/geldeki/status/2109208295957201171) ♥45
+- **Qwen3.8-Flash-Next** · Strata — 2× RTX 3090 (48GB) + 64GB DDR5-6000 → **120 tok/s** ✅ [@geldeki](https://x.com/geldeki/status/2109208295957201171) ♥45
 - **Qwen3.8-Flash-Next** — Mac Studio M5 Ultra → **85.9 tok/s** 🔁 [@wei_wang](https://x.com/wei_wang/status/2103459506944344323) ♥33
 - **MiniMax H3** · LightX2V — RTX 5090 → 768×1344 15s 视频+音频 ≈72 s（稳态，不含 MP4 导出；基线 ~26 分钟） 🏛️ [@LightX2V](https://x.com/LightX2V/status/2108769912009424976) ♥8
-- **MiniMax H3** · TensorFold（ComfyUI 换 loader） — RTX 5070 Ti 16GB + 64GB RAM（Windows） → 1344×768 5s 带声音：81 s（原生 ComfyUI 20 步 623 s） ✅ [@jayleaton](https://x.com/jayleaton/status/2106213885917491367) ♥10
+- **MiniMax H3** · TensorFold — RTX 5070 Ti 16GB + 64GB RAM（Windows） → 1344×768 5s 带声音：81 s（原生 ComfyUI 20 步 623 s） ✅ [@jayleaton](https://x.com/jayleaton/status/2106213885917491367) ♥10
+
+## 按模型系列浏览
+
+点击系列名即可打开已筛选的配方库。标签：[`dense`](explore.html?tag=dense) 85, [`long-context`](explore.html?tag=long-context) 81, [`speculative`](explore.html?tag=speculative) 64, [`4bit`](explore.html?tag=4bit) 58, [`MTP`](explore.html?tag=MTP) 42, [`MoE`](explore.html?tag=MoE) 33, [`3bit`](explore.html?tag=3bit) 32, [`multi-GPU`](explore.html?tag=multi-GPU) 32, [`2bit`](explore.html?tag=2bit) 24, [`ternary`](explore.html?tag=ternary) 22, [`8bit`](explore.html?tag=8bit) 21, [`1bit`](explore.html?tag=1bit) 12, [`few-step`](explore.html?tag=few-step) 12, [`offload`](explore.html?tag=offload) 11, [`bf16`](explore.html?tag=bf16) 6, [`6bit`](explore.html?tag=6bit) 6, [`abliterated`](explore.html?tag=abliterated) 2, [`5bit`](explore.html?tag=5bit) 1。
+
+| 系列 | 配方数 | 文字 | 图像 | 影音 |
+|---|--:|--:|--:|--:|
+| [Qwen](explore.html?family=Qwen) | 138 | 138 |  |  |
+| [Bonsai](explore.html?family=Bonsai) | 28 | 28 |  |  |
+| [GLM](explore.html?family=GLM) | 20 | 20 |  |  |
+| [DeepSeek](explore.html?family=DeepSeek) | 18 | 18 |  |  |
+| [MiniMax H3](explore.html?family=MiniMax%20H3) | 17 |  |  | 17 |
+| [Qwen-Image](explore.html?family=Qwen-Image) | 13 |  | 13 |  |
+| [LTX](explore.html?family=LTX) | 4 |  |  | 4 |
+| [Z-Image](explore.html?family=Z-Image) | 3 |  | 3 |  |
+| [ACE-Step](explore.html?family=ACE-Step) | 2 |  |  | 2 |
+| [Edge0](explore.html?family=Edge0) | 2 | 2 |  |  |
+| [Wan](explore.html?family=Wan) | 2 |  |  | 2 |
+| [Other](explore.html?family=Other) | 8 | 8 |  |  |
+
+## 按引擎浏览
+
+引擎名已统一（`scripts/normalize_engines.py`），原始写法保留在 `engine_note` 字段。
+
+| 引擎 | 配方数 |
+|---|--:|
+| [Strata](explore.html?engine=Strata) | 29 |
+| [llama.cpp](explore.html?engine=llama.cpp) | 27 |
+| [oMLX](explore.html?engine=oMLX) | 27 |
+| [MLX](explore.html?engine=MLX) | 16 |
+| [TensorFold](explore.html?engine=TensorFold) | 14 |
+| [llama.cpp (PrismML fork)](explore.html?engine=llama.cpp%20%28PrismML%20fork%29) | 14 |
+| [ComfyUI](explore.html?engine=ComfyUI) | 12 |
+| [MTPLX](explore.html?engine=MTPLX) | 11 |
+| [DFlash](explore.html?engine=DFlash) | 7 |
+| [SGLang](explore.html?engine=SGLang) | 7 |
+| [Splash](explore.html?engine=Splash) | 5 |
+| [mlx-serve](explore.html?engine=mlx-serve) | 5 |
+| [Project Maya](explore.html?engine=Project%20Maya) | 4 |
+| [mirai-s-ada](explore.html?engine=mirai-s-ada) | 4 |
+| [ds4 (DwarfStar)](explore.html?engine=ds4%20%28DwarfStar%29) | 3 |
+| [llama.cpp (agentionai fork)](explore.html?engine=llama.cpp%20%28agentionai%20fork%29) | 3 |
+| [vLLM](explore.html?engine=vLLM) | 3 |
+| [Halogen](explore.html?engine=Halogen) | 2 |
+| [MLX Swift](explore.html?engine=MLX%20Swift) | 2 |
+| [Ollama](explore.html?engine=Ollama) | 2 |
+| [Radiance (fork)](explore.html?engine=Radiance%20%28fork%29) | 2 |
+| [edge0](explore.html?engine=edge0) | 2 |
+| [DS41RT](explore.html?engine=DS41RT) | 1 |
+| [ExLlama](explore.html?engine=ExLlama) | 1 |
+| [FreeToken](explore.html?engine=FreeToken) | 1 |
+| [LightX2V](explore.html?engine=LightX2V) | 1 |
+| [MLX Swift (PrismML fork)](explore.html?engine=MLX%20Swift%20%28PrismML%20fork%29) | 1 |
+| [NVIDIA Sol](explore.html?engine=NVIDIA%20Sol) | 1 |
+| [Osaurus](explore.html?engine=Osaurus) | 1 |
+| [TabbyAPI](explore.html?engine=TabbyAPI) | 1 |
+| [llama.cpp (mirai-s fork)](explore.html?engine=llama.cpp%20%28mirai-s%20fork%29) | 1 |
+| [mflux](explore.html?engine=mflux) | 1 |
+| [sparkinfer](explore.html?engine=sparkinfer) | 1 |
+| [Unspecified](explore.html?engine=Unspecified) | 43 |
 
 ## 第 1 档 · 2,500 美元以内
 
@@ -49,16 +111,16 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 
 **📝 文字**
 
-- **Bonsai-8B** · PrismML llama.cpp fork（CUDA） `1-bit Q1_0` — RTX 4090 → **368 tok/s** 📣 [来源](https://huggingface.co/prism-ml/Bonsai-8B-gguf)
+- **Bonsai-8B** · llama.cpp (PrismML fork) `1-bit Q1_0` — RTX 4090 → **368 tok/s** 📣 [来源](https://huggingface.co/prism-ml/Bonsai-8B-gguf)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 4090 24GB → **225 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **Qwen3.8-Flash-Next** · Strata `Strata（作者自改版）· Swift 1.5 IQ…` — RTX 4090 24GB + 32GB DDR5 → **220 tok/s** ✅ [来源](https://x.com/Knuckles_XBT/status/2105245662657011841)
-- **Qwen3.6-35B-A3B** `FreeToken · NVFP4（无投机）` — RTX 4090 → **167 tok/s** 🔁 [来源](https://x.com/shipfrontierai/status/2092602493213577481)
+- **Qwen3.6-35B-A3B** · FreeToken `FreeToken · NVFP4（无投机）` — RTX 4090 → **167 tok/s** 🔁 [来源](https://x.com/shipfrontierai/status/2092602493213577481)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 3090 24GB → **154 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **Qwen3.8-27B** · DFlash `DFlash2（TeksEdge）` — RTX 3090 24GB → **138 tok/s** 🔁 [来源](https://x.com/yume_arasaki/status/2090971775714939097)
-- **Bonsai-8B** · MLX (Python) `1-bit g128` — MacBook M4 Pro 48GB → **131 tok/s** 📣 [来源](https://huggingface.co/prism-ml/Bonsai-8B-mlx-1bit)
+- **Bonsai-8B** · MLX `1-bit g128` — MacBook M4 Pro 48GB → **131 tok/s** 📣 [来源](https://huggingface.co/prism-ml/Bonsai-8B-mlx-1bit)
 - **Qwen3.8-27B** · DFlash `EXL3 4.0bpw + DFlash2 草稿（r0…` — RTX 4090 24GB → **121 tok/s** ✅ [来源](https://x.com/yume_arasaki/status/2100595901006008791)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S（GSQ-RCO）` — 单 RTX 3090 24GB（+64GB RAM 同作者前帖） → **120.8 tok/s** ✅ [来源](https://x.com/needmorevram/status/2105050786938118599)
-- **Qwen3.8-Flash-Next** · Strata（PR #262） `Q2_0` — AMD Radeon AI PRO R9700 → **100 tok/s** ✅ [来源](https://x.com/TechPractice1/status/2105338176055509376)
+- **Qwen3.8-Flash-Next** · Strata `Q2_0` — AMD Radeon AI PRO R9700 → **100 tok/s** ✅ [来源](https://x.com/TechPractice1/status/2105338176055509376)
 - *……另有 23 条，见 [配方库](explore.html)。*
 
 **🖼️ 图像**
@@ -82,16 +144,16 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 
 **📝 文字**
 
-- **Qwen3.6-35B-A3B** `sparkinfer v0.4.4（Blackwell…` — RTX 5090 → **512 tok/s** 📣 [来源](https://x.com/kysstalol/status/2105042922643321008)
-- **Qwen3.6-35B-A3B-Escha-W2** · SGLang（sglang/serve.sh） `Escha W2（INT8=on）` — RTX 5090 32GB → **283 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
+- **Qwen3.6-35B-A3B** · sparkinfer `sparkinfer v0.4.4（Blackwell…` — RTX 5090 → **512 tok/s** 📣 [来源](https://x.com/kysstalol/status/2105042922643321008)
+- **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2（INT8=on）` — RTX 5090 32GB → **283 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** ✅ [来源](https://x.com/tinybluedev/status/2089910202606764530)
-- **Qwen3.8-Flash-Next** · Strata v0.1.27 `IQ2_XS` — RTX 5090 + 256GB RAM → **176 tok/s** ✅ [来源](https://x.com/TechPractice1/status/2105087037363884483)
-- **Qwen3.8-27B** · llama.cpp ≥ b10658 `GPU-1（2.56 bpw）+ DFlash2（7 …` — RTX 5090 32GB → **176 tok/s** 📣 [来源](https://huggingface.co/byteshape/Qwen3.8-27B-GGUF)
-- **Qwen3.8-27B** · llama.cpp ≥ b10658 `GPU-5（3.84 bpw）+ DFlash2（7 …` — RTX 5090 32GB → **167 tok/s** 📣 [来源](https://huggingface.co/byteshape/Qwen3.8-27B-GGUF)
+- **Qwen3.8-Flash-Next** · Strata `IQ2_XS` — RTX 5090 + 256GB RAM → **176 tok/s** ✅ [来源](https://x.com/TechPractice1/status/2105087037363884483)
+- **Qwen3.8-27B** · llama.cpp `GPU-1（2.56 bpw）+ DFlash2（7 …` — RTX 5090 32GB → **176 tok/s** 📣 [来源](https://huggingface.co/byteshape/Qwen3.8-27B-GGUF)
+- **Qwen3.8-27B** · llama.cpp `GPU-5（3.84 bpw）+ DFlash2（7 …` — RTX 5090 32GB → **167 tok/s** 📣 [来源](https://huggingface.co/byteshape/Qwen3.8-27B-GGUF)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090（RAM 未注明） → **160 tok/s** 🔁 [来源](https://x.com/yume_arasaki/status/2107293459556225446)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090（功耗限制）+ 96GB DDR5-6400 → **150 tok/s** 🔁 [来源](https://x.com/kreia/status/2106054715373212025)
-- **Qwen3.8-27B-NVFP4-MTP** · llama.cpp b10434 `LOW + MTP（--spec-draft-n-ma…` — RTX 5090 32GB → **148.3 tok/s** 🔁 [来源](https://huggingface.co/esatapedico/Qwen3.8-27B-NVFP4-MTP-GGUF)
-- **Qwen3.8-Flash-Next-Gyro** · Strata rc1（agentionai，候选版） `Gyro-S TQ1_0（27.64 GiB）` — RTX 5090 32GB → **140 tok/s** 📣 [来源](https://huggingface.co/agentionai/Qwen3.8-Flash-Next-Gyro-GGUF)
+- **Qwen3.8-27B-NVFP4-MTP** · llama.cpp `LOW + MTP（--spec-draft-n-ma…` — RTX 5090 32GB → **148.3 tok/s** 🔁 [来源](https://huggingface.co/esatapedico/Qwen3.8-27B-NVFP4-MTP-GGUF)
+- **Qwen3.8-Flash-Next-Gyro** · Strata `Gyro-S TQ1_0（27.64 GiB）` — RTX 5090 32GB → **140 tok/s** 📣 [来源](https://huggingface.co/agentionai/Qwen3.8-Flash-Next-Gyro-GGUF)
 - *……另有 47 条，见 [配方库](explore.html)。*
 
 **🖼️ 图像**
@@ -110,7 +172,7 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 - **FastH3 V2 / Trim** `NVFP4` — 1× / 2× DGX Spark → 1×：480p 141.4 / 125.8 s，Trim 768p 340.1 s；2×：87.2 / 78.3 s 🏛️ [来源](https://haoailab.com/blogs/fasth3-rtx/)
 - **MiniMax H3（基础，50 步类）** · ComfyUI `ComfyUI + SageAttention` — RTX 5090 → 1280×736×5s：242 s → 168 s ✅ [来源](https://x.com/RKAScope/status/2084359480926503182)
 - **MiniMax H3 vs FastH3 Turbo** `同图同 seed` — RTX 5090 → 15 s 片段：11 分 55 秒 vs 2 分 6 秒 ✅ [来源](https://x.com/Sogni_Protocol/status/2097254959729246550)
-- **MiniMax H3（Sol 加速 / 无加速）** `NVIDIA Sol 引擎` — 1× DGX Spark → Sol：480p 5 s 约 68 s（NVIDIA 公布 56 s）；无 Sol >400 s；无 Sol 720p 20 步：5 s … ✅ [来源](https://x.com/yume_arasaki/status/2100734364908986511)
+- **MiniMax H3（Sol 加速 / 无加速）** · NVIDIA Sol `NVIDIA Sol 引擎` — 1× DGX Spark → Sol：480p 5 s 约 68 s（NVIDIA 公布 56 s）；无 Sol >400 s；无 Sol 720p 20 步：5 s … ✅ [来源](https://x.com/yume_arasaki/status/2100734364908986511)
 - **MiniMax H3 vs LTX-2.3 Eros** `同条件 3 组 prompt` — 1× DGX Spark → 864×480×5s：H3 平均 270 s；LTX 154 s（快 1.76×） ✅ [来源](https://x.com/YRSM_Simon/status/2084222856972456336)
 - **LTX-2.3（带口型同步）** · ComfyUI `ComfyUI` — RTX 5090 → 10 s 约 90 s（较弱 GPU 约 6×） ✅ [来源](https://x.com/freshstartsnow/status/2092263835591655773)
 - **LTX-2.5（t2v）** `模板 + LoRA` — RTX 5090（500W） → 720p/10 s：61.11 s；1080p/10 s：189.90 s ✅ [来源](https://x.com/PhotogenicWeekE/status/2087298681137701274)
@@ -126,7 +188,7 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 **📝 文字**
 
 - **Qwen3.8-Flash-Next** · TensorFold `TensorFold · NVFP4 全模型 / IN…` — 2× DGX Spark → **67.4 tok/s** 🔁 [来源](https://x.com/llm_frontier_jp/status/2108884169069916440)
-- **GLM-5.3-Flash** · TensorFold 0.5.0 + DFlash2 草稿 — 2× DGX Spark（TP2） → **54 tok/s** ✅ [来源](https://x.com/easthambuilds/status/2105693180427452703)
+- **GLM-5.3-Flash** · TensorFold — 2× DGX Spark（TP2） → **54 tok/s** ✅ [来源](https://x.com/easthambuilds/status/2105693180427452703)
 - **DeepSeek-V4.1-Flash** `Mia EXL3 2.9bpw · DSpark k=…` — 2× DGX Spark → **48.5 tok/s** ✅ [来源](https://x.com/yume_arasaki/status/2099966865326170554)
 - **GLM-5.3-Flash** `未注明` — 2× DGX Spark → **30 tok/s** ✅ [来源](https://x.com/realWeZZard/status/2099322375770869891)
 - **Qwen3.8-Flash-Next** · vLLM `vr8vr8 v4.1 配方（vLLM，TP=2）` — 2× DGX Spark → 散文 81.6；结构化 138.3；代码 133.2；4 流结构化合计 383.1 ✅ [来源](https://x.com/yume_arasaki/status/2104582876956332408)
@@ -144,8 +206,8 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 
 **📝 文字**
 
-- **Qwen3.8-Flash-Next** `Radiance fork · int4fp8 · B…` — 4× AMD R9700 32GB + TR 9970X + 128GB → 48K/用户：538.5 tok/s 合计解码；128K/用户：365 🔁 [来源](https://x.com/richgel999/status/2109515169638326738)
-- **Qwen3.8-27B** `MXFP4 · Radiance fork` — 4× R9700（同上 $18k 整机） → 合计解码 900→80 tok/s（4K→128K/会话）；PP 6.3–6.8K 🔁 [来源](https://x.com/richgel999/status/2109515169638326738)
+- **Qwen3.8-Flash-Next** · Radiance (fork) `Radiance fork · int4fp8 · B…` — 4× AMD R9700 32GB + TR 9970X + 128GB → 48K/用户：538.5 tok/s 合计解码；128K/用户：365 🔁 [来源](https://x.com/richgel999/status/2109515169638326738)
+- **Qwen3.8-27B** · Radiance (fork) `MXFP4 · Radiance fork` — 4× R9700（同上 $18k 整机） → 合计解码 900→80 tok/s（4K→128K/会话）；PP 6.3–6.8K 🔁 [来源](https://x.com/richgel999/status/2109515169638326738)
 - **GLM-5.3-Flash** `Mia EXL3（TP=3，实验性）` — 3× DGX Spark → 散文 77 单流；4 流 146 🔁 [来源](https://x.com/yume_arasaki/status/2106837882870886438)
 - **GLM-5.3-Flash** · TensorFold `TensorFold · Thunderbolt 5×…` — 2× Mac Studio M5 Ultra → 散文 114 单流；PP ~1,600；8 流最高 200；首 token 0.06s 🔁 [来源](https://x.com/yume_arasaki/status/2108359576966094952)
 - **DeepSeek-V4.1-Flash** `Mia MXFP4/FP8 · Engram 放 NV…` — 3× DGX Spark → 散文 37.9；4 流合计 78.6（独立 SGLang C1 26.5） 🔁 [来源](https://x.com/yume_arasaki/status/2099966865326170554)
@@ -158,14 +220,14 @@ X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 �
 按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 116 条。按 tok/s 排名靠前的文字配方：
 
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2（16GB 配方）` — RTX 5080 16GB → **212 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
-- **Qwen3.6-35B-A3B** `Splash` — Mac M5 Pro 48GB → **210 tok/s** 🔁 [来源](https://x.com/TeksEdge/status/2101735798567764421)
+- **Qwen3.6-35B-A3B** · Splash `Splash` — Mac M5 Pro 48GB → **210 tok/s** 🔁 [来源](https://x.com/TeksEdge/status/2101735798567764421)
 - **Qwen3.6-35B-A3B** · oMLX `oMLX 0.7.1.dev1 融合解码内核` — Mac M5 Max → **205 tok/s** 🏛️ [来源](https://x.com/jundotkim/status/2108584837590495246)
-- **Qwen3.8-Flash-Next-MLX-Serve-iQ-MLX-4.7bpw** · mlx-serve 26.10.1（MTP on） `iQ-MLX 4.7 bpw（校准 4-bit 专家 …` — Mac Studio M5 Ultra → **157 tok/s** 📣 [来源](https://huggingface.co/ddalcu/Qwen3.8-Flash-Next-MLX-Serve-iQ-MLX-4.7bpw)
+- **Qwen3.8-Flash-Next-MLX-Serve-iQ-MLX-4.7bpw** · mlx-serve `iQ-MLX 4.7 bpw（校准 4-bit 专家 …` — Mac Studio M5 Ultra → **157 tok/s** 📣 [来源](https://huggingface.co/ddalcu/Qwen3.8-Flash-Next-MLX-Serve-iQ-MLX-4.7bpw)
 - **Qwen3.8-27B** · vLLM `vLLM 等（Reddit u/tonnyygama）` — CMP 170HX（解锁 64GB 矿卡） → **147 tok/s** 🔁 [来源](https://x.com/LFrefman/status/2101572845017178243)
-- **Qwen3.8-27B** `Splash` — Mac M5 Max → **144 tok/s** 🏛️ [来源](https://x.com/zhijianliu/status/2101102949158302001)
+- **Qwen3.8-27B** · Splash `Splash` — Mac M5 Max → **144 tok/s** 🏛️ [来源](https://x.com/zhijianliu/status/2101102949158302001)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2（16GB 配方）` — RTX 5060 Ti 16GB → **128 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **GLM-5.3-Flash** `EXL3（@BrandonMusicKy 权重）+ D…` — 4× DGX Spark + RTX 5090 → **124 tok/s** ✅ [来源](https://x.com/dangerm00se/status/2104876537367728325)
-- **Qwen3.8-Flash-Next** · Strata v0.1.42 `IQ3_S` — 2× RTX 3090 (48GB) + 64GB DDR5-6000 → **120 tok/s** ✅ [来源](https://x.com/geldeki/status/2109208295957201171)
+- **Qwen3.8-Flash-Next** · Strata `IQ3_S` — 2× RTX 3090 (48GB) + 64GB DDR5-6000 → **120 tok/s** ✅ [来源](https://x.com/geldeki/status/2109208295957201171)
 - **Qwen3.8-Flash-Next** · Strata `q3 xs（Strata 教程）` — 2× Tesla V100 32GB PCIe（无 NVLink） → **120 tok/s** ✅ [来源](https://x.com/rewin123/status/2108669905616736529)
 - **Ternary-Bonsai-2-27B-262k** · mirai-s-ada `Ternary Bonsai 2 27B + MTP，…` — RTX 4070 12GB → **102 tok/s** 📣 [来源](https://huggingface.co/CaryPalmer/Ternary-Bonsai-2-27B-262k-GGUF)
 - **Qwen3.8-Flash-Next** · Strata `Strata · Q2_0（MTP 投机解码）` — RTX 5070 12GB + Ryzen 5 7600 + 64GB DDR5 → **94 tok/s** 🏛️ [来源](https://github.com/Niko1221/Strata)

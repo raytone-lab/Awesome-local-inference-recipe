@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """把 review.json 中 decision=收录 的条目写入 data/recipes.json（幂等），并同步候选状态。
 用法: python3 scripts/approve_review.py data/candidates/hf-YYYY-MM-DD.review.json"""
-import json, re, sys, os
+import json, os, sys, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # 仅使用 data/prices.json 里有来源的价格；按硬件字符串精确规则匹配，匹配不上留空
 PRICE = [
@@ -56,6 +56,9 @@ def main():
         c["status"] = {"收录": "approved", "拒绝": "rejected", "补充后收录": "pending"}[v["decision"]]
         if v["decision"] == "拒绝": c["reject_reason"] = v["reason"]
         if v["decision"] == "补充后收录": c["missing"] = v.get("missing")
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import normalize_engines, tag_recipes
+    tag_recipes.apply(normalize_engines.normalize(recipes))
     json.dump(recipes, open(f"{ROOT}/data/recipes.json", "w"), ensure_ascii=False, indent=2)
     json.dump(cand, open(cand_file, "w"), ensure_ascii=False, indent=1)
     # 关闭被合并的旧待补项

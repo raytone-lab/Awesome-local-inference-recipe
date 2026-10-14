@@ -4,6 +4,7 @@
 可选环境变量 HF_TOKEN。仅用标准库。"""
 import argparse  # v2: 抽取逻辑见 scripts/hf_extract.py
 import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))
+from normalize_engines import canon  # 统一引擎名
 import argparse, datetime, glob, json, os, re, sys, time, urllib.request, urllib.parse
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 API = "https://huggingface.co/api/models"
@@ -103,7 +104,7 @@ def main():
         name = mid.split("/")[-1]
         cands.append({
             "id": f"hf-{mid.replace('/', '--')}", "category": "text", "model": re.sub(r"(?i)[-_](gguf|mlx.*)$", "", name),
-            "quant": p["quant"], "engine": ", ".join(uniq(ENG, card)) or None, "hardware": p["hardware"],
+            "quant": p["quant"], "engine": ", ".join(uniq(ENG, card)) or None, "engine_canonical": canon(", ".join(uniq(ENG, card))) if uniq(ENG, card) else "Unspecified", "hardware": p["hardware"],
             "metric": f"生成 {p['gen']} tok/s" + (f"；读入 {p['prefill']} tok/s" if p["prefill"] else ""),
             "tok_s": p["gen"], "context_tokens": p.get("context_tokens") or x["context_tokens"], "source_url": url, "source_level": p.get("level", "宣称"),
             "concurrency": (f"聚合 {p['aggregate']} tok/s" if p.get("aggregate") else None), "peak_claim": p.get("peak_claim"),

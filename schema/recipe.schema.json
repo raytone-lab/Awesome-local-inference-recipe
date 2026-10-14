@@ -9,7 +9,9 @@
   "engine",
   "hardware",
   "source_url",
-  "source_level"
+  "source_level",
+  "model_family",
+  "tags"
  ],
  "properties": {
   "id": {
@@ -134,6 +136,23 @@
     "string",
     "null"
    ]
+  },
+  "engine_raw": {
+   "type": "string",
+   "description": "original engine string before normalization"
+  },
+  "engine_note": {
+   "type": "string",
+   "description": "version/flags/fork details split from engine"
+  },
+  "model_family": {
+   "type": "string"
+  },
+  "tags": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
   }
  },
  "additionalProperties": false

@@ -10,6 +10,8 @@
 
 - [Legend](#legend)
 - [Hot This Month](#hot-this-month)
+- [Browse by Model Family](#browse-by-model-family)
+- [Browse by Engine](#browse-by-engine)
 - [Tier 1 · up to $2.5k](#tier-1--up-to-25k)
 - [Tier 2 · $2.5k–7k](#tier-2--25k7k)
 - [Tier 3 · $7k–14k](#tier-3--7k14k)
@@ -37,10 +39,70 @@ Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).
 - **GLM 5.3** · oMLX — Mac Studio M5 Ultra → **87 tok/s** ✅ [@JamesMcPherson](https://x.com/JamesMcPherson/status/2104028051285672431) ♥106
 - **Qwen3.8-Flash-Next** · Strata — AMD Strix Halo 395 → **47.7 tok/s** ✅ [@no_stp_on_snek](https://x.com/no_stp_on_snek/status/2108296174994088177) ♥73
 - **Qwen3.8-Flash-Next** · Strata — RTX 5070 Ti 12GB + Intel 275HX + 64GB DDR5 + Gen4… → **51 tok/s** 🔁 [@jurlycat](https://x.com/jurlycat/status/2105165498967007621) ♥46
-- **Qwen3.8-Flash-Next** · Strata v0.1.42 — 2× RTX 3090 (48GB) + 64GB DDR5-6000 → **120 tok/s** ✅ [@geldeki](https://x.com/geldeki/status/2109208295957201171) ♥45
+- **Qwen3.8-Flash-Next** · Strata — 2× RTX 3090 (48GB) + 64GB DDR5-6000 → **120 tok/s** ✅ [@geldeki](https://x.com/geldeki/status/2109208295957201171) ♥45
 - **Qwen3.8-Flash-Next** — Mac Studio M5 Ultra → **85.9 tok/s** 🔁 [@wei_wang](https://x.com/wei_wang/status/2103459506944344323) ♥33
 - **MiniMax H3** · LightX2V — RTX 5090 → 768×1344 15s video + audio ≈72 s (steady state, excl. MP4 export; bas… 🏛️ [@LightX2V](https://x.com/LightX2V/status/2108769912009424976) ♥8
 - **MiniMax H3** · TensorFold — RTX 5070 Ti 16GB + 64GB RAM → 1344×768 5s with audio: 81 s (stock ComfyUI, 20 steps: 623 s) ✅ [@jayleaton](https://x.com/jayleaton/status/2106213885917491367) ♥10
+
+## Browse by Model Family
+
+Click a family to open the explorer pre-filtered. Tags: [`dense`](explore.html?tag=dense) 85, [`long-context`](explore.html?tag=long-context) 81, [`speculative`](explore.html?tag=speculative) 64, [`4bit`](explore.html?tag=4bit) 58, [`MTP`](explore.html?tag=MTP) 42, [`MoE`](explore.html?tag=MoE) 33, [`3bit`](explore.html?tag=3bit) 32, [`multi-GPU`](explore.html?tag=multi-GPU) 32, [`2bit`](explore.html?tag=2bit) 24, [`ternary`](explore.html?tag=ternary) 22, [`8bit`](explore.html?tag=8bit) 21, [`1bit`](explore.html?tag=1bit) 12, [`few-step`](explore.html?tag=few-step) 12, [`offload`](explore.html?tag=offload) 11, [`bf16`](explore.html?tag=bf16) 6, [`6bit`](explore.html?tag=6bit) 6, [`abliterated`](explore.html?tag=abliterated) 2, [`5bit`](explore.html?tag=5bit) 1.
+
+| Family | Recipes | Text | Image | Video & Audio |
+|---|--:|--:|--:|--:|
+| [Qwen](explore.html?family=Qwen) | 138 | 138 |  |  |
+| [Bonsai](explore.html?family=Bonsai) | 28 | 28 |  |  |
+| [GLM](explore.html?family=GLM) | 20 | 20 |  |  |
+| [DeepSeek](explore.html?family=DeepSeek) | 18 | 18 |  |  |
+| [MiniMax H3](explore.html?family=MiniMax%20H3) | 17 |  |  | 17 |
+| [Qwen-Image](explore.html?family=Qwen-Image) | 13 |  | 13 |  |
+| [LTX](explore.html?family=LTX) | 4 |  |  | 4 |
+| [Z-Image](explore.html?family=Z-Image) | 3 |  | 3 |  |
+| [ACE-Step](explore.html?family=ACE-Step) | 2 |  |  | 2 |
+| [Edge0](explore.html?family=Edge0) | 2 | 2 |  |  |
+| [Wan](explore.html?family=Wan) | 2 |  |  | 2 |
+| [Other](explore.html?family=Other) | 8 | 8 |  |  |
+
+## Browse by Engine
+
+Engine names are normalized (`scripts/normalize_engines.py`); original strings are kept in `engine_note`.
+
+| Engine | Recipes |
+|---|--:|
+| [Strata](explore.html?engine=Strata) | 29 |
+| [llama.cpp](explore.html?engine=llama.cpp) | 27 |
+| [oMLX](explore.html?engine=oMLX) | 27 |
+| [MLX](explore.html?engine=MLX) | 16 |
+| [TensorFold](explore.html?engine=TensorFold) | 14 |
+| [llama.cpp (PrismML fork)](explore.html?engine=llama.cpp%20%28PrismML%20fork%29) | 14 |
+| [ComfyUI](explore.html?engine=ComfyUI) | 12 |
+| [MTPLX](explore.html?engine=MTPLX) | 11 |
+| [DFlash](explore.html?engine=DFlash) | 7 |
+| [SGLang](explore.html?engine=SGLang) | 7 |
+| [Splash](explore.html?engine=Splash) | 5 |
+| [mlx-serve](explore.html?engine=mlx-serve) | 5 |
+| [Project Maya](explore.html?engine=Project%20Maya) | 4 |
+| [mirai-s-ada](explore.html?engine=mirai-s-ada) | 4 |
+| [ds4 (DwarfStar)](explore.html?engine=ds4%20%28DwarfStar%29) | 3 |
+| [llama.cpp (agentionai fork)](explore.html?engine=llama.cpp%20%28agentionai%20fork%29) | 3 |
+| [vLLM](explore.html?engine=vLLM) | 3 |
+| [Halogen](explore.html?engine=Halogen) | 2 |
+| [MLX Swift](explore.html?engine=MLX%20Swift) | 2 |
+| [Ollama](explore.html?engine=Ollama) | 2 |
+| [Radiance (fork)](explore.html?engine=Radiance%20%28fork%29) | 2 |
+| [edge0](explore.html?engine=edge0) | 2 |
+| [DS41RT](explore.html?engine=DS41RT) | 1 |
+| [ExLlama](explore.html?engine=ExLlama) | 1 |
+| [FreeToken](explore.html?engine=FreeToken) | 1 |
+| [LightX2V](explore.html?engine=LightX2V) | 1 |
+| [MLX Swift (PrismML fork)](explore.html?engine=MLX%20Swift%20%28PrismML%20fork%29) | 1 |
+| [NVIDIA Sol](explore.html?engine=NVIDIA%20Sol) | 1 |
+| [Osaurus](explore.html?engine=Osaurus) | 1 |
+| [TabbyAPI](explore.html?engine=TabbyAPI) | 1 |
+| [llama.cpp (mirai-s fork)](explore.html?engine=llama.cpp%20%28mirai-s%20fork%29) | 1 |
+| [mflux](explore.html?engine=mflux) | 1 |
+| [sparkinfer](explore.html?engine=sparkinfer) | 1 |
+| [Unspecified](explore.html?engine=Unspecified) | 43 |
 
 ## Tier 1 · up to $2.5k
 
@@ -49,13 +111,13 @@ Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).
 
 **📝 Text**
 
-- **Bonsai-8B** · PrismML llama.cpp fork `1-bit Q1_0` — RTX 4090 → **368 tok/s** 📣 [source](https://huggingface.co/prism-ml/Bonsai-8B-gguf)
+- **Bonsai-8B** · llama.cpp (PrismML fork) `1-bit Q1_0` — RTX 4090 → **368 tok/s** 📣 [source](https://huggingface.co/prism-ml/Bonsai-8B-gguf)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 4090 24GB → **225 tok/s** 📣 [source](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **Qwen3.8-Flash-Next** · Strata `Strata· Swift 1.5 IQ2_XS` — RTX 4090 24GB + 32GB DDR5 → **220 tok/s** ✅ [source](https://x.com/Knuckles_XBT/status/2105245662657011841)
-- **Qwen3.6-35B-A3B** `FreeToken · NVFP4` — RTX 4090 → **167 tok/s** 🔁 [source](https://x.com/shipfrontierai/status/2092602493213577481)
+- **Qwen3.6-35B-A3B** · FreeToken `FreeToken · NVFP4` — RTX 4090 → **167 tok/s** 🔁 [source](https://x.com/shipfrontierai/status/2092602493213577481)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 3090 24GB → **154 tok/s** 📣 [source](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **Qwen3.8-27B** · DFlash `DFlash2` — RTX 3090 24GB → **138 tok/s** 🔁 [source](https://x.com/yume_arasaki/status/2090971775714939097)
-- **Bonsai-8B** · MLX (Python) `1-bit g128` — MacBook M4 Pro 48GB → **131 tok/s** 📣 [source](https://huggingface.co/prism-ml/Bonsai-8B-mlx-1bit)
+- **Bonsai-8B** · MLX `1-bit g128` — MacBook M4 Pro 48GB → **131 tok/s** 📣 [source](https://huggingface.co/prism-ml/Bonsai-8B-mlx-1bit)
 - **Qwen3.8-27B** · DFlash `EXL3 4.0bpw + DFlash2 3-bit…` — RTX 4090 24GB → **121 tok/s** ✅ [source](https://x.com/yume_arasaki/status/2100595901006008791)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 3090 24GB → **120.8 tok/s** ✅ [source](https://x.com/needmorevram/status/2105050786938118599)
 - **Qwen3.8-Flash-Next** · Strata `Q2_0` — AMD Radeon AI PRO R9700 → **100 tok/s** ✅ [source](https://x.com/TechPractice1/status/2105338176055509376)
@@ -82,16 +144,16 @@ Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).
 
 **📝 Text**
 
-- **Qwen3.6-35B-A3B** `sparkinfer v0.4.4` — RTX 5090 → **512 tok/s** 📣 [source](https://x.com/kysstalol/status/2105042922643321008)
+- **Qwen3.6-35B-A3B** · sparkinfer `sparkinfer v0.4.4` — RTX 5090 → **512 tok/s** 📣 [source](https://x.com/kysstalol/status/2105042922643321008)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 5090 32GB → **283 tok/s** 📣 [source](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** ✅ [source](https://x.com/tinybluedev/status/2089910202606764530)
-- **Qwen3.8-Flash-Next** · Strata v0.1.27 `IQ2_XS` — RTX 5090 + 256GB RAM → **176 tok/s** ✅ [source](https://x.com/TechPractice1/status/2105087037363884483)
-- **Qwen3.8-27B** · llama.cpp ≥ b10658 `GPU-1+ DFlash2` — RTX 5090 32GB → **176 tok/s** 📣 [source](https://huggingface.co/byteshape/Qwen3.8-27B-GGUF)
-- **Qwen3.8-27B** · llama.cpp ≥ b10658 `GPU-5+ DFlash2` — RTX 5090 32GB → **167 tok/s** 📣 [source](https://huggingface.co/byteshape/Qwen3.8-27B-GGUF)
+- **Qwen3.8-Flash-Next** · Strata `IQ2_XS` — RTX 5090 + 256GB RAM → **176 tok/s** ✅ [source](https://x.com/TechPractice1/status/2105087037363884483)
+- **Qwen3.8-27B** · llama.cpp `GPU-1+ DFlash2` — RTX 5090 32GB → **176 tok/s** 📣 [source](https://huggingface.co/byteshape/Qwen3.8-27B-GGUF)
+- **Qwen3.8-27B** · llama.cpp `GPU-5+ DFlash2` — RTX 5090 32GB → **167 tok/s** 📣 [source](https://huggingface.co/byteshape/Qwen3.8-27B-GGUF)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090 → **160 tok/s** 🔁 [source](https://x.com/yume_arasaki/status/2107293459556225446)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090+ 96GB DDR5-6400 → **150 tok/s** 🔁 [source](https://x.com/kreia/status/2106054715373212025)
-- **Qwen3.8-27B-NVFP4-MTP** · llama.cpp b10434 `LOW + MTP` — RTX 5090 32GB → **148.3 tok/s** 🔁 [source](https://huggingface.co/esatapedico/Qwen3.8-27B-NVFP4-MTP-GGUF)
-- **Qwen3.8-Flash-Next-Gyro** · Strata rc1 `Gyro-S TQ1_0` — RTX 5090 32GB → **140 tok/s** 📣 [source](https://huggingface.co/agentionai/Qwen3.8-Flash-Next-Gyro-GGUF)
+- **Qwen3.8-27B-NVFP4-MTP** · llama.cpp `LOW + MTP` — RTX 5090 32GB → **148.3 tok/s** 🔁 [source](https://huggingface.co/esatapedico/Qwen3.8-27B-NVFP4-MTP-GGUF)
+- **Qwen3.8-Flash-Next-Gyro** · Strata `Gyro-S TQ1_0` — RTX 5090 32GB → **140 tok/s** 📣 [source](https://huggingface.co/agentionai/Qwen3.8-Flash-Next-Gyro-GGUF)
 - *…and 47 more in the [explorer](explore.html).*
 
 **🖼️ Image**
@@ -110,7 +172,7 @@ Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).
 - **FastH3 V2 / Trim** `NVFP4` — 1× / 2× DGX Spark → see source 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/)
 - **MiniMax H3** · ComfyUI `ComfyUI + SageAttention` — RTX 5090 → see source ✅ [source](https://x.com/RKAScope/status/2084359480926503182)
 - **MiniMax H3 vs FastH3 Turbo** `seed` — RTX 5090 → see source ✅ [source](https://x.com/Sogni_Protocol/status/2097254959729246550)
-- **MiniMax H3** `NVIDIA Sol` — 1× DGX Spark → see source ✅ [source](https://x.com/yume_arasaki/status/2100734364908986511)
+- **MiniMax H3** · NVIDIA Sol `NVIDIA Sol` — 1× DGX Spark → see source ✅ [source](https://x.com/yume_arasaki/status/2100734364908986511)
 - **MiniMax H3 vs LTX-2.3 Eros** `3 prompt` — 1× DGX Spark → see source ✅ [source](https://x.com/YRSM_Simon/status/2084222856972456336)
 - **LTX-2.3** · ComfyUI `ComfyUI` — RTX 5090 → see source ✅ [source](https://x.com/freshstartsnow/status/2092263835591655773)
 - **LTX-2.5** `LoRA` — RTX 5090 → see source ✅ [source](https://x.com/PhotogenicWeekE/status/2087298681137701274)
@@ -126,7 +188,7 @@ Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).
 **📝 Text**
 
 - **Qwen3.8-Flash-Next** · TensorFold `TensorFold · NVFP4 / INT4-A…` — 2× DGX Spark → **67.4 tok/s** 🔁 [source](https://x.com/llm_frontier_jp/status/2108884169069916440)
-- **GLM-5.3-Flash** · TensorFold 0.5.0 + DFlash2 — 2× DGX Spark → **54 tok/s** ✅ [source](https://x.com/easthambuilds/status/2105693180427452703)
+- **GLM-5.3-Flash** · TensorFold — 2× DGX Spark → **54 tok/s** ✅ [source](https://x.com/easthambuilds/status/2105693180427452703)
 - **DeepSeek-V4.1-Flash** `Mia EXL3 2.9bpw · DSpark k=3` — 2× DGX Spark → **48.5 tok/s** ✅ [source](https://x.com/yume_arasaki/status/2099966865326170554)
 - **GLM-5.3-Flash** — 2× DGX Spark → **30 tok/s** ✅ [source](https://x.com/realWeZZard/status/2099322375770869891)
 - **Qwen3.8-Flash-Next** · vLLM `vr8vr8 v4.1` — 2× DGX Spark → see source ✅ [source](https://x.com/yume_arasaki/status/2104582876956332408)
@@ -144,8 +206,8 @@ Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).
 
 **📝 Text**
 
-- **Qwen3.8-Flash-Next** `Radiance fork · int4fp8 · B…` — 4× AMD R9700 32GB + TR 9970X + 128GB → see source 🔁 [source](https://x.com/richgel999/status/2109515169638326738)
-- **Qwen3.8-27B** `MXFP4 · Radiance fork` — 4× R9700 → see source 🔁 [source](https://x.com/richgel999/status/2109515169638326738)
+- **Qwen3.8-Flash-Next** · Radiance (fork) `Radiance fork · int4fp8 · B…` — 4× AMD R9700 32GB + TR 9970X + 128GB → see source 🔁 [source](https://x.com/richgel999/status/2109515169638326738)
+- **Qwen3.8-27B** · Radiance (fork) `MXFP4 · Radiance fork` — 4× R9700 → see source 🔁 [source](https://x.com/richgel999/status/2109515169638326738)
 - **GLM-5.3-Flash** `Mia EXL3` — 3× DGX Spark → see source 🔁 [source](https://x.com/yume_arasaki/status/2106837882870886438)
 - **GLM-5.3-Flash** · TensorFold `TensorFold · Thunderbolt 5×…` — 2× Mac Studio M5 Ultra → see source 🔁 [source](https://x.com/yume_arasaki/status/2108359576966094952)
 - **DeepSeek-V4.1-Flash** `Mia MXFP4/FP8 · Engram NVMe` — 3× DGX Spark → see source 🔁 [source](https://x.com/yume_arasaki/status/2099966865326170554)
@@ -158,14 +220,14 @@ Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).
 Multi-card builds priced per card, Macs without a listed price, and other rows without a single published price · 116 recipes. Top text recipes by tok/s:
 
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 5080 16GB → **212 tok/s** 📣 [source](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
-- **Qwen3.6-35B-A3B** `Splash` — Mac M5 Pro 48GB → **210 tok/s** 🔁 [source](https://x.com/TeksEdge/status/2101735798567764421)
+- **Qwen3.6-35B-A3B** · Splash `Splash` — Mac M5 Pro 48GB → **210 tok/s** 🔁 [source](https://x.com/TeksEdge/status/2101735798567764421)
 - **Qwen3.6-35B-A3B** · oMLX `oMLX 0.7.1.dev1` — Mac M5 Max → **205 tok/s** 🏛️ [source](https://x.com/jundotkim/status/2108584837590495246)
-- **Qwen3.8-Flash-Next-MLX-Serve-iQ-MLX-4.7bpw** · mlx-serve 26.10.1 `iQ-MLX 4.7 bpw` — Mac Studio M5 Ultra → **157 tok/s** 📣 [source](https://huggingface.co/ddalcu/Qwen3.8-Flash-Next-MLX-Serve-iQ-MLX-4.7bpw)
+- **Qwen3.8-Flash-Next-MLX-Serve-iQ-MLX-4.7bpw** · mlx-serve `iQ-MLX 4.7 bpw` — Mac Studio M5 Ultra → **157 tok/s** 📣 [source](https://huggingface.co/ddalcu/Qwen3.8-Flash-Next-MLX-Serve-iQ-MLX-4.7bpw)
 - **Qwen3.8-27B** · vLLM `vLLM` — CMP 170HX → **147 tok/s** 🔁 [source](https://x.com/LFrefman/status/2101572845017178243)
-- **Qwen3.8-27B** `Splash` — Mac M5 Max → **144 tok/s** 🏛️ [source](https://x.com/zhijianliu/status/2101102949158302001)
+- **Qwen3.8-27B** · Splash `Splash` — Mac M5 Max → **144 tok/s** 🏛️ [source](https://x.com/zhijianliu/status/2101102949158302001)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 5060 Ti 16GB → **128 tok/s** 📣 [source](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **GLM-5.3-Flash** `EXL3+ DS coordinator` — 4× DGX Spark + RTX 5090 → **124 tok/s** ✅ [source](https://x.com/dangerm00se/status/2104876537367728325)
-- **Qwen3.8-Flash-Next** · Strata v0.1.42 `IQ3_S` — 2× RTX 3090 (48GB) + 64GB DDR5-6000 → **120 tok/s** ✅ [source](https://x.com/geldeki/status/2109208295957201171)
+- **Qwen3.8-Flash-Next** · Strata `IQ3_S` — 2× RTX 3090 (48GB) + 64GB DDR5-6000 → **120 tok/s** ✅ [source](https://x.com/geldeki/status/2109208295957201171)
 - **Qwen3.8-Flash-Next** · Strata `q3 xs` — 2× Tesla V100 32GB PCIe → **120 tok/s** ✅ [source](https://x.com/rewin123/status/2108669905616736529)
 - **Ternary-Bonsai-2-27B-262k** · mirai-s-ada `Ternary Bonsai 2 27B + KV` — RTX 4070 12GB → **102 tok/s** 📣 [source](https://huggingface.co/CaryPalmer/Ternary-Bonsai-2-27B-262k-GGUF)
 - **Qwen3.8-Flash-Next** · Strata `Strata · Q2_0` — RTX 5070 12GB + Ryzen 5 7600 + 64GB DDR5 → **94 tok/s** 🏛️ [source](https://github.com/Niko1221/Strata)

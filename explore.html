@@ -10,10 +10,12 @@
 <input id="q" placeholder="搜索模型 / 硬件 / 引擎 / 量化…">
 <select id="cat"><option value="">全部类别</option><option value="text">文字</option><option value="image">图像</option><option value="video-audio">影音</option></select>
 <select id="eng"><option value="">全部引擎</option></select>
+<select id="mf"><option value="">全部模型系列</option></select>
 <select id="fam"><option value="">全部硬件</option></select>
 <select id="lvl"><option value="">全部来源等级</option><option>官方</option><option>实测</option><option>转述</option><option>宣称</option></select>
 <label class="budget">预算 ≤ <b id="bv">$30,000</b><input id="budget" type="range" min="500" max="30000" step="500" value="30000"></label>
 <label class="chk"><input type="checkbox" id="unk" checked>含成本未知</label>
+<div class="chips" id="chips"></div>
 </section>
 <section class="grid2"><div class="card"><h3>tok/s vs 硬件成本（文字模型，两项均已知）</h3><svg id="chart" viewBox="0 0 640 300"></svg></div>
 <div class="card legend"><h3>说明</h3><ul><li><b>美元/tok/s</b> = 硬件成本 ÷ 单流 tok/s，越低越划算</li><li>成本取来源区间下限；多卡按张计价的行不自动折算（显示原文）</li><li>来源等级：<span class="lv 官方">官方</span><span class="lv 实测">实测</span><span class="lv 转述">转述</span><span class="lv 宣称">宣称</span></li><li>点击任意行查看详情、启动命令和来源</li></ul></div></section>

@@ -3,18 +3,27 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 const v=x=>x==null||x===''?NA:esc(x);let D=[],sk='tok_s',sd=-1;const $=id=>document.getElementById(id);
 const COL={'官方':'#4f46e5','实测':'#16a34a','转述':'#d97706','宣称':'#dc2626'};
 fetch('data/recipes.json').then(r=>r.json()).then(d=>{D=d.map(r=>({...r,cpt:r.tok_s&&r.hardware_cost_usd?Math.round(r.hardware_cost_usd/r.tok_s):null}));
- for(const [id,k] of [['eng','engine'],['fam','hardware_family']])[...new Set(D.map(r=>r[k]))].sort().forEach(x=>$(id).add(new Option(x,x)));
+ const cnt=k=>{const c={};D.forEach(r=>c[r[k]]=(c[r[k]]||0)+1);return Object.entries(c).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]))};
+ for(const [id,k] of [['eng','engine'],['mf','model_family'],['fam','hardware_family']])cnt(k).forEach(([x,n])=>$(id).add(new Option(`${x} (${n})`,x)));
+ const tc={};D.forEach(r=>r.tags.forEach(t=>tc[t]=(tc[t]||0)+1));
+ $('chips').innerHTML='<span class="cl">标签</span>'+Object.entries(tc).sort((a,b)=>b[1]-a[1]).map(([t,n])=>`<button class="chip" data-t="${t}">${t} <i>${n}</i></button>`).join('');
+ $('chips').querySelectorAll('.chip').forEach(b=>b.onclick=()=>toggleTag(b.dataset.t));
  $('stats').innerHTML=[['配方',D.length],['文字',D.filter(r=>r.category=='text').length],['图像',D.filter(r=>r.category=='image').length],['影音',D.filter(r=>r.category=='video-audio').length],['含启动命令',D.filter(r=>r.launch_command).length]].map(([a,b])=>`<div class="stat"><b>${b}</b>${a}</div>`).join('');
  render();});
-['q','cat','eng','fam','lvl','budget','unk'].forEach(i=>$(i).addEventListener('input',render));
+let TG=new Set();function toggleTag(t){TG.has(t)?TG.delete(t):TG.add(t);render()}
+['q','cat','eng','mf','fam','lvl','budget','unk'].forEach(i=>$(i).addEventListener('input',render));
+function sync(){const P=new URLSearchParams();const m={q:'q',cat:'cat',eng:'engine',mf:'family',fam:'fam',lvl:'level'};
+ for(const [id,k] of Object.entries(m))if($(id).value)P.set(k,$(id).value);if(+$('budget').value<30000)P.set('max',$('budget').value);if(TG.size)P.set('tag',[...TG].join(','));
+ history.replaceState(null,'',location.pathname+(P.toString()?'?'+P:''));
+ document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('on',TG.has(b.dataset.t)));}
 document.querySelectorAll('th').forEach(th=>th.onclick=()=>{const k=th.dataset.k;sd=sk==k?-sd:1;sk=k;render()});
 function filt(){const q=$('q').value.toLowerCase(),b=+$('budget').value;$('bv').textContent='$'+b.toLocaleString();
- return D.filter(r=>(!q||[r.model,r.quant,r.engine,r.hardware,r.metric].join(' ').toLowerCase().includes(q))&&(!$('cat').value||r.category==$('cat').value)&&(!$('eng').value||r.engine==$('eng').value)&&(!$('fam').value||r.hardware_family==$('fam').value)&&(!$('lvl').value||r.source_level==$('lvl').value)&&(r.hardware_cost_usd==null?$('unk').checked:r.hardware_cost_usd<=b));}
-function render(){const L=filt().sort((a,b)=>{const x=a[sk],y=b[sk];if(x==null)return 1;if(y==null)return -1;return (x>y?1:x<y?-1:0)*sd});
+ return D.filter(r=>(!q||[r.model,r.quant,r.engine,r.engine_note,r.hardware,r.metric,r.model_family,...r.tags].join(' ').toLowerCase().includes(q))&&(!$('cat').value||r.category==$('cat').value)&&(!$('eng').value||r.engine==$('eng').value)&&(!$('fam').value||r.hardware_family==$('fam').value)&&(!$('mf').value||r.model_family==$('mf').value)&&[...TG].every(t=>r.tags.includes(t))&&(!$('lvl').value||r.source_level==$('lvl').value)&&(r.hardware_cost_usd==null?$('unk').checked:r.hardware_cost_usd<=b));}
+function render(){if(D.length)sync();const L=filt().sort((a,b)=>{const x=a[sk],y=b[sk];if(x==null)return 1;if(y==null)return -1;return (x>y?1:x<y?-1:0)*sd});
  document.querySelectorAll('th').forEach(t=>{t.classList.toggle('s',t.dataset.k==sk);t.classList.toggle('d',sd<0)});
  $('count').textContent=`共 ${L.length} 条（总 ${D.length}）`;
- $('tb').innerHTML=L.map(r=>`<tr data-id="${r.id}"><td><span class="tag">${CAT[r.category]}</span></td><td><b>${esc(r.model)}</b></td><td>${v(r.quant)}</td><td>${esc(r.engine)}</td><td>${esc(r.hardware)}<br><span class="tag">${r.hardware_family}</span></td><td class="n">${v(r.tok_s)}</td><td>${v(r.metric)}</td><td class="n">${r.hardware_cost_usd!=null?r.hardware_cost_usd.toLocaleString():v(r.hardware_cost_text)}</td><td class="n">${v(r.cpt)}</td><td>${v(r.context)}</td><td><span class="lv ${r.source_level}">${r.source_level}</span></td></tr>`).join('');
- document.querySelectorAll('#tb tr').forEach(tr=>tr.onclick=()=>open(tr.dataset.id));chart(L);}
+ $('tb').innerHTML=L.map(r=>`<tr data-id="${r.id}"><td><span class="tag">${CAT[r.category]}</span></td><td><b>${esc(r.model)}</b><br><span class="tag fam">${esc(r.model_family)}</span>${r.tags.map(t=>`<span class="tg" data-t="${t}">${t}</span>`).join('')}</td><td>${v(r.quant)}</td><td>${esc(r.engine)}${r.engine_note?`<br><small class="na">${esc(r.engine_note)}</small>`:''}</td><td>${esc(r.hardware)}<br><span class="tag">${r.hardware_family}</span></td><td class="n">${v(r.tok_s)}</td><td>${v(r.metric)}</td><td class="n">${r.hardware_cost_usd!=null?r.hardware_cost_usd.toLocaleString():v(r.hardware_cost_text)}</td><td class="n">${v(r.cpt)}</td><td>${v(r.context)}</td><td><span class="lv ${r.source_level}">${r.source_level}</span></td></tr>`).join('');
+ document.querySelectorAll('#tb tr').forEach(tr=>tr.onclick=()=>open(tr.dataset.id));document.querySelectorAll('#tb .tg').forEach(g=>g.onclick=e=>{e.stopPropagation();toggleTag(g.dataset.t)});chart(L);}
 function chart(L){const P=L.filter(r=>r.tok_s&&r.hardware_cost_usd),W=640,H=300,m={l:50,r:15,t:10,b:36};
  const xm=Math.max(30000,...P.map(p=>p.hardware_cost_usd)),ym=Math.max(50,...P.map(p=>p.tok_s))*1.08;
  const X=c=>m.l+c/xm*(W-m.l-m.r),Y=t=>H-m.b-t/ym*(H-m.t-m.b);let s='';
@@ -26,11 +35,11 @@ function chart(L){const P=L.filter(r=>r.tok_s&&r.hardware_cost_usd),W=640,H=300,
  $('chart').innerHTML=s+(P.length?'':`<text x="320" y="150" text-anchor="middle" fill="#99a">当前筛选无可绘制数据</text>`);
  document.querySelectorAll('.dot').forEach(d=>d.onclick=()=>open(d.dataset.id));}
 function open(id){const r=D.find(x=>x.id==id);$('dc').innerHTML=`<h2 style="margin-top:0">${esc(r.model)}</h2><p><span class="tag">${CAT[r.category]}</span> <span class="lv ${r.source_level}">${r.source_level}</span> <span class="tag">${r.id}</span></p>
-<dl><dt>量化/优化</dt><dd>${v(r.quant)}</dd><dt>引擎</dt><dd>${esc(r.engine)}</dd><dt>硬件</dt><dd>${esc(r.hardware)}（${r.hardware_family}）</dd><dt>性能</dt><dd>${v(r.metric)}</dd><dt>单流 tok/s</dt><dd>${v(r.tok_s)}</dd><dt>并发</dt><dd>${v(r.concurrency)}</dd><dt>上下文</dt><dd>${v(r.context)}</dd><dt>硬件成本</dt><dd>${v(r.hardware_cost_text)}</dd><dt>$/tok/s</dt><dd>${v(r.cpt)}</dd><dt>日期</dt><dd>${v(r.date)}</dd><dt>来源说明</dt><dd>${v(r.source_note)}</dd></dl>
+<dl><dt>量化/优化</dt><dd>${v(r.quant)}</dd><dt>模型系列</dt><dd>${esc(r.model_family)}</dd><dt>标签</dt><dd>${r.tags.map(t=>`<span class="tg">${t}</span>`).join('')||'—'}</dd><dt>引擎</dt><dd>${esc(r.engine)}${r.engine_note?`（原文：${esc(r.engine_note)}）`:''}</dd><dt>硬件</dt><dd>${esc(r.hardware)}（${r.hardware_family}）</dd><dt>性能</dt><dd>${v(r.metric)}</dd><dt>单流 tok/s</dt><dd>${v(r.tok_s)}</dd><dt>并发</dt><dd>${v(r.concurrency)}</dd><dt>上下文</dt><dd>${v(r.context)}</dd><dt>硬件成本</dt><dd>${v(r.hardware_cost_text)}</dd><dt>$/tok/s</dt><dd>${v(r.cpt)}</dd><dt>日期</dt><dd>${v(r.date)}</dd><dt>来源说明</dt><dd>${v(r.source_note)}</dd></dl>
 <h3>启动命令</h3>${r.launch_command?`<pre>${esc(r.launch_command)}</pre>`:`<pre># 未见公开数据\n# 你跑过这个配置？欢迎提交 PR 补全启动命令</pre>`}
 <h3>来源</h3><p><a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.source_url)}</a></p><p><a href="submit.html">✎ 提交修正 / 补充</a></p>`;
  $('drawer').classList.add('open');$('mask').classList.add('open');}
 $('x').onclick=$('mask').onclick=()=>{$('drawer').classList.remove('open');$('mask').classList.remove('open')};
-// deep-link: explore.html?max=3000&fam=Mac&q=...
+// deep-link: explore.html?family=Qwen&tag=MoE,4bit&engine=llama.cpp&fam=Mac&cat=text&level=实测&max=3000&q=...
 const U=new URLSearchParams(location.search);
-setTimeout(()=>{if(U.get('max'))$('budget').value=U.get('max');if(U.get('fam'))$('fam').value=U.get('fam');if(U.get('q'))$('q').value=U.get('q');if(U.get('id'))open(U.get('id'));render()},300);
+setTimeout(()=>{if(U.get('max'))$('budget').value=U.get('max');for(const [id,k] of [['fam','fam'],['mf','family'],['eng','engine'],['cat','cat'],['lvl','level']])if(U.get(k))$(id).value=U.get(k);if(U.get('tag'))U.get('tag').split(',').filter(Boolean).forEach(t=>TG.add(t));if(U.get('q'))$('q').value=U.get('q');if(U.get('id'))open(U.get('id'));render()},300);
