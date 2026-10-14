@@ -10,6 +10,12 @@
 
 <p align="center"><img src="docs/hero.ja.png" width="860" alt="棒グラフ：ハードウェア $1,000 あたりの tok/s で並べた実測テキスト構成トップ 15（ハードウェア分類で色分け）"></p>
 
+### X tok/s ってどれくらい速い？
+
+<p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/speed.html"><img src="docs/speed-feel.gif" width="860" alt="Token streaming speed demo: 10, 20, 50, 100, 200 and 500 tokens per second compared with human silent reading pace"></a></p>
+
+<p align="center">同じ回答を実際の Qwen3 トークンで 10 / 20 / 50 / 100 / 200 / 500 tok/s（対数間隔）で表示し、黙読の速さ（英語で約 5 tok/s、Brysbaert 2019）やクラウド API の中央値（Artificial Analysis）と比較。 <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/speed.html"><b>インタラクティブ版を試す →</b></a></p>
+
 **レシピ 288 件**（テキスト 247 · 画像 16 · 動画・音声 25）· **ハードウェア 6 分類** · **エンジン 34 種** · **モデルファミリー 11 系統** · すべての数字に出典リンク · 予算 **3 万ドルまで**
 
 ### 注目の記録
