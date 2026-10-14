@@ -125,7 +125,7 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 
 ## Tier 1 · up to $2.5k
 
-*Used 3090/4090, MI50/V100 cards, Strix Halo, R9700* · 42 recipes
+*Used 3090/4090, MI50/V100 cards, Strix Halo, R9700* · 44 recipes
 
 
 **📝 Text**
@@ -140,7 +140,7 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 - **Qwen3.8-27B** · DFlash `EXL3 4.0bpw + DFlash2 3-bit…` — RTX 4090 24GB → **121 tok/s** ✅ [source](https://x.com/yume_arasaki/status/2100595901006008791)
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 3090 24GB → **120.8 tok/s** ✅ [source](https://x.com/needmorevram/status/2105050786938118599)
 - **Qwen3.8-Flash-Next** · Strata `Q2_0` — AMD Radeon AI PRO R9700 → **100 tok/s** ✅ [source](https://x.com/TechPractice1/status/2105338176055509376) · [guide](recipes/x-009.md)
-- *…and 24 more in the [explorer](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html).*
+- *…and 26 more in the [explorer](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html).*
 
 **🖼️ Image**
 
@@ -158,7 +158,7 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 
 ## Tier 2 · $2.5k–7k
 
-*One RTX 5090, one DGX Spark, Mac Studio Max* · 92 recipes
+*One RTX 5090, one DGX Spark, Mac Studio Max* · 95 recipes
 
 
 **📝 Text**
@@ -173,7 +173,7 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 - **Qwen3.8-Flash-Next** · Strata `Strata · IQ3_S` — RTX 5090+ 96GB DDR5-6400 → **150 tok/s** 🔁 [source](https://x.com/kreia/status/2106054715373212025)
 - **Qwen3.8-27B-NVFP4-MTP** · llama.cpp `LOW + MTP` — RTX 5090 32GB → **148.3 tok/s** 🔁 [source](https://huggingface.co/esatapedico/Qwen3.8-27B-NVFP4-MTP-GGUF)
 - **Qwen3.8-27B** · vLLM `NVFP4` — RTX 5090 32GB → **147 tok/s** ✅ [source](https://x.com/MiaAI_lab/status/2088734058842878037)
-- *…and 64 more in the [explorer](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html).*
+- *…and 67 more in the [explorer](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html).*
 
 **🖼️ Image**
 
@@ -220,11 +220,12 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 
 ## Tier 4 · $14k–30k
 
-*3–4 Spark clusters, multi-GPU workstations* · 9 recipes
+*3–4 Spark clusters, multi-GPU workstations* · 10 recipes
 
 
 **📝 Text**
 
+- **Qwen3.8-27B** · SGLang `NVFP4` — RTX PRO 6000 → **300 tok/s** ✅ [source](https://x.com/MiaAI_lab/status/2090327658508763516)
 - **GLM-5.3-Flash EXL3** · TensorFold `EXL3` — 4× DGX Spark → **95 tok/s** ✅ [source](https://x.com/MiaAI_lab/status/2108939694918488183)
 - **Qwen3.8-Flash-Next** · Radiance (fork) `Radiance fork · int4fp8 · B…` — 4× AMD R9700 32GB + TR 9970X + 128GB → see source 🔁 [source](https://x.com/richgel999/status/2109515169638326738)
 - **Qwen3.8-27B** · Radiance (fork) `MXFP4 · Radiance fork` — 4× R9700 → see source 🔁 [source](https://x.com/richgel999/status/2109515169638326738)
@@ -237,9 +238,8 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 
 ## Cost Not Published
 
-Multi-card builds priced per card, Macs without a listed price, and other rows without a single published price · 122 recipes. Top text recipes by tok/s:
+Multi-card builds priced per card, Macs without a listed price, and other rows without a single published price · 116 recipes. Top text recipes by tok/s:
 
-- **Qwen3.8-27B** · SGLang `NVFP4` — RTX PRO 6000 → **300 tok/s** ✅ [source](https://x.com/MiaAI_lab/status/2090327658508763516)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 5080 16GB → **212 tok/s** 📣 [source](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **Qwen3.6-35B-A3B** · Splash `Splash` — Mac M5 Pro 48GB → **210 tok/s** 🔁 [source](https://x.com/TeksEdge/status/2101735798567764421)
 - **Qwen3.6-35B-A3B** · oMLX `oMLX 0.7.1.dev1` — Mac M5 Max → **205 tok/s** 🏛️ [source](https://x.com/jundotkim/status/2108584837590495246)
@@ -251,7 +251,8 @@ Multi-card builds priced per card, Macs without a listed price, and other rows w
 - **Qwen3.8-Flash-Next** · Strata `IQ3_S` — 2× RTX 3090 (48GB) + 64GB DDR5-6000 → **120 tok/s** ✅ [source](https://x.com/geldeki/status/2109208295957201171) · [guide](recipes/x-004.md)
 - **Qwen3.8-Flash-Next** · Strata `q3 xs` — 2× Tesla V100 32GB PCIe → **120 tok/s** ✅ [source](https://x.com/rewin123/status/2108669905616736529) · [guide](recipes/x-007.md)
 - **Ternary-Bonsai-2-27B-262k** · mirai-s-ada `Ternary Bonsai 2 27B + KV` — RTX 4070 12GB → **102 tok/s** 📣 [source](https://huggingface.co/CaryPalmer/Ternary-Bonsai-2-27B-262k-GGUF)
-- *…browse all 122 in the [explorer](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html).*
+- **Qwen3.8-Flash-Next** · Strata `Strata · Q2_0` — RTX 5070 12GB + Ryzen 5 7600 + 64GB DDR5 → **94 tok/s** 🏛️ [source](https://github.com/Niko1221/Strata)
+- *…browse all 116 in the [explorer](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html).*
 
 
 ## Engines & Tools
