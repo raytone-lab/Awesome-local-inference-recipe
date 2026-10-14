@@ -258,7 +258,10 @@ def sentence_speeds(text, model_id=None):
             if not hms or not ums: continue
             links = re.findall(r"huggingface\.co/([\w.\-]+/[\w.\-]+)", s)
             if model_id and any(l.lower() != model_id.lower() for l in links): continue  # 句中链接到别的模型，数值归属不明
-            pairs = [(u.start() - h.start(), u, h) for u in ums for h in hms if h.start() < u.start()] or [(abs(u.start() - h.start()), u, h) for u in ums for h in hms]
+            after = [(h.start() - u.end(), u, h) for u in ums for h in hms
+                     if 0 <= h.start() - u.end() <= 30 and re.match(r"[\s*]*(?:on|with|using)\b", s[u.end():h.start()], re.I)]  # "44 tok/s on an M5 Pro"
+            pairs = after or [(u.start() - h.start(), u, h) for u in ums for h in hms if h.start() < u.start()] or [(abs(u.start() - h.start()), u, h) for u in ums for h in hms if abs(u.start() - h.start()) <= 80]
+            if not pairs: continue
             best = min(pairs, key=lambda x: x[0])
             _, u, h = best
             pre = s[max(0, u.start() - 40):u.start()]
