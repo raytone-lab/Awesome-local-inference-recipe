@@ -16,7 +16,7 @@
 准备买硬件？参考 [README](../README.zh-CN.md) 的预算档位（2.5k / 7k / 14k / 30k 美元以内）。
 
 ## 2. 看懂一条配方
-每一行是「模型 × 引擎 × 硬件 → 数字」。先看**来源等级**：✅ 实测、🏛️ 官方比 🔁 转述、📣 宣称更可靠。在 [配方库](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html) 里可按硬件、模型系列、引擎和标签（如 `4bit`、`MoE`）筛选。
+每一行是「模型 × 引擎 × 硬件 → 数字」。先看**来源等级**：✅ 实测、🏛️ 官方比 🔁 转述、📣 宣称更可靠。在 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html) 里可按硬件、模型系列、引擎和标签（如 `4bit`、`MoE`）筛选。
 
 ## 3. 跑起来
 1. 有 [指南页](../recipes/README.zh-CN.md) 的先看指南页，否则看来源链接。

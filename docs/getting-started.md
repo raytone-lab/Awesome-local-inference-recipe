@@ -16,7 +16,7 @@ How to pick a recipe for your budget and hardware, then run it.
 Buying hardware? Use the budget tiers in the [README](../README.md) (up to $2.5k / $7k / $14k / $30k).
 
 ## 2. Read a recipe
-Each row is model × engine × hardware → number. Check the **source level** first: ✅ measured and 🏛️ official are stronger than 🔁 relayed and 📣 claimed. Filter in the [explorer](https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html) by hardware, model family, engine and tags (e.g. `4bit`, `MoE`).
+Each row is model × engine × hardware → number. Check the **source level** first: ✅ measured and 🏛️ official are stronger than 🔁 relayed and 📣 claimed. Filter in the [explorer](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html) by hardware, model family, engine and tags (e.g. `4bit`, `MoE`).
 
 ## 3. Run it
 1. Open the [guide page](../recipes/README.md) if the recipe has one, otherwise the source link.
