@@ -43,7 +43,7 @@ const NA=`<span class="na">${T('na')}</span>`,CAT={text:TC('text'),image:TC('ima
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const v=x=>x==null||x===''?NA:esc(x),KC=r=>r.kind?`<small class="kc">${T('kc_'+r.kind)}</small>`:'';let D=[],sk='tok_s',sd=-1;const $=id=>document.getElementById(id);
 const LV=['官方','实测','转述','宣称'],MEA='实测',MEMS=[8,12,16,24,32,48,64,96,128,192,256,512],BUDS=[1000,2500,5000,7000,14000,30000];
-const REPO='https://github.com/raytone-lab/Awesome-local-inference-recipe';
+const REPO='https://github.com/raytone-lab/awesome-local-inference-recipes';
 const mobile=matchMedia('(max-width: 860px)');
 
 // Accelerator memory (GB) read from the free-text hardware field; null when it can't be read unambiguously.

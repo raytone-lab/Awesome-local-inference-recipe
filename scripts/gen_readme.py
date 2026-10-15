@@ -9,7 +9,7 @@ try: UPD = json.load(open(R/'data/repos.meta.json'))['updated_at']
 except Exception: UPD = None
 HWF_EN = {'NVIDIA 消费级':'NVIDIA consumer','二手数据中心卡':'Used datacenter GPU','其他':'Other'}
 HWF_JA = {'NVIDIA 消费级':'NVIDIA コンシューマー','二手数据中心卡':'中古データセンター GPU','其他':'その他'}
-PAGES = 'https://raytone-lab.github.io/Awesome-local-inference-recipe/'
+PAGES = 'https://raytone-lab.github.io/awesome-local-inference-recipes/'
 GUIDES = set(json.load(open(R/'data/guides.json'))) if (R/'data/guides.json').exists() else set()
 LVI = {'官方':'🏛️','实测':'✅','转述':'🔁','宣称':'📣'}
 CJK = re.compile(r'[\u3000-\u303f\u3400-\u9fff\uff00-\uffef“”]')
@@ -93,7 +93,7 @@ def align_tables(txt):
     return '\n'.join(res)
 
 DATA_ASOF = '2026-10-15'  # date of the last data collection pass
-REPO = 'raytone-lab/Awesome-local-inference-recipe'
+REPO = 'raytone-lab/awesome-local-inference-recipes'
 SHOW = [  # (id, label key) — curated records; every value is read from data/recipes.json
  ('text-113','mac'),('x-006','5090'),('x-009','amd'),('x-007','dc'),('text-022','spark'),('text-021','cheap')]
 HL = {

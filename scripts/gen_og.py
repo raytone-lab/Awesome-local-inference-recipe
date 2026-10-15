@@ -16,6 +16,6 @@ x=80
 for t,c in [('measured','#16a34a'),('official','#4f46e5'),('relayed','#d97706'),('claimed','#dc2626')]:
     w=len(t)*15+44; ax.add_patch(FancyBboxPatch((x,268),w,48,boxstyle='round,pad=0,rounding_size=24',color=c)); ax.text(x+w/2,292,t,fontsize=19,color='white',ha='center',va='center'); x+=w+18
 ax.text(80,180,'Explore · filter · compare   |   Feel the speed: 10 → 500 tok/s',fontsize=21,color='#e2e8f0',va='center')
-ax.text(80,130,'raytone-lab.github.io/Awesome-local-inference-recipe',fontsize=18,color='#818cf8',va='center')
+ax.text(80,130,'raytone-lab.github.io/awesome-local-inference-recipes',fontsize=18,color='#818cf8',va='center')
 ax.text(1200,40,'llama.cpp · MLX · vLLM · SGLang · Strata · oMLX · ≤ $30k',fontsize=16,color='#64748b',ha='right')
 fig.savefig(R/'docs/og.png',facecolor='#0f172a',metadata={'Software':None}); print('docs/og.png')
