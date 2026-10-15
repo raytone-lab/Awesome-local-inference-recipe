@@ -157,6 +157,46 @@ def hero(lang, E):
         out.append(f"| {H['lab'][k]} | {E(r['model'])}{' · '+eg if eg else ''} | {hw}{c} | **{r['tok_s']:g} tok/s** {LVI[r['source_level']]} | [{src}]({r['source_url']}) |")
     out+=['',f"<sub>{H['note']}</sub>"]
     return '\n'.join(out)
+# Q&A (GEO): plain-language answers with a date, the source link and the trust level next to every number.
+# Only 实测 rows (excluding metrics marked 自称 / self-reported) answer "fastest measured"; nothing is estimated.
+QA_HW = [  # (key, regex on hardware, single device only)
+ ('5090', r'^(单 ?)?(NVIDIA )?(GeForce )?RTX 5090( 32GB)?\b'), ('4090', r'^(单 ?)?(NVIDIA )?(GeForce )?RTX 4090( 24GB)?\b'),
+ ('3090', r'^(单 ?)?(NVIDIA )?(GeForce )?RTX 3090( 24GB)?\b'), ('m3u', r'Mac Studio M3 Ultra'), ('spark', r'^(1 ?[x×] ?|单台 ?)?DGX Spark\b'),
+ ('strix', r'Strix Halo|Ryzen AI Max\+? ?395')]
+QAT = {
+ 'en': dict(h='Quick answers', d='Data as of {d}. Each answer is the fastest single-stream text result in the dataset with its trust level; ✅ = measured by the poster. Models differ between answers.',
+   q={'5090':'How fast is a single RTX 5090 for local LLMs?','4090':'How fast is a single RTX 4090 for local LLMs?','3090':'How fast is a single RTX 3090 for local LLMs?',
+      'm3u':'How fast is a Mac Studio M3 Ultra for local LLMs?','spark':'How fast is one NVIDIA DGX Spark for local LLMs?','strix':'How fast is an AMD Strix Halo (Ryzen AI Max+ 395) for local LLMs?',
+      'b25':'What is the fastest measured setup under $2,500?'},
+   a='Fastest measured: **{tok:g} tok/s** — {m}{e} on {hw} ({lv} {lvn}, {dt}, [source]({u})). {n} recipe(s) {scope}, {nm} measured.',
+   none='No measured result yet; {n} recipe(s) are claimed/relayed — see the explorer.', lvn='measured', nodate='date not stated', s_hw='for this hardware', s_b='in this budget'),
+ 'zh': dict(h='快速问答', d='数据截至 {d}。每条回答取数据集中最快的单路文字生成结果，并标注来源等级；✅ = 发帖人实测。不同回答的模型不同。',
+   q={'5090':'单张 RTX 5090 跑本地大模型有多快？','4090':'单张 RTX 4090 跑本地大模型有多快？','3090':'单张 RTX 3090 跑本地大模型有多快？',
+      'm3u':'Mac Studio M3 Ultra 跑本地大模型有多快？','spark':'一台 NVIDIA DGX Spark 跑本地大模型有多快？','strix':'AMD Strix Halo（Ryzen AI Max+ 395）跑本地大模型有多快？',
+      'b25':'2500 美元以内实测最快的配置是什么？'},
+   a='实测最快：**{tok:g} tok/s**，{m}{e}，硬件 {hw}（{lv} {lvn}，{dt}，[来源]({u})）。{scope}共 {n} 条配方，其中实测 {nm} 条。',
+   none='暂无实测结果；共 {n} 条宣称/转述数据，见配方库。', lvn='实测', nodate='日期未注明', s_hw='该硬件', s_b='该预算内'),
+ 'ja': dict(h='よくある質問', d='データ時点 {d}。各回答はデータセット中で最速の 1 ストリーム テキスト生成結果で、出典レベルを併記しています。✅ = 投稿者本人の実測。回答ごとにモデルは異なります。',
+   q={'5090':'RTX 5090 1 枚でローカル LLM はどれくらい速い？','4090':'RTX 4090 1 枚でローカル LLM はどれくらい速い？','3090':'RTX 3090 1 枚でローカル LLM はどれくらい速い？',
+      'm3u':'Mac Studio M3 Ultra でローカル LLM はどれくらい速い？','spark':'NVIDIA DGX Spark 1 台でローカル LLM はどれくらい速い？','strix':'AMD Strix Halo（Ryzen AI Max+ 395）でローカル LLM はどれくらい速い？',
+      'b25':'2,500 ドル以下で実測最速の構成は？'},
+   a='実測最速：**{tok:g} tok/s** — {m}{e}、{hw}（{lv} {lvn}、{dt}、[出典]({u})）。{scope}のレシピ {n} 件、うち実測 {nm} 件。',
+   none='実測結果はまだありません。主張・伝聞 {n} 件はエクスプローラーで。', lvn='実測', nodate='日付不明', s_hw='このハードウェア', s_b='この予算内')}
+def _meas(r): return r['source_level']=='实测' and r['category']=='text' and r.get('tok_s') and '自称' not in (r.get('metric') or '') and not r.get('superseded_by')
+def qa(lang, E):
+    Q=QAT[lang]; out=[Q['d'].format(d=DATA_ASOF),'']
+    def ans(rows,scope):
+        m=[r for r in rows if _meas(r)]
+        if not m: return Q['none'].format(n=len(rows))
+        r=max(m,key=lambda r:(r['tok_s'],r['id'])); eg=E(r['engine']) if r['engine']!='Unspecified' else ''
+        return Q['a'].format(tok=r['tok_s'],m=E(r['model']),e=(' · '+eg) if eg else '',hw=clip(E(r['hardware']) or r['hardware'],60),lv=LVI['实测'],lvn=Q['lvn'],
+                             dt=r.get('date') or Q['nodate'],u=r['source_url'],n=len(rows),nm=len(m),scope=Q[scope])
+    for k,rx in QA_HW:
+        rows=[r for r in D if r['category']=='text' and re.search(rx,r['hardware']) and 'multi-GPU' not in r['tags'] and not re.search(r'[2-9] ?[x×] ?(RTX|DGX|NVIDIA)|双|[2-9] ?台',r['hardware'])]
+        if rows: out.append(f"**{Q['q'][k]}**  \n{ans(rows,'s_hw')}\n")
+    b=[r for r in D if r['category']=='text' and r.get('hardware_cost_usd') and r['hardware_cost_usd']<=2500]
+    out.append(f"**{Q['q']['b25']}**  \n{ans(b,'s_b')}\n")
+    return '\n'.join(out)
 def build(lang):
     T=L[lang]; E=(lambda s:en(s)) if lang in ('en','ja') else (lambda s:s)
     def key(r):
@@ -171,6 +211,7 @@ def build(lang):
     out=[];toc=[]
     def sec(t): out.append(f"\n## {t}\n"); toc.append(f"- [{t}](#{slug(t)})")
     seen=set();hot=[r for r in sorted([r for r in D if r.get('x_post')],key=lambda r:-(r['x_post']['likes']+3*r['x_post']['reposts'])) if not (r['source_url'] in seen or seen.add(r['source_url']))][:8]
+    sec(QAT[lang]['h']); out.append(qa(lang,E))
     sec(T['hot']); out.append(T['hotdesc']+'\n')
     for r in hot:
         eg=E(r['engine']); eg=f" · {eg}" if eg and r['engine']!='Unspecified' else ''

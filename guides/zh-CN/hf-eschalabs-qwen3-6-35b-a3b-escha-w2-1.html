@@ -1,0 +1,50 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Qwen3.6-35B-A3B-Escha-W2 · SGLang · RTX 5090 32GB</title><meta name="description" content="Qwen3.6-35B-A3B-Escha-W2 · SGLang · RTX 5090 32GB 的运行指南：硬件、引擎、启动命令与有出处的速度（Claimed）。">
+<link rel="canonical" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/zh-CN/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html"><link rel="alternate" hreflang="en" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html"><link rel="alternate" hreflang="zh-CN" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/zh-CN/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html"><link rel="alternate" hreflang="ja" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/ja/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html"><link rel="alternate" hreflang="x-default" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html">
+<meta property="og:type" content="article"><meta property="og:title" content="Qwen3.6-35B-A3B-Escha-W2 · SGLang · RTX 5090 32GB"><meta property="og:description" content="Qwen3.6-35B-A3B-Escha-W2 · SGLang · RTX 5090 32GB 的运行指南：硬件、引擎、启动命令与有出处的速度（Claimed）。"><meta property="og:url" content="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/zh-CN/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html"><meta property="og:image" content="https://raytone-lab.github.io/awesome-local-inference-recipes/docs/og.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../style.css"><script src="../../theme.js"></script></head><body>
+<header class="site-hd"><div class="hd-in"><a class="brand" href="../../index.html">⚡ Local Inference Recipes</a><nav class="static-links"><a href="../../explore.html">Explore</a> · <a href="../../guides/index.html">Guides</a> · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a></nav></div></header>
+<main class="doc static-page">
+<h1>Qwen3.6-35B-A3B-Escha-W2 · SGLang · RTX 5090 32GB</h1>
+<p><a href="../../guides/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html">English</a> | <b>简体中文</b> | <a href="../../guides/ja/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html">日本語</a> · <a href="../../explore.html">← 返回列表</a></p>
+<blockquote>来源等级: <b>📣 宣称</b> · 日期: 2026-07-22 · 数字均摘自来源，未经本仓库复测。</blockquote>
+<h2>硬件</h2>
+<ul>
+<li>RTX 5090 32GB (NVIDIA 消费级)</li>
+<li>参考价格: 仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）</li>
+</ul>
+<h2>模型</h2>
+<ul>
+<li>Qwen3.6-35B-A3B-Escha-W2 · <code>Escha W2（INT8=on）</code></li>
+<li>下载: <a href="https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2" rel="nofollow noopener">huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2</a></li>
+</ul>
+<h2>引擎</h2>
+<ul>
+<li>SGLang — 安装见 https://github.com/sgl-project/sglang</li>
+<li>备注: SGLang（sglang/serve.sh）</li>
+</ul>
+<h2>启动命令</h2>
+<pre><code>MEM=0.78 CTXLEN=32768 bash sglang/serve.sh（5090 加 INT8=on ATTN_BACKEND=triton MEM=0.82）</code></pre>
+<h2>关键参数</h2>
+<ul>
+<li>上下文: 32K（16GB 卡 8K×16）</li>
+<li>并发: 单路 283；bs32 约 2,670（峰值 3,017.6 @32 流）</li>
+<li>标签: <code>2bit</code>, <code>8bit</code>, <code>MoE</code></li>
+</ul>
+<h2>预期速度</h2>
+<ul>
+<li>283 tok/s 生成 (📣 宣称)</li>
+</ul>
+<h2>注意事项</h2>
+<ul>
+<li>非一手实测（宣称/转述），实际速度可能不同。</li>
+<li>HF 模型卡（作者自报）; 每行均在对应实体卡上用卡内命令测得; 4090 temperature 0 vs 0.6：218 vs 102 tok/s，温度影响大</li>
+<li>速度随驱动、引擎版本、上下文长度和提示长度变化。</li>
+</ul>
+<h2>来源与致谢</h2>
+<ul>
+<li><a href="https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2" rel="nofollow noopener">https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2</a></li>
+<li>版权归原作者；本页仅摘要并链接。数据以 CC BY 4.0 发布。</li>
+</ul>
+<p class="na">Source file: <a href="https://github.com/raytone-lab/awesome-local-inference-recipes/blob/main/recipes/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.zh-CN.md">recipes/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.zh-CN.md</a></p>
+</main><footer class="site-ft"><div class="ft-in">Data as of 2026-10-15 · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a> · data CC BY 4.0</div></footer></body></html>

@@ -1,0 +1,47 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Qwen3.8-Flash-Next · ExLlama · 1× DGX Spark</title><meta name="description" content="Qwen3.8-Flash-Next · ExLlama · 1× DGX Spark の実行ガイド：ハードウェア、エンジン、起動コマンド、出典付きの速度（Measured）。">
+<link rel="canonical" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/ja/text-022.html"><link rel="alternate" hreflang="en" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/text-022.html"><link rel="alternate" hreflang="zh-CN" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/zh-CN/text-022.html"><link rel="alternate" hreflang="ja" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/ja/text-022.html"><link rel="alternate" hreflang="x-default" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/text-022.html">
+<meta property="og:type" content="article"><meta property="og:title" content="Qwen3.8-Flash-Next · ExLlama · 1× DGX Spark"><meta property="og:description" content="Qwen3.8-Flash-Next · ExLlama · 1× DGX Spark の実行ガイド：ハードウェア、エンジン、起動コマンド、出典付きの速度（Measured）。"><meta property="og:url" content="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/ja/text-022.html"><meta property="og:image" content="https://raytone-lab.github.io/awesome-local-inference-recipes/docs/og.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../style.css"><script src="../../theme.js"></script></head><body>
+<header class="site-hd"><div class="hd-in"><a class="brand" href="../../index.html">⚡ Local Inference Recipes</a><nav class="static-links"><a href="../../explore.html">Explore</a> · <a href="../../guides/index.html">Guides</a> · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a></nav></div></header>
+<main class="doc static-page">
+<h1>Qwen3.8-Flash-Next · ExLlama · 1× DGX Spark</h1>
+<p><a href="../../guides/text-022.html">English</a> | <a href="../../guides/zh-CN/text-022.html">简体中文</a> | <b>日本語</b> · <a href="../../explore.html">← 一覧に戻る</a></p>
+<blockquote>出典レベル: <b>✅ 実測</b> · 日付: — · 数値は出典からの引用で、このリポジトリでは再計測していません。</blockquote>
+<h2>ハードウェア</h2>
+<ul>
+<li>1× DGX Spark (DGX Spark)</li>
+<li>参考価格: ≈ $6,950</li>
+</ul>
+<h2>モデル</h2>
+<ul>
+<li>Qwen3.8-Flash-Next · <code>Cruz exllamav3 fork · EXL3 3.05bpw · · 8-bit KV</code></li>
+<li>ダウンロード: 未公開（出典を参照）</li>
+</ul>
+<h2>エンジン</h2>
+<ul>
+<li>ExLlama — インストール： https://github.com/turboderp-org/exllamav3</li>
+</ul>
+<h2>起動コマンド</h2>
+<p>コマンドは公開されていません。出典を参照してください。</p>
+<h2>主なパラメータ</h2>
+<ul>
+<li>コンテキスト: 262K</li>
+<li>同時実行: 1</li>
+<li>タグ: <code>3bit</code>, <code>8bit</code>, <code>long-context</code>, <code>speculative</code></li>
+</ul>
+<h2>想定速度</h2>
+<ul>
+<li>71.7 tok/s (generation) (✅ 実測)</li>
+</ul>
+<h2>注意点</h2>
+<ul>
+<li>速度はドライバー、エンジンのバージョン、コンテキスト長、プロンプト長によって変わります。</li>
+</ul>
+<h2>出典とクレジット</h2>
+<ul>
+<li><a href="https://x.com/yume_arasaki/status/2101741448811229219" rel="nofollow noopener">https://x.com/yume_arasaki/status/2101741448811229219</a></li>
+<li>権利は元の投稿者にあります。このページは要約とリンクのみです。データは CC BY 4.0。</li>
+</ul>
+<p class="na">Source file: <a href="https://github.com/raytone-lab/awesome-local-inference-recipes/blob/main/recipes/text-022.ja.md">recipes/text-022.ja.md</a></p>
+</main><footer class="site-ft"><div class="ft-in">Data as of 2026-10-15 · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a> · data CC BY 4.0</div></footer></body></html>

@@ -1,0 +1,49 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Qwen3.6-35B-A3B-Escha-W2 · SGLang · RTX 5090 32GB</title><meta name="description" content="Qwen3.6-35B-A3B-Escha-W2 · SGLang · RTX 5090 32GB の実行ガイド：ハードウェア、エンジン、起動コマンド、出典付きの速度（Claimed）。">
+<link rel="canonical" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/ja/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html"><link rel="alternate" hreflang="en" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html"><link rel="alternate" hreflang="zh-CN" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/zh-CN/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html"><link rel="alternate" hreflang="ja" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/ja/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html"><link rel="alternate" hreflang="x-default" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html">
+<meta property="og:type" content="article"><meta property="og:title" content="Qwen3.6-35B-A3B-Escha-W2 · SGLang · RTX 5090 32GB"><meta property="og:description" content="Qwen3.6-35B-A3B-Escha-W2 · SGLang · RTX 5090 32GB の実行ガイド：ハードウェア、エンジン、起動コマンド、出典付きの速度（Claimed）。"><meta property="og:url" content="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/ja/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html"><meta property="og:image" content="https://raytone-lab.github.io/awesome-local-inference-recipes/docs/og.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../../style.css"><script src="../../theme.js"></script></head><body>
+<header class="site-hd"><div class="hd-in"><a class="brand" href="../../index.html">⚡ Local Inference Recipes</a><nav class="static-links"><a href="../../explore.html">Explore</a> · <a href="../../guides/index.html">Guides</a> · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a></nav></div></header>
+<main class="doc static-page">
+<h1>Qwen3.6-35B-A3B-Escha-W2 · SGLang · RTX 5090 32GB</h1>
+<p><a href="../../guides/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html">English</a> | <a href="../../guides/zh-CN/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.html">简体中文</a> | <b>日本語</b> · <a href="../../explore.html">← 一覧に戻る</a></p>
+<blockquote>出典レベル: <b>📣 主張</b> · 日付: 2026-07-22 · 数値は出典からの引用で、このリポジトリでは再計測していません。</blockquote>
+<h2>ハードウェア</h2>
+<ul>
+<li>RTX 5090 32GB (NVIDIA コンシューマー)</li>
+<li>参考価格: ≈ $5,400</li>
+</ul>
+<h2>モデル</h2>
+<ul>
+<li>Qwen3.6-35B-A3B-Escha-W2 · <code>Escha W2</code></li>
+<li>ダウンロード: <a href="https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2" rel="nofollow noopener">huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2</a></li>
+</ul>
+<h2>エンジン</h2>
+<ul>
+<li>SGLang — インストール： https://github.com/sgl-project/sglang</li>
+<li>備考: SGLang</li>
+</ul>
+<h2>起動コマンド</h2>
+<pre><code>MEM=0.78 CTXLEN=32768 bash sglang/serve.sh</code></pre>
+<h2>主なパラメータ</h2>
+<ul>
+<li>コンテキスト: 32K</li>
+<li>同時実行: 2,670</li>
+<li>タグ: <code>2bit</code>, <code>8bit</code>, <code>MoE</code></li>
+</ul>
+<h2>想定速度</h2>
+<ul>
+<li>283 tok/s decode (📣 主張)</li>
+</ul>
+<h2>注意点</h2>
+<ul>
+<li>本人による実測ではありません（主張・伝聞）。実際の速度は異なる場合があります。</li>
+<li>速度はドライバー、エンジンのバージョン、コンテキスト長、プロンプト長によって変わります。</li>
+</ul>
+<h2>出典とクレジット</h2>
+<ul>
+<li><a href="https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2" rel="nofollow noopener">https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2</a></li>
+<li>権利は元の投稿者にあります。このページは要約とリンクのみです。データは CC BY 4.0。</li>
+</ul>
+<p class="na">Source file: <a href="https://github.com/raytone-lab/awesome-local-inference-recipes/blob/main/recipes/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.ja.md">recipes/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.ja.md</a></p>
+</main><footer class="site-ft"><div class="ft-in">Data as of 2026-10-15 · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a> · data CC BY 4.0</div></footer></body></html>
