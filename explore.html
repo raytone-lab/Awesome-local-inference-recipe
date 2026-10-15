@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Explore · Awesome Local Inference Recipes</title>
 <meta name="description" content="Model × engine × hardware: real local inference recipes with sourced tok/s and hardware cost, every number linked to its source.">
-<link rel="canonical" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><link rel="alternate" hreflang="en" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?lang=en"><link rel="alternate" hreflang="zh-CN" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html?lang=zh-CN"><link rel="alternate" hreflang="x-default" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html">
+<link rel="canonical" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Awesome Local Inference Recipes">
 <meta property="og:title" content="Explore · Awesome Local Inference Recipes"><meta property="og:description" content="Model × engine × hardware: real local inference recipes with sourced tok/s and hardware cost, every number linked to its source.">
 <meta property="og:url" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><meta property="og:image" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/docs/og.png">
@@ -10,27 +10,27 @@
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Explore · Awesome Local Inference Recipes">
 <meta name="twitter:description" content="Model × engine × hardware: real local inference recipes with sourced tok/s and hardware cost, every number linked to its source."><meta name="twitter:image" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/docs/og.png">
 <link rel="stylesheet" href="style.css"></head><body>
-<header><div class="brand">⚡ <span data-i18n="brand"></span> <small>Awesome Local Inference Recipes</small></div><nav><a href="index.html" data-i18n="home"></a><a href="explore.html" class="on" data-i18n="explore"></a><a href="speed.html" data-i18n="speed"></a><a href="submit.html" data-i18n="submit"></a></nav></header>
+<header><div class="brand">⚡ <span data-i18n="brand">Local Inference Recipes</span> <small>Awesome Local Inference Recipes</small></div><nav><a href="index.html" data-i18n="home">Home</a><a href="explore.html" class="on" data-i18n="explore">Explore</a><a href="speed.html" data-i18n="speed">Speed feel</a><a href="submit.html" data-i18n="submit">Submit</a></nav></header>
 <main>
-<section class="hero"><h1 data-i18n="xh1"></h1>
-<p data-i18n="xlead"></p>
+<section class="hero"><h1 data-i18n="xh1">Which model × which hardware × which engine = how fast, how much</h1>
+<p data-i18n="xlead">Local inference setups under $30k. Every row carries a source and a trust level; unknown fields show “no public data”.</p>
 <div class="stats" id="stats"></div></section>
 <section class="filters">
-<input id="q" data-i18n-ph="ph">
-<select id="cat"><option value="" data-i18n="allcat"></option><option value="text" data-i18n="c_text"></option><option value="image" data-i18n="c_image"></option><option value="video-audio" data-i18n="c_va"></option></select>
-<select id="eng"><option value="" data-i18n="alleng"></option></select>
-<select id="mf"><option value="" data-i18n="allmf"></option></select>
-<select id="fam"><option value="" data-i18n="allhw"></option></select>
-<select id="lvl"><option value="" data-i18n="alllv"></option><option value="官方" data-i18n="l_off"></option><option value="实测" data-i18n="l_mea"></option><option value="转述" data-i18n="l_rel"></option><option value="宣称" data-i18n="l_cla"></option></select>
-<label class="budget"><span data-i18n="budget"></span> <b id="bv">$30,000</b><input id="budget" type="range" min="500" max="30000" step="500" value="30000"></label>
-<label class="chk"><input type="checkbox" id="unk" checked><span data-i18n="unk"></span></label>
+<input id="q" data-i18n-ph="ph" placeholder="Search model / hardware / engine / quant…">
+<select id="cat"><option value="" data-i18n="allcat">All categories</option><option value="text" data-i18n="c_text">Text</option><option value="image" data-i18n="c_image">Image</option><option value="video-audio" data-i18n="c_va">Video & audio</option></select>
+<select id="eng"><option value="" data-i18n="alleng">All engines</option></select>
+<select id="mf"><option value="" data-i18n="allmf">All model families</option></select>
+<select id="fam"><option value="" data-i18n="allhw">All hardware</option></select>
+<select id="lvl"><option value="" data-i18n="alllv">All source levels</option><option value="官方" data-i18n="l_off">Official</option><option value="实测" data-i18n="l_mea">Measured</option><option value="转述" data-i18n="l_rel">Relayed</option><option value="宣称" data-i18n="l_cla">Claimed</option></select>
+<label class="budget"><span data-i18n="budget">Budget ≤</span> <b id="bv">$30,000</b><input id="budget" type="range" min="500" max="30000" step="500" value="30000"></label>
+<label class="chk"><input type="checkbox" id="unk" checked><span data-i18n="unk">Include unknown cost</span></label>
 <div class="chips" id="chips"></div>
 </section>
-<section class="grid2"><div class="card"><h3 data-i18n="chh"></h3><svg id="chart" viewBox="0 0 640 300"></svg></div>
-<div class="card legend"><h3 data-i18n="lgh"></h3><ul><li data-i18n="lg1"></li><li data-i18n="lg2"></li><li><span data-i18n="lg3"></span><span class="lv 官方" data-i18n="l_off"></span><span class="lv 实测" data-i18n="l_mea"></span><span class="lv 转述" data-i18n="l_rel"></span><span class="lv 宣称" data-i18n="l_cla"></span></li><li data-i18n="lg4"></li><li data-i18n="lg5"></li></ul></div></section>
+<section class="grid2"><div class="card"><h3 data-i18n="chh">tok/s vs hardware cost (text models with both known)</h3><svg id="chart" viewBox="0 0 640 300"></svg></div>
+<div class="card legend"><h3 data-i18n="lgh">Notes</h3><ul><li data-i18n="lg1"><b>$/tok/s</b> = hardware cost ÷ single-stream tok/s; lower is better value</li><li data-i18n="lg2">Cost is the low end of the quoted range; per-card prices for multi-GPU rows are not multiplied (original text shown)</li><li><span data-i18n="lg3">Source levels: </span><span class="lv 官方" data-i18n="l_off">Official</span><span class="lv 实测" data-i18n="l_mea">Measured</span><span class="lv 转述" data-i18n="l_rel">Relayed</span><span class="lv 宣称" data-i18n="l_cla">Claimed</span></li><li data-i18n="lg4">Click any row for details, launch command and source</li><li data-i18n="lg5">Metric shows an English version where one exists (hover for the original); hardware and other fields keep the source’s wording</li></ul></div></section>
 <div class="card"><div class="tbar"><span id="count"></span></div><div class="tw"><table><thead><tr>
-<th data-k="category" data-i18n="th_cat"></th><th data-k="model" data-i18n="th_model"></th><th data-k="quant" data-i18n="th_quant"></th><th data-k="engine" data-i18n="th_eng"></th><th data-k="hardware" data-i18n="th_hw"></th><th data-k="tok_s" class="n">tok/s</th><th data-k="metric" data-i18n="th_metric"></th><th data-k="hardware_cost_usd" class="n" data-i18n="th_cost"></th><th data-k="cpt" class="n">$/tok/s</th><th data-k="context" data-i18n="th_ctx"></th><th data-k="source_level" data-i18n="th_src"></th></tr></thead><tbody id="tb"></tbody></table></div></div>
+<th data-k="category" data-i18n="th_cat">Type</th><th data-k="model" data-i18n="th_model">Model</th><th data-k="quant" data-i18n="th_quant">Quant / opt.</th><th data-k="engine" data-i18n="th_eng">Engine</th><th data-k="hardware" data-i18n="th_hw">Hardware</th><th data-k="tok_s" class="n">tok/s</th><th data-k="metric" data-i18n="th_metric">Metric</th><th data-k="hardware_cost_usd" class="n" data-i18n="th_cost">Cost $</th><th data-k="cpt" class="n">$/tok/s</th><th data-k="context" data-i18n="th_ctx">Context</th><th data-k="source_level" data-i18n="th_src">Source</th></tr></thead><tbody id="tb"></tbody></table></div></div>
 </main>
 <aside id="drawer"><button id="x">✕</button><div id="dc"></div></aside><div id="mask"></div>
-<footer><span data-i18n="xfoot"></span> · <a href="submit.html" data-i18n="submit"></a></footer>
+<footer><span data-i18n="xfoot">Compiled from X / GitHub / Reddit / price sites</span><span id="xd"></span> · <a href="submit.html" data-i18n="submit">Submit</a></footer>
 <script src="i18n.js"></script><script src="app.js"></script></body></html>

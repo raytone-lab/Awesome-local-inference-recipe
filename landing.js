@@ -19,8 +19,8 @@ const hot=D.filter(r=>r.x_post).sort((a,b)=>(b.x_post.likes+3*b.x_post.reposts)-
 document.getElementById('hot').innerHTML=hot.map(r=>`<a class="hc" href="${e(r.source_url)}" target="_blank" rel="noopener">
 <div class="hm"><span class="lv ${r.source_level}">${TL(r.source_level)}</span><span>♥ ${r.x_post.likes} · ⟲ ${r.x_post.reposts}</span></div>
 <div class="big">${r.tok_s!=null?r.tok_s+'<small> tok/s</small>':'🎬'}</div><b>${e(r.model)}</b>
-<div class="sub">${e(r.engine)} · ${e(r.quant||'')}</div><div class="sub">${e(r.hardware)}</div>
-<div class="mt">${e(r.metric)}</div><div class="au">@${e(r.x_post.author)}${r.date?' · '+e(r.date):''}</div></a>`).join('');
+<div class="sub">${e(r.engine)}${r.quant?' · '+e(r.quant):''}</div><div class="sub">${e(r.hardware)}</div>
+<div class="mt">${e(LANG=='en'&&r.metric_en?r.metric_en:r.metric)}</div><div class="au">@${e(r.x_post.author)}${r.date?' · '+e(r.date):''}</div></a>`).join('');
 const n=(f)=>D.filter(f).length;
 document.getElementById('ks').innerHTML=[[D.length,T('k1')],[new Set(D.map(r=>r.engine.split(/[ （]/)[0])).size,T('k2')],[new Set(D.map(r=>r.hardware_family)).size,T('k3')],[Math.round(100*n(r=>r.source_url)/D.length)+'%',T('k4')],[n(r=>r.source_level=='实测'),T('k5')]].map(([a,b])=>`<div class="k"><b>${a}</b>${b}</div>`).join('');
 const nd=D.map(r=>r.date).filter(Boolean).sort().pop();if(nd)document.querySelector('footer').textContent=T('foot')+T('footd',{d:nd});

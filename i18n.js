@@ -3,7 +3,7 @@
 const P=new URLSearchParams(location.search),norm=l=>(l||'').toLowerCase().startsWith('zh')?'zh-CN':(l?'en':'');
 let L=norm(P.get('lang'));
 try{if(L)localStorage.setItem('lang',L);else L=norm(localStorage.getItem('lang'))}catch(e){}
-if(!L)L=norm(navigator.language)==='zh-CN'?'zh-CN':'en';
+if(!L)L=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase().startsWith('zh')?'zh-CN':'en';
 window.LANG=L;document.documentElement.lang=L;
 const S={
  'zh-CN':{home:'首页',explore:'配方库',speed:'速度体感',submit:'提交配方',brand:'本地推理配方',
@@ -24,5 +24,6 @@ window.applyI18n=()=>{
  if(n&&!n.querySelector('.lang')){const s=document.createElement('span');s.className='lang';
   s.innerHTML=`<a href="#" data-l="en">EN</a><a href="#" data-l="zh-CN">中文</a>`;n.appendChild(s);}
  if(n)n.querySelectorAll('.lang [data-l]').forEach(a=>{a.classList.toggle('on',a.dataset.l===L);a.onclick=e=>{e.preventDefault();setLang(a.dataset.l)}});
- if(S[L].title)document.title=S[L].title;};
+ if(S[L].title)document.title=S[L].title;
+ document.documentElement.classList.toggle('l-en',L==='en');};
 })();
