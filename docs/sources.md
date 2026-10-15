@@ -14,9 +14,9 @@ Where recipes come from and how they are checked. Every recipe links to its orig
 
 ## Source levels
 - 🏛️ **Official** (官方) — published by the model/engine/hardware vendor.
-- ✅ **Measured** (实测) — the poster ran it themselves.
+- ✅ **Measured** (实测) — the poster ran it themselves and shows a screenshot or log of the run.
 - 🔁 **Relayed** (转述) — second-hand report of someone else's result.
-- 📣 **Claimed** (宣称) — marketing or unverified claim.
+- 📣 **Claimed** (宣称) — marketing, a prediction, or an unverified claim with no screenshot/log or no way to reproduce it (e.g. an unpublished private build).
 
 ## Hugging Face ingestion (maintainers)
 `python3 scripts/ingest_hf.py --limit 40` (optional `HF_TOKEN`) scans trending GGUF/MLX cards and writes candidates to `data/candidates/` (git-ignored). It never writes `data/recipes.json`. Candidates are reviewed with `python3 scripts/review_candidates.py list | show <id> | approve <id> | reject <id>`; only approved items enter the dataset. Batch approval: `python3 scripts/approve_review.py <review.json>`.
