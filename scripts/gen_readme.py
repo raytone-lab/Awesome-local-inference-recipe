@@ -14,7 +14,7 @@ PAGES = 'https://raytone-lab.github.io/awesome-local-inference-recipes/'
 GUIDES = set(json.load(open(R/'data/guides.json'))) if (R/'data/guides.json').exists() else set()
 LVI = {'官方':'🏛️','实测':'✅','转述':'🔁','宣称':'📣'}
 CJK_CHAR = re.compile(r'[\u3000-\u303f\u3400-\u9fff\uff00-\uffef]')
-CJK = re.compile(r'[\u3000-\u303f\u3400-\u9fff\uff00-\uffef“”]')
+CJK_OR_CURLY_QUOTE = re.compile(r'[\u3000-\u303f\u3400-\u9fff\uff00-\uffef“”]')
 L = {
  'en': dict(file='README.md', tpl='readme_static.en.md',
    tiers=['Tier 1 · up to $2.5k','Tier 2 · $2.5k–7k','Tier 3 · $7k–14k','Tier 4 · $14k–30k'],
@@ -56,7 +56,7 @@ SPEED={'en':('How fast is X tok/s?','Same answer, real Qwen3 tokens, streamed at
 IMGSUF={'en':'','zh':'.zh-CN','ja':'.ja'}
 BALT={'en':'Bar chart: fastest measured and claimed text setup in each budget tier','zh':'条形图：各预算档最快的实测与宣称文字配置','ja':'棒グラフ：予算帯ごとの最速テキスト構成（実測と公称）'}
 def clip(s,n=90): s=(s or '').replace('|','/').replace('\n',' '); return s if len(s)<=n else s[:n-1]+'…'
-def en(s, cjk=CJK, strip=' ·+/,'):
+def en(s, cjk=CJK_OR_CURLY_QUOTE, strip=' ·+/,'):
     if not s: return s
     s=re.sub(r'（[^）]*）|\([^)]*[\u3400-\u9fff][^)]*\)','',str(s))
     s=' '.join(w for w in re.split(r'\s+',s) if not cjk.search(w))
@@ -154,7 +154,8 @@ def hero(lang, E):
         out.append(f"| {H['lab'][k]} | {E(r['model'])}{' · '+eg if eg else ''} | {hw}{c} | **{r['tok_s']:g} tok/s** {LVI[r['source_level']]} | [{src}]({r['source_url']}) |")
     out+=['',f"<sub>{H['note']}</sub>"]
     return '\n'.join(out)
-QA_SINGLE_DEVICE_HW = [
+MULTI_OR_LAPTOP_HW = re.compile(r'[2-9] ?[x×] ?(RTX|DGX|NVIDIA)|双|[2-9] ?台|\s/|/\s|\svs\.?\s|笔记本|[Ll]aptop')
+QA_HARDWARE = [
  ('5090', r'^(单 ?)?(NVIDIA )?(GeForce )?RTX 5090( 32GB)?\b'), ('4090', r'^(单 ?)?(NVIDIA )?(GeForce )?RTX 4090( 24GB)?\b'),
  ('3090', r'^(单 ?)?(NVIDIA )?(GeForce )?RTX 3090( 24GB)?\b'), ('m3u', r'Mac Studio M3 Ultra'), ('spark', r'^(1 ?[x×] ?|单台 ?)?DGX Spark\b'),
  ('strix', r'Strix Halo|Ryzen AI Max\+? ?395')]
@@ -177,6 +178,7 @@ QAT = {
       'b25':'2,500 ドル以下で実測最速の構成は？'},
    a='実測最速：**{tok:g} tok/s** — {m}{e}、{hw}（{lv} {lvn}、{dt}、[出典]({u})）。{scope}のレシピ {n} 件、うち実測 {nm} 件。',
    none='実測結果はまだありません。主張・伝聞 {n} 件はエクスプローラーで。', lvn='実測', nodate='日付不明', s_hw='このハードウェア', s_b='この予算内')}
+def is_single_desktop_device(r): return 'multi-GPU' not in r['tags'] and not MULTI_OR_LAPTOP_HW.search(r['hardware'])
 def is_measured_text(r): return r['source_level']=='实测' and r['category']=='text' and r.get('tok_s') and '自称' not in (r.get('metric') or '') and not r.get('superseded_by')
 def qa(lang, E):
     Q=QAT[lang]; out=[Q['d'].format(d=DATA_ASOF),'']
@@ -186,8 +188,8 @@ def qa(lang, E):
         r=max(m,key=lambda r:(r['tok_s'],r['id'])); eg=E(r['engine']) if r['engine']!='Unspecified' else ''
         return Q['a'].format(tok=r['tok_s'],m=E(r['model']),e=(' · '+eg) if eg else '',hw=clip(E(r['hardware']) or r['hardware'],60),lv=LVI['实测'],lvn=Q['lvn'],
                              dt=r.get('date') or Q['nodate'],u=r['source_url'],n=len(rows),nm=len(m),scope=Q[scope])
-    for k,rx in QA_SINGLE_DEVICE_HW:
-        rows=[r for r in D if r['category']=='text' and re.search(rx,r['hardware']) and 'multi-GPU' not in r['tags'] and not re.search(r'[2-9] ?[x×] ?(RTX|DGX|NVIDIA)|双|[2-9] ?台|\s/|/\s|\svs\.?\s|笔记本|[Ll]aptop',r['hardware'])]
+    for k,rx in QA_HARDWARE:
+        rows=[r for r in D if r['category']=='text' and re.search(rx,r['hardware']) and is_single_desktop_device(r)]
         if rows: out.append(f"**{Q['q'][k]}**  \n{ans(rows,'s_hw')}\n")
     b=[r for r in D if r['category']=='text' and r.get('hardware_cost_usd') and r['hardware_cost_usd']<=BUDGET_TIER_BOUNDS_USD[0][1]]
     out.append(f"**{Q['q']['b25']}**  \n{ans(b,'s_b')}\n")
@@ -197,7 +199,7 @@ def build(lang):
     def key(r):
         if r['tok_s'] is not None: return f"**{r['tok_s']:g} tok/s**"
         m=(r.get('metric_en') or r['metric']) if lang in ('en','ja') else r['metric']
-        if lang in ('en','ja') and m and CJK.search(m): m=None
+        if lang in ('en','ja') and m and CJK_OR_CURLY_QUOTE.search(m): m=None
         return clip(m,70) if m else T['see']
     def ln(r):
         q=E(r['quant']); q=f" `{clip(q,28)}`" if q else ''

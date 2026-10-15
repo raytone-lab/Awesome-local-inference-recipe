@@ -31,26 +31,64 @@ class BudgetTiers(unittest.TestCase):
             self.assertEqual(len(t['tiers']), len(BUDGET_TIER_BOUNDS_USD), lang)
             self.assertEqual(len(t['tdesc']), len(BUDGET_TIER_BOUNDS_USD), lang)
 
+    def test_cjk_labels_name_their_bounds(self):
+        for lang in ('zh', 'ja'):
+            for label, (lo, hi) in zip(gen_readme.L[lang]['tiers'], BUDGET_TIER_BOUNDS_USD):
+                self.assertIn(f'{hi:,}', label, lang)
+                if lo: self.assertIn(f'{lo:,}', label, lang)
+
+    def test_budget_question_names_the_first_bound(self):
+        cap = BUDGET_TIER_BOUNDS_USD[0][1]
+        for lang, t in gen_readme.QAT.items():
+            self.assertIn(str(cap), t['q']['b25'].replace(',', ''), lang)
+
     def test_english_labels_name_their_bounds(self):
         for label, (lo, hi) in zip(gen_readme.L['en']['tiers'], BUDGET_TIER_BOUNDS_USD):
             self.assertIn(f'{hi/1000:g}k', label)
             if lo: self.assertIn(f'${lo/1000:g}k', label)
 
 
+MULTI_DEVICE_SAMPLES = {'5090': '2× RTX 5090 32GB', '4090': '双 RTX 4090', '3090': '4x RTX 3090', 'm3u': '2 台 Mac Studio M3 Ultra',
+                        'spark': '2× DGX Spark', 'strix': 'Strix Halo / RTX 4090'}
+SINGLE_DEVICE_SAMPLES = {'5090': 'RTX 5090 32GB', '4090': '单 RTX 4090', '3090': 'RTX 3090 24GB', 'm3u': 'Mac Studio M3 Ultra 512GB',
+                         'spark': 'DGX Spark', 'strix': 'AMD Ryzen AI Max+ 395'}
+
+
+def qa_row(hw): return dict(hardware=hw, tags=[])
+
+
 class QuickAnswerHardware(unittest.TestCase):
-    def test_patterns_reject_multi_device_setups(self):
-        for key, rx in gen_readme.QA_SINGLE_DEVICE_HW:
-            if key in ('m3u', 'strix'): continue
-            self.assertIsNone(re.search(rx, '2× RTX 3090'), key)
-            self.assertIsNone(re.search(rx, '2× DGX Spark'), key)
+    def test_every_key_has_samples(self):
+        keys = sorted(k for k, _ in gen_readme.QA_HARDWARE)
+        self.assertEqual(keys, sorted(MULTI_DEVICE_SAMPLES)); self.assertEqual(keys, sorted(SINGLE_DEVICE_SAMPLES))
+
+    def test_single_device_rows_are_answered(self):
+        for key, rx in gen_readme.QA_HARDWARE:
+            hw = SINGLE_DEVICE_SAMPLES[key]
+            self.assertTrue(re.search(rx, hw) and gen_readme.is_single_desktop_device(qa_row(hw)), key)
+
+    def test_multi_device_rows_are_excluded(self):
+        for key, rx in gen_readme.QA_HARDWARE:
+            hw = MULTI_DEVICE_SAMPLES[key]
+            self.assertFalse(re.search(rx, hw) and gen_readme.is_single_desktop_device(qa_row(hw)), key)
+
+    def test_multi_gpu_tag_excludes_the_row(self):
+        self.assertFalse(gen_readme.is_single_desktop_device(dict(hardware='RTX 5090', tags=['multi-GPU'])))
+
+    def test_laptops_are_excluded(self):
+        self.assertFalse(gen_readme.is_single_desktop_device(qa_row('RTX 5090 Laptop')))
 
 
 class HardwarePages(unittest.TestCase):
-    def test_explorer_query_finds_rows_the_page_lists(self):
+    KNOWN_PARTIAL_EXPLORER_QUERY = {'amd-radeon'}
+
+    def test_explorer_query_finds_every_row_the_page_lists(self):
         for page in gen_site.HW:
-            matched = [r['hardware'] for r in gen_site.D if re.search(page.pattern, r['hardware'])]
-            if matched:
-                self.assertTrue(any(page.explorer_query in hw for hw in matched), page.slug)
+            missed = [r['id'] for r in gen_site.D if re.search(page.pattern, r['hardware']) and page.explorer_query not in r['hardware']]
+            if page.slug in self.KNOWN_PARTIAL_EXPLORER_QUERY:
+                self.assertTrue(missed, f'{page.slug} is fixed; drop it from KNOWN_PARTIAL_EXPLORER_QUERY')
+            else:
+                self.assertEqual(missed, [], page.slug)
 
 
 if __name__ == '__main__': unittest.main()

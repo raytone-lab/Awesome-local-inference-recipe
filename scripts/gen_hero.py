@@ -8,7 +8,8 @@ import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 from matplotlib import font_manager as fm
-from hero_data import R, BUDGET_TIER_BOUNDS_USD, DATA_ASOF, TIER_LABELS, clean, money, params, fmtb, load_setups, measured_with_card, title_row, grouped_rows, rtx3090_baseline, tier_rows, is_used
+from dataset_constants import BUDGET_TIER_BOUNDS_USD, DATA_ASOF
+from hero_data import R, TIER_LABELS, clean, money, params, fmtb, load_setups, measured_with_card, title_row, grouped_rows, rtx3090_baseline, tier_rows, is_used
 SUF = {'en':'','zh-CN':'.zh-CN','ja':'.ja'}
 CJK = {'zh-CN':'Noto Sans CJK SC','ja':'Noto Sans CJK JP'}
 FAM = {'Mac':'#7c3aed','NVIDIA 消费级':'#16a34a','DGX Spark':'#0ea5e9','AMD':'#dc2626','二手数据中心卡':'#f59e0b','其他':'#64748b'}

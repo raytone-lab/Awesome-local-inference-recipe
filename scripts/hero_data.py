@@ -111,9 +111,11 @@ def tier_rows(setups, lo, hi):
     return rows
 
 
+def thousands(x): return f'{x/1000:g}k'
+
+
 def tier_label(lo, hi):
-    k = lambda x: f'{x/1000:g}k'
-    return f'≤ ${k(hi)}' if lo == 0 else f'${k(lo)}–{k(hi)}'
+    return f'≤ ${thousands(hi)}' if lo == 0 else f'${thousands(lo)}–{thousands(hi)}'
 
 
 TIER_LABELS = [tier_label(lo, hi) for lo, hi in BUDGET_TIER_BOUNDS_USD]

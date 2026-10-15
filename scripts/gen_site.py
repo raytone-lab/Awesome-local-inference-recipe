@@ -9,13 +9,15 @@ Run: python3 scripts/gen_site.py"""
 import json, re, html
 from urllib.parse import quote
 from pathlib import Path
+from typing import NamedTuple
 import gen_readme
 from dataset_constants import DATA_ASOF
-from typing import NamedTuple
 R = Path(__file__).resolve().parent.parent
 PAGES = 'https://raytone-lab.github.io/awesome-local-inference-recipes/'
 REPO = 'https://github.com/raytone-lab/awesome-local-inference-recipes'
 MIN_ROWS = 5
+STATIC_ROWS_START = '<!--static:rows (scripts/gen_site.py)-->'
+STATIC_ROWS_END = '<!--/static-->'
 D = json.load(open(R/'data/recipes.json', encoding='utf-8'))
 ASOF = DATA_ASOF
 LV = {'官方':'Official','实测':'Measured','转述':'Relayed','宣称':'Claimed'}
@@ -47,7 +49,7 @@ def row(r):
 def explore(links):
     p = R/'explore.html'; s = p.read_text(encoding='utf-8')
     rows = '\n'.join(row(r) for r in sorted(D, key=lambda r: (-(r.get('tok_s') or 0), r['id'])))
-    s = re.sub(r'<tbody id="tb">.*?</tbody>', lambda m: f'<tbody id="tb"><!--static:rows (scripts/gen_site.py)-->\n{rows}\n<!--/static--></tbody>', s, flags=re.S)
+    s = re.sub(r'<tbody id="tb">.*?</tbody>', lambda m: f'<tbody id="tb">{STATIC_ROWS_START}\n{rows}\n{STATIC_ROWS_END}</tbody>', s, flags=re.S)
     nav = '<nav class="static-links" aria-label="Browse"><a href="guides/index.html">Guides &amp; hardware / model pages</a></nav>'
     blk = f'<!--static:links-->{nav}<!--/static:links-->'
     if '<!--static:links-->' in s: s = re.sub(r'<!--static:links-->.*?<!--/static:links-->', lambda m: blk, s, flags=re.S)
