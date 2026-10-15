@@ -16,7 +16,7 @@ class ModelParams(unittest.TestCase):
             self.assertGreater(m['total_b'], 0); self.assertGreater(m['active_b'], 0)
             self.assertLessEqual(m['active_b'], m['total_b'], m['label'])
             if m['arch'] == 'dense': self.assertEqual(m['active_b'], m['total_b'], m['label'])
-            self.assertIn(m.get('quant_native'), (None, 'ternary', '1bit'), m['label'])
+            self.assertNotIn('quant_native', m, 'quant belongs on the recipe row, not the card')
             re.compile(m['match']); m.get('exclude') and re.compile(m['exclude'])
     def test_known_traps(self):
         self.assertIsNone(self.match('Bonsai 27B 1-bit'))
@@ -30,8 +30,19 @@ class ModelParams(unittest.TestCase):
         # warning, not failure: new data PRs may add models before a card exists (they are just left off the hero)
         miss = [m for m in miss if not re.search(r'REAP', m)]
         if miss: warnings.warn(f'models missing from data/model-params.json (omitted from hero): {miss}')
-    def test_every_hero_group_nonempty_for_known_models(self):
-        # hard check that the card regexes still match the headline models
-        for name in ('Qwen3.8-27B', 'Qwen3.8-Flash-Next', 'LFM2.5-24B-A2B'):
+    def test_headline_models_match(self):
+        for name in ('Qwen3.8-27B', 'Qwen3.8-Flash-Next', 'LFM2.5-24B-A2B', 'Bonsai2 27B'):
             self.assertIsNotNone(self.match(name), name)
+    def test_hero_groups_on_real_data(self):
+        import importlib.util, sys
+        spec = importlib.util.spec_from_file_location('gen_hero', R / 'scripts/gen_hero.py'); gh = importlib.util.module_from_spec(spec); spec.loader.exec_module(gh)
+        meas = [r for r in gh.U if r['_m'] and gh.params(r)]
+        counts = {k: sum(1 for r in meas if ok(gh.params(r))) for k, ok in gh.GROUPS}
+        self.assertTrue(any(counts.values()), counts)
+        self.assertGreater(counts['dense'], 0, counts)  # title is taken from Dense
+        empty = [k for k, v in counts.items() if not v]
+        if empty: warnings.warn(f'hero groups with no measured rows (not drawn): {empty}')
+    def test_title_ternary_flag_row_backed(self):
+        x = next(r for r in self.D if r['id'] == 'x-031')
+        self.assertIn('ternary', x['tags']); self.assertIn('MTP', x['tags'])
 if __name__ == '__main__': unittest.main()

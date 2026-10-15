@@ -52,7 +52,6 @@
       "total_b": 27.36,
       "active_b": 27.36,
       "arch": "dense",
-      "quant_native": "ternary",
       "source": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf"
     },
     {

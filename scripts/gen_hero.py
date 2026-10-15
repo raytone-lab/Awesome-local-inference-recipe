@@ -32,11 +32,15 @@ TX = {
 def clean(s,n):
     s=re.sub(r'[（(][^）)]*[）)]','',s); s=re.sub(r'[\u3000-\u30ff\u4e00-\u9fff，、；：]+',' ',s); s=re.sub(r'\s+',' ',s).strip(' +/·')
     return s if len(s)<=n else s[:n-1]+'…'
+def hwkey(s):
+    # dedupe key: drop parenthesized asides (dates, notes) but keep any that add hardware ('+64GB RAM'), so different setups never merge
+    s=re.sub(r'[（(]([^）)]*)[）)]',lambda m:' '+m.group(1) if '+' in m.group(1) else '',s)
+    return re.sub(r'\s+',' ',s).strip().lower()
 def money(x): return f'${x/1000:.1f}k' if x>=1000 else f'${x:.0f}'
 D=[r for r in json.load(open(R/'data/recipes.json')) if r['category']=='text' and r['tok_s'] and r['hardware_cost_usd']]
 best={}
 for r in D:
-    k=(clean(r['hardware'],80).lower(),clean(r['model'],80).lower()); cur=best.get(k)
+    k=(hwkey(r['hardware']),clean(r['model'],80).lower()); cur=best.get(k)
     rank=lambda x:(x['source_level']=='实测',x['tok_s'],x['id'])
     if cur is None or rank(r)>rank(cur): best[k]=r
 U=sorted(best.values(),key=lambda r:r['id'])
@@ -100,7 +104,7 @@ def hero(lang):
         pa=g['act'].format(a=fmtb(m['active_b'])) if m['arch']=='dense' else g['tot'].format(a=fmtb(m['active_b']),t=m.get('total_label') or fmtb(m['total_b']))
         ax.text(-.012,y-.24,f"{clean(m['label'],26)} · {pa}",transform=ax.get_yaxis_transform(),ha='right',va='center',fontsize=7.3,color='#94a3b8')
     ax.set_yticks([]); ax.set_ylim(-.7,n-.3)
-    # bare single-3090 rows only (raw string: no '+RAM' asides), Big MoE models only, so the line is a like-for-like reference
+    # bare single-3090 rows only (raw hardware string, so '+RAM' setups are excluded; dedupe also keys on raw strings), Big MoE models only, so the line is a like-for-like reference
     b=[r for r in meas if re.fullmatch(r'(单 )?RTX 3090( 24GB)?',r['hardware'].strip()) and dict(GROUPS)['big'](params(r))]
     if b and span:  # span=(header idx, last row idx); 3090 baseline is only comparable to the Big MoE rows (same offload regime); draw it inside that group
         bv=max(r['_v'] for r in b); y0,y1=n-1-span[1]-.45,n-1-span[0]+.1
@@ -109,7 +113,7 @@ def hero(lang):
     ax.set_xlim(0,vmax*1.6); ax.set_xlabel(t['h_x'],fontsize=10)
     hw=clean(first['hardware'],40); hw=re.sub(r'^(单 )','',hw)
     fl=[]
-    if params(first).get('quant_native')=='ternary' or 'ternary' in first.get('tags',[]): fl.append(g['tern'])
+    if 'ternary' in first.get('tags',[]): fl.append(g['tern'])  # row-backed: tag comes from the row's quant
     if 'MTP' in first.get('tags',[]): fl.append(g['mtp'])
     ftxt=g['flag'].format(f=g['sep'].join(fl)) if fl else ''
     fig.suptitle(g['t'].format(p=money(first['hardware_cost_usd']),u=h['used'] if _used(first) else '',hw=re.sub(r' \d+GB$','',hw),m=params(first)['label'],tok=first['tok_s'])+ftxt,x=.012,y=.99,ha='left',fontsize=15,fontweight='bold',color='#0f172a')
