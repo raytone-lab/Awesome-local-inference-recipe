@@ -28,4 +28,17 @@ class SiteStatic(unittest.TestCase):
             self.assertIn(canon, alts.values(), p)
             self.assertIn('x-default', alts)
             self.assertNotIn('HowTo', s); self.assertNotIn('FAQPage', s)
+
+
+class LandingWording(unittest.TestCase):
+    def test_summary_matches_data(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location('gs', R/'scripts/gen_site.py'); gs = importlib.util.module_from_spec(spec); spec.loader.exec_module(gs)
+        for p in list((R/'hw').glob('*.html')) + list((R/'model').glob('*.html')):
+            s = p.read_text(encoding='utf-8')
+            if 'none is first-hand yet' in s: self.assertIn(' 0 of them measured', s, p.name)
+        # the headline never cites a multi-device, comparison or self-reported row
+        for r in gs.D:
+            if 'multi-GPU' in r['tags'] or gs.selfrep(r) or gs.COMPARE.search(r['hardware']):
+                self.assertFalse(gs.meas_text(r) and gs.single(r), r['id'])
 if __name__ == '__main__': unittest.main()

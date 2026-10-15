@@ -20,16 +20,29 @@ e = lambda s: html.escape(str(s if s is not None else ''), quote=True)
 def write(p, s):
     p.parent.mkdir(parents=True, exist_ok=True); p.write_text(s, encoding='utf-8')
 def selfrep(r): return '自称' in (r.get('metric') or '')
+CJK = re.compile(r'[\u3400-\u9fff\uff00-\uffef\u3000-\u303f]')
+def en(s):  # same rule as gen_readme.en(): drop Chinese fragments, keep proper nouns; fall back to the original
+    if not s: return s
+    t = re.sub(r'（[^）]*）|\([^)]*[\u3400-\u9fff][^)]*\)', '', str(s))
+    t = re.sub(r'\s+', ' ', ' '.join(w for w in re.split(r'\s+', t) if not CJK.search(w))).strip(' ·+/,;；')
+    return t or s
+def met_en(r): return r.get('metric_en') or en(r.get('metric'))
+COMPARE = re.compile(r'\s/|/\s|\svs\.?\s', re.I)
+def single(r):  # one device, one stream: what a "fastest single-stream" headline may cite
+    return ('multi-GPU' not in r['tags'] and not re.search(r'[2-9] ?[x×] ?|双|[2-9] ?台', r['hardware']) and not COMPARE.search(r['hardware'])
+            and not r.get('superseded_by') and not re.search(r'并发|aggregate|总吞吐', (r.get('metric') or '') + ' ' + str(r.get('concurrency') or ''), re.I))
+def meas_text(r): return r['source_level'] == '实测' and r['category'] == 'text' and r.get('tok_s') and not selfrep(r)
+def safe_url(u): return u if re.match(r'(https?:)?//|[\w./#?=&%-]+$', u) and not u.lower().startswith('javascript:') else '#'
 
 # ---------- explore static rows
 def row(r):
     tok = '' if r.get('tok_s') is None else f"{r['tok_s']:g}"
     cost = f"{r['hardware_cost_usd']:,}" if r.get('hardware_cost_usd') is not None else e(r.get('hardware_cost_text') or '')
     cpt = round(r['hardware_cost_usd']/r['tok_s']) if r.get('tok_s') and r.get('hardware_cost_usd') else ''
-    met = r.get('metric_en') or r.get('metric') or ''
-    return (f'<tr data-id="{e(r["id"])}"><td></td><td>{e(r["model"])}</td><td>{e(r.get("quant") or "")}</td><td>{e(r["engine"])}</td>'
-            f'<td>{e(r["hardware"])}</td><td class="n">{tok}</td><td>{e(met)}</td><td class="n">{cost}</td><td class="n">{cpt}</td>'
-            f'<td>{e(r.get("context") or "")}</td><td><a href="{e(r["source_url"])}" rel="nofollow noopener">{LV.get(r["source_level"], e(r["source_level"]))}</a> {e(r.get("date") or "")}</td></tr>')
+    met = met_en(r) or ''
+    return (f'<tr data-id="{e(r["id"])}"><td></td><td>{e(en(r["model"]))}</td><td>{e(r.get("quant") or "")}</td><td>{e(r["engine"])}</td>'
+            f'<td>{e(en(r["hardware"]))}</td><td class="n">{tok}</td><td>{e(met)}</td><td class="n">{cost}</td><td class="n">{cpt}</td>'
+            f'<td>{e(r.get("context") or "")}</td><td><a href="{e(r["source_url"])}" rel="nofollow noopener">{LV.get(r["source_level"], e(r["source_level"]))}{" (self-reported)" if selfrep(r) else ""}</a> {e(r.get("date") or "")}</td></tr>')
 def explore(links):
     p = R/'explore.html'; s = p.read_text(encoding='utf-8')
     rows = '\n'.join(row(r) for r in sorted(D, key=lambda r: (-(r.get('tok_s') or 0), r['id'])))
@@ -48,7 +61,7 @@ def inline(t, linkmap):
         if m.group(1) is not None: out.append(f'<code>{e(m.group(1))}</code>')
         elif m.group(2) is not None: out.append(f'<b>{inline(m.group(2), linkmap)}</b>')
         else:
-            u = linkmap(m.group(4)); ext = u.startswith('http')
+            u = safe_url(linkmap(m.group(4))); ext = u.startswith('http')
             out.append(f'<a href="{e(u)}"{" rel=\"nofollow noopener\"" if ext else ""}>{inline(m.group(3), linkmap)}</a>')
         i = m.end()
     out.append(e(t[i:])); return ''.join(out)
@@ -74,6 +87,8 @@ def md(src, linkmap):
         i += 1
     close(); return '\n'.join(h)
 
+LVL = {'en': LV, 'zh-CN': {k: k for k in LV}, 'ja': {'官方': '公式', '实测': '実測', '转述': '伝聞', '宣称': '主張'}}
+CHROME = {'en': ('Explore', 'Guides', 'Data as of'), 'zh-CN': ('配方库', '指南', '数据截至'), 'ja': ('エクスプローラー', 'ガイド', 'データ時点')}
 LANGS = [('en', '', '.md', 'en'), ('zh-CN', 'zh-CN/', '.zh-CN.md', 'zh-CN'), ('ja', 'ja/', '.ja.md', 'ja')]
 def shell(title, desc, canon, body, depth, lang='en', alts=None, noindex=False):
     up = '../'*depth
@@ -83,10 +98,10 @@ def shell(title, desc, canon, body, depth, lang='en', alts=None, noindex=False):
 <link rel="canonical" href="{canon}">{alt}{'<meta name="robots" content="noindex,follow">' if noindex else ''}
 <meta property="og:type" content="article"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{canon}"><meta property="og:image" content="{PAGES}docs/og.png"><meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="{up}style.css"><script src="{up}theme.js"></script></head><body>
-<header class="site-hd"><div class="hd-in"><a class="brand" href="{up}index.html">⚡ Local Inference Recipes</a><nav class="static-links"><a href="{up}explore.html">Explore</a> · <a href="{up}guides/index.html">Guides</a> · <a href="{REPO}">GitHub</a></nav></div></header>
+<header class="site-hd"><div class="hd-in"><a class="brand" href="{up}index.html">⚡ Local Inference Recipes</a><nav class="static-links"><a href="{up}explore.html">{CHROME[lang][0]}</a> · <a href="{up}guides/index.html">{CHROME[lang][1]}</a> · <a href="{REPO}">GitHub</a></nav></div></header>
 <main class="doc static-page">
 {body}
-</main><footer class="site-ft"><div class="ft-in">Data as of {ASOF} · <a href="{REPO}">GitHub</a> · data CC BY 4.0</div></footer></body></html>
+</main><footer class="site-ft"><div class="ft-in">{CHROME[lang][2]} {ASOF} · <a href="{REPO}">GitHub</a> · data CC BY 4.0</div></footer></body></html>
 '''
 
 def guides():
@@ -104,45 +119,54 @@ def guides():
                 if m and not u.startswith('../'):
                     tgt = {'' : '', '.zh-CN': 'zh-CN/', '.ja': 'ja/'}[m.group(2) or '']
                     return '../'*depth + 'guides/' + tgt + m.group(1) + '.html'
-                if u.startswith('../'): return '../'*depth + 'explore.html'
+                if u.startswith('../README'): return '../'*depth + 'guides/index.html'
+                if u.startswith('../'): return f'{REPO}/blob/main/' + u[3:]
                 return u
             text = src.read_text(encoding='utf-8')
             title = re.match(r'# (.*)', text).group(1)
             r = next((x for x in D if x['id'] == rid), {})
             desc = {'en': 'How to run {t}: hardware, engine, launch command and the sourced speed ({lv}).',
                     'zh-CN': '{t} 的运行指南：硬件、引擎、启动命令与有出处的速度（{lv}）。',
-                    'ja': '{t} の実行ガイド：ハードウェア、エンジン、起動コマンド、出典付きの速度（{lv}）。'}[lang].format(t=title, lv=LV.get(r.get('source_level'), ''))
-            body = md(text, lm) + f'\n<p class="na">Source file: <a href="{REPO}/blob/main/recipes/{rid}{suf}">recipes/{rid}{suf}</a></p>'
+                    'ja': '{t} の実行ガイド：ハードウェア、エンジン、起動コマンド、出典付きの速度（{lv}）。'}[lang].format(t=title, lv=LVL[lang].get(r.get('source_level'), ''))
+            sf = {'en': 'Source file', 'zh-CN': '源文件', 'ja': 'ソースファイル'}[lang]
+            body = md(text, lm) + f'\n<p class="na">{sf}: <a href="{REPO}/blob/main/recipes/{rid}{suf}">recipes/{rid}{suf}</a></p>'
             canon = f'{PAGES}guides/{pre}{rid}.html'
             write(R/'guides'/f'{pre}{rid}.html', shell(title, desc, canon, body, depth, hl, alts)); urls.append(canon)
     return ids, urls
 
 # ---------- landing pages
-HW = [('rtx-5090','RTX 5090',r'RTX 5090'),('rtx-4090','RTX 4090',r'RTX 4090'),('rtx-3090','RTX 3090',r'RTX 3090'),('rtx-5060-ti','RTX 5060 Ti',r'RTX 5060 Ti'),
-      ('mac-studio-m3-ultra','Mac Studio M3 Ultra',r'M3 Ultra'),('mac-m4-max','Apple M4 Max',r'M4 Max'),('mac-m5','Apple M5 (Pro/Max)',r'\bM5\b'),
-      ('dgx-spark','NVIDIA DGX Spark',r'DGX Spark'),('strix-halo','AMD Strix Halo (Ryzen AI Max+ 395)',r'Strix Halo|Ryzen AI Max'),
-      ('amd-radeon','AMD Radeon (RX 7900 / R9700)',r'RX 7900|R9700'),('tesla-p40','NVIDIA Tesla P40',r'P40'),('rtx-pro-6000','RTX PRO 6000',r'RTX PRO 6000')]
+HW = [  # (slug, display name, regex on hardware, explorer search term that matches the same text)
+ ('rtx-5090','RTX 5090',r'RTX 5090','RTX 5090'),('rtx-4090','RTX 4090',r'RTX 4090','RTX 4090'),('rtx-3090','RTX 3090',r'RTX 3090','RTX 3090'),('rtx-5060-ti','RTX 5060 Ti',r'RTX 5060 Ti','RTX 5060 Ti'),
+ ('mac-studio-m3-ultra','Mac Studio M3 Ultra',r'M3 Ultra','M3 Ultra'),('mac-m4-max','Apple M4 Max',r'M4 Max','M4 Max'),('mac-m5','Apple M5 Pro / M5 Max',r'M5 (Pro|Max)','M5'),
+ ('dgx-spark','NVIDIA DGX Spark',r'DGX Spark','DGX Spark'),('strix-halo','AMD Strix Halo (Ryzen AI Max+ 395)',r'Strix Halo','Strix Halo'),
+ ('amd-radeon','AMD Radeon (RX 7900 / R9700)',r'RX 7900|R9700','R9700'),('tesla-p40','NVIDIA Tesla P40',r'P40','P40'),('rtx-pro-6000','RTX PRO 6000',r'RTX PRO 6000','RTX PRO 6000')]
 def slug(s): return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
-def landing(kind, key, name, rows):
+def landing(kind, key, name, rows, qterm=None):
     rows = sorted(rows, key=lambda r: (r['source_level'] != '实测', -(r.get('tok_s') or 0), r['id']))
-    meas = [r for r in rows if r['source_level'] == '实测' and r.get('tok_s') and r['category'] == 'text' and not selfrep(r)]
+    meas = [r for r in rows if meas_text(r) and single(r)]
+    nmeas = sum(1 for r in rows if r['source_level'] == '实测' and not selfrep(r))
+    nrec = lambda n: f'{n} recipe' + ('' if n == 1 else 's')
     dates = sorted(r['date'] for r in rows if r.get('date'))
     q = f'{name}: local inference speed (tok/s), sourced' if kind=='model' else f'Setups with {name}: local inference speed (tok/s), sourced'
     if meas:
         b = max(meas, key=lambda r: (r['tok_s'], r['id']))
-        summ = (f'As of {ASOF}, this dataset has <b>{len(rows)}</b> recipes for {e(name)} ({len(meas)} measured text results). '
-                f'The fastest measured single-stream result is <b>{b["tok_s"]:g} tok/s</b> with {e(b["model"])} on {e(b["engine"])} ({e(b["hardware"])}; '
+        eng = '' if b['engine'] == 'Unspecified' else f' on {e(b["engine"])}'
+        summ = (f'As of {ASOF}, this dataset has <b>{nrec(len(rows))}</b> for {e(name)}, {nmeas} of them measured by the poster. '
+                f'The fastest measured single-device, single-stream text result is <b>{b["tok_s"]:g} tok/s</b> with {e(en(b["model"]))}{eng} ({e(en(b["hardware"]))}; '
                 f'Measured{", " + e(b["date"]) if b.get("date") else ""}; <a href="{e(b["source_url"])}" rel="nofollow noopener">source</a>).')
     else:
-        summ = f'As of {ASOF}, this dataset has <b>{len(rows)}</b> recipes for {e(name)}; none is a first-hand measured text result yet, so treat the numbers below as claimed or relayed.'
-    if dates: summ += f' Entries are dated {dates[0]} to {dates[-1]}.'
-    t = ['<table><thead><tr><th>Model</th><th>Engine</th><th>Hardware</th><th>tok/s</th><th>Source level</th><th>Date</th><th>Source</th></tr></thead><tbody>']
+        summ = (f'As of {ASOF}, this dataset has <b>{nrec(len(rows))}</b> for {e(name)}, {nmeas} of them measured by the poster'
+                + ('.' if nmeas else '; none is first-hand yet, so treat the numbers below as official, claimed or relayed.')
+                + (' These are image / video / audio results, so speed is given in the metric column rather than as tok/s.' if all(r['category'] != 'text' for r in rows) else ''))
+    if dates: summ += f' Entries are dated {dates[0]}.' if dates[0] == dates[-1] else f' Entries are dated {dates[0]} to {dates[-1]}.'
+    t = ['<table><thead><tr><th>Model</th><th>Engine</th><th>Hardware</th><th>tok/s</th><th>Metric</th><th>Source level</th><th>Date</th><th>Source</th></tr></thead><tbody>']
     for r in rows:
         tok = '' if r.get('tok_s') is None else f"{r['tok_s']:g}"
-        t.append(f'<tr><td>{e(r["model"])}</td><td>{e(r["engine"])}</td><td>{e(r["hardware"])}</td><td class="n">{tok}</td><td>{LV.get(r["source_level"], "")}{" (self-reported)" if selfrep(r) else ""}</td><td>{e(r.get("date") or "")}</td><td><a href="{e(r["source_url"])}" rel="nofollow noopener">link</a></td></tr>')
+        t.append(f'<tr><td>{e(en(r["model"]))}</td><td>{e(r["engine"])}</td><td>{e(en(r["hardware"]))}</td><td class="n">{tok}</td><td>{e(met_en(r) or "")}</td><td>{LV.get(r["source_level"], "")}{" (self-reported)" if selfrep(r) else ""}</td><td>{e(r.get("date") or "")}</td><td><a href="{e(r["source_url"])}" rel="nofollow noopener">link</a></td></tr>')
     t.append('</tbody></table>')
     note = '<p class="na">Numbers are quoted from each source and have not been re-run by this project. Models and settings differ between rows. Source levels: Official = project/vendor, Measured = the poster ran it, Relayed = second-hand, Claimed = prediction or no reproduction details.</p>'
-    qs = {'hw': f'explore.html?q={e(name)}', 'model': f'explore.html?family={e(key)}'}[kind]
+    from urllib.parse import quote
+    qs = e({'hw': f'explore.html?q={quote(qterm or name)}', 'model': f'explore.html?family={quote(key)}'}[kind])
     body = f'<h1>{e(q)}</h1>\n<p>{summ}</p>\n<p><a href="../{qs}">Filter these in the explorer →</a></p>\n' + ''.join(t) + note
     canon = f'{PAGES}{kind}/{slug(key) if kind=="model" else key}.html'
     noidx = len(rows) < MIN_ROWS
@@ -154,9 +178,9 @@ def main():
         for p in (R/d).rglob('*.html') if (R/d).exists() else []: p.unlink()
     ids, gurls = guides()
     pages = []
-    for key, name, rx in HW:
+    for key, name, rx, qt in HW:
         rows = [r for r in D if re.search(rx, r['hardware'])]
-        if rows: pages.append(('hw', key, name) + landing('hw', key, name, rows))
+        if rows: pages.append(('hw', key, name) + landing('hw', key, name, rows, qt))
     fams = sorted({r['model_family'] for r in D if r['model_family'] != 'Other'})
     for f in fams:
         rows = [r for r in D if r['model_family'] == f]

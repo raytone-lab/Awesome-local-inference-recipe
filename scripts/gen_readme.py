@@ -192,7 +192,7 @@ def qa(lang, E):
         return Q['a'].format(tok=r['tok_s'],m=E(r['model']),e=(' · '+eg) if eg else '',hw=clip(E(r['hardware']) or r['hardware'],60),lv=LVI['实测'],lvn=Q['lvn'],
                              dt=r.get('date') or Q['nodate'],u=r['source_url'],n=len(rows),nm=len(m),scope=Q[scope])
     for k,rx in QA_HW:
-        rows=[r for r in D if r['category']=='text' and re.search(rx,r['hardware']) and 'multi-GPU' not in r['tags'] and not re.search(r'[2-9] ?[x×] ?(RTX|DGX|NVIDIA)|双|[2-9] ?台',r['hardware'])]
+        rows=[r for r in D if r['category']=='text' and re.search(rx,r['hardware']) and 'multi-GPU' not in r['tags'] and not re.search(r'[2-9] ?[x×] ?(RTX|DGX|NVIDIA)|双|[2-9] ?台|\s/|/\s|\svs\.?\s|笔记本|[Ll]aptop',r['hardware'])]
         if rows: out.append(f"**{Q['q'][k]}**  \n{ans(rows,'s_hw')}\n")
     b=[r for r in D if r['category']=='text' and r.get('hardware_cost_usd') and r['hardware_cost_usd']<=2500]
     out.append(f"**{Q['q']['b25']}**  \n{ans(b,'s_b')}\n")

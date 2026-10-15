@@ -61,13 +61,13 @@
 Data as of 2026-10-15. Each answer is the fastest single-stream text result in the dataset with its trust level; ✅ = measured by the poster. Models differ between answers.
 
 **How fast is a single RTX 5090 for local LLMs?**  
-Fastest measured: **351.5 tok/s** — LFM2.5-24B-A2B · llama.cpp on RTX 5090 32GB (✅ measured, 2026-10-15, [source](https://x.com/niklaslenz_ai/status/2110469931011612895)). 35 recipe(s) for this hardware, 14 measured.
+Fastest measured: **351.5 tok/s** — LFM2.5-24B-A2B · llama.cpp on RTX 5090 32GB (✅ measured, 2026-10-15, [source](https://x.com/niklaslenz_ai/status/2110469931011612895)). 31 recipe(s) for this hardware, 12 measured.
 
 **How fast is a single RTX 4090 for local LLMs?**  
-Fastest measured: **121 tok/s** — Qwen3.8-27B · DFlash on RTX 4090 24GB (✅ measured, date not stated, [source](https://x.com/yume_arasaki/status/2100595901006008791)). 10 recipe(s) for this hardware, 2 measured.
+Fastest measured: **121 tok/s** — Qwen3.8-27B · DFlash on RTX 4090 24GB (✅ measured, date not stated, [source](https://x.com/yume_arasaki/status/2100595901006008791)). 9 recipe(s) for this hardware, 2 measured.
 
 **How fast is a single RTX 3090 for local LLMs?**  
-Fastest measured: **120.8 tok/s** — Qwen3.8-Flash-Next · Strata on RTX 3090 24GB + 64GB RAM (✅ measured, date not stated, [source](https://x.com/needmorevram/status/2105050786938118599)). 10 recipe(s) for this hardware, 4 measured.
+Fastest measured: **120.8 tok/s** — Qwen3.8-Flash-Next · Strata on RTX 3090 24GB + 64GB RAM (✅ measured, date not stated, [source](https://x.com/needmorevram/status/2105050786938118599)). 9 recipe(s) for this hardware, 3 measured.
 
 **How fast is a Mac Studio M3 Ultra for local LLMs?**  
 Fastest measured: **251 tok/s** — Qwen3.6-35B-A3B · DFlash on Mac Studio M3 Ultra (✅ measured, date not stated, [source](https://x.com/tinybluedev/status/2089910202606764530)). 15 recipe(s) for this hardware, 8 measured.
@@ -76,7 +76,7 @@ Fastest measured: **251 tok/s** — Qwen3.6-35B-A3B · DFlash on Mac Studio M3 U
 Fastest measured: **95 tok/s** — Qwen3.6-35B-A3B · vLLM on 1× DGX Spark (✅ measured, 2026-07-29, [source](https://x.com/MiaAI_lab/status/2082573590529204458)). 25 recipe(s) for this hardware, 15 measured.
 
 **How fast is an AMD Strix Halo (Ryzen AI Max+ 395) for local LLMs?**  
-Fastest measured: **61 tok/s** — Qwen3.8-Flash-Next · llama.cpp (vahpetr fork) on AMD Strix Halo 128GB (✅ measured, 2026-10-10, [source](https://github.com/ggml-org/llama.cpp/discussions/30282)). 14 recipe(s) for this hardware, 6 measured.
+Fastest measured: **61 tok/s** — Qwen3.8-Flash-Next · llama.cpp (vahpetr fork) on AMD Strix Halo 128GB (✅ measured, 2026-10-10, [source](https://github.com/ggml-org/llama.cpp/discussions/30282)). 13 recipe(s) for this hardware, 6 measured.
 
 **What is the fastest measured setup under $2,500?**  
 Fastest measured: **162 tok/s** — LFM2.5-24B-A2B · llama.cpp on RTX 5060 Ti 16GB (✅ measured, 2026-10-15, [source](https://x.com/niklaslenz_ai/status/2110469931011612895)). 41 recipe(s) in this budget, 17 measured.
