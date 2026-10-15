@@ -18,4 +18,4 @@ jobs:
       - run: node scripts/check_dupes.mjs
       - run: python3 -m unittest discover tests
       - name: Generated files are up to date
-        run: python3 scripts/gen_readme.py && python3 scripts/gen_recipe_pages.py && git diff --exit-code
+        run: python3 scripts/gen_readme.py && python3 scripts/gen_recipe_pages.py && python3 scripts/gen_site.py && git status --porcelain && git diff --exit-code && test -z "$(git status --porcelain)"
