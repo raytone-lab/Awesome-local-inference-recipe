@@ -1,22 +1,50 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>提交配方 · Awesome Local Inference Recipes</title><link rel="stylesheet" href="style.css"></head><body>
-<header><div class="brand">⚡ 本地推理配方 <small>Awesome Local Inference Recipes</small></div><nav><a href="index.html">首页</a><a href="explore.html">配方库</a><a href="submit.html" class="on">提交配方</a></nav></header>
-<main class="doc"><h1>提交一条配方</h1><p>所有配方都以 PR 的方式进入仓库，经校验和人工审核后上线。</p>
-<div class="card"><h3>流程</h3><ol><li>Fork 仓库，新建分支</li><li>在 <code>data/recipes.json</code> 追加一条（后续会拆成 <code>recipes/*.yaml</code>）</li><li>本地运行 <code>node scripts/validate.mjs</code> 通过校验</li><li>提交 PR，附原帖/日志链接；自测请附截图或完整命令输出</li><li>维护者核对来源等级后合并</li></ol></div>
-<div class="card"><h3>YAML 模板</h3><pre>id: text-qwen38-27b-m4max-omlx
-category: text            # text | image | video-audio
-model: Qwen3.8-27B
-quant: UD-Q4_K_XL         # 未知写 null
-engine: oMLX 0.7          # 引擎 + 版本
-hardware: Mac Studio M4 Max 128GB
-hardware_family: Mac      # Mac | NVIDIA 消费级 | DGX Spark | AMD | 二手数据中心卡 | 其他
-hardware_cost_usd: 3499   # 未知写 null，不要估
-metric: "62 tok/s 生成；850 tok/s 读入（8K 提示）"
-tok_s: 62
-concurrency: "1 路"
-context: 128K
-launch_command: |
-  omlx serve --model ... --ctx 131072
-source_url: https://x.com/...
-source_level: 实测        # 官方 | 实测 | 转述 | 宣称
-date: 2026-10-13</pre></div>
-<div class="card"><h3>规则</h3><ul><li>不估算、不编造；拿不到的字段写 <code>null</code>，页面显示「未见公开数据」</li><li>只存链接与摘要，不搬运 X 帖子全文</li><li>来源等级：官方 = 项目方/厂商；实测 = 作者本人跑出；转述 = 二手引用；宣称 = 预测或未给出复现条件</li></ul></div></main></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Submit a recipe · Awesome Local Inference Recipes</title>
+<meta name="description" content="Model × engine × hardware: real local inference recipes with sourced tok/s and hardware cost, every number linked to its source.">
+<link rel="canonical" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html"><link rel="alternate" hreflang="en" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html?lang=en"><link rel="alternate" hreflang="zh-CN" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html?lang=zh-CN"><link rel="alternate" hreflang="x-default" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Awesome Local Inference Recipes">
+<meta property="og:title" content="Submit a recipe · Awesome Local Inference Recipes"><meta property="og:description" content="Model × engine × hardware: real local inference recipes with sourced tok/s and hardware cost, every number linked to its source.">
+<meta property="og:url" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html"><meta property="og:image" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/docs/og.png">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="Awesome Local Inference Recipes: model × engine × hardware, sourced tok/s and cost">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Submit a recipe · Awesome Local Inference Recipes">
+<meta name="twitter:description" content="Model × engine × hardware: real local inference recipes with sourced tok/s and hardware cost, every number linked to its source."><meta name="twitter:image" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/docs/og.png">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><div class="brand">⚡ <span data-i18n="brand"></span> <small>Awesome Local Inference Recipes</small></div><nav><a href="index.html" data-i18n="home"></a><a href="explore.html" data-i18n="explore"></a><a href="speed.html" data-i18n="speed"></a><a href="submit.html" class="on" data-i18n="submit"></a></nav></header>
+<main class="doc"><h1 data-i18n="sh1"></h1><p data-i18n="sp"></p>
+<div class="card"><h3 data-i18n="sflow"></h3><ol><li data-i18n="s1"></li><li data-i18n="s2"></li><li data-i18n="s3"></li><li data-i18n="s4"></li><li data-i18n="s5"></li></ol></div>
+<div class="card"><h3 data-i18n="stpl"></h3><pre>{
+  "id": "text-qwen38-27b-m4max-omlx",
+  "category": "text",
+  "model": "Qwen3.8-27B",
+  "model_family": "Qwen",
+  "quant": "UD-Q4_K_XL",
+  "engine": "oMLX",
+  "engine_note": "oMLX 0.7",
+  "hardware": "Mac Studio M4 Max 128GB",
+  "hardware_family": "Mac",
+  "hardware_cost_usd": 3499,
+  "hardware_cost_text": "$3,499 (Apple Store, 2026-10)",
+  "metric": "62 tok/s decode; 850 tok/s prefill (8K prompt)",
+  "tok_s": 62,
+  "concurrency": "1",
+  "context": "128K",
+  "launch_command": "omlx serve --model ... --ctx 131072",
+  "source_url": "https://x.com/...",
+  "source_note": "@author on X",
+  "source_level": "实测",
+  "date": "2026-10-13",
+  "tags": ["dense", "4bit"]
+}</pre><p class="na" data-i18n="snote"></p></div>
+<div class="card"><h3 data-i18n="srules"></h3><ul><li data-i18n="r1"></li><li data-i18n="r2"></li><li data-i18n="r3"></li></ul></div></main>
+<footer><a href="https://github.com/raytone-lab/Awesome-local-inference-recipe">GitHub</a> · CC BY 4.0</footer>
+<script src="i18n.js"></script><script>
+I18N_ADD({'zh-CN':{title:'提交配方 · 本地推理配方',sh1:'提交一条配方',sp:'所有配方都以 PR 的方式进入仓库，经校验和人工审核后上线。',sflow:'流程',
+ s1:'Fork 仓库，新建分支',s2:'在 <code>data/recipes.json</code> 数组末尾追加一条（JSON，字段见下方模板和 <code>schema/</code>）',s3:'本地运行 <code>node scripts/validate.mjs</code> 和 <code>node scripts/check_dupes.mjs</code>',s4:'提交 PR，附原帖/日志链接；自测请附截图或完整命令输出',s5:'维护者核对来源等级后合并；README 由脚本生成，不要手改',
+ stpl:'JSON 模板',snote:'未知字段写 null，不要估。hardware_family：Mac | NVIDIA 消费级 | DGX Spark | AMD | 二手数据中心卡 | 其他。source_level：官方 | 实测 | 转述 | 宣称（数据中保持中文取值）。tags / model_family 会由 <code>scripts/tag_recipes.py</code> 规范化。',
+ srules:'规则',r1:'不估算、不编造；拿不到的字段写 <code>null</code>，页面显示「未见公开数据」',r2:'只存链接与摘要，不搬运 X 帖子全文',r3:'来源等级：官方 = 项目方/厂商；实测 = 作者本人跑出；转述 = 二手引用；宣称 = 预测或未给出复现条件'},
+ en:{title:'Submit a recipe · Awesome Local Inference Recipes',sh1:'Submit a recipe',sp:'Every recipe enters the repo as a pull request and goes live after validation and a manual review.',sflow:'Steps',
+ s1:'Fork the repo and create a branch',s2:'Append one entry to the array in <code>data/recipes.json</code> (JSON; see the template below and <code>schema/</code>)',s3:'Run <code>node scripts/validate.mjs</code> and <code>node scripts/check_dupes.mjs</code> locally',s4:'Open a PR with the original post / log link; for your own runs attach a screenshot or the full command output',s5:'A maintainer checks the source level and merges; READMEs are generated by scripts, don\'t edit them by hand',
+ stpl:'JSON template',snote:'Use null for unknown fields; never estimate. hardware_family: Mac | NVIDIA 消费级 | DGX Spark | AMD | 二手数据中心卡 | 其他. source_level: 官方 (official) | 实测 (measured) | 转述 (relayed) | 宣称 (claimed). Keep these values in Chinese in the data. tags / model_family are normalized by <code>scripts/tag_recipes.py</code>.',
+ srules:'Rules',r1:'No estimates, nothing made up; unknown fields are <code>null</code> and show as “no public data”',r2:'Store links and summaries only; don\'t copy full X posts',r3:'Source levels: official = project / vendor; measured = the author ran it; relayed = second-hand quote; claimed = prediction or no reproduction details'}});
+applyI18n();</script></body></html>

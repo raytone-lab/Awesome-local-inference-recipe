@@ -1,5 +1,14 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Token speed feel · Awesome Local Inference Recipes</title><link rel="stylesheet" href="style.css">
+<title>Token speed feel · Awesome Local Inference Recipes</title><meta name="description" content="Feel what 10, 20, 50, 100, 200 and 500 tokens per second look like, next to human reading speed and measured local setups.">
+<link rel="canonical" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/speed.html"><link rel="alternate" hreflang="en" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/speed.html?lang=en"><link rel="alternate" hreflang="zh-CN" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/speed.html?lang=zh-CN"><link rel="alternate" hreflang="x-default" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/speed.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Awesome Local Inference Recipes">
+<meta property="og:title" content="Token speed feel · Awesome Local Inference Recipes"><meta property="og:description" content="Feel what 10, 20, 50, 100, 200 and 500 tokens per second look like, next to human reading speed and measured local setups.">
+<meta property="og:url" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/speed.html"><meta property="og:image" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/docs/og.png">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="Awesome Local Inference Recipes: model × engine × hardware, sourced tok/s and cost">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Token speed feel · Awesome Local Inference Recipes">
+<meta name="twitter:description" content="Feel what 10, 20, 50, 100, 200 and 500 tokens per second look like, next to human reading speed and measured local setups."><meta name="twitter:image" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/docs/og.png">
+<link rel="stylesheet" href="style.css">
 <style>
 .ctl{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;background:#fff;border:1px solid #e6e8ef;border-radius:12px;padding:12px;margin:14px 0}
 .ctl button{background:#4f46e5;color:#fff;border:0;border-radius:8px;padding:8px 18px;font:inherit;font-weight:600;cursor:pointer}
@@ -78,7 +87,9 @@ ja:{brand:'ローカル推論レシピ',home:'ホーム',explore:'エクスプ�
  ch:'500 トークンの回答を出し切る時間 vs 速度',chnote:'時間 = 500 / 速度（1/x 曲線。対数軸では等間隔＝体感も等間隔）。灰色の線：人が同じ 500 トークンを読む時間。軸下の点：data/recipes.json のローカル単一ストリーム実測。青緑の目盛：クラウド API の中央値（Artificial Analysis）。',
  mh:'方法と出典',foot:'データ：data/recipes.json の実測レシピ'}};
 const P=new URLSearchParams(location.search);
-const NL=(navigator.language||'').toLowerCase(); let LANG=P.get('lang')||(NL.startsWith('ja')?'ja':NL.startsWith('zh')?'zh-CN':'en');
+const NL=(navigator.language||'').toLowerCase(); let SAVED=null; try{SAVED=localStorage.getItem('lang')}catch(e){}
+let LANG=P.get('lang')||(P.has('embed')?null:SAVED)||(NL.startsWith('ja')?'ja':NL.startsWith('zh')?'zh-CN':'en');
+if(P.get('lang')&&!P.has('embed'))try{localStorage.setItem('lang',P.get('lang'))}catch(e){}  // shared with the other pages (i18n.js)
 if(!I18N[LANG])LANG='en'; const T=I18N[LANG]; document.documentElement.lang=LANG;
 document.querySelectorAll('[data-t]').forEach(e=>e.textContent=T[e.dataset.t]);
 document.querySelectorAll('[data-l]').forEach(e=>e.classList.toggle('on',e.dataset.l===LANG));
