@@ -6,7 +6,7 @@
 const DISCRETE=['NVIDIA 消费级','AMD','二手数据中心卡'],WHOLE=['Mac','DGX Spark'];
 const SYS=/Strix Halo|Ryzen AI Max|Mac\b|Mac mini|iPhone|iPad|Samsung|AI TOP ATOM|GB10/i,CARD=/RTX|Radeon|\bRX\s*\d|R9700|Tesla|CMP|\bArc\b|\bMI\d{2,3}\b|V100|P40/i;
 window.costKind=r=>{if(r.hardware_cost_usd==null)return null;const h=r.hardware||'',t=r.hardware_cost_text||'';
- if(/\s\/\s|\svs\s/i.test(h))return null;
+ if(/\s\/|\/\s|\svs\s/i.test(h))return null;  // 'A / B', 'A（…）/ +B'; keeps 'DDR4/5'
  if(t.includes('仅显卡'))return 'gpu';
  if(WHOLE.includes(r.hardware_family)||t.includes('整机')||SYS.test(h))return 'sys';
  if(DISCRETE.includes(r.hardware_family)||CARD.test(h))return 'gpu';
