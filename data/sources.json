@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-14",
-  "note": "Curated people/orgs that publish reproducible local-inference recipes. Tier A = concrete params + reproducible (repo/scripts or independent reruns); B = concrete numbers, partial conditions; C = useful but mostly relayed or narrow. Follower counts from X API on 2026-10-14.",
+  "updated": "2026-10-15",
+  "note": "Curated people/orgs that publish reproducible local-inference recipes. Tier A = concrete params + reproducible (repo/scripts or independent reruns); B = concrete numbers, partial conditions; C = useful but mostly relayed or narrow. Follower counts from X API on 2026-10-14 for X accounts; null for Reddit/GitHub/forum/web sources.",
   "sources": [
     {
       "name": "MiaAI_lab",
@@ -231,6 +231,66 @@
       "why": "多机 NVFP4 + DFlash2 配置",
       "sample_post": "https://x.com/AlicanKiraz0/status/2093843767866405145",
       "tier": "C"
+    },
+    {
+      "name": "r/LocalLLaMA",
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/LocalLLaMA/",
+      "followers": null,
+      "focus": "多卡/单卡长上下文对比、引擎 A/B（Strata vs Infernix、vLLM vs llama.cpp）",
+      "why": "帖主常给完整表格（中位数、上下文、量化），可作独立复现来源",
+      "sample_post": "https://www.reddit.com/r/LocalLLaMA/comments/1x3wjzf/qwen38flashnext_on_six_3090s_with_vllm_7_users_at/",
+      "tier": "B"
+    },
+    {
+      "name": "r/LocalLLM",
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/r/LocalLLM/",
+      "followers": null,
+      "focus": "DGX Spark 多引擎 × 投机解码对比",
+      "why": "有方法说明与更正记录",
+      "sample_post": "https://www.reddit.com/r/LocalLLM/comments/1vxs6en/benchmarks_qwen3827b_on_one_dgx_spark_across/",
+      "tier": "B"
+    },
+    {
+      "name": "Niko1221/Strata PRs（bench/results）",
+      "platform": "GitHub",
+      "url": "https://github.com/Niko1221/Strata/pulls",
+      "followers": null,
+      "focus": "社区基准 PR：README + results.json + 引擎日志",
+      "why": "带原始数据，最适合核验 Strata 行",
+      "sample_post": "https://github.com/Niko1221/Strata/pull/2165",
+      "tier": "A"
+    },
+    {
+      "name": "ggml-org/llama.cpp Discussions",
+      "platform": "GitHub",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions",
+      "followers": null,
+      "focus": "llama.cpp 硬件实测、fork 与补丁说明",
+      "why": "含配置、sha256、对照组",
+      "sample_post": "https://github.com/ggml-org/llama.cpp/discussions/30328",
+      "tier": "B"
+    },
+    {
+      "name": "vLLM / MLX / oMLX GitHub Discussions & issues",
+      "platform": "GitHub",
+      "url": "https://github.com/vllm-project/vllm/discussions",
+      "followers": null,
+      "focus": "引擎 issue 中的性能回报（另见 ml-explore/mlx-lm、oMLX 仓库 issues）",
+      "why": "矛盾数据和回归常先出现在 issue",
+      "sample_post": "https://github.com/vllm-project/vllm/discussions",
+      "tier": "C"
+    },
+    {
+      "name": "NVIDIA Developer Forums · DGX Spark / GB10",
+      "platform": "Web",
+      "url": "https://forums.developer.nvidia.com/c/accelerated-computing/dgx-spark-gb10/",
+      "followers": null,
+      "focus": "双/多 Spark recipe、内存技巧",
+      "why": "recipe 作者常在此发布完整设置",
+      "sample_post": "https://forums.developer.nvidia.com/t/deepseek-v4-1-flash-for-2x-dgx-spark-exl3-3bpw-3m-kv-cache-c6-new-2gb-free-ram-unlock-for-all-gb10s/383583",
+      "tier": "B"
     }
   ]
 }

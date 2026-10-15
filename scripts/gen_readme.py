@@ -19,7 +19,7 @@ L = {
    tdesc=['Used 3090/4090, MI50/V100 cards, Strix Halo, R9700','One RTX 5090, one DGX Spark, Mac Studio Max','Two Sparks, Mac Studio Ultra','3–4 Spark clusters, multi-GPU workstations'],
    cats={'text':'📝 Text','image':'🖼️ Image','video-audio':'🎬 Video & Audio'},
    fam='Browse by Model Family', famdesc='Click a family to open the explorer pre-filtered. Tags: {tags}.', engidx='Browse by Engine', engdesc='Engine names are normalized (`scripts/normalize_engines.py`); original strings are kept in `engine_note`.', th2='| Family | Recipes | Text | Image | Video & Audio |', th3='| Engine | Recipes |',
-   hot='Hot This Month', hotdesc='Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).',
+   hot='Hot This Month', hotdesc='Most-engaged recipe posts on X, 2026-09-15 → 10-15 (likes + 3×reposts).',
    unk='Cost Not Published', unkdesc='Multi-card builds priced per card, Macs without a listed price, and other rows without a single published price · {n} recipes. Top text recipes by tok/s:',
    guide='guide', gsuf='.md', more='…and {n} more in the [explorer](explore.html).', all='…browse all {n} in the [explorer](explore.html).', count='{n} recipes',
    src='source', see='see source', legend='Legend', eng='Engines & Tools', rel='Related Lists & Benchmarks', contrib='Contributing', lic='License',
@@ -30,7 +30,7 @@ L = {
    tdesc=['二手 3090/4090、MI50/V100、Strix Halo、R9700','单张 RTX 5090、单台 DGX Spark、Mac Studio Max','双 Spark、Mac Studio Ultra','3–4 台 Spark 集群、多卡工作站'],
    cats={'text':'📝 文字','image':'🖼️ 图像','video-audio':'🎬 影音'},
    fam='按模型系列浏览', famdesc='点击系列名即可打开已筛选的配方库。标签：{tags}。', engidx='按引擎浏览', engdesc='引擎名已统一（`scripts/normalize_engines.py`），原始写法保留在 `engine_note` 字段。', th2='| 系列 | 配方数 | 文字 | 图像 | 影音 |', th3='| 引擎 | 配方数 |',
-   hot='本月热门', hotdesc='X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 排序）。',
+   hot='本月热门', hotdesc='X 上互动最多的配方帖，2026-09-15 至 10-15（按 点赞 + 3×转发 排序）。',
    unk='价格未公开', unkdesc='按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 {n} 条。按 tok/s 排名靠前的文字配方：',
    guide='指南', gsuf='.zh-CN.md', more='……另有 {n} 条，见 [配方库](explore.html)。', all='……全部 {n} 条见 [配方库](explore.html)。', count='共 {n} 条',
    src='来源', see='见来源', legend='图例', eng='引擎与工具', rel='相关榜单与清单', contrib='参与贡献', lic='许可证',
@@ -41,7 +41,7 @@ L = {
    tdesc=['中古の 3090/4090、MI50/V100、Strix Halo、R9700','RTX 5090 1 枚、DGX Spark 1 台、Mac Studio Max','DGX Spark 2 台、Mac Studio Ultra','Spark 3〜4 台のクラスター、マルチ GPU ワークステーション'],
    cats={'text':'📝 テキスト','image':'🖼️ 画像','video-audio':'🎬 動画・音声'},
    fam='モデルファミリー別', famdesc='ファミリー名をクリックすると、絞り込み済みのエクスプローラーが開きます。タグ：{tags}。', engidx='エンジン別', engdesc='エンジン名は表記を統一しています（`scripts/normalize_engines.py`）。元の表記は `engine_note` に残しています。', th2='| ファミリー | レシピ数 | テキスト | 画像 | 動画・音声 |', th3='| エンジン | レシピ数 |',
-   hot='今月の注目', hotdesc='2026-09-15〜10-13 に X で反応が多かったレシピ投稿（いいね + リポスト×3 の順）。',
+   hot='今月の注目', hotdesc='2026-09-15〜10-15 に X で反応が多かったレシピ投稿（いいね + リポスト×3 の順）。',
    unk='価格非公開', unkdesc='1 枚単位で価格が出ているマルチ GPU 構成、価格の記載がない Mac など、単一の公開価格がないレシピ · {n} 件。tok/s 上位のテキストレシピ：',
    guide='手順', gsuf='.ja.md', more='…ほか {n} 件は[エクスプローラー](explore.html)で。', all='…全 {n} 件は[エクスプローラー](explore.html)で見られます。', count='{n} 件',
    src='出典', see='出典を参照', legend='凡例', eng='エンジンとツール', rel='関連リスト・ベンチマーク', contrib='コントリビュート', lic='ライセンス',
@@ -92,7 +92,7 @@ def align_tables(txt):
         else: res.append(lines[i]); i+=1
     return '\n'.join(res)
 
-DATA_ASOF = '2026-10-13'  # date of the last data collection pass
+DATA_ASOF = '2026-10-15'  # date of the last data collection pass
 REPO = 'raytone-lab/Awesome-local-inference-recipe'
 SHOW = [  # (id, label key) — curated records; every value is read from data/recipes.json
  ('text-113','mac'),('x-006','5090'),('x-009','amd'),('x-007','dc'),('text-022','spark'),('text-021','cheap')]
@@ -104,7 +104,7 @@ HL = {
    hd='### Headline numbers', th='| Record | Model · engine | Hardware | Result | Source |',
    lab={'mac':'Fastest on a Mac','5090':'Fastest on one RTX 5090','amd':'Fastest on AMD','dc':'Used datacenter GPUs','spark':'Fastest on one DGX Spark','cheap':'Cheapest rig in the list'},
    note='Single-stream generation speed, copied from each source; prices are the lowest published hardware price. ✅ = measured by the poster.',
-   alt='Bar chart: top 15 measured text setups ranked by tok/s per $1,000 of hardware, colored by hardware family', cost='≈ ${c:,}'),
+   alt='Bar chart: top measured text setups per model-size group (dense ≥27B; big MoE ≥100B total; mid MoE <100B total, ≥5B active; small MoE <100B total, <5B active; with active parameters; only models with official parameter cards), ranked by tok/s per $1,000 of hardware, colored by hardware family', cost='≈ ${c:,}'),
  'zh': dict(h1='本地推理配方精选', tag='你的硬件到底能跑多快？{n} 条有出处的本地 AI 配方，从 {lo:,} 美元的显卡到 3 万美元的整机。',
    lang='<a href="README.md">English</a> · <b>简体中文</b> · <a href="README.ja.md">日本語</a>',
    nav=[('在线配方库','explore.html'),('配方指南','recipes/README.zh-CN.md'),('入门指南','docs/getting-started.zh-CN.md'),('提交配方','submit.html')],
@@ -112,7 +112,7 @@ HL = {
    hd='### 亮点数据', th='| 记录 | 模型 · 引擎 | 硬件 | 结果 | 来源 |',
    lab={'mac':'Mac 最快','5090':'单张 RTX 5090 最快','amd':'AMD 最快','dc':'二手数据中心卡','spark':'单台 DGX Spark 最快','cheap':'最便宜的配置'},
    note='单路生成速度，均摘自来源；价格为公开的最低硬件价格。✅ = 发帖人实测。',
-   alt='条形图：按每 $1000 硬件对应 tok/s 排名的实测文字配置前 15 名，按硬件类别着色', cost='约 ${c:,}'),
+   alt='条形图：按模型规模分组（稠密 ≥27B；大 MoE 总参数 ≥100B；中 MoE 总参数 <100B、激活 ≥5B；小 MoE 激活 <5B；标注激活参数；仅含有官方参数卡的模型），按每 $1000 硬件对应 tok/s 排名的实测文字配置，按硬件类别着色', cost='约 ${c:,}'),
  'ja': dict(h1='ローカル推論レシピ集', tag='あなたのハードウェアで、実際どれくらいの速度が出る？出典付きのローカル AI レシピ {n} 件。{lo:,} ドルの GPU から 3 万ドルの構成まで。',
    lang='<a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a> · <b>日本語</b>',
    nav=[('エクスプローラー','explore.html'),('レシピガイド','recipes/README.ja.md'),('はじめに','docs/getting-started.ja.md'),('レシピを投稿','submit.html')],
@@ -120,7 +120,7 @@ HL = {
    hd='### 注目の記録', th='| 記録 | モデル · エンジン | ハードウェア | 結果 | 出典 |',
    lab={'mac':'Mac で最速','5090':'RTX 5090 1 枚で最速','amd':'AMD で最速','dc':'中古データセンター GPU','spark':'DGX Spark 1 台で最速','cheap':'いちばん安い構成'},
    note='1 ストリームの生成速度で、いずれも出典からの引用です。価格は公開されている最安のハードウェア価格。✅ = 投稿者本人の実測。',
-   alt='棒グラフ：ハードウェア $1,000 あたりの tok/s で並べた実測テキスト構成トップ 15（ハードウェア分類で色分け）', cost='約 {c:,} ドル'),
+   alt='棒グラフ：モデル規模別（Dense ≥27B・大型 MoE 総 ≥100B・中型 MoE 総 <100B／アクティブ ≥5B・小型 MoE アクティブ <5B、アクティブパラメータ表示、公式パラメータカードのあるモデルのみ）に、ハードウェア $1,000 あたりの tok/s で並べた実測テキスト構成（ハードウェア分類で色分け）', cost='約 {c:,} ドル'),
 }
 PNOTE = {'x-006':{'en':'card only, excl. 256GB RAM','zh':'仅显卡，不含 256GB 内存','ja':'GPU のみ、256GB RAM 別'},
  'text-113':{'en':'base config price; test machine memory not stated','zh':'起步配置价格，原帖未注明测试机内存','ja':'最小構成価格、検証機のメモリは不明'}}

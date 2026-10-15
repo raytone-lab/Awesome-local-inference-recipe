@@ -8,6 +8,9 @@ ROOT = Path(__file__).resolve().parent.parent
 UNSPEC = 'Unspecified'
 # (pattern on raw engine string, canonical) — first match wins
 RULES = [
+    (r'^(?P<x>.+? \([^)]+ fork\))$', None),  # already canonical fork name: keep
+    (r'vahpetr|s1-fork', 'llama.cpp (vahpetr fork)'),
+    (r'llama\.cpp-omni', 'llama.cpp (OpenBMB fork)'),
     (r'PrismML.*mlx-swift', 'MLX Swift (PrismML fork)'),
     (r'PrismML.*llama\.cpp', 'llama.cpp (PrismML fork)'),
     (r'^agentionai/llama\.cpp', 'llama.cpp (agentionai fork)'),
@@ -40,7 +43,7 @@ INFER = [
 ]
 def canon(raw):
     for p, c in RULES:
-        if re.search(p, raw, re.I): return c
+        if re.search(p, raw, re.I): return c if c is not None else raw
     return raw
 def infer(r):
     for p, c in INFER:

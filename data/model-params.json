@@ -1,0 +1,82 @@
+{
+  "note": "Total / active parameters from official Hugging Face model cards (fetched 2026-10-15). Used by scripts/gen_hero.py to label rows and group them. 'match' is a regex tested against recipe.model; first match wins. Only models with a cited card are listed; unmatched rows are left out of the hero chart. 'exclude' (optional) is a regex that rejects a match, e.g. pruned variants whose total differs from the card. 'total_label' overrides the displayed total.",
+  "models": [
+    {
+      "match": "DeepSeek-V4\\.1-Flash",
+      "label": "DeepSeek-V4.1-Flash",
+      "total_b": 552,
+      "active_b": 16,
+      "arch": "moe",
+      "active_note": "decode (8B prefill); 552B backbone + 196B Engram",
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "exclude": "REAP"
+    },
+    {
+      "match": "DeepSeek-V4-Flash",
+      "label": "DeepSeek-V4-Flash",
+      "total_b": 284,
+      "active_b": 13,
+      "arch": "moe",
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash"
+    },
+    {
+      "match": "GLM-5\\.3-Flash|RED-SNOW-5\\.3",
+      "label": "GLM-5.3-Flash",
+      "total_b": 320,
+      "active_b": 18,
+      "arch": "moe",
+      "source": "https://huggingface.co/zai-org/GLM-5.3-Flash"
+    },
+    {
+      "match": "Qwen3\\.8-Flash-Next",
+      "label": "Qwen3.8-Flash-Next",
+      "total_b": 125,
+      "active_b": 6,
+      "arch": "moe",
+      "active_note": "plus 51B n-gram embedding and 4B MTP",
+      "source": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "total_label": "125B (+51B emb)",
+      "exclude": "REAP"
+    },
+    {
+      "match": "Qwen3\\.8-27B",
+      "label": "Qwen3.8-27B",
+      "total_b": 27,
+      "active_b": 27,
+      "arch": "dense",
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "match": "Bonsai ?2 27B|Bonsai2 27B|Ternary-Bonsai-2-27B",
+      "label": "Bonsai 2 27B",
+      "total_b": 27.36,
+      "active_b": 27.36,
+      "arch": "dense",
+      "source": "https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf"
+    },
+    {
+      "match": "Qwen3\\.6-35B-A3B",
+      "label": "Qwen3.6-35B-A3B",
+      "total_b": 35,
+      "active_b": 3,
+      "arch": "moe",
+      "source": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B"
+    },
+    {
+      "match": "LFM2\\.5-24B-A2B",
+      "label": "LFM2.5-24B-A2B",
+      "total_b": 24,
+      "active_b": 2,
+      "arch": "moe",
+      "source": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B"
+    },
+    {
+      "match": "Nemotron-3-Nano",
+      "label": "Nemotron-3-Nano",
+      "total_b": 30,
+      "active_b": 3.5,
+      "arch": "moe",
+      "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16"
+    }
+  ]
+}
