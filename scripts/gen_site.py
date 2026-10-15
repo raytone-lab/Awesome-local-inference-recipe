@@ -25,6 +25,7 @@ CJK = re.compile(r'[\u3400-\u9fff\uff00-\uffef\u3000-\u303f]')
 def en(s):  # same rule as gen_readme.en(): drop Chinese fragments, keep proper nouns; fall back to the original
     if not s: return s
     t = re.sub(r'（[^）]*）|\([^)]*[\u3400-\u9fff][^)]*\)', '', str(s))
+    t = t.replace('；', '; ').replace('，', ', ')  # full-width separators would glue neighbouring tokens to CJK and drop them
     t = re.sub(r'\s+', ' ', ' '.join(w for w in re.split(r'\s+', t) if not CJK.search(w))).strip(' ·+/,;；')
     return t or s
 def met_en(r): return r.get('metric_en') or en(r.get('metric'))
