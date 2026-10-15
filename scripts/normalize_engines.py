@@ -16,6 +16,7 @@ RULES = [
     (r'^agentionai/llama\.cpp', 'llama.cpp (agentionai fork)'),
     (r'^llama\.cpp-mirai-s', 'llama.cpp (mirai-s fork)'),
     (r'^llama\.cpp', 'llama.cpp'),
+    # must precede ^Strata (case-insensitive match would swallow strata-mlx)
     (r'^strata-mlx', 'strata-mlx'),
     (r'^Strata', 'Strata'),
     (r'^oMLX', 'oMLX'),

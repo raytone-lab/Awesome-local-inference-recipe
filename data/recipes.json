@@ -8950,7 +8950,7 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
     "hardware_cost_usd": 6950,
-    "metric": "EXL3 3.5bpw（默认）聊天解码 151 tok/s，占 11.2 GB，top-1 与 BF16 一致 86.7%；另帖：普通生成 185、编辑最高 350；同作者 10-15（UTC+8）另帖称聊天 ~300 tok/s（2110434510936723897，条件未注明，未计入 tok_s）",
+    "metric": "EXL3 3.5bpw（默认）聊天解码 151 tok/s，占 11.2 GB，top-1 与 BF16 一致 86.7%；另帖：普通生成 185、编辑最高 350；同作者 10-15（UTC+8）另帖称聊天 ~300 tok/s（2110434510936723897，条件未注明、视频未核，未计入 tok_s）",
     "tok_s": 151,
     "concurrency": null,
     "context": null,
@@ -9649,7 +9649,7 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/GreenBitAI/status/2110450737771913237",
-    "source_note": "@GreenBitAI（gbx 引擎方）on X",
+    "source_note": "@GreenBitAI（gbx 引擎方）on X；同串 2110450746483171594 的 25 GB 预算 / SSD 冷读数据针对另一 ~105 GB 模型（35B-A3B 8-bit 约 35–37 GB），非本条，未计入",
     "source_level": "官方",
     "date": "2026-10-15",
     "x_post": {
@@ -9698,7 +9698,8 @@
       "speculative"
     ],
     "measured_by": "Blackwellboy",
-    "source_id": "src-c7751e4563"
+    "source_id": "src-c7751e4563",
+    "metric_en": "Short-context decode ~208 tok/s; at 258K: decode 127, prefill 3.6K tok/s, TTFT 72 s (fresh prompt, median of 3); DSpark drafter slower at every length on llama.cpp"
   },
   {
     "id": "x-078",
@@ -9731,7 +9732,8 @@
       "speculative"
     ],
     "measured_by": "Blackwellboy",
-    "source_id": "src-c7751e4563"
+    "source_id": "src-c7751e4563",
+    "metric_en": "Short-context decode ~143 tok/s; at 258K: decode 112, prefill 5.9K tok/s, TTFT 43 s; DSpark drafter 224 tok/s at 4K, slower than no drafter from ~16K, 8 tok/s at 192K (fresh prompt, median of 3; with drafter one 5090 fits only 192K)"
   },
   {
     "id": "x-079",
@@ -9749,7 +9751,7 @@
     "context": "主数字 32K 窗口；长上下文为另一轮（同卡同草稿）代码提示 32K–256K；KV 缓存 BF16",
     "launch_command": null,
     "source_url": "https://x.com/coffeecup2020/status/2110624499901075769",
-    "source_note": "@coffeecup2020（tqLLM 作者）on X；上下文表见 2110622742055723363",
+    "source_note": "@coffeecup2020（tqLLM 作者）on X；上下文表见 2110622742055723363；原帖 2110392058439418030（含 273 与 5060 Ti 175 的首发）",
     "source_level": "官方",
     "date": "2026-10-15",
     "x_post": {
@@ -9764,7 +9766,8 @@
       "speculative"
     ],
     "measured_by": "coffeecup2020",
-    "source_id": "src-40c4033303"
+    "source_id": "src-40c4033303",
+    "metric_en": "Short prompt (LocalMaxxing reasoning) 273 tok/s, median of 5, temperature 0, accepted by LocalMaxxing; code prompt by context: 32K 203 / 128K 157 / 192K 144 / 256K 107 (tok_s = short prompt)"
   },
   {
     "id": "x-080",
@@ -9815,8 +9818,8 @@
     "context": "320–260K；KV 缓存 BF16",
     "launch_command": null,
     "source_url": "https://x.com/Oluwaphilemon1/status/2110695069434941517",
-    "source_note": "@Oluwaphilemon1 转述（未说明测试者）",
-    "source_level": "转述",
+    "source_note": "@Oluwaphilemon1 转述未具名测试者；无截图/日志，引用帖 2110694483310350737 与本基准无关，按宣称计",
+    "source_level": "宣称",
     "date": "2026-10-15",
     "x_post": {
       "author": "Oluwaphilemon1",
@@ -9831,7 +9834,8 @@
       "speculative"
     ],
     "measured_by": null,
-    "source_id": "src-d1b947c4cb"
+    "source_id": "src-d1b947c4cb",
+    "metric_en": "Decode at 320 / 8K / 65K / 130K / 260K context: 73 / 74 / 67 / 56 / 38 tok/s (median of 4, thinking off, 512 output tokens, temperature 0); prefill peak ~2,500, 929 at 260K; repeat prompt TTFT 277 s -> 1.2 s (prefix cache)"
   },
   {
     "id": "x-082",
@@ -9839,11 +9843,11 @@
     "model": "Qwen3.8-Flash-Next",
     "quant": "Q2_0（Strata GGUF）+ 草稿头",
     "engine": "strata-mlx",
-    "hardware": "Apple M5 Ultra（机型、配置未注明）",
+    "hardware": "Mac Studio M5 Ultra（内存未注明）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "Mac Studio M5 Ultra 256GB 起 $9,499（机型未注明，仅供参考）",
-    "hardware_cost_usd": 9499,
-    "metric": "PR 9/10 合并后：Q2_0 中文 86→110、代码 127→170、英文 127→156；IQ3_S 95→112 / 127→161 / 118→137 tok/s（256 token，三轮中位）；tok_s 取英文散文 Q2_0",
+    "hardware_cost_text": "M5 Ultra 96GB 起 $5,499；内存未注明",
+    "hardware_cost_usd": 5499,
+    "metric": "PR 9/10 合并后：Q2_0 中文 86→110、代码 127→170、英文 127→156；IQ3_S 95→112 / 127→161 / 118→137 tok/s（256 token，三轮中位）；tok_s 取英文散文 Q2_0（不取代码 170）",
     "tok_s": 156,
     "concurrency": null,
     "context": null,
@@ -9873,9 +9877,9 @@
     "engine": "strata-mlx",
     "hardware": "MacBook Pro M4 Pro 48GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$2,399–2,599（MBP14 M4 Pro 48GB 定价；尺寸、芯片档位未注明）",
+    "hardware_cost_text": "$2,399–2,599（MBP14 M4 Pro 48GB 定价；芯片档位未注明）",
     "hardware_cost_usd": 2399,
-    "metric": "更新后：merge-code 提示 45 tok/s（两次）；另两个提示缓存预热后 32–33；tok_s 取另两个提示上限 33",
+    "metric": "更新后：merge-code 提示 45 tok/s（两次）；另两个提示缓存预热后 32–33；tok_s 取另两个提示上限 33（不取代码 45）",
     "tok_s": 33,
     "concurrency": null,
     "context": null,
@@ -9904,7 +9908,7 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
     "hardware_cost_usd": 6950,
-    "metric": "StairCut 投机解码前后 13.7 → 49.9 tok/s（出自 TandemLLM 手册介绍帖）",
+    "metric": "StairCut 投机解码前后 13.7 → 49.9 tok/s（出自 TandemLLM 手册介绍帖）（手册中该数字属实测/计算/估算哪一类未核实）",
     "tok_s": 49.9,
     "concurrency": null,
     "context": null,
