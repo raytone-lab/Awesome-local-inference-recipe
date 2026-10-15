@@ -8,39 +8,43 @@
 <meta property="og:image:alt" content="Awesome Local Inference Recipes: model × engine × hardware, sourced tok/s and cost">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Token speed feel · Awesome Local Inference Recipes">
 <meta name="twitter:description" content="Feel what 10, 20, 50, 100, 200 and 500 tokens per second look like, next to human reading speed and measured local setups."><meta name="twitter:image" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/docs/og.png">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css"><script src="theme.js"></script>
 <style>
-.ctl{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;background:#fff;border:1px solid #e6e8ef;border-radius:12px;padding:12px;margin:14px 0}
-.ctl button{background:#4f46e5;color:#fff;border:0;border-radius:8px;padding:8px 18px;font:inherit;font-weight:600;cursor:pointer}
-.ctl button.sec{background:#f1f2f8;color:#334}.ctl label{display:flex;align-items:center;gap:6px;color:#556}.ctl select{padding:5px 8px}
-.ttftv{color:#8a90a2;font-size:12px}
-.lang a{margin-left:8px;color:#555;text-decoration:none}.lang a.on{color:#4f46e5;font-weight:600}
-.read{background:#fff;border:1px solid #e6e8ef;border-radius:12px;padding:10px 14px;margin-bottom:14px;color:#556;font-size:13px;display:grid;grid-template-columns:1fr 1fr;gap:6px 20px}
-.read a{color:#4f46e5;text-decoration:none}.rbar{height:6px;background:#eef0f5;border-radius:99px;margin-top:4px;overflow:hidden}.rbar i{display:block;height:100%;width:0;background:#94a3b8}.rbar.al i{background:#cbd5e1}
+.ctl{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:12px 14px;margin:14px 0;box-shadow:var(--shadow-1)}
+.ctl button{background:var(--accent);color:var(--on-accent);border:0;border-radius:var(--r);padding:8px 18px;min-height:38px;font:inherit;font-weight:600;cursor:pointer}.ctl button:hover{background:var(--accent-hover)}
+.ctl button.sec{background:var(--surface-2);color:var(--text)}.ctl label{display:flex;align-items:center;gap:6px;color:var(--text-2)}.ctl select{padding:5px 30px 5px 8px;min-height:36px;width:auto;max-width:62vw}.ctl label>span{white-space:nowrap}.ctl input[type=range]{width:140px}
+.ttftv{color:var(--text-3);font-size:12px}
+.read{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:10px 14px;margin-bottom:14px;color:var(--text-2);font-size:13px;display:grid;grid-template-columns:1fr 1fr;gap:6px 20px}
+.read a{color:var(--accent-text);text-decoration:none}.rbar{height:6px;background:var(--surface-3);border-radius:99px;margin-top:4px;overflow:hidden}.rbar i{display:block;height:100%;width:0;background:#94a3b8}.rbar.al i{background:#cbd5e1}
 .lanes{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
-.lane{background:#fff;border:1px solid #e6e8ef;border-radius:12px;padding:12px;display:flex;flex-direction:column}
-.lh{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.lh b{font-size:22px;color:#1f2430}.lh b small{font-size:13px;color:#8a90a2;font-weight:400}
+.lane{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:12px;display:flex;flex-direction:column;box-shadow:var(--shadow-1)}
+.lnh{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.lnh b{font-size:22px;color:var(--text)}.lnh b small{font-size:13px;color:var(--text-3);font-weight:400}
 .badge{font-size:12px;padding:2px 9px;border-radius:99px;white-space:nowrap}
-.b0{background:#fee2e2;color:#991b1b}.b1{background:#fef3c7;color:#92400e}.b2{background:#dcfce7;color:#166534}.b3{background:#e0e7ff;color:#3730a3}
-.real,.cloud{font-size:12px;color:#667;min-height:18px;margin:2px 0}.real a,.cloud a{color:#4f46e5;text-decoration:none}.cloud a{color:#0e7490}
-.out{height:220px;overflow:auto;white-space:pre-wrap;background:#fafbfe;border:1px solid #eef0f5;border-radius:8px;padding:10px;font-size:13.5px;line-height:1.6}
-.out .cur{display:inline-block;width:7px;height:1em;background:#4f46e5;vertical-align:text-bottom;animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
-.out .pf{color:#a0a5b4;font-style:italic}
-.meta{display:flex;justify-content:space-between;font-size:12px;color:#8a90a2;margin-top:6px;font-variant-numeric:tabular-nums}
-.pg{height:4px;background:#eef0f5;border-radius:99px;margin-top:6px;overflow:hidden}.pg i{display:block;height:100%;width:0;background:#4f46e5}
-.card h2{font-size:16px;margin:4px 0 8px}#chart{width:100%;height:auto;display:block}#chart text{font:11px sans-serif;fill:#667}
-.src{font-size:12.5px;color:#556}.src li{margin:3px 0}.src a{color:#4f46e5}
-body.embed header,body.embed .ctl,body.embed .noembed,body.embed footer,body.embed .hero p,body.embed .real,body.embed .meta .tm{display:none}
-body.embed main{padding:12px 14px;max-width:none}body.embed .hero h1{font-size:21px;margin:0 0 8px}
+.b0{background:var(--lv-cla-bg);color:var(--lv-cla-fg)}.b1{background:var(--lv-rel-bg);color:var(--lv-rel-fg)}.b2{background:var(--lv-mea-bg);color:var(--lv-mea-fg)}.b3{background:var(--lv-off-bg);color:var(--lv-off-fg)}
+.real,.cloud{font-size:12px;color:var(--text-3);min-height:18px;margin:2px 0}.real a,.cloud a{color:var(--accent-text);text-decoration:none}.cloud a{color:#0e7490}:root[data-theme=dark] .cloud a{color:#67e8f9}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .cloud a{color:#67e8f9}}
+.out{height:220px;overflow:auto;white-space:pre-wrap;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:10px;font-size:13.5px;line-height:1.6}
+.out .cur{display:inline-block;width:7px;height:1em;background:var(--accent);vertical-align:text-bottom;animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.out .pf{color:var(--na);font-style:italic}
+.meta{display:flex;justify-content:space-between;font-size:12px;color:var(--text-3);margin-top:6px;font-variant-numeric:tabular-nums}
+.pg{height:4px;background:var(--surface-3);border-radius:99px;margin-top:6px;overflow:hidden}.pg i{display:block;height:100%;width:0;background:var(--accent)}
+.card h2{font-size:16px;margin:4px 0 8px}#chart{width:100%;height:auto;display:block}#chart text{font:11px var(--font);fill:var(--axis)}
+#chart .gl{stroke:var(--grid)}#chart .cv{stroke:var(--accent)}#chart .rp{fill:var(--accent)}#chart .rd{stroke:#94a3b8}#chart .lo{fill:var(--c-mea)}#chart text.lo{fill:var(--good)}#chart .cl{stroke:#0e7490}#chart text.cl{fill:#0e7490;stroke:none}
+.src{font-size:12.5px;color:var(--text-2)}.src li{margin:3px 0}.src a{color:var(--accent-text)}
+@media(max-width:600px){.read{grid-template-columns:1fr}.out{height:160px}.lanes{grid-template-columns:1fr}}
+/* embed (docs/speed-feel.gif): keep the original metrics */
+body.embed{font:14px/1.55 -apple-system,"PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif}
+body.embed .site-hd,body.embed .skip,body.embed .ctl,body.embed .noembed,body.embed .site-ft,body.embed .hero p,body.embed .real,body.embed .meta .tm{display:none}
+body.embed main{padding:12px 14px;max-width:none}body.embed .hero{padding:0}body.embed .hero h1{font-size:21px;margin:0 0 8px;letter-spacing:normal;line-height:inherit}body.embed .read{border-radius:12px}
 body.embed .read{grid-template-columns:1fr;padding:8px 12px;margin-bottom:10px}body.embed .read .al{display:none}
-body.embed .lanes{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}body.embed .lane{padding:9px 10px}
-body.embed .out{height:112px;overflow:hidden;font-size:12.5px;line-height:1.45;padding:6px 8px}body.embed .out .cur{animation:none}
+body.embed .lanes{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}body.embed .lane{padding:9px 10px;border-radius:12px;box-shadow:none}
+body.embed .out{height:112px;overflow:hidden;font-size:12.5px;line-height:1.45;padding:6px 8px;background:#fafbfe}body.embed .out .cur{animation:none}
 body.embed .cloud{min-height:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 </style></head><body>
-<header><div class="brand">⚡ <span data-t="brand"></span> <small>Awesome Local Inference Recipes</small></div>
-<nav><a href="index.html" data-t="home"></a><a href="explore.html" data-t="explore"></a><a href="speed.html" class="on" data-t="speed"></a><a href="submit.html" data-t="submit"></a><span class="lang"><a href="?lang=en" data-l="en">EN</a><a href="?lang=zh-CN" data-l="zh-CN">中文</a><a href="?lang=ja" data-l="ja">日本語</a></span></nav></header>
-<main>
-<section class="hero"><h1 data-t="h1"></h1><p data-t="intro"></p></section>
+<a class="skip" href="#main" data-s="skip">Skip to content</a>
+<header class="site-hd"><div class="hd-in"><a class="brand" href="index.html"><span class="logo" aria-hidden="true">⚡</span><span class="bt" data-t="brand">Local Inference Recipes</span></a><nav id="nav" aria-label="Main"><a href="index.html" data-t="home">Home</a><a href="explore.html" data-t="explore">Explore</a><a href="speed.html" data-t="speed" aria-current="page">Speed feel</a><a href="submit.html" data-t="submit">Submit</a><span class="lang"><a href="?lang=en" data-l="en">EN</a><a href="?lang=zh-CN" data-l="zh-CN">中文</a><a href="?lang=ja" data-l="ja">日本語</a></span></nav><div class="hd-act"><button class="icon-btn theme-tg" type="button" aria-label="Toggle dark mode"><svg class="i i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M11 1h2v3h-2zM11 20h2v3h-2zM1 11h3v2H1zM20 11h3v2h-3zM4.2 2.8l2.1 2.1-1.4 1.4-2.1-2.1zM17.7 16.3l2.1 2.1-1.4 1.4-2.1-2.1zM2.8 19.8l2.1-2.1 1.4 1.4-2.1 2.1zM16.3 6.3l2.1-2.1 1.4 1.4-2.1 2.1z"/></svg><svg class="i i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.5A9 9 0 0 1 9.5 3a9 9 0 1 0 11.5 11.5z"/></svg></button><a class="btn btn-sm btn-star hd-star" href="https://github.com/raytone-lab/Awesome-local-inference-recipe" target="_blank" rel="noopener" aria-label="Star on GitHub"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 .6l2.3 4.7 5.1.7-3.7 3.6.9 5.1L8 12.3l-4.6 2.4.9-5.1L.6 6l5.1-.7z"/></svg><span class="t" data-s="starS">Star</span></a><button class="icon-btn nav-tg" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg></button></div></div></header>
+<main id="main" class="wrap">
+<section class="hero page-hd"><h1 data-t="h1">What does 10, 50 or 500 tokens per second feel like?</h1><p data-t="intro"></p></section>
 <div class="ctl">
 <button id="go"></button><button id="stop" class="sec"></button>
 <label><span data-t="model"></span><select id="dm"><option value="steady"></option><option value="jitter" selected></option><option value="mtp"></option></select></label>
@@ -56,10 +60,10 @@ body.embed .cloud{min-height:18px;white-space:nowrap;overflow:hidden;text-overfl
 <section class="card noembed" style="margin-top:16px"><h2 data-t="ch"></h2><svg id="chart" viewBox="0 0 900 330"></svg><p class="src" data-t="chnote"></p></section>
 <section class="card noembed"><h2 data-t="mh"></h2><ul class="src" id="method"></ul></section>
 </main>
-<footer><span data-t="foot"></span> · <a href="explore.html" data-t="explore"></a></footer>
+<footer class="site-ft"><div class="ft-in"><div><b data-t="brand">Local Inference Recipes</b> · <span data-t="foot">Data: measured recipes from data/recipes.json</span><span id="xd"></span></div><nav aria-label="Footer"><a href="https://github.com/raytone-lab/Awesome-local-inference-recipe" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a><a href="https://github.com/raytone-lab/Awesome-local-inference-recipe/issues" target="_blank" rel="noopener">Issues</a><a href="submit.html" data-t="submit">Submit</a><span>Data CC BY 4.0 · code MIT</span></nav></div></footer>
 <script>
 const I18N={
-en:{brand:'Local Inference Recipes',home:'Home',explore:'Explorer',speed:'Speed feel',submit:'Submit',h1:'What does 10, 50 or 500 tokens per second feel like?',
+en:{brand:'Local Inference Recipes',home:'Home',explore:'Explore',speed:'Speed feel',submit:'Submit',h1:'What does 10, 50 or 500 tokens per second feel like?',
  intro:'Every lane streams the same answer, cut into real Qwen3 tokens, at an exact average rate. Lanes are log-spaced (1-2-5 series) because perceived speed scales roughly with the ratio, not the difference.',
  go:'▶ Start',again:'↻ Restart',stop:'■ Stop',model:'Decode',steady:'steady',jitter:'realistic jitter',mtp:'jitter + MTP/speculative bursts',prompt:'Prompt',prefill:'Prefill',custom:'Custom',
  ttft:(p,pp,t)=>`TTFT ≈ ${p} / ${pp} tok/s = ${t} s`,
@@ -100,6 +104,7 @@ const RATES=EMBED?[10,20,50,100,200,500]:[5,10,20,50,100,200,500]; const LOOP=+(
 const SMIN=1,SMAX=2000; const sl2r=v=>Math.round(SMIN*Math.pow(SMAX/SMIN,v/1000)); const r2sl=r=>Math.round(1000*Math.log(r/SMIN)/Math.log(SMAX/SMIN));
 let TOKS=[],ST=null,REF=null,RECIPES=[],lanes=[],raf=0,t0=0,READ=5,ALOUD=4,Q2O=1;
 const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const f1=x=>x>=100?Math.round(x):x>=10?x.toFixed(0):x.toFixed(1);
 function badge(r){return r<ALOUD?0:r<=READ*1.5?1:r<250?2:3}
 function closest(r){let best=null;for(const x of RECIPES){const d=Math.abs(Math.log(x.tok_s/r));if(d<=Math.log(1.12)&&(!best||d<best.d))best={d,x}}return best&&best.x}
@@ -119,7 +124,7 @@ function build(){
   $('lanes').innerHTML='';lanes=[];
   for(const r of EMBED?RATES:[...RATES,'c']){
     const el=document.createElement('div');el.className='lane';
-    el.innerHTML=`<div class="lh"><b><span class="rv"></span> <small>tok/s</small></b><span class="badge"></span></div><div class="real"></div><div class="cloud"></div><div class="out"></div><div class="pg"><i></i></div><div class="meta"><span class="cnt"></span><span class="tm"></span></div>`;
+    el.innerHTML=`<div class="lnh"><b><span class="rv"></span> <small>tok/s</small></b><span class="badge"></span></div><div class="real"></div><div class="cloud"></div><div class="out"></div><div class="pg"><i></i></div><div class="meta"><span class="cnt"></span><span class="tm"></span></div>`;
     $('lanes').appendChild(el);lanes.push({el,r})}
   label()}
 const rateOf=L=>L.r==='c'?sl2r(+$('cr').value):L.r;
@@ -127,7 +132,7 @@ function label(){$('cv').textContent=sl2r(+$('cr').value);
   const tt=ttft();$('ttftv').textContent=tt?T.ttft(+$('pl').value,+$('pp').value,tt.toFixed(1)):'';
   for(const L of lanes){const r=rateOf(L),b=badge(r),q=L.el.querySelector('.badge');
   L.el.querySelector('.rv').textContent=r;q.className='badge b'+b;q.textContent=T.b[b];
-  const x=closest(r);L.el.querySelector('.real').innerHTML=x?`${T.real} <a href="${x.source_url}" target="_blank" rel="noopener">${hwShort(x.hardware)} · ${x.model} · ${x.tok_s}</a>`:'';
+  const x=closest(r);L.el.querySelector('.real').innerHTML=x?`${T.real} <a href="${esc(x.source_url)}" target="_blank" rel="noopener">${esc(hwShort(x.hardware))} · ${esc(x.model)} · ${esc(x.tok_s)}</a>`:'';
   const c=cloudNear(r);L.el.querySelector('.cloud').innerHTML=c?`${T.cloud} <a href="${c.c.url}" target="_blank" rel="noopener">${c.c.label}${c.c.variant==="provider"||EMBED?"":" ("+c.c.variant+")"} ≈ ${f1(c.q)}</a>`:'';
   L.el.querySelector('.cnt').textContent=`0 / ${TOKS.length} ${T.tok}`}}
 function start(){
@@ -149,16 +154,16 @@ function frame(now){
 function chart(){
   const W=900,H=330,L0=56,R0=W-16,T0=14,B0=H-84,N=500,X=r=>L0+(R0-L0)*Math.log(r/SMIN)/Math.log(SMAX/SMIN),YM=150,Y=s=>B0-(B0-T0)*Math.min(s,YM)/YM;
   let s='';
-  for(const v of [1,2,5,10,20,50,100,200,500,1000,2000])s+=`<line x1="${X(v)}" x2="${X(v)}" y1="${T0}" y2="${B0}" stroke="#eef0f5"/><text x="${X(v)}" y="${B0+14}" text-anchor="middle">${v}</text>`;
-  for(const v of [0,30,60,90,120,150])s+=`<line x1="${L0}" x2="${R0}" y1="${Y(v)}" y2="${Y(v)}" stroke="#eef0f5"/><text x="${L0-6}" y="${Y(v)+4}" text-anchor="end">${v}s</text>`;
+  for(const v of [1,2,5,10,20,50,100,200,500,1000,2000])s+=`<line x1="${X(v)}" x2="${X(v)}" y1="${T0}" y2="${B0}" class="gl"/><text x="${X(v)}" y="${B0+14}" text-anchor="middle">${v}</text>`;
+  for(const v of [0,30,60,90,120,150])s+=`<line x1="${L0}" x2="${R0}" y1="${Y(v)}" y2="${Y(v)}" class="gl"/><text x="${L0-6}" y="${Y(v)+4}" text-anchor="end">${v}s</text>`;
   let d='';for(let i=0;i<=200;i++){const r=SMIN*Math.pow(SMAX/SMIN,i/200);d+=(i?'L':'M')+X(r).toFixed(1)+','+Y(N/r).toFixed(1)}
-  s+=`<path d="${d}" fill="none" stroke="#4f46e5" stroke-width="2.5"/>`;
-  for(const [v,lab,dash] of [[READ,'silent',''],[ALOUD,'aloud','4 3']]){const y=Y(N/v);s+=`<line x1="${L0}" x2="${R0}" y1="${y}" y2="${y}" stroke="#94a3b8" stroke-dasharray="${dash}"/><text x="${R0-4}" y="${y-4}" text-anchor="end">${lab}: ${Math.round(N/v)} s @ ${v.toFixed(1)} tok/s</text>`}
-  for(const r of RATES)s+=`<circle cx="${X(r)}" cy="${Y(N/r)}" r="4" fill="#4f46e5"/><text x="${X(r)+6}" y="${Y(N/r)-6}">${(N/r).toFixed(r>=100?1:0)}s</text>`;
-  for(const x of RECIPES)s+=`<circle cx="${X(x.tok_s)}" cy="${B0+30+((x.id.charCodeAt(x.id.length-1)%5)*3)}" r="2.5" fill="#22c55e" opacity=".55"><title>${hwShort(x.hardware)} · ${x.model} · ${x.tok_s} tok/s</title></circle>`;
-  s+=`<text x="${L0}" y="${B0+74}" fill="#16a34a">● local measured (n=${RECIPES.length})</text>`;
-  for(const c of REF.cloud.items){const x=X(c.tps*Q2O);s+=`<line x1="${x}" x2="${x}" y1="${T0}" y2="${T0+10}" stroke="#0e7490" stroke-width="2"><title>${c.label} (${c.variant}) ${c.tps} o200k tok/s</title></line>`}
-  s+=`<text x="${R0}" y="${B0+74}" text-anchor="end" fill="#0e7490">▮ cloud API median (top ticks)</text><text x="${(L0+R0)/2}" y="${B0+74}" text-anchor="middle">tok/s (log)</text>`;
+  s+=`<path d="${d}" fill="none" class="cv" stroke-width="2.5"/>`;
+  for(const [v,lab,dash] of [[READ,'silent',''],[ALOUD,'aloud','4 3']]){const y=Y(N/v);s+=`<line x1="${L0}" x2="${R0}" y1="${y}" y2="${y}" class="rd" stroke-dasharray="${dash}"/><text x="${R0-4}" y="${y-4}" text-anchor="end">${lab}: ${Math.round(N/v)} s @ ${v.toFixed(1)} tok/s</text>`}
+  for(const r of RATES)s+=`<circle cx="${X(r)}" cy="${Y(N/r)}" r="4" class="rp"/><text x="${X(r)+6}" y="${Y(N/r)-6}">${(N/r).toFixed(r>=100?1:0)}s</text>`;
+  for(const x of RECIPES)s+=`<circle cx="${X(x.tok_s)}" cy="${B0+30+((x.id.charCodeAt(x.id.length-1)%5)*3)}" r="2.5" class="lo" opacity=".55"><title>${esc(hwShort(x.hardware))} · ${esc(x.model)} · ${esc(x.tok_s)} tok/s</title></circle>`;
+  s+=`<text x="${L0}" y="${B0+74}" class="lo">● local measured (n=${RECIPES.length})</text>`;
+  for(const c of REF.cloud.items){const x=X(c.tps*Q2O);s+=`<line x1="${x}" x2="${x}" y1="${T0}" y2="${T0+10}" class="cl" stroke-width="2"><title>${c.label} (${c.variant}) ${c.tps} o200k tok/s</title></line>`}
+  s+=`<text x="${R0}" y="${B0+74}" text-anchor="end" class="cl">▮ cloud API median (top ticks)</text><text x="${(L0+R0)/2}" y="${B0+74}" text-anchor="middle">tok/s (log)</text>`;
   $('chart').innerHTML=s}
 function method(){
   const st=ST[LANG],rd=REF.reading[LANG],u=st.unit==='word'?'word':'char';
@@ -184,4 +189,4 @@ Promise.all([fetch('data/speed-tokens.json').then(r=>r.json()),fetch('data/speed
   $('cr').value=r2sl(35);
   build();chart();method();if(P.has('autostart')||EMBED)start();
 });
-</script></body></html>
+</script><script src="site.js"></script></body></html>
