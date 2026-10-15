@@ -33,3 +33,9 @@
 @media(max-width:1000px){.hero-in{grid-template-columns:1fr;padding-top:var(--s6)}.props{grid-template-columns:1fr 1fr}.bv,.hot{grid-template-columns:1fr 1fr}.tiers,.lvls{grid-template-columns:1fr 1fr}.speedt{grid-template-columns:1fr;padding:var(--s5)}}
 @media(max-width:600px){.hero-in{padding-top:var(--s5);padding-bottom:var(--s5);gap:var(--s5)}.cta .btn{flex:1 1 100%}.ks{gap:var(--s3) var(--s5);margin-top:var(--s5)}.k b{font-size:var(--fs-xl)}
  .props,.bv,.hot,.tiers,.lvls{grid-template-columns:1fr}.props{gap:var(--s4)}.sec{padding-top:var(--s6)}.hero-card{padding:var(--s4)}.tb a{grid-template-columns:64px 1fr auto}.bv .bvc:nth-child(n+4),.hot .hc:nth-child(n+5){display:none}.final{padding:var(--s6) var(--s4)}}
+/* price-basis tabs + caveats (card-only vs whole-system prices are ranked separately) */
+.kt{margin:0 0 var(--s2);width:100%}.kt button{flex:1 1 0;justify-content:center;font-weight:650}
+.caveat{font-size:var(--fs-sm);color:var(--text-2);background:var(--surface-2);border-left:3px solid var(--warn);border-radius:var(--r-sm);padding:8px 12px;margin:0 0 var(--s4)}
+.hero-card .caveat{font-size:var(--fs-xs);margin:0 0 var(--s3)}
+.bvgrp+.bvgrp{margin-top:var(--s5)}.bvh{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;margin-bottom:var(--s3)}.bvh h3{margin:0;font-size:var(--fs-md)}
+.bvc .nums small{color:var(--text-3);font-weight:500}

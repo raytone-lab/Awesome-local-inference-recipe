@@ -1,11 +1,12 @@
 // Shared header behaviour on every page: collapsible nav, theme toggle (persisted), labels for the header controls in en / zh-CN / ja.
 (function(){
 const L=(document.documentElement.lang||'en').toLowerCase(),K=L.startsWith('zh')?'zh':L.startsWith('ja')?'ja':'en';
-const S={en:{star:'Star on GitHub',starS:'Star',menu:'Menu',dark:'Switch to dark mode',light:'Switch to light mode',skip:'Skip to content'},
- zh:{star:'在 GitHub 上 Star',starS:'Star',menu:'菜单',dark:'切换到深色模式',light:'切换到浅色模式',skip:'跳到正文'},
- ja:{star:'GitHub でスター',starS:'Star',menu:'メニュー',dark:'ダークモードに切り替え',light:'ライトモードに切り替え',skip:'本文へスキップ'}}[K];
+const S={en:{star:'Star on GitHub',starS:'Star',menu:'Menu',dark:'Switch to dark mode',light:'Switch to light mode',skip:'Skip to content',nav:'Main',foot:'Footer'},
+ zh:{star:'在 GitHub 上 Star',starS:'Star',menu:'菜单',dark:'切换到深色模式',light:'切换到浅色模式',skip:'跳到正文',nav:'主导航',foot:'页脚'},
+ ja:{star:'GitHub でスター',starS:'Star',menu:'メニュー',dark:'ダークモードに切り替え',light:'ライトモードに切り替え',skip:'本文へスキップ',nav:'メイン',foot:'フッター'}}[K];
 document.querySelectorAll('[data-s]').forEach(e=>e.textContent=S[e.dataset.s]);
 document.querySelectorAll('.hd-star').forEach(e=>e.setAttribute('aria-label',S.star));
+document.querySelectorAll('#nav').forEach(e=>e.setAttribute('aria-label',S.nav));document.querySelectorAll('.site-ft nav').forEach(e=>e.setAttribute('aria-label',S.foot));
 const R=document.documentElement,mq=matchMedia('(prefers-color-scheme: dark)');
 const cur=()=>R.getAttribute('data-theme')||(mq.matches?'dark':'light');
 const tb=document.querySelector('.theme-tg');

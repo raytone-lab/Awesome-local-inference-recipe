@@ -1,4 +1,4 @@
-// Shared zh/en switch. Priority: ?lang= (persisted) > localStorage > browser language. Pages call T(key); static nodes use data-i18n (HTML) / data-i18n-ph (placeholder).
+// Shared zh/en switch. Priority: ?lang= (persisted) > localStorage > browser language. Pages call T(key); static nodes use data-i18n (HTML) / data-i18n-ph (placeholder) / data-i18n-al (aria-label).
 (function(){
 const P=new URLSearchParams(location.search),norm=l=>(l||'').toLowerCase().startsWith('zh')?'zh-CN':(l?'en':'');
 let L=norm(P.get('lang'));
@@ -20,6 +20,7 @@ window.setLang=l=>{try{localStorage.setItem('lang',l)}catch(e){}const p=new URLS
 window.applyI18n=()=>{
  document.querySelectorAll('[data-i18n]').forEach(e=>e.innerHTML=T(e.dataset.i18n));
  document.querySelectorAll('[data-i18n-ph]').forEach(e=>e.placeholder=T(e.dataset.i18nPh));
+ document.querySelectorAll('[data-i18n-al]').forEach(e=>e.setAttribute('aria-label',T(e.dataset.i18nAl)));
  const n=document.getElementById('nav')||document.querySelector('header nav');
  if(n&&!n.querySelector('.lang')){const s=document.createElement('span');s.className='lang';
   s.innerHTML=`<a href="#" data-l="en">EN</a><a href="#" data-l="zh-CN">中文</a>`;n.appendChild(s);}

@@ -73,12 +73,14 @@
 </div>
 <aside class="hero-card card" aria-labelledby="tbh">
 <div class="hc-hd"><h2 id="tbh" data-i18n="tbh">Fastest measured setup per budget</h2><span class="muted" data-i18n="tbs">text models · single stream</span></div>
-<ol class="tb" id="tb"><li class="muted">…</li></ol>
+<div class="seg kt" id="tbk" role="tablist" aria-label="Price basis" data-i18n-al="k_al"><button type="button" role="tab" id="tbk-gpu" data-k="gpu" aria-controls="tb" aria-selected="true" data-i18n="k_gpu">Discrete GPUs (card only)</button><button type="button" role="tab" id="tbk-sys" data-k="sys" aria-controls="tb" aria-selected="false" tabindex="-1" data-i18n="k_sys">Whole systems</button></div>
+<ol class="tb" id="tb" role="tabpanel" aria-labelledby="tbk-gpu"><li class="muted">…</li></ol>
+<p class="caveat" data-i18n="tbn">Discrete-card prices are GPU-only, not the whole PC. Each row is a different model, so speeds aren’t directly comparable.</p>
 <a class="more-l" href="explore.html?level=%E5%AE%9E%E6%B5%8B&amp;cat=text" data-i18n="tball">All measured recipes →</a>
 </aside>
 </div></section>
 
-<section class="wrap props" aria-label="Why this list">
+<section class="wrap props" aria-label="Why this list" data-i18n-al="al_props">
 <div><b data-i18n="v1h">🔗 Every number has a source</b><p data-i18n="v1">Each row links to the post, README or log it came from, with a trust level: official, measured, relayed or claimed.</p></div>
 <div><b data-i18n="v2h">🔀 Cross-engine</b><p data-i18n="v2">llama.cpp, MLX, vLLM, SGLang, Strata, oMLX, DFlash, TensorFold… compared on the same hardware.</p></div>
 <div><b data-i18n="v3h">🖥️ Hardware you can buy</b><p data-i18n="v3">Consumer GPUs, Macs, DGX Spark, Strix Halo and used datacenter cards, all under $30k.</p></div>
@@ -86,8 +88,10 @@
 </section>
 
 <section class="wrap sec">
-<div class="sec-hd"><h2 data-i18n="bvh">Best value measured setups</h2><p class="muted" data-i18n="bvs">Lowest hardware cost per single-stream tok/s (measured text recipes with a known price).</p><a class="more-l" href="explore.html?level=%E5%AE%9E%E6%B5%8B&amp;cat=text&amp;sort=cpt" data-i18n="bvall">See the full ranking →</a></div>
-<div class="bv" id="bv"></div>
+<div class="sec-hd"><h2 data-i18n="bvh">Best value measured setups</h2><p class="muted" data-i18n="bvs">Lowest hardware cost per single-stream tok/s (measured text recipes with a known price), ranked separately for card prices and whole-system prices.</p></div>
+<p class="caveat" data-i18n="bvn"><b>Prices are GPU-only for discrete cards</b>: CPU, RAM and the rest of the PC are not included. Whole-system prices (Mac, DGX Spark, mini PCs) cover the entire machine. Every row runs a different model (size and quant vary), so tok/s is not a like-for-like comparison.</p>
+<div class="bvgrp"><div class="bvh"><h3 data-i18n="bvg">Discrete GPUs · card price only</h3><a class="more-l" href="explore.html?level=%E5%AE%9E%E6%B5%8B&amp;cat=text&amp;cost=gpu&amp;sort=cpt" data-i18n="bvall">See the full ranking →</a></div><div class="bv" id="bv-gpu"></div></div>
+<div class="bvgrp"><div class="bvh"><h3 data-i18n="bvs2">Whole systems · Mac, DGX Spark, mini PCs</h3><a class="more-l" href="explore.html?level=%E5%AE%9E%E6%B5%8B&amp;cat=text&amp;cost=sys&amp;sort=cpt" data-i18n="bvall">See the full ranking →</a></div><div class="bv" id="bv-sys"></div></div>
 </section>
 
 <section class="wrap sec">
@@ -99,7 +103,7 @@
 </section>
 
 <section class="wrap sec">
-<div class="sec-hd"><h2 data-i18n="hot">🔥 Popular on X</h2><p class="muted" data-i18n="hots">Ranked by likes + reposts. Click a card to open the original post.</p></div>
+<div class="sec-hd"><h2 data-i18n="hot">🔥 Popular on X</h2><p class="muted" data-i18n="hots">Ranked by likes + reposts (reposts weighted ×3). Click a card to open the original post.</p></div>
 <div class="hot" id="hot"></div>
 </section>
 
@@ -130,4 +134,4 @@
 </section>
 </main>
 <footer class="site-ft"><div class="ft-in"><div><b data-i18n="brand">Local Inference Recipes</b> · <span data-i18n="f_tag">Model × engine × hardware, every number sourced.</span><span id="xd"></span></div><nav aria-label="Footer"><a href="https://github.com/raytone-lab/Awesome-local-inference-recipe" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a><a href="https://github.com/raytone-lab/Awesome-local-inference-recipe/issues" target="_blank" rel="noopener" data-i18n="f_issue">Report an issue</a><a href="submit.html" data-i18n="submit">Submit</a><span data-i18n="f_data">Data CC BY 4.0 · code MIT</span></nav></div></footer>
-<script src="i18n.js"></script><script src="site.js"></script><script src="landing.js"></script></body></html>
+<script src="i18n.js"></script><script src="site.js"></script><script src="cost.js"></script><script src="landing.js"></script></body></html>
