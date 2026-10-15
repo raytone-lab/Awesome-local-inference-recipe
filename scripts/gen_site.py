@@ -7,6 +7,7 @@
 - sitemap.xml
 No HowTo/FAQPage structured data on purpose. Run: python3 scripts/gen_site.py"""
 import json, re, html
+from urllib.parse import quote
 from pathlib import Path
 R = Path(__file__).resolve().parent.parent
 PAGES = 'https://raytone-lab.github.io/awesome-local-inference-recipes/'
@@ -158,14 +159,13 @@ def landing(kind, key, name, rows, qterm=None):
         summ = (f'As of {ASOF}, this dataset has <b>{nrec(len(rows))}</b> for {e(name)}, {nmeas} of them measured by the poster'
                 + ('.' if nmeas else '; none is first-hand yet, so treat the numbers below as official, claimed or relayed.')
                 + (' These are image / video / audio results, so speed is given in the metric column rather than as tok/s.' if all(r['category'] != 'text' for r in rows) else ''))
-    if dates: summ += f' Entries are dated {dates[0]}.' if dates[0] == dates[-1] else f' Entries are dated {dates[0]} to {dates[-1]}.'
+    if dates: summ += (f' {len(dates)} of the entries carry a date' + (f' ({dates[0]}).' if dates[0] == dates[-1] else f', from {dates[0]} to {dates[-1]}.'))
     t = ['<table><thead><tr><th>Model</th><th>Engine</th><th>Hardware</th><th>tok/s</th><th>Metric</th><th>Source level</th><th>Date</th><th>Source</th></tr></thead><tbody>']
     for r in rows:
         tok = '' if r.get('tok_s') is None else f"{r['tok_s']:g}"
         t.append(f'<tr><td>{e(en(r["model"]))}</td><td>{e(r["engine"])}</td><td>{e(en(r["hardware"]))}</td><td class="n">{tok}</td><td>{e(met_en(r) or "")}</td><td>{LV.get(r["source_level"], "")}{" (self-reported)" if selfrep(r) else ""}</td><td>{e(r.get("date") or "")}</td><td><a href="{e(r["source_url"])}" rel="nofollow noopener">link</a></td></tr>')
     t.append('</tbody></table>')
     note = '<p class="na">Numbers are quoted from each source and have not been re-run by this project. Models and settings differ between rows. Source levels: Official = project/vendor, Measured = the poster ran it, Relayed = second-hand, Claimed = prediction or no reproduction details.</p>'
-    from urllib.parse import quote
     qs = e({'hw': f'explore.html?q={quote(qterm or name)}', 'model': f'explore.html?family={quote(key)}'}[kind])
     body = f'<h1>{e(q)}</h1>\n<p>{summ}</p>\n<p><a href="../{qs}">Filter these in the explorer →</a></p>\n' + ''.join(t) + note
     canon = f'{PAGES}{kind}/{slug(key) if kind=="model" else key}.html'
@@ -187,7 +187,7 @@ def main():
         pages.append(('model', f, f) + landing('model', f, f, rows))
     li = lambda items: '<ul>' + ''.join(items) + '</ul>'
     byid = {r['id']: r for r in D}
-    g = [f'<li><a href="{rid}.html">{e(byid[rid]["model"])} · {e(byid[rid]["hardware"])}</a> (<a href="zh-CN/{rid}.html">中文</a> · <a href="ja/{rid}.html">日本語</a>)</li>' for rid in ids if rid in byid]
+    g = [f'<li><a href="{rid}.html">{e(en(byid[rid]["model"]))} · {e(en(byid[rid]["hardware"]))}</a> (<a href="zh-CN/{rid}.html">中文</a> · <a href="ja/{rid}.html">日本語</a>)</li>' for rid in ids if rid in byid]
     hwl = [f'<li><a href="../{k}/{(slug(key) if k=="model" else key)}.html">{e(n)}</a> — {c} recipes</li>' for k, key, n, _, noidx, c in pages if k == 'hw' and not noidx]
     ml = [f'<li><a href="../{k}/{slug(key)}.html">{e(n)}</a> — {c} recipes</li>' for k, key, n, _, noidx, c in pages if k == 'model' and not noidx]
     body = (f'<h1>Local inference recipe guides, hardware and model pages</h1><p>Static pages generated from the dataset (as of {ASOF}). Every number links to its source.</p>'
