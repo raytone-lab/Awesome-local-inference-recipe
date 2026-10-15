@@ -1,6 +1,7 @@
-import json, re, unittest
+import json, re, sys, unittest
 from pathlib import Path
 R = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(R/'scripts'))
 class SiteStatic(unittest.TestCase):
     def setUp(self):
         self.D = json.loads((R/'data/recipes.json').read_text(encoding='utf-8'))
@@ -37,8 +38,7 @@ class LandingWording(unittest.TestCase):
         for p in list((R/'hw').glob('*.html')) + list((R/'model').glob('*.html')):
             s = p.read_text(encoding='utf-8')
             if 'none is first-hand yet' in s: self.assertIn(' 0 of them measured', s, p.name)
-        # the headline never cites a multi-device, comparison or self-reported row
         for r in gs.D:
             if 'multi-GPU' in r['tags'] or gs.selfrep(r) or gs.COMPARE.search(r['hardware']):
-                self.assertFalse(gs.meas_text(r) and gs.single(r), r['id'])
+                self.assertFalse(gs.meas_text(r) and gs.single(r), f"{r['id']}: headline must not cite multi-device, comparison or self-reported rows")
 if __name__ == '__main__': unittest.main()

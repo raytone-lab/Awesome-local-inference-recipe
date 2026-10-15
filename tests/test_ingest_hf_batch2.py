@@ -1,4 +1,3 @@
-"""2026-10-14 批次 29 张卡的回归测试（金标准为人工审核结果）"""
 import os, sys, unittest
 H = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(H, "..", "scripts"))
 from hf_extract import extract, parse_cell
@@ -26,7 +25,7 @@ class Batch2(unittest.TestCase):
     def test_transposed(self):
         e = run("prism-ml_Bonsai-8B-mlx-1bit"); r = rows(e, "iPhone")[0]
         self.assertEqual((r["gen"], r["prefill"]), (44, 377))
-        self.assertNotIn(14, [x["gen"] for x in e["rows"]])  # 4-bit 对照列
+        self.assertNotIn(14, [x["gen"] for x in e["rows"]], "4-bit baseline column must be skipped")
         k = run("Kujira_Underdog-Saluki-27B-1.0-MTP-GGUF")
         self.assertEqual([r["gen"] for r in k["rows"] if r["label"] != "sentence"][:2], [40.7, 66.2])
         self.assertIn("3080", k["primary"]["hardware"])

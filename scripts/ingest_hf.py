@@ -2,9 +2,8 @@
 """Hugging Face 模型卡 -> 候选配方（不会写入 data/recipes.json）。
 用法: python3 scripts/ingest_hf.py [--limit 40] [--libs gguf,mlx] [--sorts trendingScore,downloads]
 可选环境变量 HF_TOKEN。仅用标准库。"""
-import argparse  # v2: 抽取逻辑见 scripts/hf_extract.py
 import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__)))
-from normalize_engines import canon  # 统一引擎名
+from normalize_engines import canon
 import argparse, datetime, glob, json, os, re, sys, time, urllib.request, urllib.parse
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 API = "https://huggingface.co/api/models"

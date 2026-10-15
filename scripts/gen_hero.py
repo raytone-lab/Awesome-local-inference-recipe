@@ -4,16 +4,12 @@
 - docs/budget-tiers{suf}.png  fastest text setup per README budget tier (measured vs claimed)
 Data: text recipes with tok_s and hardware_cost_usd; deduped per hardware+model (measured preferred, then best tok/s).
 Not part of the CI up-to-date check (PNG bytes vary across matplotlib/font versions). Run: python3 scripts/gen_hero.py"""
-import json, re
-from pathlib import Path
-try:  # optional so tests (CI has no matplotlib) can import the data/grouping logic
-    import matplotlib; matplotlib.use('Agg')
-    import matplotlib.pyplot as plt
-    from matplotlib.patches import Patch
-    from matplotlib import font_manager as fm
-except ImportError: plt=Patch=fm=None
-R = Path(__file__).resolve().parent.parent
-BOUNDS = [(0,2500),(2500,7000),(7000,14000),(14000,30000)]  # keep in sync with gen_readme.py
+import re
+import matplotlib; matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
+from matplotlib import font_manager as fm
+from hero_data import R, BOUNDS, clean, money, params, fmtb, load_setups, measured_with_card, title_row, grouped_rows, rtx3090_baseline, tier_rows, is_used, data_asof
 SUF = {'en':'','zh-CN':'.zh-CN','ja':'.ja'}
 CJK = {'zh-CN':'Noto Sans CJK SC','ja':'Noto Sans CJK JP'}
 FAM = {'Mac':'#7c3aed','NVIDIA 消费级':'#16a34a','DGX Spark':'#0ea5e9','AMD':'#dc2626','二手数据中心卡':'#f59e0b','其他':'#64748b'}
@@ -31,28 +27,9 @@ TX = {
    b_title='予算帯ごとの最速構成',b_x='1 ストリーム最高 tok/s',meas='実測',claim='公称 / 引用',
    tiers=['≤ $2.5k','$2.5k–7k','$7k–14k','$14k–30k']),
 }
-def clean(s,n):
-    s=re.sub(r'[（(][^）)]*[）)]','',s); s=re.sub(r'[\u3000-\u30ff\u4e00-\u9fff，、；：]+',' ',s); s=re.sub(r'\s+',' ',s).strip(' +/·')
-    return s if len(s)<=n else s[:n-1]+'…'
-def hwkey(s):
-    # dedupe key: drop parenthesized asides (dates, notes) but keep any that add hardware ('+64GB RAM'), so different setups never merge
-    s=re.sub(r'[（(]([^）)]*)[）)]',lambda m:' '+m.group(1) if re.search(r'\+\s*\d+\s*GB',m.group(1)) else '',s)
-    return re.sub(r'\s+',' ',re.sub(r'^单\s*','',s)).strip().lower()
-def money(x): return f'${x/1000:.1f}k' if x>=1000 else f'${x:.0f}'
-D=[r for r in json.load(open(R/'data/recipes.json')) if r['category']=='text' and r['tok_s'] and r['hardware_cost_usd']]
-best={}
-for r in D:
-    k=(hwkey(r['hardware']),clean(r['model'],80).lower()); cur=best.get(k)
-    rank=lambda x:(x['source_level']=='实测',x['tok_s'],x['id'])
-    if cur is None or rank(r)>rank(cur): best[k]=r
-U=sorted(best.values(),key=lambda r:r['id'])
-for r in U: r['_v']=r['tok_s']/r['hardware_cost_usd']*1000; r['_m']=r['source_level']=='实测'
-
+U=load_setups()
 def style(ax):
     for s in ('top','right'): ax.spines[s].set_visible(False)
-def _asof():
-    m=re.search(r"DATA_ASOF\s*=\s*'([^']+)'",open(R/'scripts/gen_readme.py').read()); return m.group(1) if m else ''
-def _used(r): return '二手' in (r.get('hardware_cost_text') or '') or '二手' in r['hardware']
 HT={'en':dict(t='A {p} {u}{hw} runs {tok:g} tok/s',used='used ',
       sub='tok/s per $1,000 of hardware = single-stream tok/s ÷ (price / 1000) · measured results only · lowest published price, Oct 2026 · models differ per row',
       base='single RTX 3090 ≈{v:.0f}',note='Data as of {d} · CC BY 4.0 · Awesome Local Inference Recipes'),
@@ -62,37 +39,18 @@ HT={'en':dict(t='A {p} {u}{hw} runs {tok:g} tok/s',used='used ',
     'ja':dict(t='{p} の {u}{hw} で {tok:g} tok/s',used='中古 ',
       sub='$1,000 あたり tok/s = 1 ストリーム tok/s ÷（価格 / 1000）· 実測のみ · 2026 年 10 月の公開最安価格 · 行ごとにモデルは異なる',
       base='RTX 3090 1 枚 ≈{v:.0f}',note='データ時点 {d} · CC BY 4.0 · Awesome Local Inference Recipes')}
-PARAMS=json.load(open(R/'data/model-params.json'))['models']
-def params(r):
-    for m in PARAMS:
-        if re.search(m['match'],r['model']):
-            return None if m.get('exclude') and re.search(m['exclude'],r['model']) else m
-    return None
-def fmtb(x): return f"{x:g}B"
-GROUPS=[('dense',lambda m:m['arch']=='dense' and m['total_b']>=27),
-        ('big',lambda m:m['arch']=='moe' and m['total_b']>=100),
-        ('mid',lambda m:m['arch']=='moe' and m['total_b']<100 and m['active_b']>=5),
-        ('small',lambda m:m['arch']=='moe' and m['total_b']<100 and m['active_b']<5)]
 GT={'en':dict(dense='Dense ≥27B',big='Big MoE (≥100B total)',mid='Mid MoE (<100B total, ≥5B active)',small='Small MoE (<100B total, <5B active)',act='{a} active',tot='{a} active / {t} total',
               t='{p} {u}{hw} runs {m} at {tok:g} tok/s',flag=' ({f})',tern='ternary quant',mtp='MTP',sep=' + ',only='Discrete-GPU rows: card price only (Big MoE setups also need lots of system RAM) · Mac / DGX Spark: whole system · only models with official parameter cards (data/model-params.json)'),
     'zh-CN':dict(dense='稠密 ≥27B',big='大 MoE（总参数 ≥100B）',mid='中 MoE（总参数 <100B，激活 ≥5B）',small='小 MoE（总参数 <100B，激活 <5B）',act='激活 {a}',tot='激活 {a} / 总 {t}',
               t='{p} 的 {u}{hw} 跑 {m}：{tok:g} tok/s',flag='（{f}）',tern='三值量化',mtp='MTP',sep=' + ',only='独显行价格仅含显卡（大 MoE 配置还需大量系统内存）· Mac / DGX Spark 为整机价 · 仅含有官方参数卡的模型（data/model-params.json）'),
     'ja':dict(dense='Dense ≥27B',big='大型 MoE（総パラメータ ≥100B）',mid='中型 MoE（総 <100B、アクティブ ≥5B）',small='小型 MoE（総 <100B、アクティブ <5B）',act='アクティブ {a}',tot='アクティブ {a} / 総 {t}',
               t='{p} の {u}{hw} で {m} が {tok:g} tok/s',flag='（{f}）',tern='3 値量子化',mtp='MTP',sep=' + ',only='dGPU 行は GPU 本体価格のみ（大型 MoE 構成は大容量のメインメモリも必要）· Mac / DGX Spark は本体一式 · 公式パラメータカードのあるモデルのみ（data/model-params.json）')}
-PER=5
-def title_row():
-    meas=[r for r in U if r['_m'] and params(r)]
-    dense=[r for r in meas if dict(GROUPS)['dense'](params(r))]
-    return min(dense or meas,key=lambda r:(-r['_v'],r['id']))
 def hero(lang):
     t=TX[lang]; h=HT[lang]; g=GT[lang]
-    meas=[r for r in U if r['_m'] and params(r)]
-    rows=[]; span=None  # (kind, payload); span = row-index range of Big MoE group
-    for key,ok in GROUPS:
-        rs=sorted([r for r in meas if ok(params(r))],key=lambda r:(-r['_v'],r['id']))[:PER]
-        if rs: rows.append(('h',g[key])); rows+= [('r',r) for r in rs]
-        if rs and key=='big': span=(len(rows)-len(rs)-1,len(rows)-1)
-    first=title_row()
+    meas=measured_with_card(U)
+    rows,span=grouped_rows(meas)
+    rows=[(k,g[x] if k=='h' else x) for k,x in rows]
+    first=title_row(U)
     n=len(rows); H=1.2+.42*n; fig,ax=plt.subplots(figsize=(11.5,H),dpi=150)
     vmax=max(x['_v'] for k,x in rows if k=='r')
     for i,(k,x) in enumerate(rows):
@@ -109,22 +67,21 @@ def hero(lang):
         pa=g['act'].format(a=fmtb(m['active_b'])) if m['arch']=='dense' else g['tot'].format(a=fmtb(m['active_b']),t=m.get('total_label') or fmtb(m['total_b']))
         ax.text(-.012,y-.24,f"{clean(m['label'],26)} · {pa}",transform=ax.get_yaxis_transform(),ha='right',va='center',fontsize=7.3,color='#94a3b8')
     ax.set_yticks([]); ax.set_ylim(-.7,n-.3)
-    # bare single-3090 rows only (raw hardware string, so '+RAM' setups are excluded; dedupe via hwkey() keeps '+NNGB' asides too), Big MoE models only, so the line is a like-for-like reference
-    b=[r for r in meas if re.fullmatch(r'(单 )?RTX 3090( 24GB)?',r['hardware'].strip()) and dict(GROUPS)['big'](params(r))]
-    if b and span:  # span=(header idx, last row idx); 3090 baseline is only comparable to the Big MoE rows (same offload regime); draw it inside that group
-        bv=max(r['_v'] for r in b); y0,y1=n-1-span[1]-.45,n-1-span[0]+.1
+    bv=rtx3090_baseline(meas)
+    if bv is not None and span:
+        y0,y1=n-1-span[1]-.45,n-1-span[0]+.1
         ax.vlines(bv,y0,y1,linestyles=(0,(4,4)),lw=.8,color='#b6c0cf',alpha=.8,zorder=0)
         ax.text(bv,y1,' '+h['base'].format(v=bv),fontsize=8,color='#98a2b3',va='bottom')
     ax.set_xlim(0,vmax*1.6); ax.set_xlabel(t['h_x'],fontsize=10)
     hw=clean(first['hardware'],40); hw=re.sub(r'^(单 )','',hw)
     fl=[]
-    if 'ternary' in first.get('tags',[]): fl.append(g['tern'])  # row-backed: tag comes from the row's quant
+    if 'ternary' in first.get('tags',[]): fl.append(g['tern'])
     if 'MTP' in first.get('tags',[]): fl.append(g['mtp'])
     ftxt=g['flag'].format(f=g['sep'].join(fl)) if fl else ''
-    fig.suptitle(g['t'].format(p=money(first['hardware_cost_usd']),u=h['used'] if _used(first) else '',hw=re.sub(r' \d+GB$','',hw),m=params(first)['label'],tok=first['tok_s'])+ftxt,x=.012,y=.99,ha='left',fontsize=15,fontweight='bold',color='#0f172a')
+    fig.suptitle(g['t'].format(p=money(first['hardware_cost_usd']),u=h['used'] if is_used(first) else '',hw=re.sub(r' \d+GB$','',hw),m=params(first)['label'],tok=first['tok_s'])+ftxt,x=.012,y=.99,ha='left',fontsize=15,fontweight='bold',color='#0f172a')
     fig.text(.012,1-.62/H,h['sub'],ha='left',fontsize=9,color='#475569')
     fig.text(.012,1-.82/H,g['only'],ha='left',fontsize=8.5,color='#64748b')
-    fig.text(.995,.006,h['note'].format(d=_asof()),ha='right',fontsize=7.5,color='#94a3b8')
+    fig.text(.995,.006,h['note'].format(d=data_asof()),ha='right',fontsize=7.5,color='#94a3b8')
     style(ax); ax.spines['left'].set_visible(False); ax.grid(axis='x',alpha=.2)
     fams=[k for k in FAM if any(x['hardware_family']==k for kk,x in rows if kk=='r')]
     ax.legend(handles=[Patch(color=FAM[k],label=t['fam'][k]) for k in fams],frameon=False,loc='lower right',fontsize=8.5,ncol=1)
@@ -133,10 +90,7 @@ def hero(lang):
 def tiers(lang):
     t=TX[lang]; fig,ax=plt.subplots(figsize=(11,5.4),dpi=150); y=0; ticks=[]; xmax=0; used=set()
     for name,(lo,hi) in zip(t['tiers'],BOUNDS):
-        rs=[r for r in U if lo<r['hardware_cost_usd']<=hi]; rows=[]
-        for m in (True,False):
-            pool=[r for r in rs if r['_m']==m]
-            if pool: rows.append(max(pool,key=lambda r:(r['tok_s'],r['id'])))
+        rows=tier_rows(U,lo,hi)
         ys=[]
         for r in rows:
             c=FAM[r['hardware_family']]; used.add(r['hardware_family']); xmax=max(xmax,r['tok_s'])

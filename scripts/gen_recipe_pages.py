@@ -6,7 +6,7 @@ import json, re
 from pathlib import Path
 R = Path(__file__).resolve().parent.parent
 D = {r['id']: r for r in json.load(open(R/'data/recipes.json'))}
-GUIDES = [  # curated first batch: spans Mac / NVIDIA / DGX Spark / AMD / used datacenter / image / video
+GUIDES = [
  'hf-ddalcu-qwen3-8-flash-next-mlx-serve-mixed-4-8bit-1','hf-youssofal-qwen3-6-27b-mtplx-optimized-speed-1',
  'hf-prism-ml-ternary-bonsai-2-27b-gguf-5','hf-prism-ml-ternary-bonsai-2-27b-gguf-1','hf-byteshape-qwen3-8-27b-gguf-1',
  'hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1','x-004','text-022','x-001','x-009','x-007','text-018',

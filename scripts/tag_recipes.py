@@ -4,7 +4,6 @@ Run: python3 scripts/tag_recipes.py   (also imported by approve_review.py)"""
 import json, re
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
-# first match on `model` wins (order matters: Qwen-Image before Qwen, FastH3 -> MiniMax H3)
 FAMILIES = [
     (r'Qwen-Image', 'Qwen-Image'), (r'Z-Image', 'Z-Image'), (r'Qwen', 'Qwen'),
     (r'DeepSeek', 'DeepSeek'), (r'GLM', 'GLM'), (r'Bonsai', 'Bonsai'),
@@ -13,7 +12,7 @@ FAMILIES = [
     (r'Mistral', 'Mistral'), (r'Kimi', 'Kimi'), (r'gpt-oss', 'gpt-oss'), (r'Flux', 'Flux'),
     (r'Hunyuan', 'Hunyuan'),
 ]
-QUANT = [  # (tag, pattern on model+quant)
+QUANT = [
     ('1bit', r'1-bit|\b1bit|\bI?Q1_'),
     ('ternary', r'ternary|\bTQ[12]_0'),
     ('2bit', r'\bI?Q2|2-bit|\b2bit|\b2\.\d+\s?bpw|\bW2\b|-W2'),

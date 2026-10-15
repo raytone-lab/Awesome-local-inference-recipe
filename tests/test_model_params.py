@@ -1,6 +1,8 @@
-import warnings, json, re, unittest
+import warnings, json, re, sys, unittest
 from pathlib import Path
 R = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(R / 'scripts'))
+import hero_data as gh
 class ModelParams(unittest.TestCase):
     def setUp(self):
         self.P = json.loads((R / 'data/model-params.json').read_text())['models']
@@ -24,28 +26,22 @@ class ModelParams(unittest.TestCase):
         self.assertEqual(self.match('Bonsai2 27B')['label'], 'Bonsai 2 27B')
         self.assertEqual(self.match('DeepSeek-V4-Flash (0731)')['label'], 'DeepSeek-V4-Flash')
     def test_hero_rows_covered_or_listed(self):
-        # every measured priced text row either maps to a card or is knowingly excluded
         miss = sorted({r['model'] for r in self.D if r['category'] == 'text' and r['tok_s'] and r['hardware_cost_usd']
                        and r['source_level'] == '实测' and not self.match(r['model'])})
-        # warning, not failure: new data PRs may add models before a card exists (they are just left off the hero)
         miss = [m for m in miss if not re.search(r'REAP', m)]
         if miss: warnings.warn(f'models missing from data/model-params.json (omitted from hero): {miss}')
     def test_headline_models_match(self):
         for name in ('Qwen3.8-27B', 'Qwen3.8-Flash-Next', 'LFM2.5-24B-A2B', 'Bonsai2 27B'):
             self.assertIsNotNone(self.match(name), name)
     def test_hero_groups_on_real_data(self):
-        import importlib.util
-        spec = importlib.util.spec_from_file_location('gen_hero', R / 'scripts/gen_hero.py'); gh = importlib.util.module_from_spec(spec); spec.loader.exec_module(gh)
-        meas = [r for r in gh.U if r['_m'] and gh.params(r)]
+        meas = gh.measured_with_card(gh.load_setups())
         counts = {k: sum(1 for r in meas if ok(gh.params(r))) for k, ok in gh.GROUPS}
         self.assertTrue(any(counts.values()), counts)
-        self.assertGreater(counts['dense'], 0, counts)  # title is taken from Dense
+        self.assertGreater(counts['dense'], 0, f'the hero title is taken from the Dense group: {counts}')
         empty = [k for k, v in counts.items() if not v]
         if empty: warnings.warn(f'hero groups with no measured rows (not drawn): {empty}')
     def test_title_flags_row_backed(self):
-        import importlib.util
-        spec = importlib.util.spec_from_file_location('gen_hero', R / 'scripts/gen_hero.py'); gh = importlib.util.module_from_spec(spec); spec.loader.exec_module(gh)
-        first = gh.title_row()
+        first = gh.title_row(gh.load_setups())
         self.assertTrue(gh.params(first), first['id'])
         if 'ternary' in first['tags']: self.assertRegex(first.get('quant') or '', r'(?i)ternary|TQ[12]_0', first['id'])
 if __name__ == '__main__': unittest.main()

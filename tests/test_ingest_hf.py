@@ -16,7 +16,7 @@ class T(unittest.TestCase):
         self.assertIn("RTX PRO 4000", r["primary"]["hardware"]); self.assertEqual(r["primary"]["hw_class"], "workstation")
         self.assertEqual(r["context_tokens"], 262144)
         self.assertTrue(any("separate" in c for c in r["caveats"]))
-        d = run("cdiamond_Qwen3.8-27B-iMatrix-NVFP4-MTP-GGUF"); self.assertIsNone(d["primary"])  # 默认排除工作站卡
+        d = run("cdiamond_Qwen3.8-27B-iMatrix-NVFP4-MTP-GGUF"); self.assertIsNone(d["primary"], "workstation cards are excluded by default")
     def test_bonsai2_gguf(self):
         r = run("prism-ml_Ternary-Bonsai-2-27B-gguf")
         g = {(x["hardware"], x["quant"]): (x["gen"], x["prefill"]) for x in r["rows"] if not x["excluded"]}

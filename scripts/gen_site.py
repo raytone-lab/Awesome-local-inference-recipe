@@ -5,10 +5,11 @@
 - hw/<slug>.html, model/<slug>.html: landing pages; fewer than MIN_ROWS rows -> noindex and left out of the sitemap
 - guides/index.html: crawlable index of guides and landing pages
 - sitemap.xml
-No HowTo/FAQPage structured data on purpose. Run: python3 scripts/gen_site.py"""
+Run: python3 scripts/gen_site.py"""
 import json, re, html
 from urllib.parse import quote
 from pathlib import Path
+import gen_readme
 R = Path(__file__).resolve().parent.parent
 PAGES = 'https://raytone-lab.github.io/awesome-local-inference-recipes/'
 REPO = 'https://github.com/raytone-lab/awesome-local-inference-recipes'
@@ -21,22 +22,18 @@ e = lambda s: html.escape(str(s if s is not None else ''), quote=True)
 def write(p, s):
     p.parent.mkdir(parents=True, exist_ok=True); p.write_text(s, encoding='utf-8')
 def selfrep(r): return '自称' in (r.get('metric') or '')
-CJK = re.compile(r'[\u3400-\u9fff\uff00-\uffef\u3000-\u303f]')
-def en(s):  # same rule as gen_readme.en(): drop Chinese fragments, keep proper nouns; fall back to the original
+def normalize_punct(s): return s.replace('；', '; ').replace('，', ', ')
+def en(s):
     if not s: return s
-    t = re.sub(r'（[^）]*）|\([^)]*[\u3400-\u9fff][^)]*\)', '', str(s))
-    t = t.replace('；', '; ').replace('，', ', ')  # full-width separators would glue neighbouring tokens to CJK and drop them
-    t = re.sub(r'\s+', ' ', ' '.join(w for w in re.split(r'\s+', t) if not CJK.search(w))).strip(' ·+/,;；')
-    return t or s
+    return gen_readme.en(normalize_punct(str(s))) or s
 def met_en(r): return r.get('metric_en') or en(r.get('metric'))
 COMPARE = re.compile(r'\s/|/\s|\svs\.?\s', re.I)
-def single(r):  # one device, one stream: what a "fastest single-stream" headline may cite
+def single(r):
     return ('multi-GPU' not in r['tags'] and not re.search(r'[2-9] ?[x×] ?|双|[2-9] ?台', r['hardware']) and not COMPARE.search(r['hardware'])
             and not r.get('superseded_by') and not re.search(r'并发|aggregate|总吞吐', (r.get('metric') or '') + ' ' + str(r.get('concurrency') or ''), re.I))
 def meas_text(r): return r['source_level'] == '实测' and r['category'] == 'text' and r.get('tok_s') and not selfrep(r)
 def safe_url(u): return u if re.match(r'(https?:)?//|[\w./#?=&%-]+$', u) and not u.lower().startswith('javascript:') else '#'
 
-# ---------- explore static rows
 def row(r):
     tok = '' if r.get('tok_s') is None else f"{r['tok_s']:g}"
     cost = f"{r['hardware_cost_usd']:,}" if r.get('hardware_cost_usd') is not None else e(r.get('hardware_cost_text') or '')
@@ -55,7 +52,6 @@ def explore(links):
     else: s = s.replace('<div class="more" id="morew"', blk + '\n<div class="more" id="morew"', 1)
     write(p, s)
 
-# ---------- tiny markdown -> html for the generated guides (headings, lists, quotes, code, links, bold, inline code)
 def inline(t, linkmap):
     out = []; i = 0
     for m in re.finditer(r'`([^`]+)`|\*\*([^*]+)\*\*|\[([^\]]+)\]\(([^)\s]+)\)', t):
@@ -136,8 +132,7 @@ def guides():
             write(R/'guides'/f'{pre}{rid}.html', shell(title, desc, canon, body, depth, hl, alts)); urls.append(canon)
     return ids, urls
 
-# ---------- landing pages
-HW = [  # (slug, display name, regex on hardware, explorer search term that matches the same text)
+HW = [
  ('rtx-5090','RTX 5090',r'RTX 5090','RTX 5090'),('rtx-4090','RTX 4090',r'RTX 4090','RTX 4090'),('rtx-3090','RTX 3090',r'RTX 3090','RTX 3090'),('rtx-5060-ti','RTX 5060 Ti',r'RTX 5060 Ti','RTX 5060 Ti'),
  ('mac-studio-m3-ultra','Mac Studio M3 Ultra',r'M3 Ultra','M3 Ultra'),('mac-m4-max','Apple M4 Max',r'M4 Max','M4 Max'),('mac-m5','Apple M5 Pro / M5 Max',r'M5 (Pro|Max)','M5'),
  ('dgx-spark','NVIDIA DGX Spark',r'DGX Spark','DGX Spark'),('strix-halo','AMD Strix Halo (Ryzen AI Max+ 395)',r'Strix Halo','Strix Halo'),

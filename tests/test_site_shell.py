@@ -1,4 +1,3 @@
-"""The site header is copied into each HTML page (no build step); keep the copies identical."""
 import re
 import unittest
 from pathlib import Path
