@@ -9710,7 +9710,7 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
     "hardware_cost_usd": 5400,
-    "metric": "短上下文解码 ~143 tok/s；258K：解码 112、prefill 5.9K tok/s、TTFT 43 s；DSpark 草稿 4K 时 224 tok/s，约 16K 起反而更慢，192K 仅 8 tok/s（3 次中位）",
+    "metric": "短上下文解码 ~143 tok/s；258K：解码 112、prefill 5.9K tok/s、TTFT 43 s；DSpark 草稿 4K 时 224 tok/s，约 16K 起反而更慢，192K 仅 8 tok/s（新鲜提示，3 次中位；装草稿后单张 5090 只放得下 192K）",
     "tok_s": 143,
     "concurrency": null,
     "context": "至 258K（DSpark 测至 192K）",
@@ -9746,7 +9746,7 @@
     "metric": "短提示（LocalMaxxing reasoning）273 tok/s，5 次中位、温度 0，已获 LocalMaxxing 收录；代码提示随上下文：32K 203 / 128K 157 / 192K 144 / 256K 107（tok_s 取短提示）",
     "tok_s": 273,
     "concurrency": null,
-    "context": "32K 窗口；最高 256K；KV 缓存 BF16",
+    "context": "主数字 32K 窗口；长上下文为另一轮（同卡同草稿）代码提示 32K–256K",
     "launch_command": null,
     "source_url": "https://x.com/coffeecup2020/status/2110624499901075769",
     "source_note": "@coffeecup2020（tqLLM 作者）on X；上下文表见 2110622742055723363",
@@ -9779,7 +9779,7 @@
     "metric": "短提示 175.9 tok/s（5 次中位，本地跑，未提交 LocalMaxxing）；200K 提示 113 tok/s",
     "tok_s": 175.9,
     "concurrency": null,
-    "context": "32K 窗口；200K",
+    "context": "主数字 32K 窗口；另测 200K 提示",
     "launch_command": null,
     "source_url": "https://x.com/coffeecup2020/status/2110719638518526343",
     "source_note": "@coffeecup2020（tqLLM 作者）on X",
@@ -9809,7 +9809,7 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
     "hardware_cost_usd": 6950,
-    "metric": "解码 320 / 8K / 65K / 130K / 260K 上下文：73 / 74 / 67 / 56 / 38 tok/s（4 次中位，思考关）；prefill 峰值 ~2,500，260K 时 929",
+    "metric": "解码 320 / 8K / 65K / 130K / 260K 上下文：73 / 74 / 67 / 56 / 38 tok/s（4 次中位，思考关）；prefill 峰值 ~2,500，260K 时 929；每次输出 512 token；同一提示第二次提交 TTFT 277 s → 1.2 s（前缀缓存）",
     "tok_s": 73,
     "concurrency": null,
     "context": "320–260K；KV 缓存 BF16",
@@ -9821,7 +9821,7 @@
     "x_post": {
       "author": "Oluwaphilemon1",
       "likes": 7,
-      "reposts": 0
+      "reposts": 2
     },
     "model_family": "Qwen",
     "tags": [
@@ -9839,7 +9839,7 @@
     "model": "Qwen3.8-Flash-Next",
     "quant": "Q2_0 / IQ3_S（Strata GGUF）+ 草稿头",
     "engine": "Strata",
-    "hardware": "Mac Studio M5 Ultra（配置未注明）",
+    "hardware": "Apple M5 Ultra（机型、配置未注明）",
     "hardware_family": "Mac",
     "hardware_cost_text": null,
     "hardware_cost_usd": null,
@@ -9849,7 +9849,7 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/yibie/status/2110577994964303952",
-    "source_note": "@yibie（strata-mlx 作者）自测 on X",
+    "source_note": "@yibie（strata-mlx 作者）自测 on X；模型与 Strata GGUF 据同作者项目介绍帖 2108830033083294193（strata-mlx 读 Strata 的 Qwen3.8-Flash-Next GGUF）",
     "source_level": "官方",
     "date": "2026-10-15",
     "x_post": {
@@ -9872,19 +9872,19 @@
     "id": "x-083",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
-    "quant": "未注明（同作者前测用 Q2_0）",
+    "quant": null,
     "engine": "Strata",
     "hardware": "MacBook Pro M4 Pro 48GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$2,399（MBP14 M4 Pro 48GB 定价）",
+    "hardware_cost_text": "$2,399–2,599（MBP14 M4 Pro 48GB 定价，芯片档位未注明）",
     "hardware_cost_usd": 2399,
-    "metric": "更新后：merge-code 提示 45 tok/s（两次）；另两个提示缓存预热后 32–33；tok_s 取预热后通用提示 33",
+    "metric": "更新后：merge-code 提示 45 tok/s（两次）；另两个提示缓存预热后 32–33；tok_s 取另两个提示 33",
     "tok_s": 33,
     "concurrency": null,
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/yuanhao/status/2110640238758383692",
-    "source_note": "@yuanhao 实测（前测见 2110334086426337592：官方 Metal 25.6–30.3）",
+    "source_note": "@yuanhao 实测（量化未注明；同作者前测 2110334086426337592 用 Q2_0：官方 Strata Metal 25.6–30.3）",
     "source_level": "实测",
     "date": "2026-10-15",
     "x_post": {
@@ -9893,9 +9893,7 @@
       "reposts": 0
     },
     "model_family": "Qwen",
-    "tags": [
-      "2bit"
-    ],
+    "tags": [],
     "measured_by": "yuanhao",
     "engine_raw": "strata-mlx",
     "engine_note": "strata-mlx",
@@ -9923,7 +9921,7 @@
     "x_post": {
       "author": "0xBakeer",
       "likes": 17,
-      "reposts": 0
+      "reposts": 3
     },
     "model_family": "Qwen",
     "tags": [
