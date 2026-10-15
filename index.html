@@ -1,26 +1,82 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Awesome Local Inference Recipes · 本地推理配方</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="landing.css"></head><body>
-<header><div class="brand">⚡ Awesome Local Inference Recipes <small>本地推理配方</small></div><nav><a href="index.html" class="on">首页</a><a href="explore.html">配方库</a><a href="speed.html">速度体感</a><a href="submit.html">提交配方</a></nav></header>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Awesome Local Inference Recipes</title>
+<meta name="description" content="Model × engine × hardware: real local inference recipes with sourced tok/s and hardware cost, every number linked to its source.">
+<link rel="canonical" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/index.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Awesome Local Inference Recipes">
+<meta property="og:title" content="Awesome Local Inference Recipes"><meta property="og:description" content="Model × engine × hardware: real local inference recipes with sourced tok/s and hardware cost, every number linked to its source.">
+<meta property="og:url" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/index.html"><meta property="og:image" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/docs/og.png">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="Awesome Local Inference Recipes: model × engine × hardware, sourced tok/s and cost">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Awesome Local Inference Recipes">
+<meta name="twitter:description" content="Model × engine × hardware: real local inference recipes with sourced tok/s and hardware cost, every number linked to its source."><meta name="twitter:image" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/docs/og.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Dataset",
+ "name": "Awesome Local Inference Recipes",
+ "alternateName": "本地推理配方",
+ "description": "Community-sourced local LLM / image / video inference recipes: model × quantization × engine × hardware, with single-stream tok/s, hardware cost and a source link plus trust level (official / measured / relayed / claimed) for every number.",
+ "url": "https://raytone-lab.github.io/Awesome-local-inference-recipe/",
+ "sameAs": "https://github.com/raytone-lab/Awesome-local-inference-recipe",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "isAccessibleForFree": true,
+ "inLanguage": [
+  "en",
+  "zh-CN"
+ ],
+ "keywords": [
+  "local inference",
+  "LLM",
+  "tok/s",
+  "llama.cpp",
+  "MLX",
+  "vLLM",
+  "GPU",
+  "benchmark",
+  "quantization"
+ ],
+ "creator": {
+  "@type": "Organization",
+  "name": "raytone-lab",
+  "url": "https://github.com/raytone-lab"
+ },
+ "variableMeasured": [
+  "tokens per second (single stream)",
+  "hardware cost (USD)",
+  "context length",
+  "source level"
+ ],
+ "distribution": [
+  {
+   "@type": "DataDownload",
+   "encodingFormat": "application/json",
+   "contentUrl": "https://raytone-lab.github.io/Awesome-local-inference-recipe/data/recipes.json"
+  }
+ ]
+}
+</script>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="landing.css"></head><body>
+<header><div class="brand">⚡ <span data-i18n="brand">Local Inference Recipes</span> <small>Awesome Local Inference Recipes</small></div><nav><a href="index.html" class="on" data-i18n="home">Home</a><a href="explore.html" data-i18n="explore">Explore</a><a href="speed.html" data-i18n="speed">Speed feel</a><a href="submit.html" data-i18n="submit">Submit</a></nav></header>
 <section class="lh"><div class="in">
-<p class="eyebrow">本地推理配方：模型 × 引擎 × 硬件，每个数字都有出处。</p>
-<h1>同一张卡，换个配方<br><span>速度差 10 倍</span></h1>
-<p class="lead">收集社区里真实跑出来的本地推理配方：哪个模型、什么量化、哪个引擎、什么硬件，跑出多少 tok/s、花多少钱。</p>
-<div class="pills"><span>🔀 跨引擎：Strata · oMLX · DFlash2 · TensorFold · llama.cpp</span><span>🖥️ 消费级 / 二手硬件</span><span>🔗 每个数字标来源</span><span>💰 聚焦 ≤ $30k</span></div>
-<div class="cta"><a class="btn p" href="explore.html">浏览配方库 →</a><a class="btn" href="submit.html">提交你的配方</a></div>
+<p class="eyebrow" data-i18n="eb">Local inference recipes: model × engine × hardware, every number sourced.</p>
+<h1 data-i18n="h1">Same GPU, different recipe<br><span>10× the speed</span></h1>
+<p class="lead" data-i18n="lead">Real local inference setups collected from the community: which model, which quant, which engine, which hardware, how many tok/s and what it costs.</p>
+<div class="pills"><span data-i18n="p1">🔀 Cross-engine: Strata · oMLX · DFlash2 · TensorFold · llama.cpp</span><span data-i18n="p2">🖥️ Consumer / used hardware</span><span data-i18n="p3">🔗 Every number has a source</span><span data-i18n="p4">💰 Focus on ≤ $30k</span></div>
+<div class="cta"><a class="btn p" href="explore.html" data-i18n="cta1">Explore recipes →</a><a class="btn" href="submit.html" data-i18n="cta2">Submit your recipe</a></div>
 <div class="ks" id="ks"></div></div></section>
 <main class="lm">
-<h2>🔥 本周 X 上的热门配方 <small>按点赞+转发排序 · 点击查看原帖</small></h2><div class="hot" id="hot"></div>
-<h2>按预算进入</h2><div class="tiers">
-<a href="explore.html?max=2500"><b>≤ $2.5k</b><span>二手 3090 / 4090、MI50、V100、Strix Halo</span></a>
-<a href="explore.html?max=7000"><b>≤ $7k</b><span>单张 5090、单台 DGX Spark、Mac Studio Max</span></a>
-<a href="explore.html?max=14000"><b>≤ $14k</b><span>双 Spark、Mac Studio M5 Ultra</span></a>
-<a href="explore.html?max=30000"><b>≤ $30k</b><span>3–4 台 Spark 集群、多卡工作站</span></a></div>
-<h2>来源等级怎么看</h2><div class="lvls">
-<div><span class="lv 官方">官方</span><p>项目方或厂商发布的数字，通常是最佳条件。</p></div>
-<div><span class="lv 实测">实测</span><p>作者本人在自己的机器上跑出来，附截图或日志。</p></div>
-<div><span class="lv 转述">转述</span><p>二手引用别人的结果，需要回原帖核对。</p></div>
-<div><span class="lv 宣称">宣称</span><p>预测值或无复现条件，仅供参考。</p></div></div>
-<p class="note">未知字段统一显示「未见公开数据」，不估算、不补数。</p>
-<div class="final"><h2>你跑过一个好配方？</h2><p>一个 YAML 文件，一个 PR，就能让下一个人少折腾一周。</p><a class="btn p" href="submit.html">提交配方</a></div>
-</main><footer>Awesome Local Inference Recipes · 数据整理自 X / GitHub / 价格站，截至 2026-10-13</footer>
-<script src="landing.js"></script></body></html>
+<h2 data-i18n="hot">🔥 Popular recipes on X <small>by likes + reposts · click to open the post</small></h2><div class="hot" id="hot"></div>
+<h2 data-i18n="bud">Browse by budget</h2><div class="tiers">
+<a href="explore.html?max=2500"><b>≤ $2.5k</b><span data-i18n="t1">Used 3090 / 4090, MI50, V100, Strix Halo</span></a>
+<a href="explore.html?max=7000"><b>≤ $7k</b><span data-i18n="t2">Single 5090, one DGX Spark, Mac Studio Max</span></a>
+<a href="explore.html?max=14000"><b>≤ $14k</b><span data-i18n="t3">Two Sparks, Mac Studio M5 Ultra</span></a>
+<a href="explore.html?max=30000"><b>≤ $30k</b><span data-i18n="t4">3–4 Spark cluster, multi-GPU workstation</span></a></div>
+<h2 data-i18n="lvh">What the source levels mean</h2><div class="lvls">
+<div><span class="lv 官方" data-i18n="l_off">Official</span><p data-i18n="d_off">Numbers published by the project or vendor, usually best-case.</p></div>
+<div><span class="lv 实测" data-i18n="l_mea">Measured</span><p data-i18n="d_mea">The author ran it on their own machine, with a screenshot or log.</p></div>
+<div><span class="lv 转述" data-i18n="l_rel">Relayed</span><p data-i18n="d_rel">A second-hand quote of someone else’s result; check the original post.</p></div>
+<div><span class="lv 宣称" data-i18n="l_cla">Claimed</span><p data-i18n="d_cla">A prediction or no reproduction details; for reference only.</p></div></div>
+<p class="note" data-i18n="note">Unknown fields always show “no public data”. Nothing is estimated or filled in.</p>
+<div class="final"><h2 data-i18n="fh">Ran a great recipe?</h2><p data-i18n="fp">One JSON entry, one PR, and the next person saves a week of tinkering.</p><a class="btn p" href="submit.html" data-i18n="submit">Submit</a></div>
+</main><footer data-i18n="foot">Awesome Local Inference Recipes · compiled from X / GitHub / Reddit / price sites</footer>
+<script src="i18n.js"></script><script src="landing.js"></script></body></html>

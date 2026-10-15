@@ -1,5 +1,14 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Token speed feel · Awesome Local Inference Recipes</title><link rel="stylesheet" href="style.css">
+<title>Token speed feel · Awesome Local Inference Recipes</title><meta name="description" content="Feel what 10, 20, 50, 100, 200 and 500 tokens per second look like, next to human reading speed and measured local setups.">
+<link rel="canonical" href="https://raytone-lab.github.io/Awesome-local-inference-recipe/speed.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Awesome Local Inference Recipes">
+<meta property="og:title" content="Token speed feel · Awesome Local Inference Recipes"><meta property="og:description" content="Feel what 10, 20, 50, 100, 200 and 500 tokens per second look like, next to human reading speed and measured local setups.">
+<meta property="og:url" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/speed.html"><meta property="og:image" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/docs/og.png">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="Awesome Local Inference Recipes: model × engine × hardware, sourced tok/s and cost">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Token speed feel · Awesome Local Inference Recipes">
+<meta name="twitter:description" content="Feel what 10, 20, 50, 100, 200 and 500 tokens per second look like, next to human reading speed and measured local setups."><meta name="twitter:image" content="https://raytone-lab.github.io/Awesome-local-inference-recipe/docs/og.png">
+<link rel="stylesheet" href="style.css">
 <style>
 .ctl{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;background:#fff;border:1px solid #e6e8ef;border-radius:12px;padding:12px;margin:14px 0}
 .ctl button{background:#4f46e5;color:#fff;border:0;border-radius:8px;padding:8px 18px;font:inherit;font-weight:600;cursor:pointer}
@@ -29,7 +38,7 @@ body.embed .out{height:112px;overflow:hidden;font-size:12.5px;line-height:1.45;p
 body.embed .cloud{min-height:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 </style></head><body>
 <header><div class="brand">⚡ <span data-t="brand"></span> <small>Awesome Local Inference Recipes</small></div>
-<nav><a href="index.html" data-t="home"></a><a href="explore.html" data-t="explore"></a><a href="speed.html" class="on" data-t="speed"></a><span class="lang"><a href="?lang=en" data-l="en">EN</a><a href="?lang=zh-CN" data-l="zh-CN">中文</a><a href="?lang=ja" data-l="ja">日本語</a></span></nav></header>
+<nav><a href="index.html" data-t="home"></a><a href="explore.html" data-t="explore"></a><a href="speed.html" class="on" data-t="speed"></a><a href="submit.html" data-t="submit"></a><span class="lang"><a href="?lang=en" data-l="en">EN</a><a href="?lang=zh-CN" data-l="zh-CN">中文</a><a href="?lang=ja" data-l="ja">日本語</a></span></nav></header>
 <main>
 <section class="hero"><h1 data-t="h1"></h1><p data-t="intro"></p></section>
 <div class="ctl">
@@ -50,7 +59,7 @@ body.embed .cloud{min-height:18px;white-space:nowrap;overflow:hidden;text-overfl
 <footer><span data-t="foot"></span> · <a href="explore.html" data-t="explore"></a></footer>
 <script>
 const I18N={
-en:{brand:'Local Inference Recipes',home:'Home',explore:'Explorer',speed:'Speed feel',h1:'What does 10, 50 or 500 tokens per second feel like?',
+en:{brand:'Local Inference Recipes',home:'Home',explore:'Explorer',speed:'Speed feel',submit:'Submit',h1:'What does 10, 50 or 500 tokens per second feel like?',
  intro:'Every lane streams the same answer, cut into real Qwen3 tokens, at an exact average rate. Lanes are log-spaced (1-2-5 series) because perceived speed scales roughly with the ratio, not the difference.',
  go:'▶ Start',again:'↻ Restart',stop:'■ Stop',model:'Decode',steady:'steady',jitter:'realistic jitter',mtp:'jitter + MTP/speculative bursts',prompt:'Prompt',prefill:'Prefill',custom:'Custom',
  ttft:(p,pp,t)=>`TTFT ≈ ${p} / ${pp} tok/s = ${t} s`,
@@ -59,7 +68,7 @@ en:{brand:'Local Inference Recipes',home:'Home',explore:'Explorer',speed:'Speed 
  real:'≈ local, measured:',cloud:'≈ cloud API:',
  ch:'Time to stream a 500-token answer vs. speed',chnote:'Time = 500 / speed (a 1/x curve; on a log axis equal steps feel equal). Grey lines: time a human needs to read the same 500 tokens. Dots under the axis: measured local single-stream setups from data/recipes.json; teal ticks: cloud API medians (Artificial Analysis).',
  mh:'Method & sources',foot:'Data: measured recipes from data/recipes.json'},
-'zh-CN':{brand:'本地推理配方',home:'首页',explore:'配方库',speed:'速度体感',h1:'每秒 10、50、500 个 token 到底是什么感觉？',
+'zh-CN':{brand:'本地推理配方',home:'首页',explore:'配方库',speed:'速度体感',submit:'提交配方',h1:'每秒 10、50、500 个 token 到底是什么感觉？',
  intro:'每条通道用真实 Qwen3 分词器切分同一段回答，按精确的平均速率输出。通道按对数间隔（1-2-5 序列）设置，因为人对速度的感知大致取决于倍数而不是差值。',
  go:'▶ 开始',again:'↻ 重新开始',stop:'■ 停止',model:'解码',steady:'匀速',jitter:'真实抖动',mtp:'抖动 + MTP/投机解码突发',prompt:'提示词',prefill:'预填充',custom:'自定义',
  ttft:(p,pp,t)=>`首 token ≈ ${p} / ${pp} tok/s = ${t} 秒`,
@@ -68,7 +77,7 @@ en:{brand:'Local Inference Recipes',home:'Home',explore:'Explorer',speed:'Speed 
  real:'≈ 本地实测：',cloud:'≈ 云端 API：',
  ch:'输出 500 token 回答所需时间 vs 速度',chnote:'时间 = 500 / 速度（1/x 曲线；对数坐标上等距 = 感觉等距）。灰线：人读完同样 500 token 所需时间。轴下圆点：data/recipes.json 中的本地单流实测；青色刻度：云端 API 中位数（Artificial Analysis）。',
  mh:'方法与来源',foot:'数据：data/recipes.json 中的实测配方'},
-ja:{brand:'ローカル推論レシピ',home:'ホーム',explore:'エクスプローラー',speed:'速度体感',h1:'毎秒 10・50・500 トークンはどれくらいの速さ？',
+ja:{brand:'ローカル推論レシピ',home:'ホーム',explore:'エクスプローラー',speed:'速度体感',submit:'投稿',h1:'毎秒 10・50・500 トークンはどれくらいの速さ？',
  intro:'各レーンは同じ回答を実際の Qwen3 トークンに分割し、正確な平均レートで表示します。レーンは対数間隔（1-2-5 系列）。速さの感覚は差ではなく比でほぼ決まるためです。',
  go:'▶ スタート',again:'↻ もう一度',stop:'■ 停止',model:'デコード',steady:'一定',jitter:'実際に近い揺らぎ',mtp:'揺らぎ + MTP/投機的デコード',prompt:'プロンプト',prefill:'プリフィル',custom:'カスタム',
  ttft:(p,pp,t)=>`TTFT ≈ ${p} / ${pp} tok/s = ${t} 秒`,
@@ -78,7 +87,9 @@ ja:{brand:'ローカル推論レシピ',home:'ホーム',explore:'エクスプ�
  ch:'500 トークンの回答を出し切る時間 vs 速度',chnote:'時間 = 500 / 速度（1/x 曲線。対数軸では等間隔＝体感も等間隔）。灰色の線：人が同じ 500 トークンを読む時間。軸下の点：data/recipes.json のローカル単一ストリーム実測。青緑の目盛：クラウド API の中央値（Artificial Analysis）。',
  mh:'方法と出典',foot:'データ：data/recipes.json の実測レシピ'}};
 const P=new URLSearchParams(location.search);
-const NL=(navigator.language||'').toLowerCase(); let LANG=P.get('lang')||(NL.startsWith('ja')?'ja':NL.startsWith('zh')?'zh-CN':'en');
+const NL=(navigator.language||'').toLowerCase(); let SAVED=null; try{SAVED=localStorage.getItem('lang')}catch(e){}
+let LANG=P.get('lang')||(P.has('embed')?null:SAVED)||(NL.startsWith('ja')?'ja':NL.startsWith('zh')?'zh-CN':'en');
+if(['en','zh-CN'].includes(P.get('lang'))&&!P.has('embed'))try{localStorage.setItem('lang',P.get('lang'))}catch(e){}  // only values the other pages understand  // shared with the other pages (i18n.js)
 if(!I18N[LANG])LANG='en'; const T=I18N[LANG]; document.documentElement.lang=LANG;
 document.querySelectorAll('[data-t]').forEach(e=>e.textContent=T[e.dataset.t]);
 document.querySelectorAll('[data-l]').forEach(e=>e.classList.toggle('on',e.dataset.l===LANG));
