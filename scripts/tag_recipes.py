@@ -40,7 +40,7 @@ def ctx_k(s):
 def tags(r):
     mq = ' '.join(filter(None, [r['model'], r.get('quant')]))
     allf = ' '.join(filter(None, [mq, r['engine'], r.get('engine_note'), r.get('metric')]))
-    allf = re.sub(r'MTP\s*(关|off)|无投机', '', allf, flags=re.I)
+    allf = re.sub(r'MTP\s*(关|off)|无投机|无草稿(模型)?|不开 MTP|无 ?(?:MTP|DFlash)(?:/(?:MTP|DFlash))*', '', allf, flags=re.I)
     t = [k for k, p in QUANT if re.search(p, mq, re.I)]
     moe = bool(re.search(r'\bA\d+(\.\d+)?B\b|MoE|激活|REAP|专家', mq + ' ' + (r.get('quant') or '')))
     if r['category'] == 'text':
@@ -50,7 +50,8 @@ def tags(r):
     if re.search(SPEC, allf, re.I): t.append('speculative')
     if re.search(r'MTP', allf): t.append('MTP')
     if re.search(MULTI, (r.get('hardware') or '') + ' ' + (r.get('quant') or ''), re.I): t.append('multi-GPU')
-    if re.search(r'卸载|流式|offload|stream', mq, re.I): t.append('offload')
+    off = ' '.join(filter(None, [mq, r.get('hardware'), r.get('metric')]))
+    if re.search(r'卸载|offload|NVMe|SSD(?! ?前缀)|闪存|流式读取|放内存|系统内存|RAM 卸载', off, re.I) or re.search(r'流式|stream', mq, re.I): t.append('offload')
     if r['category'] != 'text' and re.search(r'Turbo|蒸馏|distill|\b[1-8]\s*步', mq, re.I): t.append('few-step')
     if re.search(r'Abliterated|去拒答', r['model'], re.I): t.append('abliterated')
     return t

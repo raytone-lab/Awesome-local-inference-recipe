@@ -303,7 +303,8 @@
     "model_family": "Qwen",
     "tags": [
       "4bit",
-      "MoE"
+      "MoE",
+      "offload"
     ],
     "source_id": "src-8aecb1e83d"
   },
@@ -832,7 +833,8 @@
     "tags": [
       "4bit",
       "MoE",
-      "speculative"
+      "speculative",
+      "offload"
     ],
     "source_id": "src-e6ab729823"
   },
@@ -1831,7 +1833,9 @@
     "date": null,
     "engine_raw": "其他/未注明",
     "model_family": "GLM",
-    "tags": [],
+    "tags": [
+      "offload"
+    ],
     "source_id": "src-1ca0f67909"
   },
   {
@@ -2071,7 +2075,8 @@
     "tags": [
       "4bit",
       "8bit",
-      "multi-GPU"
+      "multi-GPU",
+      "offload"
     ],
     "source_id": "src-502d0f3dd0"
   },
@@ -2230,7 +2235,9 @@
     "source_level": "实测",
     "date": null,
     "model_family": "DeepSeek",
-    "tags": [],
+    "tags": [
+      "offload"
+    ],
     "source_id": "src-e6df8339a4"
   },
   {
@@ -2280,7 +2287,8 @@
     "date": null,
     "model_family": "DeepSeek",
     "tags": [
-      "4bit"
+      "4bit",
+      "offload"
     ],
     "source_id": "src-502d0f3dd0"
   },
@@ -2361,7 +2369,8 @@
     "date": null,
     "model_family": "Qwen",
     "tags": [
-      "4bit"
+      "4bit",
+      "offload"
     ],
     "source_id": "src-8b83fa6813"
   },
@@ -2894,9 +2903,7 @@
     "model_family": "Qwen",
     "tags": [
       "4bit",
-      "dense",
-      "speculative",
-      "MTP"
+      "dense"
     ],
     "source_id": "src-cdb9259df0"
   },
@@ -3389,7 +3396,8 @@
     "engine_raw": "其他/未注明",
     "model_family": "Qwen-Image",
     "tags": [
-      "8bit"
+      "8bit",
+      "offload"
     ],
     "source_id": "src-9c2f4ce74e"
   },
@@ -4255,7 +4263,8 @@
     },
     "model_family": "Qwen",
     "tags": [
-      "3bit"
+      "3bit",
+      "offload"
     ],
     "source_id": "src-03209e2ff6"
   },
@@ -4320,7 +4329,8 @@
     "model_family": "Qwen",
     "tags": [
       "3bit",
-      "long-context"
+      "long-context",
+      "offload"
     ],
     "source_id": "src-91d222be7c"
   },
@@ -6934,7 +6944,8 @@
     "tags": [
       "3bit",
       "4bit",
-      "long-context"
+      "long-context",
+      "offload"
     ],
     "source_id": "src-bf6739fe35"
   },
@@ -7557,7 +7568,8 @@
     },
     "model_family": "Qwen",
     "tags": [
-      "long-context"
+      "long-context",
+      "offload"
     ],
     "measured_by": "0xSero",
     "source_id": "src-54b732e148"
@@ -7588,7 +7600,8 @@
     },
     "model_family": "Qwen",
     "tags": [
-      "long-context"
+      "long-context",
+      "offload"
     ],
     "measured_by": "0xSero",
     "source_id": "src-54b732e148"
@@ -8317,7 +8330,7 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
     "hardware_cost_usd": 5400,
-    "metric": "Strata+MTP 204 tok/s（无 MTP 122）；写同一城市页 28.8 s；prefill 中位 4K ~3,790 / 32K ~5,230 tok/s；15 项质量检查全过，27 次重复仅 1 次文本一致",
+    "metric": "Strata+MTP 204 tok/s（无 MTP 122）；写同一城市页 28.8 s；prefill 中位 4K ~3,790 / 32K ~5,230 tok/s；15 项质量检查全过，27 次重复仅 1 次文本一致（tok_s 为单一写作任务速度，帖子未分散文/代码）",
     "tok_s": 204,
     "concurrency": null,
     "context": null,
@@ -8336,7 +8349,8 @@
       "2bit",
       "8bit",
       "speculative",
-      "MTP"
+      "MTP",
+      "offload"
     ],
     "measured_by": "niklaslenz_ai",
     "engine_raw": "Strata v0.1.43.1 + MTP（--expert-cache auto --prefill auto）",
@@ -8353,7 +8367,7 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
     "hardware_cost_usd": 5400,
-    "metric": "68 tok/s（无草稿模型）；同提示 104.2 s；prefill 中位 4K ~1,270 / 32K ~1,355 tok/s；27 次重复 27 次一致",
+    "metric": "68 tok/s（无草稿模型）；同提示 104.2 s；prefill 中位 4K ~1,270 / 32K ~1,355 tok/s；27 次重复 27 次一致（同 x-050 任务）",
     "tok_s": 68,
     "concurrency": null,
     "context": null,
@@ -8370,7 +8384,7 @@
     "model_family": "Qwen",
     "tags": [
       "2bit",
-      "speculative"
+      "offload"
     ],
     "measured_by": "niklaslenz_ai",
     "source_id": "src-07e06a0608"
@@ -8491,7 +8505,7 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $740 起（新卡，Micro Center PNY OC，2026-10-14；90 日中位 $789，见 prices.json）",
     "hardware_cost_usd": 740,
-    "metric": "MiaAI_lab 一键包默认配置：代码 66 tok/s，最多 176K 上下文（temp 0，固定种子，3 次一致）",
+    "metric": "MiaAI_lab 一键包默认配置：代码 66 tok/s，最多 176K 上下文（temp 0，固定种子，3 次一致）（代码速度；帖子未给散文速度）",
     "tok_s": 66,
     "concurrency": null,
     "context": "176K",
@@ -8527,7 +8541,7 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": "仅显卡 $740 起（新卡，Micro Center PNY OC，2026-10-14；90 日中位 $789，见 prices.json）",
     "hardware_cost_usd": 740,
-    "metric": "代码 32 tok/s，可装满 262K 上下文（无视觉文件）",
+    "metric": "代码 32 tok/s，可装满 262K 上下文（无视觉文件）（代码速度；帖子未给散文速度）",
     "tok_s": 32,
     "concurrency": null,
     "context": "262K",
@@ -8691,7 +8705,7 @@
     "id": "x-061",
     "category": "text",
     "model": "RED-SNOW-5.3-FLASH（GLM-5.3-Flash 去拒答版）",
-    "quant": "SAGE EXL3 2.49bpw（97.4 GiB）",
+    "quant": "SAGE EXL3 2.49bpw（97.4 GiB）· 投机解码",
     "engine": "TabbyAPI",
     "hardware": "1× DGX Spark",
     "hardware_family": "DGX Spark",
@@ -8715,6 +8729,7 @@
     "tags": [
       "2bit",
       "long-context",
+      "speculative",
       "abliterated"
     ],
     "measured_by": "yume_arasaki",
@@ -8730,7 +8745,7 @@
     "hardware_family": "NVIDIA 消费级",
     "hardware_cost_text": null,
     "hardware_cost_usd": null,
-    "metric": "接自制 MTP/草稿头 50 tok/s（无草稿 39）；权重+头+128K 上下文共占 10.7/12 GB，KV q4（另帖 51 tok/s）",
+    "metric": "接自制 MTP/草稿头 50 tok/s（无草稿 39）；权重+头+128K 上下文共占 10.7/12 GB，KV q4（另帖 2110546197794468240 称 51 tok/s）",
     "tok_s": 50,
     "concurrency": null,
     "context": "128K",
@@ -8880,7 +8895,8 @@
     "model_family": "Qwen",
     "tags": [
       "3bit",
-      "multi-GPU"
+      "multi-GPU",
+      "offload"
     ],
     "measured_by": "0xSero",
     "source_id": "src-89b0d4f8d9"
@@ -8938,8 +8954,8 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/0xBakeer/status/2110402196005130680",
-    "source_note": "@0xBakeer（TandemLLM 作者）on X；另见 2110297865017028730",
-    "source_level": "实测",
+    "source_note": "@0xBakeer（TandemLLM 作者，项目方自测）on X；另见 2110297865017028730",
+    "source_level": "官方",
     "date": "2026-10-15",
     "x_post": {
       "author": "0xBakeer",
@@ -8957,7 +8973,7 @@
   {
     "id": "x-069",
     "category": "text",
-    "model": "Nemotron-3-Nano",
+    "model": "Nemotron-3-Nano-30B-A3B",
     "quant": null,
     "engine": "Ollama",
     "hardware": "1× DGX Spark",
@@ -8979,7 +8995,9 @@
       "reposts": 0
     },
     "model_family": "Other",
-    "tags": [],
+    "tags": [
+      "MoE"
+    ],
     "measured_by": "DevOpsConsults",
     "source_id": "src-f7d502b07e"
   },
@@ -9052,7 +9070,7 @@
     "category": "text",
     "model": "MiniCPM-V 4.7 35B-A3B",
     "quant": "Q3 专家分片",
-    "engine": "llama.cpp",
+    "engine": "llama.cpp (OpenBMB fork)",
     "hardware": "iPhone 17 Pro Max",
     "hardware_family": "其他",
     "hardware_cost_text": null,
@@ -9074,19 +9092,21 @@
     "model_family": "Other",
     "tags": [
       "3bit",
-      "MoE"
+      "MoE",
+      "offload"
     ],
     "measured_by": null,
     "engine_raw": "llama.cpp-omni + LES",
     "engine_note": "llama.cpp-omni + LES",
-    "source_id": "src-f309b75478"
+    "source_id": "src-f309b75478",
+    "engine_fork": "OpenBMB"
   },
   {
     "id": "x-073",
     "category": "text",
     "model": "MiniCPM-V 4.7 35B-A3B",
     "quant": null,
-    "engine": "llama.cpp",
+    "engine": "llama.cpp (OpenBMB fork)",
     "hardware": "iPad Pro M4 16GB",
     "hardware_family": "其他",
     "hardware_cost_text": null,
@@ -9098,7 +9118,7 @@
     "launch_command": null,
     "source_url": "https://x.com/sudoingX/status/2110402276154380553",
     "source_note": "@sudoingX 转述 OpenBMB（“their numbers”）",
-    "source_level": "转述",
+    "source_level": "宣称",
     "date": "2026-10-15",
     "x_post": {
       "author": "sudoingX",
@@ -9113,10 +9133,43 @@
     "measured_by": null,
     "engine_raw": "llama.cpp-omni + LES",
     "engine_note": "llama.cpp-omni + LES",
-    "source_id": "src-55c1d0caff"
+    "source_id": "src-55c1d0caff",
+    "engine_fork": "OpenBMB"
   },
   {
     "id": "x-074",
+    "category": "text",
+    "model": "DiffusionGemma 26B-A4B",
+    "quant": "NVFP4",
+    "engine": "Unspecified",
+    "hardware": "AMD Strix Halo 128GB（Ryzen AI Max+ 395）",
+    "hardware_family": "AMD",
+    "hardware_cost_text": "$3,149（Framework 128GB，缺货，2026-10）",
+    "hardware_cost_usd": 3149,
+    "metric": "项目 GitHub 基准（128GB Ryzen AI Max+ 395）：llama.cpp Q8_0 20.7 / BF16 52.7 / FP8 63.7 / NVFP4 81.8 tps。仅见 @TeksEdge 转述，原始来源未核实（Strix Halo 无 FP4 硬件单元，NVFP4 数字待核）",
+    "tok_s": 81.8,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://x.com/TeksEdge/status/2109856658348298360",
+    "source_note": "@TeksEdge 转述项目 GitHub 基准（原始链接未核实）",
+    "source_level": "宣称",
+    "date": "2026-10-13",
+    "x_post": {
+      "author": "TeksEdge",
+      "likes": 12,
+      "reposts": 0
+    },
+    "model_family": "Gemma",
+    "tags": [
+      "4bit",
+      "MoE"
+    ],
+    "measured_by": null,
+    "source_id": "src-d19c5dbcd8"
+  },
+  {
+    "id": "x-075",
     "category": "text",
     "model": "DiffusionGemma 26B-A4B",
     "quant": null,
@@ -9125,14 +9178,14 @@
     "hardware_family": "AMD",
     "hardware_cost_text": "$3,149（Framework 128GB，缺货，2026-10）",
     "hardware_cost_usd": 3149,
-    "metric": "项目 GitHub 基准：llama.cpp Q8_0 20.7 / BF16 52.7 / FP8 63.7 / NVFP4 81.8 tps；Reddit 开发者 speed-bench：2K 114.6 / 8K 107.6 / 16K 105.8 / 32K 80.4（GB10 32K 77.9）",
-    "tok_s": 81.8,
+    "metric": "开发者 Reddit speed-bench（提示长度类型，非散文/代码分项）：~2K 114.6 / ~8K 107.6 / ~16K 105.8 / ~32K 80.4 tps；32K 时 GB10 77.9。仅见 @TeksEdge 转述，原始 Reddit 帖未核实",
+    "tok_s": 114.6,
     "concurrency": null,
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/TeksEdge/status/2109856658348298360",
-    "source_note": "@TeksEdge 转述项目 GitHub 与 Reddit 数据",
-    "source_level": "转述",
+    "source_note": "@TeksEdge 转述开发者 Reddit 帖（原始链接未核实）",
+    "source_level": "宣称",
     "date": "2026-10-13",
     "x_post": {
       "author": "TeksEdge",
@@ -9150,7 +9203,7 @@
     "id": "comm-001",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
-    "quant": "Unsloth UD-IQ4_XS",
+    "quant": "Unsloth UD-IQ4_XS · int8 KV · MTP spec-4",
     "engine": "Strata",
     "hardware": "RTX 3090 24GB + 128GB RAM（Windows）",
     "hardware_family": "NVIDIA 消费级",
@@ -9167,7 +9220,10 @@
     "date": "2026-10-14",
     "model_family": "Qwen",
     "tags": [
-      "4bit"
+      "4bit",
+      "8bit",
+      "speculative",
+      "MTP"
     ],
     "measured_by": "BinbinHihi",
     "engine_raw": "Strata engine 0.1.43.1，--kv int8 --spec 4 --resident-budget-gib 55",
@@ -9207,7 +9263,7 @@
     "id": "comm-003",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
-    "quant": "IQ2_XS",
+    "quant": "IQ2_XS · int8 KV",
     "engine": "Strata",
     "hardware": "RTX 4080 SUPER 16GB + i7-9700K（Windows 11）",
     "hardware_family": "NVIDIA 消费级",
@@ -9225,6 +9281,7 @@
     "model_family": "Qwen",
     "tags": [
       "2bit",
+      "8bit",
       "long-context"
     ],
     "measured_by": "johlim",
@@ -9308,7 +9365,7 @@
     "context": "262K",
     "launch_command": null,
     "source_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x3wjzf/qwen38flashnext_on_six_3090s_with_vllm_7_users_at/",
-    "source_note": "r/LocalLLaMA（自带 vLLM 分支，PLE 表放 SSD）",
+    "source_note": "r/LocalLLaMA u/flynth92（自带 vLLM 分支，PLE 表放 SSD）",
     "source_level": "实测",
     "date": "2026-10-12",
     "model_family": "Qwen",
@@ -9318,7 +9375,7 @@
       "long-context",
       "multi-GPU"
     ],
-    "measured_by": "reddit r/LocalLLaMA 帖主",
+    "measured_by": "flynth92",
     "engine_raw": "vLLM 分支（流水线并行）",
     "engine_note": "vLLM 分支（流水线并行）",
     "streams": [
@@ -9347,7 +9404,7 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
     "hardware_cost_usd": 6950,
-    "metric": "HumanEval+ 50 题、思考开、c=1 净解码：普通 12.65 / MTP 24.2 / DSpark 27.96 / DFlash2 36.59 tok/s",
+    "metric": "HumanEval+ 50 题、思考开、c=1 净解码：普通 12.65 / MTP 24.2 / DSpark 27.96 / DFlash2 36.59 tok/s（tok_s 取 DFlash2 代码任务净解码；帖子无散文分项）",
     "tok_s": 36.59,
     "concurrency": null,
     "context": null,
@@ -9363,7 +9420,7 @@
       "speculative",
       "MTP"
     ],
-    "measured_by": "reddit r/LocalLLM 帖主",
+    "measured_by": null,
     "engine_raw": "SGLang + DFlash2",
     "engine_note": "SGLang + DFlash2",
     "source_id": "src-1e5a7cc688"
@@ -9378,7 +9435,7 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
     "hardware_cost_usd": 6950,
-    "metric": "HumanEval+ 50 题、思考开、c=1 净解码：普通 10.95 / MTP 20.89 / DSpark 25.58 / DFlash2 32.01 tok/s",
+    "metric": "HumanEval+ 50 题、思考开、c=1 净解码：普通 10.95 / MTP 20.89 / DSpark 25.58 / DFlash2 32.01 tok/s（tok_s 取 DFlash2 代码任务净解码；帖子无散文分项）",
     "tok_s": 32.01,
     "concurrency": null,
     "context": null,
@@ -9394,7 +9451,7 @@
       "speculative",
       "MTP"
     ],
-    "measured_by": "reddit r/LocalLLM 帖主",
+    "measured_by": null,
     "engine_raw": "vLLM + DFlash2",
     "engine_note": "vLLM + DFlash2",
     "source_id": "src-1e5a7cc688"
@@ -9409,7 +9466,7 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
     "hardware_cost_usd": 6950,
-    "metric": "HumanEval+ 50 题、思考开、c=1 净解码：普通 10.8 / MTP 22.2 / DSpark 19.7 / DFlash2 30.02 tok/s",
+    "metric": "HumanEval+ 50 题、思考开、c=1 净解码：普通 10.8 / MTP 22.2 / DSpark 19.7 / DFlash2 30.02 tok/s（tok_s 取 DFlash2 代码任务净解码；帖子无散文分项）",
     "tok_s": 30.02,
     "concurrency": null,
     "context": null,
@@ -9425,7 +9482,7 @@
       "speculative",
       "MTP"
     ],
-    "measured_by": "reddit r/LocalLLM 帖主",
+    "measured_by": null,
     "engine_raw": "llama.cpp + DFlash2",
     "engine_note": "llama.cpp + DFlash2",
     "source_id": "src-1e5a7cc688"
@@ -9466,7 +9523,7 @@
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
     "quant": null,
-    "engine": "llama.cpp",
+    "engine": "llama.cpp (vahpetr fork)",
     "hardware": "AMD Strix Halo 128GB（Ryzen AI Max+ 395，Vulkan）",
     "hardware_family": "AMD",
     "hardware_cost_text": "$3,149（Framework 128GB，缺货，2026-10）",
@@ -9489,7 +9546,8 @@
     "measured_by": "vahpetr",
     "engine_raw": "llama.cpp s1-fork + MTP（Vulkan/RADV）",
     "engine_note": "llama.cpp s1-fork + MTP（Vulkan/RADV）",
-    "source_id": "src-38e2f1cab4"
+    "source_id": "src-38e2f1cab4",
+    "engine_fork": "vahpetr"
   },
   {
     "id": "comm-012",
@@ -9509,7 +9567,7 @@
     "source_url": "https://github.com/Libertai/dsv41-flash-vllm-2x-spark",
     "source_note": "GitHub Libertai/dsv41-flash-vllm-2x-spark README",
     "source_level": "实测",
-    "date": null,
+    "date": "2026-09-12",
     "model_family": "DeepSeek",
     "tags": [
       "MoE",
@@ -9531,18 +9589,17 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
     "hardware_cost_usd": 13900,
-    "metric": "作者称 25–40 tok/s（难散文→结构化），多流 >50；明确“不做精确声明”（无单一数值，tok_s 留空）",
+    "metric": "作者称 25–40 tok/s（难散文→结构化），多流 >50；明确“不做精确声明”（无单一数值，tok_s 留空）；KV 池约 3M token（最多 6 并发共享）",
     "tok_s": null,
-    "concurrency": null,
-    "context": "~3M KV",
+    "concurrency": "最多 6",
+    "context": null,
     "launch_command": null,
     "source_url": "https://forums.developer.nvidia.com/t/deepseek-v4-1-flash-for-2x-dgx-spark-exl3-3bpw-3m-kv-cache-c6-new-2gb-free-ram-unlock-for-all-gb10s/383583",
-    "source_note": "NVIDIA Developer Forums（DGX Spark 版块）",
+    "source_note": "NVIDIA Developer Forums（DGX Spark 版块），作者 emihuang，2026-09-18",
     "source_level": "宣称",
-    "date": null,
+    "date": "2026-09-18",
     "model_family": "DeepSeek",
     "tags": [
-      "long-context",
       "multi-GPU"
     ],
     "measured_by": null,

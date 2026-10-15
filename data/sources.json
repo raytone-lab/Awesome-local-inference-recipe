@@ -1,6 +1,6 @@
 {
   "updated": "2026-10-15",
-  "note": "Curated people/orgs that publish reproducible local-inference recipes. Tier A = concrete params + reproducible (repo/scripts or independent reruns); B = concrete numbers, partial conditions; C = useful but mostly relayed or narrow. Follower counts from X API on 2026-10-14.",
+  "note": "Curated people/orgs that publish reproducible local-inference recipes. Tier A = concrete params + reproducible (repo/scripts or independent reruns); B = concrete numbers, partial conditions; C = useful but mostly relayed or narrow. Follower counts from X API on 2026-10-14 for X accounts; null for Reddit/GitHub/forum/web sources.",
   "sources": [
     {
       "name": "MiaAI_lab",

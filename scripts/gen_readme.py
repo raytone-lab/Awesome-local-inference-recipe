@@ -19,7 +19,7 @@ L = {
    tdesc=['Used 3090/4090, MI50/V100 cards, Strix Halo, R9700','One RTX 5090, one DGX Spark, Mac Studio Max','Two Sparks, Mac Studio Ultra','3–4 Spark clusters, multi-GPU workstations'],
    cats={'text':'📝 Text','image':'🖼️ Image','video-audio':'🎬 Video & Audio'},
    fam='Browse by Model Family', famdesc='Click a family to open the explorer pre-filtered. Tags: {tags}.', engidx='Browse by Engine', engdesc='Engine names are normalized (`scripts/normalize_engines.py`); original strings are kept in `engine_note`.', th2='| Family | Recipes | Text | Image | Video & Audio |', th3='| Engine | Recipes |',
-   hot='Hot This Month', hotdesc='Most-engaged recipe posts on X, 2026-09-15 → 10-13 (likes + 3×reposts).',
+   hot='Hot This Month', hotdesc='Most-engaged recipe posts on X, 2026-09-15 → 10-15 (likes + 3×reposts).',
    unk='Cost Not Published', unkdesc='Multi-card builds priced per card, Macs without a listed price, and other rows without a single published price · {n} recipes. Top text recipes by tok/s:',
    guide='guide', gsuf='.md', more='…and {n} more in the [explorer](explore.html).', all='…browse all {n} in the [explorer](explore.html).', count='{n} recipes',
    src='source', see='see source', legend='Legend', eng='Engines & Tools', rel='Related Lists & Benchmarks', contrib='Contributing', lic='License',
@@ -30,7 +30,7 @@ L = {
    tdesc=['二手 3090/4090、MI50/V100、Strix Halo、R9700','单张 RTX 5090、单台 DGX Spark、Mac Studio Max','双 Spark、Mac Studio Ultra','3–4 台 Spark 集群、多卡工作站'],
    cats={'text':'📝 文字','image':'🖼️ 图像','video-audio':'🎬 影音'},
    fam='按模型系列浏览', famdesc='点击系列名即可打开已筛选的配方库。标签：{tags}。', engidx='按引擎浏览', engdesc='引擎名已统一（`scripts/normalize_engines.py`），原始写法保留在 `engine_note` 字段。', th2='| 系列 | 配方数 | 文字 | 图像 | 影音 |', th3='| 引擎 | 配方数 |',
-   hot='本月热门', hotdesc='X 上互动最多的配方帖，2026-09-15 至 10-13（按 点赞 + 3×转发 排序）。',
+   hot='本月热门', hotdesc='X 上互动最多的配方帖，2026-09-15 至 10-15（按 点赞 + 3×转发 排序）。',
    unk='价格未公开', unkdesc='按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 {n} 条。按 tok/s 排名靠前的文字配方：',
    guide='指南', gsuf='.zh-CN.md', more='……另有 {n} 条，见 [配方库](explore.html)。', all='……全部 {n} 条见 [配方库](explore.html)。', count='共 {n} 条',
    src='来源', see='见来源', legend='图例', eng='引擎与工具', rel='相关榜单与清单', contrib='参与贡献', lic='许可证',
@@ -41,7 +41,7 @@ L = {
    tdesc=['中古の 3090/4090、MI50/V100、Strix Halo、R9700','RTX 5090 1 枚、DGX Spark 1 台、Mac Studio Max','DGX Spark 2 台、Mac Studio Ultra','Spark 3〜4 台のクラスター、マルチ GPU ワークステーション'],
    cats={'text':'📝 テキスト','image':'🖼️ 画像','video-audio':'🎬 動画・音声'},
    fam='モデルファミリー別', famdesc='ファミリー名をクリックすると、絞り込み済みのエクスプローラーが開きます。タグ：{tags}。', engidx='エンジン別', engdesc='エンジン名は表記を統一しています（`scripts/normalize_engines.py`）。元の表記は `engine_note` に残しています。', th2='| ファミリー | レシピ数 | テキスト | 画像 | 動画・音声 |', th3='| エンジン | レシピ数 |',
-   hot='今月の注目', hotdesc='2026-09-15〜10-13 に X で反応が多かったレシピ投稿（いいね + リポスト×3 の順）。',
+   hot='今月の注目', hotdesc='2026-09-15〜10-15 に X で反応が多かったレシピ投稿（いいね + リポスト×3 の順）。',
    unk='価格非公開', unkdesc='1 枚単位で価格が出ているマルチ GPU 構成、価格の記載がない Mac など、単一の公開価格がないレシピ · {n} 件。tok/s 上位のテキストレシピ：',
    guide='手順', gsuf='.ja.md', more='…ほか {n} 件は[エクスプローラー](explore.html)で。', all='…全 {n} 件は[エクスプローラー](explore.html)で見られます。', count='{n} 件',
    src='出典', see='出典を参照', legend='凡例', eng='エンジンとツール', rel='関連リスト・ベンチマーク', contrib='コントリビュート', lic='ライセンス',
@@ -92,7 +92,7 @@ def align_tables(txt):
         else: res.append(lines[i]); i+=1
     return '\n'.join(res)
 
-DATA_ASOF = '2026-10-13'  # date of the last data collection pass
+DATA_ASOF = '2026-10-15'  # date of the last data collection pass
 REPO = 'raytone-lab/Awesome-local-inference-recipe'
 SHOW = [  # (id, label key) — curated records; every value is read from data/recipes.json
  ('text-113','mac'),('x-006','5090'),('x-009','amd'),('x-007','dc'),('text-022','spark'),('text-021','cheap')]
