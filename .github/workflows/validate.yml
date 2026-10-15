@@ -17,5 +17,9 @@ jobs:
       - run: node scripts/validate.mjs
       - run: node scripts/check_dupes.mjs
       - run: python3 -m unittest discover tests
+      - name: No TODO/HACK/FIXME/keep-in-sync markers in code
+        run: |
+          git grep -nIiE 'TODO|HACK|FIXME|keep in sync|临时|temporary|workaround|order matters|first match wins' -- '*.py' '*.mjs' '*.js' '.github/' ':!tests/fixtures' ':!.github/workflows/validate.yml' && exit 1
+          test $? -eq 1
       - name: Generated files are up to date
         run: python3 scripts/gen_readme.py && python3 scripts/gen_recipe_pages.py && python3 scripts/gen_site.py && git status --porcelain && git diff --exit-code && test -z "$(git status --porcelain)"

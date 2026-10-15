@@ -3,8 +3,7 @@
 用法: python3 scripts/approve_review.py data/candidates/hf-YYYY-MM-DD.review.json"""
 import json, os, sys, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# 仅使用 data/prices.json 里有来源的价格；按硬件字符串精确规则匹配，匹配不上留空
-PRICE = [
+SOURCED_PRICES_BY_HARDWARE = [
  (r"^RTX 5090", "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）", 5400),
  (r"^RTX 4090", "仅显卡 二手约 $2,214（2026-10-06 eBay 成交，见 prices.json）", 2214),
  (r"^RTX 3090 24GB$", "仅显卡 二手约 $1,206（2026-10-06 getpcparts，见 prices.json）", 1206),
@@ -37,7 +36,7 @@ def main():
             rid = f"hf-{slug}-{i}"
             if rid in ids: continue
             hw = y["hardware"]; ct = cu = None
-            for pat, t, u in PRICE:
+            for pat, t, u in SOURCED_PRICES_BY_HARDWARE:
                 if re.search(pat, hw): ct, cu = t, u; break
             notes = "; ".join(filter(None, ["HF 模型卡（" + ("卡内转载第三方数据" if y.get("level") == "转述" else "作者自报") + "）",
                     x.get("note_all"), y.get("note"), *(x.get("caveats") or []), "原文: " + y["quote"]]))
@@ -61,8 +60,10 @@ def main():
     tag_recipes.apply(normalize_engines.normalize(recipes))
     json.dump(recipes, open(f"{ROOT}/data/recipes.json", "w"), ensure_ascii=False, indent=2)
     json.dump(cand, open(cand_file, "w"), ensure_ascii=False, indent=1)
-    # 关闭被合并的旧待补项
-    for v in rev["reviews"]:
+    close_merged_candidates(rev["reviews"])
+    print(f"新增 {added}，总计 {len(recipes)}")
+def close_merged_candidates(reviews):
+    for v in reviews:
         if v.get("closes"):
             for f in os.listdir(f"{ROOT}/data/candidates"):
                 if f.endswith(".json") and not f.endswith(".review.json"):
@@ -71,5 +72,4 @@ def main():
                         if c["id"] == v["closes"] and c.get("status") != "merged":
                             c["status"] = "merged"; c["merged_into"] = v["id"]; ch = True
                     if ch: json.dump(d, open(p, "w"), ensure_ascii=False, indent=1)
-    print(f"新增 {added}，总计 {len(recipes)}")
 if __name__ == "__main__": main()

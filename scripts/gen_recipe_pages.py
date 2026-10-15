@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Generate how-to guide pages (recipes/<id>.md, .zh-CN.md, .ja.md) for a curated batch.
-Only uses fields in data/recipes.json; never invents commands or numbers.
 Run: python3 scripts/gen_recipe_pages.py"""
 import json, re
 from pathlib import Path
+import gen_readme
 R = Path(__file__).resolve().parent.parent
 D = {r['id']: r for r in json.load(open(R/'data/recipes.json'))}
-GUIDES = [  # curated first batch: spans Mac / NVIDIA / DGX Spark / AMD / used datacenter / image / video
+GUIDES = [
  'hf-ddalcu-qwen3-8-flash-next-mlx-serve-mixed-4-8bit-1','hf-youssofal-qwen3-6-27b-mtplx-optimized-speed-1',
  'hf-prism-ml-ternary-bonsai-2-27b-gguf-5','hf-prism-ml-ternary-bonsai-2-27b-gguf-1','hf-byteshape-qwen3-8-27b-gguf-1',
  'hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1','x-004','text-022','x-001','x-009','x-007','text-018',
@@ -24,12 +24,7 @@ def switch(base, cur):
     names = [('en','English'),('zh','简体中文'),('ja','日本語')]
     return ' | '.join(f'**{n}**' if k==cur else f'[{n}]({base}{SUF[k]})' for k,n in names)
 HWF = {'NVIDIA 消费级':'NVIDIA consumer','二手数据中心卡':'Used datacenter GPU','其他':'Other'}
-CJK = re.compile(r'[\u3400-\u9fff\uff00-\uffef\u3000-\u303f]')
-def en(s):
-    if not s: return None
-    s = re.sub(r'（[^）]*）|\([^)]*[\u3400-\u9fff][^)]*\)', '', str(s))
-    s = ' '.join(w for w in s.split() if not CJK.search(w)).strip(' ;,·')
-    return s or None
+def en(s): return gen_readme.en(s, cjk=gen_readme.CJK_CHAR, strip=' ;,·') if s else None
 def hf_repo(r):
     m = re.match(r'https://huggingface\.co/([^/]+/[^/?#]+)', r['source_url'])
     return m.group(1) if m else None

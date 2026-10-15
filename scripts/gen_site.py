@@ -1,42 +1,43 @@
 #!/usr/bin/env python3
 """Static, crawlable parts of the Pages site (no JS needed to read them). Source of truth: data/recipes.json + recipes/*.md.
-- explore.html: full static fallback table between <!--static:rows--> markers (app.js replaces it after load)
+- explore.html: full static fallback table
 - guides/<id>.html, guides/zh-CN/<id>.html, guides/ja/<id>.html: recipe guides rendered from recipes/*.md, self-canonical + hreflang
-- hw/<slug>.html, model/<slug>.html: landing pages; fewer than MIN_ROWS rows -> noindex and left out of the sitemap
+- hw/<slug>.html, model/<slug>.html: landing pages
 - guides/index.html: crawlable index of guides and landing pages
 - sitemap.xml
-No HowTo/FAQPage structured data on purpose. Run: python3 scripts/gen_site.py"""
+Run: python3 scripts/gen_site.py"""
 import json, re, html
 from urllib.parse import quote
 from pathlib import Path
+from typing import NamedTuple
+import gen_readme
+from dataset_constants import DATA_ASOF
 R = Path(__file__).resolve().parent.parent
 PAGES = 'https://raytone-lab.github.io/awesome-local-inference-recipes/'
 REPO = 'https://github.com/raytone-lab/awesome-local-inference-recipes'
 MIN_ROWS = 5
+STATIC_ROWS_START = '<!--static:rows (scripts/gen_site.py)-->'
+STATIC_ROWS_END = '<!--/static-->'
 D = json.load(open(R/'data/recipes.json', encoding='utf-8'))
-ASOF = re.search(r"DATA_ASOF\s*=\s*'([^']+)'", (R/'scripts/gen_readme.py').read_text(encoding='utf-8')).group(1)
+ASOF = DATA_ASOF
 LV = {'官方':'Official','实测':'Measured','转述':'Relayed','宣称':'Claimed'}
 HWF = {'NVIDIA 消费级':'NVIDIA consumer','二手数据中心卡':'Used datacenter','其他':'Other'}
 e = lambda s: html.escape(str(s if s is not None else ''), quote=True)
 def write(p, s):
     p.parent.mkdir(parents=True, exist_ok=True); p.write_text(s, encoding='utf-8')
 def selfrep(r): return '自称' in (r.get('metric') or '')
-CJK = re.compile(r'[\u3400-\u9fff\uff00-\uffef\u3000-\u303f]')
-def en(s):  # same rule as gen_readme.en(): drop Chinese fragments, keep proper nouns; fall back to the original
+def normalize_punct(s): return s.replace('；', '; ').replace('，', ', ')
+def en(s):
     if not s: return s
-    t = re.sub(r'（[^）]*）|\([^)]*[\u3400-\u9fff][^)]*\)', '', str(s))
-    t = t.replace('；', '; ').replace('，', ', ')  # full-width separators would glue neighbouring tokens to CJK and drop them
-    t = re.sub(r'\s+', ' ', ' '.join(w for w in re.split(r'\s+', t) if not CJK.search(w))).strip(' ·+/,;；')
-    return t or s
+    return gen_readme.en(normalize_punct(str(s)), cjk=gen_readme.CJK_CHAR, strip=' ·+/,;；') or s
 def met_en(r): return r.get('metric_en') or en(r.get('metric'))
 COMPARE = re.compile(r'\s/|/\s|\svs\.?\s', re.I)
-def single(r):  # one device, one stream: what a "fastest single-stream" headline may cite
+def single(r):
     return ('multi-GPU' not in r['tags'] and not re.search(r'[2-9] ?[x×] ?|双|[2-9] ?台', r['hardware']) and not COMPARE.search(r['hardware'])
             and not r.get('superseded_by') and not re.search(r'并发|aggregate|总吞吐', (r.get('metric') or '') + ' ' + str(r.get('concurrency') or ''), re.I))
 def meas_text(r): return r['source_level'] == '实测' and r['category'] == 'text' and r.get('tok_s') and not selfrep(r)
 def safe_url(u): return u if re.match(r'(https?:)?//|[\w./#?=&%-]+$', u) and not u.lower().startswith('javascript:') else '#'
 
-# ---------- explore static rows
 def row(r):
     tok = '' if r.get('tok_s') is None else f"{r['tok_s']:g}"
     cost = f"{r['hardware_cost_usd']:,}" if r.get('hardware_cost_usd') is not None else e(r.get('hardware_cost_text') or '')
@@ -48,14 +49,13 @@ def row(r):
 def explore(links):
     p = R/'explore.html'; s = p.read_text(encoding='utf-8')
     rows = '\n'.join(row(r) for r in sorted(D, key=lambda r: (-(r.get('tok_s') or 0), r['id'])))
-    s = re.sub(r'<tbody id="tb">.*?</tbody>', lambda m: f'<tbody id="tb"><!--static:rows (scripts/gen_site.py)-->\n{rows}\n<!--/static--></tbody>', s, flags=re.S)
+    s = re.sub(r'<tbody id="tb">.*?</tbody>', lambda m: f'<tbody id="tb">{STATIC_ROWS_START}\n{rows}\n{STATIC_ROWS_END}</tbody>', s, flags=re.S)
     nav = '<nav class="static-links" aria-label="Browse"><a href="guides/index.html">Guides &amp; hardware / model pages</a></nav>'
     blk = f'<!--static:links-->{nav}<!--/static:links-->'
     if '<!--static:links-->' in s: s = re.sub(r'<!--static:links-->.*?<!--/static:links-->', lambda m: blk, s, flags=re.S)
     else: s = s.replace('<div class="more" id="morew"', blk + '\n<div class="more" id="morew"', 1)
     write(p, s)
 
-# ---------- tiny markdown -> html for the generated guides (headings, lists, quotes, code, links, bold, inline code)
 def inline(t, linkmap):
     out = []; i = 0
     for m in re.finditer(r'`([^`]+)`|\*\*([^*]+)\*\*|\[([^\]]+)\]\(([^)\s]+)\)', t):
@@ -136,12 +136,16 @@ def guides():
             write(R/'guides'/f'{pre}{rid}.html', shell(title, desc, canon, body, depth, hl, alts)); urls.append(canon)
     return ids, urls
 
-# ---------- landing pages
-HW = [  # (slug, display name, regex on hardware, explorer search term that matches the same text)
- ('rtx-5090','RTX 5090',r'RTX 5090','RTX 5090'),('rtx-4090','RTX 4090',r'RTX 4090','RTX 4090'),('rtx-3090','RTX 3090',r'RTX 3090','RTX 3090'),('rtx-5060-ti','RTX 5060 Ti',r'RTX 5060 Ti','RTX 5060 Ti'),
- ('mac-studio-m3-ultra','Mac Studio M3 Ultra',r'M3 Ultra','M3 Ultra'),('mac-m4-max','Apple M4 Max',r'M4 Max','M4 Max'),('mac-m5','Apple M5 Pro / M5 Max',r'M5 (Pro|Max)','M5'),
- ('dgx-spark','NVIDIA DGX Spark',r'DGX Spark','DGX Spark'),('strix-halo','AMD Strix Halo (Ryzen AI Max+ 395)',r'Strix Halo','Strix Halo'),
- ('amd-radeon','AMD Radeon (RX 7900 / R9700)',r'RX 7900|R9700','R9700'),('tesla-p40','NVIDIA Tesla P40',r'P40','P40'),('rtx-pro-6000','RTX PRO 6000',r'RTX PRO 6000','RTX PRO 6000')]
+class HardwarePage(NamedTuple):
+    slug: str
+    name: str
+    pattern: str
+    explorer_query: str
+HW = [
+ HardwarePage('rtx-5090','RTX 5090',r'RTX 5090','RTX 5090'),HardwarePage('rtx-4090','RTX 4090',r'RTX 4090','RTX 4090'),HardwarePage('rtx-3090','RTX 3090',r'RTX 3090','RTX 3090'),HardwarePage('rtx-5060-ti','RTX 5060 Ti',r'RTX 5060 Ti','RTX 5060 Ti'),
+ HardwarePage('mac-studio-m3-ultra','Mac Studio M3 Ultra',r'M3 Ultra','M3 Ultra'),HardwarePage('mac-m4-max','Apple M4 Max',r'M4 Max','M4 Max'),HardwarePage('mac-m5','Apple M5 Pro / M5 Max',r'M5 (Pro|Max)','M5'),
+ HardwarePage('dgx-spark','NVIDIA DGX Spark',r'DGX Spark','DGX Spark'),HardwarePage('strix-halo','AMD Strix Halo (Ryzen AI Max+ 395)',r'Strix Halo','Strix Halo'),
+ HardwarePage('amd-radeon','AMD Radeon (RX 7900 / R9700)',r'RX 7900|R9700','R9700'),HardwarePage('tesla-p40','NVIDIA Tesla P40',r'P40','P40'),HardwarePage('rtx-pro-6000','RTX PRO 6000',r'RTX PRO 6000','RTX PRO 6000')]
 def slug(s): return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
 def landing(kind, key, name, rows, qterm=None):
     rows = sorted(rows, key=lambda r: (r['source_level'] != '实测', -(r.get('tok_s') or 0), r['id']))

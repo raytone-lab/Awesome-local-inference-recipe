@@ -2,6 +2,7 @@
 """Generate README.md (English), README.zh-CN.md (Chinese) and README.ja.md (Japanese) from data/. Run: python3 scripts/gen_readme.py"""
 import json, re
 from pathlib import Path
+from dataset_constants import BUDGET_TIER_BOUNDS_USD, DATA_ASOF
 R = Path(__file__).resolve().parent.parent
 D = json.load(open(R/'data/recipes.json'))
 REPOS = json.load(open(R/'data/repos.json'))
@@ -12,7 +13,8 @@ HWF_JA = {'NVIDIA 消费级':'NVIDIA コンシューマー','二手数据中心�
 PAGES = 'https://raytone-lab.github.io/awesome-local-inference-recipes/'
 GUIDES = set(json.load(open(R/'data/guides.json'))) if (R/'data/guides.json').exists() else set()
 LVI = {'官方':'🏛️','实测':'✅','转述':'🔁','宣称':'📣'}
-CJK = re.compile(r'[\u3000-\u303f\u3400-\u9fff\uff00-\uffef“”]')
+CJK_CHAR = re.compile(r'[\u3000-\u303f\u3400-\u9fff\uff00-\uffef]')
+CJK_OR_CURLY_QUOTE = re.compile(r'[\u3000-\u303f\u3400-\u9fff\uff00-\uffef“”]')
 L = {
  'en': dict(file='README.md', tpl='readme_static.en.md',
    tiers=['Tier 1 · up to $2.5k','Tier 2 · $2.5k–7k','Tier 3 · $7k–14k','Tier 4 · $14k–30k'],
@@ -48,24 +50,21 @@ L = {
    th='| プロジェクト | ⭐ Star | ライブ | 最終 push | 概要 |', site='*（サイト・ブログ）*', desc='desc_ja',
    note='⭐ スナップショットは `scripts/update_stars.py` で {u}（UTC）に更新 · 「ライブ」バッジは表示時に shields.io が描画します。'),
 }
-BOUNDS=[(0,2500),(2500,7000),(7000,14000),(14000,30000)]  # keep in sync with gen_hero.py
 SPEED={'en':('How fast is X tok/s?','Same answer, real Qwen3 tokens, streamed at 10 / 20 / 50 / 100 / 200 / 500 tok/s (log-spaced) vs. silent reading (≈5 tok/s, Brysbaert 2019), with cloud-API medians from Artificial Analysis for comparison.','Try it interactively →'),
        'zh':('X tok/s 到底有多快？','同一段回答、真实 Qwen3 token，以 10 / 20 / 50 / 100 / 200 / 500 tok/s（对数间隔）输出，对比默读速度（英文约 5 tok/s，Brysbaert 2019）和云端 API 中位速度（Artificial Analysis）。','在线互动体验 →'),
        'ja':('X tok/s ってどれくらい速い？','同じ回答を実際の Qwen3 トークンで 10 / 20 / 50 / 100 / 200 / 500 tok/s（対数間隔）で表示し、黙読の速さ（英語で約 5 tok/s、Brysbaert 2019）やクラウド API の中央値（Artificial Analysis）と比較。','インタラクティブ版を試す →')}
-IMGSUF={'en':'','zh':'.zh-CN','ja':'.ja'}  # charts rendered by scripts/gen_hero.py
+IMGSUF={'en':'','zh':'.zh-CN','ja':'.ja'}
 BALT={'en':'Bar chart: fastest measured and claimed text setup in each budget tier','zh':'条形图：各预算档最快的实测与宣称文字配置','ja':'棒グラフ：予算帯ごとの最速テキスト構成（実測と公称）'}
 def clip(s,n=90): s=(s or '').replace('|','/').replace('\n',' '); return s if len(s)<=n else s[:n-1]+'…'
-def en(s):
-    """Drop Chinese fragments so English lines stay single-language (proper nouns kept)."""
+def en(s, cjk=CJK_OR_CURLY_QUOTE, strip=' ·+/,'):
     if not s: return s
-    s=re.sub(r'（[^）]*）|\([^)]*[\u3400-\u9fff][^)]*\)','',s)
-    s=' '.join(w for w in re.split(r'\s+',s) if not CJK.search(w))
-    return re.sub(r'\s+',' ',s).strip(' ·+/,') or None
+    s=re.sub(r'（[^）]*）|\([^)]*[\u3400-\u9fff][^)]*\)','',str(s))
+    s=' '.join(w for w in re.split(r'\s+',s) if not cjk.search(w))
+    return re.sub(r'\s+',' ',s).strip(strip) or None
 def slug(s): return re.sub(r'[^\w \-]','',s.lower()).replace(' ','-')
 def fmt(n): return f"{n/1000:.1f}k" if n>=1000 else str(n)
-import unicodedata
-def _w(s): return len(s.encode('utf-16-le'))//2  # JS string length, as remark-lint measures
-def _pad(s,w): return s+' '*(w-_w(s))
+def js_length(s): return len(s.encode('utf-16-le'))//2
+def _pad(s,w): return s+' '*(w-js_length(s))
 def _cells(l):
     l=l.strip()[1:-1]; out=[];cur='';i=0
     while i<len(l):
@@ -76,7 +75,6 @@ def _cells(l):
         i+=1
     out.append(cur.strip()); return out
 def align_tables(txt):
-    """Pad markdown tables so pipes align (remark-lint table-pipe-alignment / cell-padding)."""
     lines=txt.split('\n'); res=[]; i=0
     while i<len(lines):
         if lines[i].startswith('|') and i+1<len(lines) and re.match(r'^\|[\s:|-]+\|$',lines[i+1].strip()):
@@ -84,7 +82,7 @@ def align_tables(txt):
             while j<len(lines) and lines[j].startswith('|'): j+=1
             rows=[_cells(l) for l in lines[i:j]]; n=max(map(len,rows))
             rows=[r+['']*(n-len(r)) for r in rows]
-            w=[max(3,max(_w(r[k]) for k_,r in enumerate(rows) if k_!=1)) for k in range(n)]
+            w=[max(3,max(js_length(r[k]) for k_,r in enumerate(rows) if k_!=1)) for k in range(n)]
             for k_,r in enumerate(rows):
                 if k_==1: res.append('| '+' | '.join('-'*w[k] for k in range(n))+' |')
                 else: res.append('| '+' | '.join(_pad(r[k],w[k]) for k in range(n))+' |')
@@ -92,9 +90,8 @@ def align_tables(txt):
         else: res.append(lines[i]); i+=1
     return '\n'.join(res)
 
-DATA_ASOF = '2026-10-15'  # date of the last data collection pass
 REPO = 'raytone-lab/awesome-local-inference-recipes'
-SHOW = [  # (id, label key) — curated records; every value is read from data/recipes.json
+SHOW = [
  ('text-113','mac'),('x-006','5090'),('x-009','amd'),('x-007','dc'),('text-022','spark'),('text-021','cheap')]
 HL = {
  'en': dict(h1='Awesome Local Inference Recipes', tag='What speed will <b>your</b> hardware actually get? {n} source-backed local AI recipes, from a ${lo:,} GPU to a $30k rig.',
@@ -157,9 +154,8 @@ def hero(lang, E):
         out.append(f"| {H['lab'][k]} | {E(r['model'])}{' · '+eg if eg else ''} | {hw}{c} | **{r['tok_s']:g} tok/s** {LVI[r['source_level']]} | [{src}]({r['source_url']}) |")
     out+=['',f"<sub>{H['note']}</sub>"]
     return '\n'.join(out)
-# Q&A (GEO): plain-language answers with a date, the source link and the trust level next to every number.
-# Only 实测 rows (excluding metrics marked 自称 / self-reported) answer "fastest measured"; nothing is estimated.
-QA_HW = [  # (key, regex on hardware, single device only)
+MULTI_OR_LAPTOP_HW = re.compile(r'[2-9] ?[x×] ?(RTX|DGX|NVIDIA)|双|[2-9] ?台|\s/|/\s|\svs\.?\s|笔记本|[Ll]aptop')
+QA_HARDWARE = [
  ('5090', r'^(单 ?)?(NVIDIA )?(GeForce )?RTX 5090( 32GB)?\b'), ('4090', r'^(单 ?)?(NVIDIA )?(GeForce )?RTX 4090( 24GB)?\b'),
  ('3090', r'^(单 ?)?(NVIDIA )?(GeForce )?RTX 3090( 24GB)?\b'), ('m3u', r'Mac Studio M3 Ultra'), ('spark', r'^(1 ?[x×] ?|单台 ?)?DGX Spark\b'),
  ('strix', r'Strix Halo|Ryzen AI Max\+? ?395')]
@@ -182,19 +178,20 @@ QAT = {
       'b25':'2,500 ドル以下で実測最速の構成は？'},
    a='実測最速：**{tok:g} tok/s** — {m}{e}、{hw}（{lv} {lvn}、{dt}、[出典]({u})）。{scope}のレシピ {n} 件、うち実測 {nm} 件。',
    none='実測結果はまだありません。主張・伝聞 {n} 件はエクスプローラーで。', lvn='実測', nodate='日付不明', s_hw='このハードウェア', s_b='この予算内')}
-def _meas(r): return r['source_level']=='实测' and r['category']=='text' and r.get('tok_s') and '自称' not in (r.get('metric') or '') and not r.get('superseded_by')
+def is_single_desktop_device(r): return 'multi-GPU' not in r['tags'] and not MULTI_OR_LAPTOP_HW.search(r['hardware'])
+def is_measured_text(r): return r['source_level']=='实测' and r['category']=='text' and r.get('tok_s') and '自称' not in (r.get('metric') or '') and not r.get('superseded_by')
 def qa(lang, E):
     Q=QAT[lang]; out=[Q['d'].format(d=DATA_ASOF),'']
     def ans(rows,scope):
-        m=[r for r in rows if _meas(r)]
+        m=[r for r in rows if is_measured_text(r)]
         if not m: return Q['none'].format(n=len(rows))
         r=max(m,key=lambda r:(r['tok_s'],r['id'])); eg=E(r['engine']) if r['engine']!='Unspecified' else ''
         return Q['a'].format(tok=r['tok_s'],m=E(r['model']),e=(' · '+eg) if eg else '',hw=clip(E(r['hardware']) or r['hardware'],60),lv=LVI['实测'],lvn=Q['lvn'],
                              dt=r.get('date') or Q['nodate'],u=r['source_url'],n=len(rows),nm=len(m),scope=Q[scope])
-    for k,rx in QA_HW:
-        rows=[r for r in D if r['category']=='text' and re.search(rx,r['hardware']) and 'multi-GPU' not in r['tags'] and not re.search(r'[2-9] ?[x×] ?(RTX|DGX|NVIDIA)|双|[2-9] ?台|\s/|/\s|\svs\.?\s|笔记本|[Ll]aptop',r['hardware'])]
+    for k,rx in QA_HARDWARE:
+        rows=[r for r in D if r['category']=='text' and re.search(rx,r['hardware']) and is_single_desktop_device(r)]
         if rows: out.append(f"**{Q['q'][k]}**  \n{ans(rows,'s_hw')}\n")
-    b=[r for r in D if r['category']=='text' and r.get('hardware_cost_usd') and r['hardware_cost_usd']<=2500]
+    b=[r for r in D if r['category']=='text' and r.get('hardware_cost_usd') and r['hardware_cost_usd']<=BUDGET_TIER_BOUNDS_USD[0][1]]
     out.append(f"**{Q['q']['b25']}**  \n{ans(b,'s_b')}\n")
     return '\n'.join(out)
 def build(lang):
@@ -202,7 +199,7 @@ def build(lang):
     def key(r):
         if r['tok_s'] is not None: return f"**{r['tok_s']:g} tok/s**"
         m=(r.get('metric_en') or r['metric']) if lang in ('en','ja') else r['metric']
-        if lang in ('en','ja') and m and CJK.search(m): m=None  # don't show mangled partial translations
+        if lang in ('en','ja') and m and CJK_OR_CURLY_QUOTE.search(m): m=None
         return clip(m,70) if m else T['see']
     def ln(r):
         q=E(r['quant']); q=f" `{clip(q,28)}`" if q else ''
@@ -228,7 +225,7 @@ def build(lang):
     for e,n in sorted(Counter(r['engine'] for r in D).items(),key=lambda x:(x[0]=='Unspecified',-x[1],x[0])):
         out.append(f"| [{e}](explore.html?engine={quote(e)}) | {n} |")
     out.append(f'\n<p align="center"><img src="docs/budget-tiers{IMGSUF[lang]}.png" width="860" alt="{BALT[lang]}"></p>\n')
-    for t,d,(lo,hi) in zip(T['tiers'],T['tdesc'],BOUNDS):
+    for t,d,(lo,hi) in zip(T['tiers'],T['tdesc'],BUDGET_TIER_BOUNDS_USD,strict=True):
         sec(t); rs=[r for r in D if r['hardware_cost_usd'] is not None and lo<r['hardware_cost_usd']<=hi]
         out.append(f"*{d}* · {T['count'].format(n=len(rs))}\n")
         for c,ct in T['cats'].items():
@@ -260,4 +257,5 @@ def build(lang):
     txt=align_tables(txt)
     open(R/T['file'],'w').write(txt)
     return T['file']
-for lang in L: print('written', build(lang))
+if __name__ == '__main__':
+    for lang in L: print('written', build(lang))

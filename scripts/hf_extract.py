@@ -1,32 +1,3 @@
-"""模型卡测速抽取（纯函数，便于测试）。v3 规则（2026-10-14）：
-表格
-- 逐行解析：一行 = 硬件 × 量化/配置；按表头区分 生成 / 读入 / 聚合吞吐(并发) / 峰值；延迟列(TTFT/TPOT/ms/latency)忽略
-- 表头没有 tok/s 但单元格带单位（"33.1 tokens/s"）的列也算速度列；表头的 decode/prefill/generation 词决定类别
-- 对照列（FP16/BF16/4-bit/8-bit 基线、original/reference）跳过；同一表多个生成列（如 投机 关/开、new text/code）拆成多条，variant=列名
-- 转置表（首列是 "Token generation / Prompt processing / Generation (mean of 6)" 等指标名）：按列出记录；
-  若列名不像配置开关（on/off/with/without/MTP/spec/helper），只取第一列（其余视为对比模型）
-- 评测/任务表（Task|Verdict|PASS|ID）与延迟表（arrival rate / TTFT p50 / TPOT）整体跳过
-- 单元格支持 "**283 tok/s**[^x]"、"14.9–17.7 tok/s"（取下限，保留区间）、"113 / 140 tok/s"（冷/热，读入取后者）、"~2,670 tok/s @ bs 32"
-- 行内上下文（"4k tokens of context"、"16,384" 在 prompt/context 列）写入 row.context_tokens，不污染卡级上下文
-硬件
-- 行标签 > 表前最近的硬件提及（含 "## Measured" 标题后首行、"Machine:"、"Hardware:"）> 卡级声明句 > 表后声明句
-- 机房卡/服务器 CPU（H100/A100/L40S/L4/Xeon/EPYC…）与工作站卡（RTX PRO/RTX 6000 Ada/A6000）默认排除
-来源与说明
-- 表前文字或列名出现 "their numbers / not ours / community benchmark / X's numbers / by <name>" → 该表行 level=转述
-- "up to" 峰值说法 → row.peak_claim=True 并进 caveats；pending re-measurement 等保留说明进 caveats
-- 句子抽取：段落合并后，同句有硬件+速度才算；取离硬件最近的速度数字
-其他
-- OCR/嵌入/语音、<3B、占位链接 → flags 降分；flags 含「非通用 LLM」时 primary=None（交给过滤）
-- 行级 dup_key 供跨卡去重（seen_rows 参数；ingest_hf.py 会把历史候选批次的 dup_key 一并载入）
-v4 增补（2026-10-14）
-- 对照列：成对列 "A tg | B tg" 中，A 在卡内写作 "vs (uniform) A" → 跳过 A；表头裸 tg/pp 也算速度列
-- 多档上下文表有 Mean/Average/Median 行时只取汇总行
-- Bits/Weight、bpw 列 → quant 写成 "<行名> (<bpw> bpw)"（如 byteshape 的 GPU-1..5 是量化档 ID）
-- Headline/Highlights 表 → peak_claim=True，primary 优先非峰值行；"prose **140**, code 209" 取 prose 值
-- 前缀配对：多生成列时 "X prefill" 只配 "X decode"
-- 硬件补 RTX A 系列 / A6000（工作站，默认排除）、Radeon AI PRO R9700、Radeon RX
-- 噪声：encoder/embedding throughput、tokens per second of video/audio 整行丢弃
-- 句子：链接到别的 HF 模型的句子丢弃；列表项各自成句；优先取数字前面最近的硬件"""
 import re, hashlib
 
 DC = re.compile(r"\b(H100|H200|H20|B200|B300|GB200|A100|A800|L40S?|L4\b|A10G?|T4\b|MI300X?|MI325X?|Gaudi|Xeon|EPYC|Threadripper)", re.I)
@@ -48,12 +19,13 @@ CAVEAT = re.compile(r"(pending re-?measurement|not a specification|thermally lim
 CTX = re.compile(r"(?:ctx-size|context(?:\s+length|\s+window)?|上下文)[^\n\d]{0,30}?(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?\s?[KkM]\b|\d{4,7})|(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?\s?[KkM])[- ](?:token )?context", re.I)
 PLACEHOLDER = re.compile(r"github\.com/your-org|github\.com/USERNAME|example\.com/", re.I)
 NOISE = re.compile(r"encoder throughput|embedding throughput|tokens? per second of (?:video|audio)|tokens?/s of (?:video|audio)", re.I)
+SUMMARY_ROW = re.compile(r"(?i)mean|average|avg|median")
+PARAGRAPH_OR_LIST_ITEM = re.compile(r"\n\s*\n|\n(?=\s*(?:[-*]|\d+\.)\s)")
 SEP = re.compile(r"^\s*\|[\s:\-|]+\|\s*$")
 
 def clean(s): return re.sub(r"\[\^[^\]]*\]|[`*¹²³⁴]|\\", "", s).strip()
 
 def parse_cell(s):
-    """返回 (value, low, high, slash_vals) 或 None"""
     s = clean(s)
     if not s or s in ("—", "-", "–"): return None
     s = re.sub(r"^(?:prose|text|chat|general)\s+(?=\d)", "", s, flags=re.I)
@@ -147,11 +119,21 @@ def col_kind(h, cells, ncols=2):
     return "gen"
 
 def is_comparator(h, card_text):
-    """列名前缀是卡内写明的对照组（"vs uniform oQ4e"）→ 对照列"""
     toks = clean(h).split()
     if len(toks) < 2 or re.match(r"(?i)^(tg|pp|tps|tok|t/s|decode|prefill|gen|speed)", toks[0]): return False
     t = re.escape(toks[0])
     return bool(re.search(rf"\bvs\.?\s+(?:uniform\s+|the\s+|stock\s+|plain\s+)?{t}\b|\buniform\s+{t}\b", card_text, re.I))
+
+def metric_name_rows(cells):
+    return [c for c in cells if c and re.match(r"(?:\w+\s)?(token generation|prompt processing|generat\w*|decode|prefill|prompt|tg\d+|pp\d+)\b", clean(c[0]), re.I)]
+
+def is_transposed_table(hdr, cells, metric_rows):
+    return bool(metric_rows) and (len(metric_rows) * 2 >= len(cells) or not re.search(r"t/s|tok/s|tokens?/s|tg\d|pp\d", " ".join(hdr[1:]), re.I)) \
+        and not re.search(r"t/s|tok/s|tg\d|pp\d|decode|prefill", clean(hdr[0]), re.I) and len(hdr) >= 2 and not find_hw(" ".join(clean(c[0]) for c in cells))
+
+def summary_rows_only(cells):
+    summary = [c for c in cells if c and SUMMARY_ROW.fullmatch(clean(c[0]))]
+    return summary if summary and len(cells) > 2 else cells
 
 def _table(hdr, rows, before, after, ctx_hw, third_default, card_text=""):
     head = " ".join(hdr)
@@ -161,14 +143,12 @@ def _table(hdr, rows, before, after, ctx_hw, third_default, card_text=""):
     local_hw = next((find_hw(l) for l in reversed(before) if DECL.search(l) and find_hw(l)), None) \
         or next((find_hw(l) for l in reversed(before) if find_hw(l)), None)
     cells = [split_row(r) for r in rows]
-    agg_rows = [c for c in cells if c and re.fullmatch(r"(?i)mean|average|avg|median", clean(c[0]))]
-    if agg_rows and len(cells) > 2: cells = agg_rows  # 多档上下文表：只取 Mean 汇总行
+    cells = summary_rows_only(cells)
     bpw_col = next((k for k, h in enumerate(hdr) if re.search(r"(?i)bits\s*/\s*weight|\bbpw\b", clean(h))), None)
     headline = bool(re.match(r"(?i)(headline|highlights?|at a glance)\b", clean(hdr[0]))) if hdr else False
     out = []
-    # 转置表：首列是指标名
-    metric_rows = [c for c in cells if c and re.match(r"(?:\w+\s)?(token generation|prompt processing|generat\w*|decode|prefill|prompt|tg\d+|pp\d+)\b", clean(c[0]), re.I)]
-    if metric_rows and (len(metric_rows) * 2 >= len(cells) or not re.search(r"t/s|tok/s|tokens?/s|tg\d|pp\d", " ".join(hdr[1:]), re.I)) and not re.search(r"t/s|tok/s|tg\d|pp\d|decode|prefill", clean(hdr[0]), re.I) and len(hdr) >= 2 and not find_hw(" ".join(clean(c[0]) for c in cells)):
+    metric_rows = metric_name_rows(cells)
+    if is_transposed_table(hdr, cells, metric_rows):
         vcols = [k for k in range(1, len(hdr)) if not BASE_COL.search(clean(hdr[k]))]
         if len([k for k in vcols if VARIANT.search(clean(hdr[k]))]) < 2: vcols = vcols[:1]
         for k in vcols:
@@ -189,21 +169,20 @@ def _table(hdr, rows, before, after, ctx_hw, third_default, card_text=""):
         return out
     kinds = [col_kind(h, [c[k] if k < len(c) else "" for c in cells], len(hdr)) for k, h in enumerate(hdr)]
     sfx = lambda k: " ".join(clean(hdr[k]).lower().split()[1:])
-    comp = {k for k, t in enumerate(kinds) if t in ("gen", "prefill") and is_comparator(hdr[k], card_text)
-            and any(k2 != k and t2 == t and sfx(k2) == sfx(k) for k2, t2 in enumerate(kinds))}  # 只在 "A tg | B tg" 成对列时判对照
+    def has_twin_column(k, kind): return any(k2 != k and t2 == kind and sfx(k2) == sfx(k) for k2, t2 in enumerate(kinds))
+    comp = {k for k, t in enumerate(kinds) if t in ("gen", "prefill") and is_comparator(hdr[k], card_text) and has_twin_column(k, t)}
     if comp and any(t == "gen" and k not in comp for k, t in enumerate(kinds)): kinds = [None if k in comp else t for k, t in enumerate(kinds)]
     gen_cols = [k for k, t in enumerate(kinds) if t == "gen" and not (BASE_COL.search(clean(hdr[k])) and any(t2 == "gen" and not BASE_COL.search(clean(hdr[k2])) for k2, t2 in enumerate(kinds) if k2 != k))]
     pre_cols = [k for k, t in enumerate(kinds) if t == "prefill" and not BASE_COL.search(clean(hdr[k]))]
     agg_cols = [k for k, t in enumerate(kinds) if t == "agg"]
     peak_cols = [k for k, t in enumerate(kinds) if t == "peak"]
     if not (gen_cols or pre_cols or agg_cols): return []
-    # 量化前缀分组（"PQ2_0 TG128 | PTQ1_0 TG128"）
-    def qp(k):
+    def quant_prefix(k):
         m = QUANT.search(clean(hdr[k]).replace("TG", " TG").replace("PP", " PP"))
         return m.group(0) if m and not re.match(r"(?i)^(tg|pp)", m.group(0)) else None
     groups = {}
-    for k in gen_cols: groups.setdefault(qp(k), {"gen": [], "pre": []})["gen"].append(k)
-    for k in pre_cols: groups.setdefault(qp(k), {"gen": [], "pre": []})["pre"].append(k)
+    for k in gen_cols: groups.setdefault(quant_prefix(k), {"gen": [], "pre": []})["gen"].append(k)
+    for k in pre_cols: groups.setdefault(quant_prefix(k), {"gen": [], "pre": []})["pre"].append(k)
     used = set(gen_cols + pre_cols + agg_cols + peak_cols)
     for c in cells:
         label = " ".join(x for k, x in enumerate(c) if k not in used and (kinds[k] is None) and num(x) is None and not re.search(r"^\d", clean(x)))
@@ -226,9 +205,10 @@ def _table(hdr, rows, before, after, ctx_hw, third_default, card_text=""):
                 if p and not multi and not g["pre"] and c and PRE_W.search(clean(c[0])) and not re.search(r"decode|generat", clean(c[0]), re.I):
                     pre, p = (p["slash"] or p["v"]), None
                 pre_k = pre
-                if multi and k is not None and g["pre"]:  # "Gyro-S prefill" 只配 "Gyro-S decode"，不配 "Gyro-M decode"
-                    f0 = lambda kk: clean(hdr[kk]).split()[0].lower() if clean(hdr[kk]).split() else ""
-                    if any(f0(kp) == f0(k2) for kp in g["pre"] for k2 in gcols if k2 is not None) and not any(f0(kp) == f0(k) for kp in g["pre"]): pre_k = None
+                if multi and k is not None and g["pre"]:
+                    prefix = lambda kk: clean(hdr[kk]).split()[0].lower() if clean(hdr[kk]).split() else ""
+                    prefixed_pairs = any(prefix(kp) == prefix(k2) for kp in g["pre"] for k2 in gcols if k2 is not None)
+                    if prefixed_pairs and not any(prefix(kp) == prefix(k) for kp in g["pre"]): pre_k = None
                 if p is None and pre_k is None and agg is None: continue
                 if k is not None and p is None and multi: continue
                 cell_hw = find_hw(clean(c[k])) if p and k is not None else None
@@ -247,9 +227,11 @@ def parse_tables(text, ctx_hw=None):
         out += _table(hdr, rows, before, after, ctx_hw or hw_after, False, text)
     return out
 
+def links_other_model(links, model_id): return bool(model_id) and any(l.lower() != model_id.lower() for l in links)
+
 def sentence_speeds(text, model_id=None):
     out = []
-    paras = re.split(r"\n\s*\n|\n(?=\s*(?:[-*]|\d+\.)\s)", text)  # 列表项各自成段
+    paras = PARAGRAPH_OR_LIST_ITEM.split(text)
     for para in paras:
         if para.strip().startswith("|"): continue
         flat = re.sub(r"\s*\n\s*", " ", para)
@@ -257,9 +239,9 @@ def sentence_speeds(text, model_id=None):
             hms = list(HW.finditer(s)); ums = list(UNIT.finditer(s))
             if not hms or not ums: continue
             links = re.findall(r"huggingface\.co/([\w.\-]+/[\w.\-]+)", s)
-            if model_id and any(l.lower() != model_id.lower() for l in links): continue  # 句中链接到别的模型，数值归属不明
+            if links_other_model(links, model_id): continue
             after = [(h.start() - u.end(), u, h) for u in ums for h in hms
-                     if 0 <= h.start() - u.end() <= 30 and re.match(r"[\s*]*(?:on|with|using)\b", s[u.end():h.start()], re.I)]  # "44 tok/s on an M5 Pro"
+                     if 0 <= h.start() - u.end() <= 30 and re.match(r"[\s*]*(?:on|with|using)\b", s[u.end():h.start()], re.I)]
             pairs = after or [(u.start() - h.start(), u, h) for u in ums for h in hms if h.start() < u.start()] or [(abs(u.start() - h.start()), u, h) for u in ums for h in hms if abs(u.start() - h.start()) <= 80]
             if not pairs: continue
             best = min(pairs, key=lambda x: x[0])

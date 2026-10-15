@@ -1,4 +1,3 @@
-"""speed.html reference data must point at real recipes and quote numbers that appear in them."""
 import json, re, unittest
 from pathlib import Path
 R = Path(__file__).resolve().parent.parent

@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Normalize `engine` to canonical names (idempotent, deterministic).
 Original string is kept in `engine_raw`; flags/version details go to `engine_note`.
-Run: python3 scripts/normalize_engines.py   (also imported by approve_review.py)"""
+Run: python3 scripts/normalize_engines.py"""
 import json, re
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 UNSPEC = 'Unspecified'
-# (pattern on raw engine string, canonical) — first match wins
+ALREADY_CANONICAL_FORK = r'^.+? \([^)]+ fork\)$'
 RULES = [
-    (r'^(?P<x>.+? \([^)]+ fork\))$', None),  # already canonical fork name: keep
+    (ALREADY_CANONICAL_FORK, None),
     (r'vahpetr|s1-fork', 'llama.cpp (vahpetr fork)'),
     (r'llama\.cpp-omni', 'llama.cpp (OpenBMB fork)'),
     (r'PrismML.*mlx-swift', 'MLX Swift (PrismML fork)'),
@@ -16,7 +16,6 @@ RULES = [
     (r'^agentionai/llama\.cpp', 'llama.cpp (agentionai fork)'),
     (r'^llama\.cpp-mirai-s', 'llama.cpp (mirai-s fork)'),
     (r'^llama\.cpp', 'llama.cpp'),
-    # must precede ^Strata (case-insensitive match would swallow strata-mlx)
     (r'^strata-mlx', 'strata-mlx'),
     (r'^Strata', 'Strata'),
     (r'^oMLX', 'oMLX'),
@@ -35,7 +34,6 @@ RULES = [
     (r'^Osaurus', 'Osaurus'),
     (r'^ExLlama', 'ExLlama'),
 ]
-# Unspecified rows: infer only from explicit mentions in quant / source_note
 INFER = [
     (r'Halogen', 'Halogen'), (r'\bSplash\b', 'Splash'), (r'sparkinfer', 'sparkinfer'),
     (r'FreeToken', 'FreeToken'), (r'tabbyAPI', 'TabbyAPI'), (r'Radiance fork', 'Radiance (fork)'),
@@ -68,5 +66,5 @@ def normalize(recipes):
     return recipes
 if __name__ == '__main__':
     p = ROOT / 'data/recipes.json'; D = json.load(open(p))
-    normalize(D); json.dump(D, open(p, 'w'), ensure_ascii=False, indent=2); open(p,'a').write('\n') if False else None
+    normalize(D); json.dump(D, open(p, 'w'), ensure_ascii=False, indent=2)
     import collections; print(collections.Counter(r['engine'] for r in D).most_common())
