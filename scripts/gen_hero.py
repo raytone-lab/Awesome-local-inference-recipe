@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Render README charts (en / zh-CN / ja). Needs matplotlib + a CJK font (Noto Sans CJK) for zh/ja labels.
-- docs/hero{suf}.png          top 15 measured text setups ranked by tok/s per $1,000 of hardware
+- docs/hero{suf}.png          top measured text setups per model-size group (data/model-params.json), ranked by tok/s per $1,000 of hardware
 - docs/budget-tiers{suf}.png  fastest text setup per README budget tier (measured vs claimed)
 Data: text recipes with tok_s and hardware_cost_usd; deduped per hardware+model (measured preferred, then best tok/s).
 Not part of the CI up-to-date check (PNG bytes vary across matplotlib/font versions). Run: python3 scripts/gen_hero.py"""
@@ -56,32 +56,63 @@ HT={'en':dict(t='A {p} {u}{hw} runs {tok:g} tok/s',used='used ',
     'ja':dict(t='{p} の{u}{hw} で {tok:g} tok/s',used='中古 ',
       sub='$1,000 あたり tok/s = 1 ストリーム tok/s ÷（価格 / 1000）· 実測のみ · 2026 年 10 月の公開最安価格 · 行ごとにモデルは異なる',
       base='RTX 3090 1 枚 ≈{v:.0f}',note='データ時点 {d} · CC BY 4.0 · Awesome Local Inference Recipes')}
+PARAMS=json.load(open(R/'data/model-params.json'))['models']
+def params(r):
+    for m in PARAMS:
+        if re.search(m['match'],r['model']):
+            return None if m.get('exclude') and re.search(m['exclude'],r['model']) else m
+    return None
+def fmtb(x): return f"{x:g}B"
+GROUPS=[('dense',lambda m:m['arch']=='dense' and m['total_b']>=27),
+        ('big',lambda m:m['arch']=='moe' and m['total_b']>=100),
+        ('mid',lambda m:m['arch']=='moe' and m['total_b']<100 and m['active_b']>=5),
+        ('small',lambda m:m['arch']=='moe' and m['total_b']<100 and m['active_b']<5)]
+GT={'en':dict(dense='Dense ≥27B',big='Big MoE (≥100B total)',mid='Mid MoE (<100B total, ≥5B active)',small='Small MoE (<100B total, <5B active)',act='{a} active',tot='{a} active / {t} total',
+              t='{p} {u}{hw} runs {m} at {tok:g} tok/s',only='Only models with official parameter cards (data/model-params.json)'),
+    'zh-CN':dict(dense='稠密 ≥27B',big='大 MoE（总参数 ≥100B）',mid='中 MoE（总参数 <100B，激活 ≥5B）',small='小 MoE（总参数 <100B，激活 <5B）',act='激活 {a}',tot='激活 {a} / 总 {t}',
+              t='{p} 的{u}{hw} 跑 {m}：{tok:g} tok/s',only='仅含有官方参数卡的模型（data/model-params.json）'),
+    'ja':dict(dense='Dense ≥27B',big='大型 MoE（総パラメータ ≥100B）',mid='中型 MoE（総 <100B、アクティブ ≥5B）',small='小型 MoE（総 <100B、アクティブ <5B）',act='アクティブ {a}',tot='アクティブ {a} / 総 {t}',
+              t='{p} の{u}{hw} で {m} が {tok:g} tok/s',only='公式パラメータカードのあるモデルのみ（data/model-params.json）')}
+PER=5
 def hero(lang):
-    t=TX[lang]; h=HT[lang]
-    meas=[r for r in U if r['_m']]; top=sorted(meas,key=lambda r:(-r['_v'],r['id']))[:15]
-    first=top[0]; top=top[::-1]
-    fig,ax=plt.subplots(figsize=(11.5,7.4),dpi=150)
-    vmax=max(r['_v'] for r in top)
-    for i,r in enumerate(top):
-        ax.barh(i,r['_v'],color=FAM[r['hardware_family']],alpha=.9,height=.72)
-        ax.text(r['_v']+vmax*.01,i,f"≈{r['_v']:.0f} tok/s/$1k",va='center',fontsize=9.5,fontweight='bold',color='#0f172a')
-        ax.annotate(f"({r['tok_s']:g} tok/s · {money(r['hardware_cost_usd'])})",(r['_v']+vmax*.01,i),xytext=(len(f"≈{r['_v']:.0f} tok/s/$1k")*6.4+4,0),textcoords='offset points',va='center',fontsize=8.5,color='#475569')
-        ax.text(-.012,i+.13,f"{clean(r['hardware'],30)} [{money(r['hardware_cost_usd'])}]",transform=ax.get_yaxis_transform(),ha='right',va='center',fontsize=9.2,color='#0f172a')
-        ax.text(-.012,i-.24,clean(r['model'],34),transform=ax.get_yaxis_transform(),ha='right',va='center',fontsize=7.3,color='#94a3b8')
-    ax.set_yticks([]); ax.set_ylim(-.7,len(top)-.3)
+    t=TX[lang]; h=HT[lang]; g=GT[lang]
+    meas=[r for r in U if r['_m'] and params(r)]
+    rows=[]  # (kind, payload)
+    for key,ok in GROUPS:
+        rs=sorted([r for r in meas if ok(params(r))],key=lambda r:(-r['_v'],r['id']))[:PER]
+        if rs: rows.append(('h',g[key])); rows+= [('r',r) for r in rs]
+    dense=[x for k,x in rows if k=='r' and params(x)['arch']=='dense']
+    first=min(dense or [x for k,x in rows if k=='r'],key=lambda r:(-r['_v'],r['id']))
+    n=len(rows); H=1.2+.42*n; fig,ax=plt.subplots(figsize=(11.5,H),dpi=150)
+    vmax=max(x['_v'] for k,x in rows if k=='r')
+    for i,(k,x) in enumerate(rows):
+        y=n-1-i
+        if k=='h':
+            ax.text(-.012,y,x,transform=ax.get_yaxis_transform(),ha='right',va='center',fontsize=10.5,fontweight='bold',color='#334155')
+            if i: ax.axhline(y+.55,color='#e2e8f0',lw=.8)
+            continue
+        r=x; m=params(r)
+        ax.barh(y,r['_v'],color=FAM[r['hardware_family']],alpha=.9,height=.72)
+        ax.text(r['_v']+vmax*.01,y,f"≈{r['_v']:.0f} tok/s/$1k",va='center',fontsize=9.5,fontweight='bold',color='#0f172a')
+        ax.annotate(f"({r['tok_s']:g} tok/s · {money(r['hardware_cost_usd'])})",(r['_v']+vmax*.01,y),xytext=(len(f"≈{r['_v']:.0f} tok/s/$1k")*6.4+4,0),textcoords='offset points',va='center',fontsize=8.5,color='#475569')
+        ax.text(-.012,y+.13,f"{clean(r['hardware'],30)} [{money(r['hardware_cost_usd'])}]",transform=ax.get_yaxis_transform(),ha='right',va='center',fontsize=9.2,color='#0f172a')
+        pa=g['act'].format(a=fmtb(m['active_b'])) if m['arch']=='dense' else g['tot'].format(a=fmtb(m['active_b']),t=m.get('total_label') or fmtb(m['total_b']))
+        ax.text(-.012,y-.24,f"{clean(r['model'],26)} · {pa}",transform=ax.get_yaxis_transform(),ha='right',va='center',fontsize=7.3,color='#94a3b8')
+    ax.set_yticks([]); ax.set_ylim(-.7,n-.3)
     b=[r for r in meas if re.fullmatch(r'(单 )?RTX 3090( 24GB)?',clean(r['hardware'],80))]
     if b:
-        bv=max(r['_v'] for r in b); ax.axvline(bv,ls='--',lw=1,color='#334155',alpha=.7)
-        ax.text(bv,len(top)-.35,' '+h['base'].format(v=bv),fontsize=8.5,color='#334155',va='bottom')
+        bv=max(r['_v'] for r in b); ax.axvline(bv,ls=(0,(4,4)),lw=.8,color='#b6c0cf',alpha=.8,zorder=0)
+        ax.text(bv,n-.35,' '+h['base'].format(v=bv),fontsize=8,color='#98a2b3',va='bottom')
     ax.set_xlim(0,vmax*1.6); ax.set_xlabel(t['h_x'],fontsize=10)
     hw=clean(first['hardware'],40); hw=re.sub(r'^(单 )','',hw)
-    fig.suptitle(h['t'].format(p=money(first['hardware_cost_usd']),u=h['used'] if _used(first) else '',hw=re.sub(r' \d+GB$','',hw),tok=first['tok_s']),x=.012,y=.985,ha='left',fontsize=15,fontweight='bold',color='#0f172a')
-    fig.text(.012,.935,h['sub'],ha='left',fontsize=9,color='#475569')
-    fig.text(.995,.008,h['note'].format(d=_asof()),ha='right',fontsize=7.5,color='#94a3b8')
+    fig.suptitle(g['t'].format(p=money(first['hardware_cost_usd']),u=h['used'] if _used(first) else '',hw=re.sub(r' \d+GB$','',hw),m=params(first)['label'],tok=first['tok_s']),x=.012,y=.99,ha='left',fontsize=15,fontweight='bold',color='#0f172a')
+    fig.text(.012,1-.62/H,h['sub'],ha='left',fontsize=9,color='#475569')
+    fig.text(.012,1-.82/H,g['only'],ha='left',fontsize=8.5,color='#64748b')
+    fig.text(.995,.006,h['note'].format(d=_asof()),ha='right',fontsize=7.5,color='#94a3b8')
     style(ax); ax.spines['left'].set_visible(False); ax.grid(axis='x',alpha=.2)
-    fams=[k for k in FAM if any(r['hardware_family']==k for r in top)]
+    fams=[k for k in FAM if any(x['hardware_family']==k for kk,x in rows if kk=='r')]
     ax.legend(handles=[Patch(color=FAM[k],label=t['fam'][k]) for k in fams],frameon=False,loc='lower right',fontsize=8.5,ncol=1)
-    fig.tight_layout(rect=(0,.02,1,.935))
+    fig.tight_layout(rect=(0,.015,1,1-.9/H)); fig.subplots_adjust(top=1-1.12/H)
     return fig
 def tiers(lang):
     t=TX[lang]; fig,ax=plt.subplots(figsize=(11,5.4),dpi=150); y=0; ticks=[]; xmax=0; used=set()

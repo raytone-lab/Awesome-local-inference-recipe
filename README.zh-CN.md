@@ -8,7 +8,7 @@
 
 <p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><b>在线配方库</b></a> · <a href="recipes/README.zh-CN.md"><b>配方指南</b></a> · <a href="docs/getting-started.zh-CN.md"><b>入门指南</b></a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html"><b>提交配方</b></a></p>
 
-<p align="center"><img src="docs/hero.zh-CN.png" width="860" alt="条形图：按每 $1000 硬件对应 tok/s 排名的实测文字配置前 15 名，按硬件类别着色"></p>
+<p align="center"><img src="docs/hero.zh-CN.png" width="860" alt="条形图：按模型规模分组（稠密 ≥27B；大 MoE 总参数 ≥100B；中 MoE 总参数 <100B、激活 ≥5B；小 MoE 激活 <5B；标注激活参数；仅含有官方参数卡的模型），按每 $1000 硬件对应 tok/s 排名的实测文字配置，按硬件类别着色"></p>
 
 ### X tok/s 到底有多快？
 

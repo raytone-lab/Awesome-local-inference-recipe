@@ -8,7 +8,7 @@
 
 <p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><b>Explore live</b></a> · <a href="recipes/README.md"><b>Recipe guides</b></a> · <a href="docs/getting-started.md"><b>Getting started</b></a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html"><b>Submit a recipe</b></a></p>
 
-<p align="center"><img src="docs/hero.png" width="860" alt="Bar chart: top 15 measured text setups ranked by tok/s per $1,000 of hardware, colored by hardware family"></p>
+<p align="center"><img src="docs/hero.png" width="860" alt="Bar chart: top measured text setups per model-size group (dense ≥27B; big MoE ≥100B total; mid MoE <100B total, ≥5B active; small MoE <100B total, <5B active; with active parameters; only models with official parameter cards), ranked by tok/s per $1,000 of hardware, colored by hardware family"></p>
 
 ### How fast is X tok/s?
 

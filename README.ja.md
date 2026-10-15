@@ -8,7 +8,7 @@
 
 <p align="center"><a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/explore.html"><b>エクスプローラー</b></a> · <a href="recipes/README.ja.md"><b>レシピガイド</b></a> · <a href="docs/getting-started.ja.md"><b>はじめに</b></a> · <a href="https://raytone-lab.github.io/Awesome-local-inference-recipe/submit.html"><b>レシピを投稿</b></a></p>
 
-<p align="center"><img src="docs/hero.ja.png" width="860" alt="棒グラフ：ハードウェア $1,000 あたりの tok/s で並べた実測テキスト構成トップ 15（ハードウェア分類で色分け）"></p>
+<p align="center"><img src="docs/hero.ja.png" width="860" alt="棒グラフ：モデル規模別（Dense ≥27B・大型 MoE 総 ≥100B・中型 MoE 総 <100B／アクティブ ≥5B・小型 MoE アクティブ <5B、アクティブパラメータ表示、公式パラメータカードのあるモデルのみ）に、ハードウェア $1,000 あたりの tok/s で並べた実測テキスト構成（ハードウェア分類で色分け）"></p>
 
 ### X tok/s ってどれくらい速い？
 
