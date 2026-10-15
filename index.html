@@ -55,28 +55,83 @@
  ]
 }
 </script>
-<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="landing.css"></head><body>
-<header><div class="brand">⚡ <span data-i18n="brand">Local Inference Recipes</span> <small>Awesome Local Inference Recipes</small></div><nav><a href="index.html" class="on" data-i18n="home">Home</a><a href="explore.html" data-i18n="explore">Explore</a><a href="speed.html" data-i18n="speed">Speed feel</a><a href="submit.html" data-i18n="submit">Submit</a></nav></header>
-<section class="lh"><div class="in">
-<p class="eyebrow" data-i18n="eb">Local inference recipes: model × engine × hardware, every number sourced.</p>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="landing.css"><script src="theme.js"></script></head><body>
+<a class="skip" href="#main" data-s="skip">Skip to content</a>
+<header class="site-hd"><div class="hd-in"><a class="brand" href="index.html"><span class="logo" aria-hidden="true">⚡</span><span class="bt" data-i18n="brand">Local Inference Recipes</span></a><nav id="nav" aria-label="Main"><a href="index.html" data-i18n="home" aria-current="page">Home</a><a href="explore.html" data-i18n="explore">Explore</a><a href="speed.html" data-i18n="speed">Speed feel</a><a href="submit.html" data-i18n="submit">Submit</a></nav><div class="hd-act"><button class="icon-btn theme-tg" type="button" aria-label="Toggle dark mode"><svg class="i i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M11 1h2v3h-2zM11 20h2v3h-2zM1 11h3v2H1zM20 11h3v2h-3zM4.2 2.8l2.1 2.1-1.4 1.4-2.1-2.1zM17.7 16.3l2.1 2.1-1.4 1.4-2.1-2.1zM2.8 19.8l2.1-2.1 1.4 1.4-2.1 2.1zM16.3 6.3l2.1-2.1 1.4 1.4-2.1 2.1z"/></svg><svg class="i i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.5A9 9 0 0 1 9.5 3a9 9 0 1 0 11.5 11.5z"/></svg></button><a class="btn btn-sm btn-star hd-star" href="https://github.com/raytone-lab/Awesome-local-inference-recipe" target="_blank" rel="noopener" aria-label="Star on GitHub"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 .6l2.3 4.7 5.1.7-3.7 3.6.9 5.1L8 12.3l-4.6 2.4.9-5.1L.6 6l5.1-.7z"/></svg><span class="t" data-s="starS">Star</span></a><button class="icon-btn nav-tg" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg></button></div></div></header>
+<main id="main">
+<section class="hero"><div class="wrap hero-in">
+<div class="hero-copy">
+<p class="eyebrow"><span class="dotlive" aria-hidden="true"></span><span data-i18n="eb">Open dataset · model × engine × hardware · every number sourced</span></p>
 <h1 data-i18n="h1">Same GPU, different recipe<br><span>10× the speed</span></h1>
-<p class="lead" data-i18n="lead">Real local inference setups collected from the community: which model, which quant, which engine, which hardware, how many tok/s and what it costs.</p>
-<div class="pills"><span data-i18n="p1">🔀 Cross-engine: Strata · oMLX · DFlash2 · TensorFold · llama.cpp</span><span data-i18n="p2">🖥️ Consumer / used hardware</span><span data-i18n="p3">🔗 Every number has a source</span><span data-i18n="p4">💰 Focus on ≤ $30k</span></div>
-<div class="cta"><a class="btn p" href="explore.html" data-i18n="cta1">Explore recipes →</a><a class="btn" href="submit.html" data-i18n="cta2">Submit your recipe</a></div>
-<div class="ks" id="ks"></div></div></section>
-<main class="lm">
-<h2 data-i18n="hot">🔥 Popular recipes on X <small>by likes + reposts · click to open the post</small></h2><div class="hot" id="hot"></div>
-<h2 data-i18n="bud">Browse by budget</h2><div class="tiers">
+<p class="lead" data-i18n="lead">Find out which model, quant and engine gets the most tok/s out of the hardware you have or plan to buy, and what it costs. Every number links to its source.</p>
+<div class="cta">
+<a class="btn btn-star btn-lg" href="https://github.com/raytone-lab/Awesome-local-inference-recipe" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 .6l2.3 4.7 5.1.7-3.7 3.6.9 5.1L8 12.3l-4.6 2.4.9-5.1L.6 6l5.1-.7z"/></svg><span data-i18n="gh_star">Star on GitHub</span></a>
+<a class="btn btn-p btn-lg" href="explore.html" data-i18n="cta1">Explore recipes →</a>
+</div>
+<p class="cta-sub"><a href="explore.html?pick=1#picker" data-i18n="cta3">What can my machine run? →</a><span class="sep" aria-hidden="true">·</span><span data-i18n="cta_note">Free, open data (CC BY 4.0). A star helps other people find it.</span></p>
+<div class="ks" id="ks" aria-live="polite"></div>
+</div>
+<aside class="hero-card card" aria-labelledby="tbh">
+<div class="hc-hd"><h2 id="tbh" data-i18n="tbh">Fastest measured setup per budget</h2><span class="muted" data-i18n="tbs">text models · single stream</span></div>
+<div class="seg kt" id="tbk" role="tablist" aria-label="Price basis" data-i18n-al="k_al"><button type="button" role="tab" id="tbk-gpu" data-k="gpu" aria-controls="tb" aria-selected="true" data-i18n="k_gpu">GPU cards (card price)</button><button type="button" role="tab" id="tbk-sys" data-k="sys" aria-controls="tb" aria-selected="false" tabindex="-1" data-i18n="k_sys">Whole systems</button></div>
+<ol class="tb" id="tb" role="tabpanel" aria-labelledby="tbk-gpu"><li class="muted">…</li></ol>
+<p class="caveat" data-i18n="tbn">Discrete-card prices are GPU-only, not the whole PC. Each row is a different model, so speeds aren’t directly comparable.</p>
+<a class="more-l" href="explore.html?level=%E5%AE%9E%E6%B5%8B&amp;cat=text" data-i18n="tball">All measured recipes →</a>
+</aside>
+</div></section>
+
+<section class="wrap props" aria-label="Why this list" data-i18n-al="al_props">
+<div><b data-i18n="v1h">🔗 Every number has a source</b><p data-i18n="v1">Each row links to the post, README or log it came from, with a trust level: official, measured, relayed or claimed.</p></div>
+<div><b data-i18n="v2h">🔀 Cross-engine</b><p data-i18n="v2">llama.cpp, MLX, vLLM, SGLang, Strata, oMLX, DFlash, TensorFold… compared on the same hardware.</p></div>
+<div><b data-i18n="v3h">🖥️ Hardware you can buy</b><p data-i18n="v3">Consumer GPUs, Macs, DGX Spark, Strix Halo and used datacenter cards, all under $30k.</p></div>
+<div><b data-i18n="v4h">🚫 No estimates</b><p data-i18n="v4">Unknown fields say “no public data”. Nothing is estimated or filled in.</p></div>
+</section>
+
+<section class="wrap sec">
+<div class="sec-hd"><h2 data-i18n="bvh">Best value measured setups</h2><p class="muted" data-i18n="bvs">Lowest hardware cost per single-stream tok/s (measured text recipes with a known price), ranked separately for card prices and whole-system prices.</p></div>
+<p class="caveat" data-i18n="bvn"><b>Prices are GPU-only for discrete cards</b>: CPU, RAM and the rest of the PC are not included. Whole-system prices (Mac, DGX Spark, mini PCs) cover the entire machine. Every row runs a different model (size and quant vary), so tok/s is not a like-for-like comparison.</p>
+<div class="bvgrp"><div class="bvh"><h3 data-i18n="bvg">Discrete GPUs · card price only</h3><a class="more-l" href="explore.html?level=%E5%AE%9E%E6%B5%8B&amp;cat=text&amp;cost=gpu&amp;sort=cpt" data-i18n="bvall">See the full ranking →</a></div><div class="bv" id="bv-gpu"></div></div>
+<div class="bvgrp"><div class="bvh"><h3 data-i18n="bvs2">Whole systems · Mac, DGX Spark, mini PCs</h3><a class="more-l" href="explore.html?level=%E5%AE%9E%E6%B5%8B&amp;cat=text&amp;cost=sys&amp;sort=cpt" data-i18n="bvall">See the full ranking →</a></div><div class="bv" id="bv-sys"></div></div>
+</section>
+
+<section class="wrap sec">
+<div class="speedt card">
+<div><p class="eyebrow" data-i18n="spe">Interactive demo</p><h2 data-i18n="sph">What do 10, 50 and 500 tok/s actually feel like?</h2><p class="muted" data-i18n="spp">Watch the same answer stream at different speeds, next to human reading pace and real measured setups.</p>
+<a class="btn btn-p" href="speed.html" data-i18n="spb">Open the speed demo →</a></div>
+<div class="mini" id="mini" aria-hidden="true"></div>
+</div>
+</section>
+
+<section class="wrap sec">
+<div class="sec-hd"><h2 data-i18n="hot">🔥 Popular on X</h2><p class="muted" data-i18n="hots">Ranked by likes + reposts (reposts weighted ×3). Click a card to open the original post.</p></div>
+<div class="hot" id="hot"></div>
+</section>
+
+<section class="wrap sec">
+<div class="sec-hd"><h2 data-i18n="bud">Browse by budget</h2></div>
+<div class="tiers">
 <a href="explore.html?max=2500"><b>≤ $2.5k</b><span data-i18n="t1">Used 3090 / 4090, MI50, V100, Strix Halo</span></a>
 <a href="explore.html?max=7000"><b>≤ $7k</b><span data-i18n="t2">Single 5090, one DGX Spark, Mac Studio Max</span></a>
 <a href="explore.html?max=14000"><b>≤ $14k</b><span data-i18n="t3">Two Sparks, Mac Studio M5 Ultra</span></a>
 <a href="explore.html?max=30000"><b>≤ $30k</b><span data-i18n="t4">3–4 Spark cluster, multi-GPU workstation</span></a></div>
-<h2 data-i18n="lvh">What the source levels mean</h2><div class="lvls">
+</section>
+
+<section class="wrap sec">
+<div class="sec-hd"><h2 data-i18n="lvh">What the source levels mean</h2></div>
+<div class="lvls">
 <div><span class="lv 官方" data-i18n="l_off">Official</span><p data-i18n="d_off">Numbers published by the project or vendor, usually best-case.</p></div>
 <div><span class="lv 实测" data-i18n="l_mea">Measured</span><p data-i18n="d_mea">The author ran it on their own machine, with a screenshot or log.</p></div>
 <div><span class="lv 转述" data-i18n="l_rel">Relayed</span><p data-i18n="d_rel">A second-hand quote of someone else’s result; check the original post.</p></div>
 <div><span class="lv 宣称" data-i18n="l_cla">Claimed</span><p data-i18n="d_cla">A prediction or no reproduction details; for reference only.</p></div></div>
-<p class="note" data-i18n="note">Unknown fields always show “no public data”. Nothing is estimated or filled in.</p>
-<div class="final"><h2 data-i18n="fh">Ran a great recipe?</h2><p data-i18n="fp">One JSON entry, one PR, and the next person saves a week of tinkering.</p><a class="btn p" href="submit.html" data-i18n="submit">Submit</a></div>
-</main><footer data-i18n="foot">Awesome Local Inference Recipes · compiled from X / GitHub / Reddit / price sites</footer>
-<script src="i18n.js"></script><script src="landing.js"></script></body></html>
+</section>
+
+<section class="wrap sec">
+<div class="final">
+<h2 data-i18n="fh">Saved you a week of tinkering?</h2>
+<p data-i18n="fp">Star the repo so the next person finds it, or add the recipe you ran: one JSON entry, one PR.</p>
+<div class="cta"><a class="btn btn-star btn-lg" href="https://github.com/raytone-lab/Awesome-local-inference-recipe" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 .6l2.3 4.7 5.1.7-3.7 3.6.9 5.1L8 12.3l-4.6 2.4.9-5.1L.6 6l5.1-.7z"/></svg><span data-i18n="gh_star">Star on GitHub</span></a><a class="btn btn-lg" href="submit.html" data-i18n="cta2">Submit your recipe</a></div>
+</div>
+</section>
+</main>
+<footer class="site-ft"><div class="ft-in"><div><b data-i18n="brand">Local Inference Recipes</b> · <span data-i18n="f_tag">Model × engine × hardware, every number sourced.</span><span id="xd"></span></div><nav aria-label="Footer"><a href="https://github.com/raytone-lab/Awesome-local-inference-recipe" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a><a href="https://github.com/raytone-lab/Awesome-local-inference-recipe/issues" target="_blank" rel="noopener" data-i18n="f_issue">Report an issue</a><a href="submit.html" data-i18n="submit">Submit</a><span data-i18n="f_data">Data CC BY 4.0 · code MIT</span></nav></div></footer>
+<script src="i18n.js"></script><script src="site.js"></script><script src="cost.js"></script><script src="landing.js"></script></body></html>
