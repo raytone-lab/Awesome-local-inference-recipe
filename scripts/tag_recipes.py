@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Derive `model_family` and `tags` from existing fields only (idempotent, deterministic).
-Run: python3 scripts/tag_recipes.py   (also imported by approve_review.py)"""
+Run: python3 scripts/tag_recipes.py"""
 import json, re
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent

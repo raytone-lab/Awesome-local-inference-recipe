@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """Normalize `engine` to canonical names (idempotent, deterministic).
 Original string is kept in `engine_raw`; flags/version details go to `engine_note`.
-Run: python3 scripts/normalize_engines.py   (also imported by approve_review.py)"""
+Run: python3 scripts/normalize_engines.py"""
 import json, re
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 UNSPEC = 'Unspecified'
+ALREADY_CANONICAL_FORK = r'^.+? \([^)]+ fork\)$'
 RULES = [
-    (r'^(?P<x>.+? \([^)]+ fork\))$', None),
+    (ALREADY_CANONICAL_FORK, None),
     (r'vahpetr|s1-fork', 'llama.cpp (vahpetr fork)'),
     (r'llama\.cpp-omni', 'llama.cpp (OpenBMB fork)'),
     (r'PrismML.*mlx-swift', 'MLX Swift (PrismML fork)'),

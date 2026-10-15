@@ -2,7 +2,7 @@
 """Generate README.md (English), README.zh-CN.md (Chinese) and README.ja.md (Japanese) from data/. Run: python3 scripts/gen_readme.py"""
 import json, re
 from pathlib import Path
-from budget import BOUNDS
+from dataset_constants import BUDGET_TIER_BOUNDS_USD, DATA_ASOF
 R = Path(__file__).resolve().parent.parent
 D = json.load(open(R/'data/recipes.json'))
 REPOS = json.load(open(R/'data/repos.json'))
@@ -13,7 +13,7 @@ HWF_JA = {'NVIDIA 消费级':'NVIDIA コンシューマー','二手数据中心�
 PAGES = 'https://raytone-lab.github.io/awesome-local-inference-recipes/'
 GUIDES = set(json.load(open(R/'data/guides.json'))) if (R/'data/guides.json').exists() else set()
 LVI = {'官方':'🏛️','实测':'✅','转述':'🔁','宣称':'📣'}
-CJK_WORD = re.compile(r'[\u3000-\u303f\u3400-\u9fff\uff00-\uffef]')
+CJK_CHAR = re.compile(r'[\u3000-\u303f\u3400-\u9fff\uff00-\uffef]')
 CJK = re.compile(r'[\u3000-\u303f\u3400-\u9fff\uff00-\uffef“”]')
 L = {
  'en': dict(file='README.md', tpl='readme_static.en.md',
@@ -56,11 +56,11 @@ SPEED={'en':('How fast is X tok/s?','Same answer, real Qwen3 tokens, streamed at
 IMGSUF={'en':'','zh':'.zh-CN','ja':'.ja'}
 BALT={'en':'Bar chart: fastest measured and claimed text setup in each budget tier','zh':'条形图：各预算档最快的实测与宣称文字配置','ja':'棒グラフ：予算帯ごとの最速テキスト構成（実測と公称）'}
 def clip(s,n=90): s=(s or '').replace('|','/').replace('\n',' '); return s if len(s)<=n else s[:n-1]+'…'
-def en(s):
+def en(s, cjk=CJK, strip=' ·+/,'):
     if not s: return s
-    s=re.sub(r'（[^）]*）|\([^)]*[\u3400-\u9fff][^)]*\)','',s)
-    s=' '.join(w for w in re.split(r'\s+',s) if not CJK_WORD.search(w))
-    return re.sub(r'\s+',' ',s).strip(' ·+/,;；') or None
+    s=re.sub(r'（[^）]*）|\([^)]*[\u3400-\u9fff][^)]*\)','',str(s))
+    s=' '.join(w for w in re.split(r'\s+',s) if not cjk.search(w))
+    return re.sub(r'\s+',' ',s).strip(strip) or None
 def slug(s): return re.sub(r'[^\w \-]','',s.lower()).replace(' ','-')
 def fmt(n): return f"{n/1000:.1f}k" if n>=1000 else str(n)
 def js_length(s): return len(s.encode('utf-16-le'))//2
@@ -90,7 +90,6 @@ def align_tables(txt):
         else: res.append(lines[i]); i+=1
     return '\n'.join(res)
 
-DATA_ASOF = '2026-10-15'
 REPO = 'raytone-lab/awesome-local-inference-recipes'
 SHOW = [
  ('text-113','mac'),('x-006','5090'),('x-009','amd'),('x-007','dc'),('text-022','spark'),('text-021','cheap')]
@@ -155,7 +154,7 @@ def hero(lang, E):
         out.append(f"| {H['lab'][k]} | {E(r['model'])}{' · '+eg if eg else ''} | {hw}{c} | **{r['tok_s']:g} tok/s** {LVI[r['source_level']]} | [{src}]({r['source_url']}) |")
     out+=['',f"<sub>{H['note']}</sub>"]
     return '\n'.join(out)
-QA_HW = [
+QA_SINGLE_DEVICE_HW = [
  ('5090', r'^(单 ?)?(NVIDIA )?(GeForce )?RTX 5090( 32GB)?\b'), ('4090', r'^(单 ?)?(NVIDIA )?(GeForce )?RTX 4090( 24GB)?\b'),
  ('3090', r'^(单 ?)?(NVIDIA )?(GeForce )?RTX 3090( 24GB)?\b'), ('m3u', r'Mac Studio M3 Ultra'), ('spark', r'^(1 ?[x×] ?|单台 ?)?DGX Spark\b'),
  ('strix', r'Strix Halo|Ryzen AI Max\+? ?395')]
@@ -187,10 +186,10 @@ def qa(lang, E):
         r=max(m,key=lambda r:(r['tok_s'],r['id'])); eg=E(r['engine']) if r['engine']!='Unspecified' else ''
         return Q['a'].format(tok=r['tok_s'],m=E(r['model']),e=(' · '+eg) if eg else '',hw=clip(E(r['hardware']) or r['hardware'],60),lv=LVI['实测'],lvn=Q['lvn'],
                              dt=r.get('date') or Q['nodate'],u=r['source_url'],n=len(rows),nm=len(m),scope=Q[scope])
-    for k,rx in QA_HW:
+    for k,rx in QA_SINGLE_DEVICE_HW:
         rows=[r for r in D if r['category']=='text' and re.search(rx,r['hardware']) and 'multi-GPU' not in r['tags'] and not re.search(r'[2-9] ?[x×] ?(RTX|DGX|NVIDIA)|双|[2-9] ?台|\s/|/\s|\svs\.?\s|笔记本|[Ll]aptop',r['hardware'])]
         if rows: out.append(f"**{Q['q'][k]}**  \n{ans(rows,'s_hw')}\n")
-    b=[r for r in D if r['category']=='text' and r.get('hardware_cost_usd') and r['hardware_cost_usd']<=2500]
+    b=[r for r in D if r['category']=='text' and r.get('hardware_cost_usd') and r['hardware_cost_usd']<=BUDGET_TIER_BOUNDS_USD[0][1]]
     out.append(f"**{Q['q']['b25']}**  \n{ans(b,'s_b')}\n")
     return '\n'.join(out)
 def build(lang):
@@ -224,7 +223,7 @@ def build(lang):
     for e,n in sorted(Counter(r['engine'] for r in D).items(),key=lambda x:(x[0]=='Unspecified',-x[1],x[0])):
         out.append(f"| [{e}](explore.html?engine={quote(e)}) | {n} |")
     out.append(f'\n<p align="center"><img src="docs/budget-tiers{IMGSUF[lang]}.png" width="860" alt="{BALT[lang]}"></p>\n')
-    for t,d,(lo,hi) in zip(T['tiers'],T['tdesc'],BOUNDS):
+    for t,d,(lo,hi) in zip(T['tiers'],T['tdesc'],BUDGET_TIER_BOUNDS_USD,strict=True):
         sec(t); rs=[r for r in D if r['hardware_cost_usd'] is not None and lo<r['hardware_cost_usd']<=hi]
         out.append(f"*{d}* · {T['count'].format(n=len(rs))}\n")
         for c,ct in T['cats'].items():

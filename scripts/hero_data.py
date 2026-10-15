@@ -1,6 +1,6 @@
 import json, re
 from pathlib import Path
-from budget import BOUNDS
+from dataset_constants import BUDGET_TIER_BOUNDS_USD, DATA_ASOF
 
 R = Path(__file__).resolve().parent.parent
 PER = 5
@@ -111,11 +111,14 @@ def tier_rows(setups, lo, hi):
     return rows
 
 
-def tiers(setups): return [tier_rows(setups, lo, hi) for lo, hi in BOUNDS]
+def tier_label(lo, hi):
+    k = lambda x: f'{x/1000:g}k'
+    return f'≤ ${k(hi)}' if lo == 0 else f'${k(lo)}–{k(hi)}'
+
+
+TIER_LABELS = [tier_label(lo, hi) for lo, hi in BUDGET_TIER_BOUNDS_USD]
 
 
 def is_used(r): return '二手' in (r.get('hardware_cost_text') or '') or '二手' in r['hardware']
 
 
-def data_asof():
-    m = re.search(r"DATA_ASOF\s*=\s*'([^']+)'", open(R/'scripts/gen_readme.py').read()); return m.group(1) if m else ''

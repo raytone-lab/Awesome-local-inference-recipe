@@ -3,16 +3,39 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 import normalize_engines as N, tag_recipes as T
 
 
+RAW_ENGINE_SAMPLES = {
+    'llama.cpp (vahpetr fork)': 'vahpetr llama.cpp s1-fork',
+    'llama.cpp (OpenBMB fork)': 'llama.cpp-omni b123',
+    'MLX Swift (PrismML fork)': 'PrismML mlx-swift fork',
+    'llama.cpp (PrismML fork)': 'PrismML llama.cpp fork（Metal）',
+    'llama.cpp (agentionai fork)': 'agentionai/llama.cpp fork',
+    'llama.cpp (mirai-s fork)': 'llama.cpp-mirai-s build 7',
+    'llama.cpp': 'llama.cpp b10434',
+    'strata-mlx': 'strata-mlx 0.4.1',
+    'Strata': 'Strata v0.1.42',
+    'oMLX': 'oMLX 0.3', 'TensorFold': 'TensorFold beta', 'DFlash': 'DFlash spec', 'MTPLX': 'MTPLX 2.11.3 serve',
+    'mlx-serve': 'mlx-serve 26.8.11', 'MLX Swift': 'MLX Swift 0.21', 'MLX': 'mlx-lm 0.30.7', 'edge0': 'edge0 runtime',
+    'SGLang': 'SGLang 0.5', 'vLLM': 'vLLM 0.11', 'Splash': 'Splash 1.2', 'Project Maya': 'Project Maya alpha',
+    'Halogen': 'halogen flash server', 'Osaurus': 'Osaurus 1.0', 'ExLlama': 'ExLlamaV3',
+}
+
+
 class EngineRuleOrder(unittest.TestCase):
-    def test_every_canonical_engine_name_maps_to_itself(self):
-        for _, canonical in N.RULES:
-            if canonical is not None:
-                self.assertEqual(N.canon(canonical), canonical, f'an earlier rule shadows {canonical!r}')
+    def test_every_rule_has_a_raw_sample(self):
+        self.assertEqual(sorted(c for _, c in N.RULES if c is not None), sorted(RAW_ENGINE_SAMPLES))
+
+    def test_each_raw_sample_reaches_its_own_rule(self):
+        for canonical, raw in RAW_ENGINE_SAMPLES.items():
+            self.assertEqual(N.canon(raw), canonical, f'an earlier rule shadows {canonical!r} for {raw!r}')
+
+    def test_no_earlier_rule_matches_a_later_rules_sample(self):
+        index = {c: i for i, (_, c) in enumerate(N.RULES)}
+        for canonical, raw in RAW_ENGINE_SAMPLES.items():
+            earlier = [c for p, c in N.RULES[:index[canonical]] if re.search(p, raw, re.I)]
+            self.assertEqual(earlier, [], f'{raw!r} is captured before reaching {canonical!r}')
 
     def test_strata_mlx_is_not_swallowed_by_strata(self):
-        self.assertEqual(N.canon('strata-mlx 0.4.1'), 'strata-mlx')
         self.assertEqual(N.canon('STRATA-MLX'), 'strata-mlx')
-        self.assertEqual(N.canon('Strata v0.1.42'), 'Strata')
 
     def test_canonical_fork_names_are_kept_verbatim(self):
         self.assertEqual(N.canon('llama.cpp (Radiance fork)'), 'llama.cpp (Radiance fork)')
@@ -32,6 +55,7 @@ class FamilyRuleOrder(unittest.TestCase):
 
     def test_wan_requires_version(self):
         self.assertEqual(T.family('Wan2.2'), 'Wan')
+        self.assertEqual(T.family('Wan'), 'Other')
 
 
 if __name__ == '__main__': unittest.main()

@@ -1,6 +1,6 @@
 # Hugging Face model-card speed extraction rules
 
-Rules implemented by `scripts/hf_extract.py`; regression cases live in `tests/test_ingest_hf*.py` and `tests/test_hf_extract_formats.py`. The fixtures in `tests/fixtures/hf/` are the 2026-10-14 batches (29 cards, then 12 v3 cards); expected values are the human review results.
+Rules implemented by `scripts/hf_extract.py`; regression cases live in `tests/test_ingest_hf*.py` and `tests/test_hf_extract_formats.py`. Fixture cards live in `tests/fixtures/hf/`; expected values in the batch tests come from the 2026-10-14 human review.
 
 ## v3 规则（2026-10-14）
 

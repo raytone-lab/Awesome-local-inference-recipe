@@ -60,7 +60,10 @@ def main():
     tag_recipes.apply(normalize_engines.normalize(recipes))
     json.dump(recipes, open(f"{ROOT}/data/recipes.json", "w"), ensure_ascii=False, indent=2)
     json.dump(cand, open(cand_file, "w"), ensure_ascii=False, indent=1)
-    for v in rev["reviews"]:
+    close_merged_candidates(rev["reviews"])
+    print(f"新增 {added}，总计 {len(recipes)}")
+def close_merged_candidates(reviews):
+    for v in reviews:
         if v.get("closes"):
             for f in os.listdir(f"{ROOT}/data/candidates"):
                 if f.endswith(".json") and not f.endswith(".review.json"):
@@ -69,5 +72,4 @@ def main():
                         if c["id"] == v["closes"] and c.get("status") != "merged":
                             c["status"] = "merged"; c["merged_into"] = v["id"]; ch = True
                     if ch: json.dump(d, open(p, "w"), ensure_ascii=False, indent=1)
-    print(f"新增 {added}，总计 {len(recipes)}")
 if __name__ == "__main__": main()

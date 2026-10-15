@@ -2,14 +2,13 @@
 """Render README charts (en / zh-CN / ja). Needs matplotlib + a CJK font (Noto Sans CJK) for zh/ja labels.
 - docs/hero{suf}.png          top measured text setups per model-size group (data/model-params.json), ranked by tok/s per $1,000 of hardware
 - docs/budget-tiers{suf}.png  fastest text setup per README budget tier (measured vs claimed)
-Data: text recipes with tok_s and hardware_cost_usd; deduped per hardware+model (measured preferred, then best tok/s).
 Not part of the CI up-to-date check (PNG bytes vary across matplotlib/font versions). Run: python3 scripts/gen_hero.py"""
 import re
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 from matplotlib import font_manager as fm
-from hero_data import R, BOUNDS, clean, money, params, fmtb, load_setups, measured_with_card, title_row, grouped_rows, rtx3090_baseline, tier_rows, is_used, data_asof
+from hero_data import R, BUDGET_TIER_BOUNDS_USD, DATA_ASOF, TIER_LABELS, clean, money, params, fmtb, load_setups, measured_with_card, title_row, grouped_rows, rtx3090_baseline, tier_rows, is_used
 SUF = {'en':'','zh-CN':'.zh-CN','ja':'.ja'}
 CJK = {'zh-CN':'Noto Sans CJK SC','ja':'Noto Sans CJK JP'}
 FAM = {'Mac':'#7c3aed','NVIDIA 消费级':'#16a34a','DGX Spark':'#0ea5e9','AMD':'#dc2626','二手数据中心卡':'#f59e0b','其他':'#64748b'}
@@ -17,15 +16,15 @@ TX = {
  'en':dict(fam={'Mac':'Mac','NVIDIA 消费级':'NVIDIA consumer','DGX Spark':'DGX Spark','AMD':'AMD','二手数据中心卡':'Used datacenter','其他':'Other'},
    h_title='How much speed does $1,000 buy?  Top 15 measured setups',h_x='tok/s per $1,000 of hardware (single stream, measured)',
    b_title='Fastest setup in each budget tier',b_x='Best single-stream tok/s',meas='measured',claim='claimed / relayed',
-   tiers=['≤ $2.5k','$2.5k–7k','$7k–14k','$14k–30k']),
+   tiers=TIER_LABELS),
  'zh-CN':dict(fam={'Mac':'Mac','NVIDIA 消费级':'NVIDIA 消费级','DGX Spark':'DGX Spark','AMD':'AMD','二手数据中心卡':'二手数据中心卡','其他':'其他'},
    h_title='每 $1000 能买到多少 tok/s？实测前 15 名',h_x='每 $1000 硬件对应的 tok/s（单流，实测）',
    b_title='各预算档最快的配置',b_x='最佳单流 tok/s',meas='实测',claim='宣称 / 转述',
-   tiers=['≤ $2.5k','$2.5k–7k','$7k–14k','$14k–30k']),
+   tiers=TIER_LABELS),
  'ja':dict(fam={'Mac':'Mac','NVIDIA 消费级':'NVIDIA コンシューマー','DGX Spark':'DGX Spark','AMD':'AMD','二手数据中心卡':'中古データセンター','其他':'その他'},
    h_title='$1,000 でどれだけ速くなる？実測トップ 15',h_x='ハードウェア $1,000 あたりの tok/s（1 ストリーム、実測）',
    b_title='予算帯ごとの最速構成',b_x='1 ストリーム最高 tok/s',meas='実測',claim='公称 / 引用',
-   tiers=['≤ $2.5k','$2.5k–7k','$7k–14k','$14k–30k']),
+   tiers=TIER_LABELS),
 }
 U=load_setups()
 def style(ax):
@@ -81,7 +80,7 @@ def hero(lang):
     fig.suptitle(g['t'].format(p=money(first['hardware_cost_usd']),u=h['used'] if is_used(first) else '',hw=re.sub(r' \d+GB$','',hw),m=params(first)['label'],tok=first['tok_s'])+ftxt,x=.012,y=.99,ha='left',fontsize=15,fontweight='bold',color='#0f172a')
     fig.text(.012,1-.62/H,h['sub'],ha='left',fontsize=9,color='#475569')
     fig.text(.012,1-.82/H,g['only'],ha='left',fontsize=8.5,color='#64748b')
-    fig.text(.995,.006,h['note'].format(d=data_asof()),ha='right',fontsize=7.5,color='#94a3b8')
+    fig.text(.995,.006,h['note'].format(d=DATA_ASOF),ha='right',fontsize=7.5,color='#94a3b8')
     style(ax); ax.spines['left'].set_visible(False); ax.grid(axis='x',alpha=.2)
     fams=[k for k in FAM if any(x['hardware_family']==k for kk,x in rows if kk=='r')]
     ax.legend(handles=[Patch(color=FAM[k],label=t['fam'][k]) for k in fams],frameon=False,loc='lower right',fontsize=8.5,ncol=1)
@@ -89,7 +88,7 @@ def hero(lang):
     return fig
 def tiers(lang):
     t=TX[lang]; fig,ax=plt.subplots(figsize=(11,5.4),dpi=150); y=0; ticks=[]; xmax=0; used=set()
-    for name,(lo,hi) in zip(t['tiers'],BOUNDS):
+    for name,(lo,hi) in zip(t['tiers'],BUDGET_TIER_BOUNDS_USD,strict=True):
         rows=tier_rows(U,lo,hi)
         ys=[]
         for r in rows:

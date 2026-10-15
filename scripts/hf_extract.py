@@ -124,6 +124,13 @@ def is_comparator(h, card_text):
     t = re.escape(toks[0])
     return bool(re.search(rf"\bvs\.?\s+(?:uniform\s+|the\s+|stock\s+|plain\s+)?{t}\b|\buniform\s+{t}\b", card_text, re.I))
 
+def metric_name_rows(cells):
+    return [c for c in cells if c and re.match(r"(?:\w+\s)?(token generation|prompt processing|generat\w*|decode|prefill|prompt|tg\d+|pp\d+)\b", clean(c[0]), re.I)]
+
+def is_transposed_table(hdr, cells, metric_rows):
+    return bool(metric_rows) and (len(metric_rows) * 2 >= len(cells) or not re.search(r"t/s|tok/s|tokens?/s|tg\d|pp\d", " ".join(hdr[1:]), re.I)) \
+        and not re.search(r"t/s|tok/s|tg\d|pp\d|decode|prefill", clean(hdr[0]), re.I) and len(hdr) >= 2 and not find_hw(" ".join(clean(c[0]) for c in cells))
+
 def summary_rows_only(cells):
     summary = [c for c in cells if c and SUMMARY_ROW.fullmatch(clean(c[0]))]
     return summary if summary and len(cells) > 2 else cells
@@ -140,8 +147,8 @@ def _table(hdr, rows, before, after, ctx_hw, third_default, card_text=""):
     bpw_col = next((k for k, h in enumerate(hdr) if re.search(r"(?i)bits\s*/\s*weight|\bbpw\b", clean(h))), None)
     headline = bool(re.match(r"(?i)(headline|highlights?|at a glance)\b", clean(hdr[0]))) if hdr else False
     out = []
-    metric_rows = [c for c in cells if c and re.match(r"(?:\w+\s)?(token generation|prompt processing|generat\w*|decode|prefill|prompt|tg\d+|pp\d+)\b", clean(c[0]), re.I)]
-    if metric_rows and (len(metric_rows) * 2 >= len(cells) or not re.search(r"t/s|tok/s|tokens?/s|tg\d|pp\d", " ".join(hdr[1:]), re.I)) and not re.search(r"t/s|tok/s|tg\d|pp\d|decode|prefill", clean(hdr[0]), re.I) and len(hdr) >= 2 and not find_hw(" ".join(clean(c[0]) for c in cells)):
+    metric_rows = metric_name_rows(cells)
+    if is_transposed_table(hdr, cells, metric_rows):
         vcols = [k for k in range(1, len(hdr)) if not BASE_COL.search(clean(hdr[k]))]
         if len([k for k in vcols if VARIANT.search(clean(hdr[k]))]) < 2: vcols = vcols[:1]
         for k in vcols:
@@ -162,7 +169,7 @@ def _table(hdr, rows, before, after, ctx_hw, third_default, card_text=""):
         return out
     kinds = [col_kind(h, [c[k] if k < len(c) else "" for c in cells], len(hdr)) for k, h in enumerate(hdr)]
     sfx = lambda k: " ".join(clean(hdr[k]).lower().split()[1:])
-    has_twin_column = lambda k, t: any(k2 != k and t2 == t and sfx(k2) == sfx(k) for k2, t2 in enumerate(kinds))
+    def has_twin_column(k, kind): return any(k2 != k and t2 == kind and sfx(k2) == sfx(k) for k2, t2 in enumerate(kinds))
     comp = {k for k, t in enumerate(kinds) if t in ("gen", "prefill") and is_comparator(hdr[k], card_text) and has_twin_column(k, t)}
     if comp and any(t == "gen" and k not in comp for k, t in enumerate(kinds)): kinds = [None if k in comp else t for k, t in enumerate(kinds)]
     gen_cols = [k for k, t in enumerate(kinds) if t == "gen" and not (BASE_COL.search(clean(hdr[k])) and any(t2 == "gen" and not BASE_COL.search(clean(hdr[k2])) for k2, t2 in enumerate(kinds) if k2 != k))]

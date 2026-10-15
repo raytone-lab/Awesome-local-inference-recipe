@@ -56,8 +56,13 @@ class Tiers(unittest.TestCase):
         self.assertEqual([r['id'] for r in H.tier_rows(rows, 2500, 7000)], ['b'])
 
     def test_bounds_are_contiguous(self):
-        for (_, hi), (lo, _) in zip(H.BOUNDS, H.BOUNDS[1:]):
+        b = H.BUDGET_TIER_BOUNDS_USD
+        for (_, hi), (lo, _) in zip(b, b[1:]):
             self.assertEqual(hi, lo)
+
+    def test_chart_tier_labels_follow_bounds(self):
+        self.assertEqual(H.TIER_LABELS, ['≤ $2.5k', '$2.5k–7k', '$7k–14k', '$14k–30k'])
+        self.assertEqual(H.tier_label(0, 1000), '≤ $1k')
 
 
 class NoMatplotlib(unittest.TestCase):
