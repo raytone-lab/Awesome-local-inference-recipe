@@ -6,10 +6,12 @@ Data: text recipes with tok_s and hardware_cost_usd; deduped per hardware+model 
 Not part of the CI up-to-date check (PNG bytes vary across matplotlib/font versions). Run: python3 scripts/gen_hero.py"""
 import json, re
 from pathlib import Path
-import matplotlib; matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-from matplotlib.patches import Patch
-from matplotlib import font_manager as fm
+try:  # optional so tests (CI has no matplotlib) can import the data/grouping logic
+    import matplotlib; matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    from matplotlib.patches import Patch
+    from matplotlib import font_manager as fm
+except ImportError: plt=Patch=fm=None
 R = Path(__file__).resolve().parent.parent
 BOUNDS = [(0,2500),(2500,7000),(7000,14000),(14000,30000)]  # keep in sync with gen_readme.py
 SUF = {'en':'','zh-CN':'.zh-CN','ja':'.ja'}
@@ -34,8 +36,8 @@ def clean(s,n):
     return s if len(s)<=n else s[:n-1]+'…'
 def hwkey(s):
     # dedupe key: drop parenthesized asides (dates, notes) but keep any that add hardware ('+64GB RAM'), so different setups never merge
-    s=re.sub(r'[（(]([^）)]*)[）)]',lambda m:' '+m.group(1) if '+' in m.group(1) else '',s)
-    return re.sub(r'\s+',' ',s).strip().lower()
+    s=re.sub(r'[（(]([^）)]*)[）)]',lambda m:' '+m.group(1) if re.search(r'\+\s*\d+\s*GB',m.group(1)) else '',s)
+    return re.sub(r'\s+',' ',re.sub(r'^单\s*','',s)).strip().lower()
 def money(x): return f'${x/1000:.1f}k' if x>=1000 else f'${x:.0f}'
 D=[r for r in json.load(open(R/'data/recipes.json')) if r['category']=='text' and r['tok_s'] and r['hardware_cost_usd']]
 best={}
@@ -78,6 +80,10 @@ GT={'en':dict(dense='Dense ≥27B',big='Big MoE (≥100B total)',mid='Mid MoE (<
     'ja':dict(dense='Dense ≥27B',big='大型 MoE（総パラメータ ≥100B）',mid='中型 MoE（総 <100B、アクティブ ≥5B）',small='小型 MoE（総 <100B、アクティブ <5B）',act='アクティブ {a}',tot='アクティブ {a} / 総 {t}',
               t='{p} の {u}{hw} で {m} が {tok:g} tok/s',flag='（{f}）',tern='3 値量子化',mtp='MTP',sep=' + ',only='dGPU 行は GPU 本体価格のみ（大型 MoE 構成は大容量のメインメモリも必要）· Mac / DGX Spark は本体一式 · 公式パラメータカードのあるモデルのみ（data/model-params.json）')}
 PER=5
+def title_row():
+    meas=[r for r in U if r['_m'] and params(r)]
+    dense=[r for r in meas if dict(GROUPS)['dense'](params(r))]
+    return min(dense or meas,key=lambda r:(-r['_v'],r['id']))
 def hero(lang):
     t=TX[lang]; h=HT[lang]; g=GT[lang]
     meas=[r for r in U if r['_m'] and params(r)]
@@ -86,8 +92,7 @@ def hero(lang):
         rs=sorted([r for r in meas if ok(params(r))],key=lambda r:(-r['_v'],r['id']))[:PER]
         if rs: rows.append(('h',g[key])); rows+= [('r',r) for r in rs]
         if rs and key=='big': span=(len(rows)-len(rs)-1,len(rows)-1)
-    dense=[x for k,x in rows if k=='r' and params(x)['arch']=='dense']
-    first=min(dense or [x for k,x in rows if k=='r'],key=lambda r:(-r['_v'],r['id']))
+    first=title_row()
     n=len(rows); H=1.2+.42*n; fig,ax=plt.subplots(figsize=(11.5,H),dpi=150)
     vmax=max(x['_v'] for k,x in rows if k=='r')
     for i,(k,x) in enumerate(rows):
@@ -104,7 +109,7 @@ def hero(lang):
         pa=g['act'].format(a=fmtb(m['active_b'])) if m['arch']=='dense' else g['tot'].format(a=fmtb(m['active_b']),t=m.get('total_label') or fmtb(m['total_b']))
         ax.text(-.012,y-.24,f"{clean(m['label'],26)} · {pa}",transform=ax.get_yaxis_transform(),ha='right',va='center',fontsize=7.3,color='#94a3b8')
     ax.set_yticks([]); ax.set_ylim(-.7,n-.3)
-    # bare single-3090 rows only (raw hardware string, so '+RAM' setups are excluded; dedupe also keys on raw strings), Big MoE models only, so the line is a like-for-like reference
+    # bare single-3090 rows only (raw hardware string, so '+RAM' setups are excluded; dedupe via hwkey() keeps '+NNGB' asides too), Big MoE models only, so the line is a like-for-like reference
     b=[r for r in meas if re.fullmatch(r'(单 )?RTX 3090( 24GB)?',r['hardware'].strip()) and dict(GROUPS)['big'](params(r))]
     if b and span:  # span=(header idx, last row idx); 3090 baseline is only comparable to the Big MoE rows (same offload regime); draw it inside that group
         bv=max(r['_v'] for r in b); y0,y1=n-1-span[1]-.45,n-1-span[0]+.1

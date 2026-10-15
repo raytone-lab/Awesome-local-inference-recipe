@@ -34,7 +34,7 @@ class ModelParams(unittest.TestCase):
         for name in ('Qwen3.8-27B', 'Qwen3.8-Flash-Next', 'LFM2.5-24B-A2B', 'Bonsai2 27B'):
             self.assertIsNotNone(self.match(name), name)
     def test_hero_groups_on_real_data(self):
-        import importlib.util, sys
+        import importlib.util
         spec = importlib.util.spec_from_file_location('gen_hero', R / 'scripts/gen_hero.py'); gh = importlib.util.module_from_spec(spec); spec.loader.exec_module(gh)
         meas = [r for r in gh.U if r['_m'] and gh.params(r)]
         counts = {k: sum(1 for r in meas if ok(gh.params(r))) for k, ok in gh.GROUPS}
@@ -42,7 +42,10 @@ class ModelParams(unittest.TestCase):
         self.assertGreater(counts['dense'], 0, counts)  # title is taken from Dense
         empty = [k for k, v in counts.items() if not v]
         if empty: warnings.warn(f'hero groups with no measured rows (not drawn): {empty}')
-    def test_title_ternary_flag_row_backed(self):
-        x = next(r for r in self.D if r['id'] == 'x-031')
-        self.assertIn('ternary', x['tags']); self.assertIn('MTP', x['tags'])
+    def test_title_flags_row_backed(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location('gen_hero', R / 'scripts/gen_hero.py'); gh = importlib.util.module_from_spec(spec); spec.loader.exec_module(gh)
+        first = gh.title_row()
+        self.assertTrue(gh.params(first), first['id'])
+        if 'ternary' in first['tags']: self.assertRegex(first.get('quant') or '', r'(?i)ternary|TQ[12]_0', first['id'])
 if __name__ == '__main__': unittest.main()
