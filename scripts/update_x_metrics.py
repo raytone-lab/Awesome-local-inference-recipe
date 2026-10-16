@@ -3,7 +3,8 @@
 
 Live: X_BEARER_TOKEN=... python3 scripts/update_x_metrics.py
 Offline: python3 scripts/update_x_metrics.py --posts posts.json --users users.json --as-of 2026-10-16
-(--posts / --users take saved X API v2 responses with public_metrics.)"""
+(--posts / --users take saved X API v2 responses with public_metrics.)
+Then re-run gen_readme.py, gen_recipe_pages.py and gen_site.py."""
 import argparse, datetime, json, os, re, urllib.parse, urllib.request
 from pathlib import Path
 R = Path(__file__).resolve().parent.parent
@@ -50,7 +51,7 @@ def apply_users(sources, users, as_of):
     for s in sources['sources']:
         h = x_handle(s.get('url'))
         if h and h.lower() in m: s['followers'] = m[h.lower()]; n += 1
-    sources['followers_as_of'] = as_of
+    sources['followers_as_of'] = sources['updated'] = as_of
     sources['note'] = re.sub(r'Follower counts from X API on \d{4}-\d{2}-\d{2}', 'Follower counts from X API on ' + as_of, sources['note'])
     return n
 

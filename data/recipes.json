@@ -7432,7 +7432,7 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/MiaAI_lab/status/2090327658508763516",
-    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取）",
+    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取；300 取自帖文，mia-ai.net 列 240+）",
     "source_level": "实测",
     "date": "2026-08-20",
     "x_post": {
@@ -7450,7 +7450,8 @@
     "measured_by": "MiaAI_lab",
     "source_id": "src-671103a20a",
     "engine_raw": "SGLang + DFlash2（据 mia-ai.net）",
-    "engine_note": "SGLang + DFlash2（据 mia-ai.net）"
+    "engine_note": "SGLang + DFlash2（据 mia-ai.net）",
+    "metric_en": "about 300 tok/s (post); mia-ai.net lists 240+ at 8 requests"
   },
   {
     "id": "x-026",

@@ -20,14 +20,14 @@
 
 ### 注目の記録
 
-| 記録               | モデル · エンジン                      | ハードウェア                                                   | 結果               | 出典                                                                       |
-| ---------------- | ------------------------------- | -------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------ |
-| Mac で最速          | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra · 約 5,649 ドル（ピーク値、最小構成価格、検証機のメモリは不明） | **130 tok/s** ✅  | [出典](https://x.com/ivanfioravanti/status/2104183112611614780)            |
-| RTX 5090 1 枚で最速  | Qwen3.8-Flash-Next · Strata     | RTX 5090 + 256GB RAM · 約 5,400 ドル（GPU のみ、256GB RAM 別）    | **176 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483) |
-| AMD で最速          | Qwen3.8-Flash-Next · Strata     | AMD Radeon AI PRO R9700 · 約 1,600 ドル                     | **100 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376) |
-| 中古データセンター GPU    | Qwen3.8-Flash-Next · Strata     | 2× Tesla V100 32GB PCIe                                  | **120 tok/s** ✅  | [@rewin123](https://x.com/rewin123/status/2108669905616736529)           |
-| DGX Spark 1 台で最速 | Qwen3.8-Flash-Next · ExLlama    | 1× DGX Spark · 約 6,950 ドル                                | **71.7 tok/s** ✅ | [出典](https://x.com/yume_arasaki/status/2101741448811229219)              |
-| いちばん安い構成         | Qwen3.8-Flash-Next · Strata     | Tesla P40 24GB · 約 405 ドル                                | **30 tok/s** ✅   | [出典](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md)    |
+| 記録               | モデル · エンジン                      | ハードウェア                                                                 | 結果               | 出典                                                                       |
+| ---------------- | ------------------------------- | ---------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------ |
+| Mac で最速          | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra · 約 5,649 ドル（ピーク値、最小構成価格、検証機のメモリは不明）               | **130 tok/s** ✅  | [出典](https://x.com/ivanfioravanti/status/2104183112611614780)            |
+| RTX 5090 1 枚で最速  | Qwen3.8-Flash-Next · Strata     | RTX 5090 + 256GB RAM · 約 5,400 ドル（GPU のみ、256GB RAM 別。実売価格、MSRP $1,999） | **176 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483) |
+| AMD で最速          | Qwen3.8-Flash-Next · Strata     | AMD Radeon AI PRO R9700 · 約 1,600 ドル                                   | **100 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376) |
+| 中古データセンター GPU    | Qwen3.8-Flash-Next · Strata     | 2× Tesla V100 32GB PCIe                                                | **120 tok/s** ✅  | [@rewin123](https://x.com/rewin123/status/2108669905616736529)           |
+| DGX Spark 1 台で最速 | Qwen3.8-Flash-Next · ExLlama    | 1× DGX Spark · 約 6,950 ドル                                              | **71.7 tok/s** ✅ | [出典](https://x.com/yume_arasaki/status/2101741448811229219)              |
+| いちばん安い構成         | Qwen3.8-Flash-Next · Strata     | Tesla P40 24GB · 約 405 ドル                                              | **30 tok/s** ✅   | [出典](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md)    |
 
 <sub>1 ストリームの生成速度で、いずれも出典からの引用です。価格は公開されている最安のハードウェア価格。✅ = 投稿者本人の実測。</sub>
 

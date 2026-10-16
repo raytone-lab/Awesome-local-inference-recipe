@@ -119,7 +119,7 @@ HL = {
    note='1 ストリームの生成速度で、いずれも出典からの引用です。価格は公開されている最安のハードウェア価格。✅ = 投稿者本人の実測。',
    alt='棒グラフ：モデル規模別（Dense ≥27B・大型 MoE 総 ≥100B・中型 MoE 総 <100B／アクティブ ≥5B・小型 MoE アクティブ <5B、アクティブパラメータ表示、公式パラメータカードのあるモデルのみ）に、ハードウェア $1,000 あたりの tok/s で並べた実測テキスト構成（ハードウェア分類で色分け）', cost='約 {c:,} ドル'),
 }
-PNOTE = {'x-006':{'en':'card only, excl. 256GB RAM','zh':'仅显卡，不含 256GB 内存','ja':'GPU のみ、256GB RAM 別'},
+PNOTE = {'x-006':{'en':'card only, excl. 256GB RAM; street price, MSRP $1,999','zh':'仅显卡，不含 256GB 内存；街价，MSRP $1,999','ja':'GPU のみ、256GB RAM 別。実売価格、MSRP $1,999'},
  'text-092':{'en':'peak figure; base config price, test machine memory not stated','zh':'峰值；起步配置价格，原帖未注明测试机内存','ja':'ピーク値、最小構成価格、検証機のメモリは不明'}}
 def hero(lang, E):
     H=HL[lang]; T=L[lang]; byid={r['id']:r for r in D}
