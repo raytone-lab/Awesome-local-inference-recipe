@@ -12774,7 +12774,7 @@
     "id": "text-134",
     "category": "text",
     "model": "Swift-1.5-Qwen3.8-Flash-Next",
-    "quant": "NVFP4+FP8（Ninfer6000）",
+    "quant": "NVFP4+FP8 · MTP 3（Ninfer6000）",
     "engine": "ninfer",
     "hardware": "RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 5600X",
     "hardware_family": "其他",
@@ -12792,7 +12792,7 @@
     "measured_by": "dboybaker",
     "metric_en": "decode mean ~238 tok/s (Ninfer6000 blog sweep mean; MTP 3 draft)",
     "en": {
-      "quant": "NVFP4+FP8 (Ninfer6000)",
+      "quant": "NVFP4+FP8 · MTP 3 (Ninfer6000)",
       "hardware": "RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 5600X",
       "hardware_cost_text": "$15,999 lowest tracked (new card, 2026-10-13)",
       "source_note": "demietrich.com engine comparison blog; hardware details from same-post r/LocalLLaMA u/dboybaker (600W / Ryzen 5 5600X)",
