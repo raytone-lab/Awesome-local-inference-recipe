@@ -11,13 +11,13 @@
 
 ## モデル
 
-- Qwen3.8-27B · `ShapeLearn GPU-1`
+- Qwen3.8-27B · `ShapeLearn mixed quantization GPU-1 (2.56 bpw, label IQ2_XXS)`
 - ダウンロード: [huggingface.co/byteshape/Qwen3.8-27B-GGUF](https://huggingface.co/byteshape/Qwen3.8-27B-GGUF)
 
 ## エンジン
 
 - llama.cpp — インストール： https://github.com/ggml-org/llama.cpp
-- 備考: llama.cpp
+- 備考: llama.cpp (-np 1 -fa on)
 
 ## 起動コマンド
 
@@ -30,7 +30,7 @@ llama-server -hf byteshape/Qwen3.8-27B-GGUF:<tag> --spec-type draft-mtp --spec-d
 ## 主なパラメータ
 
 - コンテキスト: —
-- 同時実行: —
+- 同時実行: single stream (-np 1)
 - タグ: `2bit`, `dense`
 
 ## 想定速度

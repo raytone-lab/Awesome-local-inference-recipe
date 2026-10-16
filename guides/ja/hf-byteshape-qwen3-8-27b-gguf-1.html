@@ -3,7 +3,7 @@
 <link rel="canonical" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/ja/hf-byteshape-qwen3-8-27b-gguf-1.html"><link rel="alternate" hreflang="en" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/hf-byteshape-qwen3-8-27b-gguf-1.html"><link rel="alternate" hreflang="zh-CN" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/zh-CN/hf-byteshape-qwen3-8-27b-gguf-1.html"><link rel="alternate" hreflang="ja" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/ja/hf-byteshape-qwen3-8-27b-gguf-1.html"><link rel="alternate" hreflang="x-default" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/hf-byteshape-qwen3-8-27b-gguf-1.html">
 <meta property="og:type" content="article"><meta property="og:title" content="Qwen3.8-27B · llama.cpp · RTX 5090 32GB"><meta property="og:description" content="Qwen3.8-27B · llama.cpp · RTX 5090 32GB の実行ガイド：ハードウェア、エンジン、起動コマンド、出典付きの速度（主張）。"><meta property="og:url" content="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/ja/hf-byteshape-qwen3-8-27b-gguf-1.html"><meta property="og:image" content="https://raytone-lab.github.io/awesome-local-inference-recipes/docs/og.png"><meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../../style.css"><script src="../../theme.js"></script></head><body>
-<header class="site-hd"><div class="hd-in"><a class="brand" href="../../index.html">⚡ Local Inference Recipes</a><nav class="static-links"><a href="../../explore.html">エクスプローラー</a> · <a href="../../guides/index.html">ガイド</a> · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a></nav></div></header>
+<header class="site-hd"><div class="hd-in"><a class="brand" href="../../index.html">⚡ ローカル推論レシピ</a><nav class="static-links"><a href="../../explore.html">エクスプローラー</a> · <a href="../../guides/index.html">ガイド</a> · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a></nav></div></header>
 <main class="doc static-page">
 <h1>Qwen3.8-27B · llama.cpp · RTX 5090 32GB</h1>
 <p><a href="../../guides/hf-byteshape-qwen3-8-27b-gguf-1.html">English</a> | <a href="../../guides/zh-CN/hf-byteshape-qwen3-8-27b-gguf-1.html">简体中文</a> | <b>日本語</b> · <a href="../../guides/index.html">← 一覧に戻る</a></p>
@@ -15,13 +15,13 @@
 </ul>
 <h2>モデル</h2>
 <ul>
-<li>Qwen3.8-27B · <code>ShapeLearn GPU-1</code></li>
+<li>Qwen3.8-27B · <code>ShapeLearn mixed quantization GPU-1 (2.56 bpw, label IQ2_XXS)</code></li>
 <li>ダウンロード: <a href="https://huggingface.co/byteshape/Qwen3.8-27B-GGUF" rel="nofollow noopener">huggingface.co/byteshape/Qwen3.8-27B-GGUF</a></li>
 </ul>
 <h2>エンジン</h2>
 <ul>
 <li>llama.cpp — インストール： https://github.com/ggml-org/llama.cpp</li>
-<li>備考: llama.cpp</li>
+<li>備考: llama.cpp (-np 1 -fa on)</li>
 </ul>
 <h2>起動コマンド</h2>
 <pre><code>llama-server -hf byteshape/Qwen3.8-27B-GGUF:&lt;tag&gt; --spec-type draft-mtp --spec-draft-n-max 3</code></pre>
@@ -29,7 +29,7 @@
 <h2>主なパラメータ</h2>
 <ul>
 <li>コンテキスト: —</li>
-<li>同時実行: —</li>
+<li>同時実行: single stream (-np 1)</li>
 <li>タグ: <code>2bit</code>, <code>dense</code></li>
 </ul>
 <h2>想定速度</h2>
@@ -47,4 +47,4 @@
 <li>権利は元の投稿者にあります。このページは要約とリンクのみです。データは CC BY 4.0。</li>
 </ul>
 <p class="na">ソースファイル: <a href="https://github.com/raytone-lab/awesome-local-inference-recipes/blob/main/recipes/hf-byteshape-qwen3-8-27b-gguf-1.ja.md">recipes/hf-byteshape-qwen3-8-27b-gguf-1.ja.md</a></p>
-</main><footer class="site-ft"><div class="ft-in">データ時点 2026-10-15 · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a> · data CC BY 4.0</div></footer></body></html>
+</main><footer class="site-ft"><div class="ft-in">データ時点 2026-10-15 · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a> · データ CC BY 4.0</div></footer></body></html>

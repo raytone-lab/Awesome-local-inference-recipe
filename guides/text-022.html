@@ -15,7 +15,7 @@
 </ul>
 <h2>Model</h2>
 <ul>
-<li>Qwen3.8-Flash-Next · <code>Cruz exllamav3 fork · EXL3 3.05bpw · · 8-bit KV</code></li>
+<li>Qwen3.8-Flash-Next · <code>Cruz exllamav3 fork · EXL3 3.05bpw · draft depth 5 · 8-bit KV</code></li>
 <li>Download: not published, see source</li>
 </ul>
 <h2>Engine</h2>
@@ -26,13 +26,13 @@
 <p>Command not published — see source.</p>
 <h2>Key parameters</h2>
 <ul>
-<li>Context: 262K</li>
-<li>Concurrency: 1</li>
+<li>Context: 262K (243K needle test 15/15)</li>
+<li>Concurrency: native engine only 1 stream (separate vLLM concurrent lane also exists)</li>
 <li>Tags: <code>3bit</code>, <code>8bit</code>, <code>long-context</code>, <code>speculative</code></li>
 </ul>
 <h2>Expected speed</h2>
 <ul>
-<li>71.7 tok/s (generation) (✅ Measured)</li>
+<li>code 102.6; prose 71.7; JSON 66.2 tok/s (✅ Measured)</li>
 </ul>
 <h2>Caveats</h2>
 <ul>

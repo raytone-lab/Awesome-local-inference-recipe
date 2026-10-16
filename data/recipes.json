@@ -25,7 +25,14 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-bca476fd34"
+    "source_id": "src-bca476fd34",
+    "metric_en": "94 tok/s generation; 2,650 tok/s prefill (32K prompt)",
+    "en": {
+      "quant": "Strata · Q2_0 (MTP speculative decoding)",
+      "context": "Up to 262K (README: 45–95 tok/s across the full 262K range)",
+      "concurrency": "Default 1 stream (can set parallel:2)",
+      "source_note": "Strata README / paper"
+    }
   },
   {
     "id": "text-002",
@@ -50,7 +57,12 @@
     "tags": [
       "3bit"
     ],
-    "source_id": "src-bca476fd34"
+    "source_id": "src-bca476fd34",
+    "metric_en": "53 tok/s; 1,620 tok/s prefill",
+    "en": {
+      "context": "32K tested",
+      "concurrency": "Default 1 stream"
+    }
   },
   {
     "id": "text-003",
@@ -75,7 +87,13 @@
     "tags": [
       "2bit"
     ],
-    "source_id": "src-bca476fd34"
+    "source_id": "src-bca476fd34",
+    "metric_en": "60 / 52 tok/s; 1,160 / 1,110 prefill",
+    "en": {
+      "context": "32K tested",
+      "concurrency": "Default 1 stream",
+      "hardware_cost_text": "≈$975 (eBay median, vramglass table)"
+    }
   },
   {
     "id": "text-004",
@@ -100,7 +118,13 @@
     "tags": [
       "3bit"
     ],
-    "source_id": "src-87c3eed337"
+    "source_id": "src-87c3eed337",
+    "metric_en": "160 tok/s (llama.cpp on the same card 15 tok/s)",
+    "en": {
+      "hardware": "RTX 5090 (RAM not stated)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "@yume_arasaki relaying EpicMaan"
+    }
   },
   {
     "id": "text-005",
@@ -126,7 +150,14 @@
       "3bit",
       "long-context"
     ],
-    "source_id": "src-e4eb55a0bb"
+    "source_id": "src-e4eb55a0bb",
+    "metric_en": "150–200 tok/s decode; 5–6K prefill",
+    "en": {
+      "hardware": "RTX 5090 (power limited) + 96GB DDR5-6400",
+      "context": "128K (8-bit KV)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "@kreia relaying r/LocalLLaMA"
+    }
   },
   {
     "id": "text-006",
@@ -151,7 +182,11 @@
     "tags": [
       "3bit"
     ],
-    "source_id": "src-6d6cbf1b1e"
+    "source_id": "src-6d6cbf1b1e",
+    "metric_en": "123.4 tok/s live; full run 115+",
+    "en": {
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "text-007",
@@ -177,7 +212,14 @@
       "3bit",
       "long-context"
     ],
-    "source_id": "src-1dcae268a2"
+    "source_id": "src-1dcae268a2",
+    "metric_en": "120.8 tok/s live; 2,000 PP",
+    "en": {
+      "quant": "Strata · IQ3_S (GSQ-RCO)",
+      "hardware": "single RTX 3090 24GB + 64GB RAM (RAM see same author's earlier post)",
+      "context": "256K configuration",
+      "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)"
+    }
   },
   {
     "id": "text-008",
@@ -203,7 +245,13 @@
       "3bit",
       "long-context"
     ],
-    "source_id": "src-46c063899f"
+    "source_id": "src-46c063899f",
+    "metric_en": "72 tok/s decode",
+    "en": {
+      "quant": "Strata · IQ3_S (GSQ-RCO)",
+      "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)",
+      "source_note": "@needmorevram; independent corroboration: Strata PR #2390 (3090 UD-IQ4_XS short chat 65.5, agent 74.8 tok/s) https://github.com/Niko1221/Strata/pull/2390"
+    }
   },
   {
     "id": "text-009",
@@ -228,7 +276,11 @@
     "tags": [
       "3bit"
     ],
-    "source_id": "src-f152825317"
+    "source_id": "src-f152825317",
+    "en": {
+      "hardware": "RTX 3090 + 32GB RAM (single card) / +2070S (32GB combined)",
+      "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)"
+    }
   },
   {
     "id": "text-010",
@@ -255,7 +307,12 @@
       "2bit",
       "long-context"
     ],
-    "source_id": "src-e814f171a0"
+    "source_id": "src-e814f171a0",
+    "en": {
+      "quant": "Strata (author's modified version) · Swift 1.5 IQ2_XS",
+      "hardware_cost_text": "≈$2,214 (used, sold 2026-10-06)",
+      "source_note": "@Knuckles_XBT; author's own modified Strata (post/images include no code or patch), 1× RTX 4090 limited to 350W + Ryzen 9 7950X + 32GB DDR5; no logs, not reproducible, counted as claimed"
+    }
   },
   {
     "id": "text-011",
@@ -280,7 +337,12 @@
     "tags": [
       "3bit"
     ],
-    "source_id": "src-87c3eed337"
+    "source_id": "src-87c3eed337",
+    "metric_en": "60 tok/s; 2,500 PP",
+    "en": {
+      "hardware_cost_text": "≈$2,214 (used, sold 2026-10-06)",
+      "source_note": "@yume_arasaki relaying 5000e12"
+    }
   },
   {
     "id": "text-012",
@@ -307,7 +369,14 @@
       "MoE",
       "offload"
     ],
-    "source_id": "src-8aecb1e83d"
+    "source_id": "src-8aecb1e83d",
+    "metric_en": "4090: 25→up to 41; 5090: 31→up to 68 tok/s",
+    "en": {
+      "quant": "llama.cpp PR #29887 MoE expert GPU cache · Q4 (94GB)",
+      "hardware": "RTX 4090 / RTX 5090 + system RAM",
+      "hardware_cost_text": "≈$2,214 (used, sold 2026-10-06) / $5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "PR author data (relayed by @BTC_Cracker)"
+    }
   },
   {
     "id": "text-013",
@@ -337,7 +406,13 @@
       "MTP",
       "offload"
     ],
-    "source_id": "src-87c3eed337"
+    "source_id": "src-87c3eed337",
+    "metric_en": "28 tok/s (sustained over 1.59M tokens) / 38.6 tok/s",
+    "en": {
+      "quant": "llama.cpp UD-Q2_K_XL expert offload / EXL3 2.5bpw+MTP",
+      "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)",
+      "source_note": "@yume_arasaki relaying eirrann_art / r0b0tlab"
+    }
   },
   {
     "id": "text-014",
@@ -364,7 +439,12 @@
       "long-context",
       "multi-GPU"
     ],
-    "source_id": "src-c3a764e860"
+    "source_id": "src-c3a764e860",
+    "metric_en": "100+ tok/s; 900–1,200 PP",
+    "en": {
+      "hardware": "2× RTX 3090 + 80GB DDR4 (used HP Z840)",
+      "hardware_cost_text": "≈$2,412–2,998 (2×3090, card only)"
+    }
   },
   {
     "id": "text-015",
@@ -390,7 +470,11 @@
       "3bit",
       "long-context"
     ],
-    "source_id": "src-34c8adae1e"
+    "source_id": "src-34c8adae1e",
+    "metric_en": "68.3 tok/s; 1,623 PP",
+    "en": {
+      "quant": "Strata · IQ3_S (GSQ-RCO)"
+    }
   },
   {
     "id": "text-016",
@@ -416,7 +500,11 @@
       "3bit",
       "long-context"
     ],
-    "source_id": "src-08a6413ff5"
+    "source_id": "src-08a6413ff5",
+    "metric_en": "32K: 66.7 tok/s / 3,278 PP; 128K: 68.1 / 3,160",
+    "en": {
+      "context": "128K tested"
+    }
   },
   {
     "id": "text-017",
@@ -442,7 +530,13 @@
       "long-context",
       "multi-GPU"
     ],
-    "source_id": "src-87c3eed337"
+    "source_id": "src-87c3eed337",
+    "en": {
+      "quant": "Strata + custom quantization",
+      "hardware": "2× Tesla V100 32GB (used)",
+      "hardware_cost_text": "≈$1,300–1,400 (2 cards, card only)",
+      "source_note": "@yume_arasaki relaying ryu15"
+    }
   },
   {
     "id": "text-018",
@@ -469,7 +563,11 @@
       "multi-GPU",
       "abliterated"
     ],
-    "source_id": "src-bc9360492e"
+    "source_id": "src-bc9360492e",
+    "metric_en": "78 tok/s @32K; 56 tok/s @262K",
+    "en": {
+      "hardware_cost_text": "V100 $650–700 each (used, 2026-09/10)"
+    }
   },
   {
     "id": "text-019",
@@ -496,7 +594,14 @@
       "MTP",
       "multi-GPU"
     ],
-    "source_id": "src-0d80b902df"
+    "source_id": "src-0d80b902df",
+    "metric_en": "40.0–49.8 tok/s sustained; cumulative mean 42.39",
+    "en": {
+      "quant": "Strata ROCm/HIP port (spec 4, MTP)",
+      "hardware": "2× AMD Instinct MI50 (gfx906, used)",
+      "context": "83K–100K test",
+      "hardware_cost_text": "≈$734/card eBay (2026-10-13); Alibaba-ecosystem suppliers $120–210"
+    }
   },
   {
     "id": "text-020",
@@ -523,7 +628,13 @@
       "long-context",
       "multi-GPU"
     ],
-    "source_id": "src-f55421a83d"
+    "source_id": "src-f55421a83d",
+    "metric_en": "50.1 / 47.8 / 45.7 tok/s (4K/32K/128K); ~520 PP",
+    "en": {
+      "quant": "Strata gfx906 build · IQ1_M",
+      "hardware_cost_text": "≈$734/card eBay (2026-10-13); Alibaba-ecosystem suppliers $120–210",
+      "source_note": "Strata OLDER_GPUS.md (community contribution #677)"
+    }
   },
   {
     "id": "text-021",
@@ -548,7 +659,14 @@
     "tags": [
       "3bit"
     ],
-    "source_id": "src-f55421a83d"
+    "source_id": "src-f55421a83d",
+    "metric_en": "30–33 tok/s decode; 217–374 PP",
+    "en": {
+      "quant": "Strata · IQ3_S (engine 0.1.30)",
+      "hardware": "Tesla P40 24GB (used)",
+      "hardware_cost_text": "≈$405 (eBay listing median, 2026-10)",
+      "source_note": "Strata OLDER_GPUS.md (#395)"
+    }
   },
   {
     "id": "text-022",
@@ -576,7 +694,15 @@
       "long-context",
       "speculative"
     ],
-    "source_id": "src-abb408b53c"
+    "source_id": "src-abb408b53c",
+    "metric_en": "code 102.6; prose 71.7; JSON 66.2 tok/s",
+    "en": {
+      "quant": "Cruz exllamav3 fork · EXL3 3.05bpw · draft depth 5 · 8-bit KV",
+      "context": "262K (243K needle test 15/15)",
+      "concurrency": "native engine only 1 stream (separate vLLM concurrent lane also exists)",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@yume_arasaki self-tested"
+    }
   },
   {
     "id": "text-023",
@@ -601,7 +727,15 @@
     "tags": [
       "long-context"
     ],
-    "source_id": "src-03f081c85a"
+    "source_id": "src-03f081c85a",
+    "metric_en": "Prose 50.7 (1 stream) → 122.9 (4) → 189.6 (8) → 282.6 (16); author's table says 322 at 16 streams",
+    "en": {
+      "quant": "vr8vr8 v5.1 vLLM + RecoverSSM (preview)",
+      "context": "262K (flat ~49 tok/s)",
+      "concurrency": "16 streams",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@yume_arasaki self-tested"
+    }
   },
   {
     "id": "text-024",
@@ -626,7 +760,14 @@
     "tags": [
       "long-context"
     ],
-    "source_id": "src-5e67752577"
+    "source_id": "src-5e67752577",
+    "metric_en": "single-stream prose 63.6; 4 streams total 114.5",
+    "en": {
+      "quant": "Mia TensorFold recipe",
+      "concurrency": "5 streams",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@yume_arasaki (Mia data + reproduction)"
+    }
   },
   {
     "id": "text-025",
@@ -652,7 +793,15 @@
       "long-context",
       "multi-GPU"
     ],
-    "source_id": "src-63dff07172"
+    "source_id": "src-63dff07172",
+    "metric_en": "Prose 81.6; structured 138.3; code 133.2; 4 streams structured total 383.1",
+    "en": {
+      "quant": "vr8vr8 v4.1 recipe (vLLM, TP=2)",
+      "context": "900K needle test 18/18 (YaRN)",
+      "concurrency": "4 streams (test)",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "source_note": "@yume_arasaki self-tested"
+    }
   },
   {
     "id": "text-026",
@@ -679,7 +828,13 @@
       "MoE",
       "multi-GPU"
     ],
-    "source_id": "src-8929978dc2"
+    "source_id": "src-8929978dc2",
+    "metric_en": "67.4 / 89.3 tok/s (author says the latter loses about 10% general capability)",
+    "en": {
+      "quant": "TensorFold · NVFP4 full model / INT4-AutoRound expert-pruned",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "source_note": "@llm_frontier_jp compiling Mia's AI Lab"
+    }
   },
   {
     "id": "text-027",
@@ -705,7 +860,14 @@
     "tags": [
       "speculative"
     ],
-    "source_id": "src-f4049241a7"
+    "source_id": "src-f4049241a7",
+    "metric_en": "44–59 tok/s; ~1,400 PP",
+    "en": {
+      "quant": "Open-source engine + speculative decoding",
+      "hardware": "AMD Strix Halo 128GB mini PC",
+      "hardware_cost_text": "$3,149 (Framework 128GB, out of stock, 2026-10)",
+      "source_note": "@kreia relaying r/LocalLLaMA"
+    }
   },
   {
     "id": "text-028",
@@ -729,7 +891,11 @@
     "engine_raw": "其他/未注明",
     "model_family": "Qwen",
     "tags": [],
-    "source_id": "src-00bad3d565"
+    "source_id": "src-00bad3d565",
+    "metric_en": "38.0 tok/s average (old llama.cpp 13.9)",
+    "en": {
+      "hardware_cost_text": "$3,149 (Framework 128GB, out of stock, 2026-10)"
+    }
   },
   {
     "id": "text-029",
@@ -759,7 +925,14 @@
       "multi-GPU"
     ],
     "source_id": "src-987e1bb8bd",
-    "engine_fork": "Radiance"
+    "engine_fork": "Radiance",
+    "metric_en": "48K/user: 538.5 tok/s total decode; 128K/user: 365",
+    "en": {
+      "context": "128K/user",
+      "concurrency": "16 concurrent",
+      "hardware_cost_text": "$18,000 (whole system, poster's quote)",
+      "source_note": "@richgel999 relaying r/LocalLLaMA"
+    }
   },
   {
     "id": "text-030",
@@ -782,7 +955,11 @@
     "date": null,
     "model_family": "Qwen",
     "tags": [],
-    "source_id": "src-6d7b2dee32"
+    "source_id": "src-6d7b2dee32",
+    "en": {
+      "hardware": "Mac M4 Pro 48GB (model not stated)",
+      "hardware_cost_text": "$2,399 (MBP14 M4 Pro 48GB list price)"
+    }
   },
   {
     "id": "text-031",
@@ -809,7 +986,11 @@
       "MoE",
       "offload"
     ],
-    "source_id": "src-77d360cc7f"
+    "source_id": "src-77d360cc7f",
+    "metric_en": "stock 11 / best 11 tok/s (author says it barely runs)",
+    "en": {
+      "quant": "stock (expert offload)"
+    }
   },
   {
     "id": "text-032",
@@ -837,7 +1018,14 @@
       "speculative",
       "offload"
     ],
-    "source_id": "src-e6ab729823"
+    "source_id": "src-e6ab729823",
+    "metric_en": "Decode 26–29 tok/s; PP up to ~149; resident ~39GB",
+    "en": {
+      "quant": "experts pruned 512→288 · 4-bit · oMLX (PLE n-gram table kept on NVMe)",
+      "hardware": "Mac M4 Pro 48GB (model not stated)",
+      "context": "measured max input 8,217 tokens (48GB limit)",
+      "hardware_cost_text": "$2,399 (MBP14 M4 Pro 48GB list price)"
+    }
   },
   {
     "id": "text-033",
@@ -863,7 +1051,8 @@
       "4bit",
       "MoE"
     ],
-    "source_id": "src-96399c71ec"
+    "source_id": "src-96399c71ec",
+    "metric_en": "21.2 tok/s (coding agent); ~190 PP"
   },
   {
     "id": "text-034",
@@ -889,7 +1078,12 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-77d360cc7f"
+    "source_id": "src-77d360cc7f",
+    "metric_en": "Best 83 tok/s; 4 streams total 224",
+    "en": {
+      "concurrency": "4 streams",
+      "source_note": "@yume_arasaki roundup"
+    }
   },
   {
     "id": "text-035",
@@ -914,7 +1108,12 @@
     "tags": [
       "long-context"
     ],
-    "source_id": "src-77d360cc7f"
+    "source_id": "src-77d360cc7f",
+    "metric_en": "90 tok/s (another post 73.5 @262K)",
+    "en": {
+      "quant": "mlx-serve · Sushi-4 mixed-precision pack",
+      "source_note": "@yume_arasaki roundup"
+    }
   },
   {
     "id": "text-036",
@@ -937,7 +1136,14 @@
     "date": null,
     "model_family": "Qwen",
     "tags": [],
-    "source_id": "src-77d360cc7f"
+    "source_id": "src-77d360cc7f",
+    "metric_en": "102 single stream; 8 streams 134 (stock oMLX 25)",
+    "en": {
+      "quant": "fused-kernel oMLX branch",
+      "concurrency": "8 streams",
+      "hardware_cost_text": "used about $8,299–9,999 (search snippet, 2026-10)",
+      "source_note": "@yume_arasaki roundup"
+    }
   },
   {
     "id": "text-037",
@@ -962,7 +1168,14 @@
     "tags": [
       "long-context"
     ],
-    "source_id": "src-77d360cc7f"
+    "source_id": "src-77d360cc7f",
+    "metric_en": "oMLX 157.7 (96.6 at 195K); TensorFold 200.7 decode but only 471 PP (oMLX 3,300–3,600)",
+    "en": {
+      "quant": "Tuned oMLX / TensorFold",
+      "concurrency": "TensorFold 8 streams 353",
+      "hardware_cost_text": "$9,499 (64C/256GB) / $10,799 (80C/256GB)",
+      "source_note": "@yume_arasaki roundup (includes independent test in issue #22)"
+    }
   },
   {
     "id": "text-038",
@@ -987,7 +1200,11 @@
     "tags": [
       "long-context"
     ],
-    "source_id": "src-7a444b72fa"
+    "source_id": "src-7a444b72fa",
+    "metric_en": "51 tok/s write; ~950 tok/s read (918 at 98K)",
+    "en": {
+      "hardware_cost_text": "$3,499 (list price, see @yume_arasaki 8/27 post)"
+    }
   },
   {
     "id": "text-039",
@@ -1016,7 +1233,14 @@
       "long-context",
       "speculative"
     ],
-    "source_id": "src-5aae4ea96a"
+    "source_id": "src-5aae4ea96a",
+    "metric_en": "GSM8K 181; real prompt 146; prose 121; 32K 58 / 131K 35 tok/s",
+    "en": {
+      "quant": "EXL3 4.0bpw + DFlash2 draft (r0b0tlab repo) · 3-bit KV",
+      "context": "262K (single 24GB card, needle test 5/5)",
+      "hardware_cost_text": "≈$2,214 (used, sold 2026-10-06)",
+      "source_note": "@yume_arasaki self-tested"
+    }
   },
   {
     "id": "text-040",
@@ -1041,7 +1265,10 @@
     "tags": [
       "dense"
     ],
-    "source_id": "src-fffda87c00"
+    "source_id": "src-fffda87c00",
+    "en": {
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999) / $6,950 (128GB, 2026-10-11)"
+    }
   },
   {
     "id": "text-041",
@@ -1068,7 +1295,14 @@
       "long-context",
       "speculative"
     ],
-    "source_id": "src-5e67752577"
+    "source_id": "src-5e67752577",
+    "metric_en": "No draft 75 vs 14.4; speculative 215 vs 44 tok/s",
+    "en": {
+      "quant": "TensorFold speculative decoding (same output hash)",
+      "context": "Spark can do 262K",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999) / $6,950 (128GB, 2026-10-11)",
+      "source_note": "@yume_arasaki relaying Niklas"
+    }
   },
   {
     "id": "text-042",
@@ -1093,7 +1327,14 @@
     "tags": [
       "dense"
     ],
-    "source_id": "src-5e67752577"
+    "source_id": "src-5e67752577",
+    "metric_en": "Prose 58.3; code 136.9; 8 streams total 220.6 (independent reproduction 64.0 / 238.6)",
+    "en": {
+      "quant": "Mia TensorFold recipe",
+      "concurrency": "8 streams",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@yume_arasaki roundup + reproduction"
+    }
   },
   {
     "id": "text-043",
@@ -1120,7 +1361,15 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-cd292e7f5c"
+    "source_id": "src-cd292e7f5c",
+    "metric_en": "82 native → 114 MTP → 138 DFlash2 tok/s",
+    "en": {
+      "quant": "DFlash2 (TeksEdge)",
+      "context": "large context hard to combine with DFlash2 (~110K fills it up)",
+      "concurrency": "syv-ai tuned 64 streams total ~1,000",
+      "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)",
+      "source_note": "@yume_arasaki roundup"
+    }
   },
   {
     "id": "text-044",
@@ -1147,7 +1396,12 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-342773ce34"
+    "source_id": "src-342773ce34",
+    "metric_en": "41.0 → 85.4 tok/s (Linux ROCm 36.3→62.6)",
+    "en": {
+      "quant": "llama.cpp + MTP (Vulkan, Windows)",
+      "hardware_cost_text": "≈$1,007 (lowest average price in Oct)"
+    }
   },
   {
     "id": "text-045",
@@ -1173,7 +1427,12 @@
     "tags": [
       "dense"
     ],
-    "source_id": "src-5d2ab530e1"
+    "source_id": "src-5d2ab530e1",
+    "en": {
+      "quant": "Not stated (r/LocalLLaMA post)",
+      "hardware_cost_text": "from $1,600 (new card, 2026-10-13) / $3,149 (Framework 128GB, out of stock, 2026-10)",
+      "source_note": "@kreia relaying r/LocalLLaMA"
+    }
   },
   {
     "id": "text-046",
@@ -1203,7 +1462,14 @@
       "multi-GPU"
     ],
     "source_id": "src-987e1bb8bd",
-    "engine_fork": "Radiance"
+    "engine_fork": "Radiance",
+    "metric_en": "total decode 900→80 tok/s (4K→128K/session); PP 6.3–6.8K",
+    "en": {
+      "hardware": "4× R9700 (same $18k whole system)",
+      "concurrency": "16 concurrent",
+      "hardware_cost_text": "$18,000 (whole system)",
+      "source_note": "@richgel999 relaying r/LocalLLaMA"
+    }
   },
   {
     "id": "text-047",
@@ -1229,7 +1495,14 @@
       "dense",
       "long-context"
     ],
-    "source_id": "src-896caa6ac3"
+    "source_id": "src-896caa6ac3",
+    "metric_en": "147 tok/s; 65 at 250K",
+    "en": {
+      "quant": "vLLM etc. (Reddit u/tonnyygama)",
+      "hardware": "CMP 170HX (unlocked 64GB mining card)",
+      "hardware_cost_text": "≈$3,195/card (64GB unlocked, 2026-10-13)",
+      "source_note": "@LFrefman relaying r/LocalLLaMA"
+    }
   },
   {
     "id": "text-048",
@@ -1256,7 +1529,12 @@
       "6bit",
       "dense"
     ],
-    "source_id": "src-f862b480cb"
+    "source_id": "src-f862b480cb",
+    "en": {
+      "hardware": "Tesla V100 16GB + V100 32GB (48GB mixed)",
+      "hardware_cost_text": "V100 32GB $650–700 each (used, 2026-09/10)",
+      "source_note": "@TeksEdge; see also comm-016 (2×V100 16GB, ninfer-V100X2 author claims 180)"
+    }
   },
   {
     "id": "text-049",
@@ -1284,7 +1562,12 @@
       "dense",
       "speculative"
     ],
-    "source_id": "src-cd292e7f5c"
+    "source_id": "src-cd292e7f5c",
+    "metric_en": "4-bit 14.7→33.8 tok/s; 8-bit 8.4→30.5",
+    "en": {
+      "quant": "oMLX/MLX + DFlash2 (4-bit / 8-bit)",
+      "source_note": "@yume_arasaki's own machine"
+    }
   },
   {
     "id": "text-050",
@@ -1311,7 +1594,12 @@
       "4bit",
       "dense"
     ],
-    "source_id": "src-78fdafba2a"
+    "source_id": "src-78fdafba2a",
+    "metric_en": "Short essay 24.8 / 300 words 17.5 / 1000 words 15.8 (another short-essay measurement 66); first token 0.4s",
+    "en": {
+      "quant": "Splash 4bit (Inco AI)",
+      "hardware_cost_text": "same-chip MBP 48GB $2,399"
+    }
   },
   {
     "id": "text-051",
@@ -1337,7 +1625,8 @@
       "4bit",
       "dense"
     ],
-    "source_id": "src-4fbd5a27e5"
+    "source_id": "src-4fbd5a27e5",
+    "metric_en": "29 tok/s (SSD prefix cache ~85%)"
   },
   {
     "id": "text-052",
@@ -1363,7 +1652,14 @@
       "dense",
       "speculative"
     ],
-    "source_id": "src-e518818c3e"
+    "source_id": "src-e518818c3e",
+    "metric_en": "74 tok/s short prompt; 54 @32K; 4 agents total 3.9× (oMLX 38 / Ollama 24)",
+    "en": {
+      "quant": "Splash (DFlash 2 built in)",
+      "context": "32K tested",
+      "concurrency": "4 agents; TeksEdge relays Inco test: 16 streams of 32K requests all handled",
+      "source_note": "@inco_ai (project team)"
+    }
   },
   {
     "id": "text-053",
@@ -1390,7 +1686,11 @@
       "dense",
       "speculative"
     ],
-    "source_id": "src-9f8ea35d45"
+    "source_id": "src-9f8ea35d45",
+    "metric_en": "144 tok/s (one month ago DFlash 2 was 70)",
+    "en": {
+      "source_note": "@zhijianliu (author)"
+    }
   },
   {
     "id": "text-054",
@@ -1417,7 +1717,11 @@
       "dense",
       "speculative"
     ],
-    "source_id": "src-e7622d64c8"
+    "source_id": "src-e7622d64c8",
+    "metric_en": "Numeric 154 / 146 / 146; story 51 / 53 / 54; draft off averages 29–31",
+    "en": {
+      "quant": "TensorFold / oMLX 0.7.0 / mlx-serve (same draft)"
+    }
   },
   {
     "id": "text-055",
@@ -1442,7 +1746,13 @@
     "tags": [
       "dense"
     ],
-    "source_id": "src-6ce99efd90"
+    "source_id": "src-6ce99efd90",
+    "metric_en": "code 125; prose 51 (1.0.5 about 20)",
+    "en": {
+      "quant": "TensorFold 1.0.7 (drafting also works in sampling mode)",
+      "hardware_cost_text": "used about $8,299–9,999 (search snippet)",
+      "source_note": "@VRAMCalculator relaying release notes"
+    }
   },
   {
     "id": "text-056",
@@ -1468,7 +1778,12 @@
     "tags": [
       "MoE"
     ],
-    "source_id": "src-18f547def3"
+    "source_id": "src-18f547def3",
+    "metric_en": "512 tok/s (claimed 86% faster than llama.cpp)",
+    "en": {
+      "quant": "sparkinfer v0.4.4 (Blackwell native CUDA)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "text-057",
@@ -1495,7 +1810,12 @@
       "MoE",
       "speculative"
     ],
-    "source_id": "src-ceef60bd18"
+    "source_id": "src-ceef60bd18",
+    "metric_en": "No draft 275.5 → 312.4 (best 318.3)",
+    "en": {
+      "quant": "DSpark max 3 drafts",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "text-058",
@@ -1522,7 +1842,12 @@
       "4bit",
       "MoE"
     ],
-    "source_id": "src-deeffdcb58"
+    "source_id": "src-deeffdcb58",
+    "metric_en": "167 tok/s; peak VRAM 23.55GB",
+    "en": {
+      "quant": "FreeToken · NVFP4 (no speculation)",
+      "hardware_cost_text": "≈$2,214 (used, sold 2026-10-06)"
+    }
   },
   {
     "id": "text-059",
@@ -1547,7 +1872,12 @@
     "tags": [
       "MoE"
     ],
-    "source_id": "src-dab23f8491"
+    "source_id": "src-dab23f8491",
+    "metric_en": "139.6 @32K; 112.4 @64K (0.71GiB spilled to CPU)",
+    "en": {
+      "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)",
+      "source_note": "@llamaperf relaying r/LocalLLaMA"
+    }
   },
   {
     "id": "text-060",
@@ -1573,7 +1903,12 @@
     "tags": [
       "MoE"
     ],
-    "source_id": "src-1c184ba4d7"
+    "source_id": "src-1c184ba4d7",
+    "metric_en": "65 tok/s; 1,960 PP",
+    "en": {
+      "quant": "Not stated",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
+    }
   },
   {
     "id": "text-061",
@@ -1598,7 +1933,10 @@
     "tags": [
       "MoE"
     ],
-    "source_id": "src-4ba524ce5d"
+    "source_id": "src-4ba524ce5d",
+    "en": {
+      "quant": "MLX (before/after engine upgrade)"
+    }
   },
   {
     "id": "text-062",
@@ -1648,7 +1986,11 @@
     "tags": [
       "MoE"
     ],
-    "source_id": "src-e36926fd3b"
+    "source_id": "src-e36926fd3b",
+    "metric_en": "Within 1/4 context 100+ (peak 140+); near full 40+ (oMLX 20+)",
+    "en": {
+      "hardware": "Mac Studio \"M4 128G\" (verbatim from post)"
+    }
   },
   {
     "id": "text-064",
@@ -1674,7 +2016,8 @@
     "tags": [
       "MoE"
     ],
-    "source_id": "src-f045ad1b4a"
+    "source_id": "src-f045ad1b4a",
+    "metric_en": "210 tok/s; 143 @32K; first token 123ms after 32K cache (oMLX 816ms)"
   },
   {
     "id": "text-065",
@@ -1700,7 +2043,13 @@
     "tags": [
       "MoE"
     ],
-    "source_id": "src-f848dce8d1"
+    "source_id": "src-f848dce8d1",
+    "metric_en": "Average 24.6; coding 27.6 tok/s",
+    "en": {
+      "quant": "Cruz packaging ~91GiB + kernel optimizations",
+      "model": "GLM-5.3-Flash (320B/18B active)",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
+    }
   },
   {
     "id": "text-066",
@@ -1731,7 +2080,13 @@
       "abliterated"
     ],
     "source_id": "src-70371789ed",
-    "superseded_by": "x-061"
+    "superseded_by": "x-061",
+    "metric_en": "Structured 43.2; code 40.7; prose 29.2; 11.3 at 8K → 0.7 at 240K (depth decay)",
+    "en": {
+      "model": "RED-SNOW-5.3-FLASH (GLM-5.3-Flash refusal-removed version)",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@yume_arasaki self-tested"
+    }
   },
   {
     "id": "text-067",
@@ -1757,7 +2112,15 @@
       "long-context",
       "multi-GPU"
     ],
-    "source_id": "src-5e67752577"
+    "source_id": "src-5e67752577",
+    "metric_en": "Prose 60.4; structured 114.7; 4 streams total 108.8; 8K 54.9 → 874K 44.6",
+    "en": {
+      "quant": "Mia EXL3 + TensorFold (TP=2)",
+      "context": "1M (KV pool 2.9M tokens)",
+      "concurrency": "4 streams",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "source_note": "@yume_arasaki reproduced Mia"
+    }
   },
   {
     "id": "text-068",
@@ -1784,7 +2147,12 @@
       "long-context",
       "multi-GPU"
     ],
-    "source_id": "src-48ef0bc79f"
+    "source_id": "src-48ef0bc79f",
+    "en": {
+      "quant": "Not stated",
+      "concurrency": "2 concurrent",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)"
+    }
   },
   {
     "id": "text-069",
@@ -1811,7 +2179,14 @@
       "long-context",
       "multi-GPU"
     ],
-    "source_id": "src-5e67752577"
+    "source_id": "src-5e67752577",
+    "metric_en": "Prose 77 single stream; 4 streams 146",
+    "en": {
+      "quant": "Mia EXL3 (TP=3, experimental)",
+      "concurrency": "4 streams",
+      "hardware_cost_text": "≈$20,850 (3×$6,950, computed)",
+      "source_note": "@yume_arasaki relaying Mia (preview)"
+    }
   },
   {
     "id": "text-070",
@@ -1837,7 +2212,13 @@
     "tags": [
       "offload"
     ],
-    "source_id": "src-1ca0f67909"
+    "source_id": "src-1ca0f67909",
+    "metric_en": "Decode ~28 tok/s; PP ~800",
+    "en": {
+      "quant": "Maya-S quantization (project-maya)",
+      "hardware": "AMD R9700 32GB single card (+ system RAM)",
+      "hardware_cost_text": "from $1,600 (new card, 2026-10-13)"
+    }
   },
   {
     "id": "text-071",
@@ -1865,7 +2246,12 @@
       "MTP",
       "multi-GPU"
     ],
-    "source_id": "src-86edf0ecda"
+    "source_id": "src-86edf0ecda",
+    "metric_en": "~34 tok/s decode; ~490 PP",
+    "en": {
+      "quant": "Maya (MTP)",
+      "hardware": "R9700 + RX 7900 XT dual card"
+    }
   },
   {
     "id": "text-072",
@@ -1891,7 +2277,11 @@
     "tags": [
       "2bit"
     ],
-    "source_id": "src-733ea7e114"
+    "source_id": "src-733ea7e114",
+    "en": {
+      "hardware": "Strix Halo (Framework Desktop 395+)",
+      "hardware_cost_text": "$3,149 (Framework 128GB, out of stock, 2026-10)"
+    }
   },
   {
     "id": "text-073",
@@ -1917,7 +2307,14 @@
     "tags": [
       "multi-GPU"
     ],
-    "source_id": "src-bb1775e11b"
+    "source_id": "src-bb1775e11b",
+    "metric_en": "c=1 structured 396.0 / code 306.2 / prose 192.5; c=8 798.6",
+    "en": {
+      "quant": "@Morrowmake recipe (TP4, Supermicro 4028)",
+      "hardware": "4× CMP 170HX 64GB (unlocked mining cards)",
+      "concurrency": "8 concurrent",
+      "hardware_cost_text": "≈$12,780 (4×$3,195, card only, computed)"
+    }
   },
   {
     "id": "text-074",
@@ -1942,7 +2339,11 @@
     "tags": [
       "multi-GPU"
     ],
-    "source_id": "src-5d0e38175d"
+    "source_id": "src-5d0e38175d",
+    "en": {
+      "quant": "Maya / Strata stack",
+      "hardware_cost_text": "Whole system < £3,000 (post)"
+    }
   },
   {
     "id": "text-075",
@@ -1967,7 +2368,14 @@
     "tags": [
       "multi-GPU"
     ],
-    "source_id": "src-77d360cc7f"
+    "source_id": "src-77d360cc7f",
+    "metric_en": "Prose 114 single stream; PP ~1,600; up to 200 with 8 streams; first token 0.06s",
+    "en": {
+      "quant": "TensorFold · Thunderbolt 5×4 bonded, TP=2",
+      "concurrency": "8 streams",
+      "hardware_cost_text": "≈$19,000–21,600 (2×$9,499–10,799, computed)",
+      "source_note": "@yume_arasaki relaying demo"
+    }
   },
   {
     "id": "text-076",
@@ -1993,7 +2401,12 @@
     "tags": [
       "multi-GPU"
     ],
-    "source_id": "src-930b946323"
+    "source_id": "src-930b946323",
+    "metric_en": "124 tok/s decode; 5.3K PP",
+    "en": {
+      "quant": "EXL3 (@BrandonMusicKy weights) + DS engine coordinator",
+      "hardware_cost_text": "≈$33,200+ (4×Spark+5090, computed) ⚠️ over $30k"
+    }
   },
   {
     "id": "text-077",
@@ -2021,7 +2434,15 @@
       "MoE",
       "offload"
     ],
-    "source_id": "src-502d0f3dd0"
+    "source_id": "src-502d0f3dd0",
+    "metric_en": "HTML game 36.6; SQL 31.8; Python 24.3; long story 17.1; PP 337 (degrades beyond 2,000 tokens)",
+    "en": {
+      "quant": "0xBakeer expert profile: hot ~40% kept resident at 3-bit, 87GB; the rest streamed",
+      "model": "DeepSeek-V4.1-Flash (510GB weights)",
+      "concurrency": "1 stream",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@yume_arasaki relaying 0xBakeer · github.com/0xBakeer/deepseek-v41-flash-spark"
+    }
   },
   {
     "id": "text-078",
@@ -2050,7 +2471,14 @@
       "speculative",
       "multi-GPU"
     ],
-    "source_id": "src-502d0f3dd0"
+    "source_id": "src-502d0f3dd0",
+    "metric_en": "35K agent prompt 48.5 tok/s; ≈30–32.6 at 17K–559K depth",
+    "en": {
+      "quant": "Mia EXL3 2.9bpw · DSpark k=3 (TP=2)",
+      "context": "559K (needle test 12/12 up to 548K)",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "source_note": "@yume_arasaki self-tested"
+    }
   },
   {
     "id": "text-079",
@@ -2079,7 +2507,14 @@
       "multi-GPU",
       "offload"
     ],
-    "source_id": "src-502d0f3dd0"
+    "source_id": "src-502d0f3dd0",
+    "metric_en": "Prose 37.9; 4 streams total 78.6 (independent SGLang C1 26.5)",
+    "en": {
+      "quant": "Mia MXFP4/FP8 · Engram on NVMe (TP=3)",
+      "concurrency": "4 streams",
+      "hardware_cost_text": "≈$20,850 (3×$6,950, computed)",
+      "source_note": "@yume_arasaki roundup"
+    }
   },
   {
     "id": "text-080",
@@ -2106,7 +2541,14 @@
       "long-context",
       "multi-GPU"
     ],
-    "source_id": "src-5e67752577"
+    "source_id": "src-5e67752577",
+    "metric_en": "MXFP4: C1 peak 77.2, 6 streams 214; TensorFold: prose 87, code 124.8, 4 streams 246.8; PP 5,800–5,925",
+    "en": {
+      "quant": "tonyd615 native MXFP4 / Mia TensorFold TP=4",
+      "concurrency": "6 streams",
+      "hardware_cost_text": "≈$27,800 (4×$6,950, computed)",
+      "source_note": "@yume_arasaki roundup (see also the 9/15 post)"
+    }
   },
   {
     "id": "text-081",
@@ -2132,7 +2574,15 @@
     "tags": [
       "multi-GPU"
     ],
-    "source_id": "src-7da284d7bb"
+    "source_id": "src-7da284d7bb",
+    "metric_en": "up to 494 tok/s total at 32 requests",
+    "en": {
+      "quant": "Not stated",
+      "hardware": "4× DGX Spark (direct-connected, no switch)",
+      "concurrency": "32 requests",
+      "hardware_cost_text": "≈$27,800 (4×$6,950, computed)",
+      "source_note": "@hardfanaticos (media relay)"
+    }
   },
   {
     "id": "text-082",
@@ -2160,7 +2610,15 @@
       "long-context",
       "multi-GPU"
     ],
-    "source_id": "src-ab69395b83"
+    "source_id": "src-ab69395b83",
+    "metric_en": "73–85 tok/s decode; 2,000 PP",
+    "en": {
+      "quant": "DS41RT AFD engine, coordinator on 5090",
+      "model": "DeepSeek-V4.1-Flash (with Engram 769B)",
+      "context": "1M (KV pool 7.79M)",
+      "concurrency": "8 concurrent 1M",
+      "hardware_cost_text": "≈$33,200+ (4×Spark+5090, computed) ⚠️ over $30k"
+    }
   },
   {
     "id": "text-083",
@@ -2186,7 +2644,14 @@
     "tags": [
       "offload"
     ],
-    "source_id": "src-502d0f3dd0"
+    "source_id": "src-502d0f3dd0",
+    "metric_en": "cold 5.1 tok/s; 21.4 after cache warm",
+    "en": {
+      "quant": "SSD/RAM streaming",
+      "hardware": "single RTX 5090 32GB + 126GB RAM + NVMe",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "@yume_arasaki relaying TeksEdge & JigSawPT"
+    }
   },
   {
     "id": "text-084",
@@ -2214,7 +2679,11 @@
       "speculative",
       "multi-GPU"
     ],
-    "source_id": "src-8214c306d1"
+    "source_id": "src-8214c306d1",
+    "metric_en": "Structured 98.4 / code 79.3 / prose 26–38; PP 475–791",
+    "en": {
+      "hardware_cost_text": "≈$12,780 (4 cards, computed)"
+    }
   },
   {
     "id": "text-085",
@@ -2239,7 +2708,13 @@
     "tags": [
       "offload"
     ],
-    "source_id": "src-e6df8339a4"
+    "source_id": "src-e6df8339a4",
+    "metric_en": ">15 tok/s, peak 31.7",
+    "en": {
+      "quant": "llama.cpp/LM Studio class",
+      "hardware": "ACEMAGIC Strix Halo 128GB (€2,300) + fast SSD",
+      "hardware_cost_text": "€2,300 (poster's purchase price)"
+    }
   },
   {
     "id": "text-086",
@@ -2265,7 +2740,14 @@
     "tags": [
       "speculative"
     ],
-    "source_id": "src-ef037e8879"
+    "source_id": "src-ef037e8879",
+    "metric_en": "vendor homepage 86 tok/s; independent retest 51–57 (median 51.1)",
+    "en": {
+      "quant": "DSpark · Strix Halo + R9700 (Lucebox-style product)",
+      "model": "DeepSeek-V4-Flash (V4, not 4.1)",
+      "hardware_cost_text": "homepage from $5,999, fully configured about $9,000 (post)",
+      "source_note": "@msala9 (skeptical post)"
+    }
   },
   {
     "id": "text-087",
@@ -2291,7 +2773,12 @@
       "4bit",
       "offload"
     ],
-    "source_id": "src-502d0f3dd0"
+    "source_id": "src-502d0f3dd0",
+    "metric_en": "~14.6 / 15 (SSD streaming), 25 (RDMA tensor parallel)",
+    "en": {
+      "hardware_cost_text": "M3 Ultra 512GB used $16k–25k (search snippet)",
+      "source_note": "@yume_arasaki roundup"
+    }
   },
   {
     "id": "text-088",
@@ -2319,7 +2806,15 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-8b83fa6813"
+    "source_id": "src-8b83fa6813",
+    "metric_en": "Short prompt 108; code 143; 512-token answer 4K 90.7 → 256K 74.7; 16K PP 2,887",
+    "en": {
+      "quant": "oMLX 0.7.0.dev2 · oQ4e · MTP depth 3 (thinking off)",
+      "context": "256K measured (256K first token 102–104 s)",
+      "concurrency": "3 streams at once: total 81.5 (single stream 66.2)",
+      "hardware_cost_text": "$10,799 (M5 Ultra 80C/256GB/1TB)",
+      "source_note": "MacStories (Viticci) review"
+    }
   },
   {
     "id": "text-089",
@@ -2347,7 +2842,15 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-8b83fa6813"
+    "source_id": "src-8b83fa6813",
+    "metric_en": "Short prompt 70; code 98; 4K 59.0 → 256K 38.6; 16K PP 1,143",
+    "en": {
+      "quant": "oMLX 0.7.0.dev2 · oQ4e · MTP depth 3 (same as above, for comparison)",
+      "context": "256K measured (first token 245 s)",
+      "concurrency": "3 streams at once: total 39.9 (single stream 38.4)",
+      "hardware_cost_text": "discontinued; 512GB used price not verified",
+      "source_note": "MacStories (Viticci) review"
+    }
   },
   {
     "id": "text-090",
@@ -2373,7 +2876,14 @@
       "4bit",
       "offload"
     ],
-    "source_id": "src-8b83fa6813"
+    "source_id": "src-8b83fa6813",
+    "metric_en": "M5U: 111.6/142.9 → oQ8e (tables on SSD) 86.8/119.0; M3U: 77.3/103.9 → oQ8e 63.5/89.1",
+    "en": {
+      "quant": "oMLX · oQ4e / oQ5e / oQ6e / oQ8e (prose/code)",
+      "context": "On a 256GB machine oQ6e/oQ8e need the n-gram table on SSD",
+      "hardware_cost_text": "$9,499 (64C/256GB) / $10,799 (80C/256GB)",
+      "source_note": "MacStories (Viticci) review"
+    }
   },
   {
     "id": "text-091",
@@ -2400,7 +2910,13 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-0b4335f1bc"
+    "source_id": "src-0b4335f1bc",
+    "metric_en": "97.1 tok/s decode; ~1,131 PP (uncached)",
+    "en": {
+      "quant": "4-bit MTP (oMLX PR / OMP)",
+      "context": "23K tested",
+      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+    }
   },
   {
     "id": "text-092",
@@ -2425,7 +2941,12 @@
     "tags": [
       "4bit"
     ],
-    "source_id": "src-2cb3f88940"
+    "source_id": "src-2cb3f88940",
+    "metric_en": "peak 130 tok/s (0.3.4 was 128)",
+    "en": {
+      "context": "64K+ long-context test",
+      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+    }
   },
   {
     "id": "text-093",
@@ -2452,7 +2973,14 @@
       "2bit",
       "long-context"
     ],
-    "source_id": "src-ef39a29389"
+    "source_id": "src-ef39a29389",
+    "metric_en": "65 tok/s (demo video)",
+    "en": {
+      "quant": "DwarfStar (ds4) · Q2 · Metal PR branch",
+      "context": "PP still >1,000 at 262K (@0xBakeer)",
+      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)",
+      "source_note": "@ivanfioravanti (author)"
+    }
   },
   {
     "id": "text-094",
@@ -2478,7 +3006,12 @@
     "tags": [
       "4bit"
     ],
-    "source_id": "src-3ac303a9ff"
+    "source_id": "src-3ac303a9ff",
+    "metric_en": "MTP off 42.51 → on 59.90 tok/s; PP 288.78; resident 69.73 GiB",
+    "en": {
+      "quant": "ds4-metal · Q4 mixed-precision GGUF · Metal",
+      "hardware_cost_text": "Discontinued; refurbished from ≈ $3,599 (refurb.me, 2026-09)"
+    }
   },
   {
     "id": "text-095",
@@ -2506,7 +3039,10 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-b2c05e90ab"
+    "source_id": "src-b2c05e90ab",
+    "en": {
+      "hardware_cost_text": "discontinued; Apple refurbished 128GB/4TB $5,689 (2026-10)"
+    }
   },
   {
     "id": "text-096",
@@ -2529,7 +3065,11 @@
     "date": null,
     "model_family": "Qwen",
     "tags": [],
-    "source_id": "src-efeab8b2ad"
+    "source_id": "src-efeab8b2ad",
+    "metric_en": "Reasoning 22.7 / coding 23.0 / strategy 23.2 tok/s",
+    "en": {
+      "hardware_cost_text": "discontinued; Apple refurbished 128GB/4TB $5,689 (2026-10)"
+    }
   },
   {
     "id": "text-097",
@@ -2555,7 +3095,13 @@
       "MoE",
       "offload"
     ],
-    "source_id": "src-d8f7513152"
+    "source_id": "src-d8f7513152",
+    "metric_en": "M3U 32K prefill 396 → 636 tok/s; M5 Max 8 requests first token 7.41 → 5.75 s",
+    "en": {
+      "quant": "oMLX 0.7.1.dev1 (expert offload / batched prefill)",
+      "concurrency": "8 requests (0.4 s apart)",
+      "source_note": "oMLX release notes (@jundotkim)"
+    }
   },
   {
     "id": "text-098",
@@ -2582,7 +3128,14 @@
       "dense",
       "long-context"
     ],
-    "source_id": "src-8b83fa6813"
+    "source_id": "src-8b83fa6813",
+    "metric_en": "6K prompt: 48 / 31 / 59 tok/s; PP 1,701 / 414 / 3,031; 256K: 24.3 / 15.0 / 30.0 (5090 needs 8-bit KV)",
+    "en": {
+      "quant": "oMLX · oQ4e (MTP off) vs RTX 5090 LM Studio Q4_K_M",
+      "context": "256K (on 5090 with default 16-bit KV, 256K did not finish in 10 minutes)",
+      "hardware_cost_text": "$9,499 (64C/256GB) / $10,799 (80C/256GB)",
+      "source_note": "MacStories (Viticci) review"
+    }
   },
   {
     "id": "text-099",
@@ -2610,7 +3163,13 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-afb4ca7864"
+    "source_id": "src-afb4ca7864",
+    "metric_en": "Average 75.6 vs 33.9 tok/s (MTP support differs)",
+    "en": {
+      "quant": "4-bit MLX (official build vs modified build)",
+      "hardware_cost_text": "$3,499 (M5 Max 40C/64GB, Apple 2026-10)",
+      "source_note": "@CGrajnish relaying the machine owner"
+    }
   },
   {
     "id": "text-100",
@@ -2635,7 +3194,11 @@
     "tags": [
       "dense"
     ],
-    "source_id": "src-2decea9cb7"
+    "source_id": "src-2decea9cb7",
+    "metric_en": "About 60 tok/s (40–70 depending on task)",
+    "en": {
+      "hardware_cost_text": "$3,499 (M5 Max 40C/64GB, Apple 2026-10)"
+    }
   },
   {
     "id": "text-101",
@@ -2663,7 +3226,12 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-cdb9259df0"
+    "source_id": "src-cdb9259df0",
+    "metric_en": "58.7 sustained / 73 peak",
+    "en": {
+      "quant": "MTPLX (MTP)",
+      "source_note": "@yume_arasaki relaying Youssofal HF card"
+    }
   },
   {
     "id": "text-102",
@@ -2689,7 +3257,11 @@
       "dense",
       "speculative"
     ],
-    "source_id": "src-13aaa09d9b"
+    "source_id": "src-13aaa09d9b",
+    "metric_en": "code 151 vs 32–33 tok/s",
+    "en": {
+      "source_note": "@CryptoBandit100 relaying TensorFold test"
+    }
   },
   {
     "id": "text-103",
@@ -2715,7 +3287,11 @@
       "4bit",
       "dense"
     ],
-    "source_id": "src-265be1317e"
+    "source_id": "src-265be1317e",
+    "metric_en": "thinking off 76.7 / on 57.4 tok/s (6,071 / 11,895 tokens)",
+    "en": {
+      "hardware_cost_text": "discontinued; Apple refurbished 128GB/4TB $5,689 (2026-10)"
+    }
   },
   {
     "id": "text-104",
@@ -2742,7 +3318,13 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-13aaa09d9b"
+    "source_id": "src-13aaa09d9b",
+    "metric_en": "code 74.1; prose 52.8",
+    "en": {
+      "quant": "mlx-serve + MTP head",
+      "concurrency": "1 stream",
+      "hardware_cost_text": "discontinued; Apple refurbished 128GB/4TB $5,689 (2026-10)"
+    }
   },
   {
     "id": "text-105",
@@ -2768,7 +3350,14 @@
       "MoE",
       "speculative"
     ],
-    "source_id": "src-93a15841e4"
+    "source_id": "src-93a15841e4",
+    "metric_en": "27B 70; Flash-Next 83; 35B-A3B 239 tok/s; 27B 4 streams total 119 (old version 72)",
+    "en": {
+      "quant": "mlx-serve 26.9.5 (concurrent speculative decoding)",
+      "concurrency": "4 streams",
+      "hardware_cost_text": "discontinued; Apple refurbished 128GB/4TB $5,689 (2026-10)",
+      "source_note": "@Oluwaphilemon1 relaying mlx-serve benchmark"
+    }
   },
   {
     "id": "text-106",
@@ -2797,7 +3386,12 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-9496872725"
+    "source_id": "src-9496872725",
+    "metric_en": "21.51 tok/s (63% faster than no draft); peak 58.09GB",
+    "en": {
+      "quant": "BF16 + native MTP",
+      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+    }
   },
   {
     "id": "text-107",
@@ -2826,7 +3420,11 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-1fd96fc598"
+    "source_id": "src-1fd96fc598",
+    "metric_en": "5.75 / 10.50 / 15.15 / 8.41 / 16.03 / 24.32 / 3.29 tok/s (thinking off, 160 tokens, mean of 3 runs)",
+    "en": {
+      "hardware_cost_text": "Previous-generation model (currently sold: M6 / M5 Pro), price not verified"
+    }
   },
   {
     "id": "text-108",
@@ -2852,7 +3450,12 @@
       "dense",
       "speculative"
     ],
-    "source_id": "src-8009989e02"
+    "source_id": "src-8009989e02",
+    "metric_en": "28.41 vs 14.62 tok/s; Ollama 17–26; peak RAM ~20GB",
+    "en": {
+      "context": "22.5K-token agent prompt: no first token after 5 minutes",
+      "hardware_cost_text": "Previous-generation model (currently sold: M6 / M5 Pro), price not verified"
+    }
   },
   {
     "id": "text-109",
@@ -2880,7 +3483,13 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-cdb9259df0"
+    "source_id": "src-cdb9259df0",
+    "metric_en": "27 tok/s (MTP) / 12 (base); 8K prompt prefill ~80 s",
+    "en": {
+      "quant": "MTPLX (MTP)",
+      "hardware_cost_text": "Previous-generation model (currently sold: M6 / M5 Pro), price not verified",
+      "source_note": "@yume_arasaki's own machine"
+    }
   },
   {
     "id": "text-110",
@@ -2906,7 +3515,12 @@
       "4bit",
       "dense"
     ],
-    "source_id": "src-cdb9259df0"
+    "source_id": "src-cdb9259df0",
+    "en": {
+      "quant": "oMLX (no MTP/DFlash)",
+      "hardware": "Mac M5 Pro 48GB (model not stated)",
+      "source_note": "@yume_arasaki relaying oMLX"
+    }
   },
   {
     "id": "text-111",
@@ -2933,7 +3547,13 @@
       "4bit",
       "MoE"
     ],
-    "source_id": "src-5eb58413c5"
+    "source_id": "src-5eb58413c5",
+    "metric_en": "57–65 tok/s; PP ~470 → 250 at 25K; first token 3.3 s@1.5K / 12.4 s@6K / ~100 s@25K",
+    "en": {
+      "quant": "Splash · 4-bit (20.95GB weights)",
+      "context": "90K config",
+      "hardware_cost_text": "Previous-generation model (currently sold: M6 / M5 Pro), price not verified"
+    }
   },
   {
     "id": "text-112",
@@ -2959,7 +3579,12 @@
       "8bit",
       "MoE"
     ],
-    "source_id": "src-e1cae090f0"
+    "source_id": "src-e1cae090f0",
+    "metric_en": "1 stream 57.2; 2 streams total 113.5; 4 streams total 73.4 (regression)",
+    "en": {
+      "concurrency": "1 / 2 / 4 streams",
+      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+    }
   },
   {
     "id": "text-113",
@@ -2985,7 +3610,11 @@
       "MoE",
       "speculative"
     ],
-    "source_id": "src-77c9e0b22f"
+    "source_id": "src-77c9e0b22f",
+    "en": {
+      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)",
+      "source_note": "@tinybluedev (one-sentence post: only states 251 tok/s, with no quantization, RAM, or context, and no reproduction; downgraded to claimed after verification on 2026-10-16)"
+    }
   },
   {
     "id": "text-114",
@@ -3010,7 +3639,12 @@
     "tags": [
       "MoE"
     ],
-    "source_id": "src-d8f7513152"
+    "source_id": "src-d8f7513152",
+    "metric_en": "156 → 205 tok/s (+31%)",
+    "en": {
+      "quant": "oMLX 0.7.1.dev1 fused decode kernel",
+      "source_note": "oMLX release notes (@jundotkim)"
+    }
   },
   {
     "id": "text-115",
@@ -3036,7 +3670,13 @@
       "8bit",
       "long-context"
     ],
-    "source_id": "src-8b83fa6813"
+    "source_id": "src-8b83fa6813",
+    "metric_en": "41 / 26 tok/s (including reasoning tokens); 16K PP 1,107 / 428; 64K PP 1,016 / 448",
+    "en": {
+      "context": "M3U can answer at 256K (first token 11 min); M5U 256GB runs out of RAM at 256K",
+      "hardware_cost_text": "$9,499 (64C/256GB) / $10,799 (80C/256GB)",
+      "source_note": "MacStories (Viticci) review"
+    }
   },
   {
     "id": "text-116",
@@ -3059,7 +3699,13 @@
     "date": null,
     "model_family": "GLM",
     "tags": [],
-    "source_id": "src-d8f7513152"
+    "source_id": "src-d8f7513152",
+    "metric_en": "31.3 → 40.6 tok/s (+30%)",
+    "en": {
+      "quant": "oMLX 0.7.1.dev1 fused decode kernel",
+      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)",
+      "source_note": "oMLX release notes (@jundotkim)"
+    }
   },
   {
     "id": "text-117",
@@ -3084,7 +3730,13 @@
     "tags": [
       "4bit"
     ],
-    "source_id": "src-d5cd871b07"
+    "source_id": "src-d5cd871b07",
+    "metric_en": "8 streams at once: total 78 tok/s, first token avg <1.6 s, all finished in 26 s; oMLX 8th request waited 43 s; single stream +12%",
+    "en": {
+      "quant": "MLX 4-bit · TensorFold 0.6.2 vs oMLX (sequential processing)",
+      "concurrency": "8 streams",
+      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+    }
   },
   {
     "id": "text-118",
@@ -3111,7 +3763,12 @@
       "4bit",
       "dense"
     ],
-    "source_id": "src-1f8db0cb46"
+    "source_id": "src-1f8db0cb46",
+    "metric_en": "14.58 tok/s generation; 145.86 PP",
+    "en": {
+      "model": "GLM-5.3 (744B full, not Flash)",
+      "hardware_cost_text": "discontinued; 512GB used price not verified"
+    }
   },
   {
     "id": "text-119",
@@ -3138,7 +3795,13 @@
       "MTP",
       "offload"
     ],
-    "source_id": "src-0621c494c6"
+    "source_id": "src-0621c494c6",
+    "metric_en": "About 6 → 33.0 tok/s (32K 6.17→33.0; 64K 5.58→33.0)",
+    "en": {
+      "quant": "oMLX native V4.1 + MTP + Engram SSD offload",
+      "context": "64K test, decode does not drop with context",
+      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+    }
   },
   {
     "id": "text-120",
@@ -3165,7 +3828,12 @@
       "speculative",
       "multi-GPU"
     ],
-    "source_id": "src-84c7c47ec7"
+    "source_id": "src-84c7c47ec7",
+    "metric_en": "40–66 tok/s decode (acceptance rate 70–81%); ~1,100 PP",
+    "en": {
+      "quant": "Self-developed MLX port · TP=2 · TB5 RDMA · DSpark",
+      "hardware_cost_text": "discontinued; 512GB used price not verified"
+    }
   },
   {
     "id": "text-121",
@@ -3192,7 +3860,13 @@
       "2bit",
       "long-context"
     ],
-    "source_id": "src-2763bc71bb"
+    "source_id": "src-2763bc71bb",
+    "metric_en": "~30 tok/s write; 37K prompt prefill about 2 min",
+    "en": {
+      "model": "DeepSeek-V4-Flash (V4, not 4.1)",
+      "context": "1M fits",
+      "hardware_cost_text": "discontinued; Apple refurbished 128GB/4TB $5,689 (2026-10)"
+    }
   },
   {
     "id": "text-122",
@@ -3217,7 +3891,13 @@
     "tags": [
       "4bit"
     ],
-    "source_id": "src-cdb9259df0"
+    "source_id": "src-cdb9259df0",
+    "metric_en": "35 (oMLX, Viticci); ds4 short 35.5 / long 26.6; PP 448.8",
+    "en": {
+      "model": "DeepSeek-V4-Flash (V4, not 4.1)",
+      "hardware_cost_text": "discontinued; 512GB used price not verified",
+      "source_note": "@yume_arasaki roundup source"
+    }
   },
   {
     "id": "image-001",
@@ -3242,7 +3922,16 @@
     "tags": [
       "8bit"
     ],
-    "source_id": "src-c7624c906d"
+    "source_id": "src-c7624c906d",
+    "metric_en": "8.1 s / 1024² (40 steps); 30.2 s / 2048×1152 (50 steps); peak 16.2GB",
+    "en": {
+      "quant": "official Comfy-Org INT8 · ComfyUI",
+      "model": "Qwen-Image 2.1 (7B + 8B text encoder)",
+      "context": "native 2K",
+      "concurrency": "single card, serial",
+      "hardware_cost_text": "≈$2,214 (used, sold 2026-10-06)",
+      "source_note": "@yume_arasaki self-tested"
+    }
   },
   {
     "id": "image-002",
@@ -3268,7 +3957,12 @@
     "tags": [
       "8bit"
     ],
-    "source_id": "src-c7624c906d"
+    "source_id": "src-c7624c906d",
+    "metric_en": "82–96 s / 2K (public receipt)",
+    "en": {
+      "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)",
+      "source_note": "@yume_arasaki relay"
+    }
   },
   {
     "id": "image-003",
@@ -3296,7 +3990,13 @@
       "8bit",
       "bf16"
     ],
-    "source_id": "src-9c2f4ce74e"
+    "source_id": "src-9c2f4ce74e",
+    "metric_en": "5.93 s; NVFP4 6.7 s vs INT8 7.6 s vs BF16 15.6 s (1024²)",
+    "en": {
+      "quant": "LightX2V / BennyDaBall NVFP4 / official INT8 / BF16",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "@yume_arasaki roundup"
+    }
   },
   {
     "id": "image-004",
@@ -3323,7 +4023,12 @@
       "6bit",
       "8bit"
     ],
-    "source_id": "src-e7200c22d8"
+    "source_id": "src-e7200c22d8",
+    "metric_en": "4.53 s / 6.94 s / 13.87 s (1024², 25 steps; NVFP4 peak 22.9GB; images not identical to Q6)",
+    "en": {
+      "quant": "TensorFold NVFP4 / FP8 / GGUF Q6_K (jayleaton repo)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "image-005",
@@ -3347,7 +4052,12 @@
     "engine_raw": "其他/未注明",
     "model_family": "Qwen-Image",
     "tags": [],
-    "source_id": "src-3b30b5aad2"
+    "source_id": "src-3b30b5aad2",
+    "metric_en": "13.5 s → 1.9 s / image (vendor claim)",
+    "en": {
+      "quant": "vendor kernel rewrite + step cache",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "image-006",
@@ -3373,7 +4083,13 @@
     "tags": [
       "8bit"
     ],
-    "source_id": "src-28caffdc0c"
+    "source_id": "src-28caffdc0c",
+    "metric_en": "5.2 s vs 9.1 s / image (median); energy 0.58 vs 0.53 Wh/image",
+    "en": {
+      "quant": "int8 · 25 steps · 1MP",
+      "concurrency": "Independent queue per card",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999) / ≈$3,195/card (unlocked 64GB, 2026-10-13)"
+    }
   },
   {
     "id": "image-007",
@@ -3400,7 +4116,12 @@
       "8bit",
       "offload"
     ],
-    "source_id": "src-9c2f4ce74e"
+    "source_id": "src-9c2f4ce74e",
+    "metric_en": "~2 min / ~40 s / ~25 s (1024², 25 steps)",
+    "en": {
+      "quant": "GGUF/INT8 + encoder in RAM / low-VRAM mode",
+      "source_note": "@yume_arasaki roundup"
+    }
   },
   {
     "id": "image-008",
@@ -3425,7 +4146,13 @@
     "tags": [
       "bf16"
     ],
-    "source_id": "src-9c2f4ce74e"
+    "source_id": "src-9c2f4ce74e",
+    "metric_en": "52.6 s / 1024²; SGLang table: Spark 35.4 s, 4090 18.7 s",
+    "en": {
+      "hardware": "1× DGX Spark (vs 4090)",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@yume_arasaki relay (includes official SGLang table)"
+    }
   },
   {
     "id": "image-009",
@@ -3451,7 +4178,12 @@
     "tags": [
       "bf16"
     ],
-    "source_id": "src-9c2f4ce74e"
+    "source_id": "src-9c2f4ce74e",
+    "metric_en": "~78 s / 1024² (40 steps)",
+    "en": {
+      "quant": "mflux (bf16 46GB / quantized 31GB)",
+      "source_note": "@yume_arasaki roundup"
+    }
   },
   {
     "id": "image-010",
@@ -3474,7 +4206,12 @@
     "date": null,
     "model_family": "Qwen-Image",
     "tags": [],
-    "source_id": "src-53d02285dc"
+    "source_id": "src-53d02285dc",
+    "metric_en": "3 min 52 s / image (768 edit)",
+    "en": {
+      "model": "Qwen-Image 2.1 (edit)",
+      "hardware_cost_text": "MBP M4 Pro 48GB $2,399 (RAM spec not stated in post)"
+    }
   },
   {
     "id": "image-011",
@@ -3500,7 +4237,13 @@
     "tags": [
       "few-step"
     ],
-    "source_id": "src-57cb09cdc6"
+    "source_id": "src-57cb09cdc6",
+    "metric_en": "29 s vs 108 s / image (2048²)",
+    "en": {
+      "quant": "Turbo 8 steps vs Base 40 steps",
+      "model": "Qwen-Image-2.1-Turbo (official 8 steps)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "image-012",
@@ -3528,7 +4271,8 @@
       "8bit",
       "few-step"
     ],
-    "source_id": "src-856bdefc1a"
+    "source_id": "src-856bdefc1a",
+    "metric_en": "~35 s / image (8 steps)"
   },
   {
     "id": "image-013",
@@ -3553,7 +4297,13 @@
     "tags": [
       "few-step"
     ],
-    "source_id": "src-91fa3d9f02"
+    "source_id": "src-91fa3d9f02",
+    "metric_en": "2048px about 8 s / image; another user 12 s after warm-up",
+    "en": {
+      "model": "Z-Image Turbo (6B, 8 steps)",
+      "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)",
+      "source_note": "@michaelricks (see also @Brjen 2106743364716556717)"
+    }
   },
   {
     "id": "image-014",
@@ -3578,7 +4328,8 @@
     "tags": [
       "few-step"
     ],
-    "source_id": "src-d8194459e8"
+    "source_id": "src-d8194459e8",
+    "metric_en": "~25 s / image"
   },
   {
     "id": "image-015",
@@ -3603,7 +4354,12 @@
     "tags": [
       "few-step"
     ],
-    "source_id": "src-fde02223e8"
+    "source_id": "src-fde02223e8",
+    "metric_en": "493 s / image (2048×1152)",
+    "en": {
+      "quant": "ComfyUI · 8 steps",
+      "hardware": "Mac M4 Pro (24GB)"
+    }
   },
   {
     "id": "image-016",
@@ -3629,7 +4385,12 @@
     "tags": [
       "few-step"
     ],
-    "source_id": "src-96d16094e7"
+    "source_id": "src-96d16094e7",
+    "metric_en": "Z-Image ~2× faster (no absolute times); quality: Qwen wins 9:6",
+    "en": {
+      "quant": "same prompt, same seed, 20 rounds",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "video-audio-001",
@@ -3656,7 +4417,14 @@
       "4bit",
       "few-step"
     ],
-    "source_id": "src-ad2d13492d"
+    "source_id": "src-ad2d13492d",
+    "metric_en": "832×480×5s: 14.8 s; 1344×768×5s: 38.6 s (with audio, end-to-end)",
+    "en": {
+      "model": "FastH3 V2 (MiniMax H3 8-step distillation)",
+      "concurrency": "single request",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "Hao AI Lab official blog 2026-10-06"
+    }
   },
   {
     "id": "video-audio-002",
@@ -3682,7 +4450,14 @@
     "tags": [
       "4bit"
     ],
-    "source_id": "src-ad2d13492d"
+    "source_id": "src-ad2d13492d",
+    "metric_en": "480p 5s: 13.4 s; 768p: 35.4 s",
+    "en": {
+      "model": "FastH3 Trim (42 blocks pruned, experimental)",
+      "concurrency": "single request",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "Hao AI Lab official"
+    }
   },
   {
     "id": "video-audio-003",
@@ -3708,7 +4483,13 @@
     "tags": [
       "8bit"
     ],
-    "source_id": "src-ad2d13492d"
+    "source_id": "src-ad2d13492d",
+    "metric_en": "480p 5s: 54.6 / 43.9 s; 768p: 154.6 / 132.8 s; 8GB limit Trim 82.0 s",
+    "en": {
+      "concurrency": "single request",
+      "hardware_cost_text": "≈$2,214 (used, sold 2026-10-06)",
+      "source_note": "Hao AI Lab official"
+    }
   },
   {
     "id": "video-audio-004",
@@ -3735,7 +4516,13 @@
       "4bit",
       "multi-GPU"
     ],
-    "source_id": "src-ad2d13492d"
+    "source_id": "src-ad2d13492d",
+    "metric_en": "1×: 480p 141.4 / 125.8 s, Trim 768p 340.1 s; 2×: 87.2 / 78.3 s",
+    "en": {
+      "concurrency": "single request",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11) / ≈$13,900 (2×$6,950, computed)",
+      "source_note": "Hao AI Lab official"
+    }
   },
   {
     "id": "video-audio-005",
@@ -3760,7 +4547,12 @@
     "tags": [
       "6bit"
     ],
-    "source_id": "src-ad2d13492d"
+    "source_id": "src-ad2d13492d",
+    "metric_en": "480p 5s: 925.2 s (V2 not listed)",
+    "en": {
+      "concurrency": "single request",
+      "source_note": "Hao AI Lab official"
+    }
   },
   {
     "id": "video-audio-006",
@@ -3788,7 +4580,13 @@
       "8bit",
       "few-step"
     ],
-    "source_id": "src-6f81c4e8ea"
+    "source_id": "src-6f81c4e8ea",
+    "metric_en": "832×480×124 frames: cold start 465–504 s; INT6 456 s (peak 19.5GiB)",
+    "en": {
+      "model": "FastH3 Preview (4 steps)",
+      "concurrency": "single request",
+      "source_note": "Hao AI Lab official 2026-09-02"
+    }
   },
   {
     "id": "video-audio-007",
@@ -3811,7 +4609,12 @@
     "date": null,
     "model_family": "MiniMax H3",
     "tags": [],
-    "source_id": "src-e8cba5222f"
+    "source_id": "src-e8cba5222f",
+    "metric_en": "1280×736×5s: 242 s → 168 s",
+    "en": {
+      "model": "MiniMax H3 (base, 50-step class)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "video-audio-008",
@@ -3837,7 +4640,12 @@
     "tags": [
       "few-step"
     ],
-    "source_id": "src-641570f2b0"
+    "source_id": "src-641570f2b0",
+    "metric_en": "15 s clip: 11 min 55 s vs 2 min 6 s",
+    "en": {
+      "quant": "same image, same seed",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "video-audio-009",
@@ -3862,7 +4670,13 @@
     "tags": [
       "few-step"
     ],
-    "source_id": "src-566f983fa8"
+    "source_id": "src-566f983fa8",
+    "metric_en": "5 s clip ~91 s; 15 s ~8 minutes; 960×544×5s about 50 s",
+    "en": {
+      "model": "MiniMax H3 (turbo)",
+      "hardware_cost_text": "≈$2,214 (used, sold 2026-10-06)",
+      "source_note": "@yume_arasaki self-tested (see also 2103277400234860878)"
+    }
   },
   {
     "id": "video-audio-010",
@@ -3885,7 +4699,11 @@
     "date": null,
     "model_family": "MiniMax H3",
     "tags": [],
-    "source_id": "src-c438cce474"
+    "source_id": "src-c438cce474",
+    "metric_en": "11 s video 13 minutes",
+    "en": {
+      "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)"
+    }
   },
   {
     "id": "video-audio-011",
@@ -3909,7 +4727,14 @@
     "engine_raw": "其他/未注明",
     "model_family": "MiniMax H3",
     "tags": [],
-    "source_id": "src-f848dce8d1"
+    "source_id": "src-f848dce8d1",
+    "metric_en": "Sol: 480p 5 s ≈ 68 s (NVIDIA published 56 s); without Sol >400 s; without Sol 720p 20 steps: 5 s 7 min / 10 s ~20 min / 15 s ~45 min",
+    "en": {
+      "quant": "NVIDIA Sol engine",
+      "model": "MiniMax H3 (Sol accelerated / not accelerated)",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@yume_arasaki self-tested + NVIDIA data"
+    }
   },
   {
     "id": "video-audio-012",
@@ -3933,7 +4758,12 @@
     "engine_raw": "其他/未注明",
     "model_family": "MiniMax H3",
     "tags": [],
-    "source_id": "src-05681b1bdc"
+    "source_id": "src-05681b1bdc",
+    "metric_en": "864×480×5s: H3 average 270 s; LTX 154 s (1.76× faster)",
+    "en": {
+      "quant": "same conditions, 3 prompt sets",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
+    }
   },
   {
     "id": "video-audio-013",
@@ -3958,7 +4788,12 @@
     "tags": [
       "few-step"
     ],
-    "source_id": "src-1fae2ac294"
+    "source_id": "src-1fae2ac294",
+    "metric_en": "1024×576×15 s: 43.7 → 13.3 minutes",
+    "en": {
+      "quant": "MLX (GPT-6 Astra optimized)",
+      "model": "FastH3 (4 steps)"
+    }
   },
   {
     "id": "video-audio-014",
@@ -3982,7 +4817,13 @@
     "engine_raw": "其他/未注明",
     "model_family": "MiniMax H3",
     "tags": [],
-    "source_id": "src-b28231a9c9"
+    "source_id": "src-b28231a9c9",
+    "metric_en": "5 s clip: 35 minutes → ~8 minutes",
+    "en": {
+      "quant": "Not stated",
+      "hardware": "48GB Apple Silicon Mac (chip not stated)",
+      "hardware_cost_text": "M4 Pro 48GB model price see above (chip not confirmed)"
+    }
   },
   {
     "id": "video-audio-015",
@@ -4005,7 +4846,12 @@
     "date": null,
     "model_family": "LTX",
     "tags": [],
-    "source_id": "src-721dbc07d3"
+    "source_id": "src-721dbc07d3",
+    "metric_en": "10 s about 90 s (weaker GPU about 6×)",
+    "en": {
+      "model": "LTX-2.3 (with lip sync)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "video-audio-016",
@@ -4029,7 +4875,11 @@
     "engine_raw": "其他/未注明",
     "model_family": "LTX",
     "tags": [],
-    "source_id": "src-0056c2d9df"
+    "source_id": "src-0056c2d9df",
+    "metric_en": "10 s clip about 120 s",
+    "en": {
+      "quant": "Community workflow"
+    }
   },
   {
     "id": "video-audio-017",
@@ -4053,7 +4903,14 @@
     "engine_raw": "其他/未注明",
     "model_family": "LTX",
     "tags": [],
-    "source_id": "src-4b05b6fd29"
+    "source_id": "src-4b05b6fd29",
+    "metric_en": "720p/10 s: 61.11 s; 1080p/10 s: 189.90 s",
+    "en": {
+      "quant": "Template + LoRA",
+      "model": "LTX-2.5 (t2v)",
+      "hardware": "RTX 5090 (500W)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "video-audio-018",
@@ -4076,7 +4933,12 @@
     "date": null,
     "model_family": "LTX",
     "tags": [],
-    "source_id": "src-f848dce8d1"
+    "source_id": "src-f848dce8d1",
+    "metric_en": "2 min 05 s song generated in one pass; +2:28 lip-sync video end to end 32 minutes",
+    "en": {
+      "quant": "ComfyUI serial workflow",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
+    }
   },
   {
     "id": "video-audio-019",
@@ -4100,7 +4962,12 @@
     "engine_raw": "其他/未注明",
     "model_family": "ACE-Step",
     "tags": [],
-    "source_id": "src-14f9b369f6"
+    "source_id": "src-14f9b369f6",
+    "metric_en": "Whole song <10 s (promo post)",
+    "en": {
+      "model": "ACE-Step 1.5 (music)",
+      "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)"
+    }
   },
   {
     "id": "video-audio-020",
@@ -4124,7 +4991,12 @@
     "engine_raw": "其他/未注明",
     "model_family": "ACE-Step",
     "tags": [],
-    "source_id": "src-f3a0783e9f"
+    "source_id": "src-f3a0783e9f",
+    "metric_en": "About 1 minute per first",
+    "en": {
+      "model": "ACE-Step 1.5 (music)",
+      "hardware": "Mac (chip not stated)"
+    }
   },
   {
     "id": "video-audio-021",
@@ -4147,7 +5019,12 @@
     "date": null,
     "model_family": "Wan",
     "tags": [],
-    "source_id": "src-1c20ac5ff7"
+    "source_id": "src-1c20ac5ff7",
+    "metric_en": "736×512 / 16fps: 8 segments ×~5 s (~40 s total) 13.5 minutes",
+    "en": {
+      "hardware": "DGX Spark compatible system (thermal throttling)",
+      "context": "~5 s/segment"
+    }
   },
   {
     "id": "video-audio-022",
@@ -4174,7 +5051,14 @@
       "8bit",
       "few-step"
     ],
-    "source_id": "src-b389ac3d76"
+    "source_id": "src-b389ac3d76",
+    "metric_en": "720p: 4,769 s → 18 s (project claims 265×)",
+    "en": {
+      "quant": "97% sparse attention + 3-step distillation + FP8",
+      "model": "Wan2.1 14B (SparkDiffusion)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "@thePandaily (media relay)"
+    }
   },
   {
     "id": "x-001",
@@ -4205,7 +5089,12 @@
     "tags": [
       "4bit"
     ],
-    "source_id": "src-5388fb1c0e"
+    "source_id": "src-5388fb1c0e",
+    "metric_en": "8K prompt/128 output: 47.7 tok/s decode, 699 tok/s prefill, TTFT 11.8 s (halogen 0.17.2: 34.3 / 1,573; llama.cpp HIP: 23.2 / 466)",
+    "en": {
+      "context": "8K test",
+      "hardware_cost_text": "$3,149 (Framework 128GB, 2026-10)"
+    }
   },
   {
     "id": "x-002",
@@ -4238,7 +5127,12 @@
     "tags": [
       "4bit"
     ],
-    "source_id": "src-5388fb1c0e"
+    "source_id": "src-5388fb1c0e",
+    "metric_en": "34.3 tok/s decode, 1,573 tok/s prefill, TTFT 5.2 s (8K prompt)",
+    "en": {
+      "context": "8K test",
+      "hardware_cost_text": "$3,149 (Framework 128GB, 2026-10)"
+    }
   },
   {
     "id": "x-003",
@@ -4270,7 +5164,11 @@
       "3bit",
       "offload"
     ],
-    "source_id": "src-03209e2ff6"
+    "source_id": "src-03209e2ff6",
+    "metric_en": "51 tok/s generation, 1,500 tok/s prefill (llama.cpp 23)",
+    "en": {
+      "hardware": "Laptop RTX 5070 Ti 12GB + Intel 275HX + 64GB DDR5 + Gen4 SSD"
+    }
   },
   {
     "id": "x-004",
@@ -4305,7 +5203,11 @@
       "long-context",
       "multi-GPU"
     ],
-    "source_id": "src-7680de7f5a"
+    "source_id": "src-7680de7f5a",
+    "metric_en": "Sustained decode 120+ tok/s, peak 153.4; cold prefill 2,844 tok/s (191K), peak 3,113",
+    "en": {
+      "hardware_cost_text": "2×$1,206–1,499 (used, sold, 2026-10-06/12) (per card)"
+    }
   },
   {
     "id": "x-005",
@@ -4338,7 +5240,12 @@
       "long-context",
       "offload"
     ],
-    "source_id": "src-91d222be7c"
+    "source_id": "src-91d222be7c",
+    "metric_en": "78.6 tok/s decode, 887 tok/s prefill, ~22GB VRAM",
+    "en": {
+      "hardware": "RTX 4090 24GB + RAM (experts 39.97GiB in RAM)",
+      "hardware_cost_text": "≈$2,214 (used, sold 2026-10-06)"
+    }
   },
   {
     "id": "x-006",
@@ -4372,7 +5279,11 @@
       "2bit",
       "long-context"
     ],
-    "source_id": "src-d089a2d6d0"
+    "source_id": "src-d089a2d6d0",
+    "metric_en": "176 tok/s decode; 162 at 64K; 5,247 tok/s prefill",
+    "en": {
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "x-007",
@@ -4404,7 +5315,14 @@
       "3bit",
       "multi-GPU"
     ],
-    "source_id": "src-c9b67109e8"
+    "source_id": "src-c9b67109e8",
+    "metric_en": "Up to 120 tok/s decode, 2,000 tok/s prefill (llama.cpp 30 / 120)",
+    "en": {
+      "quant": "q3 xs (Strata tutorial)",
+      "hardware": "2× Tesla V100 32GB PCIe (no NVLink)",
+      "concurrency": "single stream (Strata supports single stream only)",
+      "hardware_cost_text": "$650–700/card (used, 2026-09/10)"
+    }
   },
   {
     "id": "x-008",
@@ -4438,7 +5356,12 @@
       "3bit",
       "multi-GPU"
     ],
-    "source_id": "src-9511cdffaa"
+    "source_id": "src-9511cdffaa",
+    "metric_en": "50 tok/s decode / 387 prefill (llama.cpp 37 / 327)",
+    "en": {
+      "hardware": "2× MI50 32GB (limited to 150W)",
+      "hardware_cost_text": "≈$734/card eBay (2026-10-13)"
+    }
   },
   {
     "id": "x-009",
@@ -4471,7 +5394,12 @@
     "tags": [
       "2bit"
     ],
-    "source_id": "src-92150b203f"
+    "source_id": "src-92150b203f",
+    "metric_en": "Decode ~100 tok/s, peak 128 (58 before PR); prefill ~1,800; TTFT 5.5 s @8.7K",
+    "en": {
+      "engine_note": "Strata (PR #262)",
+      "hardware_cost_text": "from $1,600 (new card, 2026-10-13)"
+    }
   },
   {
     "id": "x-010",
@@ -4502,7 +5430,12 @@
     "engine_note": "oMLX（作者调优）",
     "model_family": "GLM",
     "tags": [],
-    "source_id": "src-af98d40fb6"
+    "source_id": "src-af98d40fb6",
+    "metric_en": "code 125 tok/s, prose 87 tok/s",
+    "en": {
+      "model": "GLM 5.3 (post's original wording \"GLM 5.3 Code\")",
+      "engine_note": "oMLX (author-tuned)"
+    }
   },
   {
     "id": "x-011",
@@ -4532,7 +5465,11 @@
     "engine_raw": "其他/未注明",
     "model_family": "Qwen",
     "tags": [],
-    "source_id": "src-8fd8ad1e0e"
+    "source_id": "src-8fd8ad1e0e",
+    "metric_en": "single stream 85.9 tok/s, long-prompt prefill 6,085 tok/s",
+    "en": {
+      "concurrency": "single stream"
+    }
   },
   {
     "id": "x-012",
@@ -4566,7 +5503,14 @@
       "speculative",
       "multi-GPU"
     ],
-    "source_id": "src-4e5df01765"
+    "source_id": "src-4e5df01765",
+    "metric_en": "1 stream 54 tok/s; 2 streams 83; 4 streams total 142 (old 0.3.4: 40/53/54)",
+    "en": {
+      "hardware": "2× DGX Spark (TP2)",
+      "concurrency": "4 streams total 142 tok/s",
+      "engine_note": "TensorFold 0.5.0 + DFlash2 draft",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)"
+    }
   },
   {
     "id": "x-013",
@@ -4599,7 +5543,11 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-c29e1e757f"
+    "source_id": "src-c29e1e757f",
+    "metric_en": "102.9 vs 34.9 tok/s (vLLM+MTP)",
+    "en": {
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
+    }
   },
   {
     "id": "x-014",
@@ -4631,7 +5579,12 @@
     "engine_note": "TensorFold（ComfyUI 换 loader）",
     "model_family": "MiniMax H3",
     "tags": [],
-    "source_id": "src-619cf646ee"
+    "source_id": "src-619cf646ee",
+    "en": {
+      "hardware": "RTX 5070 Ti 16GB + 64GB RAM (Windows)",
+      "concurrency": "single request",
+      "engine_note": "TensorFold (ComfyUI loader swapped)"
+    }
   },
   {
     "id": "x-015",
@@ -4661,7 +5614,10 @@
     "metric_en": "768×1344 15s video + audio ≈72 s (steady state, excl. MP4 export; baseline ~26 min)",
     "model_family": "MiniMax H3",
     "tags": [],
-    "source_id": "src-1e26d04c42"
+    "source_id": "src-1e26d04c42",
+    "en": {
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "x-016",
@@ -4691,7 +5647,10 @@
     "metric_en": "Three 5s chained clips: 17 min total",
     "model_family": "MiniMax H3",
     "tags": [],
-    "source_id": "src-401a7fee4b"
+    "source_id": "src-401a7fee4b",
+    "en": {
+      "hardware": "Laptop RTX 5090 24GB + 64GB RAM"
+    }
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-1",
@@ -4722,7 +5681,15 @@
       "long-context"
     ],
     "source_id": "src-6d274f8f57",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "context": "262K (model card); example command -c 32768",
+      "concurrency": "batch 1 (single stream)",
+      "engine_note": "PrismML-Eng/llama.cpp fork (llama-bench, batch 1, depth 0)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork (stock llama.cpp not usable); original: | RTX 5090 (32 GB) | **129.9** | 3893 | **1.95** | 120.5 | 1805 | 2.15 |",
+      "launch_command": "llama-cli ... -ngl 99 -fa on -c 32768 (requires the PrismML llama.cpp fork; stock llama.cpp does not work)"
+    }
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-2",
@@ -4753,7 +5720,15 @@
       "long-context"
     ],
     "source_id": "src-6d274f8f57",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "context": "262K (model card); example command -c 32768",
+      "concurrency": "batch 1 (single stream)",
+      "engine_note": "PrismML-Eng/llama.cpp fork (llama-bench, batch 1, depth 0)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork (stock llama.cpp not usable); original: same row as above",
+      "launch_command": "llama-cli ... -ngl 99 -fa on -c 32768 (requires the PrismML llama.cpp fork; stock llama.cpp does not work)"
+    }
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-3",
@@ -4784,7 +5759,15 @@
       "long-context"
     ],
     "source_id": "src-6d274f8f57",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "context": "262K (model card); example command -c 32768",
+      "concurrency": "batch 1 (single stream)",
+      "engine_note": "PrismML-Eng/llama.cpp fork (llama-bench, batch 1, depth 0)",
+      "hardware_cost_text": "card only used about $2,214 (2026-10-06 eBay sold, see prices.json)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork (stock llama.cpp not usable); original: | RTX 4090 (24 GB) | 81.2 | 3124 | 2.99 | **91.1** | 1645 | 2.58 |",
+      "launch_command": "llama-cli ... -ngl 99 -fa on -c 32768 (requires the PrismML llama.cpp fork; stock llama.cpp does not work)"
+    }
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-4",
@@ -4815,7 +5798,15 @@
       "long-context"
     ],
     "source_id": "src-6d274f8f57",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "context": "262K (model card); example command -c 32768",
+      "concurrency": "batch 1 (single stream)",
+      "engine_note": "PrismML-Eng/llama.cpp fork (llama-bench, batch 1, depth 0)",
+      "hardware_cost_text": "card only used about $2,214 (2026-10-06 eBay sold, see prices.json)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork (stock llama.cpp not usable); original: same row as above",
+      "launch_command": "llama-cli ... -ngl 99 -fa on -c 32768 (requires the PrismML llama.cpp fork; stock llama.cpp does not work)"
+    }
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-5",
@@ -4846,7 +5837,14 @@
       "long-context"
     ],
     "source_id": "src-6d274f8f57",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "context": "262K (model card); example command -c 32768",
+      "concurrency": "batch 1 (single stream)",
+      "engine_note": "PrismML llama.cpp fork (Metal)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork (stock llama.cpp not usable); original: | Laptop (Apple M5 Pro, Metal) | 28.1 | 387 | — |",
+      "launch_command": "llama-cli ... -ngl 99 -fa on -c 32768 (requires the PrismML llama.cpp fork; stock llama.cpp does not work)"
+    }
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-6",
@@ -4876,7 +5874,14 @@
       "dense",
       "long-context"
     ],
-    "source_id": "src-6d274f8f57"
+    "source_id": "src-6d274f8f57",
+    "en": {
+      "quant": "PQ2_0 (old pre-rotation build)",
+      "context": "262K (model card); example command -c 32768",
+      "concurrency": "batch 1 (single stream)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork (stock llama.cpp not usable); card note: Measured on the earlier pre-rotation build and reported pending re-measurement; original: | Laptop (Apple M5 Max, Metal) | 7.2 GB | 47.0 | 765 |",
+      "launch_command": "llama-cli ... -ngl 99 -fa on -c 32768 (requires the PrismML llama.cpp fork; stock llama.cpp does not work)"
+    }
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-2-27b-gguf-7",
@@ -4906,7 +5911,14 @@
       "dense",
       "long-context"
     ],
-    "source_id": "src-6d274f8f57"
+    "source_id": "src-6d274f8f57",
+    "en": {
+      "quant": "PQ2_0 (old pre-rotation build)",
+      "context": "262K (model card); example command -c 32768",
+      "concurrency": "batch 1 (single stream)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork (stock llama.cpp not usable); same as above, pending re-measurement; original: | Laptop (Apple M4 Pro, Metal) | 7.2 GB | 18.0 | 125 |",
+      "launch_command": "llama-cli ... -ngl 99 -fa on -c 32768 (requires the PrismML llama.cpp fork; stock llama.cpp does not work)"
+    }
   },
   {
     "id": "hf-cdiamond-qwen3-8-27b-imatrix-nvfp4-mtp-gguf-1",
@@ -4938,7 +5950,15 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-c2f202a4b3"
+    "source_id": "src-c2f202a4b3",
+    "en": {
+      "quant": "iMatrix NVFP4 mixed 5.01 BPW + embedded MTP",
+      "hardware": "RTX PRO 4000 Blackwell SFF 24GB (70W)",
+      "context": "262,144 (actually filled 261,500 input + 256 output with no OOM, GPU0 used 23,952/24,467 MiB)",
+      "engine_note": "llama.cpp + 6 unmerged PRs (custom)",
+      "source_note": "HF model card (self-reported); RTX PRO 4000 Blackwell SFF is a workstation card, no reliable price source found; blog https://piszczek.pl/blog/qwen38-27b-256k-50-tps-24gb-gpu; original: | Production series, 10 runs | 50.441 tok/s mean, 49.420-51.397 |",
+      "launch_command": "llama-server --n-gpu-layers 999 --ctx-size 262144 --parallel 1 --flash-attn on --cache-type-k q4_0 --cache-type-v q4_0 --spec-type draft-mtp ... (full command on the card)"
+    }
   },
   {
     "id": "hf-cdiamond-qwen3-8-27b-imatrix-nvfp4-mtp-gguf-2",
@@ -4967,7 +5987,14 @@
       "dense",
       "long-context"
     ],
-    "source_id": "src-c2f202a4b3"
+    "source_id": "src-c2f202a4b3",
+    "en": {
+      "quant": "same as above",
+      "context": "262,144 (actually filled 261,500 input + 256 output with no OOM, GPU0 used 23,952/24,467 MiB)",
+      "engine_note": "llama.cpp b10454 (commit 4df29be4f, stock)",
+      "source_note": "HF model card (self-reported); RTX PRO 4000 Blackwell SFF is a workstation card, no reliable price source found; blog https://piszczek.pl/blog/qwen38-27b-256k-50-tps-24gb-gpu; original: | Clean llama.cpp b10454 | 45.422 tok/s |",
+      "launch_command": "llama-server --n-gpu-layers 999 --ctx-size 262144 --parallel 1 --flash-attn on --cache-type-k q4_0 --cache-type-v q4_0 --spec-type draft-mtp ... (full command on the card)"
+    }
   },
   {
     "id": "hf-cdiamond-qwen3-8-27b-imatrix-nvfp4-mtp-gguf-3",
@@ -4996,7 +6023,14 @@
       "dense",
       "long-context"
     ],
-    "source_id": "src-c2f202a4b3"
+    "source_id": "src-c2f202a4b3",
+    "en": {
+      "quant": "same as above",
+      "context": "262,144 (actually filled 261,500 input + 256 output with no OOM, GPU0 used 23,952/24,467 MiB)",
+      "engine_note": "llama.cpp custom",
+      "source_note": "HF model card (self-reported); RTX PRO 4000 Blackwell SFF is a workstation card, no reliable price source found; blog https://piszczek.pl/blog/qwen38-27b-256k-50-tps-24gb-gpu; at full 256K context; original: | Full-cache prefill | 226.750 tok/s | / | Full-cache decode | 12.606 tok/s |",
+      "launch_command": "llama-server --n-gpu-layers 999 --ctx-size 262144 --parallel 1 --flash-attn on --cache-type-k q4_0 --cache-type-v q4_0 --spec-type draft-mtp ... (full command on the card)"
+    }
   },
   {
     "id": "hf-prism-ml-bonsai-27b-mlx-1bit-1",
@@ -5027,7 +6061,13 @@
       "long-context"
     ],
     "source_id": "src-8858c67440",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "context": "262K (model card); 100K context peak 11.6–12.2 GB",
+      "engine_note": "PrismML llama.cpp fork (Metal)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp / mlx-swift fork; original: | Laptop (Apple M5 Max, Metal) | 3.9 GB | 66.4 | 874 |",
+      "launch_command": "See Bonsai-demo / Bonsai-27B-gguf"
+    }
   },
   {
     "id": "hf-prism-ml-bonsai-27b-mlx-1bit-2",
@@ -5058,7 +6098,13 @@
       "long-context"
     ],
     "source_id": "src-8858c67440",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "context": "262K (model card); 100K context peak 11.6–12.2 GB",
+      "engine_note": "PrismML llama.cpp fork (Metal)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp / mlx-swift fork; original: | Laptop (Apple M5 Pro, Metal) | 3.9 GB | 44.2 | 421 |",
+      "launch_command": "See Bonsai-demo / Bonsai-27B-gguf"
+    }
   },
   {
     "id": "hf-prism-ml-bonsai-27b-mlx-1bit-3",
@@ -5089,7 +6135,13 @@
       "long-context"
     ],
     "source_id": "src-8858c67440",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "context": "262K (model card); 100K context peak 11.6–12.2 GB",
+      "engine_note": "PrismML llama.cpp fork (Metal)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp / mlx-swift fork; original: | Laptop (Apple M4 Pro, Metal) | 3.9 GB | 26.0 | 133 |",
+      "launch_command": "See Bonsai-demo / Bonsai-27B-gguf"
+    }
   },
   {
     "id": "hf-prism-ml-bonsai-27b-mlx-1bit-4",
@@ -5119,7 +6171,12 @@
       "dense",
       "long-context"
     ],
-    "source_id": "src-8858c67440"
+    "source_id": "src-8858c67440",
+    "en": {
+      "context": "262K (model card); 100K context peak 11.6–12.2 GB",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp / mlx-swift fork; sustained generation 10.8 tok/s (thermal throttling); original: | iPhone 17 Pro Max (A19 Pro) | 3.9 GB | 11.0¹ | 111 |",
+      "launch_command": "See Bonsai-demo / Bonsai-27B-gguf"
+    }
   },
   {
     "id": "hf-esatapedico-qwen3-8-27b-nvfp4-mtp-gguf-1",
@@ -5153,7 +6210,16 @@
       "MTP",
       "multi-GPU"
     ],
-    "source_id": "src-91a12d7e89"
+    "source_id": "src-91a12d7e89",
+    "en": {
+      "quant": "NVFP4 backbone + LOW tier (Q5_0/IQ4_XS) + MTP",
+      "hardware": "RTX 5070 Ti 16GB + RTX 5060 Ti 16GB (dual card tensor split)",
+      "context": "262,144 (native); tested 180K/192K/32K",
+      "concurrency": "Not stated (single request)",
+      "engine_note": "llama.cpp (split-mode tensor)",
+      "source_note": "HF model card (self-reported); prefill drops as context grows, so different contexts are not directly comparable; run at 180K context; card notes prefill drops as context grows, so different contexts are not directly comparable; original: | LOW (Q5_0 / IQ4_XS / IQ4_XS) | 645.6 | 18.44 | 1,151 | 0.726 | 2.88 | 361 |",
+      "launch_command": "llama-server ... --ctx-size 262144 (example from the card)"
+    }
   },
   {
     "id": "hf-esatapedico-qwen3-8-27b-nvfp4-mtp-gguf-2",
@@ -5185,7 +6251,15 @@
       "MTP",
       "multi-GPU"
     ],
-    "source_id": "src-91a12d7e89"
+    "source_id": "src-91a12d7e89",
+    "en": {
+      "quant": "MID-HIGH (Q8_0) + MTP",
+      "hardware": "RTX 5070 Ti 16GB + RTX 5060 Ti 16GB (dual card)",
+      "context": "262,144 (native); tested 180K/192K/32K",
+      "concurrency": "Not stated (single request)",
+      "source_note": "HF model card (self-reported); prefill drops as context grows, so different contexts are not directly comparable; 32K context; original: | **MID-HIGH (Q8_0 / Q8_0 / Q8_0)** | **1451.6** | **25.98** | 0.771 | 2.87 | 108.8 |",
+      "launch_command": "llama-server ... --ctx-size 262144 (example from the card)"
+    }
   },
   {
     "id": "hf-esatapedico-qwen3-8-27b-nvfp4-mtp-gguf-3",
@@ -5217,7 +6291,15 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-91a12d7e89"
+    "source_id": "src-91a12d7e89",
+    "en": {
+      "quant": "LOW + MTP (--spec-draft-n-max 4)",
+      "context": "262,144 (native); tested 180K/192K/32K",
+      "concurrency": "Not stated (single request)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (third-party data reproduced in the card); prefill drops as context grows, so different contexts are not directly comparable; measured by community user PierpaoloPernici, 192K ctx, KV q8_0; peak 203; original: | **LOW** (Q5_0 / IQ4_XS / IQ4_XS) | 49.0% | **148.3** | **203** | 25.0 GiB |",
+      "launch_command": "llama-server ... --ctx-size 262144 (example from the card)"
+    }
   },
   {
     "id": "hf-esatapedico-qwen3-8-27b-nvfp4-mtp-gguf-4",
@@ -5250,7 +6332,15 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-91a12d7e89"
+    "source_id": "src-91a12d7e89",
+    "en": {
+      "quant": "VERY-HIGH (BF16 head) + MTP",
+      "context": "262,144 (native); tested 180K/192K/32K",
+      "concurrency": "Not stated (single request)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (third-party data reproduced in the card); prefill drops as context grows, so different contexts are not directly comparable; original: | **VERY-HIGH** (BF16 / BF16 / BF16) | 49.5% | 111.9 | 139 | 26.9 GiB |",
+      "launch_command": "llama-server ... --ctx-size 262144 (example from the card)"
+    }
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-27b-gguf-1",
@@ -5282,7 +6372,12 @@
       "long-context"
     ],
     "source_id": "src-1d9a41045a",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "context": "262K (model card)",
+      "engine_note": "PrismML llama.cpp fork (llama-bench, Metal)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork; original: | Laptop (Apple M5 Max, Metal) | 7.2 GB | 44.0 | 830 |"
+    }
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-27b-gguf-2",
@@ -5314,7 +6409,12 @@
       "long-context"
     ],
     "source_id": "src-1d9a41045a",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "context": "262K (model card)",
+      "engine_note": "PrismML llama.cpp fork (Metal)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork; original: | Laptop (Apple M5 Pro, Metal) | 7.2 GB | 26.2 | 393 |"
+    }
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-27b-gguf-3",
@@ -5346,7 +6446,12 @@
       "long-context"
     ],
     "source_id": "src-1d9a41045a",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "context": "262K (model card)",
+      "engine_note": "PrismML llama.cpp fork (Metal)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork; original: | Laptop (Apple M4 Pro, Metal) | 7.2 GB | 18.0 | 125 |"
+    }
   },
   {
     "id": "hf-prism-ml-bonsai-8b-gguf-1",
@@ -5376,7 +6481,12 @@
       "dense"
     ],
     "source_id": "src-562348a0ba",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "engine_note": "PrismML llama.cpp fork (CUDA)",
+      "hardware_cost_text": "card only used about $2,214 (2026-10-06 eBay sold, see prices.json)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork; original: | RTX 4090 | llama.cpp CUDA | 368 | 59 | **6.2x** | 11,809 | 10,453 |"
+    }
   },
   {
     "id": "hf-prism-ml-bonsai-8b-gguf-2",
@@ -5406,7 +6516,11 @@
       "dense"
     ],
     "source_id": "src-562348a0ba",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "engine_note": "PrismML llama.cpp fork (CUDA)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork; original: | RTX 3060 Laptop | llama.cpp CUDA | 81 | 3.5¹ | **23x**¹ | 1,871 | 94¹ |"
+    }
   },
   {
     "id": "hf-prism-ml-bonsai-8b-gguf-3",
@@ -5436,7 +6550,12 @@
       "dense"
     ],
     "source_id": "src-562348a0ba",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "engine_note": "PrismML llama.cpp fork (Metal)",
+      "hardware_cost_text": "$2,399 (MBP14 M4 Pro 48GB list price, see prices.json)",
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork; original: | M4 Pro 48 GB | llama.cpp Metal | 85 | 16 | **5.4x** | 498 | 490 |"
+    }
   },
   {
     "id": "hf-prism-ml-bonsai-8b-gguf-4",
@@ -5465,7 +6584,10 @@
       "1bit",
       "dense"
     ],
-    "source_id": "src-562348a0ba"
+    "source_id": "src-562348a0ba",
+    "en": {
+      "source_note": "HF model card (self-reported); requires PrismML llama.cpp fork; original: | Samsung S25 Ultra | llama.cpp OpenCL | 19.6 | — | — | 30.4 | — |"
+    }
   },
   {
     "id": "hf-edge0-edge0-35b-a3b-preview-1",
@@ -5495,7 +6617,12 @@
       "MoE",
       "offload"
     ],
-    "source_id": "src-e0f512a26f"
+    "source_id": "src-e0f512a26f",
+    "en": {
+      "quant": "4-bit (streamed experts)",
+      "engine_note": "edge0 (MLX backend)",
+      "source_note": "HF model card (self-reported); generation 14.9–17.7; prefill cold/warm 113/140; peak active RAM 2.9 GiB; original: | 14.9–17.7 tok/s | 113 / 140 tok/s | 2.9 GiB |"
+    }
   },
   {
     "id": "hf-youssofal-qwen3-8-27b-mtplx-optimized-speed-1",
@@ -5525,7 +6652,11 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-8790632629"
+    "source_id": "src-8790632629",
+    "en": {
+      "quant": "MTPLX Optimized Speed (MLX + MTP)",
+      "source_note": "HF model card (self-reported); 87.6 is the favorable case of rewriting a file it just wrote; rewriting an already-written file, most favorable case; original: | Optimized Speed rewriting a file it just wrote, stock settings (MTPLX 2.10.0) | 87.6 |"
+    }
   },
   {
     "id": "hf-youssofal-qwen3-8-27b-mtplx-optimized-speed-2",
@@ -5555,7 +6686,10 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-8790632629"
+    "source_id": "src-8790632629",
+    "en": {
+      "source_note": "HF model card (self-reported); 87.6 is a favorable case of rewriting a file just written; original: | Optimized Speed on a 3k-token chat answer (MTPLX 2.10.0) | 64.3 |"
+    }
   },
   {
     "id": "hf-youssofal-qwen3-8-flash-next-mtplx-optimized-speed-1",
@@ -5585,7 +6719,12 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-f6663b42ef"
+    "source_id": "src-f6663b42ef",
+    "en": {
+      "quant": "MTPLX Optimized Speed (MTP)",
+      "context": "200K+ measured",
+      "source_note": "HF model card (self-reported); original: | Coding task, MTP speculative decode (the default) | 73.5 |"
+    }
   },
   {
     "id": "hf-youssofal-qwen3-8-flash-next-mtplx-optimized-speed-2",
@@ -5615,7 +6754,12 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-f6663b42ef"
+    "source_id": "src-f6663b42ef",
+    "en": {
+      "quant": "same as above, MTP off",
+      "context": "200K+ measured",
+      "source_note": "HF model card (self-reported); original: | Same task, plain autoregressive | 43.8 |"
+    }
   },
   {
     "id": "hf-youssofal-qwen3-8-flash-next-mtplx-optimized-speed-3",
@@ -5645,7 +6789,11 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-f6663b42ef"
+    "source_id": "src-f6663b42ef",
+    "en": {
+      "context": "200K+ measured",
+      "source_note": "HF model card (self-reported); 200K context; under 2.12.0 after a 65K prompt generation 63.5, prefill 1,094; original: | 200k-token OpenCode turn, warm, mean of two runs | 50.3 |"
+    }
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-8b-mlx-2bit-1",
@@ -5675,7 +6823,11 @@
       "2bit",
       "dense"
     ],
-    "source_id": "src-93d98d177b"
+    "source_id": "src-93d98d177b",
+    "en": {
+      "hardware_cost_text": "$2,399 (MBP14 M4 Pro 48GB list price, see prices.json)",
+      "source_note": "HF model card (self-reported); original: | M4 Pro 48 GB | MLX (Python) | 460 | 83 | 16 | **5.2x** |"
+    }
   },
   {
     "id": "hf-prism-ml-ternary-bonsai-8b-mlx-2bit-2",
@@ -5703,7 +6855,10 @@
       "2bit",
       "dense"
     ],
-    "source_id": "src-93d98d177b"
+    "source_id": "src-93d98d177b",
+    "en": {
+      "source_note": "HF model card (self-reported); original: | iPhone 17 Pro Max | MLX Swift | 363 | 27 | 14 | **1.9x** |"
+    }
   },
   {
     "id": "hf-prism-ml-bonsai-8b-mlx-1bit-1",
@@ -5732,7 +6887,11 @@
       "1bit",
       "dense"
     ],
-    "source_id": "src-76836f5758"
+    "source_id": "src-76836f5758",
+    "en": {
+      "hardware_cost_text": "$2,399 (MBP14 M4 Pro 48GB list price, see prices.json)",
+      "source_note": "HF model card (self-reported); requires PrismML MLX / mlx-swift fork; original: | M4 Pro 48 GB | MLX (Python) | 131 | 16 | **8.4x** | 472 | 434 |"
+    }
   },
   {
     "id": "hf-prism-ml-bonsai-8b-mlx-1bit-2",
@@ -5762,7 +6921,10 @@
       "dense"
     ],
     "source_id": "src-76836f5758",
-    "engine_fork": "PrismML"
+    "engine_fork": "PrismML",
+    "en": {
+      "source_note": "HF model card (self-reported); requires PrismML MLX / mlx-swift fork; original: | Token generation | 44 | 14 | **3.1x** | / | Prompt processing | 377 | 348 |"
+    }
   },
   {
     "id": "hf-alesha-pro-qwen3-8-27b-s-mirai-gguf-1",
@@ -5793,7 +6955,14 @@
       "long-context"
     ],
     "source_id": "src-4118c0fab3",
-    "engine_fork": "mirai-s"
+    "engine_fork": "mirai-s",
+    "en": {
+      "quant": "S-mirai GGUF, 128K q4_0 KV",
+      "hardware": "RTX 3090 (VRAM limited to 12GB, PCIe 3.0)",
+      "context": "128K (q4_0 KV)",
+      "concurrency": "Not stated",
+      "source_note": "HF model card (self-reported); 34.6 at 62K; prefill is for a 6.9K prompt; original: | 12 GB: 128K, q4_0 KV, `-ub 1024` | 11.3 GB | 39.7 tok/s | 34.6 tok/s | 1008 tok/s |"
+    }
   },
   {
     "id": "hf-youssofal-qwen3-8-27b-mtplx-optimized-quality-1",
@@ -5823,7 +6992,11 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-2c5444ed9c"
+    "source_id": "src-2c5444ed9c",
+    "en": {
+      "engine_note": "MTPLX Mac app (2.11.3 measurement section)",
+      "source_note": "HF model card (self-reported); original: | Coding task, medium reasoning, inside the MTPLX Mac app | 48.3 |"
+    }
   },
   {
     "id": "hf-mlx-community-qwen3-5-27b-claude-4-6-opus-distilled-mlx-4bit-1",
@@ -5852,7 +7025,11 @@
       "4bit",
       "dense"
     ],
-    "source_id": "src-8fdfb6d872"
+    "source_id": "src-8fdfb6d872",
+    "en": {
+      "quant": "MLX 4-bit (4.501 bpw)",
+      "source_note": "HF model card (self-reported); peak RAM 15.6 GB; original: | Generation speed | 15.7 tokens/sec | / | Prompt ingestion | 86.5 tokens/sec |"
+    }
   },
   {
     "id": "hf-carypalmer-ternary-bonsai-2-27b-262k-gguf-1",
@@ -5883,7 +7060,12 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-baa7cd9b32"
+    "source_id": "src-baa7cd9b32",
+    "en": {
+      "quant": "Ternary Bonsai 2 27B + MTP, q8_0 KV",
+      "context": "262K (full window)",
+      "source_note": "HF model card (self-reported); 4K context; original: | 4k tokens of context | **102** | 102 | 1,173 |"
+    }
   },
   {
     "id": "hf-carypalmer-ternary-bonsai-2-27b-262k-gguf-2",
@@ -5911,7 +7093,12 @@
       "dense",
       "long-context"
     ],
-    "source_id": "src-baa7cd9b32"
+    "source_id": "src-baa7cd9b32",
+    "en": {
+      "quant": "same as above",
+      "context": "262K (full window)",
+      "source_note": "HF model card (self-reported); 32K; code 175; original: | 32k | **78** | 175 | 1,031 |"
+    }
   },
   {
     "id": "hf-carypalmer-ternary-bonsai-2-27b-262k-gguf-3",
@@ -5939,7 +7126,12 @@
       "dense",
       "long-context"
     ],
-    "source_id": "src-baa7cd9b32"
+    "source_id": "src-baa7cd9b32",
+    "en": {
+      "quant": "same as above",
+      "context": "262K (full window)",
+      "source_note": "HF model card (self-reported); end of 258K window; original: | 258k (the window's end) | **8.6** | 12.1 | 436 |"
+    }
   },
   {
     "id": "hf-carypalmer-ternary-bonsai-2-27b-262k-gguf-4",
@@ -5970,7 +7162,12 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-baa7cd9b32"
+    "source_id": "src-baa7cd9b32",
+    "en": {
+      "quant": "8GB preset: q4_0 K/V, Q4_0 MTP head, 131K window",
+      "context": "262K (full window)",
+      "source_note": "HF model card (self-reported); 43.1 at 32K; driving the desktop at the same time; original: Measured on an RTX 2060 SUPER ... 51.2 / 43.1 tok/s at 4k / 32k"
+    }
   },
   {
     "id": "hf-youssofal-ternary-bonsai-2-27b-mtplx-optimized-speed-1",
@@ -6001,7 +7198,10 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-09a230ad39"
+    "source_id": "src-09a230ad39",
+    "en": {
+      "source_note": "HF model card (self-reported); after 4K prompt; original: | 4,061 tokens | 64.4 tok/s | 52.6 tok/s | 11.4 and 23.9 GB |"
+    }
   },
   {
     "id": "hf-youssofal-ternary-bonsai-2-27b-mtplx-optimized-speed-2",
@@ -6032,7 +7232,11 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-09a230ad39"
+    "source_id": "src-09a230ad39",
+    "en": {
+      "quant": "same as above",
+      "source_note": "HF model card (self-reported); after 16K prompt; original: | 16,350 tokens | 57.1 tok/s | 51.0 tok/s | 14.6 and 27.0 GB |"
+    }
   },
   {
     "id": "hf-edge0-edge0-8b-a1b-preview-1",
@@ -6062,7 +7266,12 @@
       "MoE",
       "offload"
     ],
-    "source_id": "src-ca9a5f73d4"
+    "source_id": "src-ca9a5f73d4",
+    "en": {
+      "quant": "4-bit (streamed)",
+      "engine_note": "edge0 (MLX backend)",
+      "source_note": "HF model card (self-reported); generation 23.9–25.3; prefill cold/warm 500/1428; original: | 23.9–25.3 tok/s | 500 / 1428 tok/s | 1.0 GiB |"
+    }
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1",
@@ -6092,7 +7301,16 @@
       "8bit",
       "MoE"
     ],
-    "source_id": "src-b536429e70"
+    "source_id": "src-b536429e70",
+    "en": {
+      "quant": "Escha W2 (INT8=on)",
+      "context": "32K (16GB card 8K×16)",
+      "concurrency": "single stream 283; bs32 about 2,670 (peak 3,017.6 @32 streams)",
+      "engine_note": "SGLang (sglang/serve.sh)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (self-reported); each row measured on the corresponding physical card using the in-card command; 4090 temperature 0 vs 0.6: 218 vs 102 tok/s, temperature has a large effect; original: | RTX 5090 | 32 GB | sm_120 | **283 tok/s**[^int8on] | 0.22 s | **~2,670 tok/s** @ bs 32 | 32k |",
+      "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)"
+    }
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-2",
@@ -6119,7 +7337,13 @@
       "2bit",
       "MoE"
     ],
-    "source_id": "src-b536429e70"
+    "source_id": "src-b536429e70",
+    "en": {
+      "context": "32K (16GB card 8K×16)",
+      "hardware_cost_text": "card only used about $2,214 (2026-10-06 eBay sold, see prices.json)",
+      "source_note": "HF model card (self-reported); each row measured on the corresponding physical card using the in-card command; 4090 temperature 0 vs 0.6: 218 vs 102 tok/s, temperature has a large effect; original: | RTX 4090 | 24 GB | sm_89 | **225 tok/s** | 0.26 s | **1,321 tok/s** @ bs 32 | 32k |",
+      "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)"
+    }
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-3",
@@ -6146,7 +7370,14 @@
       "2bit",
       "MoE"
     ],
-    "source_id": "src-b536429e70"
+    "source_id": "src-b536429e70",
+    "en": {
+      "quant": "Escha W2 (16GB recipe)",
+      "context": "32K (16GB card 8K×16)",
+      "concurrency": "bs16 914, 8K×16 streams",
+      "source_note": "HF model card (self-reported); each row measured on the corresponding physical card using the in-card command; 4090 temperature 0 vs 0.6: 218 vs 102 tok/s, temperature has a large effect; original: | RTX 5080 | 16 GB | sm_120 | **212 tok/s** | 0.18 s @1k | 914 tok/s @ bs 16 | 8k × 16 streams |",
+      "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)"
+    }
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-4",
@@ -6173,7 +7404,13 @@
       "2bit",
       "MoE"
     ],
-    "source_id": "src-b536429e70"
+    "source_id": "src-b536429e70",
+    "en": {
+      "context": "32K (16GB card 8K×16)",
+      "hardware_cost_text": "card only used about $1,206 (2026-10-06 getpcparts, see prices.json)",
+      "source_note": "HF model card (self-reported); each row measured on the corresponding physical card using the in-card command; 4090 temperature 0 vs 0.6: 218 vs 102 tok/s, temperature has a large effect; original: | RTX 3090 | 24 GB | sm_86 | **154 tok/s** | 0.63 s | 390 tok/s @ bs 16 | 32k |",
+      "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)"
+    }
   },
   {
     "id": "hf-eschalabs-qwen3-6-35b-a3b-escha-w2-5",
@@ -6200,7 +7437,13 @@
       "2bit",
       "MoE"
     ],
-    "source_id": "src-b536429e70"
+    "source_id": "src-b536429e70",
+    "en": {
+      "quant": "Escha W2 (16GB recipe)",
+      "context": "32K (16GB card 8K×16)",
+      "source_note": "HF model card (self-reported); each row measured on the corresponding physical card using the in-card command; 4090 temperature 0 vs 0.6: 218 vs 102 tok/s, temperature has a large effect; original: | RTX 5060 Ti | 16 GB | sm_120 | **128 tok/s** | 0.52 s @1k | 387 tok/s @ bs 16 | 8k × 16 streams |",
+      "launch_command": "MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)"
+    }
   },
   {
     "id": "hf-conwayresearch-underdog-27b-1-0-1",
@@ -6229,7 +7472,10 @@
       "4bit",
       "dense"
     ],
-    "source_id": "src-f0185e4e20"
+    "source_id": "src-f0185e4e20",
+    "en": {
+      "source_note": "HF model card (self-reported); original: | Email writing | 33.1 tokens/s | 80.6 tokens/s | 2.44x |"
+    }
   },
   {
     "id": "hf-conwayresearch-underdog-27b-1-0-2",
@@ -6259,7 +7505,10 @@
       "dense",
       "speculative"
     ],
-    "source_id": "src-f0185e4e20"
+    "source_id": "src-f0185e4e20",
+    "en": {
+      "source_note": "HF model card (self-reported); Python coding 130.1 (3.94x), long-text summarization 71.4; original: | Email writing | 33.1 tokens/s | 80.6 tokens/s | 2.44x |"
+    }
   },
   {
     "id": "hf-mlx-community-arex-2-6bit-1",
@@ -6287,7 +7536,11 @@
     "tags": [
       "6bit"
     ],
-    "source_id": "src-b386fdb464"
+    "source_id": "src-b386fdb464",
+    "en": {
+      "engine_note": "MLX (helper not specified)",
+      "source_note": "HF model card (self-reported); author's note: 'This is a small test on one Mac, not a benchmark'; speed helper not explained; 19 with helper on; prefill about 90 tok/s; original: | **6-bit** | **10 tokens/s** | **19 tokens/s** | ..."
+    }
   },
   {
     "id": "hf-mlx-community-arex-2-6bit-2",
@@ -6313,7 +7566,10 @@
     "tags": [
       "4bit"
     ],
-    "source_id": "src-b386fdb464"
+    "source_id": "src-b386fdb464",
+    "en": {
+      "source_note": "HF model card (self-reported); author's note: 'This is a small test on one Mac, not a benchmark'; speed helper not explained; 27 with helper on; original: | 4-bit | 14 tokens/s | 27 tokens/s | 91.4% |"
+    }
   },
   {
     "id": "hf-kujira-underdog-saluki-27b-1-0-mtp-gguf-1",
@@ -6343,7 +7599,13 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-5a213b64b5"
+    "source_id": "src-5a213b64b5",
+    "en": {
+      "quant": "MTP GGUF, without --spec-type",
+      "hardware": "RTX 3080 12GB (WSL2)",
+      "engine_note": "llama.cpp 03aa006 (after b11493)",
+      "source_note": "HF model card (self-reported); original: | Generation (mean of 6) | 41.2 tok/s | 40.7 tok/s | **66.2 tok/s** (58–75) |"
+    }
   },
   {
     "id": "hf-kujira-underdog-saluki-27b-1-0-mtp-gguf-2",
@@ -6373,7 +7635,12 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-5a213b64b5"
+    "source_id": "src-5a213b64b5",
+    "en": {
+      "quant": "MTP on",
+      "hardware": "RTX 3080 12GB (WSL2)",
+      "source_note": "HF model card (self-reported); original: same row as above, MTP on 66.2 (58–75), acceptance rate 62–96%, VRAM 11.5 GB"
+    }
   },
   {
     "id": "hf-opensourcewtf-deepseek-v4-1-flash-streaming-repack-exl3-3-0bpw-1",
@@ -6404,7 +7671,14 @@
       "long-context",
       "offload"
     ],
-    "source_id": "src-d86abbb551"
+    "source_id": "src-d86abbb551",
+    "en": {
+      "quant": "EXL3 3.0bpw expert streaming (slot cache)",
+      "context": "1,047,488 measured",
+      "concurrency": "HumanEval 164 problems, aggregate 31.8 tok/s",
+      "engine_note": "mlx-serve + mlx-stream plugin 4f42e79 (EXL3 Metal kernels)",
+      "source_note": "HF model card (self-reported); 1K prompt; original: | 1,024 | 81.3 | 12.6 | 39.9 | 148 | 167 | 107.2 |"
+    }
   },
   {
     "id": "hf-opensourcewtf-deepseek-v4-1-flash-streaming-repack-exl3-3-0bpw-2",
@@ -6434,7 +7708,14 @@
       "long-context",
       "offload"
     ],
-    "source_id": "src-d86abbb551"
+    "source_id": "src-d86abbb551",
+    "en": {
+      "quant": "same as above",
+      "context": "1,047,488 measured",
+      "concurrency": "HumanEval 164 problems, aggregate 31.8 tok/s",
+      "engine_note": "mlx-serve + mlx-stream plugin 4f42e79 (EXL3 Metal kernels)",
+      "source_note": "HF model card (self-reported); 256K prompt, TTFT 574.5 s; original: | 262,144 | 456.3 | 574.5 | 27.1 | 115 | 161 | 106.4 |"
+    }
   },
   {
     "id": "hf-opensourcewtf-deepseek-v4-1-flash-streaming-repack-exl3-3-0bpw-3",
@@ -6464,7 +7745,14 @@
       "long-context",
       "offload"
     ],
-    "source_id": "src-d86abbb551"
+    "source_id": "src-d86abbb551",
+    "en": {
+      "quant": "same as above",
+      "context": "1,047,488 measured",
+      "concurrency": "HumanEval 164 problems, aggregate 31.8 tok/s",
+      "engine_note": "mlx-serve + mlx-stream plugin 4f42e79 (EXL3 Metal kernels)",
+      "source_note": "HF model card (self-reported); ≈1M prompt, TTFT 3,988.9 s; original: | 1,047,488 | 262.6 | 3,988.9 | 11.1 | 82 | 143 | 103.7 |"
+    }
   },
   {
     "id": "hf-final-bench-pocket-35b-gguf-1",
@@ -6493,7 +7781,11 @@
       "1bit",
       "dense"
     ],
-    "source_id": "src-e5825a3cef"
+    "source_id": "src-e5825a3cef",
+    "en": {
+      "engine_note": "llama.cpp Metal (tg64/pp128)",
+      "source_note": "HF model card (self-reported); CPU 8 threads 13.8; Q2_K CPU only 19.5; original: | Metal generate (tg64) | **25.4 tok/s** | 12.8 | 🟢 1.99× | / | Metal prompt (pp128) | **240.7 tok/s** |"
+    }
   },
   {
     "id": "hf-peasantsmith-glm-5-3-flash-maya-gguf-1",
@@ -6523,7 +7815,13 @@
       "MTP",
       "multi-GPU"
     ],
-    "source_id": "src-100ca98eeb"
+    "source_id": "src-100ca98eeb",
+    "en": {
+      "context": "60K test",
+      "engine_note": "Project Maya (v1.0.15 prefill up to 670)",
+      "hardware_cost_text": "card only 2×about $650 = about $1,300 (used, see prices.json)",
+      "source_note": "HF model card (self-reported); original says 'up to' (peak); peak; holds up at 60K context; original: Maya-S on two Tesla V100 32 GB (30 GB RAM) with Project Maya: decode ... up to 40 tokens/s ... prefill ... up to 560"
+    }
   },
   {
     "id": "hf-peasantsmith-glm-5-3-flash-maya-gguf-2",
@@ -6547,7 +7845,12 @@
     "metric_en": "19 tok/s decode; 370 tok/s prefill",
     "model_family": "GLM",
     "tags": [],
-    "source_id": "src-100ca98eeb"
+    "source_id": "src-100ca98eeb",
+    "en": {
+      "context": "60K test",
+      "hardware_cost_text": "card only used about $650 (see prices.json)",
+      "source_note": "HF model card (self-reported); original says 'up to' (peak); peak; original: On one Tesla V100 32 GB with 64 GB of RAM: decode up to 19 tokens/s, prefill up to 370 tokens/s"
+    }
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-1",
@@ -6576,7 +7879,14 @@
       "2bit",
       "dense"
     ],
-    "source_id": "src-5eaf91bb06"
+    "source_id": "src-5eaf91bb06",
+    "en": {
+      "quant": "ShapeLearn mixed quantization GPU-1 (2.56 bpw, label IQ2_XXS)",
+      "concurrency": "single stream (-np 1)",
+      "engine_note": "llama.cpp (-np 1 -fa on)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (self-reported); thinking-mode sampling; mixed coding/math/IF/common-sense prompts; single stream, no speculation; original: | GPU-1 | 2.56 | 119 | 164 (1.38x) | 176 (1.47x) |"
+    }
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-2",
@@ -6606,7 +7916,14 @@
       "3bit",
       "dense"
     ],
-    "source_id": "src-5eaf91bb06"
+    "source_id": "src-5eaf91bb06",
+    "en": {
+      "quant": "ShapeLearn mixed quantization GPU-2 (2.88 bpw, label IQ3_XXS)",
+      "concurrency": "single stream (-np 1)",
+      "engine_note": "llama.cpp (-np 1 -fa on)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (self-reported); thinking-mode sampling; mixed coding/math/IF/common-sense prompts; single stream, no speculation; original: | GPU-2 | 2.88 | 111 | 157 (1.41x) | 176 (1.59x) |"
+    }
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-3",
@@ -6635,7 +7952,14 @@
       "3bit",
       "dense"
     ],
-    "source_id": "src-5eaf91bb06"
+    "source_id": "src-5eaf91bb06",
+    "en": {
+      "quant": "ShapeLearn mixed quantization GPU-3 (3.01 bpw, label IQ3_XS)",
+      "concurrency": "single stream (-np 1)",
+      "engine_note": "llama.cpp (-np 1 -fa on)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (self-reported); thinking-mode sampling; mixed coding/math/IF/common-sense prompts; single stream, no speculation; original: | GPU-3 | 3.01 | 108 | 155 (1.44x) | 172 (1.59x) |"
+    }
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-4",
@@ -6664,7 +7988,14 @@
       "3bit",
       "dense"
     ],
-    "source_id": "src-5eaf91bb06"
+    "source_id": "src-5eaf91bb06",
+    "en": {
+      "quant": "ShapeLearn mixed quantization GPU-4 (3.23 bpw, label IQ3_S)",
+      "concurrency": "single stream (-np 1)",
+      "engine_note": "llama.cpp (-np 1 -fa on)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (self-reported); thinking-mode sampling; mixed coding/math/IF/common-sense prompts; single stream, no speculation; original: | GPU-4 | 3.23 | 104 | 148 (1.43x) | 170 (1.64x) |"
+    }
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-5",
@@ -6694,7 +8025,14 @@
       "4bit",
       "dense"
     ],
-    "source_id": "src-5eaf91bb06"
+    "source_id": "src-5eaf91bb06",
+    "en": {
+      "quant": "ShapeLearn mixed quantization GPU-5 (3.84 bpw, label IQ4_XS)",
+      "concurrency": "single stream (-np 1)",
+      "engine_note": "llama.cpp (-np 1 -fa on)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (self-reported); thinking-mode sampling; mixed coding/math/IF/common-sense prompts; single stream, no speculation; original: | GPU-5 | 3.84 |  94 | 147 (1.57x) | 167 (1.78x) |"
+    }
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-6",
@@ -6724,7 +8062,13 @@
       "dense",
       "speculative"
     ],
-    "source_id": "src-5eaf91bb06"
+    "source_id": "src-5eaf91bb06",
+    "en": {
+      "quant": "GPU-1 (2.56 bpw) + DFlash2 (7 draft)",
+      "concurrency": "single stream (-np 1)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (self-reported); thinking-mode sampling; mixed coding/math/IF/common-sense prompts; DFlash2 speculation, text only; original: | GPU-1 | 2.56 | 119 | 164 (1.38x) | 176 (1.47x) |"
+    }
   },
   {
     "id": "hf-byteshape-qwen3-8-27b-gguf-7",
@@ -6754,7 +8098,13 @@
       "dense",
       "speculative"
     ],
-    "source_id": "src-5eaf91bb06"
+    "source_id": "src-5eaf91bb06",
+    "en": {
+      "quant": "GPU-5 (3.84 bpw) + DFlash2 (7 draft)",
+      "concurrency": "single stream (-np 1)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (self-reported); thinking-mode sampling; mixed coding/math/IF/common-sense prompts; DFlash2 speculation, text only; original: | GPU-5 | 3.84 |  94 | 147 (1.57x) | 167 (1.78x) |"
+    }
   },
   {
     "id": "hf-agentionai-qwen3-8-flash-next-gyro-gguf-1",
@@ -6783,7 +8133,15 @@
       "ternary",
       "long-context"
     ],
-    "source_id": "src-4417018204"
+    "source_id": "src-4417018204",
+    "en": {
+      "quant": "Gyro-S TQ1_0 (27.64 GiB)",
+      "context": "Up to 128k (model card; 28.8 GiB at 64k)",
+      "concurrency": "Not stated",
+      "engine_note": "Strata rc1 (agentionai, release candidate)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (self-reported); prose 140 / code 209 / JSON 221; prefill is for a 16k prompt; original: | RTX 5090, 32 GB | Strata `rc1` (release candidate) | prose **140**, code 209, JSON 221 | 4,883 (16k prompt) | prose 114 |"
+    }
   },
   {
     "id": "hf-agentionai-qwen3-8-flash-next-gyro-gguf-2",
@@ -6813,7 +8171,15 @@
       "long-context"
     ],
     "source_id": "src-4417018204",
-    "engine_fork": "agentionai"
+    "engine_fork": "agentionai",
+    "en": {
+      "quant": "Gyro-S TQ1_0 (27.64 GiB)",
+      "context": "Up to 128k (model card; 28.8 GiB at 64k)",
+      "concurrency": "Not stated",
+      "engine_note": "agentionai/llama.cpp fork main (CUDA)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "HF model card (self-reported); with MTP: JSON 210 / code 180; prefill is approximate, pp2048; original: | RTX 5090, 32 GB | llama.cpp fork main, CUDA | **113** (MTP: JSON 210, code 180, copy 218) | ~3,000 (pp2048) |  |"
+    }
   },
   {
     "id": "hf-agentionai-qwen3-8-flash-next-gyro-gguf-3",
@@ -6843,7 +8209,13 @@
       "long-context"
     ],
     "source_id": "src-4417018204",
-    "engine_fork": "agentionai"
+    "engine_fork": "agentionai",
+    "en": {
+      "context": "Up to 128k (model card; 28.8 GiB at 64k)",
+      "concurrency": "Not stated",
+      "engine_note": "agentionai/llama.cpp fork (Vulkan)",
+      "source_note": "HF model card (self-reported); code+MTP 70.6; prefill pp512; original: | Radeon AI PRO R9700, 32 GB | llama.cpp fork, Vulkan | 57.8 (code with MTP: 70.6) | 1,246 (pp512) |  |"
+    }
   },
   {
     "id": "hf-agentionai-qwen3-8-flash-next-gyro-gguf-4",
@@ -6873,7 +8245,13 @@
       "long-context"
     ],
     "source_id": "src-4417018204",
-    "engine_fork": "agentionai"
+    "engine_fork": "agentionai",
+    "en": {
+      "context": "Up to 128k (model card; 28.8 GiB at 64k)",
+      "concurrency": "Not stated",
+      "engine_note": "agentionai/llama.cpp fork (Vulkan)",
+      "source_note": "HF model card (self-reported); MTP code 50 / JSON 55; Gyro-M 26.4; original: | AMD Strix Halo | llama.cpp fork, Vulkan | 31.7 (MTP: code 50, JSON 55) |  | 26.4 |"
+    }
   },
   {
     "id": "hf-umixer-qwen3-8-flash-next-oq4e-mix6-mtp-1",
@@ -6904,7 +8282,13 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-e2a5b0313c"
+    "source_id": "src-e2a5b0313c",
+    "en": {
+      "quant": "oQ4e-mix6 (U-shaped mixed 4/6-bit) + 6-bit MTP",
+      "context": "Measured to about 122k",
+      "concurrency": "Not stated",
+      "source_note": "HF model card (self-reported); a v2 repo exists (umixer/...-v2), this repo is v1; average over 7 context sizes (pp1199 to pp122463); short-prompt tg 136.7, 67.0 at 122k; original: | **Mean** | **75.7** | **84.4** | **2,581.4** | **2,377.1** | **−7.9%** |"
+    }
   },
   {
     "id": "hf-osaurusai-allosaurus-v0-1-125b-a6b-jangh2-1",
@@ -6933,7 +8317,14 @@
       "MoE",
       "long-context"
     ],
-    "source_id": "src-d9418d5e1b"
+    "source_id": "src-d9418d5e1b",
+    "en": {
+      "quant": "JANGH2 (RAM-resident 34.8 GiB)",
+      "hardware": "Apple M5 Max (RAM not stated; card says it targets 48GB Macs)",
+      "concurrency": "Not stated",
+      "engine_note": "Osaurus engine (pre-release)",
+      "source_note": "HF model card (self-reported); after a ~4k prompt, decode drops to 31.7 (card says it is a known issue of the pre-release engine); prefill 902 is for a ~4k prompt; original: | decode, short prompt | 46.5 tok/s | 53.1 tok/s |"
+    }
   },
   {
     "id": "hf-atomicchat-qwen3-8-flash-next-gguf-1",
@@ -6964,7 +8355,14 @@
       "long-context",
       "offload"
     ],
-    "source_id": "src-bf6739fe35"
+    "source_id": "src-bf6739fe35",
+    "en": {
+      "quant": "AD-3.84bpw-IQ4_XS-M64 (RAM 45.8 GB + SSD 39.1 GB)",
+      "context": "262,144 (model card says extendable to 1M)",
+      "concurrency": "Not stated",
+      "engine_note": "llama.cpp (needs a build that supports Qwen3.8-Flash-Next)",
+      "source_note": "HF model card (self-reported); file is larger than RAM, relies on NVMe random reads; quant tier inferred from 85 GB total as AD-3.84bpw; original: Our 85 GB quant runs on an M5 Max with 64 GB of memory, with vision, at 36 tok/s."
+    }
   },
   {
     "id": "hf-ddalcu-qwen3-8-flash-next-mlx-serve-mixed-4-8bit-1",
@@ -6994,7 +8392,12 @@
       "8bit",
       "long-context"
     ],
-    "source_id": "src-9bd14540d5"
+    "source_id": "src-9bd14540d5",
+    "en": {
+      "quant": "mixed 4/8-bit (≈75 GB resident)",
+      "concurrency": "serial single request",
+      "source_note": "HF model card (self-reported); 78 tok/s with --mtp (code +41%, prose slightly slower); values are approximate; original: Measured on an M4 Max 128 GB with mlx-serve 26.8.11: ~75 GB resident, decode ~60 tok/s serial and 78 tok/s with MTP"
+    }
   },
   {
     "id": "hf-youssofal-qwen3-6-27b-mtplx-optimized-speed-1",
@@ -7026,7 +8429,12 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-4d5c73e58f"
+    "source_id": "src-4d5c73e58f",
+    "en": {
+      "quant": "MLXCommunity 4-bit backbone + 3-bit draft LM head (MTP depth 3)",
+      "concurrency": "single request",
+      "source_note": "HF model card (self-reported); thinking mode off, draft temperature 0.70, fanmax; RAM not stated; original: this artifact reached **63.056 tok/s** and **62.886 tok/s** at depth 3 on the long-code 192-token prompt"
+    }
   },
   {
     "id": "hf-ddalcu-qwen3-8-flash-next-mlx-serve-iq-mlx-4-7bpw-1",
@@ -7059,7 +8467,13 @@
       "speculative",
       "MTP"
     ],
-    "source_id": "src-c255c8a5c2"
+    "source_id": "src-c255c8a5c2",
+    "en": {
+      "quant": "iQ-MLX 4.7 bpw (calibrated 4-bit experts + 8-bit rest, ≈75 GB)",
+      "concurrency": "Not stated",
+      "engine_note": "mlx-serve 26.10.1 (MTP on)",
+      "source_note": "HF model card (self-reported); range 149 to 162; RAM not stated (card says a 128GB Mac can run it); original: decode 157 tok/s median (149 to 162) against 166 (141 to 173) for the uncalibrated pack, prefill 5411 against 5369 tok/s."
+    }
   },
   {
     "id": "x-017",
@@ -7107,7 +8521,12 @@
     "source_id": "src-3950f578b9",
     "engine_raw": "TensorFold + DFlash2",
     "engine_note": "TensorFold + DFlash2",
-    "metric_en": "1 stream 60.4 tok/s (mia-ai.net; the post says about 60); 4 streams 108.8 total; 32k prefill 1,978.9 tok/s (mia-ai.net)"
+    "metric_en": "1 stream 60.4 tok/s (mia-ai.net; the post says about 60); 4 streams 108.8 total; 32k prefill 1,978.9 tok/s (mia-ai.net)",
+    "en": {
+      "context": "1M (4 streams share a ~2.7–2.9M KV pool)",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "source_note": "@MiaAI_lab post + mia-ai.net/models (fetched 10/14; single-stream tok/s taken from mia-ai.net, the post does not have this exact value)"
+    }
   },
   {
     "id": "x-018",
@@ -7152,7 +8571,14 @@
     "measured_by": "MiaAI_lab",
     "source_id": "src-a16afa2688",
     "engine_raw": "TensorFold TP4 分支",
-    "engine_note": "TensorFold TP4 分支"
+    "engine_note": "TensorFold TP4 分支",
+    "metric_en": "1 stream 95 tok/s (prose); 4 streams 163",
+    "en": {
+      "hardware": "4× DGX Spark (works with or without switch, TP4 branch)",
+      "context": "KV ≈ 6M",
+      "engine_note": "TensorFold TP4 branch",
+      "hardware_cost_text": "≈$27,800 (4×$6,950, computed)"
+    }
   },
   {
     "id": "x-019",
@@ -7199,7 +8625,13 @@
     "measured_by": "MiaAI_lab",
     "source_id": "src-ccaf216073",
     "engine_raw": "TensorFold Zig v1.0 + MTP",
-    "engine_note": "TensorFold Zig v1.0 + MTP"
+    "engine_note": "TensorFold Zig v1.0 + MTP",
+    "metric_en": "1 stream 64.4 tok/s (prose); 8 streams 200.9; 32k prefill 2,630 tok/s",
+    "en": {
+      "context": "262K, up to 8 streams",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@MiaAI_lab post + mia-ai.net/models (fetched 10/14)"
+    }
   },
   {
     "id": "x-020",
@@ -7243,7 +8675,13 @@
     ],
     "measured_by": "MiaAI_lab",
     "source_id": "src-2c6ee16025",
-    "metric_en": "1 stream 48.7 tok/s (mia-ai.net, not in the post); 8 streams 117 prose / 180 code (post); peak memory 91 GiB"
+    "metric_en": "1 stream 48.7 tok/s (mia-ai.net, not in the post); 8 streams 117 prose / 180 code (post); peak memory 91 GiB",
+    "en": {
+      "quant": "NVFP4 (official NVIDIA NVFP4 optional)",
+      "context": "262K (YaRN 512K)",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@MiaAI_lab post + mia-ai.net/models (fetched 10/14; single-stream tok/s taken from mia-ai.net, the post does not have this exact value)"
+    }
   },
   {
     "id": "x-021",
@@ -7288,7 +8726,12 @@
     ],
     "measured_by": "MiaAI_lab",
     "source_id": "src-125252fa01",
-    "metric_en": "1 stream 54.4 tok/s, 8 streams 207, 32k prefill 2,962 tok/s (all mia-ai.net; the post says about 50 single-stream / about 212 at 8 streams)"
+    "metric_en": "1 stream 54.4 tok/s, 8 streams 207, 32k prefill 2,962 tok/s (all mia-ai.net; the post says about 50 single-stream / about 212 at 8 streams)",
+    "en": {
+      "context": "1M (2.5M bf16 KV)",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "source_note": "@MiaAI_lab post + mia-ai.net/models (fetched 10/14; single-stream tok/s taken from mia-ai.net, the post does not have this exact value)"
+    }
   },
   {
     "id": "x-022",
@@ -7331,7 +8774,12 @@
       }
     ],
     "measured_by": "MiaAI_lab",
-    "source_id": "src-6176a62245"
+    "source_id": "src-6176a62245",
+    "metric_en": "single stream 82 tok/s (peak about 95); 3 sessions 135 tok/s",
+    "en": {
+      "quant": "official FP8 weights",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)"
+    }
   },
   {
     "id": "x-023",
@@ -7377,7 +8825,12 @@
     "measured_by": "MiaAI_lab",
     "source_id": "src-aecdae50c6",
     "engine_raw": "vLLM 0.26",
-    "engine_note": "vLLM 0.26"
+    "engine_note": "vLLM 0.26",
+    "metric_en": "single session 95 tok/s; 8 sessions 317 tok/s",
+    "en": {
+      "context": "256K, 24 concurrent",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
+    }
   },
   {
     "id": "x-024",
@@ -7414,7 +8867,13 @@
     "measured_by": "MiaAI_lab",
     "source_id": "src-5173bf0d5f",
     "engine_raw": "vLLM（引擎据 mia-ai.net：vLLM · NVFP4 · MTP）",
-    "engine_note": "vLLM（引擎据 mia-ai.net：vLLM · NVFP4 · MTP）"
+    "engine_note": "vLLM（引擎据 mia-ai.net：vLLM · NVFP4 · MTP）",
+    "metric_en": "147 tok/s decode (mia-ai.net lists about 160)",
+    "en": {
+      "engine_note": "vLLM (engine per mia-ai.net: vLLM · NVFP4 · MTP)",
+      "hardware_cost_text": "card only from $5,400 (lowest tracked street price 2026-10-11, MSRP $1,999, see prices.json)",
+      "source_note": "@MiaAI_lab post + mia-ai.net/models (fetched 10/14)"
+    }
   },
   {
     "id": "x-025",
@@ -7451,7 +8910,12 @@
     "source_id": "src-671103a20a",
     "engine_raw": "SGLang + DFlash2（据 mia-ai.net）",
     "engine_note": "SGLang + DFlash2（据 mia-ai.net）",
-    "metric_en": "about 300 tok/s (post); mia-ai.net lists 240+ at 8 requests"
+    "metric_en": "about 300 tok/s (post); mia-ai.net lists 240+ at 8 requests",
+    "en": {
+      "engine_note": "SGLang + DFlash2 (per mia-ai.net)",
+      "hardware_cost_text": "$15,999 lowest tracked quote (new card, Newegg/B&H/Best Buy aggregate, 2026-10-13); B&H Workstation edition $17,999.99 (see prices.json)",
+      "source_note": "@MiaAI_lab post + mia-ai.net/models (fetched 10/14; 300 taken from the post, mia-ai.net lists 240+)"
+    }
   },
   {
     "id": "x-026",
@@ -7490,7 +8954,13 @@
       }
     ],
     "measured_by": "MiaAI_lab",
-    "source_id": "src-a0df0f2043"
+    "source_id": "src-a0df0f2043",
+    "metric_en": "24 concurrent sessions up to 440 tok/s (total)",
+    "en": {
+      "context": "256K, 24 streams",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@MiaAI_lab on X; engine info: b12x backend + MTP"
+    }
   },
   {
     "id": "x-027",
@@ -7540,7 +9010,12 @@
     "measured_by": "ashxhart",
     "source_id": "src-233f5276ae",
     "engine_raw": "TensorFold + DFlash2（MiaAI_lab recipe）",
-    "engine_note": "TensorFold + DFlash2（MiaAI_lab recipe）"
+    "engine_note": "TensorFold + DFlash2（MiaAI_lab recipe）",
+    "metric_en": "1 stream 58.3 tok/s (prose); 2 streams 108.5; 8 streams 220",
+    "en": {
+      "engine_note": "TensorFold + DFlash2 (MiaAI_lab recipe)",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
+    }
   },
   {
     "id": "x-028",
@@ -7573,7 +9048,12 @@
       "multi-GPU"
     ],
     "measured_by": "0xSero",
-    "source_id": "src-06b6c52487"
+    "source_id": "src-06b6c52487",
+    "metric_en": "Decode 29 tok/s prose / 41 code; prefill 2,000 tok/s; top-token agreement 92%, KLD 0.07",
+    "en": {
+      "context": "262K, 8 concurrent, 2M KV pool",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)"
+    }
   },
   {
     "id": "x-029",
@@ -7606,7 +9086,11 @@
       "offload"
     ],
     "measured_by": "0xSero",
-    "source_id": "src-54b732e148"
+    "source_id": "src-54b732e148",
+    "metric_en": "c1 decode 64 tok/s; prefill 2,000 / 2,800 tok/s",
+    "en": {
+      "hardware_cost_text": "card only used about $1,206 (2026-10-06 getpcparts, see prices.json)"
+    }
   },
   {
     "id": "x-030",
@@ -7639,7 +9123,11 @@
       "offload"
     ],
     "measured_by": "0xSero",
-    "source_id": "src-54b732e148"
+    "source_id": "src-54b732e148",
+    "metric_en": "Decode 35 tok/s; prefill 800 / 1,200 tok/s",
+    "en": {
+      "hardware_cost_text": "card only $1,299.99 (ASRock B70 CT 32GB, Newegg direct, 2026-10-14; Intel reference card $1,999.99–2,099, see prices.json)"
+    }
   },
   {
     "id": "x-031",
@@ -7675,7 +9163,12 @@
       "MTP"
     ],
     "measured_by": "sudoingX",
-    "source_id": "src-3b34b15273"
+    "source_id": "src-3b34b15273",
+    "metric_en": "67 tok/s with MTP head; 262K context + MTP + vision loaded together use 15.2/15.9 GB",
+    "en": {
+      "quant": "ternary (Bonsai 2 native ternary weights, see model card)",
+      "hardware_cost_text": "card only from $740 (new card, Micro Center PNY OC, 2026-10-14; 90-day median $789, see prices.json)"
+    }
   },
   {
     "id": "x-032",
@@ -7711,7 +9204,12 @@
     "measured_by": "ashxhart",
     "source_id": "src-5dc46efb08",
     "engine_raw": "oMLX（作者 PR）+ MTP",
-    "engine_note": "oMLX（作者 PR）+ MTP"
+    "engine_note": "oMLX（作者 PR）+ MTP",
+    "metric_en": "23k context overall decode 97.1 tok/s; uncached prefill about 1,131 tok/s",
+    "en": {
+      "engine_note": "oMLX (author's PR) + MTP",
+      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+    }
   },
   {
     "id": "x-033",
@@ -7747,7 +9245,11 @@
     "measured_by": "WescheNex1q",
     "source_id": "src-9b25c86557",
     "engine_raw": "oMLX + MTP depth 6",
-    "engine_note": "oMLX + MTP depth 6"
+    "engine_note": "oMLX + MTP depth 6",
+    "metric_en": "mean 63.38 tok/s; sequence 68.85, code 52.20, json 69.09",
+    "en": {
+      "hardware_cost_text": "discontinued; Apple refurbished 128GB/4TB $5,689 (2026-10)"
+    }
   },
   {
     "id": "x-034",
@@ -7782,7 +9284,11 @@
       "MTP"
     ],
     "measured_by": "WescheNex1q",
-    "source_id": "src-c93f0c71bd"
+    "source_id": "src-c93f0c71bd",
+    "metric_en": "native stack 65.76 tok/s (MTP depth 3); same GGUF + llama.cpp without MTP: 21.00",
+    "en": {
+      "hardware_cost_text": "discontinued; Apple refurbished 128GB/4TB $5,689 (2026-10)"
+    }
   },
   {
     "id": "x-035",
@@ -7817,7 +9323,11 @@
       "MTP"
     ],
     "measured_by": "WescheNex1q",
-    "source_id": "src-c93f0c71bd"
+    "source_id": "src-c93f0c71bd",
+    "metric_en": "native stack 34.89 tok/s (MTP depth 3); same GGUF + llama.cpp without MTP: 11.17",
+    "en": {
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
+    }
   },
   {
     "id": "x-036",
@@ -7862,7 +9372,11 @@
     "measured_by": "WescheNex1q",
     "source_id": "src-98d2c9be56",
     "engine_raw": "SGLang + DFlash2",
-    "engine_note": "SGLang + DFlash2"
+    "engine_note": "SGLang + DFlash2",
+    "metric_en": "single stream 42 tok/s; C8 114; TTFT 0.2s; 1.86M KV",
+    "en": {
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
+    }
   },
   {
     "id": "x-037",
@@ -7898,7 +9412,11 @@
     "measured_by": "WescheNex1q",
     "source_id": "src-98d2c9be56",
     "engine_raw": "oMLX + MTP",
-    "engine_note": "oMLX + MTP"
+    "engine_note": "oMLX + MTP",
+    "metric_en": "53 tok/s prose, 72 code, draft acceptance rate 78%",
+    "en": {
+      "hardware_cost_text": "discontinued; Apple refurbished 128GB/4TB $5,689 (2026-10)"
+    }
   },
   {
     "id": "x-038",
@@ -7933,7 +9451,12 @@
     "measured_by": "TeksEdge",
     "source_id": "src-5b9276f5c2",
     "engine_raw": "llama.cpp 自适应投机解码 fork",
-    "engine_note": "llama.cpp 自适应投机解码 fork"
+    "engine_note": "llama.cpp 自适应投机解码 fork",
+    "metric_en": "Up to 65.6 tok/s decode",
+    "en": {
+      "engine_note": "llama.cpp adaptive speculative decoding fork",
+      "hardware_cost_text": "$3,149 (Framework 128GB, 2026-10)"
+    }
   },
   {
     "id": "x-039",
@@ -7981,7 +9504,12 @@
       }
     ],
     "measured_by": "JASONMCNAB",
-    "source_id": "src-d4cc877e2d"
+    "source_id": "src-d4cc877e2d",
+    "metric_en": "reproduces MiaAI_lab recipe, total per stream count: 1/2/4/8 streams 50.3/75.8/117.5/162.0 (Mia: 48.7/74.6/113.7/…)",
+    "en": {
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@JASONMCNAB on X; engine info: MiaAI_lab recipe (post does not state the engine)"
+    }
   },
   {
     "id": "x-040",
@@ -8031,7 +9559,12 @@
       }
     ],
     "measured_by": "JASONMCNAB",
-    "source_id": "src-8a8f996efe"
+    "source_id": "src-8a8f996efe",
+    "metric_en": "reproduces MiaAI_lab recipe: 1/2/4/8 streams 64.0/104.3/155.1/238.6 (Mia: 58.3/108.5/135.1/220.6)",
+    "en": {
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@JASONMCNAB on X; engine info: MiaAI_lab recipe"
+    }
   },
   {
     "id": "x-041",
@@ -8073,7 +9606,12 @@
       }
     ],
     "measured_by": "JASONMCNAB",
-    "source_id": "src-616d6abcb0"
+    "source_id": "src-616d6abcb0",
+    "metric_en": "reproduces MiaAI_lab recipe: 1 stream 61.43 (Mia 60.4); 4 streams 107.8 (Mia 108.8)",
+    "en": {
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "source_note": "@JASONMCNAB on X; engine info: MiaAI_lab recipe"
+    }
   },
   {
     "id": "x-042",
@@ -8116,7 +9654,12 @@
       }
     ],
     "measured_by": "Urthoo",
-    "source_id": "src-1af49987af"
+    "source_id": "src-1af49987af",
+    "metric_en": "TensorFold: 1 stream 95, 3 streams 147, prefill 1,400; vLLM comparison: 51 / 86 / 870",
+    "en": {
+      "context": "16 streams × 600K",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)"
+    }
   },
   {
     "id": "x-043",
@@ -8156,7 +9699,12 @@
       }
     ],
     "measured_by": "hnakamur2",
-    "source_id": "src-ad5f918887"
+    "source_id": "src-ad5f918887",
+    "metric_en": "x1 31.5 tok/s, TTFT 408ms; x2 total 29.8",
+    "en": {
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@hnakamur2 on X; engine info: MiaAI_lab recipe"
+    }
   },
   {
     "id": "x-044",
@@ -8190,7 +9738,12 @@
       "speculative"
     ],
     "measured_by": "CryptoBandit100",
-    "source_id": "src-b254d3a781"
+    "source_id": "src-b254d3a781",
+    "metric_en": "code 74 / prose 42 tok/s (temp 0, thinking off)",
+    "en": {
+      "quant": "oQ4e, KV q4",
+      "hardware_cost_text": "discontinued; Apple refurbished 128GB/4TB $5,689 (2026-10)"
+    }
   },
   {
     "id": "x-045",
@@ -8227,7 +9780,12 @@
     "measured_by": "CryptoBandit100",
     "source_id": "src-b254d3a781",
     "engine_raw": "vLLM 0.30.0 + MTP K=5",
-    "engine_note": "vLLM 0.30.0 + MTP K=5"
+    "engine_note": "vLLM 0.30.0 + MTP K=5",
+    "en": {
+      "model": "Qwen3.8-Flash-Next-hibrid48 (uncensored)",
+      "hardware": "2× DGX Spark (TP=2)",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)"
+    }
   },
   {
     "id": "x-046",
@@ -8269,7 +9827,12 @@
     "measured_by": "niklaslenz_ai",
     "source_id": "src-2af64659c6",
     "engine_raw": "TensorFold（MiaAI_lab TensorFold recipe）",
-    "engine_note": "TensorFold（MiaAI_lab TensorFold recipe）"
+    "engine_note": "TensorFold（MiaAI_lab TensorFold recipe）",
+    "metric_en": "reproduces MiaAI_lab recipe: 1 request 64.1 (README 62.4); 2 requests 83.0 (README 90.5)",
+    "en": {
+      "engine_note": "TensorFold (MiaAI_lab TensorFold recipe)",
+      "hardware_cost_text": "$5,999.99 (128GB/1TB ATAGB10-9002, sold by Newegg, out of stock, 2026-10-14); 4TB version CDW $7,999.99 (see prices.json)"
+    }
   },
   {
     "id": "x-047",
@@ -8305,7 +9868,11 @@
     "measured_by": "aartiles24",
     "source_id": "src-72ecd159f1",
     "engine_raw": "TensorFold + DFlash2",
-    "engine_note": "TensorFold + DFlash2"
+    "engine_note": "TensorFold + DFlash2",
+    "metric_en": "89.9 tok/s (about 1.9× mlx-serve, 2.4× oMLX)",
+    "en": {
+      "hardware_cost_text": "$3,699 (MBP14 M5 Pro 18C/20C 64GB/1TB Apple list price, 2026-10-13; resellers as low as $3,519, see prices.json)"
+    }
   },
   {
     "id": "x-048",
@@ -8337,7 +9904,11 @@
       "long-context"
     ],
     "measured_by": "_Holistech_",
-    "source_id": "src-e51991b9f0"
+    "source_id": "src-e51991b9f0",
+    "metric_en": "49 tok/s output at 245k context",
+    "en": {
+      "hardware_cost_text": "discontinued; used refurbished 64GB/2TB eBay $3,810.95 (2026-10-10, see prices.json)"
+    }
   },
   {
     "id": "x-049",
@@ -8373,7 +9944,11 @@
     "measured_by": "LocalSilicon",
     "source_id": "src-d2d83155c0",
     "engine_raw": "mlx-serve 26.10.1 + MTP",
-    "engine_note": "mlx-serve 26.10.1 + MTP"
+    "engine_note": "mlx-serve 26.10.1 + MTP",
+    "metric_en": "1k context: generation 126 t/s, prefill >4,500 t/s",
+    "en": {
+      "hardware_cost_text": "$9,499 (64C/256GB) / $10,799 (80C/256GB)"
+    }
   },
   {
     "id": "x-050",
@@ -8411,7 +9986,14 @@
     "measured_by": "niklaslenz_ai",
     "engine_raw": "Strata v0.1.43.1 + MTP（--expert-cache auto --prefill auto）",
     "engine_note": "Strata v0.1.43.1 + MTP（--expert-cache auto --prefill auto）",
-    "source_id": "src-07e06a0608"
+    "source_id": "src-07e06a0608",
+    "metric_en": "Strata+MTP 204 tok/s (122 without MTP); writing the same city page 28.8 s; prefill median 4K ~3,790 / 32K ~5,230 tok/s; all 15 quality checks passed, only 1 of 27 repeats had identical text (tok_s is the speed of a single writing task; the post did not separate prose/code)",
+    "en": {
+      "hardware": "RTX 5090 32GB + system RAM (partial offload)",
+      "engine_note": "Strata v0.1.43.1 + MTP (--expert-cache auto --prefill auto)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "@niklaslenz_ai on X (parameters and prefill see his replies 2110290343719522729 / 2110244773709914230 / 2110245823955259551); independent corroboration: Strata PR #2165 (someone else's 5090 + IQ3_XXS, chat 202.1 / agent 223.8 tok/s) https://github.com/Niko1221/Strata/pull/2165"
+    }
   },
   {
     "id": "x-051",
@@ -8444,7 +10026,13 @@
       "offload"
     ],
     "measured_by": "niklaslenz_ai",
-    "source_id": "src-07e06a0608"
+    "source_id": "src-07e06a0608",
+    "metric_en": "68 tok/s (no draft model); same prompt 104.2 s; prefill median 4K ~1,270 / 32K ~1,355 tok/s; 27 of 27 repeats identical (same x-050 task)",
+    "en": {
+      "hardware": "RTX 5090 32GB + system RAM (partial offload)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "@niklaslenz_ai on X (same file, same prompt comparison as x-050)"
+    }
   },
   {
     "id": "x-052",
@@ -8480,7 +10068,11 @@
     "measured_by": "niklaslenz_ai",
     "engine_raw": "TensorFold 0.6.6 + DFlash2",
     "engine_note": "TensorFold 0.6.6 + DFlash2",
-    "source_id": "src-72942cbcb3"
+    "source_id": "src-72942cbcb3",
+    "metric_en": "code 370 | prose 174 | structured 634 tok/s; 32K prompt first token 12.4 s; 5 prompts×3 rounds interleaved, 450 W / 2200 MHz cap; each uses its own 4-bit format and draft (compares recipes, not quantization)",
+    "en": {
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "x-053",
@@ -8516,7 +10108,11 @@
     "measured_by": "niklaslenz_ai",
     "engine_raw": "exllamav3 + DFlash2",
     "engine_note": "exllamav3 + DFlash2",
-    "source_id": "src-72942cbcb3"
+    "source_id": "src-72942cbcb3",
+    "metric_en": "code 258 | prose 114 | structured 366 tok/s; 32K prompt first token 10.4 s; 5 prompts×3 rounds interleaved, 450 W / 2200 MHz cap; each uses its own 4-bit format and draft (compares recipes, not quantization)",
+    "en": {
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "x-054",
@@ -8553,7 +10149,11 @@
     "measured_by": "niklaslenz_ai",
     "engine_raw": "llama.cpp MTP",
     "engine_note": "llama.cpp MTP",
-    "source_id": "src-72942cbcb3"
+    "source_id": "src-72942cbcb3",
+    "metric_en": "code 186 | prose 116 | structured 200 tok/s; 32K prompt first token 12.5 s; 5 prompts×3 rounds interleaved, 450 W / 2200 MHz cap; each uses its own 4-bit format and draft (compares recipes, not quantization)",
+    "en": {
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "x-055",
@@ -8590,7 +10190,13 @@
     "measured_by": "niklaslenz_ai",
     "engine_raw": "exllamav3 + MTP（MiaAI_lab 一键包）",
     "engine_note": "exllamav3 + MTP（MiaAI_lab 一键包）",
-    "source_id": "src-a5e5c86d46"
+    "source_id": "src-a5e5c86d46",
+    "metric_en": "MiaAI_lab one-click package default config: code 66 tok/s, up to 176K context (temp 0, fixed seed, 3 runs consistent) (code speed; post gives no prose speed)",
+    "en": {
+      "engine_note": "exllamav3 + MTP (MiaAI_lab one-click package)",
+      "hardware_cost_text": "card only from $740 (new card, Micro Center PNY OC, 2026-10-14; 90-day median $789, see prices.json)",
+      "source_note": "@niklaslenz_ai on X; same-card reference: llama.cpp Discussion #30328 (5060 Ti, UD-IQ4_XS + MTP-2 at 50.2 tok/s) https://github.com/ggml-org/llama.cpp/discussions/30328"
+    }
   },
   {
     "id": "x-056",
@@ -8625,7 +10231,12 @@
     "measured_by": "niklaslenz_ai",
     "engine_raw": "llama.cpp b11151",
     "engine_note": "llama.cpp b11151",
-    "source_id": "src-a5e5c86d46"
+    "source_id": "src-a5e5c86d46",
+    "metric_en": "code 32 tok/s, can fill 262K context (no vision file) (code speed; post gives no prose speed)",
+    "en": {
+      "model": "Qwen3.8-27B (Saluki by Underdog, 7.9 GB)",
+      "hardware_cost_text": "card only from $740 (new card, Micro Center PNY OC, 2026-10-14; 90-day median $789, see prices.json)"
+    }
   },
   {
     "id": "x-057",
@@ -8658,7 +10269,12 @@
       "MoE"
     ],
     "measured_by": "niklaslenz_ai",
-    "source_id": "src-a7d4c130c3"
+    "source_id": "src-a7d4c130c3",
+    "metric_en": "351.5 tok/s; math problem 1.98 s; GSM8K 97%, MMLU 80%; same GGUF, same llama.cpp build; writing speed median of 5 runs",
+    "en": {
+      "quant": "Q4 (14.5 GB)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "x-058",
@@ -8691,7 +10307,12 @@
       "MoE"
     ],
     "measured_by": "niklaslenz_ai",
-    "source_id": "src-a7d4c130c3"
+    "source_id": "src-a7d4c130c3",
+    "metric_en": "162.0 tok/s; math problem 3.99 s; GSM8K 97%, MMLU 82%; same GGUF, same llama.cpp build; writing speed median of 5 runs",
+    "en": {
+      "quant": "Q4 (14.5 GB)",
+      "hardware_cost_text": "card only from $740 (new card, Micro Center PNY OC, 2026-10-14; 90-day median $789, see prices.json)"
+    }
   },
   {
     "id": "x-059",
@@ -8728,7 +10349,15 @@
     "measured_by": "sudoingX",
     "engine_raw": "vLLM + DSpark 投机解码（recipe v1.1）",
     "engine_note": "vLLM + DSpark 投机解码（recipe v1.1）",
-    "source_id": "src-1e069df3e9"
+    "source_id": "src-1e069df3e9",
+    "metric_en": "v1.1: code 103.0 / prose 57.9 / structured 141.0 tok/s (DSpark on); prefill 8K 2,090, 32K 2,092 tok/s (v1 1,763 / 1,773); 32K first token 15.7 s",
+    "en": {
+      "quant": "EXL3 experts 2–5 bit (avg 2.7)",
+      "model": "DeepSeek-V4.1-Flash (sudoingX 2.7-bit mixed-bit-width experts)",
+      "engine_note": "vLLM + DSpark speculative decoding (recipe v1.1)",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "source_note": "@sudoingX on X (see also 2110538144659677184: first version 74 → 141 tok/s structured, 255K prompt <3 minutes)"
+    }
   },
   {
     "id": "x-060",
@@ -8765,7 +10394,16 @@
     "measured_by": "yume_arasaki",
     "engine_raw": "vLLM main 6e517b15 + 20 补丁，DSpark k=5，TP=2",
     "engine_note": "vLLM main 6e517b15 + 20 补丁，DSpark k=5，TP=2",
-    "source_id": "src-b3c984813e"
+    "source_id": "src-b3c984813e",
+    "metric_en": "reproduces sudoingX recipe, single stream thinking off, 3 runs <1% difference: structured 135.5 / JSON 115.2 / math 114.0 / code 91.3 / prose 57.2; draft off about 44; 8K→240K prose 57.6–61.5; TTFT 8K 4.3 s / 35K ~18 s / 240K 91.8 s; Hermes Agent turns 82–94",
+    "en": {
+      "quant": "EXL3 experts 2–5 bit (avg 2.7)",
+      "model": "DeepSeek-V4.1-Flash (sudoingX 2.7-bit mixed-bit-width experts)",
+      "context": "262K, MAX_SEQS=2",
+      "engine_note": "vLLM main 6e517b15 + 20 patches, DSpark k=5, TP=2",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "source_note": "@yume_arasaki reproduction (details 2110460903300935879)"
+    }
   },
   {
     "id": "x-061",
@@ -8800,7 +10438,15 @@
       "abliterated"
     ],
     "measured_by": "yume_arasaki",
-    "source_id": "src-9f9c61cc17"
+    "source_id": "src-9f9c61cc17",
+    "metric_en": "Part 2 single stream: structured 45.2 / JSON 45.7 / code 35.9 / prose 27.5; 33K research turn 32; 8K→240K decode 50.1→44.4; TTFT 8K 14 s / 65K 79 s / 240K 280 s; prefill 450–640 tok/s; shallow 69 W",
+    "en": {
+      "quant": "SAGE EXL3 2.49bpw (97.4 GiB) · speculative decoding",
+      "model": "RED-SNOW-5.3-FLASH (GLM-5.3-Flash refusal-removed version)",
+      "context": "262K (KV Q4)",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@yume_arasaki self-test part 2; supersedes the depth numbers of text-066: text-066 recorded \"11.3 at 8K → 0.7 at 240K\", while part 2 fully measured 8K→240K decode 50.1→44.4 (only an 11% drop)"
+    }
   },
   {
     "id": "x-062",
@@ -8837,7 +10483,11 @@
       "abliterated"
     ],
     "measured_by": "sudoingX",
-    "source_id": "src-6b290ed61f"
+    "source_id": "src-6b290ed61f",
+    "metric_en": "50 tok/s with self-built MTP/draft head (39 without draft); weights + head + 128K context use 10.7/12 GB total, KV q4 (another post 2110546197794468240 says 51 tok/s)",
+    "en": {
+      "model": "Ternary Bonsai 2 27B (heretic, refusals removed)"
+    }
   },
   {
     "id": "x-063",
@@ -8871,7 +10521,12 @@
       "speculative"
     ],
     "measured_by": "sudoingX",
-    "source_id": "src-df2f288726"
+    "source_id": "src-df2f288726",
+    "metric_en": "Q4_K_M: 176 tok/s; with DSpark draft code 272 tok/s (verified from video subtitles). Post also says the one run where Hermes Agent read back the disk tool screenshot was 171 tok/s (single task, not overall speed)",
+    "en": {
+      "hardware": "RTX 5090 laptop",
+      "source_note": "@sudoingX on X; numbers checked against the closing subtitles of the video in the post: \"speed, this laptop: MiniCPM-V 4.7 176 tok/s (272 on code with DSpark) · Qwen 3.6 157 tok/s\" (MiniCPM q4_k_m / Qwen q4, llama.cpp, same RTX 5090 Laptop)"
+    }
   },
   {
     "id": "x-064",
@@ -8904,7 +10559,12 @@
       "MoE"
     ],
     "measured_by": "sudoingX",
-    "source_id": "src-df2f288726"
+    "source_id": "src-df2f288726",
+    "metric_en": "Q4: 157 tok/s (same card and task as x-063)",
+    "en": {
+      "hardware": "RTX 5090 laptop",
+      "source_note": "@sudoingX on X; numbers checked against the closing subtitles of the video in the post: \"speed, this laptop: MiniCPM-V 4.7 176 tok/s (272 on code with DSpark) · Qwen 3.6 157 tok/s\" (MiniCPM q4_k_m / Qwen q4, llama.cpp, same RTX 5090 Laptop)"
+    }
   },
   {
     "id": "x-065",
@@ -8937,7 +10597,8 @@
       "multi-GPU"
     ],
     "measured_by": "0xSero",
-    "source_id": "src-ed9de9cb70"
+    "source_id": "src-ed9de9cb70",
+    "metric_en": "Decode 23–27 tok/s, prefill 523 tok/s, 200K KV, startup 118 s"
   },
   {
     "id": "x-066",
@@ -8971,7 +10632,12 @@
       "offload"
     ],
     "measured_by": "0xSero",
-    "source_id": "src-89b0d4f8d9"
+    "source_id": "src-89b0d4f8d9",
+    "metric_en": "EXL3 3-bit, more than half the model streamed from NVMe: 31 tok/s",
+    "en": {
+      "hardware": "M4 Mac mini 16GB + RTX 3090 (NVMe streaming)",
+      "hardware_cost_text": "≈ $2,600 (post)"
+    }
   },
   {
     "id": "x-067",
@@ -9009,7 +10675,11 @@
         "tok_s": 214
       }
     ],
-    "source_id": "src-8c6ac18523"
+    "source_id": "src-8c6ac18523",
+    "metric_en": "8 conversations total 214 tok/s, slowest conversation 26–30 tok/s",
+    "en": {
+      "hardware_cost_text": "≈$20,850 (3×$6,950, computed)"
+    }
   },
   {
     "id": "x-068",
@@ -9042,7 +10712,12 @@
       "MoE"
     ],
     "measured_by": "0xBakeer",
-    "source_id": "src-4758413a34"
+    "source_id": "src-4758413a34",
+    "metric_en": "EXL3 3.5bpw (default) chat decode 151 tok/s, 11.2 GB, top-1 agreement with BF16 86.7%; another post: plain generation 185, edits up to 350; the same author's other post on 10-15 (UTC+8) claims chat ~300 tok/s (2110434510936723897, conditions not stated, video not checked, not counted in tok_s)",
+    "en": {
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@0xBakeer (TandemLLM author, project's own test) on X; see also 2110297865017028730"
+    }
   },
   {
     "id": "x-069",
@@ -9074,7 +10749,11 @@
       "MoE"
     ],
     "measured_by": "DevOpsConsults",
-    "source_id": "src-f7d502b07e"
+    "source_id": "src-f7d502b07e",
+    "metric_en": "71 tok/s (fastest in 30B-class comparison; QwQ on Ollama 10 tok/s)",
+    "en": {
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)"
+    }
   },
   {
     "id": "x-070",
@@ -9107,7 +10786,11 @@
       "MoE"
     ],
     "measured_by": null,
-    "source_id": "src-4dfe7007d6"
+    "source_id": "src-4dfe7007d6",
+    "metric_en": "Liquid AI claims 184 tps (Q4_K_M 14.5 GB)",
+    "en": {
+      "source_note": "@TeksEdge relaying official Liquid AI numbers"
+    }
   },
   {
     "id": "x-071",
@@ -9140,7 +10823,12 @@
       "MoE"
     ],
     "measured_by": null,
-    "source_id": "src-4dfe7007d6"
+    "source_id": "src-4dfe7007d6",
+    "metric_en": "Liquid AI claims 114 tps (Q4_K_M 14.5 GB)",
+    "en": {
+      "hardware_cost_text": "$3,149 (Framework 128GB, out of stock, 2026-10)",
+      "source_note": "@TeksEdge relaying official Liquid AI numbers"
+    }
   },
   {
     "id": "x-072",
@@ -9177,7 +10865,12 @@
     "engine_raw": "llama.cpp-omni + LES",
     "engine_note": "llama.cpp-omni + LES",
     "source_id": "src-f309b75478",
-    "engine_fork": "OpenBMB"
+    "engine_fork": "OpenBMB",
+    "metric_en": "OpenBMB claims 13+ tps; Q3 expert shards on flash, LES prefetch; ≈ 16.6 GB model file, 12GB device recommended",
+    "en": {
+      "quant": "Q3 expert shards",
+      "source_note": "@TeksEdge relaying OpenBMB"
+    }
   },
   {
     "id": "x-073",
@@ -9213,7 +10906,11 @@
     "engine_raw": "llama.cpp-omni + LES",
     "engine_note": "llama.cpp-omni + LES",
     "source_id": "src-55c1d0caff",
-    "engine_fork": "OpenBMB"
+    "engine_fork": "OpenBMB",
+    "metric_en": "OpenBMB numbers: on-demand expert loading 2.97 tok/s; LES prefetch 9.81; own quantization + DSpark 17.39",
+    "en": {
+      "source_note": "@sudoingX relaying OpenBMB (\"their numbers\")"
+    }
   },
   {
     "id": "x-074",
@@ -9246,7 +10943,13 @@
       "MoE"
     ],
     "measured_by": null,
-    "source_id": "src-d19c5dbcd8"
+    "source_id": "src-d19c5dbcd8",
+    "metric_en": "Project GitHub benchmark (128GB Ryzen AI Max+ 395): llama.cpp Q8_0 20.7 / BF16 52.7 / FP8 63.7 / NVFP4 81.8 tps. Seen only as relayed by @TeksEdge; original source not verified (Strix Halo has no FP4 hardware unit, NVFP4 number needs checking)",
+    "en": {
+      "hardware": "AMD Strix Halo 128GB (Ryzen AI Max+ 395)",
+      "hardware_cost_text": "$3,149 (Framework 128GB, out of stock, 2026-10)",
+      "source_note": "@TeksEdge relaying project's GitHub benchmark (original link not verified)"
+    }
   },
   {
     "id": "x-075",
@@ -9278,7 +10981,13 @@
       "MoE"
     ],
     "measured_by": null,
-    "source_id": "src-d19c5dbcd8"
+    "source_id": "src-d19c5dbcd8",
+    "metric_en": "Developer Reddit speed-bench (prompt-length categories, not split by prose/code): ~2K 114.6 / ~8K 107.6 / ~16K 105.8 / ~32K 80.4 tps; GB10 77.9 at 32K. Seen only as relayed by @TeksEdge; original Reddit post not verified",
+    "en": {
+      "hardware": "AMD Strix Halo 128GB (Ryzen AI Max+ 395)",
+      "hardware_cost_text": "$3,149 (Framework 128GB, out of stock, 2026-10)",
+      "source_note": "@TeksEdge relaying developer's Reddit post (original link not verified)"
+    }
   },
   {
     "id": "comm-001",
@@ -9309,7 +11018,14 @@
     "measured_by": "BinbinHihi",
     "engine_raw": "Strata engine 0.1.43.1，--kv int8 --spec 4 --resident-budget-gib 55",
     "engine_note": "Strata engine 0.1.43.1，--kv int8 --spec 4 --resident-budget-gib 55",
-    "source_id": "src-acdc2fdb0f"
+    "source_id": "src-acdc2fdb0f",
+    "metric_en": "Short-chat decode median 65.5 tok/s (49–81), first token ~0.40 s; agent turn at ~14.5K context 74.8; prefill 4K 1,473 / 16K 2,127 tok/s",
+    "en": {
+      "hardware": "RTX 3090 24GB + 128GB RAM (Windows)",
+      "engine_note": "Strata engine 0.1.43.1, --kv int8 --spec 4 --resident-budget-gib 55",
+      "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)",
+      "source_note": "Strata community benchmark PR #2390 (includes results.json and engine log)"
+    }
   },
   {
     "id": "comm-002",
@@ -9338,7 +11054,14 @@
     "measured_by": "kompotex",
     "engine_raw": "Strata 0.1.43.1（commit fb58e0db）",
     "engine_note": "Strata 0.1.43.1（commit fb58e0db）",
-    "source_id": "src-f8b1974cf5"
+    "source_id": "src-f8b1974cf5",
+    "metric_en": "bench.sh --long median: chat decode 202.1 / agent decode 223.8 tok/s; prefill 4K/16K/32K = 4,473 / 6,656 / 6,827 tok/s",
+    "en": {
+      "hardware": "RTX 5090 32GB (limited to 450W) + Ryzen 7 9800X3D + 60.5GB DDR5",
+      "engine_note": "Strata 0.1.43.1 (commit fb58e0db)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "Strata community benchmark PR #2165"
+    }
   },
   {
     "id": "comm-003",
@@ -9368,7 +11091,13 @@
     "measured_by": "johlim",
     "engine_raw": "Strata engine 0.1.43.1",
     "engine_note": "Strata engine 0.1.43.1",
-    "source_id": "src-5d757868b7"
+    "source_id": "src-5d757868b7",
+    "metric_en": "Short-chat decode median 61.1 tok/s; agent turn 73.8; prefill 4K 1,368.0 / 16K 2,454.3 tok/s",
+    "en": {
+      "hardware": "RTX 4080 SUPER 16GB + i7-9700K (Windows 11)",
+      "context": "131K (KV int8)",
+      "source_note": "Strata community benchmark PR #2298"
+    }
   },
   {
     "id": "comm-004",
@@ -9398,7 +11127,13 @@
       "MTP"
     ],
     "measured_by": "zipzak",
-    "source_id": "src-35d618f23c"
+    "source_id": "src-35d618f23c",
+    "metric_en": "262K: decode 120.6 / cold prefill 1,550; 512K (YaRN 2): 126.3 / 3,045 tok/s (median of 3 runs)",
+    "en": {
+      "hardware": "RTX 5090 32GB + 189.6GB RAM + 9950X (Windows)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "r/LocalLLaMA u/zipzak (A/B on same machine as comm-005)"
+    }
   },
   {
     "id": "comm-005",
@@ -9428,7 +11163,12 @@
       "MTP"
     ],
     "measured_by": "zipzak",
-    "source_id": "src-35d618f23c"
+    "source_id": "src-35d618f23c",
+    "metric_en": "262K: decode 149.0 / cold prefill 3,548; 512K (YaRN 2): 137.0 / 3,497 tok/s (median of 3 runs)",
+    "en": {
+      "hardware": "RTX 5090 32GB + 189.6GB RAM + 9950X (Windows)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)"
+    }
   },
   {
     "id": "comm-006",
@@ -9473,7 +11213,14 @@
         "tok_s": 206
       }
     ],
-    "source_id": "src-9432734c78"
+    "source_id": "src-9432734c78",
+    "metric_en": "250K context: single-session decode 57.6 tok/s, prefill 6,574 (TTFT 37.8 s); 5 sessions 37.9/190; 7 sessions 29.4/206 (same machine llama.cpp-multigpu: 33.7 / 2,111)",
+    "en": {
+      "hardware": "6× RTX 3090 + 7950X + 187GB RAM (4 cards over Thunderbolt)",
+      "engine_note": "vLLM fork (pipeline parallel)",
+      "hardware_cost_text": "≈$7,236–8,994 (6×$1,206–1,499, computed)",
+      "source_note": "r/LocalLLaMA u/flynth92 (own vLLM fork, PLE table on SSD)"
+    }
   },
   {
     "id": "comm-007",
@@ -9504,7 +11251,12 @@
     "measured_by": null,
     "engine_raw": "SGLang + DFlash2",
     "engine_note": "SGLang + DFlash2",
-    "source_id": "src-1e5a7cc688"
+    "source_id": "src-1e5a7cc688",
+    "metric_en": "HumanEval+ 50 problems, thinking on, c=1 net decode: plain 12.65 / MTP 24.2 / DSpark 27.96 / DFlash2 36.59 tok/s (tok_s uses DFlash2 code-task net decode; post has no prose breakdown)",
+    "en": {
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "r/LocalLLM 12-way comparison (different engines use different quantization conversions)"
+    }
   },
   {
     "id": "comm-008",
@@ -9535,7 +11287,12 @@
     "measured_by": null,
     "engine_raw": "vLLM + DFlash2",
     "engine_note": "vLLM + DFlash2",
-    "source_id": "src-1e5a7cc688"
+    "source_id": "src-1e5a7cc688",
+    "metric_en": "HumanEval+ 50 problems, thinking on, c=1 net decode: plain 10.95 / MTP 20.89 / DSpark 25.58 / DFlash2 32.01 tok/s (tok_s uses DFlash2 code-task net decode; the post has no prose breakdown)",
+    "en": {
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "r/LocalLLM 12-way comparison (different engines use different quantization conversions)"
+    }
   },
   {
     "id": "comm-009",
@@ -9566,7 +11323,12 @@
     "measured_by": null,
     "engine_raw": "llama.cpp + DFlash2",
     "engine_note": "llama.cpp + DFlash2",
-    "source_id": "src-1e5a7cc688"
+    "source_id": "src-1e5a7cc688",
+    "metric_en": "HumanEval+ 50 problems, thinking on, c=1 net decode: plain 10.8 / MTP 22.2 / DSpark 19.7 / DFlash2 30.02 tok/s (tok_s uses DFlash2 code-task net decode; the post has no prose breakdown)",
+    "en": {
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "r/LocalLLM 12-way comparison (different engines use different quantization conversions)"
+    }
   },
   {
     "id": "comm-010",
@@ -9597,7 +11359,13 @@
     "measured_by": "SoundByGAIA",
     "engine_raw": "llama.cpp（stock）+ MTP-2",
     "engine_note": "llama.cpp（stock）+ MTP-2",
-    "source_id": "src-ac22bfc9db"
+    "source_id": "src-ac22bfc9db",
+    "metric_en": "MTP-2: 30-token prompt 50.2 / 6.6K prompt 48.1 tok/s; MTP-1 45.8; no MTP 27.6; peak VRAM 14.8 GiB; acceptance rate 77.2%",
+    "en": {
+      "quant": "Unsloth UD-IQ4_XS + external MTP head",
+      "engine_note": "llama.cpp (stock) + MTP-2",
+      "hardware_cost_text": "card only from $740 (new card, Micro Center PNY OC, 2026-10-14; 90-day median $789, see prices.json)"
+    }
   },
   {
     "id": "comm-011",
@@ -9628,7 +11396,14 @@
     "engine_raw": "llama.cpp s1-fork + MTP（Vulkan/RADV）",
     "engine_note": "llama.cpp s1-fork + MTP（Vulkan/RADV）",
     "source_id": "src-38e2f1cab4",
-    "engine_fork": "vahpetr"
+    "engine_fork": "vahpetr",
+    "metric_en": "Empty context 61 t/s, 524K 45, 1M 35.5; prefill 8K 550 / 213K ~420; 1M context uses 102.7 GiB (stock llama.cpp on the same machine ~24–27)",
+    "en": {
+      "hardware": "AMD Strix Halo 128GB (Ryzen AI Max+ 395, Vulkan)",
+      "engine_note": "llama.cpp s1-fork + MTP (Vulkan/RADV)",
+      "hardware_cost_text": "$3,149 (Framework 128GB, out of stock, 2026-10)",
+      "source_note": "llama.cpp GitHub Discussion #30282 (fork vahpetr/llama.cpp-s1-fork)"
+    }
   },
   {
     "id": "comm-012",
@@ -9658,7 +11433,12 @@
     "measured_by": "Libertai",
     "engine_raw": "vLLM TP=2 over RoCE + DSpark k=5",
     "engine_note": "vLLM TP=2 over RoCE + DSpark k=5",
-    "source_id": "src-bd52d39c0c"
+    "source_id": "src-bd52d39c0c",
+    "metric_en": "c=1, DSpark k=5, 32K: code 30.4 / reasoning 28.3 / chat 27.0 / prose 19.2 tok/s (counting 49.4, author warns not to use); prefill 700–2,200; 25K prompt TTFT ~22 s",
+    "en": {
+      "model": "DeepSeek-V4.1-Flash (REAP 256-expert pruning)",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)"
+    }
   },
   {
     "id": "comm-013",
@@ -9684,7 +11464,14 @@
       "multi-GPU"
     ],
     "measured_by": null,
-    "source_id": "src-4ec2ce2f27"
+    "source_id": "src-4ec2ce2f27",
+    "metric_en": "author says 25–40 tok/s (hard prose→structured), multi-stream >50; explicitly makes no precise claims (no single value, tok_s left blank); KV pool about 3M tokens (shared by up to 6 concurrent)",
+    "en": {
+      "hardware": "2× DGX Spark (headless mode, unlocks +2GB)",
+      "concurrency": "Up to 6",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "source_note": "NVIDIA Developer Forums (DGX Spark section), author emihuang, 2026-09-18"
+    }
   },
   {
     "id": "comm-014",
@@ -9710,7 +11497,13 @@
       "multi-GPU"
     ],
     "measured_by": "senn-tech",
-    "source_id": "src-00467e05da"
+    "source_id": "src-00467e05da",
+    "metric_en": "single stream 63.7 tok/s (bandwidth-limit estimate 74.7, reaches 85%); V4.1-Flash on same machine failed due to RAM",
+    "en": {
+      "hardware": "2× DGX Spark (QSFP direct link)",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "source_note": "senn-tech blog (borrowed test machine, measured 2026-09-28)"
+    }
   },
   {
     "id": "x-076",
@@ -9744,7 +11537,13 @@
       "speculative"
     ],
     "measured_by": "GreenBitAI",
-    "source_id": "src-632660ee7e"
+    "source_id": "src-632660ee7e",
+    "metric_en": "gbx 120.5 / omlx 93.3 / Ollama 88.2 / mlx-vlm 82.0 / mlx-lm 76.3 tok/s decode; with speculative decoding on gbx 176 vs omlx 156 (vendor comparison, engine versions not stated)",
+    "en": {
+      "hardware": "Mac Studio M3 Ultra (RAM not stated)",
+      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)",
+      "source_note": "@GreenBitAI (gbx engine team) on X; the 25 GB budget / SSD cold-read data post in the same thread 2110450746483171594 says Same 105 GB model, which does not match 35B-A3B 8-bit (~35–37 GB), not counted"
+    }
   },
   {
     "id": "x-077",
@@ -9780,7 +11579,12 @@
     ],
     "measured_by": "Blackwellboy",
     "source_id": "src-c7751e4563",
-    "metric_en": "Short-context decode ~208 tok/s; at 258K: decode 127, prefill 3.6K tok/s, TTFT 72 s (fresh prompt, median of 3); DSpark drafter slower at every length on llama.cpp"
+    "metric_en": "Short-context decode ~208 tok/s; at 258K: decode 127, prefill 3.6K tok/s, TTFT 72 s (fresh prompt, median of 3); DSpark drafter slower at every length on llama.cpp",
+    "en": {
+      "context": "Up to 258K",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "@Blackwellboy measured (same thread 2110717838516269264; DSpark see 2110717850138845284)"
+    }
   },
   {
     "id": "x-078",
@@ -9815,7 +11619,13 @@
     ],
     "measured_by": "Blackwellboy",
     "source_id": "src-c7751e4563",
-    "metric_en": "Short-context decode ~143 tok/s; at 258K: decode 112, prefill 5.9K tok/s, TTFT 43 s; DSpark drafter 224 tok/s at 4K, slower than no drafter from ~16K, 8 tok/s at 192K (fresh prompt, median of 3; with drafter one 5090 fits only 192K)"
+    "metric_en": "Short-context decode ~143 tok/s; at 258K: decode 112, prefill 5.9K tok/s, TTFT 43 s; DSpark drafter 224 tok/s at 4K, slower than no drafter from ~16K, 8 tok/s at 192K (fresh prompt, median of 3; with drafter one 5090 fits only 192K)",
+    "en": {
+      "quant": "AWQ (official)",
+      "context": "Up to 258K (DSpark measured to 192K)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "@Blackwellboy measured (DSpark see 2110717850138845284)"
+    }
   },
   {
     "id": "x-079",
@@ -9850,7 +11660,13 @@
     ],
     "measured_by": "coffeecup2020",
     "source_id": "src-40c4033303",
-    "metric_en": "Short prompt (LocalMaxxing reasoning) 273 tok/s, median of 5, temperature 0, accepted by LocalMaxxing; code prompt by context: 32K 203 / 128K 157 / 192K 144 / 256K 107 (tok_s = short prompt)"
+    "metric_en": "Short prompt (LocalMaxxing reasoning) 273 tok/s, median of 5, temperature 0, accepted by LocalMaxxing; code prompt by context: 32K 203 / 128K 157 / 192K 144 / 256K 107 (tok_s = short prompt)",
+    "en": {
+      "quant": "TQ3_4S-v2 · DFlash2 draft",
+      "context": "main figures at 32K window; long context is a separate run (same card, same draft) with code prompts 32K–256K; KV cache BF16",
+      "hardware_cost_text": "$1,206–1,499 (used, sold, 2026-10-06/12)",
+      "source_note": "@coffeecup2020 (tqLLM author) on X; context table see 2110622742055723363; original post 2110392058439418030 (first release of 273 and 5060 Ti 175)"
+    }
   },
   {
     "id": "x-080",
@@ -9884,7 +11700,14 @@
       "speculative"
     ],
     "measured_by": "coffeecup2020",
-    "source_id": "src-016c14c190"
+    "source_id": "src-016c14c190",
+    "metric_en": "Short prompt 175.9 tok/s (median of 5 runs, run locally, not submitted to LocalMaxxing); 200K prompt 113 tok/s",
+    "en": {
+      "quant": "TQ_XS (~11.9 GB) · DFlash2 draft",
+      "context": "main figures at 32K window; 200K prompt also tested",
+      "hardware_cost_text": "card only from $740 (new card, Micro Center PNY OC, 2026-10-14; 90-day median $789, see prices.json)",
+      "source_note": "@coffeecup2020 (tqLLM author) on X"
+    }
   },
   {
     "id": "x-081",
@@ -9920,7 +11743,13 @@
     ],
     "measured_by": null,
     "source_id": "src-d1b947c4cb",
-    "metric_en": "Decode at 320 / 8K / 65K / 130K / 260K context: 73 / 74 / 67 / 56 / 38 tok/s (median of 4, thinking off, 512 output tokens, temperature 0); prefill peak ~2,500, 929 at 260K; repeat prompt TTFT 277 s -> 1.2 s (prefix cache)"
+    "metric_en": "Decode at 320 / 8K / 65K / 130K / 260K context: 73 / 74 / 67 / 56 / 38 tok/s (median of 4, thinking off, 512 output tokens, temperature 0); prefill peak ~2,500, 929 at 260K; repeat prompt TTFT 277 s -> 1.2 s (prefix cache)",
+    "en": {
+      "quant": "NVFP4 · DFlash2 (4-bit draft, 16 tokens)",
+      "context": "320–260K; KV cache BF16",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@Oluwaphilemon1 relaying an unnamed tester; no screenshot/log, the quoted post 2110694483310350737 is unrelated to this benchmark, counted as claimed"
+    }
   },
   {
     "id": "x-082",
@@ -9953,7 +11782,14 @@
       "speculative"
     ],
     "measured_by": "yibie",
-    "source_id": "src-54be7411b2"
+    "source_id": "src-54be7411b2",
+    "metric_en": "After PR 9/10 merged: Q2_0 Chinese 86→110, code 127→170, English 127→156; IQ3_S 95→112 / 127→161 / 118→137 tok/s (256 tokens, median of three runs); tok_s uses English prose Q2_0 (not code 170)",
+    "en": {
+      "quant": "Q2_0 (Strata GGUF) + draft head",
+      "hardware": "Mac Studio M5 Ultra (RAM not stated)",
+      "hardware_cost_text": "M5 Ultra 96GB from $5,499; RAM not stated",
+      "source_note": "@yibie (author of strata-mlx) self-tested on X; model and Strata GGUF per the same author's project intro post 2108830033083294193 (strata-mlx reads Strata's Qwen3.8-Flash-Next GGUF)"
+    }
   },
   {
     "id": "x-083",
@@ -9983,7 +11819,12 @@
     "model_family": "Qwen",
     "tags": [],
     "measured_by": "yuanhao",
-    "source_id": "src-f6d2856800"
+    "source_id": "src-f6d2856800",
+    "metric_en": "After update: merge-code prompt 45 tok/s (twice); other two prompts 32–33 after cache warm-up; tok_s uses the upper bound 33 of the other two prompts (not code's 45)",
+    "en": {
+      "hardware_cost_text": "$2,399–2,599 (MBP14 M4 Pro 48GB list price; chip tier not stated)",
+      "source_note": "@yuanhao measured (quantization not stated; same author's earlier test 2110334086426337592 used Q2_0: strata-mlx 23.6–34.1, official Strata Metal 25.6–30.3)"
+    }
   },
   {
     "id": "x-084",
@@ -10016,7 +11857,12 @@
       "speculative"
     ],
     "measured_by": "0xBakeer",
-    "source_id": "src-ee3202417a"
+    "source_id": "src-ee3202417a",
+    "metric_en": "StairCut speculative decoding before/after 13.7 → 49.9 tok/s (from TandemLLM manual intro post) (whether this number in the manual is measured/computed/estimated not verified)",
+    "en": {
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "@0xBakeer (TandemLLM author) on X"
+    }
   },
   {
     "id": "comm-015",
@@ -10044,7 +11890,13 @@
     ],
     "measured_by": "Athabasco",
     "source_id": "src-ad1dca1233",
-    "engine_fork": "Radiance"
+    "engine_fork": "Radiance",
+    "metric_en": "Decode 176 tok/s, prefill 6,450 tok/s (BetterBench screenshot)",
+    "en": {
+      "quant": "Q4 (StillDeadcode iq4r-moe)",
+      "hardware_cost_text": "≈$3,200 (2×$1,600 lowest new card, computed, card only)",
+      "source_note": "r/LocalLLaMA u/Athabasco measured (Deadcode's Radiance engine); weights on HF: StillDeadcode/qwen3.8-next-flash-fp8-iq4r-moe"
+    }
   },
   {
     "id": "comm-016",
@@ -10075,7 +11927,14 @@
       "multi-GPU"
     ],
     "measured_by": "ReflectionCurious342",
-    "source_id": "src-dd7edfd3d8"
+    "source_id": "src-dd7edfd3d8",
+    "metric_en": "180 tok/s (video; KV Q8, MTP 4); author comment: prefill ~2,000, 143 at 85K input (llama.cpp 35). Another user: 2× V100 16GB SXM2, Q4_K_M 40–50 (engine not stated; poster thinks llama.cpp), not a same-config reproduction",
+    "en": {
+      "quant": "NVFP4 (Quasar) · MTP 4",
+      "hardware": "2× Tesla V100 16GB (no NVLink)",
+      "context": "262K; KV Q8",
+      "source_note": "r/LocalLLM u/ReflectionCurious342 (author of ninfer-V100X2, self-reported ninfer optimizations); video + public repo tuxKOH/ninfer-V100X2"
+    }
   },
   {
     "id": "comm-017",
@@ -10101,7 +11960,12 @@
       "long-context"
     ],
     "measured_by": "Present_Resource4022",
-    "source_id": "src-9d92158ec1"
+    "source_id": "src-9d92158ec1",
+    "metric_en": "Decode 30–38 tok/s, prefill 950–1,800 tok/s (varies with context)",
+    "en": {
+      "model": "Qwen3.8-Flash-Next (Gyro-M)",
+      "source_note": "r/LocalLLaMA u/Present_Resource4022 measured (Gitshop77/GyroStrata); post says multi-head prediction and vision both off; benchmarks and config in repo; poster is the GyroStrata author, counted as project self-test"
+    }
   },
   {
     "id": "comm-018",
@@ -10132,7 +11996,14 @@
       "multi-GPU"
     ],
     "measured_by": "Fovane",
-    "source_id": "src-4a25683110"
+    "source_id": "src-4a25683110",
+    "metric_en": "llama.cpp log 21.39–21.93 tok/s (generating 1.6–1.9K tokens); tg_3s ≈26.4",
+    "en": {
+      "hardware": "2 cards: RTX 5060 Ti 16GB + GTX 1080 8GB (tensor split 4,1)",
+      "context": "128K; KV Q8_0",
+      "hardware_cost_text": "5060 Ti card only from $740 (GTX 1080 not counted, so total price not computed)",
+      "source_note": "r/LocalLLM u/Fovane measured (self-built CUDA llama.cpp)"
+    }
   },
   {
     "id": "comm-019",
@@ -10158,7 +12029,12 @@
       "3bit"
     ],
     "measured_by": "politerate",
-    "source_id": "src-f97eb36381"
+    "source_id": "src-f97eb36381",
+    "metric_en": "AIME + LiveCodeBench long-generation average 36.8 tok/s (1.39M token / 10.5 h)",
+    "en": {
+      "hardware_cost_text": "≈$734 eBay (2026-10-13)",
+      "source_note": "r/LocalLLaMA u/politerate measured (evalscope)"
+    }
   },
   {
     "id": "comm-020",
@@ -10185,7 +12061,13 @@
       "dense"
     ],
     "measured_by": "politerate",
-    "source_id": "src-f97eb36381"
+    "source_id": "src-f97eb36381",
+    "metric_en": "AIME + LiveCodeBench long-generation average 47.9 tok/s (1.34M token / 7.8 h)",
+    "en": {
+      "context": "KV f16 (llama.cpp default)",
+      "hardware_cost_text": "≈$1,007 (lowest average price in Oct)",
+      "source_note": "r/LocalLLaMA u/politerate measured (evalscope)"
+    }
   },
   {
     "id": "comm-021",
@@ -10213,7 +12095,13 @@
       "long-context"
     ],
     "measured_by": "crooi",
-    "source_id": "src-24fe8d44b9"
+    "source_id": "src-24fe8d44b9",
+    "metric_en": "Decode ~50 tok/s (44–52), KV 46,400 tokens (screenshot)",
+    "en": {
+      "hardware": "RTX 3060 (VRAM not stated)",
+      "context": "131K window (KV 46,400 tokens)",
+      "source_note": "r/LocalLLM u/crooi own-run screenshot (5258mf/ninfer-rtx3060-27b, not their own project)"
+    }
   },
   {
     "id": "comm-022",
@@ -10240,7 +12128,13 @@
       "offload"
     ],
     "measured_by": "kingfish600",
-    "source_id": "src-6e60fe8564"
+    "source_id": "src-6e60fe8564",
+    "metric_en": "Decode 4.4 tok/s, prefill ~2.9 tok/s",
+    "en": {
+      "quant": "66 GB mixed-quant GGUF (MoE, mmap paged on demand from flash)",
+      "hardware": "RedMagic 10S Pro (Snapdragon 8 Elite, 24GB RAM, CPU only)",
+      "source_note": "r/LocalLLM u/kingfish600 measured (MonsterQwenDroid, llama.cpp ARM patch); poster is the author of MonsterQwenDroid, counted as project self-test"
+    }
   },
   {
     "id": "comm-023",
@@ -10266,7 +12160,13 @@
       "MoE"
     ],
     "measured_by": "ShadoByBB",
-    "source_id": "src-74eb05ceee"
+    "source_id": "src-74eb05ceee",
+    "metric_en": "256-token warm start: 1 node 73.5 tok/s; split across 2 nodes via RPC 50.7",
+    "en": {
+      "quant": "Ollama default (qwen3.6:35b)",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "source_note": "r/LocalLLM u/ShadoByBB measured (Ollama 0.40.3 + RPC fork, llama.cpp b11351); poster is the author of the Ollama RPC fork, counted as project self-test"
+    }
   },
   {
     "id": "comm-024",
@@ -10294,7 +12194,14 @@
       "multi-GPU"
     ],
     "measured_by": "ShadoByBB",
-    "source_id": "src-74eb05ceee"
+    "source_id": "src-74eb05ceee",
+    "metric_en": "2 nodes 15.3 tok/s (does not fit on a single node), load 188 s",
+    "en": {
+      "quant": "UD-IQ3_XXS (141 GB, MoE)",
+      "hardware": "2× DGX Spark (200 Gb/s direct link, RPC layer split)",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "source_note": "r/LocalLLM u/ShadoByBB measured (Ollama RPC fork); poster is the author of the Ollama RPC fork, counted as project self-test"
+    }
   },
   {
     "id": "comm-025",
@@ -10320,7 +12227,14 @@
       "multi-GPU"
     ],
     "measured_by": "ShadoByBB",
-    "source_id": "src-b4de477c70"
+    "source_id": "src-b4de477c70",
+    "metric_en": "single request vLLM TP=2 55.7 tok/s (8 concurrent total 202); SGLang TP=2 on same machine 53.3; for comparison: Ollama single node 42",
+    "en": {
+      "hardware": "2× DGX Spark (TP=2)",
+      "concurrency": "1 / 8 concurrent",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, computed)",
+      "source_note": "r/LocalLLM u/ShadoByBB measured in a comment (text-only comment, no screenshot/log, counted as claimed)"
+    }
   },
   {
     "id": "comm-026",
@@ -10346,7 +12260,12 @@
       "3bit"
     ],
     "measured_by": "ImpulseNOR",
-    "source_id": "src-566958aa76"
+    "source_id": "src-566958aa76",
+    "metric_en": "Strata 0.1.43.1: --resident-budget decode 151 tok/s vs --resident-experts 139 (the latter has 1.6× faster prefill)",
+    "en": {
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "source_note": "r/LocalLLM u/ImpulseNOR measured in a comment (text-only comment, no screenshot/log, counted as claimed)"
+    }
   },
   {
     "id": "comm-027",
@@ -10377,7 +12296,12 @@
       "multi-GPU"
     ],
     "measured_by": "No-Refrigerator-1672",
-    "source_id": "src-fe20147426"
+    "source_id": "src-fe20147426",
+    "metric_en": "TG 45–55 tok/s, PP ~1,000 tok/s",
+    "en": {
+      "context": "340K (KV fp8; about half without KV quantization)",
+      "source_note": "r/LocalLLM u/No-Refrigerator-1672 measured in a comment (text-only comment, no screenshot/log, counted as claimed)"
+    }
   },
   {
     "id": "comm-028",
@@ -10405,7 +12329,13 @@
       "multi-GPU"
     ],
     "measured_by": "Opteron67",
-    "source_id": "src-4862a0a47a"
+    "source_id": "src-4862a0a47a",
+    "metric_en": "160 tok/s (comment, no further details)",
+    "en": {
+      "hardware": "2× RTX 5090 (P2P driver)",
+      "hardware_cost_text": "≈$10,800 (2×$5,400, computed, card only)",
+      "source_note": "r/LocalLLM u/Opteron67 measured in a comment (text-only comment, no screenshot/log, counted as claimed); model inferred from post context (Qwen3.8-27B NVFP4 post)"
+    }
   },
   {
     "id": "comm-029",
@@ -10435,7 +12365,13 @@
       "multi-GPU"
     ],
     "measured_by": "Embarrassed_Adagio28",
-    "source_id": "src-b40d5741d4"
+    "source_id": "src-b40d5741d4",
+    "metric_en": "coding tasks 80 tok/s (MTP)",
+    "en": {
+      "hardware": "2 cards: Tesla V100 16GB + V100 32GB + 64GB RAM",
+      "hardware_cost_text": "V100 32GB $650–700 each (used, 2026-09/10; 16GB card not counted)",
+      "source_note": "r/LocalLLM u/Embarrassed_Adagio28 measured in a comment (text-only comment, no screenshot/log, counted as claimed)"
+    }
   },
   {
     "id": "comm-030",
@@ -10461,6 +12397,11 @@
       "4bit"
     ],
     "measured_by": "Beneficial-Ad-8127",
-    "source_id": "src-f91c69d71b"
+    "source_id": "src-f91c69d71b",
+    "metric_en": "About 120 tok/s; cold prefill 3,000–6,000 (comment, rough numbers)",
+    "en": {
+      "hardware_cost_text": "≈$6,000 (whole system, poster self-reported)",
+      "source_note": "r/LocalLLaMA u/Beneficial-Ad-8127 measured in a comment (text-only comment, no screenshot/log, counted as claimed)"
+    }
   }
 ]

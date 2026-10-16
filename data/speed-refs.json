@@ -2,16 +2,54 @@
   "reading": {
     "note": "Human reference rates in source units; speed.html converts them to Qwen3 tokens/s with the measured tok_per_unit of the sample text (data/speed-tokens.json stats).",
     "en": {
-      "silent": {"rate": 238, "unit": "words/min", "what": "silent reading, adult English non-fiction (meta-analysis of 190 studies, 18,573 participants)", "src": "Brysbaert 2019, J. Memory and Language 109:104047", "url": "https://doi.org/10.1016/j.jml.2019.104047"},
-      "aloud": {"rate": 183, "unit": "words/min", "what": "oral reading, English (77 studies, 5,965 participants)", "src": "Brysbaert 2019", "url": "https://osf.io/3wfas/"}
+      "silent": {
+        "rate": 238,
+        "unit": "words/min",
+        "what": "silent reading, adult English non-fiction (meta-analysis of 190 studies, 18,573 participants)",
+        "src": "Brysbaert 2019, J. Memory and Language 109:104047",
+        "url": "https://doi.org/10.1016/j.jml.2019.104047"
+      },
+      "aloud": {
+        "rate": 183,
+        "unit": "words/min",
+        "what": "oral reading, English (77 studies, 5,965 participants)",
+        "src": "Brysbaert 2019",
+        "url": "https://osf.io/3wfas/"
+      }
     },
     "zh-CN": {
-      "aloud": {"rate": 255, "unit": "chars/min", "what": "reading aloud, Chinese, IReST (n=25 adults, 10 texts)", "src": "Trauzettel-Klosinski & Dietz 2012, IOVS 53(9):5452, Table 2", "url": "https://iovs.arvojournals.org/article.aspx?articleid=2166061"},
-      "silent": {"rate": 332, "unit": "chars/min", "estimate": true, "what": "ESTIMATE = IReST aloud × 1.30 (Brysbaert's English silent/oral ratio 238/183); no comparable silent-reading meta-analysis for Chinese was found", "src": "derived", "url": "https://iovs.arvojournals.org/article.aspx?articleid=2166061"}
+      "aloud": {
+        "rate": 255,
+        "unit": "chars/min",
+        "what": "reading aloud, Chinese, IReST (n=25 adults, 10 texts)",
+        "src": "Trauzettel-Klosinski & Dietz 2012, IOVS 53(9):5452, Table 2",
+        "url": "https://iovs.arvojournals.org/article.aspx?articleid=2166061"
+      },
+      "silent": {
+        "rate": 332,
+        "unit": "chars/min",
+        "estimate": true,
+        "what": "ESTIMATE = IReST aloud × 1.30 (Brysbaert's English silent/oral ratio 238/183); no comparable silent-reading meta-analysis for Chinese was found",
+        "src": "derived",
+        "url": "https://iovs.arvojournals.org/article.aspx?articleid=2166061"
+      }
     },
     "ja": {
-      "aloud": {"rate": 357, "unit": "chars/min", "what": "reading aloud, Japanese, IReST (n=36 adults, 10 texts)", "src": "Trauzettel-Klosinski & Dietz 2012, IOVS 53(9):5452, Table 2", "url": "https://iovs.arvojournals.org/article.aspx?articleid=2166061"},
-      "silent": {"rate": 464, "unit": "chars/min", "estimate": true, "what": "ESTIMATE = IReST aloud × 1.30 (Brysbaert's English silent/oral ratio 238/183)", "src": "derived", "url": "https://iovs.arvojournals.org/article.aspx?articleid=2166061"}
+      "aloud": {
+        "rate": 357,
+        "unit": "chars/min",
+        "what": "reading aloud, Japanese, IReST (n=36 adults, 10 texts)",
+        "src": "Trauzettel-Klosinski & Dietz 2012, IOVS 53(9):5452, Table 2",
+        "url": "https://iovs.arvojournals.org/article.aspx?articleid=2166061"
+      },
+      "silent": {
+        "rate": 464,
+        "unit": "chars/min",
+        "estimate": true,
+        "what": "ESTIMATE = IReST aloud × 1.30 (Brysbaert's English silent/oral ratio 238/183)",
+        "src": "derived",
+        "url": "https://iovs.arvojournals.org/article.aspx?articleid=2166061"
+      }
     }
   },
   "cloud": {
@@ -19,31 +57,131 @@
     "fetched": "2026-10-14",
     "method_url": "https://artificialanalysis.ai/methodology/performance-benchmarking",
     "items": [
-      {"label": "Claude Opus 4.7", "variant": "Non-reasoning, High", "tps": 45.9, "url": "https://artificialanalysis.ai/leaderboards/models"},
-      {"label": "Claude Opus 5.5", "variant": "Low", "tps": 81.2, "url": "https://artificialanalysis.ai/models/claude-opus-5-5"},
-      {"label": "GPT-5.5", "variant": "Non-reasoning", "tps": 84.3, "url": "https://artificialanalysis.ai/models/gpt-5-5"},
-      {"label": "Grok 4.3", "variant": "Non-reasoning", "tps": 92.7, "url": "https://artificialanalysis.ai/models/grok-4-3"},
-      {"label": "DeepSeek V4 Pro", "variant": "Non-reasoning", "tps": 94.3, "url": "https://artificialanalysis.ai/models/deepseek-v4-pro"},
-      {"label": "Claude Sonnet 5.5", "variant": "Low", "tps": 102.6, "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5"},
-      {"label": "Gemini 3.1 Pro", "variant": "Preview", "tps": 138.9, "url": "https://artificialanalysis.ai/leaderboards/models"},
-      {"label": "Gemini 3.7 Flash", "variant": "Low", "tps": 323.2, "url": "https://artificialanalysis.ai/models/gemini-3-7-flash"},
-      {"label": "gpt-oss-120b on Groq", "variant": "provider", "tps": 474, "url": "https://artificialanalysis.ai/models/gpt-oss-120b/providers"},
-      {"label": "gpt-oss-120b on Cerebras", "variant": "provider", "tps": 1697, "url": "https://artificialanalysis.ai/models/gpt-oss-120b/providers"}
+      {
+        "label": "Claude Opus 4.7",
+        "variant": "Non-reasoning, High",
+        "tps": 45.9,
+        "url": "https://artificialanalysis.ai/leaderboards/models"
+      },
+      {
+        "label": "Claude Opus 5.5",
+        "variant": "Low",
+        "tps": 81.2,
+        "url": "https://artificialanalysis.ai/models/claude-opus-5-5"
+      },
+      {
+        "label": "GPT-5.5",
+        "variant": "Non-reasoning",
+        "tps": 84.3,
+        "url": "https://artificialanalysis.ai/models/gpt-5-5"
+      },
+      {
+        "label": "Grok 4.3",
+        "variant": "Non-reasoning",
+        "tps": 92.7,
+        "url": "https://artificialanalysis.ai/models/grok-4-3"
+      },
+      {
+        "label": "DeepSeek V4 Pro",
+        "variant": "Non-reasoning",
+        "tps": 94.3,
+        "url": "https://artificialanalysis.ai/models/deepseek-v4-pro"
+      },
+      {
+        "label": "Claude Sonnet 5.5",
+        "variant": "Low",
+        "tps": 102.6,
+        "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5"
+      },
+      {
+        "label": "Gemini 3.1 Pro",
+        "variant": "Preview",
+        "tps": 138.9,
+        "url": "https://artificialanalysis.ai/leaderboards/models"
+      },
+      {
+        "label": "Gemini 3.7 Flash",
+        "variant": "Low",
+        "tps": 323.2,
+        "url": "https://artificialanalysis.ai/models/gemini-3-7-flash"
+      },
+      {
+        "label": "gpt-oss-120b on Groq",
+        "variant": "provider",
+        "tps": 474,
+        "url": "https://artificialanalysis.ai/models/gpt-oss-120b/providers"
+      },
+      {
+        "label": "gpt-oss-120b on Cerebras",
+        "variant": "provider",
+        "tps": 1697,
+        "url": "https://artificialanalysis.ai/models/gpt-oss-120b/providers"
+      }
     ]
   },
   "prefill": {
-    "note": "Measured (实测) prompt-processing speeds quoted in data/recipes.json source_note; TTFT ≈ prompt tokens / prefill tok/s.",
+    "note": "Measured prompt-processing speeds quoted in data/recipes.json source_note; TTFT ≈ prompt tokens / prefill tok/s.",
     "items": [
-      {"id": "text-033", "label": "Mac mini M4 Pro 64GB", "pp": 190},
-      {"id": "x-001", "label": "AMD Strix Halo 395", "pp": 699, "check": "TTFT 11.8 s"},
-      {"id": "x-005", "label": "RTX 4090 24GB", "pp": 887},
-      {"id": "text-007", "label": "RTX 3090 24GB", "pp": 2000},
-      {"id": "text-088", "label": "Mac Studio M5 Ultra", "pp": 2887},
-      {"id": "x-006", "label": "RTX 5090", "pp": 5247}
+      {
+        "id": "text-033",
+        "label": "Mac mini M4 Pro 64GB",
+        "pp": 190
+      },
+      {
+        "id": "x-001",
+        "label": "AMD Strix Halo 395",
+        "pp": 699,
+        "check": "TTFT 11.8 s"
+      },
+      {
+        "id": "x-005",
+        "label": "RTX 4090 24GB",
+        "pp": 887
+      },
+      {
+        "id": "text-007",
+        "label": "RTX 3090 24GB",
+        "pp": 2000
+      },
+      {
+        "id": "text-088",
+        "label": "Mac Studio M5 Ultra",
+        "pp": 2887
+      },
+      {
+        "id": "x-006",
+        "label": "RTX 5090",
+        "pp": 5247
+      }
     ]
   },
   "mtp": {
     "note": "Speculative/MTP burst model: each verify step emits 1 + accepted draft tokens (draft depth 3, per-token acceptance 0.75). Depth 3 as in x-034/x-035; acceptance 70–81% reported in text-120.",
-    "depth": 3, "accept": 0.75, "ids": ["x-034", "text-120"]
+    "depth": 3,
+    "accept": 0.75,
+    "ids": [
+      "x-034",
+      "text-120"
+    ]
+  },
+  "i18n": {
+    "zh-CN": {
+      "cloud": "Artificial Analysis 的输出速度中位数（P50，过去 72 小时，默认 10k 输入负载，按 o200k_base 计 token），2026-10-14 抓取。输出速度从首个 token 之后开始计，不含推理/首 token 时间。Agent 工具（Cursor、Claude Code、Codex 等）的输出速度取决于它们调用的模型/服务商；没有找到独立的按工具测速，因此不单列。",
+      "prefill": "实测的提示处理（预填充）速度，引自 data/recipes.json 的 source_note；首 token 时间 ≈ 提示 token 数 / 预填充 tok/s。",
+      "mtp": "投机/MTP 突发模型：每个验证步输出 1 个 token 加上被接受的草稿 token（草稿深度 3，单 token 接受率 0.75）。深度 3 同 x-034/x-035；text-120 报告的接受率为 70–81%。",
+      "what": {
+        "silent": "估算值 = IReST 朗读 × 1.30（Brysbaert 英文默读/朗读比 238/183）；没有找到可比的中文默读荟萃分析",
+        "aloud": "中文朗读，IReST（成人 n=25，10 篇文本）"
+      }
+    },
+    "ja": {
+      "cloud": "Artificial Analysis の出力速度の中央値（P50、直近 72 時間、既定の 10k 入力ワークロード、o200k_base でトークン計数）、2026-10-14 取得。出力速度は最初のトークン以降を測るため、推論・TTFT は含みません。エージェントツール（Cursor、Claude Code、Codex など）の速度は呼び出すモデル／プロバイダー次第で、ツール単位の独立した計測は見つからなかったため掲載していません。",
+      "prefill": "data/recipes.json の source_note に記載された実測のプロンプト処理（プリフィル）速度。TTFT ≈ プロンプトのトークン数 / プリフィル tok/s。",
+      "mtp": "投機的デコード／MTP のバーストモデル：各検証ステップで 1 トークン＋採用されたドラフトトークンを出力（ドラフト深さ 3、トークンごとの採用率 0.75）。深さ 3 は x-034/x-035 と同じ。採用率 70〜81% は text-120 の報告値。",
+      "what": {
+        "silent": "推定値 = IReST 音読 × 1.30（Brysbaert による英語の黙読／音読比 238/183）",
+        "aloud": "日本語の音読、IReST（成人 n=36、10 テキスト）"
+      }
+    }
   }
 }

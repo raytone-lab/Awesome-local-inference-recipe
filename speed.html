@@ -60,10 +60,11 @@ body.embed .cloud{min-height:18px;white-space:nowrap;overflow:hidden;text-overfl
 <section class="card noembed" style="margin-top:16px"><h2 data-t="ch"></h2><svg id="chart" viewBox="0 0 900 330"></svg><p class="src" data-t="chnote"></p></section>
 <section class="card noembed"><h2 data-t="mh"></h2><ul class="src" id="method"></ul></section>
 </main>
-<footer class="site-ft"><div class="ft-in"><div><b data-i18n="brand">Local Inference Recipes</b> · <span data-t="foot">Data: measured recipes from data/recipes.json</span><span id="xd"></span></div><nav aria-label="Footer"><a href="https://github.com/raytone-lab/awesome-local-inference-recipes" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a><a href="https://github.com/raytone-lab/awesome-local-inference-recipes/issues" target="_blank" rel="noopener" data-i18n="f_issue">Report an issue</a><a href="submit.html" data-t="submit">Submit</a><span>Data CC BY 4.0 · code MIT</span></nav></div></footer>
+<footer class="site-ft"><div class="ft-in"><div><b data-i18n="brand">Local Inference Recipes</b> · <span data-t="foot">Data: measured recipes from data/recipes.json</span><span id="xd"></span></div><nav aria-label="Footer"><a href="https://github.com/raytone-lab/awesome-local-inference-recipes" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a><a href="https://github.com/raytone-lab/awesome-local-inference-recipes/issues" target="_blank" rel="noopener" data-i18n="f_issue">Report an issue</a><a href="submit.html" data-t="submit">Submit</a><span data-t="f_data">Data CC BY 4.0 · code MIT</span></nav></div></footer>
+<script src="cost.js"></script>
 <script>
 const I18N={
-en:{brand:'Local Inference Recipes',home:'Home',explore:'Explore',speed:'Speed feel',submit:'Submit',h1:'What does 10, 50 or 500 tokens per second feel like?',
+en:{f_data:'Data CC BY 4.0 · code MIT',derived:'derived',stop_:'. ',title:'Token speed feel · Awesome Local Inference Recipes',units:{},brand:'Local Inference Recipes',home:'Home',explore:'Explore',speed:'Speed feel',submit:'Submit',h1:'What does 10, 50 or 500 tokens per second feel like?',
  intro:'Every lane streams the same answer, cut into real Qwen3 tokens, at an exact average rate. Lanes are log-spaced (1-2-5 series) because perceived speed scales roughly with the ratio, not the difference.',
  go:'▶ Start',again:'↻ Restart',stop:'■ Stop',model:'Decode',steady:'steady',jitter:'realistic jitter',mtp:'jitter + MTP/speculative bursts',prompt:'Prompt',prefill:'Prefill',custom:'Custom',
  ttft:(p,pp,t)=>`TTFT ≈ ${p} / ${pp} tok/s = ${t} s`,
@@ -71,17 +72,17 @@ en:{brand:'Local Inference Recipes',home:'Home',explore:'Explore',speed:'Speed f
  b:['slower than reading aloud','about reading pace','faster than you can read','feels instant'],tok:'tokens',done:'done in',pf:'prefill…',
  real:'≈ local, measured:',cloud:'≈ cloud API:',
  ch:'Time to stream a 500-token answer vs. speed',chnote:'Time = 500 / speed (a 1/x curve; on a log axis equal steps feel equal). Grey lines: time a human needs to read the same 500 tokens. Dots under the axis: measured local single-stream setups from data/recipes.json; teal ticks: cloud API medians (Artificial Analysis).',
- mh:'Method & sources',foot:'Data: measured recipes from data/recipes.json',f_issue:'Report an issue'},
-'zh-CN':{brand:'本地推理配方',home:'首页',explore:'配方库',speed:'速度体感',submit:'提交配方',h1:'每秒 10、50、500 个 token 到底是什么感觉？',
+ mh:'Method & sources',c_silent:'silent',c_aloud:'aloud',c_local:'local measured',c_cloud:'cloud API median (top ticks)',c_axis:'tok/s (log)',m:{tok:(st,u,lang)=>`Tokenizer: Qwen/Qwen3-8B. Sample (${lang}): ${st.tokens} tokens / ${st.units} ${u}s = <b>${st.tok_per_unit}</b> tokens per ${u} (measured, scripts/gen_speed_tokens.py).`,silent:'silent',aloud:'aloud',cloud:(r,o,s)=>`Cloud: ${r} Converted to Qwen3 tokens with this text's ratio ${o}/${s} (o200k).`,aa:'AA methodology',pf:(n,l)=>`Prefill / TTFT: ${n} ${l}. Check: x-001 reports TTFT 11.8 s for an 8K prompt at 699 tok/s; 8192/699 = 11.7 s.`,dec:n=>`Decode model: ${n} Step times are lognormal (σ = 0.35, illustrative — no public inter-token-latency distribution in our data) and rescaled so the mean rate is exact. Timing uses requestAnimationFrame against elapsed time, so lanes never drift.`,lanes:'Lanes 5-10-20-50-100-200-500 follow the 1-2-5 preferred-number series (steps of 2–2.5×). Perceived magnitude grows roughly with the logarithm of the stimulus (Weber–Fechner), so equal ratios read as equal steps; 10/30/50 would put two lanes only 1.7× apart and leave 50→500 empty, where cloud APIs (≈80–140) and fast providers (≈300–1,700) sit.'},foot:'Data: measured recipes from data/recipes.json',f_issue:'Report an issue'},
+'zh-CN':{f_data:'数据 CC BY 4.0 · 代码 MIT',derived:'推算',stop_:'。',title:'速度体感 · 本地推理配方',units:{'chars/min':'字/分钟','words/min':'词/分钟'},brand:'本地推理配方',home:'首页',explore:'配方库',speed:'速度体感',submit:'提交配方',h1:'每秒 10、50、500 个 token 到底是什么感觉？',
  intro:'每条通道用真实 Qwen3 分词器切分同一段回答，按精确的平均速率输出。通道按对数间隔（1-2-5 序列）设置，因为人对速度的感知大致取决于倍数而不是差值。',
  go:'▶ 开始',again:'↻ 重新开始',stop:'■ 停止',model:'解码',steady:'匀速',jitter:'真实抖动',mtp:'抖动 + MTP/投机解码突发',prompt:'提示词',prefill:'预填充',custom:'自定义',
  ttft:(p,pp,t)=>`首 token ≈ ${p} / ${pp} tok/s = ${t} 秒`,
  silent:(r,s)=>`默读 ≈ <b>${r} tok/s</b>（${s}）`,aloud:(r,s)=>`朗读 / 说话 ≈ <b>${r} tok/s</b>（${s}）`,est:'估算',
- b:['比朗读还慢','和阅读差不多','比你读得快','几乎瞬间'],tok:'tokens',done:'用时',pf:'预填充中…',
+ b:['比朗读还慢','和阅读差不多','比你读得快','几乎瞬间'],tok:'token',done:'用时',pf:'预填充中…',
  real:'≈ 本地实测：',cloud:'≈ 云端 API：',
  ch:'输出 500 token 回答所需时间 vs 速度',chnote:'时间 = 500 / 速度（1/x 曲线；对数坐标上等距 = 感觉等距）。灰线：人读完同样 500 token 所需时间。轴下圆点：data/recipes.json 中的本地单流实测；青色刻度：云端 API 中位数（Artificial Analysis）。',
- mh:'方法与来源',foot:'数据：data/recipes.json 中的实测配方',f_issue:'反馈问题'},
-ja:{brand:'ローカル推論レシピ',home:'ホーム',explore:'エクスプローラー',speed:'速度体感',submit:'投稿',h1:'毎秒 10・50・500 トークンはどれくらいの速さ？',
+ mh:'方法与来源',c_silent:'默读',c_aloud:'朗读',c_local:'本地实测',c_cloud:'云端 API 中位数（顶部刻度）',c_axis:'tok/s（对数）',m:{tok:(st,u,lang)=>`分词器：Qwen/Qwen3-8B。样本（${lang}）：${st.tokens} 个 token / ${st.units} 个${u==='word'?'词':'字'} = 每${u==='word'?'词':'字'} <b>${st.tok_per_unit}</b> 个 token（实测，scripts/gen_speed_tokens.py）。`,silent:'默读',aloud:'朗读',cloud:(r,o,s)=>`云端：${r} 按本文的比例 ${o}/${s}（o200k）换算成 Qwen3 token。`,aa:'AA 测量方法',pf:(n,l)=>`预填充 / 首 token：${n} ${l}。核对：x-001 报告 8K 提示在 699 tok/s 下首 token 11.8 秒；8192/699 = 11.7 秒。`,dec:n=>`解码模型：${n} 每步耗时服从对数正态分布（σ = 0.35，仅作示意，我们的数据里没有公开的 token 间延迟分布），并缩放使平均速率精确。计时用 requestAnimationFrame 对照已过时间，各通道不会漂移。`,lanes:'通道 5-10-20-50-100-200-500 按 1-2-5 优先数系列（每步 2–2.5 倍）。感知强度大致随刺激的对数增长（韦伯-费希纳定律），所以等比看起来等距；若用 10/30/50，两条通道只差 1.7 倍，而 50→500 之间会空着，那里正是云端 API（≈80–140）和高速服务商（≈300–1,700）所在的区间。'},foot:'数据：data/recipes.json 中的实测配方',f_issue:'反馈问题'},
+ja:{f_data:'データ CC BY 4.0 · コード MIT',derived:'推算',stop_:'。',title:'速度体感 · ローカル推論レシピ',units:{'chars/min':'文字/分','words/min':'語/分'},brand:'ローカル推論レシピ',home:'ホーム',explore:'エクスプローラー',speed:'速度体感',submit:'投稿',h1:'毎秒 10・50・500 トークンはどれくらいの速さ？',
  intro:'各レーンは同じ回答を実際の Qwen3 トークンに分割し、正確な平均レートで表示します。レーンは対数間隔（1-2-5 系列）。速さの感覚は差ではなく比でほぼ決まるためです。',
  go:'▶ スタート',again:'↻ もう一度',stop:'■ 停止',model:'デコード',steady:'一定',jitter:'実際に近い揺らぎ',mtp:'揺らぎ + MTP/投機的デコード',prompt:'プロンプト',prefill:'プリフィル',custom:'カスタム',
  ttft:(p,pp,t)=>`TTFT ≈ ${p} / ${pp} tok/s = ${t} 秒`,
@@ -89,12 +90,12 @@ ja:{brand:'ローカル推論レシピ',home:'ホーム',explore:'エクスプ�
  b:['音読より遅い','読む速さと同じくらい','読むより速い','ほぼ一瞬'],tok:'トークン',done:'所要',pf:'プリフィル中…',
  real:'≈ ローカル実測：',cloud:'≈ クラウド API：',
  ch:'500 トークンの回答を出し切る時間 vs 速度',chnote:'時間 = 500 / 速度（1/x 曲線。対数軸では等間隔＝体感も等間隔）。灰色の線：人が同じ 500 トークンを読む時間。軸下の点：data/recipes.json のローカル単一ストリーム実測。青緑の目盛：クラウド API の中央値（Artificial Analysis）。',
- mh:'方法と出典',foot:'データ：data/recipes.json の実測レシピ',f_issue:'問題を報告'}};
+ mh:'方法と出典',c_silent:'黙読',c_aloud:'音読',c_local:'ローカル実測',c_cloud:'クラウド API の中央値（上部の目盛）',c_axis:'tok/s（対数）',m:{tok:(st,u,lang)=>`トークナイザー：Qwen/Qwen3-8B。サンプル（${lang}）：${st.tokens} トークン / ${st.units} ${u==='word'?'語':'文字'} = 1 ${u==='word'?'語':'文字'}あたり <b>${st.tok_per_unit}</b> トークン（実測、scripts/gen_speed_tokens.py）。`,silent:'黙読',aloud:'音読',cloud:(r,o,s)=>`クラウド：${r} この文章の比率 ${o}/${s}（o200k）で Qwen3 トークンに換算。`,aa:'AA の測定方法',pf:(n,l)=>`プリフィル / TTFT：${n} ${l}。確認：x-001 は 8K プロンプト・699 tok/s で TTFT 11.8 秒と報告。8192/699 = 11.7 秒。`,dec:n=>`デコードモデル：${n} 各ステップの所要時間は対数正規分布（σ = 0.35、説明用。手元のデータにトークン間レイテンシの公開分布はない）で、平均レートが正確になるよう再スケール。計時は経過時間に対する requestAnimationFrame なので、レーンがずれません。`,lanes:'レーン 5-10-20-50-100-200-500 は 1-2-5 の標準数列（2〜2.5 倍刻み）。知覚される大きさは刺激の対数にほぼ比例する（ウェーバー・フェヒナーの法則）ため、等比は等間隔に感じられます。10/30/50 だと 2 本のレーンが 1.7 倍しか離れず、クラウド API（≈80〜140）や高速プロバイダー（≈300〜1,700）がある 50→500 が空いてしまいます。'},foot:'データ：data/recipes.json の実測レシピ',f_issue:'問題を報告'}};
 const P=new URLSearchParams(location.search);
 const NL=(navigator.language||'').toLowerCase(); let SAVED=null; try{SAVED=localStorage.getItem('lang')}catch(e){}
 let LANG=P.get('lang')||(P.has('embed')?null:SAVED)||(NL.startsWith('ja')?'ja':NL.startsWith('zh')?'zh-CN':'en');
 if(['en','zh-CN'].includes(P.get('lang'))&&!P.has('embed'))try{localStorage.setItem('lang',P.get('lang'))}catch(e){}  // only values the other pages understand  // shared with the other pages (i18n.js)
-if(!I18N[LANG])LANG='en'; const T=I18N[LANG]; document.documentElement.lang=LANG;
+if(!I18N[LANG])LANG='en'; const T=I18N[LANG]; document.documentElement.lang=LANG;document.title=T.title;
 document.querySelectorAll('[data-t]').forEach(e=>e.textContent=T[e.dataset.t]);
 // shared header/footer use data-i18n (same markup as the other pages); the language switch is added here, as i18n.js does elsewhere
 document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=T[e.dataset.i18n]);
@@ -110,6 +111,7 @@ const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const f1=x=>x>=100?Math.round(x):x>=10?x.toFixed(0):x.toFixed(1);
 function badge(r){return r<ALOUD?0:r<=READ*1.5?1:r<250?2:3}
+function localPicks(rc,lang){return rc.filter(r=>r.category==='text'&&r.tok_s&&r.source_level==='实测'&&!selfReported(r)&&!r.superseded_by&&!/并发|aggregate|总吞吐/i.test((r.metric||'')+' '+(r.concurrency||''))).map(r=>localizeRecipe(r,lang==='zh-CN'?'zh-CN':'en'))}
 function closest(r){let best=null;for(const x of RECIPES){const d=Math.abs(Math.log(x.tok_s/r));if(d<=Math.log(1.12)&&(!best||d<best.d))best={d,x}}return best&&best.x}
 function cloudNear(r){let best=null;for(const c of REF.cloud.items){const q=c.tps*Q2O,d=Math.abs(Math.log(q/r));if(d<=Math.log(1.2)&&(!best||d<best.d))best={d,c,q}}return best}
 function hwShort(s){return s.replace(/[（(][^）)]*[）)]/g,'').replace(/[\u4e00-\u9fff，、；：]+/g,' ').replace(/\s+/g,' ').trim()}
@@ -127,7 +129,7 @@ function build(){
   $('lanes').innerHTML='';lanes=[];
   for(const r of EMBED?RATES:[...RATES,'c']){
     const el=document.createElement('div');el.className='lane';
-    el.innerHTML=`<div class="lnh"><b><span class="rv"></span> <small>tok/s</small></b><span class="badge"></span></div><div class="real"></div><div class="cloud"></div><div class="out"></div><div class="pg"><i></i></div><div class="meta"><span class="cnt"></span><span class="tm"></span></div>`;
+    el.innerHTML=`<div class="lnh"><b><span class="rv"></span> <small>tok/s</small>${r==='c'?` <small class="cus">· ${esc(T.custom)}</small>`:''}</b><span class="badge"></span></div><div class="real"></div><div class="cloud"></div><div class="out"></div><div class="pg"><i></i></div><div class="meta"><span class="cnt"></span><span class="tm"></span></div>`;
     $('lanes').appendChild(el);lanes.push({el,r})}
   label()}
 const rateOf=L=>L.r==='c'?sl2r(+$('cr').value):L.r;
@@ -137,7 +139,11 @@ function label(){$('cv').textContent=sl2r(+$('cr').value);
   L.el.querySelector('.rv').textContent=r;q.className='badge b'+b;q.textContent=T.b[b];
   const x=closest(r);L.el.querySelector('.real').innerHTML=x?`${T.real} <a href="${esc(x.source_url)}" target="_blank" rel="noopener">${esc(hwShort(x.hardware))} · ${esc(x.model)} · ${esc(x.tok_s)}</a>`:'';
   const c=cloudNear(r);L.el.querySelector('.cloud').innerHTML=c?`${T.cloud} <a href="${esc(c.c.url)}" target="_blank" rel="noopener">${esc(c.c.label)}${c.c.variant==="provider"||EMBED?"":" ("+esc(c.c.variant)+")"} ≈ ${f1(c.q)}</a>`:'';
-  L.el.querySelector('.cnt').textContent=`0 / ${TOKS.length} ${T.tok}`}}
+  L.el.querySelector('.cnt').textContent=`0 / ${TOKS.length} ${T.tok}`}
+  sortLanes()}
+// The custom lane follows the slider, so lanes are re-sorted by rate (ascending) every time the rate changes.
+const laneOrder=ls=>[...ls].sort((a,b)=>rateOf(a)-rateOf(b)||(a.r==='c')-(b.r==='c'));
+function sortLanes(){const box=$('lanes');for(const L of laneOrder(lanes))box.appendChild(L.el)}
 function start(){
   cancelAnimationFrame(raf);label();
   for(const L of lanes){L.ts=times(rateOf(L));L.i=0;L.o=L.el.querySelector('.out');L.o.innerHTML=(L.ts[0]>0?`<span class="pf">${T.pf}</span>`:'')+'<span class="cur"></span>';L.txt=document.createTextNode('');L.o.insertBefore(L.txt,L.o.querySelector('.cur'));L.end=null}
@@ -161,22 +167,21 @@ function chart(){
   for(const v of [0,30,60,90,120,150])s+=`<line x1="${L0}" x2="${R0}" y1="${Y(v)}" y2="${Y(v)}" class="gl"/><text x="${L0-6}" y="${Y(v)+4}" text-anchor="end">${v}s</text>`;
   let d='';for(let i=0;i<=200;i++){const r=SMIN*Math.pow(SMAX/SMIN,i/200);d+=(i?'L':'M')+X(r).toFixed(1)+','+Y(N/r).toFixed(1)}
   s+=`<path d="${d}" fill="none" class="cv" stroke-width="2.5"/>`;
-  for(const [v,lab,dash] of [[READ,'silent',''],[ALOUD,'aloud','4 3']]){const y=Y(N/v);s+=`<line x1="${L0}" x2="${R0}" y1="${y}" y2="${y}" class="rd" stroke-dasharray="${dash}"/><text x="${R0-4}" y="${y-4}" text-anchor="end">${lab}: ${Math.round(N/v)} s @ ${v.toFixed(1)} tok/s</text>`}
+  for(const [v,lab,dash] of [[READ,T.c_silent,''],[ALOUD,T.c_aloud,'4 3']]){const y=Y(N/v);s+=`<line x1="${L0}" x2="${R0}" y1="${y}" y2="${y}" class="rd" stroke-dasharray="${dash}"/><text x="${R0-4}" y="${y-4}" text-anchor="end">${lab}: ${Math.round(N/v)} s @ ${v.toFixed(1)} tok/s</text>`}
   for(const r of RATES)s+=`<circle cx="${X(r)}" cy="${Y(N/r)}" r="4" class="rp"/><text x="${X(r)+6}" y="${Y(N/r)-6}">${(N/r).toFixed(r>=100?1:0)}s</text>`;
   for(const x of RECIPES)s+=`<circle cx="${X(x.tok_s)}" cy="${B0+30+((x.id.charCodeAt(x.id.length-1)%5)*3)}" r="2.5" class="lo" opacity=".55"><title>${esc(hwShort(x.hardware))} · ${esc(x.model)} · ${esc(x.tok_s)} tok/s</title></circle>`;
-  s+=`<text x="${L0}" y="${B0+74}" class="lo">● local measured (n=${RECIPES.length})</text>`;
+  s+=`<text x="${L0}" y="${B0+74}" class="lo">● ${T.c_local} (n=${RECIPES.length})</text>`;
   for(const c of REF.cloud.items){const x=X(c.tps*Q2O);s+=`<line x1="${x}" x2="${x}" y1="${T0}" y2="${T0+10}" class="cl" stroke-width="2"><title>${esc(c.label)} (${esc(c.variant)}) ${esc(c.tps)} o200k tok/s</title></line>`}
-  s+=`<text x="${R0}" y="${B0+74}" text-anchor="end" class="cl">▮ cloud API median (top ticks)</text><text x="${(L0+R0)/2}" y="${B0+74}" text-anchor="middle">tok/s (log)</text>`;
+  s+=`<text x="${R0}" y="${B0+74}" text-anchor="end" class="cl">▮ ${T.c_cloud}</text><text x="${(L0+R0)/2}" y="${B0+74}" text-anchor="middle">${T.c_axis}</text>`;
   $('chart').innerHTML=s}
 function method(){
-  const st=ST[LANG],rd=REF.reading[LANG],u=st.unit==='word'?'word':'char';
-  const li=[];
-  li.push(`Tokenizer: Qwen/Qwen3-8B. Sample (${LANG}): ${st.tokens} tokens / ${st.units} ${u}s = <b>${st.tok_per_unit}</b> tokens per ${u} (measured, scripts/gen_speed_tokens.py).`);
-  for(const k of ['silent','aloud']){const x=rd[k];li.push(`${k}: ${esc(x.rate)} ${esc(x.unit)} × ${st.tok_per_unit} / 60 = <b>${(x.rate*st.tok_per_unit/60).toFixed(2)} tok/s</b> — ${esc(x.what)}. <a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.src)}</a>`)}
-  li.push(`Cloud: ${esc(REF.cloud.note)} Converted to Qwen3 tokens with this text's ratio ${st.tokens}/${st.o200k_tokens} (o200k). <a href="${esc(REF.cloud.method_url)}" target="_blank" rel="noopener">AA methodology</a> · `+REF.cloud.items.map(c=>`<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.label)}</a> ${esc(c.tps)}`).join(', '));
-  li.push(`Prefill / TTFT: ${esc(REF.prefill.note)} `+REF.prefill.items.map(p=>`${esc(p.id)} ${esc(p.label)} ${esc(p.pp)}`).join(' · ')+`. Check: x-001 reports TTFT 11.8 s for an 8K prompt at 699 tok/s; 8192/699 = 11.7 s.`);
-  li.push(`Decode model: ${esc(REF.mtp.note)} Step times are lognormal (σ = 0.35, illustrative — no public inter-token-latency distribution in our data) and rescaled so the mean rate is exact. Timing uses requestAnimationFrame against elapsed time, so lanes never drift.`);
-  li.push(`Lanes 5-10-20-50-100-200-500 follow the 1-2-5 preferred-number series (steps of 2–2.5×). Perceived magnitude grows roughly with the logarithm of the stimulus (Weber–Fechner), so equal ratios read as equal steps; 10/30/50 would put two lanes only 1.7× apart and leave 50→500 empty, where cloud APIs (≈80–140) and fast providers (≈300–1,700) sit.`);
+  const st=ST[LANG],rd=REF.reading[LANG],u=st.unit==='word'?'word':'char',M=T.m,TR=(REF.i18n||{})[LANG]||{};
+  const li=[M.tok(st,u,LANG)];
+  for(const k of ['silent','aloud']){const x=rd[k];li.push(`${M[k]}: ${esc(x.rate)} ${esc(T.units[x.unit]||x.unit)} × ${st.tok_per_unit} / 60 = <b>${(x.rate*st.tok_per_unit/60).toFixed(2)} tok/s</b> — ${esc((TR.what||{})[k]||x.what)}${T.stop_}<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.src==='derived'?T.derived:x.src)}</a>`)}
+  li.push(M.cloud(esc(TR.cloud||REF.cloud.note),st.tokens,st.o200k_tokens)+` <a href="${esc(REF.cloud.method_url)}" target="_blank" rel="noopener">${M.aa}</a> · `+REF.cloud.items.map(c=>`<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.label)}</a> ${esc(c.tps)}`).join(', '));
+  li.push(M.pf(esc(TR.prefill||REF.prefill.note),REF.prefill.items.map(p=>`${esc(p.id)} ${esc(p.label)} ${esc(p.pp)}`).join(' · ')));
+  li.push(M.dec(esc(TR.mtp||REF.mtp.note)));
+  li.push(M.lanes);
   $('method').innerHTML=li.map(x=>`<li>${x}</li>`).join('')}
 $('go').onclick=start;$('stop').onclick=()=>cancelAnimationFrame(raf);
 $('cr').oninput=label;$('pl').onchange=label;$('pp').onchange=label;
@@ -185,10 +190,10 @@ Promise.all([fetch('data/speed-tokens.json').then(r=>r.json()),fetch('data/speed
   TOKS=tk.texts[LANG]||tk.texts.en;ST=tk.stats;REF=rf;const st=ST[LANG];
   Q2O=st.tokens/st.o200k_tokens;
   const rd=REF.reading[LANG],cv=x=>x.rate*st.tok_per_unit/60;READ=cv(rd.silent);ALOUD=cv(rd.aloud);
-  const tag=x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${x.estimate?T.est+' · ':''}${esc(x.rate)} ${esc(x.unit)}</a>`;
+  const tag=x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${x.estimate?T.est+' · ':''}${esc(x.rate)} ${esc(T.units[x.unit]||x.unit)}</a>`;
   $('rlab').innerHTML=T.silent(READ.toFixed(1),tag(rd.silent));$('alab').innerHTML=T.aloud(ALOUD.toFixed(1),tag(rd.aloud));
   $('pp').innerHTML=REF.prefill.items.map(p=>`<option value="${esc(p.pp)}"${p.id==='x-005'?' selected':''}>${esc(p.label)} · ${esc(p.pp)} tok/s</option>`).join('');
-  RECIPES=rc.filter(r=>r.category==='text'&&r.tok_s&&r.source_level==='实测');
+  RECIPES=localPicks(rc,LANG);
   $('cr').value=r2sl(35);
   build();chart();method();if(P.has('autostart')||EMBED)start();
 });

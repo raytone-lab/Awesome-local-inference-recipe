@@ -11,7 +11,7 @@
 
 ## Model
 
-- Qwen3.8-Flash-Next-MLX-Serve-mixed-4 · `mixed 4/8-bit`
+- Qwen3.8-Flash-Next-MLX-Serve-mixed-4 · `mixed 4/8-bit (≈75 GB resident)`
 - Download: [huggingface.co/ddalcu/Qwen3.8-Flash-Next-MLX-Serve-mixed-4-8bit](https://huggingface.co/ddalcu/Qwen3.8-Flash-Next-MLX-Serve-mixed-4-8bit)
 
 ## Engine
@@ -28,7 +28,7 @@ mlx-serve --model ddalcu/Qwen3.8-Flash-Next-MLX-Serve-mixed-4-8bit --serve
 ## Key parameters
 
 - Context: 268,288
-- Concurrency: —
+- Concurrency: serial single request
 - Tags: `4bit`, `8bit`, `long-context`
 
 ## Expected speed

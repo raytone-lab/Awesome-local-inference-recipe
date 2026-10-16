@@ -30,7 +30,7 @@ Command not published — see source.
 
 ## Expected speed
 
-- 78.0 tok/s (generation) (✅ Measured)
+- 78 tok/s @32K; 56 tok/s @262K (✅ Measured)
 
 ## Caveats
 

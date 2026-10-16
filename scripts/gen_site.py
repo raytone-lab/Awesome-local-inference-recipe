@@ -29,21 +29,22 @@ def en(s):
     if not s: return s
     return gen_readme.en(normalize_punct(str(s)), cjk=gen_readme.CJK_CHAR, strip=' ·+/,;；') or s
 def met_en(r): return r.get('metric_en') or en(r.get('metric'))
+def fen(r, k): return (r.get('en') or {}).get(k) or en(r.get(k))
 def safe_url(u): return u if re.match(r'(https?:)?//|[\w./#?=&%-]+$', u) and not u.lower().startswith('javascript:') else '#'
 
 def row(r):
     tok = '' if r.get('tok_s') is None else f"{r['tok_s']:g}"
-    cost = f"{r['hardware_cost_usd']:,}" if r.get('hardware_cost_usd') is not None else e(r.get('hardware_cost_text') or '')
+    cost = f"{r['hardware_cost_usd']:,}" if r.get('hardware_cost_usd') is not None else e(fen(r, 'hardware_cost_text') or '')
     cpt = round(r['hardware_cost_usd']/r['tok_s']) if r.get('tok_s') and r.get('hardware_cost_usd') else ''
     met = met_en(r) or ''
-    return (f'<tr data-id="{e(r["id"])}"><td></td><td>{e(en(r["model"]))}</td><td>{e(r.get("quant") or "")}</td><td>{e(r["engine"])}</td>'
-            f'<td>{e(en(r["hardware"]))}</td><td class="n">{tok}</td><td>{e(met)}</td><td class="n">{cost}</td><td class="n">{cpt}</td>'
-            f'<td>{e(r.get("context") or "")}</td><td><a href="{e(r["source_url"])}" rel="nofollow noopener">{LV.get(r["source_level"], e(r["source_level"]))}{" (self-reported)" if selfrep(r) else ""}</a> {e(r.get("date") or "")}</td></tr>')
+    return (f'<tr data-id="{e(r["id"])}"><td></td><td>{e(fen(r, "model"))}</td><td>{e(fen(r, "quant") or "")}</td><td>{e(r["engine"])}</td>'
+            f'<td>{e(fen(r, "hardware"))}</td><td class="n">{tok}</td><td>{e(met)}</td><td class="n">{cost}</td><td class="n">{cpt}</td>'
+            f'<td>{e(fen(r, "context") or "")}</td><td><a href="{e(r["source_url"])}" rel="nofollow noopener">{LV.get(r["source_level"], e(r["source_level"]))}{" (self-reported)" if selfrep(r) else ""}</a> {e(r.get("date") or "")}</td></tr>')
 def explore(links):
     p = R/'explore.html'; s = p.read_text(encoding='utf-8')
     rows = '\n'.join(row(r) for r in sorted(D, key=lambda r: (-(r.get('tok_s') or 0), r['id'])))
     s = re.sub(r'<tbody id="tb">.*?</tbody>', lambda m: f'<tbody id="tb">{STATIC_ROWS_START}\n{rows}\n{STATIC_ROWS_END}</tbody>', s, flags=re.S)
-    nav = '<nav class="static-links" aria-label="Browse"><a href="guides/index.html">Guides &amp; hardware / model pages</a></nav>'
+    nav = '<nav class="static-links" aria-label="Browse" data-i18n-al="nav_browse"><a href="guides/index.html" data-i18n="nav_guides">Guides &amp; hardware / model pages</a></nav>'
     blk = f'<!--static:links-->{nav}<!--/static:links-->'
     if '<!--static:links-->' in s: s = re.sub(r'<!--static:links-->.*?<!--/static:links-->', lambda m: blk, s, flags=re.S)
     else: s = s.replace('<div class="more" id="morew"', blk + '\n<div class="more" id="morew"', 1)
@@ -83,7 +84,7 @@ def md(src, linkmap):
     close(); return '\n'.join(h)
 
 LVL = {'en': LV, 'zh-CN': {k: k for k in LV}, 'ja': {'官方': '公式', '实测': '実測', '转述': '伝聞', '宣称': '主張'}}
-CHROME = {'en': ('Explore', 'Guides', 'Data as of'), 'zh-CN': ('配方库', '指南', '数据截至'), 'ja': ('エクスプローラー', 'ガイド', 'データ時点')}
+CHROME = {'en': ('Explore', 'Guides', 'Data as of', 'Local Inference Recipes', 'data CC BY 4.0'), 'zh-CN': ('配方库', '指南', '数据截至', '本地推理配方', '数据 CC BY 4.0'), 'ja': ('エクスプローラー', 'ガイド', 'データ時点', 'ローカル推論レシピ', 'データ CC BY 4.0')}
 LANGS = [('en', '', '.md', 'en'), ('zh-CN', 'zh-CN/', '.zh-CN.md', 'zh-CN'), ('ja', 'ja/', '.ja.md', 'ja')]
 def shell(title, desc, canon, body, depth, lang='en', alts=None, noindex=False):
     up = '../'*depth
@@ -93,10 +94,10 @@ def shell(title, desc, canon, body, depth, lang='en', alts=None, noindex=False):
 <link rel="canonical" href="{canon}">{alt}{'<meta name="robots" content="noindex,follow">' if noindex else ''}
 <meta property="og:type" content="article"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{canon}"><meta property="og:image" content="{PAGES}docs/og.png"><meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="{up}style.css"><script src="{up}theme.js"></script></head><body>
-<header class="site-hd"><div class="hd-in"><a class="brand" href="{up}index.html">⚡ Local Inference Recipes</a><nav class="static-links"><a href="{up}explore.html">{CHROME[lang][0]}</a> · <a href="{up}guides/index.html">{CHROME[lang][1]}</a> · <a href="{REPO}">GitHub</a></nav></div></header>
+<header class="site-hd"><div class="hd-in"><a class="brand" href="{up}index.html">⚡ {CHROME[lang][3]}</a><nav class="static-links"><a href="{up}explore.html">{CHROME[lang][0]}</a> · <a href="{up}guides/index.html">{CHROME[lang][1]}</a> · <a href="{REPO}">GitHub</a></nav></div></header>
 <main class="doc static-page">
 {body}
-</main><footer class="site-ft"><div class="ft-in">{CHROME[lang][2]} {ASOF} · <a href="{REPO}">GitHub</a> · data CC BY 4.0</div></footer></body></html>
+</main><footer class="site-ft"><div class="ft-in">{CHROME[lang][2]} {ASOF} · <a href="{REPO}">GitHub</a> · {CHROME[lang][4]}</div></footer></body></html>
 '''
 
 def guides():
@@ -141,7 +142,7 @@ def landing(kind, key, name, rows, qterm=None):
         b = max(meas, key=lambda r: (r['tok_s'], r['id']))
         eng = '' if b['engine'] == 'Unspecified' else f' on {e(b["engine"])}'
         summ = (f'As of {ASOF}, this dataset has <b>{nrec(len(rows))}</b> for {e(name)}, {nmeas} of them measured by the poster. '
-                f'The fastest measured single-device, single-stream text result is <b>{b["tok_s"]:g} tok/s</b> with {e(en(b["model"]))}{eng} ({e(en(b["hardware"]))}; '
+                f'The fastest measured single-device, single-stream text result is <b>{b["tok_s"]:g} tok/s</b> with {e(fen(b, "model"))}{eng} ({e(fen(b, "hardware"))}; '
                 f'Measured{", " + e(b["date"]) if b.get("date") else ""}; <a href="{e(b["source_url"])}" rel="nofollow noopener">source</a>).')
     else:
         summ = (f'As of {ASOF}, this dataset has <b>{nrec(len(rows))}</b> for {e(name)}, {nmeas} of them measured by the poster'
@@ -151,7 +152,7 @@ def landing(kind, key, name, rows, qterm=None):
     t = ['<table><thead><tr><th>Model</th><th>Engine</th><th>Hardware</th><th>tok/s</th><th>Metric</th><th>Source level</th><th>Date</th><th>Source</th></tr></thead><tbody>']
     for r in rows:
         tok = '' if r.get('tok_s') is None else f"{r['tok_s']:g}"
-        t.append(f'<tr><td>{e(en(r["model"]))}</td><td>{e(r["engine"])}</td><td>{e(en(r["hardware"]))}</td><td class="n">{tok}</td><td>{e(met_en(r) or "")}</td><td>{LV.get(r["source_level"], "")}{" (self-reported)" if selfrep(r) else ""}</td><td>{e(r.get("date") or "")}</td><td><a href="{e(r["source_url"])}" rel="nofollow noopener">link</a></td></tr>')
+        t.append(f'<tr><td>{e(fen(r, "model"))}</td><td>{e(r["engine"])}</td><td>{e(fen(r, "hardware"))}</td><td class="n">{tok}</td><td>{e(met_en(r) or "")}</td><td>{LV.get(r["source_level"], "")}{" (self-reported)" if selfrep(r) else ""}</td><td>{e(r.get("date") or "")}</td><td><a href="{e(r["source_url"])}" rel="nofollow noopener">link</a></td></tr>')
     t.append('</tbody></table>')
     note = '<p class="na">Numbers are quoted from each source and have not been re-run by this project. Models and settings differ between rows. Source levels: Official = project/vendor, Measured = the poster ran it, Relayed = second-hand, Claimed = prediction or no reproduction details.</p>'
     qs = e({'hw': f'explore.html?q={quote(qterm or name)}', 'model': f'explore.html?family={quote(key)}'}[kind])
@@ -175,7 +176,7 @@ def main():
         pages.append(('model', f, f) + landing('model', f, f, rows))
     li = lambda items: '<ul>' + ''.join(items) + '</ul>'
     byid = {r['id']: r for r in D}
-    g = [f'<li><a href="{rid}.html">{e(en(byid[rid]["model"]))} · {e(en(byid[rid]["hardware"]))}</a> (<a href="zh-CN/{rid}.html">中文</a> · <a href="ja/{rid}.html">日本語</a>)</li>' for rid in ids if rid in byid]
+    g = [f'<li><a href="{rid}.html">{e(fen(byid[rid], "model"))} · {e(fen(byid[rid], "hardware"))}</a> (<a href="zh-CN/{rid}.html">中文</a> · <a href="ja/{rid}.html">日本語</a>)</li>' for rid in ids if rid in byid]
     hwl = [f'<li><a href="../{k}/{(slug(key) if k=="model" else key)}.html">{e(n)}</a> — {c} recipes</li>' for k, key, n, _, noidx, c in pages if k == 'hw' and not noidx]
     ml = [f'<li><a href="../{k}/{slug(key)}.html">{e(n)}</a> — {c} recipes</li>' for k, key, n, _, noidx, c in pages if k == 'model' and not noidx]
     body = (f'<h1>Local inference recipe guides, hardware and model pages</h1><p>Static pages generated from the dataset (as of {ASOF}). Every number links to its source.</p>'

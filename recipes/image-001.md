@@ -1,4 +1,4 @@
-# Qwen-Image 2.1 · ComfyUI · RTX 4090 24GB
+# Qwen-Image 2.1 (7B + 8B text encoder) · ComfyUI · RTX 4090 24GB
 
 **English** | [简体中文](image-001.zh-CN.md) | [日本語](image-001.ja.md) · [← All recipes](../README.md)
 
@@ -11,7 +11,7 @@
 
 ## Model
 
-- Qwen-Image 2.1 · `Comfy-Org INT8 · ComfyUI`
+- Qwen-Image 2.1 (7B + 8B text encoder) · `official Comfy-Org INT8 · ComfyUI`
 - Download: not published, see source
 
 ## Engine
@@ -24,13 +24,13 @@ Command not published — see source.
 
 ## Key parameters
 
-- Context: 2K
-- Concurrency: —
+- Context: native 2K
+- Concurrency: single card, serial
 - Tags: `8bit`
 
 ## Expected speed
 
-- not published, see source (✅ Measured)
+- 8.1 s / 1024² (40 steps); 30.2 s / 2048×1152 (50 steps); peak 16.2GB (✅ Measured)
 
 ## Caveats
 

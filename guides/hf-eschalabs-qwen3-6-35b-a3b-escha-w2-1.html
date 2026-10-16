@@ -15,20 +15,20 @@
 </ul>
 <h2>Model</h2>
 <ul>
-<li>Qwen3.6-35B-A3B-Escha-W2 · <code>Escha W2</code></li>
+<li>Qwen3.6-35B-A3B-Escha-W2 · <code>Escha W2 (INT8=on)</code></li>
 <li>Download: <a href="https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2" rel="nofollow noopener">huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2</a></li>
 </ul>
 <h2>Engine</h2>
 <ul>
 <li>SGLang — install: https://github.com/sgl-project/sglang</li>
-<li>Note: SGLang</li>
+<li>Note: SGLang (sglang/serve.sh)</li>
 </ul>
 <h2>Launch command</h2>
-<pre><code>MEM=0.78 CTXLEN=32768 bash sglang/serve.sh</code></pre>
+<pre><code>MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)</code></pre>
 <h2>Key parameters</h2>
 <ul>
-<li>Context: 32K</li>
-<li>Concurrency: 2,670</li>
+<li>Context: 32K (16GB card 8K×16)</li>
+<li>Concurrency: single stream 283; bs32 about 2,670 (peak 3,017.6 @32 streams)</li>
 <li>Tags: <code>2bit</code>, <code>8bit</code>, <code>MoE</code></li>
 </ul>
 <h2>Expected speed</h2>

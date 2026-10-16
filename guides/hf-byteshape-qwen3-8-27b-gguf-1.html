@@ -15,13 +15,13 @@
 </ul>
 <h2>Model</h2>
 <ul>
-<li>Qwen3.8-27B · <code>ShapeLearn GPU-1</code></li>
+<li>Qwen3.8-27B · <code>ShapeLearn mixed quantization GPU-1 (2.56 bpw, label IQ2_XXS)</code></li>
 <li>Download: <a href="https://huggingface.co/byteshape/Qwen3.8-27B-GGUF" rel="nofollow noopener">huggingface.co/byteshape/Qwen3.8-27B-GGUF</a></li>
 </ul>
 <h2>Engine</h2>
 <ul>
 <li>llama.cpp — install: https://github.com/ggml-org/llama.cpp</li>
-<li>Note: llama.cpp</li>
+<li>Note: llama.cpp (-np 1 -fa on)</li>
 </ul>
 <h2>Launch command</h2>
 <pre><code>llama-server -hf byteshape/Qwen3.8-27B-GGUF:&lt;tag&gt; --spec-type draft-mtp --spec-draft-n-max 3</code></pre>
@@ -29,7 +29,7 @@
 <h2>Key parameters</h2>
 <ul>
 <li>Context: —</li>
-<li>Concurrency: —</li>
+<li>Concurrency: single stream (-np 1)</li>
 <li>Tags: <code>2bit</code>, <code>dense</code></li>
 </ul>
 <h2>Expected speed</h2>

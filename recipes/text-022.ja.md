@@ -11,7 +11,7 @@
 
 ## モデル
 
-- Qwen3.8-Flash-Next · `Cruz exllamav3 fork · EXL3 3.05bpw · · 8-bit KV`
+- Qwen3.8-Flash-Next · `Cruz exllamav3 fork · EXL3 3.05bpw · draft depth 5 · 8-bit KV`
 - ダウンロード: 未公開（出典を参照）
 
 ## エンジン
@@ -24,13 +24,13 @@
 
 ## 主なパラメータ
 
-- コンテキスト: 262K
-- 同時実行: 1
+- コンテキスト: 262K (243K needle test 15/15)
+- 同時実行: native engine only 1 stream (separate vLLM concurrent lane also exists)
 - タグ: `3bit`, `8bit`, `long-context`, `speculative`
 
 ## 想定速度
 
-- 71.7 tok/s (generation) (✅ 実測)
+- code 102.6; prose 71.7; JSON 66.2 tok/s (✅ 実測)
 
 ## 注意点
 

@@ -11,24 +11,24 @@
 
 ## モデル
 
-- Qwen3.6-35B-A3B-Escha-W2 · `Escha W2`
+- Qwen3.6-35B-A3B-Escha-W2 · `Escha W2 (INT8=on)`
 - ダウンロード: [huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 
 ## エンジン
 
 - SGLang — インストール： https://github.com/sgl-project/sglang
-- 備考: SGLang
+- 備考: SGLang (sglang/serve.sh)
 
 ## 起動コマンド
 
 ```bash
-MEM=0.78 CTXLEN=32768 bash sglang/serve.sh
+MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)
 ```
 
 ## 主なパラメータ
 
-- コンテキスト: 32K
-- 同時実行: 2,670
+- コンテキスト: 32K (16GB card 8K×16)
+- 同時実行: single stream 283; bs32 about 2,670 (peak 3,017.6 @32 streams)
 - タグ: `2bit`, `8bit`, `MoE`
 
 ## 想定速度
