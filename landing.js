@@ -38,7 +38,7 @@ const xl=id=>'explore.html?id='+encodeURIComponent(id);
  const run=()=>{const on=vis&&!document.hidden;if(on&&!raf){if(paused)t0+=performance.now()-paused;paused=0;raf=requestAnimationFrame(f)}else if(!on&&raf){cancelAnimationFrame(raf);raf=0;paused=performance.now()}};
  if('IntersectionObserver' in window)new IntersectionObserver(es=>{vis=es[es.length-1].isIntersecting;run()}).observe(el);
  document.addEventListener('visibilitychange',run);run()})();
-fetch('data/recipes.json').then(r=>r.json()).then(D=>{
+fetch('data/recipes.json').then(r=>r.json()).then(d=>{const D=d.map(r=>localizeRecipe(r,LANG));
  const n=f=>D.filter(f).length,nd=D.map(r=>r.date).filter(Boolean).sort().pop();
  $('ks').innerHTML=[[D.length,T('k1')],[new Set(D.map(r=>r.engine.split(/[ （]/)[0])).size,T('k2')],[n(r=>r.source_level==MEA),T('k5')],...(nd?[[nd,T('k6')]]:[])].map(([a,b])=>`<div class="k"><b>${e(a)}</b>${e(b)}</div>`).join('');
  // like-for-like only: card-only and whole-system prices are ranked separately (costKind, cost.js); self-reported (自称) rows are left out
@@ -51,13 +51,13 @@ fetch('data/recipes.json').then(r=>r.json()).then(D=>{
  tabs.forEach((b,i)=>{b.onclick=()=>sel(b);b.onkeydown=ev=>{const d={ArrowRight:1,ArrowLeft:-1}[ev.key];if(d){const t=tabs[(i+d+tabs.length)%tabs.length];sel(t);t.focus()}}});sel(tabs[0]);
  for(const k of ['gpu','sys']){const seen=new Set(),bv=M.filter(r=>r.kind==k).map(r=>({...r,cpt:r.hardware_cost_usd/r.tok_s})).sort((a,b)=>a.cpt-b.cpt).filter(r=>{const q=r.model+'|'+r.hardware;if(seen.has(q))return false;seen.add(q);return true}).slice(0,3);
  $('bv-'+k).innerHTML=bv.map((r,i)=>`<a class="bvc" href="${xl(r.id)}"><div class="r1"><span class="cpt">$${Math.round(r.cpt)}<small> / tok/s</small></span><span class="rank">#${i+1}</span></div>
-<b class="m">${e(r.model)}</b><span class="s">${e(r.hardware)}</span><span class="s">${e(r.engine)}${r.quant?' · '+e(r.quant):''}</span>
+<b class="m">${e(r.model)}</b><span class="s">${e(r.hardware)}</span><span class="s">${e(displayValue(r.engine,LANG))}${r.quant?' · '+e(r.quant):''}</span>
 <div class="nums"><span><b>${e(r.tok_s)}</b> tok/s</span><span><b>$${r.hardware_cost_usd.toLocaleString()}</b> <small>${T('pr_'+k)}</small></span></div></a>`).join('')}
  const hot=hotPosts(D,6);
  $('hot').innerHTML=hot.map(r=>`<a class="hc" href="${e(r.source_url)}" target="_blank" rel="noopener">
 <div class="hm"><span class="lv ${e(r.source_level)}">${e(TL(r.source_level))}</span><span>♥ ${e(r.x_post.likes)} · ⟲ ${e(r.x_post.reposts)}${r.x_post.as_of?' · '+e(T('asof',{d:r.x_post.as_of})):''}</span></div>
 <div class="big">${r.tok_s!=null?e(r.tok_s)+'<small> tok/s</small>':'🎬'}</div><b>${e(r.model)}</b>
-<div class="sub">${e(r.engine)}${r.quant?' · '+e(r.quant):''}</div><div class="sub">${e(r.hardware)}</div>
+<div class="sub">${e(displayValue(r.engine,LANG))}${r.quant?' · '+e(r.quant):''}</div><div class="sub">${e(r.hardware)}</div>
 <div class="mt">${e(LANG=='en'&&r.metric_en?r.metric_en:r.metric)}</div><div class="au">@${e(r.x_post.author)}${r.date?' · '+e(r.date):''}</div></a>`).join('');
  if(nd)$('xd').textContent=T('footd',{d:nd});
 });

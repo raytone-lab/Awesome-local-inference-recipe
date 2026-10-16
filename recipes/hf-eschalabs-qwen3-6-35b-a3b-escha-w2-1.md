@@ -11,24 +11,24 @@
 
 ## Model
 
-- Qwen3.6-35B-A3B-Escha-W2 · `Escha W2`
+- Qwen3.6-35B-A3B-Escha-W2 · `Escha W2 (INT8=on)`
 - Download: [huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 
 ## Engine
 
 - SGLang — install: https://github.com/sgl-project/sglang
-- Note: SGLang
+- Note: SGLang (sglang/serve.sh)
 
 ## Launch command
 
 ```bash
-MEM=0.78 CTXLEN=32768 bash sglang/serve.sh
+MEM=0.78 CTXLEN=32768 bash sglang/serve.sh (on 5090 add INT8=on ATTN_BACKEND=triton MEM=0.82)
 ```
 
 ## Key parameters
 
-- Context: 32K
-- Concurrency: 2,670
+- Context: 32K (16GB card 8K×16)
+- Concurrency: single stream 283; bs32 about 2,670 (peak 3,017.6 @32 streams)
 - Tags: `2bit`, `8bit`, `MoE`
 
 ## Expected speed

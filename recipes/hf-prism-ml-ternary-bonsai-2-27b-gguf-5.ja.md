@@ -17,20 +17,20 @@
 ## エンジン
 
 - llama.cpp (PrismML fork) — インストール： https://github.com/ggml-org/llama.cpp
-- 備考: PrismML llama.cpp fork
+- 備考: PrismML llama.cpp fork (Metal)
 
 ## 起動コマンド
 
 ```bash
-llama-cli ... -ngl 99 -fa on -c 32768
+llama-cli ... -ngl 99 -fa on -c 32768 (requires the PrismML llama.cpp fork; stock llama.cpp does not work)
 ```
 
 出典からの抜粋です（`...` やプレースホルダーを含みます）。全引数は出典を参照してください。
 
 ## 主なパラメータ
 
-- コンテキスト: -c 32768
-- 同時実行: batch 1
+- コンテキスト: 262K (model card); example command -c 32768
+- 同時実行: batch 1 (single stream)
 - タグ: `ternary`, `dense`, `long-context`
 
 ## 想定速度

@@ -17,20 +17,20 @@
 ## Engine
 
 - llama.cpp (PrismML fork) — install: https://github.com/ggml-org/llama.cpp
-- Note: PrismML llama.cpp fork
+- Note: PrismML llama.cpp fork (Metal)
 
 ## Launch command
 
 ```bash
-llama-cli ... -ngl 99 -fa on -c 32768
+llama-cli ... -ngl 99 -fa on -c 32768 (requires the PrismML llama.cpp fork; stock llama.cpp does not work)
 ```
 
 Excerpt from the source (contains `...`/placeholders); see the source for full arguments.
 
 ## Key parameters
 
-- Context: -c 32768
-- Concurrency: batch 1
+- Context: 262K (model card); example command -c 32768
+- Concurrency: batch 1 (single stream)
 - Tags: `ternary`, `dense`, `long-context`
 
 ## Expected speed

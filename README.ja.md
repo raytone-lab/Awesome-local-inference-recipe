@@ -203,17 +203,17 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 
 **🖼️ 画像**
 
-- **Qwen-Image 2.1** · ComfyUI `Comfy-Org INT8 · ComfyUI` — RTX 4090 24GB → 出典を参照 ✅ [出典](https://x.com/yume_arasaki/status/2102176739359404499) · [手順](recipes/image-001.ja.md)
-- **Qwen-Image 2.1** `INT8` — RTX 3090 → 出典を参照 🔁 [出典](https://x.com/yume_arasaki/status/2102176739359404499)
-- **Qwen-Image 2.1** · ComfyUI `ComfyUI` — Mac M4 Pro → 出典を参照 ✅ [出典](https://x.com/gabeciii/status/2104920039077884324)
-- **Z-Image Turbo** · ComfyUI `ComfyUI` — RTX 3090 24GB → 出典を参照 ✅ [出典](https://x.com/michaelricks/status/2104959036353356058)
+- **Qwen-Image 2.1** · ComfyUI `Comfy-Org INT8 · ComfyUI` — RTX 4090 24GB → 8.1 s / 1024² (40 steps); 30.2 s / 2048×1152 (50 steps); peak 16.2GB ✅ [出典](https://x.com/yume_arasaki/status/2102176739359404499) · [手順](recipes/image-001.ja.md)
+- **Qwen-Image 2.1** `INT8` — RTX 3090 → 82–96 s / 2K (public receipt) 🔁 [出典](https://x.com/yume_arasaki/status/2102176739359404499)
+- **Qwen-Image 2.1** · ComfyUI `ComfyUI` — Mac M4 Pro → 3 min 52 s / image (768 edit) ✅ [出典](https://x.com/gabeciii/status/2104920039077884324)
+- **Z-Image Turbo** · ComfyUI `ComfyUI` — RTX 3090 24GB → 2048px about 8 s / image; another user 12 s after warm-up ✅ [出典](https://x.com/michaelricks/status/2104959036353356058)
 
 **🎬 動画・音声**
 
-- **FastH3 V2 / Trim** `FP8` — RTX 4090 24GB → 出典を参照 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/)
-- **MiniMax H3** · ComfyUI `ComfyUI` — RTX 4090 → 出典を参照 ✅ [出典](https://x.com/yume_arasaki/status/2097790831323427046)
-- **MiniMax H3** · ComfyUI `ComfyUI` — RTX 3090 → 出典を参照 ✅ [出典](https://x.com/natehalko/status/2103538997146611890)
-- **ACE-Step 1.5** — RTX 3090 → 出典を参照 🔁 [出典](https://x.com/simplifyinAI/status/2091935190335754493)
+- **FastH3 V2 / Trim** `FP8` — RTX 4090 24GB → 480p 5s: 54.6 / 43.9 s; 768p: 154.6 / 132.8 s; 8GB limit Trim 82.0 s 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/)
+- **MiniMax H3** · ComfyUI `ComfyUI` — RTX 4090 → 5 s clip ~91 s; 15 s ~8 minutes; 960×544×5s about 50 s ✅ [出典](https://x.com/yume_arasaki/status/2097790831323427046)
+- **MiniMax H3** · ComfyUI `ComfyUI` — RTX 3090 → 11 s video 13 minutes ✅ [出典](https://x.com/natehalko/status/2103538997146611890)
+- **ACE-Step 1.5** — RTX 3090 → Whole song <10 s (promo post) 🔁 [出典](https://x.com/simplifyinAI/status/2091935190335754493)
 
 ## 第 2 段階 · 2,500〜7,000 ドル
 
@@ -236,26 +236,26 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 
 **🖼️ 画像**
 
-- **Qwen-Image 2.1** `LightX2V / BennyDaBall NVFP…` — RTX 5090 32GB → 出典を参照 🔁 [出典](https://x.com/yume_arasaki/status/2103277400234860878)
-- **Qwen-Image 2.1** · TensorFold `TensorFold NVFP4 / FP8 / GG…` — RTX 5090 @450W → 出典を参照 ✅ [出典](https://x.com/niklaslenz_ai/status/2106465941177487871)
-- **Qwen-Image 2.1** — RTX 5090 → 出典を参照 📣 [出典](https://x.com/fractalyze_io/status/2105207217452695841)
-- **Qwen-Image 2.1** · SGLang `spark-image-lab BF16 / SGLa…` — 1× DGX Spark → 出典を参照 🔁 [出典](https://x.com/yume_arasaki/status/2103277400234860878)
-- **Qwen-Image-2.1-Turbo** `Turbo 8 vs Base 40` — RTX 5090 → 出典を参照 ✅ [出典](https://x.com/niklaslenz_ai/status/2108609693941920176)
-- **Z-Image Turbo vs Qwen-Image 2.1** `prompt seed 20` — RTX 5090 → 出典を参照 ✅ [出典](https://x.com/princedoesai/status/2109376490009743713)
+- **Qwen-Image 2.1** `LightX2V / BennyDaBall NVFP…` — RTX 5090 32GB → 5.93 s; NVFP4 6.7 s vs INT8 7.6 s vs BF16 15.6 s (1024²) 🔁 [出典](https://x.com/yume_arasaki/status/2103277400234860878)
+- **Qwen-Image 2.1** · TensorFold `TensorFold NVFP4 / FP8 / GG…` — RTX 5090 @450W → 4.53 s / 6.94 s / 13.87 s (1024², 25 steps; NVFP4 peak 22.9GB; images… ✅ [出典](https://x.com/niklaslenz_ai/status/2106465941177487871)
+- **Qwen-Image 2.1** — RTX 5090 → 13.5 s → 1.9 s / image (vendor claim) 📣 [出典](https://x.com/fractalyze_io/status/2105207217452695841)
+- **Qwen-Image 2.1** · SGLang `spark-image-lab BF16 / SGLa…` — 1× DGX Spark → 52.6 s / 1024²; SGLang table: Spark 35.4 s, 4090 18.7 s 🔁 [出典](https://x.com/yume_arasaki/status/2103277400234860878)
+- **Qwen-Image-2.1-Turbo** `Turbo 8 vs Base 40` — RTX 5090 → 29 s vs 108 s / image (2048²) ✅ [出典](https://x.com/niklaslenz_ai/status/2108609693941920176)
+- **Z-Image Turbo vs Qwen-Image 2.1** `prompt seed 20` — RTX 5090 → Z-Image ~2× faster (no absolute times); quality: Qwen wins 9:6 ✅ [出典](https://x.com/princedoesai/status/2109376490009743713)
 
 **🎬 動画・音声**
 
-- **FastH3 V2** `NVFP4` — RTX 5090 32GB → 出典を参照 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/) · [手順](recipes/video-audio-001.ja.md)
-- **FastH3 Trim** `NVFP4` — RTX 5090 → 出典を参照 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/)
-- **FastH3 V2 / Trim** `NVFP4` — 1× / 2× DGX Spark → 出典を参照 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/)
-- **MiniMax H3** · ComfyUI `ComfyUI + SageAttention` — RTX 5090 → 出典を参照 ✅ [出典](https://x.com/RKAScope/status/2084359480926503182)
-- **MiniMax H3 vs FastH3 Turbo** `seed` — RTX 5090 → 出典を参照 ✅ [出典](https://x.com/Sogni_Protocol/status/2097254959729246550)
-- **MiniMax H3** · NVIDIA Sol `NVIDIA Sol` — 1× DGX Spark → 出典を参照 ✅ [出典](https://x.com/yume_arasaki/status/2100734364908986511)
-- **MiniMax H3 vs LTX-2.3 Eros** `3 prompt` — 1× DGX Spark → 出典を参照 ✅ [出典](https://x.com/YRSM_Simon/status/2084222856972456336)
-- **LTX-2.3** · ComfyUI `ComfyUI` — RTX 5090 → 出典を参照 ✅ [出典](https://x.com/freshstartsnow/status/2092263835591655773)
-- **LTX-2.5** `LoRA` — RTX 5090 → 出典を参照 ✅ [出典](https://x.com/PhotogenicWeekE/status/2087298681137701274)
-- **ACE-Step 1.5 + LTX-2.3** · ComfyUI `ComfyUI` — 1× DGX Spark → 出典を参照 🔁 [出典](https://x.com/yume_arasaki/status/2100734364908986511)
-- **Wan2.1 14B** `97% + 3 + FP8` — RTX 5090 → 出典を参照 📣 [出典](https://x.com/thePandaily/status/2105209996648567243)
+- **FastH3 V2** `NVFP4` — RTX 5090 32GB → 832×480×5s: 14.8 s; 1344×768×5s: 38.6 s (with audio, end-to-end) 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/) · [手順](recipes/video-audio-001.ja.md)
+- **FastH3 Trim** `NVFP4` — RTX 5090 → 480p 5s: 13.4 s; 768p: 35.4 s 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/)
+- **FastH3 V2 / Trim** `NVFP4` — 1× / 2× DGX Spark → 1×: 480p 141.4 / 125.8 s, Trim 768p 340.1 s; 2×: 87.2 / 78.3 s 🏛️ [出典](https://haoailab.com/blogs/fasth3-rtx/)
+- **MiniMax H3** · ComfyUI `ComfyUI + SageAttention` — RTX 5090 → 1280×736×5s: 242 s → 168 s ✅ [出典](https://x.com/RKAScope/status/2084359480926503182)
+- **MiniMax H3 vs FastH3 Turbo** `seed` — RTX 5090 → 15 s clip: 11 min 55 s vs 2 min 6 s ✅ [出典](https://x.com/Sogni_Protocol/status/2097254959729246550)
+- **MiniMax H3** · NVIDIA Sol `NVIDIA Sol` — 1× DGX Spark → Sol: 480p 5 s ≈ 68 s (NVIDIA published 56 s); without Sol >400 s; wit… ✅ [出典](https://x.com/yume_arasaki/status/2100734364908986511)
+- **MiniMax H3 vs LTX-2.3 Eros** `3 prompt` — 1× DGX Spark → 864×480×5s: H3 average 270 s; LTX 154 s (1.76× faster) ✅ [出典](https://x.com/YRSM_Simon/status/2084222856972456336)
+- **LTX-2.3** · ComfyUI `ComfyUI` — RTX 5090 → 10 s about 90 s (weaker GPU about 6×) ✅ [出典](https://x.com/freshstartsnow/status/2092263835591655773)
+- **LTX-2.5** `LoRA` — RTX 5090 → 720p/10 s: 61.11 s; 1080p/10 s: 189.90 s ✅ [出典](https://x.com/PhotogenicWeekE/status/2087298681137701274)
+- **ACE-Step 1.5 + LTX-2.3** · ComfyUI `ComfyUI` — 1× DGX Spark → 2 min 05 s song generated in one pass; +2:28 lip-sync video end to en… 🔁 [出典](https://x.com/yume_arasaki/status/2100734364908986511)
+- **Wan2.1 14B** `97% + 3 + FP8` — RTX 5090 → 720p: 4,769 s → 18 s (project claims 265×) 📣 [出典](https://x.com/thePandaily/status/2105209996648567243)
 - **MiniMax H3** · LightX2V — RTX 5090 → 768×1344 15s video + audio ≈72 s (steady state, excl. MP4 export; bas… 🏛️ [出典](https://x.com/LightX2V/status/2108769912009424976)
 
 ## 第 3 段階 · 7,000〜14,000 ドル
@@ -286,14 +286,14 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 
 - **Qwen3.8-27B** · SGLang `NVFP4` — RTX PRO 6000 → **300 tok/s** ✅ [出典](https://x.com/MiaAI_lab/status/2090327658508763516)
 - **GLM-5.3-Flash EXL3** · TensorFold `EXL3` — 4× DGX Spark → **95 tok/s** ✅ [出典](https://x.com/MiaAI_lab/status/2108939694918488183)
-- **Qwen3.8-Flash-Next** · Radiance (fork) `Radiance fork · int4fp8 · B…` — 4× AMD R9700 32GB + TR 9970X + 128GB → 出典を参照 🔁 [出典](https://x.com/richgel999/status/2109515169638326738)
-- **Qwen3.8-27B** · Radiance (fork) `MXFP4 · Radiance fork` — 4× R9700 → 出典を参照 🔁 [出典](https://x.com/richgel999/status/2109515169638326738)
-- **GLM-5.3-Flash** `Mia EXL3` — 3× DGX Spark → 出典を参照 🔁 [出典](https://x.com/yume_arasaki/status/2106837882870886438)
-- **GLM-5.3-Flash** · TensorFold `TensorFold · Thunderbolt 5×…` — 2× Mac Studio M5 Ultra → 出典を参照 🔁 [出典](https://x.com/yume_arasaki/status/2108359576966094952)
-- **DeepSeek-V4.1-Flash** `Mia MXFP4/FP8 · Engram NVMe` — 3× DGX Spark → 出典を参照 🔁 [出典](https://x.com/yume_arasaki/status/2099966865326170554)
-- **DeepSeek-V4.1-Flash** · TensorFold `tonyd615 MXFP4 / Mia Tensor…` — 4× DGX Spark → 出典を参照 🔁 [出典](https://x.com/yume_arasaki/status/2106837882870886438)
-- **DeepSeek-V4.1-Flash** — 4× DGX Spark → 出典を参照 🔁 [出典](https://x.com/hardfanaticos/status/2107225102475813374)
-- **DeepSeek-V4.1-Flash** · MLX `MLX Q4i / DwarfStar` — M3 Ultra 512GB / M5 Max 128GB → 出典を参照 🔁 [出典](https://x.com/yume_arasaki/status/2099966865326170554)
+- **Qwen3.8-Flash-Next** · Radiance (fork) `Radiance fork · int4fp8 · B…` — 4× AMD R9700 32GB + TR 9970X + 128GB → 48K/user: 538.5 tok/s total decode; 128K/user: 365 🔁 [出典](https://x.com/richgel999/status/2109515169638326738)
+- **Qwen3.8-27B** · Radiance (fork) `MXFP4 · Radiance fork` — 4× R9700 → total decode 900→80 tok/s (4K→128K/session); PP 6.3–6.8K 🔁 [出典](https://x.com/richgel999/status/2109515169638326738)
+- **GLM-5.3-Flash** `Mia EXL3` — 3× DGX Spark → Prose 77 single stream; 4 streams 146 🔁 [出典](https://x.com/yume_arasaki/status/2106837882870886438)
+- **GLM-5.3-Flash** · TensorFold `TensorFold · Thunderbolt 5×…` — 2× Mac Studio M5 Ultra → Prose 114 single stream; PP ~1,600; up to 200 with 8 streams; first t… 🔁 [出典](https://x.com/yume_arasaki/status/2108359576966094952)
+- **DeepSeek-V4.1-Flash** `Mia MXFP4/FP8 · Engram NVMe` — 3× DGX Spark → Prose 37.9; 4 streams total 78.6 (independent SGLang C1 26.5) 🔁 [出典](https://x.com/yume_arasaki/status/2099966865326170554)
+- **DeepSeek-V4.1-Flash** · TensorFold `tonyd615 MXFP4 / Mia Tensor…` — 4× DGX Spark → MXFP4: C1 peak 77.2, 6 streams 214; TensorFold: prose 87, code 124.8,… 🔁 [出典](https://x.com/yume_arasaki/status/2106837882870886438)
+- **DeepSeek-V4.1-Flash** — 4× DGX Spark → up to 494 tok/s total at 32 requests 🔁 [出典](https://x.com/hardfanaticos/status/2107225102475813374)
+- **DeepSeek-V4.1-Flash** · MLX `MLX Q4i / DwarfStar` — M3 Ultra 512GB / M5 Max 128GB → ~14.6 / 15 (SSD streaming), 25 (RDMA tensor parallel) 🔁 [出典](https://x.com/yume_arasaki/status/2099966865326170554)
 - *…ほか 1 件は[エクスプローラー](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html)で。*
 
 ## 価格非公開

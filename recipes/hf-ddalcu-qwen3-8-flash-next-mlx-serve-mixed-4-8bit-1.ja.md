@@ -11,7 +11,7 @@
 
 ## モデル
 
-- Qwen3.8-Flash-Next-MLX-Serve-mixed-4 · `mixed 4/8-bit`
+- Qwen3.8-Flash-Next-MLX-Serve-mixed-4 · `mixed 4/8-bit (≈75 GB resident)`
 - ダウンロード: [huggingface.co/ddalcu/Qwen3.8-Flash-Next-MLX-Serve-mixed-4-8bit](https://huggingface.co/ddalcu/Qwen3.8-Flash-Next-MLX-Serve-mixed-4-8bit)
 
 ## エンジン
@@ -28,7 +28,7 @@ mlx-serve --model ddalcu/Qwen3.8-Flash-Next-MLX-Serve-mixed-4-8bit --serve
 ## 主なパラメータ
 
 - コンテキスト: 268,288
-- 同時実行: —
+- 同時実行: serial single request
 - タグ: `4bit`, `8bit`, `long-context`
 
 ## 想定速度

@@ -1,4 +1,4 @@
-# FastH3 V2 · Unspecified · RTX 5090 32GB
+# FastH3 V2 (MiniMax H3 8-step distillation) · Unspecified · RTX 5090 32GB
 
 [English](video-audio-001.md) | [简体中文](video-audio-001.zh-CN.md) | **日本語** · [← 一覧に戻る](../README.ja.md)
 
@@ -11,7 +11,7 @@
 
 ## モデル
 
-- FastH3 V2 · `NVFP4`
+- FastH3 V2 (MiniMax H3 8-step distillation) · `NVFP4`
 - ダウンロード: 未公開（出典を参照）
 
 ## エンジン
@@ -25,12 +25,12 @@
 ## 主なパラメータ
 
 - コンテキスト: 5 s
-- 同時実行: —
+- 同時実行: single request
 - タグ: `4bit`, `few-step`
 
 ## 想定速度
 
-- 未公開（出典を参照） (🏛️ 公式)
+- 832×480×5s: 14.8 s; 1344×768×5s: 38.6 s (with audio, end-to-end) (🏛️ 公式)
 
 ## 注意点
 

@@ -21,15 +21,15 @@
 <h2>Engine</h2>
 <ul>
 <li>llama.cpp (PrismML fork) — install: https://github.com/ggml-org/llama.cpp</li>
-<li>Note: PrismML-Eng/llama.cpp fork</li>
+<li>Note: PrismML-Eng/llama.cpp fork (llama-bench, batch 1, depth 0)</li>
 </ul>
 <h2>Launch command</h2>
-<pre><code>llama-cli ... -ngl 99 -fa on -c 32768</code></pre>
+<pre><code>llama-cli ... -ngl 99 -fa on -c 32768 (requires the PrismML llama.cpp fork; stock llama.cpp does not work)</code></pre>
 <p>Excerpt from the source (contains <code>...</code>/placeholders); see the source for full arguments.</p>
 <h2>Key parameters</h2>
 <ul>
-<li>Context: -c 32768</li>
-<li>Concurrency: batch 1</li>
+<li>Context: 262K (model card); example command -c 32768</li>
+<li>Concurrency: batch 1 (single stream)</li>
 <li>Tags: <code>ternary</code>, <code>dense</code>, <code>long-context</code></li>
 </ul>
 <h2>Expected speed</h2>

@@ -135,6 +135,40 @@
     }
    }
   },
+  "en": {
+   "type": "object",
+   "description": "English text for Chinese-language fields, shown in English mode",
+   "properties": {
+    "quant": {
+     "type": "string"
+    },
+    "model": {
+     "type": "string"
+    },
+    "hardware": {
+     "type": "string"
+    },
+    "context": {
+     "type": "string"
+    },
+    "concurrency": {
+     "type": "string"
+    },
+    "engine_note": {
+     "type": "string"
+    },
+    "hardware_cost_text": {
+     "type": "string"
+    },
+    "source_note": {
+     "type": "string"
+    },
+    "launch_command": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
   "metric_en": {
    "type": [
     "string",

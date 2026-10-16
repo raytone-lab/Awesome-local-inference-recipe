@@ -11,7 +11,7 @@
 
 ## モデル
 
-- Qwen3.6-27B-MTPLX-Optimized-Speed · `MLXCommunity 4-bit + 3-bit draft LM head`
+- Qwen3.6-27B-MTPLX-Optimized-Speed · `MLXCommunity 4-bit backbone + 3-bit draft LM head (MTP depth 3)`
 - ダウンロード: [huggingface.co/Youssofal/Qwen3.6-27B-MTPLX-Optimized-Speed](https://huggingface.co/Youssofal/Qwen3.6-27B-MTPLX-Optimized-Speed)
 
 ## エンジン
@@ -28,7 +28,7 @@ brew install youssofal/mtplx/mtplx && mtplx start
 ## 主なパラメータ
 
 - コンテキスト: —
-- 同時実行: —
+- 同時実行: single request
 - タグ: `3bit`, `4bit`, `dense`, `speculative`, `MTP`
 
 ## 想定速度

@@ -203,17 +203,17 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 
 **🖼️ Image**
 
-- **Qwen-Image 2.1** · ComfyUI `Comfy-Org INT8 · ComfyUI` — RTX 4090 24GB → see source ✅ [source](https://x.com/yume_arasaki/status/2102176739359404499) · [guide](recipes/image-001.md)
-- **Qwen-Image 2.1** `INT8` — RTX 3090 → see source 🔁 [source](https://x.com/yume_arasaki/status/2102176739359404499)
-- **Qwen-Image 2.1** · ComfyUI `ComfyUI` — Mac M4 Pro → see source ✅ [source](https://x.com/gabeciii/status/2104920039077884324)
-- **Z-Image Turbo** · ComfyUI `ComfyUI` — RTX 3090 24GB → see source ✅ [source](https://x.com/michaelricks/status/2104959036353356058)
+- **Qwen-Image 2.1** · ComfyUI `Comfy-Org INT8 · ComfyUI` — RTX 4090 24GB → 8.1 s / 1024² (40 steps); 30.2 s / 2048×1152 (50 steps); peak 16.2GB ✅ [source](https://x.com/yume_arasaki/status/2102176739359404499) · [guide](recipes/image-001.md)
+- **Qwen-Image 2.1** `INT8` — RTX 3090 → 82–96 s / 2K (public receipt) 🔁 [source](https://x.com/yume_arasaki/status/2102176739359404499)
+- **Qwen-Image 2.1** · ComfyUI `ComfyUI` — Mac M4 Pro → 3 min 52 s / image (768 edit) ✅ [source](https://x.com/gabeciii/status/2104920039077884324)
+- **Z-Image Turbo** · ComfyUI `ComfyUI` — RTX 3090 24GB → 2048px about 8 s / image; another user 12 s after warm-up ✅ [source](https://x.com/michaelricks/status/2104959036353356058)
 
 **🎬 Video & Audio**
 
-- **FastH3 V2 / Trim** `FP8` — RTX 4090 24GB → see source 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/)
-- **MiniMax H3** · ComfyUI `ComfyUI` — RTX 4090 → see source ✅ [source](https://x.com/yume_arasaki/status/2097790831323427046)
-- **MiniMax H3** · ComfyUI `ComfyUI` — RTX 3090 → see source ✅ [source](https://x.com/natehalko/status/2103538997146611890)
-- **ACE-Step 1.5** — RTX 3090 → see source 🔁 [source](https://x.com/simplifyinAI/status/2091935190335754493)
+- **FastH3 V2 / Trim** `FP8` — RTX 4090 24GB → 480p 5s: 54.6 / 43.9 s; 768p: 154.6 / 132.8 s; 8GB limit Trim 82.0 s 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/)
+- **MiniMax H3** · ComfyUI `ComfyUI` — RTX 4090 → 5 s clip ~91 s; 15 s ~8 minutes; 960×544×5s about 50 s ✅ [source](https://x.com/yume_arasaki/status/2097790831323427046)
+- **MiniMax H3** · ComfyUI `ComfyUI` — RTX 3090 → 11 s video 13 minutes ✅ [source](https://x.com/natehalko/status/2103538997146611890)
+- **ACE-Step 1.5** — RTX 3090 → Whole song <10 s (promo post) 🔁 [source](https://x.com/simplifyinAI/status/2091935190335754493)
 
 ## Tier 2 · $2.5k–7k
 
@@ -236,26 +236,26 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 
 **🖼️ Image**
 
-- **Qwen-Image 2.1** `LightX2V / BennyDaBall NVFP…` — RTX 5090 32GB → see source 🔁 [source](https://x.com/yume_arasaki/status/2103277400234860878)
-- **Qwen-Image 2.1** · TensorFold `TensorFold NVFP4 / FP8 / GG…` — RTX 5090 @450W → see source ✅ [source](https://x.com/niklaslenz_ai/status/2106465941177487871)
-- **Qwen-Image 2.1** — RTX 5090 → see source 📣 [source](https://x.com/fractalyze_io/status/2105207217452695841)
-- **Qwen-Image 2.1** · SGLang `spark-image-lab BF16 / SGLa…` — 1× DGX Spark → see source 🔁 [source](https://x.com/yume_arasaki/status/2103277400234860878)
-- **Qwen-Image-2.1-Turbo** `Turbo 8 vs Base 40` — RTX 5090 → see source ✅ [source](https://x.com/niklaslenz_ai/status/2108609693941920176)
-- **Z-Image Turbo vs Qwen-Image 2.1** `prompt seed 20` — RTX 5090 → see source ✅ [source](https://x.com/princedoesai/status/2109376490009743713)
+- **Qwen-Image 2.1** `LightX2V / BennyDaBall NVFP…` — RTX 5090 32GB → 5.93 s; NVFP4 6.7 s vs INT8 7.6 s vs BF16 15.6 s (1024²) 🔁 [source](https://x.com/yume_arasaki/status/2103277400234860878)
+- **Qwen-Image 2.1** · TensorFold `TensorFold NVFP4 / FP8 / GG…` — RTX 5090 @450W → 4.53 s / 6.94 s / 13.87 s (1024², 25 steps; NVFP4 peak 22.9GB; images… ✅ [source](https://x.com/niklaslenz_ai/status/2106465941177487871)
+- **Qwen-Image 2.1** — RTX 5090 → 13.5 s → 1.9 s / image (vendor claim) 📣 [source](https://x.com/fractalyze_io/status/2105207217452695841)
+- **Qwen-Image 2.1** · SGLang `spark-image-lab BF16 / SGLa…` — 1× DGX Spark → 52.6 s / 1024²; SGLang table: Spark 35.4 s, 4090 18.7 s 🔁 [source](https://x.com/yume_arasaki/status/2103277400234860878)
+- **Qwen-Image-2.1-Turbo** `Turbo 8 vs Base 40` — RTX 5090 → 29 s vs 108 s / image (2048²) ✅ [source](https://x.com/niklaslenz_ai/status/2108609693941920176)
+- **Z-Image Turbo vs Qwen-Image 2.1** `prompt seed 20` — RTX 5090 → Z-Image ~2× faster (no absolute times); quality: Qwen wins 9:6 ✅ [source](https://x.com/princedoesai/status/2109376490009743713)
 
 **🎬 Video & Audio**
 
-- **FastH3 V2** `NVFP4` — RTX 5090 32GB → see source 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/) · [guide](recipes/video-audio-001.md)
-- **FastH3 Trim** `NVFP4` — RTX 5090 → see source 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/)
-- **FastH3 V2 / Trim** `NVFP4` — 1× / 2× DGX Spark → see source 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/)
-- **MiniMax H3** · ComfyUI `ComfyUI + SageAttention` — RTX 5090 → see source ✅ [source](https://x.com/RKAScope/status/2084359480926503182)
-- **MiniMax H3 vs FastH3 Turbo** `seed` — RTX 5090 → see source ✅ [source](https://x.com/Sogni_Protocol/status/2097254959729246550)
-- **MiniMax H3** · NVIDIA Sol `NVIDIA Sol` — 1× DGX Spark → see source ✅ [source](https://x.com/yume_arasaki/status/2100734364908986511)
-- **MiniMax H3 vs LTX-2.3 Eros** `3 prompt` — 1× DGX Spark → see source ✅ [source](https://x.com/YRSM_Simon/status/2084222856972456336)
-- **LTX-2.3** · ComfyUI `ComfyUI` — RTX 5090 → see source ✅ [source](https://x.com/freshstartsnow/status/2092263835591655773)
-- **LTX-2.5** `LoRA` — RTX 5090 → see source ✅ [source](https://x.com/PhotogenicWeekE/status/2087298681137701274)
-- **ACE-Step 1.5 + LTX-2.3** · ComfyUI `ComfyUI` — 1× DGX Spark → see source 🔁 [source](https://x.com/yume_arasaki/status/2100734364908986511)
-- **Wan2.1 14B** `97% + 3 + FP8` — RTX 5090 → see source 📣 [source](https://x.com/thePandaily/status/2105209996648567243)
+- **FastH3 V2** `NVFP4` — RTX 5090 32GB → 832×480×5s: 14.8 s; 1344×768×5s: 38.6 s (with audio, end-to-end) 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/) · [guide](recipes/video-audio-001.md)
+- **FastH3 Trim** `NVFP4` — RTX 5090 → 480p 5s: 13.4 s; 768p: 35.4 s 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/)
+- **FastH3 V2 / Trim** `NVFP4` — 1× / 2× DGX Spark → 1×: 480p 141.4 / 125.8 s, Trim 768p 340.1 s; 2×: 87.2 / 78.3 s 🏛️ [source](https://haoailab.com/blogs/fasth3-rtx/)
+- **MiniMax H3** · ComfyUI `ComfyUI + SageAttention` — RTX 5090 → 1280×736×5s: 242 s → 168 s ✅ [source](https://x.com/RKAScope/status/2084359480926503182)
+- **MiniMax H3 vs FastH3 Turbo** `seed` — RTX 5090 → 15 s clip: 11 min 55 s vs 2 min 6 s ✅ [source](https://x.com/Sogni_Protocol/status/2097254959729246550)
+- **MiniMax H3** · NVIDIA Sol `NVIDIA Sol` — 1× DGX Spark → Sol: 480p 5 s ≈ 68 s (NVIDIA published 56 s); without Sol >400 s; wit… ✅ [source](https://x.com/yume_arasaki/status/2100734364908986511)
+- **MiniMax H3 vs LTX-2.3 Eros** `3 prompt` — 1× DGX Spark → 864×480×5s: H3 average 270 s; LTX 154 s (1.76× faster) ✅ [source](https://x.com/YRSM_Simon/status/2084222856972456336)
+- **LTX-2.3** · ComfyUI `ComfyUI` — RTX 5090 → 10 s about 90 s (weaker GPU about 6×) ✅ [source](https://x.com/freshstartsnow/status/2092263835591655773)
+- **LTX-2.5** `LoRA` — RTX 5090 → 720p/10 s: 61.11 s; 1080p/10 s: 189.90 s ✅ [source](https://x.com/PhotogenicWeekE/status/2087298681137701274)
+- **ACE-Step 1.5 + LTX-2.3** · ComfyUI `ComfyUI` — 1× DGX Spark → 2 min 05 s song generated in one pass; +2:28 lip-sync video end to en… 🔁 [source](https://x.com/yume_arasaki/status/2100734364908986511)
+- **Wan2.1 14B** `97% + 3 + FP8` — RTX 5090 → 720p: 4,769 s → 18 s (project claims 265×) 📣 [source](https://x.com/thePandaily/status/2105209996648567243)
 - **MiniMax H3** · LightX2V — RTX 5090 → 768×1344 15s video + audio ≈72 s (steady state, excl. MP4 export; bas… 🏛️ [source](https://x.com/LightX2V/status/2108769912009424976)
 
 ## Tier 3 · $7k–14k
@@ -286,14 +286,14 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 
 - **Qwen3.8-27B** · SGLang `NVFP4` — RTX PRO 6000 → **300 tok/s** ✅ [source](https://x.com/MiaAI_lab/status/2090327658508763516)
 - **GLM-5.3-Flash EXL3** · TensorFold `EXL3` — 4× DGX Spark → **95 tok/s** ✅ [source](https://x.com/MiaAI_lab/status/2108939694918488183)
-- **Qwen3.8-Flash-Next** · Radiance (fork) `Radiance fork · int4fp8 · B…` — 4× AMD R9700 32GB + TR 9970X + 128GB → see source 🔁 [source](https://x.com/richgel999/status/2109515169638326738)
-- **Qwen3.8-27B** · Radiance (fork) `MXFP4 · Radiance fork` — 4× R9700 → see source 🔁 [source](https://x.com/richgel999/status/2109515169638326738)
-- **GLM-5.3-Flash** `Mia EXL3` — 3× DGX Spark → see source 🔁 [source](https://x.com/yume_arasaki/status/2106837882870886438)
-- **GLM-5.3-Flash** · TensorFold `TensorFold · Thunderbolt 5×…` — 2× Mac Studio M5 Ultra → see source 🔁 [source](https://x.com/yume_arasaki/status/2108359576966094952)
-- **DeepSeek-V4.1-Flash** `Mia MXFP4/FP8 · Engram NVMe` — 3× DGX Spark → see source 🔁 [source](https://x.com/yume_arasaki/status/2099966865326170554)
-- **DeepSeek-V4.1-Flash** · TensorFold `tonyd615 MXFP4 / Mia Tensor…` — 4× DGX Spark → see source 🔁 [source](https://x.com/yume_arasaki/status/2106837882870886438)
-- **DeepSeek-V4.1-Flash** — 4× DGX Spark → see source 🔁 [source](https://x.com/hardfanaticos/status/2107225102475813374)
-- **DeepSeek-V4.1-Flash** · MLX `MLX Q4i / DwarfStar` — M3 Ultra 512GB / M5 Max 128GB → see source 🔁 [source](https://x.com/yume_arasaki/status/2099966865326170554)
+- **Qwen3.8-Flash-Next** · Radiance (fork) `Radiance fork · int4fp8 · B…` — 4× AMD R9700 32GB + TR 9970X + 128GB → 48K/user: 538.5 tok/s total decode; 128K/user: 365 🔁 [source](https://x.com/richgel999/status/2109515169638326738)
+- **Qwen3.8-27B** · Radiance (fork) `MXFP4 · Radiance fork` — 4× R9700 → total decode 900→80 tok/s (4K→128K/session); PP 6.3–6.8K 🔁 [source](https://x.com/richgel999/status/2109515169638326738)
+- **GLM-5.3-Flash** `Mia EXL3` — 3× DGX Spark → Prose 77 single stream; 4 streams 146 🔁 [source](https://x.com/yume_arasaki/status/2106837882870886438)
+- **GLM-5.3-Flash** · TensorFold `TensorFold · Thunderbolt 5×…` — 2× Mac Studio M5 Ultra → Prose 114 single stream; PP ~1,600; up to 200 with 8 streams; first t… 🔁 [source](https://x.com/yume_arasaki/status/2108359576966094952)
+- **DeepSeek-V4.1-Flash** `Mia MXFP4/FP8 · Engram NVMe` — 3× DGX Spark → Prose 37.9; 4 streams total 78.6 (independent SGLang C1 26.5) 🔁 [source](https://x.com/yume_arasaki/status/2099966865326170554)
+- **DeepSeek-V4.1-Flash** · TensorFold `tonyd615 MXFP4 / Mia Tensor…` — 4× DGX Spark → MXFP4: C1 peak 77.2, 6 streams 214; TensorFold: prose 87, code 124.8,… 🔁 [source](https://x.com/yume_arasaki/status/2106837882870886438)
+- **DeepSeek-V4.1-Flash** — 4× DGX Spark → up to 494 tok/s total at 32 requests 🔁 [source](https://x.com/hardfanaticos/status/2107225102475813374)
+- **DeepSeek-V4.1-Flash** · MLX `MLX Q4i / DwarfStar` — M3 Ultra 512GB / M5 Max 128GB → ~14.6 / 15 (SSD streaming), 25 (RDMA tensor parallel) 🔁 [source](https://x.com/yume_arasaki/status/2099966865326170554)
 - *…and 1 more in the [explorer](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html).*
 
 ## Cost Not Published

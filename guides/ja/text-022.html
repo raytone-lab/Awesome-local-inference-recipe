@@ -3,7 +3,7 @@
 <link rel="canonical" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/ja/text-022.html"><link rel="alternate" hreflang="en" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/text-022.html"><link rel="alternate" hreflang="zh-CN" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/zh-CN/text-022.html"><link rel="alternate" hreflang="ja" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/ja/text-022.html"><link rel="alternate" hreflang="x-default" href="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/text-022.html">
 <meta property="og:type" content="article"><meta property="og:title" content="Qwen3.8-Flash-Next · ExLlama · 1× DGX Spark"><meta property="og:description" content="Qwen3.8-Flash-Next · ExLlama · 1× DGX Spark の実行ガイド：ハードウェア、エンジン、起動コマンド、出典付きの速度（実測）。"><meta property="og:url" content="https://raytone-lab.github.io/awesome-local-inference-recipes/guides/ja/text-022.html"><meta property="og:image" content="https://raytone-lab.github.io/awesome-local-inference-recipes/docs/og.png"><meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../../style.css"><script src="../../theme.js"></script></head><body>
-<header class="site-hd"><div class="hd-in"><a class="brand" href="../../index.html">⚡ Local Inference Recipes</a><nav class="static-links"><a href="../../explore.html">エクスプローラー</a> · <a href="../../guides/index.html">ガイド</a> · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a></nav></div></header>
+<header class="site-hd"><div class="hd-in"><a class="brand" href="../../index.html">⚡ ローカル推論レシピ</a><nav class="static-links"><a href="../../explore.html">エクスプローラー</a> · <a href="../../guides/index.html">ガイド</a> · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a></nav></div></header>
 <main class="doc static-page">
 <h1>Qwen3.8-Flash-Next · ExLlama · 1× DGX Spark</h1>
 <p><a href="../../guides/text-022.html">English</a> | <a href="../../guides/zh-CN/text-022.html">简体中文</a> | <b>日本語</b> · <a href="../../guides/index.html">← 一覧に戻る</a></p>
@@ -15,7 +15,7 @@
 </ul>
 <h2>モデル</h2>
 <ul>
-<li>Qwen3.8-Flash-Next · <code>Cruz exllamav3 fork · EXL3 3.05bpw · · 8-bit KV</code></li>
+<li>Qwen3.8-Flash-Next · <code>Cruz exllamav3 fork · EXL3 3.05bpw · draft depth 5 · 8-bit KV</code></li>
 <li>ダウンロード: 未公開（出典を参照）</li>
 </ul>
 <h2>エンジン</h2>
@@ -26,13 +26,13 @@
 <p>コマンドは公開されていません。出典を参照してください。</p>
 <h2>主なパラメータ</h2>
 <ul>
-<li>コンテキスト: 262K</li>
-<li>同時実行: 1</li>
+<li>コンテキスト: 262K (243K needle test 15/15)</li>
+<li>同時実行: native engine only 1 stream (separate vLLM concurrent lane also exists)</li>
 <li>タグ: <code>3bit</code>, <code>8bit</code>, <code>long-context</code>, <code>speculative</code></li>
 </ul>
 <h2>想定速度</h2>
 <ul>
-<li>71.7 tok/s (generation) (✅ 実測)</li>
+<li>code 102.6; prose 71.7; JSON 66.2 tok/s (✅ 実測)</li>
 </ul>
 <h2>注意点</h2>
 <ul>
@@ -44,4 +44,4 @@
 <li>権利は元の投稿者にあります。このページは要約とリンクのみです。データは CC BY 4.0。</li>
 </ul>
 <p class="na">ソースファイル: <a href="https://github.com/raytone-lab/awesome-local-inference-recipes/blob/main/recipes/text-022.ja.md">recipes/text-022.ja.md</a></p>
-</main><footer class="site-ft"><div class="ft-in">データ時点 2026-10-15 · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a> · data CC BY 4.0</div></footer></body></html>
+</main><footer class="site-ft"><div class="ft-in">データ時点 2026-10-15 · <a href="https://github.com/raytone-lab/awesome-local-inference-recipes">GitHub</a> · データ CC BY 4.0</div></footer></body></html>
