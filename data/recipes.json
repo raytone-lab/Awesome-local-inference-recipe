@@ -13143,21 +13143,21 @@
     "id": "text-138",
     "category": "text",
     "model": "Qwen3.8-27B",
-    "quant": "MLX 4-bit",
+    "quant": "MLX 4-bit · MTP",
     "engine": "Rapid-MLX",
     "hardware": "Mac Studio M3 Ultra 256GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": null,
-    "hardware_cost_usd": null,
-    "metric": "43.4 tok/s 生成；330.8 tok/s 预填充（8K 提示）；TTFT 中位数 24.66s；MTP 路径",
+    "hardware_cost_text": "二手约 $8,299–9,999（搜索摘要，2026-10）",
+    "hardware_cost_usd": 8299,
+    "metric": "43.4 tok/s 生成；330.8 tok/s 预填充（8K 提示）；TTFT 中位数 24.66s",
     "tok_s": 43.4,
     "concurrency": "单路（B=1）",
     "context": "8K 提示 + 256 token 输出",
     "launch_command": null,
     "source_url": "https://github.com/raullenchai/Rapid-MLX/blob/main/docs/benchmarks/recent-large-models-m3-ultra.md",
-    "source_note": "Rapid-MLX 官方基准（0.13.4，3 次请求中位数，每次清前缀缓存；峰值内存 27.1 GB）",
+    "source_note": "Rapid-MLX 官方基准（0.13.4，3 次请求中位数，每次清前缀缓存；峰值内存 27.1 GB，测至 32K）",
     "source_level": "官方",
-    "date": null,
+    "date": "2026-09-02",
     "model_family": "Qwen",
     "tags": [
       "4bit",
@@ -13165,73 +13165,80 @@
       "speculative",
       "MTP"
     ],
-    "metric_en": "43.4 tok/s generation; 330.8 tok/s prefill (8K prompt); median TTFT 24.66s; MTP path",
+    "metric_en": "43.4 tok/s generation; 330.8 tok/s prefill (8K prompt); median TTFT 24.66s",
     "en": {
       "concurrency": "Single stream (B=1)",
       "context": "8K prompt + 256-token output",
-      "source_note": "Rapid-MLX official benchmark (0.13.4, median of 3 requests, prefix cache cleared each run; peak memory 27.1 GB)"
+      "source_note": "Rapid-MLX official benchmark (0.13.4, median of 3 requests, prefix cache cleared each run; peak memory 27.1 GB observed up to 32K)",
+      "hardware_cost_text": "used about $8,299–9,999 (search snippet, 2026-10)"
     },
     "source_id": "src-f328862fff"
   },
   {
     "id": "text-139",
     "category": "text",
-    "model": "Qwen3.8-Flash-Next",
+    "model": "Qwen3.8-Flash-Next（180B/6B 激活）",
     "quant": "MLX 4-bit",
     "engine": "Rapid-MLX",
     "hardware": "Mac Studio M3 Ultra 256GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": null,
-    "hardware_cost_usd": null,
-    "metric": "23.0 tok/s 生成；867.9 tok/s 预填充（8K 提示）；TTFT 中位数 9.4s",
+    "hardware_cost_text": "二手约 $8,299–9,999（搜索摘要，2026-10）",
+    "hardware_cost_usd": 8299,
+    "metric": "23.0 tok/s 生成；867.9 tok/s 预填充（8K 提示）；TTFT 中位数 9.40s",
     "tok_s": 23.0,
     "concurrency": "单路（B=1）",
     "context": "8K 提示 + 256 token 输出",
     "launch_command": null,
     "source_url": "https://github.com/raullenchai/Rapid-MLX/blob/main/docs/benchmarks/recent-large-models-m3-ultra.md",
-    "source_note": "Rapid-MLX 官方基准（0.13.4，3 次请求中位数，每次清前缀缓存；峰值内存 148.1 GB）",
+    "source_note": "Rapid-MLX 官方基准（0.13.4，3 次请求中位数，每次清前缀缓存；峰值内存 148.1 GB，测至 32K）",
     "source_level": "官方",
-    "date": null,
+    "date": "2026-09-02",
     "model_family": "Qwen",
     "tags": [
-      "4bit"
+      "4bit",
+      "MoE"
     ],
-    "metric_en": "23.0 tok/s generation; 867.9 tok/s prefill (8K prompt); median TTFT 9.4s",
+    "metric_en": "23.0 tok/s generation; 867.9 tok/s prefill (8K prompt); median TTFT 9.40s",
     "en": {
       "concurrency": "Single stream (B=1)",
       "context": "8K prompt + 256-token output",
-      "source_note": "Rapid-MLX official benchmark (0.13.4, median of 3 requests, prefix cache cleared each run; peak memory 148.1 GB)"
+      "source_note": "Rapid-MLX official benchmark (0.13.4, median of 3 requests, prefix cache cleared each run; peak memory 148.1 GB observed up to 32K)",
+      "hardware_cost_text": "used about $8,299–9,999 (search snippet, 2026-10)",
+      "model": "Qwen3.8-Flash-Next (180B/6B active)"
     },
     "source_id": "src-f328862fff"
   },
   {
     "id": "text-140",
     "category": "text",
-    "model": "GLM-5.3-Flash",
+    "model": "GLM-5.3-Flash（320B/18B 激活）",
     "quant": "MLX 4-bit",
     "engine": "Rapid-MLX",
     "hardware": "Mac Studio M3 Ultra 256GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": null,
-    "hardware_cost_usd": null,
+    "hardware_cost_text": "二手约 $8,299–9,999（搜索摘要，2026-10）",
+    "hardware_cost_usd": 8299,
     "metric": "27.8 tok/s 生成；359.6 tok/s 预填充（8K 提示）；TTFT 中位数 22.78s",
     "tok_s": 27.8,
     "concurrency": "单路（B=1）",
     "context": "8K 提示 + 256 token 输出",
     "launch_command": null,
     "source_url": "https://github.com/raullenchai/Rapid-MLX/blob/main/docs/benchmarks/recent-large-models-m3-ultra.md",
-    "source_note": "Rapid-MLX 官方基准（0.13.4，3 次请求中位数，每次清前缀缓存；峰值内存 195.6 GB）",
+    "source_note": "Rapid-MLX 官方基准（0.13.4，3 次请求中位数，每次清前缀缓存；峰值内存 195.6 GB，测至 32K）",
     "source_level": "官方",
-    "date": null,
+    "date": "2026-09-02",
     "model_family": "GLM",
     "tags": [
-      "4bit"
+      "4bit",
+      "MoE"
     ],
     "metric_en": "27.8 tok/s generation; 359.6 tok/s prefill (8K prompt); median TTFT 22.78s",
     "en": {
       "concurrency": "Single stream (B=1)",
       "context": "8K prompt + 256-token output",
-      "source_note": "Rapid-MLX official benchmark (0.13.4, median of 3 requests, prefix cache cleared each run; peak memory 195.6 GB)"
+      "source_note": "Rapid-MLX official benchmark (0.13.4, median of 3 requests, prefix cache cleared each run; peak memory 195.6 GB observed up to 32K)",
+      "hardware_cost_text": "used about $8,299–9,999 (search snippet, 2026-10)",
+      "model": "GLM-5.3-Flash (320B/18B active)"
     },
     "source_id": "src-f328862fff"
   }

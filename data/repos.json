@@ -180,13 +180,13 @@
   "name": "Project Maya",
   "repo": "mw00/project-maya",
   "section": "engines",
-  "desc": "Runs GLM-5.3-Flash (321B MoE) on 1–16 NVIDIA or AMD GPUs; engine, server, dashboard and quant tools.",
+  "desc": "Runs GLM-5.3-Flash (listed by the repo as 321B MoE) on 1–16 NVIDIA or AMD GPUs; engine, server, dashboard and quant tools.",
   "stars": 928,
   "pushed_at": "2026-10-16T09:52:33Z",
   "url": "https://github.com/mw00/project-maya",
   "archived": false,
-  "desc_zh": "在 1–16 张 NVIDIA 或 AMD 显卡上运行 GLM-5.3-Flash（321B MoE），含引擎、服务、仪表盘和量化工具。",
-  "desc_ja": "GLM-5.3-Flash（321B MoE）を NVIDIA/AMD の GPU 1〜16 枚で動かす。エンジン・サーバー・ダッシュボード・量子化ツール付き。"
+  "desc_zh": "在 1–16 张 NVIDIA 或 AMD 显卡上运行 GLM-5.3-Flash（仓库标注为 321B MoE），含引擎、服务、仪表盘和量化工具。",
+  "desc_ja": "GLM-5.3-Flash（リポジトリ表記は 321B MoE）を NVIDIA/AMD の GPU 1〜16 枚で動かす。エンジン・サーバー・ダッシュボード・量子化ツール付き。"
  },
  {
   "name": "Lemonade",
@@ -204,13 +204,13 @@
   "name": "janas",
   "repo": "prabanta-dev/janas",
   "section": "engines",
-  "desc": "Pure-C engine for running models larger than RAM on CPU or GPU; README reports 37 tok/s for Qwen3-Next-80B on a 32 GB laptop (with drafts).",
+  "desc": "Pure-C engine for running models larger than RAM on CPU or GPU; claims 37 tok/s for Qwen3-Next-80B on a 32 GB laptop with drafts (project claim).",
   "stars": 423,
   "pushed_at": "2026-10-14T10:25:34Z",
   "url": "https://github.com/prabanta-dev/janas",
   "archived": false,
-  "desc_zh": "纯 C 写的推理引擎，可在 CPU 或 GPU 上运行比内存还大的模型；README 称 32GB 笔记本跑 Qwen3-Next-80B 可达 37 tok/s（带 draft）。",
-  "desc_ja": "純 C 製の推論エンジン。RAM より大きいモデルを CPU/GPU で実行。README では 32GB ノートで Qwen3-Next-80B が 37 tok/s（ドラフト使用）。"
+  "desc_zh": "纯 C 写的推理引擎，可在 CPU 或 GPU 上运行比内存还大的模型；项目自称 32GB 笔记本跑 Qwen3-Next-80B 可达 37 tok/s（带 draft）。",
+  "desc_ja": "純 C 製の推論エンジン。RAM より大きいモデルを CPU/GPU で実行。32GB ノートで Qwen3-Next-80B が 37 tok/s（ドラフト使用）とプロジェクトは説明。"
  },
  {
   "name": "turbo-fieldfare",

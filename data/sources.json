@@ -153,6 +153,16 @@
       "tier": "B"
     },
     {
+      "name": "llm_frontier_jp",
+      "platform": "X",
+      "url": "https://x.com/llm_frontier_jp",
+      "followers": 517,
+      "focus": "V100 / Intel Arc B570 自测；Strata 公开实测汇总（日文）",
+      "why": "自测写明引擎版本、输入 32,768/输出 1,024 tokens、2 次取中位数；整理 30 款 ≤16GB GPU 共 82 例 Strata 公开实测并附出处",
+      "sample_post": "https://x.com/llm_frontier_jp/status/2110743174344044897",
+      "tier": "B"
+    },
+    {
       "name": "Oluwaphilemon1",
       "platform": "X",
       "url": "https://x.com/Oluwaphilemon1",
@@ -161,16 +171,6 @@
       "why": "多为整理/转述 WescheNex1q 等数据",
       "sample_post": "https://x.com/Oluwaphilemon1/status/2091693026087182378",
       "tier": "C"
-    },
-    {
-      "name": "llm_frontier_jp",
-      "platform": "X",
-      "url": "https://x.com/llm_frontier_jp",
-      "followers": 517,
-      "focus": "V100 / Intel Arc B570 / P100 / M5 Ultra 自测；Strata 公开实测汇总（日文）",
-      "why": "自测写明引擎版本、输入 32,768/输出 1,024 tokens、2 次取中位数；整理 30 款 ≤16GB GPU 共 82 例 Strata 公开实测并附出处",
-      "sample_post": "https://x.com/llm_frontier_jp/status/2110743174344044897",
-      "tier": "B"
     },
     {
       "name": "aartiles24",
@@ -288,7 +288,7 @@
       "url": "https://github.com/MiaAI-Lab",
       "followers": null,
       "focus": "Mia 的 recipe 仓库（每个配置一个 repo）+ sparkDash",
-      "why": "一手启动脚本和按流数基准表，比 X 帖子更完整，可按 owner 订阅 commits/releases",
+      "why": "一手启动脚本和按并发流数的基准表（单流/多流、TTFT），比 X 帖子更完整，可按 owner 订阅 commits/releases",
       "sample_post": "https://github.com/MiaAI-Lab/GLM-5.3-Flash-EXL3-2x-DGX-Sparks-TensorFold",
       "tier": "A"
     },
@@ -303,32 +303,12 @@
       "tier": "B"
     },
     {
-      "name": "Rapid-MLX Community Benchmark",
-      "platform": "Web",
-      "url": "https://rapidmlx.com/leaderboard",
-      "followers": null,
-      "focus": "Apple Silicon 社区提交的固定流程基准",
-      "why": "统一 workload、按机型汇总，适合定期抓取；单条需看提交者与版本",
-      "sample_post": "https://rapidmlx.com/leaderboard",
-      "tier": "B"
-    },
-    {
-      "name": "LocalScore",
-      "platform": "Web",
-      "url": "https://www.localscore.ai/",
-      "followers": null,
-      "focus": "跨硬件的本地 LLM 基准榜（prefill / 生成 / TTFT）",
-      "why": "统一测试流程、按 GPU/芯片汇总，可用来交叉核对单条 recipe",
-      "sample_post": "https://www.localscore.ai/",
-      "tier": "B"
-    },
-    {
       "name": "Hao AI Lab blog",
       "platform": "Web",
       "url": "https://haoailab.com/blogs/",
       "followers": null,
       "focus": "视频/音频生成模型在消费级 GPU 上的加速（FastH3 等）",
-      "why": "实验室一手博客，给出硬件、步数和耗时；repo 已有 6 条",
+      "why": "实验室一手博客，给出硬件、步数和耗时",
       "sample_post": "https://haoailab.com/blogs/fasth3-rtx/",
       "tier": "A"
     },
@@ -338,7 +318,7 @@
       "url": "https://machinelearning.apple.com/research",
       "followers": null,
       "focus": "MLX 分布式推理、Apple Silicon 官方基准",
-      "why": "官方技术文章，写明机型与配置；repo 已有 11 条",
+      "why": "官方技术文章，写明机型与配置",
       "sample_post": "https://machinelearning.apple.com/research/mlx-distributed-inference",
       "tier": "A"
     },
@@ -348,7 +328,7 @@
       "url": "https://www.macstories.net/",
       "followers": null,
       "focus": "新 Mac 的本地 AI 评测（M5 Ultra Mac Studio 等）",
-      "why": "长篇评测，多引擎同机对比；repo 已有 5 条",
+      "why": "长篇评测，多引擎同机对比",
       "sample_post": "https://www.macstories.net/stories/m5-ultra-mac-studio-review-the-dream-mac-for-local-ai-agents/",
       "tier": "B"
     },
@@ -358,7 +338,7 @@
       "url": "https://demietrich.com/blog/",
       "followers": null,
       "focus": "同机多引擎对比（Qwen3.8-Flash-Next）",
-      "why": "固定模型和硬件对比多个引擎，条件写得清楚；repo 已有 3 条",
+      "why": "固定模型和硬件对比多个引擎，条件写得清楚",
       "sample_post": "https://demietrich.com/blog/q3.8fn_engine_comparison/",
       "tier": "B"
     }
