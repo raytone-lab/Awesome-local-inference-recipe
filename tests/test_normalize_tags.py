@@ -41,6 +41,12 @@ class TestTags(unittest.TestCase):
         self.assertEqual(t, ['4bit', 'dense'])
         t = T.tags(rec(category='image', model='Z-Image Turbo', quant='int8 · 25 步', engine='ComfyUI'))
         self.assertEqual(t, ['8bit', 'few-step'])
+    def test_mtp_not_multi_gpu(self):
+        t = T.tags(rec(model='Qwen3.8-Flash-Next', quant='NVFP4 + MTP2', engine='vLLM', hardware='RTX PRO 6000 Blackwell 96GB'))
+        self.assertNotIn('multi-GPU', t)
+        self.assertIn('MTP', t)
+        t = T.tags(rec(model='Qwen3.8-Flash-Next', quant='官方 NVFP4 · TP=2', engine='capy-flash', hardware='2× RTX 5070 Ti 16GB'))
+        self.assertIn('multi-GPU', t)
     def test_no_dense_on_image(self):
         self.assertNotIn('dense', T.tags(rec(category='image', model='Qwen-Image 2.1（7B）', engine='ComfyUI')))
     def test_data_is_up_to_date(self):
