@@ -2532,7 +2532,7 @@
     "context": "1.03M KV",
     "launch_command": null,
     "source_url": "https://x.com/yume_arasaki/status/2106837882870886438",
-    "source_note": "@yume_arasaki 汇总（另见 9/15 帖）；另见 Aroochacha knapcio 复现（单流散文 ~58–62.5，未复现媒体 494 峰值）",
+    "source_note": "@yume_arasaki 汇总（另见 9/15 帖）；另见 comm-035（Aroochacha knapcio/SGLang 复现）",
     "source_level": "转述",
     "date": null,
     "model_family": "DeepSeek",
@@ -2547,7 +2547,7 @@
       "quant": "tonyd615 native MXFP4 / Mia TensorFold TP=4",
       "concurrency": "6 streams",
       "hardware_cost_text": "≈$27,800 (4×$6,950, computed)",
-      "source_note": "@yume_arasaki roundup (see also the 9/15 post); see also Aroochacha knapcio reproduction (single-stream prose ~58–62.5; media 494 peak not reproduced)"
+      "source_note": "@yume_arasaki roundup (see also the 9/15 post); see also comm-035 (Aroochacha knapcio/SGLang reproduction)"
     }
   },
   {
@@ -2560,13 +2560,13 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$27,800（4×$6,950，计算值）",
     "hardware_cost_usd": 27800,
-    "metric": "32 请求时最高 494 tok/s 合计；社区 knapcio 复现（Aroochacha）16 slots 峰值约 293 代码 / 228 散文，未达 494",
+    "metric": "32 请求时最高 494 tok/s 合计",
     "tok_s": null,
     "concurrency": "32 请求",
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/hardfanaticos/status/2107225102475813374",
-    "source_note": "@hardfanaticos（媒体转述）；r/LocalLLaMA u/Aroochacha 用 knapcio SGLang TP4+DSpark 复现未达 494 峰值（16 slots 最高约 293 代码 / 228 散文）",
+    "source_note": "@hardfanaticos（媒体转述）；另见 comm-035：Aroochacha 用 knapcio SGLang TP4+DSpark 在 100GbE 交换机、16 slots 下未复现本行转述的 494 峰值（其峰值约 293 代码 / 228 散文）",
     "source_level": "转述",
     "date": null,
     "engine_raw": "其他/未注明",
@@ -2575,13 +2575,13 @@
       "multi-GPU"
     ],
     "source_id": "src-7da284d7bb",
-    "metric_en": "up to 494 tok/s total at 32 requests; community knapcio reproduction (Aroochacha) peaked ~293 code / ~228 prose at 16 slots, did not reach 494",
+    "metric_en": "up to 494 tok/s total at 32 requests",
     "en": {
       "quant": "Not stated",
       "hardware": "4× DGX Spark (direct-connected, no switch)",
       "concurrency": "32 requests",
       "hardware_cost_text": "≈$27,800 (4×$6,950, computed)",
-      "source_note": "@hardfanaticos (media relay); r/LocalLLaMA u/Aroochacha reproduction with knapcio SGLang TP4+DSpark did not reach the 494 peak (max ~293 code / ~228 prose at 16 slots)"
+      "source_note": "@hardfanaticos (media relay); see also comm-035: Aroochacha with knapcio SGLang TP4+DSpark on a 100GbE switch at 16 slots did not reproduce this row's relayed 494 peak (theirs ~293 code / ~228 prose)"
     }
   },
   {
@@ -12410,9 +12410,9 @@
     "model": "Muse Spark Open 816B-A42B",
     "quant": "NVFP4",
     "engine": "MLX",
-    "hardware": "2× Mac Studio M5 Ultra（pipeline）",
+    "hardware": "2× Mac Studio M5 Ultra 512GB（pipeline）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "2×$9,499（64C/256GB）起，多机未合计",
+    "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
     "hardware_cost_usd": null,
     "metric": "解码 15.74 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 15.74,
@@ -12425,8 +12425,8 @@
     "date": "2026-10-15",
     "metric_en": "decode 15.74 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware": "2× Mac Studio M5 Ultra (pipeline)",
-      "hardware_cost_text": "2×$9,499 (64C/256GB) up, multi-machine not totaled",
+      "hardware": "2× Mac Studio M5 Ultra 512GB (pipeline)",
+      "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -12444,9 +12444,9 @@
     "model": "Muse Spark Open 816B-A42B",
     "quant": "NVFP4",
     "engine": "MLX",
-    "hardware": "2× Mac Studio M5 Ultra（tensor）",
+    "hardware": "2× Mac Studio M5 Ultra 512GB（tensor）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "2×$9,499（64C/256GB）起，多机未合计",
+    "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
     "hardware_cost_usd": null,
     "metric": "解码 24.99 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 24.99,
@@ -12459,8 +12459,8 @@
     "date": "2026-10-15",
     "metric_en": "decode 24.99 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware": "2× Mac Studio M5 Ultra (tensor)",
-      "hardware_cost_text": "2×$9,499 (64C/256GB) up, multi-machine not totaled",
+      "hardware": "2× Mac Studio M5 Ultra 512GB (tensor)",
+      "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -12478,9 +12478,9 @@
     "model": "Muse Spark Open 816B-A42B",
     "quant": "NVFP4",
     "engine": "MLX",
-    "hardware": "4× Mac Studio M5 Ultra（tensor）",
+    "hardware": "4× Mac Studio M5 Ultra 512GB（tensor）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "4×$9,499（64C/256GB）起，多机未合计",
+    "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
     "hardware_cost_usd": null,
     "metric": "解码 36.73 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 36.73,
@@ -12493,8 +12493,8 @@
     "date": "2026-10-15",
     "metric_en": "decode 36.73 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware": "4× Mac Studio M5 Ultra (tensor)",
-      "hardware_cost_text": "4×$9,499 (64C/256GB) up, multi-machine not totaled",
+      "hardware": "4× Mac Studio M5 Ultra 512GB (tensor)",
+      "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -12512,10 +12512,10 @@
     "model": "Mistral Medium 3.5 128B",
     "quant": "FP8",
     "engine": "MLX",
-    "hardware": "Mac Studio M3 Ultra",
+    "hardware": "Mac Studio M3 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "二手约 $8,299（256GB 参考）",
-    "hardware_cost_usd": 8299,
+    "hardware_cost_text": "512GB 二手价未核实（文章为 512GB 配置）",
+    "hardware_cost_usd": null,
     "metric": "解码 4.95 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 4.95,
     "concurrency": null,
@@ -12527,7 +12527,7 @@
     "date": "2026-10-15",
     "metric_en": "decode 4.95 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "used ~$8,299 (256GB ref)",
+      "hardware_cost_text": "512GB used price unverified (article uses 512GB config)",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -12544,10 +12544,10 @@
     "model": "Mistral Medium 3.5 128B",
     "quant": "FP8",
     "engine": "MLX",
-    "hardware": "Mac Studio M5 Ultra",
+    "hardware": "Mac Studio M5 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$9,499（64C/256GB）",
-    "hardware_cost_usd": 9499,
+    "hardware_cost_text": "512GB 版价格未公布（文章为 512GB 配置；256GB 起 $9,499 仅供参考）",
+    "hardware_cost_usd": null,
     "metric": "解码 7.7 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 7.7,
     "concurrency": null,
@@ -12559,7 +12559,7 @@
     "date": "2026-10-15",
     "metric_en": "decode 7.7 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "$9,499 (64C/256GB)",
+      "hardware_cost_text": "512GB price not published (article uses 512GB; 256GB from $9,499 for ref only)",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -12576,9 +12576,9 @@
     "model": "Mistral Medium 3.5 128B",
     "quant": "FP8",
     "engine": "MLX",
-    "hardware": "2× Mac Studio M5 Ultra（tensor）",
+    "hardware": "2× Mac Studio M5 Ultra 512GB（tensor）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "2×$9,499（64C/256GB）起，多机未合计",
+    "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
     "hardware_cost_usd": null,
     "metric": "解码 13.69 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 13.69,
@@ -12591,10 +12591,10 @@
     "date": "2026-10-15",
     "metric_en": "decode 13.69 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "2×$9,499 (64C/256GB) up, multi-machine not totaled",
+      "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K",
-      "hardware": "2× Mac Studio M5 Ultra (tensor)"
+      "hardware": "2× Mac Studio M5 Ultra 512GB (tensor)"
     },
     "model_family": "Mistral",
     "tags": [
@@ -12610,9 +12610,9 @@
     "model": "Mistral Medium 3.5 128B",
     "quant": "FP8",
     "engine": "MLX",
-    "hardware": "4× Mac Studio M5 Ultra（tensor）",
+    "hardware": "4× Mac Studio M5 Ultra 512GB（tensor）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "4×$9,499（64C/256GB）起，多机未合计",
+    "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
     "hardware_cost_usd": null,
     "metric": "解码 23.37 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 23.37,
@@ -12625,10 +12625,10 @@
     "date": "2026-10-15",
     "metric_en": "decode 23.37 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "4×$9,499 (64C/256GB) up, multi-machine not totaled",
+      "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K",
-      "hardware": "4× Mac Studio M5 Ultra (tensor)"
+      "hardware": "4× Mac Studio M5 Ultra 512GB (tensor)"
     },
     "model_family": "Mistral",
     "tags": [
@@ -12644,10 +12644,10 @@
     "model": "Qwen3.8-27B",
     "quant": "BF16",
     "engine": "MLX",
-    "hardware": "Mac Studio M3 Ultra",
+    "hardware": "Mac Studio M3 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "二手约 $8,299（256GB 参考）",
-    "hardware_cost_usd": 8299,
+    "hardware_cost_text": "512GB 二手价未核实（文章为 512GB 配置）",
+    "hardware_cost_usd": null,
     "metric": "解码 12.46 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 12.46,
     "concurrency": null,
@@ -12659,7 +12659,7 @@
     "date": "2026-10-15",
     "metric_en": "decode 12.46 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "used ~$8,299 (256GB ref)",
+      "hardware_cost_text": "512GB used price unverified (article uses 512GB config)",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -12676,10 +12676,10 @@
     "model": "Qwen3.8-27B",
     "quant": "BF16",
     "engine": "MLX",
-    "hardware": "Mac Studio M5 Ultra",
+    "hardware": "Mac Studio M5 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$9,499（64C/256GB）",
-    "hardware_cost_usd": 9499,
+    "hardware_cost_text": "512GB 版价格未公布（文章为 512GB 配置；256GB 起 $9,499 仅供参考）",
+    "hardware_cost_usd": null,
     "metric": "解码 19.69 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 19.69,
     "concurrency": null,
@@ -12691,7 +12691,7 @@
     "date": "2026-10-15",
     "metric_en": "decode 19.69 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "$9,499 (64C/256GB)",
+      "hardware_cost_text": "512GB price not published (article uses 512GB; 256GB from $9,499 for ref only)",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -12708,9 +12708,9 @@
     "model": "Qwen3.8-27B",
     "quant": "BF16",
     "engine": "MLX",
-    "hardware": "2× Mac Studio M5 Ultra（tensor）",
+    "hardware": "2× Mac Studio M5 Ultra 512GB（tensor）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "2×$9,499（64C/256GB）起，多机未合计",
+    "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
     "hardware_cost_usd": null,
     "metric": "解码 33.27 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 33.27,
@@ -12723,10 +12723,10 @@
     "date": "2026-10-15",
     "metric_en": "decode 33.27 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "2×$9,499 (64C/256GB) up, multi-machine not totaled",
+      "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K",
-      "hardware": "2× Mac Studio M5 Ultra (tensor)"
+      "hardware": "2× Mac Studio M5 Ultra 512GB (tensor)"
     },
     "model_family": "Qwen",
     "tags": [
@@ -12742,9 +12742,9 @@
     "model": "Qwen3.8-27B",
     "quant": "BF16",
     "engine": "MLX",
-    "hardware": "4× Mac Studio M5 Ultra（tensor）",
+    "hardware": "4× Mac Studio M5 Ultra 512GB（tensor）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "4×$9,499（64C/256GB）起，多机未合计",
+    "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
     "hardware_cost_usd": null,
     "metric": "解码 50.89 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 50.89,
@@ -12757,10 +12757,10 @@
     "date": "2026-10-15",
     "metric_en": "decode 50.89 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "4×$9,499 (64C/256GB) up, multi-machine not totaled",
+      "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K",
-      "hardware": "4× Mac Studio M5 Ultra (tensor)"
+      "hardware": "4× Mac Studio M5 Ultra 512GB (tensor)"
     },
     "model_family": "Qwen",
     "tags": [
@@ -12773,29 +12773,30 @@
   {
     "id": "text-134",
     "category": "text",
-    "model": "Qwen3.8-Flash-Next",
-    "quant": "Swift1.5 NVFP4+FP8（Ninfer6000）",
+    "model": "Swift-1.5-Qwen3.8-Flash-Next",
+    "quant": "NVFP4+FP8（Ninfer6000）",
     "engine": "ninfer",
     "hardware": "RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 5600X",
     "hardware_family": "其他",
-    "hardware_cost_text": "$15,999 最低追踪报价（新卡，见 prices / x-025）",
+    "hardware_cost_text": "$15,999 最低追踪报价（新卡，2026-10-13）",
     "hardware_cost_usd": 15999,
     "metric": "解码均值 ~238 tok/s（Ninfer6000 博客 sweep mean；MTP 3 draft）",
-    "tok_s": 238.0,
+    "tok_s": 238,
     "concurrency": null,
-    "context": null,
+    "context": "~1K–114K（sweep mean）",
     "launch_command": null,
     "source_url": "https://demietrich.com/blog/q3.8fn_engine_comparison/",
-    "source_note": "demietrich.com 博客引擎对比（同帖 r/LocalLLaMA u/dboybaker）",
+    "source_note": "demietrich.com 博客引擎对比；硬件细节见同帖 r/LocalLLaMA u/dboybaker（600W / Ryzen 5 5600X）",
     "source_level": "实测",
     "date": "2026-10-15",
     "measured_by": "dboybaker",
     "metric_en": "decode mean ~238 tok/s (Ninfer6000 blog sweep mean; MTP 3 draft)",
     "en": {
-      "quant": "Swift1.5 NVFP4+FP8 (Ninfer6000)",
+      "quant": "NVFP4+FP8 (Ninfer6000)",
       "hardware": "RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 5600X",
-      "hardware_cost_text": "$15,999 lowest tracked (new card; see prices / x-025)",
-      "source_note": "demietrich.com engine comparison blog (same post r/LocalLLaMA u/dboybaker)"
+      "hardware_cost_text": "$15,999 lowest tracked (new card, 2026-10-13)",
+      "source_note": "demietrich.com engine comparison blog; hardware details from same-post r/LocalLLaMA u/dboybaker (600W / Ryzen 5 5600X)",
+      "context": "~1K–114K (sweep mean)"
     },
     "model_family": "Qwen",
     "tags": [
@@ -12810,35 +12811,34 @@
     "id": "text-135",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
-    "quant": "NVFP4 + MTP2",
+    "quant": "NVFP4 · MTP 2",
     "engine": "vLLM",
     "hardware": "RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 5600X",
     "hardware_family": "其他",
-    "hardware_cost_text": "$15,999 最低追踪报价（新卡，见 prices / x-025）",
+    "hardware_cost_text": "$15,999 最低追踪报价（新卡，2026-10-13）",
     "hardware_cost_usd": 15999,
     "metric": "解码均值 ~150 tok/s（博客 sweep mean；MTP 2）",
-    "tok_s": 150.0,
+    "tok_s": 150,
     "concurrency": null,
-    "context": null,
+    "context": "~1K–114K（sweep mean）",
     "launch_command": null,
     "source_url": "https://demietrich.com/blog/q3.8fn_engine_comparison/",
-    "source_note": "demietrich.com 博客引擎对比（同帖 r/LocalLLaMA u/dboybaker）",
+    "source_note": "demietrich.com 博客引擎对比；硬件细节见同帖 r/LocalLLaMA u/dboybaker（600W / Ryzen 5 5600X）",
     "source_level": "实测",
     "date": "2026-10-15",
     "measured_by": "dboybaker",
     "metric_en": "decode mean ~150 tok/s (blog sweep mean; MTP 2)",
     "en": {
-      "quant": "NVFP4 + MTP2",
-      "hardware": "RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 5600X",
-      "hardware_cost_text": "$15,999 lowest tracked (new card; see prices / x-025)",
-      "source_note": "demietrich.com engine comparison blog (same post r/LocalLLaMA u/dboybaker)"
+      "quant": "NVFP4 · MTP 2",
+      "hardware_cost_text": "$15,999 lowest tracked (new card, 2026-10-13)",
+      "source_note": "demietrich.com engine comparison blog; hardware details from same-post r/LocalLLaMA u/dboybaker (600W / Ryzen 5 5600X)",
+      "context": "~1K–114K (sweep mean)"
     },
     "model_family": "Qwen",
     "tags": [
       "4bit",
       "speculative",
-      "MTP",
-      "multi-GPU"
+      "MTP"
     ],
     "source_id": "src-fb651de9b6"
   },
@@ -12846,35 +12846,34 @@
     "id": "text-136",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
-    "quant": "Unsloth UD-Q4_K_XL + MTP3",
+    "quant": "Unsloth UD-Q4_K_XL · MTP 3",
     "engine": "llama.cpp",
     "hardware": "RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 5600X",
     "hardware_family": "其他",
-    "hardware_cost_text": "$15,999 最低追踪报价（新卡，见 prices / x-025）",
+    "hardware_cost_text": "$15,999 最低追踪报价（新卡，2026-10-13）",
     "hardware_cost_usd": 15999,
     "metric": "解码均值 ~108 tok/s（博客 sweep mean；MTP 3）",
-    "tok_s": 108.0,
+    "tok_s": 108,
     "concurrency": null,
-    "context": null,
+    "context": "~1K–114K（sweep mean；随长度从 ~138 降至 ~65）",
     "launch_command": null,
     "source_url": "https://demietrich.com/blog/q3.8fn_engine_comparison/",
-    "source_note": "demietrich.com 博客引擎对比（同帖 r/LocalLLaMA u/dboybaker）",
+    "source_note": "demietrich.com 博客引擎对比；硬件细节见同帖 r/LocalLLaMA u/dboybaker（600W / Ryzen 5 5600X）",
     "source_level": "实测",
     "date": "2026-10-15",
     "measured_by": "dboybaker",
     "metric_en": "decode mean ~108 tok/s (blog sweep mean; MTP 3)",
     "en": {
-      "quant": "Unsloth UD-Q4_K_XL + MTP3",
-      "hardware": "RTX PRO 6000 Blackwell 96GB @ 600W + 96GB DDR4 + Ryzen 5 5600X",
-      "hardware_cost_text": "$15,999 lowest tracked (new card; see prices / x-025)",
-      "source_note": "demietrich.com engine comparison blog (same post r/LocalLLaMA u/dboybaker)"
+      "quant": "Unsloth UD-Q4_K_XL · MTP 3",
+      "hardware_cost_text": "$15,999 lowest tracked (new card, 2026-10-13)",
+      "source_note": "demietrich.com engine comparison blog; hardware details from same-post r/LocalLLaMA u/dboybaker (600W / Ryzen 5 5600X)",
+      "context": "~1K–114K (sweep mean; falls ~138→~65 with length)"
     },
     "model_family": "Qwen",
     "tags": [
       "4bit",
       "speculative",
-      "MTP",
-      "multi-GPU"
+      "MTP"
     ],
     "source_id": "src-fb651de9b6"
   },
@@ -12912,7 +12911,7 @@
   {
     "id": "comm-031",
     "category": "text",
-    "model": "DeepSeek-V4-Flash-0731",
+    "model": "DeepSeek-V4-Flash (0731)",
     "quant": "2.875 bpw",
     "engine": "affinity",
     "hardware": "Threadripper PRO 9955WX + 128GB + 4× Radeon AI PRO R9700",
@@ -12944,14 +12943,14 @@
   {
     "id": "comm-032",
     "category": "text",
-    "model": "DeepSeek-V4-Flash-0731",
-    "quant": "2.875 bpw",
+    "model": "DeepSeek-V4-Flash (0731)",
+    "quant": "2.875 bpw · host-pool stream",
     "engine": "affinity",
     "hardware": "Threadripper PRO 9955WX + 128GB + 2× Radeon AI PRO R9700",
     "hardware_family": "AMD",
     "hardware_cost_text": "≈$3,200（2×$1,600，计算值，仅显卡）",
     "hardware_cost_usd": 3200,
-    "metric": "解码 36 tok/s（约 45% 专家在显存，其余自 51GB pinned host 池流式）",
+    "metric": "解码 36 tok/s（约 45% 专家在显存，其余自 51GB pinned host 池流式卸载）",
     "tok_s": 36,
     "concurrency": null,
     "context": null,
@@ -12961,7 +12960,7 @@
     "source_level": "实测",
     "date": "2026-10-16",
     "measured_by": "brainchillzZ",
-    "metric_en": "decode 36 tok/s (~45% experts in VRAM; rest streamed from 51GB pinned host pool)",
+    "metric_en": "decode 36 tok/s (~45% experts in VRAM; rest streamed/offloaded from 51GB pinned host pool)",
     "en": {
       "hardware_cost_text": "≈$3,200 (2×$1,600, computed, cards only)",
       "source_note": "r/LocalLLaMA u/brainchillzZ measured (same post, 2-card control)"
@@ -12969,7 +12968,8 @@
     "model_family": "DeepSeek",
     "tags": [
       "2bit",
-      "multi-GPU"
+      "multi-GPU",
+      "offload"
     ],
     "source_id": "src-f023759a9b"
   },
@@ -12983,28 +12983,26 @@
     "hardware_family": "其他",
     "hardware_cost_text": "£299.99（帖主自报）",
     "hardware_cost_usd": null,
-    "metric": "write 24.5 tok/s；read ~118；MTP ~29–33（512 token prompt，8 threads）",
+    "metric": "解码 24.5 tok/s（llama.cpp write）；prefill/read ~118",
     "tok_s": 24.5,
     "concurrency": null,
     "context": null,
     "launch_command": null,
     "source_url": "https://www.reddit.com/r/LocalLLaMA/comments/1x6stod/",
-    "source_note": "r/LocalLLaMA u/WorldlyAd7946 实测（CPU only，Adreno/NPU 未用）",
+    "source_note": "r/LocalLLaMA u/WorldlyAd7946 实测（CPU only；同帖 MTP 约 29–33，未作本行 tok_s）",
     "source_level": "实测",
     "date": "2026-10-16",
     "measured_by": "WorldlyAd7946",
-    "metric_en": "write 24.5 tok/s; read ~118; MTP ~29–33 (512-token prompt, 8 threads)",
+    "metric_en": "decode 24.5 tok/s (llama.cpp write); prefill/read ~118",
     "en": {
       "hardware": "Lenovo IdeaCentre Mini Snapdragon X1-26-100 32GB (CPU only)",
       "hardware_cost_text": "£299.99 (poster self-reported)",
-      "source_note": "r/LocalLLaMA u/WorldlyAd7946 measured (CPU only; Adreno/NPU unused)"
+      "source_note": "r/LocalLLaMA u/WorldlyAd7946 measured (CPU only; same post MTP ~29–33, not used as this row's tok_s)"
     },
     "model_family": "Qwen",
     "tags": [
       "4bit",
-      "MoE",
-      "speculative",
-      "MTP"
+      "MoE"
     ],
     "source_id": "src-0257df5798"
   },
@@ -13012,7 +13010,7 @@
     "id": "comm-034",
     "category": "text",
     "model": "Qwen3.8-Flash-Next",
-    "quant": "官方 NVFP4",
+    "quant": "官方 NVFP4 · TP=2",
     "engine": "capy-flash",
     "hardware": "2× RTX 5070 Ti 16GB + R9 9900X + 96GB DDR5",
     "hardware_family": "NVIDIA 消费级",
@@ -13030,7 +13028,7 @@
     "measured_by": "FeydRowan",
     "metric_en": "generation ~100 tok/s (TP=2; same weights Strata ~78; prefill ~3.4k @15k prompt)",
     "en": {
-      "quant": "official NVFP4",
+      "quant": "official NVFP4 · TP=2",
       "source_note": "r/LocalLLaMA u/FeydRowan / capy-flash author measured (TP=2, official NVFP4)"
     },
     "model_family": "Qwen",
@@ -13081,7 +13079,7 @@
     "id": "comm-036",
     "category": "text",
     "model": "Bonsai 1.7B",
-    "quant": "1-bit / ternary",
+    "quant": "1-bit",
     "engine": "BitRun",
     "hardware": "Apple M4 Pro（纯 CPU）",
     "hardware_family": "Mac",
@@ -13105,7 +13103,6 @@
     "model_family": "Bonsai",
     "tags": [
       "1bit",
-      "ternary",
       "dense"
     ],
     "source_id": "src-58b62bc7b0"
@@ -13114,7 +13111,7 @@
     "id": "comm-037",
     "category": "text",
     "model": "Bonsai 1.7B",
-    "quant": "1-bit / ternary",
+    "quant": "1-bit",
     "engine": "BitRun",
     "hardware": "Core i5-12600K（纯 CPU）",
     "hardware_family": "其他",
@@ -13138,7 +13135,6 @@
     "model_family": "Bonsai",
     "tags": [
       "1bit",
-      "ternary",
       "dense"
     ],
     "source_id": "src-58b62bc7b0"
