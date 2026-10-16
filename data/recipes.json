@@ -2373,7 +2373,7 @@
     "en": {
       "quant": "TensorFold · Thunderbolt 5×4 bonded, TP=2",
       "concurrency": "8 streams",
-      "hardware_cost_text": "2× M5 Ultra memory not stated; $5,499 (30C/64C · 96GB) / $9,499 (30C/64C · 256GB) / $10,799 (36C/80C · 256GB), Apple US launch price, 2026-08, base 1TB SSD; 512GB price not yet published by Apple (as of 2026-10-16); so no multi-machine total",
+      "hardware_cost_text": "2× M5 Ultra memory not stated; $5,499 (30C/64C · 96GB) / $9,499 (30C/64C · 256GB) / $10,799 (36C/80C · 256GB), Apple US launch price, 2026-08, base 1TB SSD; 512GB price not yet published by Apple (as of 2026-10-16); memory not stated, so no multi-machine total",
       "source_note": "@yume_arasaki relaying demo"
     }
   },
@@ -2788,7 +2788,7 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M5 Ultra 80C 256GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$10,799（M5 Ultra 36C CPU/80C GPU · 256GB；Apple 美国首发价，2026-08，基础 1TB SSD）（MacStories 测试机为 80 核 GPU 顶配）",
+    "hardware_cost_text": "$10,799（M5 Ultra 36C CPU/80C GPU · 256GB；Apple 美国首发价，2026-08，基础 1TB SSD；MacStories 测试机为 36C/80C 芯片）",
     "hardware_cost_usd": 10799,
     "metric": "短提示 108；代码 143；512 token 答案 4K 90.7 → 256K 74.7；16K PP 2,887",
     "tok_s": null,
@@ -2812,7 +2812,7 @@
       "quant": "oMLX 0.7.0.dev2 · oQ4e · MTP depth 3 (thinking off)",
       "context": "256K measured (256K first token 102–104 s)",
       "concurrency": "3 streams at once: total 81.5 (single stream 66.2)",
-      "hardware_cost_text": "$10,799 (M5 Ultra 36C CPU/80C GPU · 256GB; Apple US launch price, 2026-08, base 1TB SSD) (MacStories test machine is the top 80-core GPU config)",
+      "hardware_cost_text": "$10,799 (M5 Ultra 36C CPU/80C GPU · 256GB; Apple US launch price, 2026-08, base 1TB SSD; MacStories test machine is the 36C/80C chip)",
       "source_note": "MacStories (Viticci) review"
     }
   },
@@ -2860,7 +2860,7 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M5 Ultra 256GB vs M3 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$10,799（M5 Ultra 36C CPU/80C GPU · 256GB；Apple 美国首发价，2026-08，基础 1TB SSD）（MacStories 测试机为 80 核 GPU 顶配）；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_text": "$10,799（M5 Ultra 36C CPU/80C GPU · 256GB；Apple 美国首发价，2026-08，基础 1TB SSD；MacStories 测试机为 36C/80C 芯片）；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
     "hardware_cost_usd": 10799,
     "metric": "M5U：111.6/142.9 → oQ8e（表放 SSD）86.8/119.0；M3U：77.3/103.9 → oQ8e 63.5/89.1",
     "tok_s": null,
@@ -2881,7 +2881,7 @@
     "en": {
       "quant": "oMLX · oQ4e / oQ5e / oQ6e / oQ8e (prose/code)",
       "context": "On a 256GB machine oQ6e/oQ8e need the n-gram table on SSD",
-      "hardware_cost_text": "$10,799 (M5 Ultra 36C CPU/80C GPU · 256GB; Apple US launch price, 2026-08, base 1TB SSD) (MacStories test machine is the top 80-core GPU config); M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
+      "hardware_cost_text": "$10,799 (M5 Ultra 36C CPU/80C GPU · 256GB; Apple US launch price, 2026-08, base 1TB SSD; MacStories test machine is the 36C/80C chip); M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
       "source_note": "MacStories (Viticci) review"
     }
   },
@@ -3112,7 +3112,7 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M5 Ultra 256GB / M3 Ultra 512GB / RTX 5090",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$10,799（M5 Ultra 36C CPU/80C GPU · 256GB；Apple 美国首发价，2026-08，基础 1TB SSD）（MacStories 测试机为 80 核 GPU 顶配）；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）；RTX 5090 价格未注明",
+    "hardware_cost_text": "$10,799（M5 Ultra 36C CPU/80C GPU · 256GB；Apple 美国首发价，2026-08，基础 1TB SSD；MacStories 测试机为 36C/80C 芯片）；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）；RTX 5090 价格未注明",
     "hardware_cost_usd": 10799,
     "metric": "6K 提示：48 / 31 / 59 tok/s；PP 1,701 / 414 / 3,031；256K：24.3 / 15.0 / 30.0（5090 需 8-bit KV）",
     "tok_s": null,
@@ -3134,7 +3134,7 @@
     "en": {
       "quant": "oMLX · oQ4e (MTP off) vs RTX 5090 LM Studio Q4_K_M",
       "context": "256K (on 5090 with default 16-bit KV, 256K did not finish in 10 minutes)",
-      "hardware_cost_text": "$10,799 (M5 Ultra 36C CPU/80C GPU · 256GB; Apple US launch price, 2026-08, base 1TB SSD) (MacStories test machine is the top 80-core GPU config); M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued); RTX 5090 price not stated",
+      "hardware_cost_text": "$10,799 (M5 Ultra 36C CPU/80C GPU · 256GB; Apple US launch price, 2026-08, base 1TB SSD; MacStories test machine is the 36C/80C chip); M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued); RTX 5090 price not stated",
       "source_note": "MacStories (Viticci) review"
     }
   },
@@ -3209,7 +3209,7 @@
     "engine": "MTPLX",
     "hardware": "Mac Studio M5 Max",
     "hardware_family": "Mac",
-    "hardware_cost_text": "M5 Max 内存未注明；$2,499（18C/32C · 36GB）/ $3,099（18C/40C · 48GB）/ $3,499（64GB）/ $5,099（128GB），Apple 美国首发价，2026-08，基础 512GB SSD",
+    "hardware_cost_text": "M5 Max 内存未注明；$2,499（18C/32C · 36GB）/ $3,099（18C/40C · 48GB）/ $3,499（18C/40C · 64GB）/ $5,099（18C/40C · 128GB），Apple 美国首发价，2026-08，基础 512GB SSD",
     "hardware_cost_usd": null,
     "metric": "58.7 持续 / 73 峰值",
     "tok_s": null,
@@ -3232,7 +3232,7 @@
     "en": {
       "quant": "MTPLX (MTP)",
       "source_note": "@yume_arasaki relaying Youssofal HF card",
-      "hardware_cost_text": "M5 Max memory not stated; $2,499 (18C/32C · 36GB) / $3,099 (18C/40C · 48GB) / $3,499 (64GB) / $5,099 (128GB), Apple US launch price, 2026-08, base 512GB SSD"
+      "hardware_cost_text": "M5 Max memory not stated; $2,499 (18C/32C · 36GB) / $3,099 (18C/40C · 48GB) / $3,499 (18C/40C · 64GB) / $5,099 (18C/40C · 128GB), Apple US launch price, 2026-08, base 512GB SSD"
     }
   },
   {
@@ -3656,7 +3656,7 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M5 Ultra 256GB / M3 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$10,799（M5 Ultra 36C CPU/80C GPU · 256GB；Apple 美国首发价，2026-08，基础 1TB SSD）（MacStories 测试机为 80 核 GPU 顶配）；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_text": "$10,799（M5 Ultra 36C CPU/80C GPU · 256GB；Apple 美国首发价，2026-08，基础 1TB SSD；MacStories 测试机为 36C/80C 芯片）；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
     "hardware_cost_usd": 10799,
     "metric": "41 / 26 tok/s（含推理 token）；16K PP 1,107 / 428；64K PP 1,016 / 448",
     "tok_s": null,
@@ -3676,7 +3676,7 @@
     "metric_en": "41 / 26 tok/s (including reasoning tokens); 16K PP 1,107 / 428; 64K PP 1,016 / 448",
     "en": {
       "context": "M3U can answer at 256K (first token 11 min); M5U 256GB runs out of RAM at 256K",
-      "hardware_cost_text": "$10,799 (M5 Ultra 36C CPU/80C GPU · 256GB; Apple US launch price, 2026-08, base 1TB SSD) (MacStories test machine is the top 80-core GPU config); M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
+      "hardware_cost_text": "$10,799 (M5 Ultra 36C CPU/80C GPU · 256GB; Apple US launch price, 2026-08, base 1TB SSD; MacStories test machine is the 36C/80C chip); M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
       "source_note": "MacStories (Viticci) review"
     }
   },
