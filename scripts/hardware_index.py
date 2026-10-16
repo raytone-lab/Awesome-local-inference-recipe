@@ -76,3 +76,6 @@ def grid(D):
         if rows: by.setdefault(c.group, []).append((c, len(rows), fastest(rows, multi=bool(c.tag))))
     for v in by.values(): v.sort(key=lambda x: (-x[1], x[0].label))
     return sorted(by.items(), key=lambda kv: (kv[0] == 'other', -sum(n for _, n, _ in kv[1])))
+
+def fastest_on_page(D, slug):
+    return fastest(chip_rows(D, next(c for c in CHIPS if c.page == slug)))

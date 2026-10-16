@@ -93,7 +93,7 @@ def align_tables(txt):
 
 REPO = 'raytone-lab/awesome-local-inference-recipes'
 SHOW = [
- ('text-092','mac'),('x-006','5090'),('x-009','amd'),('x-007','dc'),('text-022','spark'),('text-021','cheap')]
+ ('text-092','mac'),('x-006','5090'),('x-009','amd'),('x-007','dc'),(hardware_index.fastest_on_page(D,'dgx-spark')['id'],'spark'),('text-021','cheap')]
 HL = {
  'en': dict(h1='Awesome Local Inference Recipes', tag='What speed will <b>your</b> hardware actually get? {n} source-backed local AI recipes, from a ${lo:,} GPU to a $30k rig.',
    lang='<b>English</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ja.md">日本語</a>',

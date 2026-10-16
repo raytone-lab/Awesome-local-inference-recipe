@@ -57,4 +57,14 @@ class BrowseByHardware(unittest.TestCase):
         for g, chips in hi.grid(self.D):
             ns = [n for _, n, _ in chips]; self.assertEqual(ns, sorted(ns, reverse=True), g)
 
+class SparkHeadline(unittest.TestCase):
+    def test_readme_headline_matches_the_dgx_spark_chip(self):
+        D = json.loads((R/'data/recipes.json').read_text(encoding='utf-8'))
+        b = hi.fastest_on_page(D, 'dgx-spark')
+        for lang, label in [('en', 'Fastest on one DGX Spark'), ('zh', '单台 DGX Spark 最快'), ('ja', 'DGX Spark 1 台で最速')]:
+            s = (R/README[lang]).read_text(encoding='utf-8')
+            row = next(l for l in s.splitlines() if l.startswith('| ' + label))
+            self.assertIn(f"**{b['tok_s']:g} tok/s**", row, lang); self.assertIn(b['source_url'], row, lang)
+            self.assertRegex(s, re.escape('[DGX Spark](' + PAGES + 'hw/dgx-spark.html) (') + r'\d+ · ⚡\*\*' + re.escape(f"{b['tok_s']:g}") + r'\*\*', lang)
+
 if __name__ == '__main__': unittest.main()
