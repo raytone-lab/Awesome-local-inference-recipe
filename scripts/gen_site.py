@@ -9,13 +9,12 @@ Run: python3 scripts/gen_site.py"""
 import json, re, html
 from urllib.parse import quote
 from pathlib import Path
-from typing import NamedTuple
 import gen_readme
 from dataset_constants import DATA_ASOF
+from hardware_index import HW, MIN_ROWS, selfrep, single, meas_text, COMPARE
 R = Path(__file__).resolve().parent.parent
 PAGES = 'https://raytone-lab.github.io/awesome-local-inference-recipes/'
 REPO = 'https://github.com/raytone-lab/awesome-local-inference-recipes'
-MIN_ROWS = 5
 STATIC_ROWS_START = '<!--static:rows (scripts/gen_site.py)-->'
 STATIC_ROWS_END = '<!--/static-->'
 D = json.load(open(R/'data/recipes.json', encoding='utf-8'))
@@ -25,17 +24,11 @@ HWF = {'NVIDIA 消费级':'NVIDIA consumer','二手数据中心卡':'Used datace
 e = lambda s: html.escape(str(s if s is not None else ''), quote=True)
 def write(p, s):
     p.parent.mkdir(parents=True, exist_ok=True); p.write_text(s, encoding='utf-8')
-def selfrep(r): return '自称' in (r.get('metric') or '')
 def normalize_punct(s): return s.replace('；', '; ').replace('，', ', ')
 def en(s):
     if not s: return s
     return gen_readme.en(normalize_punct(str(s)), cjk=gen_readme.CJK_CHAR, strip=' ·+/,;；') or s
 def met_en(r): return r.get('metric_en') or en(r.get('metric'))
-COMPARE = re.compile(r'\s/|/\s|\svs\.?\s', re.I)
-def single(r):
-    return ('multi-GPU' not in r['tags'] and not re.search(r'[2-9] ?[x×] ?|双|[2-9] ?台', r['hardware']) and not COMPARE.search(r['hardware'])
-            and not r.get('superseded_by') and not re.search(r'并发|aggregate|总吞吐', (r.get('metric') or '') + ' ' + str(r.get('concurrency') or ''), re.I))
-def meas_text(r): return r['source_level'] == '实测' and r['category'] == 'text' and r.get('tok_s') and not selfrep(r)
 def safe_url(u): return u if re.match(r'(https?:)?//|[\w./#?=&%-]+$', u) and not u.lower().startswith('javascript:') else '#'
 
 def row(r):
@@ -136,16 +129,6 @@ def guides():
             write(R/'guides'/f'{pre}{rid}.html', shell(title, desc, canon, body, depth, hl, alts)); urls.append(canon)
     return ids, urls
 
-class HardwarePage(NamedTuple):
-    slug: str
-    name: str
-    pattern: str
-    explorer_query: str
-HW = [
- HardwarePage('rtx-5090','RTX 5090',r'RTX 5090','RTX 5090'),HardwarePage('rtx-4090','RTX 4090',r'RTX 4090','RTX 4090'),HardwarePage('rtx-3090','RTX 3090',r'RTX 3090','RTX 3090'),HardwarePage('rtx-5060-ti','RTX 5060 Ti',r'RTX 5060 Ti','RTX 5060 Ti'),
- HardwarePage('mac-studio-m3-ultra','Mac Studio M3 Ultra',r'M3 Ultra','M3 Ultra'),HardwarePage('mac-m4-max','Apple M4 Max',r'M4 Max','M4 Max'),HardwarePage('mac-m5','Apple M5 Pro / M5 Max',r'M5 (Pro|Max)','M5'),
- HardwarePage('dgx-spark','NVIDIA DGX Spark',r'DGX Spark','DGX Spark'),HardwarePage('strix-halo','AMD Strix Halo (Ryzen AI Max+ 395)',r'Strix Halo','Strix Halo'),
- HardwarePage('amd-radeon','AMD Radeon (RX 7900 / R9700)',r'RX 7900|R9700','R9700'),HardwarePage('tesla-p40','NVIDIA Tesla P40',r'P40','P40'),HardwarePage('rtx-pro-6000','RTX PRO 6000',r'RTX PRO 6000','RTX PRO 6000')]
 def slug(s): return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
 def landing(kind, key, name, rows, qterm=None):
     rows = sorted(rows, key=lambda r: (r['source_level'] != '实测', -(r.get('tok_s') or 0), r['id']))
@@ -196,7 +179,7 @@ def main():
     hwl = [f'<li><a href="../{k}/{(slug(key) if k=="model" else key)}.html">{e(n)}</a> — {c} recipes</li>' for k, key, n, _, noidx, c in pages if k == 'hw' and not noidx]
     ml = [f'<li><a href="../{k}/{slug(key)}.html">{e(n)}</a> — {c} recipes</li>' for k, key, n, _, noidx, c in pages if k == 'model' and not noidx]
     body = (f'<h1>Local inference recipe guides, hardware and model pages</h1><p>Static pages generated from the dataset (as of {ASOF}). Every number links to its source.</p>'
-            f'<h2>Recipe guides</h2>{li(g)}<h2>By hardware</h2>{li(hwl)}<h2>By model family</h2>{li(ml)}')
+            f'<h2>Recipe guides</h2>{li(g)}<h2 id="by-hardware">By hardware</h2>{li(hwl)}<h2>By model family</h2>{li(ml)}')
     write(R/'guides/index.html', shell('Recipe guides · Local Inference Recipes', 'Step-by-step local inference recipe guides plus per-hardware and per-model speed pages, every number sourced.', f'{PAGES}guides/index.html', body, 1))
     explore(None)
     urls = [PAGES, PAGES+'explore.html', PAGES+'speed.html', PAGES+'submit.html', PAGES+'guides/index.html'] + gurls + [c for *_, c, noidx, n in pages if not noidx]

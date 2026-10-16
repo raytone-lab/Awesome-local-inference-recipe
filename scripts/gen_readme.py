@@ -3,6 +3,7 @@
 import json, re
 from pathlib import Path
 from dataset_constants import BUDGET_TIER_BOUNDS_USD, DATA_ASOF
+import hardware_index
 R = Path(__file__).resolve().parent.parent
 D = json.load(open(R/'data/recipes.json'))
 REPOS = json.load(open(R/'data/repos.json'))
@@ -20,7 +21,7 @@ L = {
    tiers=['Tier 1 · up to $2.5k','Tier 2 · $2.5k–7k','Tier 3 · $7k–14k','Tier 4 · $14k–30k'],
    tdesc=['Used 3090/4090, MI50/V100 cards, Strix Halo, R9700','One RTX 5090, one DGX Spark, Mac Studio Max','Two Sparks, Mac Studio Ultra','3–4 Spark clusters, multi-GPU workstations'],
    cats={'text':'📝 Text','image':'🖼️ Image','video-audio':'🎬 Video & Audio'},
-   fam='Browse by Model Family', famdesc='Click a family to open the explorer pre-filtered. Tags: {tags}.', engidx='Browse by Engine', engdesc='Engine names are normalized (`scripts/normalize_engines.py`); original strings are kept in `engine_note`.', th2='| Family | Recipes | Text | Image | Video & Audio |', th3='| Engine | Recipes |',
+   fam='Browse by Model Family', famdesc='Click a family to open the explorer pre-filtered. Tags: {tags}.', hwidx='Browse by Hardware', hwdesc='Recipe count and the fastest measured single-stream tok/s for each device (multi-GPU rigs: fastest measured on any rig). Links open the hardware page, or the explorer pre-filtered when a device has fewer than {m} recipes.', th4='| Family | Device (recipes · ⚡ fastest measured tok/s) |', engidx='Browse by Engine', engdesc='Engine names are normalized (`scripts/normalize_engines.py`); original strings are kept in `engine_note`.', th2='| Family | Recipes | Text | Image | Video & Audio |', th3='| Engine | Recipes |',
    hot='Popular on X', hotdesc='Most-engaged recipe posts on X (likes + 3×reposts; one entry per post, claimed-only results left out; counts as of {asof}).',
    unk='Cost Not Published', unkdesc='Multi-card builds priced per card, Macs without a listed price, and other rows without a single published price · {n} recipes. Top text recipes by tok/s:',
    guide='guide', gsuf='.md', more='…and {n} more in the [explorer](explore.html).', all='…browse all {n} in the [explorer](explore.html).', count='{n} recipes',
@@ -31,7 +32,7 @@ L = {
    tiers=['第 1 档 · 2,500 美元以内','第 2 档 · 2,500–7,000 美元','第 3 档 · 7,000–14,000 美元','第 4 档 · 14,000–30,000 美元'],
    tdesc=['二手 3090/4090、MI50/V100、Strix Halo、R9700','单张 RTX 5090、单台 DGX Spark、Mac Studio Max','双 Spark、Mac Studio Ultra','3–4 台 Spark 集群、多卡工作站'],
    cats={'text':'📝 文字','image':'🖼️ 图像','video-audio':'🎬 影音'},
-   fam='按模型系列浏览', famdesc='点击系列名即可打开已筛选的配方库。标签：{tags}。', engidx='按引擎浏览', engdesc='引擎名已统一（`scripts/normalize_engines.py`），原始写法保留在 `engine_note` 字段。', th2='| 系列 | 配方数 | 文字 | 图像 | 影音 |', th3='| 引擎 | 配方数 |',
+   fam='按模型系列浏览', famdesc='点击系列名即可打开已筛选的配方库。标签：{tags}。', hwidx='按硬件浏览', hwdesc='每种设备的配方数，以及实测最快的单路 tok/s（多卡组合取任一组合的实测最快值）。点击打开该硬件页面；配方不足 {m} 条的设备会打开已筛选的配方库。', th4='| 类别 | 设备（配方数 · ⚡ 实测最快 tok/s） |', engidx='按引擎浏览', engdesc='引擎名已统一（`scripts/normalize_engines.py`），原始写法保留在 `engine_note` 字段。', th2='| 系列 | 配方数 | 文字 | 图像 | 影音 |', th3='| 引擎 | 配方数 |',
    hot='X 上的热门配方', hotdesc='X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只列一次，不含“宣称”条目；互动数截至 {asof}）。',
    unk='价格未公开', unkdesc='按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 {n} 条。按 tok/s 排名靠前的文字配方：',
    guide='指南', gsuf='.zh-CN.md', more='……另有 {n} 条，见 [配方库](explore.html)。', all='……全部 {n} 条见 [配方库](explore.html)。', count='共 {n} 条',
@@ -42,7 +43,7 @@ L = {
    tiers=['第 1 段階 · 2,500 ドルまで','第 2 段階 · 2,500〜7,000 ドル','第 3 段階 · 7,000〜14,000 ドル','第 4 段階 · 14,000〜30,000 ドル'],
    tdesc=['中古の 3090/4090、MI50/V100、Strix Halo、R9700','RTX 5090 1 枚、DGX Spark 1 台、Mac Studio Max','DGX Spark 2 台、Mac Studio Ultra','Spark 3〜4 台のクラスター、マルチ GPU ワークステーション'],
    cats={'text':'📝 テキスト','image':'🖼️ 画像','video-audio':'🎬 動画・音声'},
-   fam='モデルファミリー別', famdesc='ファミリー名をクリックすると、絞り込み済みのエクスプローラーが開きます。タグ：{tags}。', engidx='エンジン別', engdesc='エンジン名は表記を統一しています（`scripts/normalize_engines.py`）。元の表記は `engine_note` に残しています。', th2='| ファミリー | レシピ数 | テキスト | 画像 | 動画・音声 |', th3='| エンジン | レシピ数 |',
+   fam='モデルファミリー別', famdesc='ファミリー名をクリックすると、絞り込み済みのエクスプローラーが開きます。タグ：{tags}。', hwidx='ハードウェア別', hwdesc='デバイスごとのレシピ数と、実測で最速の 1 ストリーム tok/s（マルチ GPU は全構成中の実測最速）。クリックでハードウェアページを開きます。レシピが {m} 件未満のデバイスは、絞り込み済みのエクスプローラーが開きます。', th4='| 分類 | デバイス（レシピ数 · ⚡ 実測最速 tok/s） |', engidx='エンジン別', engdesc='エンジン名は表記を統一しています（`scripts/normalize_engines.py`）。元の表記は `engine_note` に残しています。', th2='| ファミリー | レシピ数 | テキスト | 画像 | 動画・音声 |', th3='| エンジン | レシピ数 |',
    hot='X で話題のレシピ', hotdesc='X で反応が多かったレシピ投稿（いいね + リポスト×3 の順。1 投稿 1 件、「主張のみ」は除外。数値は {asof} 時点）。',
    unk='価格非公開', unkdesc='1 枚単位で価格が出ているマルチ GPU 構成、価格の記載がない Mac など、単一の公開価格がないレシピ · {n} 件。tok/s 上位のテキストレシピ：',
    guide='手順', gsuf='.ja.md', more='…ほか {n} 件は[エクスプローラー](explore.html)で。', all='…全 {n} 件は[エクスプローラー](explore.html)で見られます。', count='{n} 件',
@@ -215,6 +216,10 @@ def build(lang):
         out.append(f"- **{E(r['model'])}**{eg} — {clip(E(r['hardware']),50)} → {key(r)} {LVI[r['source_level']]} [@{r['x_post']['author']}]({r['source_url']}) ♥{r['x_post']['likes']}")
     from collections import Counter
     from urllib.parse import quote
+    sec(T['hwidx']); out.append(T['hwdesc'].format(m=hardware_index.MIN_ROWS)+'\n'); out.append(T['th4']); out.append('|---|---|')
+    for g,chips in hardware_index.grid(D):
+        cells=[f"[{hardware_index.LABELS.get(c.label,{}).get(lang,c.label)}]({hardware_index.chip_link(c,D,PAGES)}) ({n}"+(f" · ⚡**{b['tok_s']:g}**" if b else '')+')' for c,n,b in chips]
+        out.append(f"| {hardware_index.GROUPS[g][lang].replace(' ','&nbsp;')} | "+' &nbsp;·&nbsp; '.join(cells)+' |')
     sec(T['fam']); fc=Counter(r['model_family'] for r in D); tc=Counter(t for r in D for t in r['tags'])
     tl=', '.join(f"[`{t}`](explore.html?tag={quote(t)}) {n}" for t,n in tc.most_common())
     out.append(T['famdesc'].format(tags=tl)+'\n'); out.append(T['th2']); out.append('|---|--:|--:|--:|--:|')
