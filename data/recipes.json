@@ -1153,8 +1153,8 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M5 Ultra 80C 256GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$9,499（64C/256GB）/ $10,799（80C/256GB）",
-    "hardware_cost_usd": 9499,
+    "hardware_cost_text": "$10,799（M5 Ultra 36 核 CPU/80 核 GPU · 256GB；Apple 美国首发价，2026-08，1TB）",
+    "hardware_cost_usd": 10799,
     "metric": "oMLX 157.7（195K 时 96.6）；TensorFold 200.7 解码但仅 471 PP（oMLX 3,300–3,600）",
     "tok_s": null,
     "concurrency": "TensorFold 8 流 353",
@@ -1173,7 +1173,7 @@
     "en": {
       "quant": "Tuned oMLX / TensorFold",
       "concurrency": "TensorFold 8 streams 353",
-      "hardware_cost_text": "$9,499 (64C/256GB) / $10,799 (80C/256GB)",
+      "hardware_cost_text": "$10,799 (M5 Ultra 36-core CPU/80-core GPU · 256GB; Apple US launch price, 2026-08, 1TB)",
       "source_note": "@yume_arasaki roundup (includes independent test in issue #22)"
     }
   },
@@ -1185,7 +1185,7 @@
     "engine": "llama.cpp",
     "hardware": "Mac Studio M5 Max 64GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$3,499（定价，见 @yume_arasaki 8/27 帖）",
+    "hardware_cost_text": "$3,499（M5 Max 18 核 CPU/40 核 GPU · 64GB · 512GB SSD；Apple 美国首发价，2026-08，最低 SSD 配置）",
     "hardware_cost_usd": 3499,
     "metric": "51 tok/s 写；~950 tok/s 读（98K 时 918）",
     "tok_s": 51.0,
@@ -1203,7 +1203,7 @@
     "source_id": "src-7a444b72fa",
     "metric_en": "51 tok/s write; ~950 tok/s read (918 at 98K)",
     "en": {
-      "hardware_cost_text": "$3,499 (list price, see @yume_arasaki 8/27 post)"
+      "hardware_cost_text": "$3,499 (M5 Max 18-core CPU/40-core GPU · 64GB · 512GB SSD; Apple US launch price, 2026-08, lowest SSD option)"
     }
   },
   {
@@ -2353,8 +2353,8 @@
     "engine": "TensorFold",
     "hardware": "2× Mac Studio M5 Ultra",
     "hardware_family": "Mac",
-    "hardware_cost_text": "≈$19,000–21,600（2×$9,499–10,799，计算值）",
-    "hardware_cost_usd": 19000,
+    "hardware_cost_text": "2× M5 Ultra 内存未注明；Apple 美国首发价，2026-08，1TB：$5,499（30C/64C · 96GB）/ $9,499（30C/64C · 256GB）/ $10,799（36C/80C · 256GB）；512GB 价格 Apple 尚未公布（截至 2026-10-16）；两台合计无法给出",
+    "hardware_cost_usd": null,
     "metric": "散文 114 单流；PP ~1,600；8 流最高 200；首 token 0.06s",
     "tok_s": null,
     "concurrency": "8 流",
@@ -2373,7 +2373,7 @@
     "en": {
       "quant": "TensorFold · Thunderbolt 5×4 bonded, TP=2",
       "concurrency": "8 streams",
-      "hardware_cost_text": "≈$19,000–21,600 (2×$9,499–10,799, computed)",
+      "hardware_cost_text": "2× M5 Ultra memory not stated; Apple US launch price, 2026-08, 1TB: $5,499 (30C/64C · 96GB) / $9,499 (30C/64C · 256GB) / $10,799 (36C/80C · 256GB); 512GB price not yet published by Apple (as of 2026-10-16); no combined total",
       "source_note": "@yume_arasaki relaying demo"
     }
   },
@@ -2788,7 +2788,7 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M5 Ultra 80C 256GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$10,799（M5 Ultra 80C/256GB/1TB）",
+    "hardware_cost_text": "$10,799（M5 Ultra 36 核 CPU/80 核 GPU · 256GB；Apple 美国首发价，2026-08，1TB）",
     "hardware_cost_usd": 10799,
     "metric": "短提示 108；代码 143；512 token 答案 4K 90.7 → 256K 74.7；16K PP 2,887",
     "tok_s": null,
@@ -2812,7 +2812,7 @@
       "quant": "oMLX 0.7.0.dev2 · oQ4e · MTP depth 3 (thinking off)",
       "context": "256K measured (256K first token 102–104 s)",
       "concurrency": "3 streams at once: total 81.5 (single stream 66.2)",
-      "hardware_cost_text": "$10,799 (M5 Ultra 80C/256GB/1TB)",
+      "hardware_cost_text": "$10,799 (M5 Ultra 36-core CPU/80-core GPU · 256GB; Apple US launch price, 2026-08, 1TB)",
       "source_note": "MacStories (Viticci) review"
     }
   },
@@ -2860,7 +2860,7 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M5 Ultra 256GB vs M3 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "M5 Ultra $9,499（64C/256GB）/ $10,799（80C/256GB）；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_text": "M5 Ultra 256GB：$9,499（30 核 CPU/64 核 GPU）/ $10,799（36 核 CPU/80 核 GPU）；Apple 美国首发价，2026-08，1TB；测试机芯片未注明，按较低档计；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
     "hardware_cost_usd": 9499,
     "metric": "M5U：111.6/142.9 → oQ8e（表放 SSD）86.8/119.0；M3U：77.3/103.9 → oQ8e 63.5/89.1",
     "tok_s": null,
@@ -2881,7 +2881,7 @@
     "en": {
       "quant": "oMLX · oQ4e / oQ5e / oQ6e / oQ8e (prose/code)",
       "context": "On a 256GB machine oQ6e/oQ8e need the n-gram table on SSD",
-      "hardware_cost_text": "M5 Ultra $9,499 (64C/256GB) / $10,799 (80C/256GB); M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
+      "hardware_cost_text": "M5 Ultra 256GB: $9,499 (30-core CPU/64-core GPU) / $10,799 (36-core CPU/80-core GPU); Apple US launch price, 2026-08, 1TB; test machine chip not stated, lower tier used; M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
       "source_note": "MacStories (Viticci) review"
     }
   },
@@ -3112,7 +3112,7 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M5 Ultra 256GB / M3 Ultra 512GB / RTX 5090",
     "hardware_family": "Mac",
-    "hardware_cost_text": "M5 Ultra $9,499（64C/256GB）/ $10,799（80C/256GB）；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）；RTX 5090 价格未注明",
+    "hardware_cost_text": "M5 Ultra 256GB：$9,499（30 核 CPU/64 核 GPU）/ $10,799（36 核 CPU/80 核 GPU）；Apple 美国首发价，2026-08，1TB；测试机芯片未注明，按较低档计；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）；RTX 5090 价格未注明",
     "hardware_cost_usd": 9499,
     "metric": "6K 提示：48 / 31 / 59 tok/s；PP 1,701 / 414 / 3,031；256K：24.3 / 15.0 / 30.0（5090 需 8-bit KV）",
     "tok_s": null,
@@ -3134,7 +3134,7 @@
     "en": {
       "quant": "oMLX · oQ4e (MTP off) vs RTX 5090 LM Studio Q4_K_M",
       "context": "256K (on 5090 with default 16-bit KV, 256K did not finish in 10 minutes)",
-      "hardware_cost_text": "M5 Ultra $9,499 (64C/256GB) / $10,799 (80C/256GB); M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued); RTX 5090 price not stated",
+      "hardware_cost_text": "M5 Ultra 256GB: $9,499 (30-core CPU/64-core GPU) / $10,799 (36-core CPU/80-core GPU); Apple US launch price, 2026-08, 1TB; test machine chip not stated, lower tier used; M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued); RTX 5090 price not stated",
       "source_note": "MacStories (Viticci) review"
     }
   },
@@ -3146,7 +3146,7 @@
     "engine": "MLX",
     "hardware": "Mac Studio M5 Max 64GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$3,499（M5 Max 40C/64GB，Apple 2026-10）",
+    "hardware_cost_text": "$3,499（M5 Max 18 核 CPU/40 核 GPU · 64GB · 512GB SSD；Apple 美国首发价，2026-08，最低 SSD 配置）",
     "hardware_cost_usd": 3499,
     "metric": "平均 75.6 vs 33.9 tok/s（MTP 支持不同）",
     "tok_s": null,
@@ -3168,7 +3168,7 @@
     "metric_en": "Average 75.6 vs 33.9 tok/s (MTP support differs)",
     "en": {
       "quant": "4-bit MLX (official build vs modified build)",
-      "hardware_cost_text": "$3,499 (M5 Max 40C/64GB, Apple 2026-10)",
+      "hardware_cost_text": "$3,499 (M5 Max 18-core CPU/40-core GPU · 64GB · 512GB SSD; Apple US launch price, 2026-08, lowest SSD option)",
       "source_note": "@CGrajnish relaying the machine owner"
     }
   },
@@ -3180,7 +3180,7 @@
     "engine": "Ollama",
     "hardware": "Mac Studio M5 Max 64GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$3,499（M5 Max 40C/64GB，Apple 2026-10）",
+    "hardware_cost_text": "$3,499（M5 Max 18 核 CPU/40 核 GPU · 64GB · 512GB SSD；Apple 美国首发价，2026-08，最低 SSD 配置）",
     "hardware_cost_usd": 3499,
     "metric": "约 60 tok/s（视任务 40–70）",
     "tok_s": 60.0,
@@ -3198,7 +3198,7 @@
     "source_id": "src-2decea9cb7",
     "metric_en": "About 60 tok/s (40–70 depending on task)",
     "en": {
-      "hardware_cost_text": "$3,499 (M5 Max 40C/64GB, Apple 2026-10)"
+      "hardware_cost_text": "$3,499 (M5 Max 18-core CPU/40-core GPU · 64GB · 512GB SSD; Apple US launch price, 2026-08, lowest SSD option)"
     }
   },
   {
@@ -3655,7 +3655,7 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M5 Ultra 256GB / M3 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "M5 Ultra $9,499（64C/256GB）/ $10,799（80C/256GB）；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_text": "M5 Ultra 256GB：$9,499（30 核 CPU/64 核 GPU）/ $10,799（36 核 CPU/80 核 GPU）；Apple 美国首发价，2026-08，1TB；测试机芯片未注明，按较低档计；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
     "hardware_cost_usd": 9499,
     "metric": "41 / 26 tok/s（含推理 token）；16K PP 1,107 / 428；64K PP 1,016 / 448",
     "tok_s": null,
@@ -3675,7 +3675,7 @@
     "metric_en": "41 / 26 tok/s (including reasoning tokens); 16K PP 1,107 / 428; 64K PP 1,016 / 448",
     "en": {
       "context": "M3U can answer at 256K (first token 11 min); M5U 256GB runs out of RAM at 256K",
-      "hardware_cost_text": "M5 Ultra $9,499 (64C/256GB) / $10,799 (80C/256GB); M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
+      "hardware_cost_text": "M5 Ultra 256GB: $9,499 (30-core CPU/64-core GPU) / $10,799 (36-core CPU/80-core GPU); Apple US launch price, 2026-08, 1TB; test machine chip not stated, lower tier used; M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
       "source_note": "MacStories (Viticci) review"
     }
   },
@@ -5410,7 +5410,7 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M5 Ultra",
     "hardware_family": "Mac",
-    "hardware_cost_text": null,
+    "hardware_cost_text": "M5 Ultra 内存未注明；Apple 美国首发价，2026-08，1TB：$5,499（30C/64C · 96GB）/ $9,499（30C/64C · 256GB）/ $10,799（36C/80C · 256GB）；512GB 价格 Apple 尚未公布（截至 2026-10-16）",
     "hardware_cost_usd": null,
     "metric": "代码 125 tok/s，散文 87 tok/s",
     "tok_s": 87,
@@ -5435,7 +5435,8 @@
     "metric_en": "code 125 tok/s, prose 87 tok/s",
     "en": {
       "model": "GLM 5.3 (post's original wording \"GLM 5.3 Code\")",
-      "engine_note": "oMLX (author-tuned)"
+      "engine_note": "oMLX (author-tuned)",
+      "hardware_cost_text": "M5 Ultra memory not stated; Apple US launch price, 2026-08, 1TB: $5,499 (30C/64C · 96GB) / $9,499 (30C/64C · 256GB) / $10,799 (36C/80C · 256GB); 512GB price not yet published by Apple (as of 2026-10-16)"
     }
   },
   {
@@ -5446,7 +5447,7 @@
     "engine": "Unspecified",
     "hardware": "Mac Studio M5 Ultra",
     "hardware_family": "Mac",
-    "hardware_cost_text": null,
+    "hardware_cost_text": "M5 Ultra 内存未注明；Apple 美国首发价，2026-08，1TB：$5,499（30C/64C · 96GB）/ $9,499（30C/64C · 256GB）/ $10,799（36C/80C · 256GB）；512GB 价格 Apple 尚未公布（截至 2026-10-16）",
     "hardware_cost_usd": null,
     "metric": "单路 85.9 tok/s，长提示 prefill 6,085 tok/s",
     "tok_s": 85.9,
@@ -5469,7 +5470,8 @@
     "source_id": "src-8fd8ad1e0e",
     "metric_en": "single stream 85.9 tok/s, long-prompt prefill 6,085 tok/s",
     "en": {
-      "concurrency": "single stream"
+      "concurrency": "single stream",
+      "hardware_cost_text": "M5 Ultra memory not stated; Apple US launch price, 2026-08, 1TB: $5,499 (30C/64C · 96GB) / $9,499 (30C/64C · 256GB) / $10,799 (36C/80C · 256GB); 512GB price not yet published by Apple (as of 2026-10-16)"
     }
   },
   {
@@ -8445,7 +8447,7 @@
     "engine": "mlx-serve",
     "hardware": "Mac Studio M5 Ultra",
     "hardware_family": "Mac",
-    "hardware_cost_text": null,
+    "hardware_cost_text": "M5 Ultra 内存未注明；Apple 美国首发价，2026-08，1TB：$5,499（30C/64C · 96GB）/ $9,499（30C/64C · 256GB）/ $10,799（36C/80C · 256GB）；512GB 价格 Apple 尚未公布（截至 2026-10-16）",
     "hardware_cost_usd": null,
     "metric": "157.0 tok/s 生成；5411.0 tok/s 读入",
     "tok_s": 157.0,
@@ -8473,7 +8475,8 @@
       "quant": "iQ-MLX 4.7 bpw (calibrated 4-bit experts + 8-bit rest, ≈75 GB)",
       "concurrency": "Not stated",
       "engine_note": "mlx-serve 26.10.1 (MTP on)",
-      "source_note": "HF model card (self-reported); range 149 to 162; RAM not stated (card says a 128GB Mac can run it); original: decode 157 tok/s median (149 to 162) against 166 (141 to 173) for the uncalibrated pack, prefill 5411 against 5369 tok/s."
+      "source_note": "HF model card (self-reported); range 149 to 162; RAM not stated (card says a 128GB Mac can run it); original: decode 157 tok/s median (149 to 162) against 166 (141 to 173) for the uncalibrated pack, prefill 5411 against 5369 tok/s.",
+      "hardware_cost_text": "M5 Ultra memory not stated; Apple US launch price, 2026-08, 1TB: $5,499 (30C/64C · 96GB) / $9,499 (30C/64C · 256GB) / $10,799 (36C/80C · 256GB); 512GB price not yet published by Apple (as of 2026-10-16)"
     }
   },
   {
@@ -9919,7 +9922,7 @@
     "engine": "mlx-serve",
     "hardware": "Mac Studio M5 Ultra 256GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "$9,499（64C/256GB）/ $10,799（80C/256GB）",
+    "hardware_cost_text": "M5 Ultra 256GB：$9,499（30 核 CPU/64 核 GPU）/ $10,799（36 核 CPU/80 核 GPU）；Apple 美国首发价，2026-08，1TB；测试机芯片未注明，按较低档计",
     "hardware_cost_usd": 9499,
     "metric": "1k 上下文：生成 126 t/s，预填充 >4,500 t/s",
     "tok_s": 126,
@@ -9948,7 +9951,7 @@
     "engine_note": "mlx-serve 26.10.1 + MTP",
     "metric_en": "1k context: generation 126 t/s, prefill >4,500 t/s",
     "en": {
-      "hardware_cost_text": "$9,499 (64C/256GB) / $10,799 (80C/256GB)"
+      "hardware_cost_text": "M5 Ultra 256GB: $9,499 (30-core CPU/64-core GPU) / $10,799 (36-core CPU/80-core GPU); Apple US launch price, 2026-08, 1TB; test machine chip not stated, lower tier used"
     }
   },
   {
@@ -11760,8 +11763,8 @@
     "engine": "strata-mlx",
     "hardware": "Mac Studio M5 Ultra（内存未注明）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "M5 Ultra 96GB 起 $5,499；内存未注明",
-    "hardware_cost_usd": 5499,
+    "hardware_cost_text": "M5 Ultra 内存未注明；Apple 美国首发价，2026-08，1TB：$5,499（30C/64C · 96GB）/ $9,499（30C/64C · 256GB）/ $10,799（36C/80C · 256GB）；512GB 价格 Apple 尚未公布（截至 2026-10-16）",
+    "hardware_cost_usd": null,
     "metric": "PR 9/10 合并后：Q2_0 中文 86→110、代码 127→170、英文 127→156；IQ3_S 95→112 / 127→161 / 118→137 tok/s（256 token，三轮中位）；tok_s 取英文散文 Q2_0（不取代码 170）",
     "tok_s": 156,
     "concurrency": null,
@@ -11788,7 +11791,7 @@
     "en": {
       "quant": "Q2_0 (Strata GGUF) + draft head",
       "hardware": "Mac Studio M5 Ultra (RAM not stated)",
-      "hardware_cost_text": "M5 Ultra 96GB from $5,499; RAM not stated",
+      "hardware_cost_text": "M5 Ultra memory not stated; Apple US launch price, 2026-08, 1TB: $5,499 (30C/64C · 96GB) / $9,499 (30C/64C · 256GB) / $10,799 (36C/80C · 256GB); 512GB price not yet published by Apple (as of 2026-10-16)",
       "source_note": "@yibie (author of strata-mlx) self-tested on X; model and Strata GGUF per the same author's project intro post 2108830033083294193 (strata-mlx reads Strata's Qwen3.8-Flash-Next GGUF)"
     }
   },
@@ -12413,7 +12416,7 @@
     "engine": "MLX",
     "hardware": "2× Mac Studio M5 Ultra 512GB（pipeline）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
+    "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB；512GB 版价格 Apple 尚未公布（截至 2026-10-16，官方称 10 月下旬推出），多机无法合计",
     "hardware_cost_usd": null,
     "metric": "解码 15.74 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 15.74,
@@ -12427,7 +12430,7 @@
     "metric_en": "decode 15.74 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
       "hardware": "2× Mac Studio M5 Ultra 512GB (pipeline)",
-      "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
+      "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB; 512GB price not yet published by Apple (as of 2026-10-16; Apple says late October), so no multi-machine total",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -12447,7 +12450,7 @@
     "engine": "MLX",
     "hardware": "2× Mac Studio M5 Ultra 512GB（tensor）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
+    "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB；512GB 版价格 Apple 尚未公布（截至 2026-10-16，官方称 10 月下旬推出），多机无法合计",
     "hardware_cost_usd": null,
     "metric": "解码 24.99 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 24.99,
@@ -12461,7 +12464,7 @@
     "metric_en": "decode 24.99 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
       "hardware": "2× Mac Studio M5 Ultra 512GB (tensor)",
-      "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
+      "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB; 512GB price not yet published by Apple (as of 2026-10-16; Apple says late October), so no multi-machine total",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -12481,7 +12484,7 @@
     "engine": "MLX",
     "hardware": "4× Mac Studio M5 Ultra 512GB（tensor）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
+    "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB；512GB 版价格 Apple 尚未公布（截至 2026-10-16，官方称 10 月下旬推出），多机无法合计",
     "hardware_cost_usd": null,
     "metric": "解码 36.73 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 36.73,
@@ -12495,7 +12498,7 @@
     "metric_en": "decode 36.73 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
       "hardware": "4× Mac Studio M5 Ultra 512GB (tensor)",
-      "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
+      "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB; 512GB price not yet published by Apple (as of 2026-10-16; Apple says late October), so no multi-machine total",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -12547,7 +12550,7 @@
     "engine": "MLX",
     "hardware": "Mac Studio M5 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "512GB 版价格未公布（文章为 512GB 配置；256GB 起 $9,499 仅供参考）",
+    "hardware_cost_text": "512GB 版价格 Apple 尚未公布（截至 2026-10-16，官方称 10 月下旬推出）",
     "hardware_cost_usd": null,
     "metric": "解码 7.7 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 7.7,
@@ -12560,7 +12563,7 @@
     "date": "2026-10-15",
     "metric_en": "decode 7.7 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "512GB price not published (article uses 512GB; 256GB from $9,499 for ref only)",
+      "hardware_cost_text": "512GB price not yet published by Apple (as of 2026-10-16; Apple says late October)",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -12579,7 +12582,7 @@
     "engine": "MLX",
     "hardware": "2× Mac Studio M5 Ultra 512GB（tensor）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
+    "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB；512GB 版价格 Apple 尚未公布（截至 2026-10-16，官方称 10 月下旬推出），多机无法合计",
     "hardware_cost_usd": null,
     "metric": "解码 13.69 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 13.69,
@@ -12592,7 +12595,7 @@
     "date": "2026-10-15",
     "metric_en": "decode 13.69 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
+      "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB; 512GB price not yet published by Apple (as of 2026-10-16; Apple says late October), so no multi-machine total",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K",
       "hardware": "2× Mac Studio M5 Ultra 512GB (tensor)"
@@ -12613,7 +12616,7 @@
     "engine": "MLX",
     "hardware": "4× Mac Studio M5 Ultra 512GB（tensor）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
+    "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB；512GB 版价格 Apple 尚未公布（截至 2026-10-16，官方称 10 月下旬推出），多机无法合计",
     "hardware_cost_usd": null,
     "metric": "解码 23.37 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 23.37,
@@ -12626,7 +12629,7 @@
     "date": "2026-10-15",
     "metric_en": "decode 23.37 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
+      "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB; 512GB price not yet published by Apple (as of 2026-10-16; Apple says late October), so no multi-machine total",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K",
       "hardware": "4× Mac Studio M5 Ultra 512GB (tensor)"
@@ -12679,7 +12682,7 @@
     "engine": "MLX",
     "hardware": "Mac Studio M5 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "512GB 版价格未公布（文章为 512GB 配置；256GB 起 $9,499 仅供参考）",
+    "hardware_cost_text": "512GB 版价格 Apple 尚未公布（截至 2026-10-16，官方称 10 月下旬推出）",
     "hardware_cost_usd": null,
     "metric": "解码 19.69 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 19.69,
@@ -12692,7 +12695,7 @@
     "date": "2026-10-15",
     "metric_en": "decode 19.69 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "512GB price not published (article uses 512GB; 256GB from $9,499 for ref only)",
+      "hardware_cost_text": "512GB price not yet published by Apple (as of 2026-10-16; Apple says late October)",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -12711,7 +12714,7 @@
     "engine": "MLX",
     "hardware": "2× Mac Studio M5 Ultra 512GB（tensor）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
+    "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB；512GB 版价格 Apple 尚未公布（截至 2026-10-16，官方称 10 月下旬推出），多机无法合计",
     "hardware_cost_usd": null,
     "metric": "解码 33.27 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 33.27,
@@ -12724,7 +12727,7 @@
     "date": "2026-10-15",
     "metric_en": "decode 33.27 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
+      "hardware_cost_text": "2× Mac Studio M5 Ultra 512GB; 512GB price not yet published by Apple (as of 2026-10-16; Apple says late October), so no multi-machine total",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K",
       "hardware": "2× Mac Studio M5 Ultra 512GB (tensor)"
@@ -12745,7 +12748,7 @@
     "engine": "MLX",
     "hardware": "4× Mac Studio M5 Ultra 512GB（tensor）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB；单机 512GB 价未公布，多机未合计",
+    "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB；512GB 版价格 Apple 尚未公布（截至 2026-10-16，官方称 10 月下旬推出），多机无法合计",
     "hardware_cost_usd": null,
     "metric": "解码 50.89 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 50.89,
@@ -12758,7 +12761,7 @@
     "date": "2026-10-15",
     "metric_en": "decode 50.89 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB; single-machine 512GB price unpublished, multi-machine not totaled",
+      "hardware_cost_text": "4× Mac Studio M5 Ultra 512GB; 512GB price not yet published by Apple (as of 2026-10-16; Apple says late October), so no multi-machine total",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K",
       "hardware": "4× Mac Studio M5 Ultra 512GB (tensor)"
