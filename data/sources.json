@@ -163,24 +163,14 @@
       "tier": "C"
     },
     {
-      "name": "hnakamur2",
-      "platform": "X",
-      "url": "https://x.com/hnakamur2",
-      "followers": 1498,
-      "focus": "2× ThinkStation PGX（Spark OEM）",
-      "why": "日文复现 Mia recipe，含 TTFT",
-      "sample_post": "https://x.com/hnakamur2/status/2090784021630566613",
-      "tier": "C"
-    },
-    {
       "name": "llm_frontier_jp",
       "platform": "X",
       "url": "https://x.com/llm_frontier_jp",
-      "followers": 511,
-      "focus": "GPU/Mac 本地 LLM（日文）",
-      "why": "区分自测与引用的 Spark 对比整理",
-      "sample_post": "https://x.com/llm_frontier_jp/status/2108048696906825765",
-      "tier": "C"
+      "followers": 517,
+      "focus": "V100 / Intel Arc B570 / P100 / M5 Ultra 自测；Strata 公开实测汇总（日文）",
+      "why": "自测写明引擎版本、输入 32,768/输出 1,024 tokens、2 次取中位数；整理 30 款 ≤16GB GPU 共 82 例 Strata 公开实测并附出处",
+      "sample_post": "https://x.com/llm_frontier_jp/status/2110743174344044897",
+      "tier": "B"
     },
     {
       "name": "aartiles24",
@@ -290,6 +280,86 @@
       "focus": "双/多 Spark recipe、内存技巧",
       "why": "recipe 作者常在此发布完整设置",
       "sample_post": "https://forums.developer.nvidia.com/t/deepseek-v4-1-flash-for-2x-dgx-spark-exl3-3bpw-3m-kv-cache-c6-new-2gb-free-ram-unlock-for-all-gb10s/383583",
+      "tier": "B"
+    },
+    {
+      "name": "MiaAI-Lab",
+      "platform": "GitHub",
+      "url": "https://github.com/MiaAI-Lab",
+      "followers": null,
+      "focus": "Mia 的 recipe 仓库（每个配置一个 repo）+ sparkDash",
+      "why": "一手启动脚本和按流数基准表，比 X 帖子更完整，可按 owner 订阅 commits/releases",
+      "sample_post": "https://github.com/MiaAI-Lab/GLM-5.3-Flash-EXL3-2x-DGX-Sparks-TensorFold",
+      "tier": "A"
+    },
+    {
+      "name": "raullenchai/Rapid-MLX",
+      "platform": "GitHub",
+      "url": "https://github.com/raullenchai/Rapid-MLX",
+      "followers": null,
+      "focus": "Rapid-MLX README / docs/benchmarks（M3 Ultra、M4 Pro、M5 Max）",
+      "why": "写明 TTFT、prefill、decode、内存峰值和测法（3 次中位数、清缓存），但属项目方自测",
+      "sample_post": "https://github.com/raullenchai/Rapid-MLX/blob/main/docs/benchmarks/recent-large-models-m3-ultra.md",
+      "tier": "B"
+    },
+    {
+      "name": "Rapid-MLX Community Benchmark",
+      "platform": "Web",
+      "url": "https://rapidmlx.com/leaderboard",
+      "followers": null,
+      "focus": "Apple Silicon 社区提交的固定流程基准",
+      "why": "统一 workload、按机型汇总，适合定期抓取；单条需看提交者与版本",
+      "sample_post": "https://rapidmlx.com/leaderboard",
+      "tier": "B"
+    },
+    {
+      "name": "LocalScore",
+      "platform": "Web",
+      "url": "https://www.localscore.ai/",
+      "followers": null,
+      "focus": "跨硬件的本地 LLM 基准榜（prefill / 生成 / TTFT）",
+      "why": "统一测试流程、按 GPU/芯片汇总，可用来交叉核对单条 recipe",
+      "sample_post": "https://www.localscore.ai/",
+      "tier": "B"
+    },
+    {
+      "name": "Hao AI Lab blog",
+      "platform": "Web",
+      "url": "https://haoailab.com/blogs/",
+      "followers": null,
+      "focus": "视频/音频生成模型在消费级 GPU 上的加速（FastH3 等）",
+      "why": "实验室一手博客，给出硬件、步数和耗时；repo 已有 6 条",
+      "sample_post": "https://haoailab.com/blogs/fasth3-rtx/",
+      "tier": "A"
+    },
+    {
+      "name": "Apple Machine Learning Research",
+      "platform": "Web",
+      "url": "https://machinelearning.apple.com/research",
+      "followers": null,
+      "focus": "MLX 分布式推理、Apple Silicon 官方基准",
+      "why": "官方技术文章，写明机型与配置；repo 已有 11 条",
+      "sample_post": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+      "tier": "A"
+    },
+    {
+      "name": "MacStories",
+      "platform": "Web",
+      "url": "https://www.macstories.net/",
+      "followers": null,
+      "focus": "新 Mac 的本地 AI 评测（M5 Ultra Mac Studio 等）",
+      "why": "长篇评测，多引擎同机对比；repo 已有 5 条",
+      "sample_post": "https://www.macstories.net/stories/m5-ultra-mac-studio-review-the-dream-mac-for-local-ai-agents/",
+      "tier": "B"
+    },
+    {
+      "name": "demietrich.com",
+      "platform": "Web",
+      "url": "https://demietrich.com/blog/",
+      "followers": null,
+      "focus": "同机多引擎对比（Qwen3.8-Flash-Next）",
+      "why": "固定模型和硬件对比多个引擎，条件写得清楚；repo 已有 3 条",
+      "sample_post": "https://demietrich.com/blog/q3.8fn_engine_comparison/",
       "tier": "B"
     }
   ],

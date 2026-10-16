@@ -20,8 +20,7 @@ Generated from `data/sources.json` (2026-10-16). Tier A = 参数具体且可复�
 | B | [ivanfioravanti](https://x.com/ivanfioravanti) | X | 43734 | Apple MLX | MLX 生态大号，Mac 新机/新模型首测 | [link](https://x.com/ivanfioravanti) |
 | B | [CryptoBandit100](https://x.com/CryptoBandit100) | X | 633 | 3×DGX Spark + Mac Studio | 写清 KV 量化、MTP K、temp、引擎版本 | [link](https://x.com/CryptoBandit100/status/2106374669477761493) |
 | C | [Oluwaphilemon1](https://x.com/Oluwaphilemon1) | X | 9754 | Mac vs Spark 对比 | 多为整理/转述 WescheNex1q 等数据 | [link](https://x.com/Oluwaphilemon1/status/2091693026087182378) |
-| C | [hnakamur2](https://x.com/hnakamur2) | X | 1498 | 2× ThinkStation PGX（Spark OEM） | 日文复现 Mia recipe，含 TTFT | [link](https://x.com/hnakamur2/status/2090784021630566613) |
-| C | [llm_frontier_jp](https://x.com/llm_frontier_jp) | X | 511 | GPU/Mac 本地 LLM（日文） | 区分自测与引用的 Spark 对比整理 | [link](https://x.com/llm_frontier_jp/status/2108048696906825765) |
+| B | [llm_frontier_jp](https://x.com/llm_frontier_jp) | X | 517 | V100 / Intel Arc B570 / P100 / M5 Ultra 自测；Strata 公开实测汇总（日文） | 自测写明引擎版本、输入 32,768/输出 1,024 tokens、2 次取中位数；整理 30 款 ≤16GB GPU 共 82 例 Strata 公开实测并附出处 | [link](https://x.com/llm_frontier_jp/status/2110743174344044897) |
 | C | [aartiles24](https://x.com/aartiles24) | X | 6497 | MacBook M5 Pro | TensorFold vs mlx-serve vs oMLX 同机倍率 | [link](https://x.com/aartiles24/status/2104179801388884125) |
 | C | [Urthoo](https://x.com/Urthoo) | X | 924 | 2× DGX Spark | vLLM→TensorFold 前后对照（1/3 流、预填充） | [link](https://x.com/Urthoo/status/2106426248759005362) |
 | C | [redp314](https://x.com/redp314) | X | 2102 | MacBook M3 Max | 固定提示/温度的引擎对比板 | [link](https://x.com/redp314/status/2093588456396210479) |
