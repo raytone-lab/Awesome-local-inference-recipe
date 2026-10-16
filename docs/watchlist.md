@@ -1,6 +1,6 @@
 # Recipe sources to watch / 重点跟踪来源
 
-Generated from `data/sources.json` (2026-10-16). Tier A = 参数具体且可复现；B = 有具体数字但条件不全；C = 多为转述或覆盖面窄。
+Generated from `data/sources.json` (2026-10-16) by `scripts/gen_watchlist.py`. Tier A = 参数具体且可复现；B = 有具体数字但条件不全；C = 多为转述或覆盖面窄。
 
 | Tier | Name | Platform | Followers | Focus | Why | Sample |
 |---|---|---|---|---|---|---|
@@ -12,6 +12,7 @@ Generated from `data/sources.json` (2026-10-16). Tier A = 参数具体且可复�
 | A | [ashxhart](https://x.com/ashxhart) | X | 8414 | Mac Studio M3 Ultra、DGX Spark；oMLX PR、TensorFold 贡献者 | 给上下文长度、未缓存 PP 等条件，且向引擎提 PR | [link](https://x.com/ashxhart/status/2099219170546028647) |
 | A | [WescheNex1q](https://x.com/WescheNex1q) | X | 3141 | Mac Studio M4 Max vs DGX Spark | 受控对比：同 GGUF sha256、分项 prose/code/json、TTFT | [link](https://x.com/WescheNex1q/status/2103651224650207607) |
 | A | [niklaslenz_ai](https://x.com/niklaslenz_ai) | X | 870 | RTX 5090、2×5060 Ti、4×DGX Spark | 独立复现他人 recipe 并公布原始文件，30+ 组合矩阵 | [link](https://x.com/niklaslenz_ai/status/2105623763018453099) |
+| A | [Niko1221/Strata PRs（bench/results）](https://github.com/Niko1221/Strata/pulls) | GitHub | — | 社区基准 PR：README + results.json + 引擎日志 | 带原始数据，最适合核验 Strata 行 | [link](https://github.com/Niko1221/Strata/pull/2165) |
 | A | [MiaAI-Lab](https://github.com/MiaAI-Lab) | GitHub | — | Mia 的 recipe 仓库（每个配置一个 repo）+ sparkDash | 一手启动脚本和按并发流数的基准表（单流/多流、TTFT），比 X 帖子更完整，可按 owner 订阅 commits/releases | [link](https://github.com/MiaAI-Lab/GLM-5.3-Flash-EXL3-2x-DGX-Sparks-TensorFold) |
 | A | [Hao AI Lab blog](https://haoailab.com/blogs/) | Web | — | 视频/音频生成模型在消费级 GPU 上的加速（FastH3 等） | 实验室一手博客，给出硬件、步数和耗时 | [link](https://haoailab.com/blogs/fasth3-rtx/) |
 | A | [Apple Machine Learning Research](https://machinelearning.apple.com/research) | Web | — | MLX 分布式推理、Apple Silicon 官方基准 | 官方技术文章，写明机型与配置 | [link](https://machinelearning.apple.com/research/mlx-distributed-inference) |
@@ -23,6 +24,10 @@ Generated from `data/sources.json` (2026-10-16). Tier A = 参数具体且可复�
 | B | [ivanfioravanti](https://x.com/ivanfioravanti) | X | 43734 | Apple MLX | MLX 生态大号，Mac 新机/新模型首测 | [link](https://x.com/ivanfioravanti) |
 | B | [CryptoBandit100](https://x.com/CryptoBandit100) | X | 633 | 3×DGX Spark + Mac Studio | 写清 KV 量化、MTP K、temp、引擎版本 | [link](https://x.com/CryptoBandit100/status/2106374669477761493) |
 | B | [llm_frontier_jp](https://x.com/llm_frontier_jp) | X | 517 | V100 / Intel Arc B570 自测；Strata 公开实测汇总（日文） | 自测写明引擎版本、输入 32,768/输出 1,024 tokens、2 次取中位数；整理 30 款 ≤16GB GPU 共 82 例 Strata 公开实测并附出处 | [link](https://x.com/llm_frontier_jp/status/2110743174344044897) |
+| B | [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/) | Reddit | — | 多卡/单卡长上下文对比、引擎 A/B（Strata vs Infernix、vLLM vs llama.cpp） | 帖主常给完整表格（中位数、上下文、量化），可作独立复现来源 | [link](https://www.reddit.com/r/LocalLLaMA/comments/1x3wjzf/qwen38flashnext_on_six_3090s_with_vllm_7_users_at/) |
+| B | [r/LocalLLM](https://www.reddit.com/r/LocalLLM/) | Reddit | — | DGX Spark 多引擎 × 投机解码对比 | 有方法说明与更正记录 | [link](https://www.reddit.com/r/LocalLLM/comments/1vxs6en/benchmarks_qwen3827b_on_one_dgx_spark_across/) |
+| B | [ggml-org/llama.cpp Discussions](https://github.com/ggml-org/llama.cpp/discussions) | GitHub | — | llama.cpp 硬件实测、fork 与补丁说明 | 含配置、sha256、对照组 | [link](https://github.com/ggml-org/llama.cpp/discussions/30328) |
+| B | [NVIDIA Developer Forums · DGX Spark / GB10](https://forums.developer.nvidia.com/c/accelerated-computing/dgx-spark-gb10/) | Web | — | 双/多 Spark recipe、内存技巧 | recipe 作者常在此发布完整设置 | [link](https://forums.developer.nvidia.com/t/deepseek-v4-1-flash-for-2x-dgx-spark-exl3-3bpw-3m-kv-cache-c6-new-2gb-free-ram-unlock-for-all-gb10s/383583) |
 | B | [raullenchai/Rapid-MLX](https://github.com/raullenchai/Rapid-MLX) | GitHub | — | Rapid-MLX README / docs/benchmarks（M3 Ultra、M4 Pro、M5 Max） | 写明 TTFT、prefill、decode、内存峰值和测法（3 次中位数、清缓存），但属项目方自测 | [link](https://github.com/raullenchai/Rapid-MLX/blob/main/docs/benchmarks/recent-large-models-m3-ultra.md) |
 | B | [MacStories](https://www.macstories.net/) | Web | — | 新 Mac 的本地 AI 评测（M5 Ultra Mac Studio 等） | 长篇评测，多引擎同机对比 | [link](https://www.macstories.net/stories/m5-ultra-mac-studio-review-the-dream-mac-for-local-ai-agents/) |
 | B | [demietrich.com](https://demietrich.com/blog/) | Web | — | 同机多引擎对比（Qwen3.8-Flash-Next） | 固定模型和硬件对比多个引擎，条件写得清楚 | [link](https://demietrich.com/blog/q3.8fn_engine_comparison/) |
@@ -32,3 +37,4 @@ Generated from `data/sources.json` (2026-10-16). Tier A = 参数具体且可复�
 | C | [redp314](https://x.com/redp314) | X | 2102 | MacBook M3 Max | 固定提示/温度的引擎对比板 | [link](https://x.com/redp314/status/2093588456396210479) |
 | C | [iam_agg](https://x.com/iam_agg) | X | 2502 | Mac Studio M5 Ultra 256GB | M5 Ultra 多引擎早期数据 | [link](https://x.com/iam_agg/status/2104413091996008624) |
 | C | [AlicanKiraz0](https://x.com/AlicanKiraz0) | X | 39325 | 4× DGX Spark（土耳其语） | 多机 NVFP4 + DFlash2 配置 | [link](https://x.com/AlicanKiraz0/status/2093843767866405145) |
+| C | [vLLM / MLX / oMLX GitHub Discussions & issues](https://github.com/vllm-project/vllm/discussions) | GitHub | — | 引擎 issue 中的性能回报（另见 ml-explore/mlx-lm、oMLX 仓库 issues） | 矛盾数据和回归常先出现在 issue | [link](https://github.com/vllm-project/vllm/discussions) |

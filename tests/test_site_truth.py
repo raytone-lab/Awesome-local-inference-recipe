@@ -55,13 +55,10 @@ class UpdateXMetrics(unittest.TestCase):
         self.assertEqual(n, 1)
         self.assertEqual(recs[0]['x_post'], {'author': 'a', 'likes': 40, 'reposts': 3, 'as_of': '2026-10-16'})
         self.assertNotIn('as_of', recs[1]['x_post'])
-    def test_apply_users_and_watchlist(self):
+    def test_apply_users(self):
         src = {'updated': 'x', 'note': 'Follower counts from X API on 2026-10-14 for X accounts', 'sources': [{'url': 'https://x.com/Mia', 'followers': 1}, {'url': 'https://www.reddit.com/r/x/', 'followers': None}]}
         self.assertEqual(self.u.apply_users(src, [{'username': 'mia', 'public_metrics': {'followers_count': 77}}], '2026-10-16'), 1)
         self.assertEqual((src['sources'][0]['followers'], src['updated'], src['followers_as_of']), (77, '2026-10-16', '2026-10-16'))
         self.assertIn('2026-10-16', src['note'])
-        md = 'Generated from `data/sources.json` (2026-10-14). x\n| A | [Mia](https://x.com/Mia) | X | 1 | f |'
-        out = self.u.render_watchlist(md, src, '2026-10-16')
-        self.assertIn('(2026-10-16)', out); self.assertIn('| X | 77 |', out)
 
 if __name__ == '__main__': unittest.main()
