@@ -4,7 +4,7 @@
 import json, os, sys, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCED_PRICES_BY_HARDWARE = [
- (r"^RTX 5090", "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）", 5400),
+ (r"^RTX 5090", "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）", 5400),
  (r"^RTX 4090", "仅显卡 二手约 $2,214（2026-10-06 eBay 成交，见 prices.json）", 2214),
  (r"^RTX 3090 24GB$", "仅显卡 二手约 $1,206（2026-10-06 getpcparts，见 prices.json）", 1206),
  (r"^2× Tesla V100 32GB", "仅显卡 2×约 $650 = 约 $1,300（二手，见 prices.json）", 1300),

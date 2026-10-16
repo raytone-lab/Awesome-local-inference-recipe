@@ -85,7 +85,7 @@
     "engine": "Strata",
     "hardware": "RTX 5090（RAM 未注明）",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "160 tok/s（同卡 llama.cpp 15 tok/s）",
     "tok_s": 160.0,
@@ -110,7 +110,7 @@
     "engine": "Strata",
     "hardware": "RTX 5090（功耗限制）+ 96GB DDR5-6400",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "150–200 tok/s 解码；5–6K 读入",
     "tok_s": 150.0,
@@ -136,7 +136,7 @@
     "engine": "Strata",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "123.4 tok/s 实时；完整跑 115+",
     "tok_s": 123.4,
@@ -290,7 +290,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 4090 / RTX 5090 + 系统内存",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "≈$2,214（二手成交，2026-10-06） / $5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "≈$2,214（二手成交，2026-10-06） / $5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 2214,
     "metric": "4090: 25→最高 41；5090: 31→最高 68 tok/s",
     "tok_s": 68.0,
@@ -1026,7 +1026,7 @@
     "engine": "SGLang",
     "hardware": "RTX 5090 / 1× DGX Spark",
     "hardware_family": "DGX Spark",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11） / $6,950（128GB，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999） / $6,950（128GB，2026-10-11）",
     "hardware_cost_usd": 5400,
     "metric": "206 tok/s / 38 tok/s",
     "tok_s": null,
@@ -1051,7 +1051,7 @@
     "engine": "TensorFold",
     "hardware": "RTX 5090 vs 1× DGX Spark",
     "hardware_family": "DGX Spark",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11） / $6,950（128GB，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999） / $6,950（128GB，2026-10-11）",
     "hardware_cost_usd": 5400,
     "metric": "无草稿 75 vs 14.4；投机 215 vs 44 tok/s",
     "tok_s": null,
@@ -1452,7 +1452,7 @@
     "engine": "sparkinfer",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "512 tok/s（称比 llama.cpp 快 86%）",
     "tok_s": 512.0,
@@ -1478,7 +1478,7 @@
     "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "无草稿 275.5 → 312.4（最佳 318.3）",
     "tok_s": null,
@@ -2170,7 +2170,7 @@
     "engine": "Unspecified",
     "hardware": "单 RTX 5090 32GB + 126GB RAM + NVMe",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "冷 5.1 tok/s；缓存热后 21.4",
     "tok_s": 5.1,
@@ -2977,9 +2977,9 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/tinybluedev/status/2089910202606764530",
-    "source_note": "@tinybluedev",
-    "source_level": "实测",
-    "date": null,
+    "source_note": "@tinybluedev（单句帖：只写了 251 tok/s，没有量化、内存、上下文，也没有复现；2026-10-16 核实后降为宣称）",
+    "source_level": "宣称",
+    "date": "2026-08-19",
     "model_family": "Qwen",
     "tags": [
       "MoE",
@@ -3278,7 +3278,7 @@
     "engine": "Unspecified",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "5.93 s；NVFP4 6.7 s vs INT8 7.6 s vs BF16 15.6 s（1024²）",
     "tok_s": null,
@@ -3306,7 +3306,7 @@
     "engine": "TensorFold",
     "hardware": "RTX 5090 @450W",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "4.53 s / 6.94 s / 13.87 s（1024²，25 步；NVFP4 峰值 22.9GB；图像与 Q6 不完全一致）",
     "tok_s": null,
@@ -3333,7 +3333,7 @@
     "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "13.5 s → 1.9 s / 张（厂商宣称）",
     "tok_s": null,
@@ -3357,7 +3357,7 @@
     "engine": "Unspecified",
     "hardware": "RTX 5090 @455W vs CMP 170HX",
     "hardware_family": "二手数据中心卡",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11） / ≈$3,195/张（解锁64GB，2026-10-13）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999） / ≈$3,195/张（解锁64GB，2026-10-13）",
     "hardware_cost_usd": null,
     "metric": "5.2 s vs 9.1 s / 张（中位）；能耗 0.58 vs 0.53 Wh/张",
     "tok_s": null,
@@ -3484,7 +3484,7 @@
     "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "29 s vs 108 s / 张（2048²）",
     "tok_s": null,
@@ -3613,7 +3613,7 @@
     "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "Z-Image 快约 2×（无绝对时间）；质量 Qwen 9:6 胜",
     "tok_s": null,
@@ -3639,7 +3639,7 @@
     "engine": "Unspecified",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "832×480×5s：14.8 s；1344×768×5s：38.6 s（含音频，端到端）",
     "tok_s": null,
@@ -3666,7 +3666,7 @@
     "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "480p 5s：13.4 s；768p：35.4 s",
     "tok_s": null,
@@ -3798,7 +3798,7 @@
     "engine": "ComfyUI",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "1280×736×5s：242 s → 168 s",
     "tok_s": null,
@@ -3821,7 +3821,7 @@
     "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "15 s 片段：11 分 55 秒 vs 2 分 6 秒",
     "tok_s": null,
@@ -3992,7 +3992,7 @@
     "engine": "ComfyUI",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "10 s 约 90 s（较弱 GPU 约 6×）",
     "tok_s": null,
@@ -4039,7 +4039,7 @@
     "engine": "Unspecified",
     "hardware": "RTX 5090（500W）",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "720p/10 s：61.11 s；1080p/10 s：189.90 s",
     "tok_s": null,
@@ -4157,7 +4157,7 @@
     "engine": "Unspecified",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "720p：4,769 s → 18 s（项目宣称 265×）",
     "tok_s": null,
@@ -4198,7 +4198,8 @@
     "x_post": {
       "author": "no_stp_on_snek",
       "likes": 73,
-      "reposts": 7
+      "reposts": 7,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -4228,7 +4229,8 @@
     "x_post": {
       "author": "no_stp_on_snek",
       "likes": 73,
-      "reposts": 7
+      "reposts": 7,
+      "as_of": "2026-10-16"
     },
     "engine_raw": "halogen 0.17.2",
     "engine_note": "halogen 0.17.2",
@@ -4259,8 +4261,9 @@
     "date": "2026-09-30",
     "x_post": {
       "author": "jurlycat",
-      "likes": 46,
-      "reposts": 2
+      "likes": 45,
+      "reposts": 1,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -4291,7 +4294,8 @@
     "x_post": {
       "author": "geldeki",
       "likes": 45,
-      "reposts": 2
+      "reposts": 2,
+      "as_of": "2026-10-16"
     },
     "engine_raw": "Strata v0.1.42",
     "engine_note": "Strata v0.1.42",
@@ -4325,7 +4329,8 @@
     "x_post": {
       "author": "BrianMRey",
       "likes": 5,
-      "reposts": 1
+      "reposts": 1,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -4343,7 +4348,7 @@
     "engine": "Strata",
     "hardware": "RTX 5090 + 256GB RAM",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "176 tok/s 解码；64K 时 162；5,247 tok/s prefill",
     "tok_s": 176,
@@ -4357,7 +4362,8 @@
     "x_post": {
       "author": "TechPractice1",
       "likes": 2,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "engine_raw": "Strata v0.1.27",
     "engine_note": "Strata v0.1.27",
@@ -4390,7 +4396,8 @@
     "x_post": {
       "author": "rewin123",
       "likes": 1,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -4421,7 +4428,8 @@
     "x_post": {
       "author": "sami3dat",
       "likes": 1,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "engine_raw": "Strata 0.1.39",
     "engine_note": "Strata 0.1.39",
@@ -4454,7 +4462,8 @@
     "x_post": {
       "author": "TechPractice1",
       "likes": 1,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "engine_raw": "Strata（PR #262）",
     "engine_note": "Strata（PR #262）",
@@ -4486,7 +4495,8 @@
     "x_post": {
       "author": "JamesMcPherson",
       "likes": 106,
-      "reposts": 5
+      "reposts": 5,
+      "as_of": "2026-10-16"
     },
     "engine_raw": "oMLX（作者调优）",
     "engine_note": "oMLX（作者调优）",
@@ -4516,7 +4526,8 @@
     "x_post": {
       "author": "wei_wang",
       "likes": 33,
-      "reposts": 1
+      "reposts": 1,
+      "as_of": "2026-10-16"
     },
     "engine_raw": "其他/未注明",
     "model_family": "Qwen",
@@ -4545,7 +4556,8 @@
     "x_post": {
       "author": "easthambuilds",
       "likes": 0,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "engine_raw": "TensorFold 0.5.0 + DFlash2 草稿",
     "engine_note": "TensorFold 0.5.0 + DFlash2 草稿",
@@ -4578,7 +4590,8 @@
     "x_post": {
       "author": "HandwerkAiLab",
       "likes": 0,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -4609,8 +4622,9 @@
     "date": "2026-10-03",
     "x_post": {
       "author": "jayleaton",
-      "likes": 10,
-      "reposts": 0
+      "likes": 12,
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "metric_en": "1344×768 5s with audio: 81 s (stock ComfyUI, 20 steps: 623 s)",
     "engine_raw": "TensorFold（ComfyUI 换 loader）",
@@ -4627,7 +4641,7 @@
     "engine": "LightX2V",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "768×1344 15s 视频+音频 ≈72 s（稳态，不含 MP4 导出；基线 ~26 分钟）",
     "tok_s": null,
@@ -4641,7 +4655,8 @@
     "x_post": {
       "author": "LightX2V",
       "likes": 8,
-      "reposts": 2
+      "reposts": 2,
+      "as_of": "2026-10-16"
     },
     "metric_en": "768×1344 15s video + audio ≈72 s (steady state, excl. MP4 export; baseline ~26 min)",
     "model_family": "MiniMax H3",
@@ -4670,7 +4685,8 @@
     "x_post": {
       "author": "EndFolding79421",
       "likes": 149,
-      "reposts": 16
+      "reposts": 16,
+      "as_of": "2026-10-16"
     },
     "metric_en": "Three 5s chained clips: 17 min total",
     "model_family": "MiniMax H3",
@@ -4685,7 +4701,7 @@
     "engine": "llama.cpp (PrismML fork)",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "129.9 tok/s 生成；3893 tok/s 读入",
     "tok_s": 129.9,
@@ -4716,7 +4732,7 @@
     "engine": "llama.cpp (PrismML fork)",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "120.5 tok/s 生成；1805 tok/s 读入",
     "tok_s": 120.5,
@@ -5179,7 +5195,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "148.3 tok/s 生成",
     "tok_s": 148.3,
@@ -5211,7 +5227,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "111.9 tok/s 生成",
     "tok_s": 111.9,
@@ -6056,7 +6072,7 @@
     "engine": "SGLang",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "283 tok/s 生成",
     "tok_s": 283,
@@ -6541,7 +6557,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "119.0 tok/s 生成",
     "tok_s": 119.0,
@@ -6570,7 +6586,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "111.0 tok/s 生成",
     "tok_s": 111.0,
@@ -6600,7 +6616,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "108.0 tok/s 生成",
     "tok_s": 108.0,
@@ -6629,7 +6645,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "104.0 tok/s 生成",
     "tok_s": 104.0,
@@ -6658,7 +6674,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "94.0 tok/s 生成",
     "tok_s": 94.0,
@@ -6688,7 +6704,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "176.0 tok/s 生成",
     "tok_s": 176.0,
@@ -6718,7 +6734,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "167.0 tok/s 生成",
     "tok_s": 167.0,
@@ -6748,7 +6764,7 @@
     "engine": "Strata",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "140.0 tok/s 生成；4883.0 tok/s 读入",
     "tok_s": 140.0,
@@ -6777,7 +6793,7 @@
     "engine": "llama.cpp (agentionai fork)",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "113.0 tok/s 生成；3000.0 tok/s 读入",
     "tok_s": 113.0,
@@ -7055,19 +7071,20 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
     "hardware_cost_usd": 13900,
-    "metric": "1 流 60.4 tok/s（prose）；4 流合计 108.8；32k 预填充 1,978.9 tok/s",
+    "metric": "1 流 60.4 tok/s（mia-ai.net；帖文只写约 60）；4 流合计 108.8；32k 预填充 1,978.9 tok/s（mia-ai.net）",
     "tok_s": 60.4,
     "concurrency": null,
     "context": "1M（4 路共享约 2.7–2.9M KV 池）",
     "launch_command": null,
     "source_url": "https://x.com/MiaAI_lab/status/2105598458547646875",
-    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取）",
+    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取；单流 tok/s 取自 mia-ai.net，帖文中没有这个精确值）",
     "source_level": "实测",
     "date": "2026-10-01",
     "x_post": {
       "author": "MiaAI_lab",
-      "likes": 683,
-      "reposts": 90
+      "likes": 684,
+      "reposts": 91,
+      "as_of": "2026-10-16"
     },
     "model_family": "GLM",
     "tags": [
@@ -7089,7 +7106,8 @@
     "measured_by": "MiaAI_lab",
     "source_id": "src-3950f578b9",
     "engine_raw": "TensorFold + DFlash2",
-    "engine_note": "TensorFold + DFlash2"
+    "engine_note": "TensorFold + DFlash2",
+    "metric_en": "1 stream 60.4 tok/s (mia-ai.net; the post says about 60); 4 streams 108.8 total; 32k prefill 1,978.9 tok/s (mia-ai.net)"
   },
   {
     "id": "x-018",
@@ -7112,8 +7130,9 @@
     "date": "2026-10-10",
     "x_post": {
       "author": "MiaAI_lab",
-      "likes": 275,
-      "reposts": 17
+      "likes": 273,
+      "reposts": 17,
+      "as_of": "2026-10-16"
     },
     "model_family": "GLM",
     "tags": [
@@ -7157,7 +7176,8 @@
     "x_post": {
       "author": "MiaAI_lab",
       "likes": 386,
-      "reposts": 39
+      "reposts": 39,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7191,19 +7211,20 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "$6,950（128GB，2026-10-11）",
     "hardware_cost_usd": 6950,
-    "metric": "1 流 48.7 tok/s（mia-ai.net）；8 流 117 prose / 180 code（帖文）；峰值内存 91 GiB",
+    "metric": "1 流 48.7 tok/s（mia-ai.net，帖文未写单流）；8 流 117 prose / 180 code（帖文）；峰值内存 91 GiB",
     "tok_s": 48.7,
     "concurrency": null,
     "context": "262K（YaRN 512K）",
     "launch_command": null,
     "source_url": "https://x.com/MiaAI_lab/status/2101339268203380857",
-    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取）",
+    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取；单流 tok/s 取自 mia-ai.net，帖文中没有这个精确值）",
     "source_level": "实测",
     "date": "2026-09-19",
     "x_post": {
       "author": "MiaAI_lab",
       "likes": 800,
-      "reposts": 56
+      "reposts": 56,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7221,7 +7242,8 @@
       }
     ],
     "measured_by": "MiaAI_lab",
-    "source_id": "src-2c6ee16025"
+    "source_id": "src-2c6ee16025",
+    "metric_en": "1 stream 48.7 tok/s (mia-ai.net, not in the post); 8 streams 117 prose / 180 code (post); peak memory 91 GiB"
   },
   {
     "id": "x-021",
@@ -7233,19 +7255,20 @@
     "hardware_family": "DGX Spark",
     "hardware_cost_text": "≈$13,900（2×$6,950，计算值）",
     "hardware_cost_usd": 13900,
-    "metric": "1 流 54.4 tok/s；8 流 207；32k 预填充 2,962 tok/s（mia-ai.net）",
+    "metric": "1 流 54.4 tok/s、8 流 207、32k 预填充 2,962 tok/s（均为 mia-ai.net；帖文写约 50 单流 / 约 212 8 流）",
     "tok_s": 54.4,
     "concurrency": null,
     "context": "1M（2.5M bf16 KV）",
     "launch_command": null,
     "source_url": "https://x.com/MiaAI_lab/status/2094338533909475486",
-    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取）",
+    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取；单流 tok/s 取自 mia-ai.net，帖文中没有这个精确值）",
     "source_level": "实测",
     "date": "2026-08-31",
     "x_post": {
       "author": "MiaAI_lab",
       "likes": 290,
-      "reposts": 22
+      "reposts": 22,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7264,7 +7287,8 @@
       }
     ],
     "measured_by": "MiaAI_lab",
-    "source_id": "src-125252fa01"
+    "source_id": "src-125252fa01",
+    "metric_en": "1 stream 54.4 tok/s, 8 streams 207, 32k prefill 2,962 tok/s (all mia-ai.net; the post says about 50 single-stream / about 212 at 8 streams)"
   },
   {
     "id": "x-022",
@@ -7287,8 +7311,9 @@
     "date": "2026-07-31",
     "x_post": {
       "author": "MiaAI_lab",
-      "likes": 368,
-      "reposts": 22
+      "likes": 367,
+      "reposts": 22,
+      "as_of": "2026-10-16"
     },
     "model_family": "DeepSeek",
     "tags": [
@@ -7330,7 +7355,8 @@
     "x_post": {
       "author": "MiaAI_lab",
       "likes": 311,
-      "reposts": 32
+      "reposts": 32,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7361,7 +7387,7 @@
     "engine": "vLLM",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪报价，见 prices.json）",
+    "hardware_cost_text": "仅显卡 $5,400 起（2026-10-11 最低追踪街价，MSRP $1,999，见 prices.json）",
     "hardware_cost_usd": 5400,
     "metric": "147 tok/s 解码（mia-ai.net 列约 160）",
     "tok_s": 147,
@@ -7375,7 +7401,8 @@
     "x_post": {
       "author": "MiaAI_lab",
       "likes": 381,
-      "reposts": 10
+      "reposts": 10,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7405,13 +7432,14 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://x.com/MiaAI_lab/status/2090327658508763516",
-    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取）",
+    "source_note": "@MiaAI_lab 帖文 + mia-ai.net/models（10/14 抓取；300 取自帖文，mia-ai.net 列 240+）",
     "source_level": "实测",
     "date": "2026-08-20",
     "x_post": {
       "author": "MiaAI_lab",
       "likes": 239,
-      "reposts": 14
+      "reposts": 14,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7422,7 +7450,8 @@
     "measured_by": "MiaAI_lab",
     "source_id": "src-671103a20a",
     "engine_raw": "SGLang + DFlash2（据 mia-ai.net）",
-    "engine_note": "SGLang + DFlash2（据 mia-ai.net）"
+    "engine_note": "SGLang + DFlash2（据 mia-ai.net）",
+    "metric_en": "about 300 tok/s (post); mia-ai.net lists 240+ at 8 requests"
   },
   {
     "id": "x-026",
@@ -7446,7 +7475,8 @@
     "x_post": {
       "author": "MiaAI_lab",
       "likes": 189,
-      "reposts": 11
+      "reposts": 11,
+      "as_of": "2026-10-16"
     },
     "model_family": "Other",
     "tags": [
@@ -7484,7 +7514,8 @@
     "x_post": {
       "author": "ashxhart",
       "likes": 77,
-      "reposts": 2
+      "reposts": 2,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7533,7 +7564,8 @@
     "x_post": {
       "author": "0xSero",
       "likes": 2470,
-      "reposts": 112
+      "reposts": 112,
+      "as_of": "2026-10-16"
     },
     "model_family": "DeepSeek",
     "tags": [
@@ -7565,7 +7597,8 @@
     "x_post": {
       "author": "0xSero",
       "likes": 686,
-      "reposts": 31
+      "reposts": 31,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7597,7 +7630,8 @@
     "x_post": {
       "author": "0xSero",
       "likes": 686,
-      "reposts": 31
+      "reposts": 31,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7629,7 +7663,8 @@
     "x_post": {
       "author": "sudoingX",
       "likes": 180,
-      "reposts": 8
+      "reposts": 8,
+      "as_of": "2026-10-16"
     },
     "model_family": "Bonsai",
     "tags": [
@@ -7664,7 +7699,8 @@
     "x_post": {
       "author": "ashxhart",
       "likes": 131,
-      "reposts": 12
+      "reposts": 12,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7699,7 +7735,8 @@
     "x_post": {
       "author": "WescheNex1q",
       "likes": 48,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7734,7 +7771,8 @@
     "x_post": {
       "author": "WescheNex1q",
       "likes": 16,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7768,7 +7806,8 @@
     "x_post": {
       "author": "WescheNex1q",
       "likes": 16,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7802,7 +7841,8 @@
     "x_post": {
       "author": "WescheNex1q",
       "likes": 70,
-      "reposts": 1
+      "reposts": 1,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7846,7 +7886,8 @@
     "x_post": {
       "author": "WescheNex1q",
       "likes": 70,
-      "reposts": 1
+      "reposts": 1,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7881,7 +7922,8 @@
     "x_post": {
       "author": "TeksEdge",
       "likes": 215,
-      "reposts": 20
+      "reposts": 20,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -7915,7 +7957,8 @@
     "x_post": {
       "author": "JASONMCNAB",
       "likes": 63,
-      "reposts": 5
+      "reposts": 5,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [],
@@ -7962,7 +8005,8 @@
     "x_post": {
       "author": "JASONMCNAB",
       "likes": 3,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8011,7 +8055,8 @@
     "x_post": {
       "author": "JASONMCNAB",
       "likes": 27,
-      "reposts": 3
+      "reposts": 3,
+      "as_of": "2026-10-16"
     },
     "model_family": "GLM",
     "tags": [
@@ -8052,7 +8097,8 @@
     "x_post": {
       "author": "Urthoo",
       "likes": 0,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "DeepSeek",
     "tags": [
@@ -8094,7 +8140,8 @@
     "x_post": {
       "author": "hnakamur2",
       "likes": 12,
-      "reposts": 3
+      "reposts": 3,
+      "as_of": "2026-10-16"
     },
     "model_family": "DeepSeek",
     "tags": [],
@@ -8133,7 +8180,8 @@
     "x_post": {
       "author": "CryptoBandit100",
       "likes": 1,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8166,7 +8214,8 @@
     "x_post": {
       "author": "CryptoBandit100",
       "likes": 1,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8202,7 +8251,8 @@
     "x_post": {
       "author": "niklaslenz_ai",
       "likes": 15,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [],
@@ -8242,8 +8292,9 @@
     "date": "2026-09-27",
     "x_post": {
       "author": "aartiles24",
-      "likes": 12,
-      "reposts": 0
+      "likes": 9,
+      "reposts": 1,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8278,7 +8329,8 @@
     "x_post": {
       "author": "_Holistech_",
       "likes": 0,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8309,7 +8361,8 @@
     "x_post": {
       "author": "LocalSilicon",
       "likes": 1,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8330,7 +8383,7 @@
     "engine": "Strata",
     "hardware": "RTX 5090 32GB + 系统内存（部分卸载）",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "Strata+MTP 204 tok/s（无 MTP 122）；写同一城市页 28.8 s；prefill 中位 4K ~3,790 / 32K ~5,230 tok/s；15 项质量检查全过，27 次重复仅 1 次文本一致（tok_s 为单一写作任务速度，帖子未分散文/代码）",
     "tok_s": 204,
@@ -8343,8 +8396,9 @@
     "date": "2026-10-14",
     "x_post": {
       "author": "niklaslenz_ai",
-      "likes": 469,
-      "reposts": 36
+      "likes": 487,
+      "reposts": 37,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8367,7 +8421,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB + 系统内存（部分卸载）",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "68 tok/s（无草稿模型）；同提示 104.2 s；prefill 中位 4K ~1,270 / 32K ~1,355 tok/s；27 次重复 27 次一致（同 x-050 任务）",
     "tok_s": 68,
@@ -8380,8 +8434,9 @@
     "date": "2026-10-14",
     "x_post": {
       "author": "niklaslenz_ai",
-      "likes": 469,
-      "reposts": 36
+      "likes": 487,
+      "reposts": 37,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8399,7 +8454,7 @@
     "engine": "TensorFold",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "代码 370 | 散文 174 | 结构化 634 tok/s；32K 提示首 token 12.4 s；5 提示×3 轮交错，450 W / 2200 MHz 上限；各用自家 4-bit 格式与草稿（比较的是 recipe 不是量化）",
     "tok_s": 174,
@@ -8413,7 +8468,8 @@
     "x_post": {
       "author": "niklaslenz_ai",
       "likes": 58,
-      "reposts": 3
+      "reposts": 3,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8434,7 +8490,7 @@
     "engine": "ExLlama",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "代码 258 | 散文 114 | 结构化 366 tok/s；32K 提示首 token 10.4 s；5 提示×3 轮交错，450 W / 2200 MHz 上限；各用自家 4-bit 格式与草稿（比较的是 recipe 不是量化）",
     "tok_s": 114,
@@ -8448,7 +8504,8 @@
     "x_post": {
       "author": "niklaslenz_ai",
       "likes": 58,
-      "reposts": 3
+      "reposts": 3,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8469,7 +8526,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "代码 186 | 散文 116 | 结构化 200 tok/s；32K 提示首 token 12.5 s；5 提示×3 轮交错，450 W / 2200 MHz 上限；各用自家 4-bit 格式与草稿（比较的是 recipe 不是量化）",
     "tok_s": 116,
@@ -8483,7 +8540,8 @@
     "x_post": {
       "author": "niklaslenz_ai",
       "likes": 58,
-      "reposts": 3
+      "reposts": 3,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8519,7 +8577,8 @@
     "x_post": {
       "author": "niklaslenz_ai",
       "likes": 11,
-      "reposts": 1
+      "reposts": 1,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8555,7 +8614,8 @@
     "x_post": {
       "author": "niklaslenz_ai",
       "likes": 11,
-      "reposts": 1
+      "reposts": 1,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8575,7 +8635,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 5090 32GB",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "351.5 tok/s；数学题 1.98 s；GSM8K 97%，MMLU 80%；同 GGUF 同 llama.cpp build；写作速度 5 次中位",
     "tok_s": 351.5,
@@ -8588,8 +8648,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "niklaslenz_ai",
-      "likes": 11,
-      "reposts": 0
+      "likes": 38,
+      "reposts": 1,
+      "as_of": "2026-10-16"
     },
     "model_family": "Other",
     "tags": [
@@ -8620,8 +8681,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "niklaslenz_ai",
-      "likes": 11,
-      "reposts": 0
+      "likes": 38,
+      "reposts": 1,
+      "as_of": "2026-10-16"
     },
     "model_family": "Other",
     "tags": [
@@ -8653,7 +8715,8 @@
     "x_post": {
       "author": "sudoingX",
       "likes": 136,
-      "reposts": 5
+      "reposts": 5,
+      "as_of": "2026-10-16"
     },
     "model_family": "DeepSeek",
     "tags": [
@@ -8688,8 +8751,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "yume_arasaki",
-      "likes": 34,
-      "reposts": 4
+      "likes": 39,
+      "reposts": 4,
+      "as_of": "2026-10-16"
     },
     "model_family": "DeepSeek",
     "tags": [
@@ -8725,7 +8789,8 @@
     "x_post": {
       "author": "yume_arasaki",
       "likes": 13,
-      "reposts": 1
+      "reposts": 1,
+      "as_of": "2026-10-16"
     },
     "model_family": "GLM",
     "tags": [
@@ -8758,8 +8823,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "sudoingX",
-      "likes": 141,
-      "reposts": 6
+      "likes": 741,
+      "reposts": 61,
+      "as_of": "2026-10-16"
     },
     "model_family": "Bonsai",
     "tags": [
@@ -8794,8 +8860,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "sudoingX",
-      "likes": 34,
-      "reposts": 1
+      "likes": 47,
+      "reposts": 1,
+      "as_of": "2026-10-16"
     },
     "model_family": "Other",
     "tags": [
@@ -8827,8 +8894,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "sudoingX",
-      "likes": 34,
-      "reposts": 1
+      "likes": 47,
+      "reposts": 1,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8859,8 +8927,9 @@
     "date": "2026-10-14",
     "x_post": {
       "author": "0xSero",
-      "likes": 127,
-      "reposts": 4
+      "likes": 128,
+      "reposts": 4,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8891,8 +8960,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "0xSero",
-      "likes": 109,
-      "reposts": 2
+      "likes": 269,
+      "reposts": 7,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -8925,7 +8995,8 @@
     "x_post": {
       "author": "CryptoBandit100",
       "likes": 0,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "GLM",
     "tags": [
@@ -8961,8 +9032,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "0xBakeer",
-      "likes": 25,
-      "reposts": 2
+      "likes": 29,
+      "reposts": 2,
+      "as_of": "2026-10-16"
     },
     "model_family": "Other",
     "tags": [
@@ -8994,7 +9066,8 @@
     "x_post": {
       "author": "DevOpsConsults",
       "likes": 2,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Other",
     "tags": [
@@ -9024,8 +9097,9 @@
     "date": "2026-10-14",
     "x_post": {
       "author": "TeksEdge",
-      "likes": 154,
-      "reposts": 10
+      "likes": 156,
+      "reposts": 10,
+      "as_of": "2026-10-16"
     },
     "model_family": "Other",
     "tags": [
@@ -9056,8 +9130,9 @@
     "date": "2026-10-14",
     "x_post": {
       "author": "TeksEdge",
-      "likes": 154,
-      "reposts": 10
+      "likes": 156,
+      "reposts": 10,
+      "as_of": "2026-10-16"
     },
     "model_family": "Other",
     "tags": [
@@ -9089,7 +9164,8 @@
     "x_post": {
       "author": "TeksEdge",
       "likes": 31,
-      "reposts": 4
+      "reposts": 4,
+      "as_of": "2026-10-16"
     },
     "model_family": "Other",
     "tags": [
@@ -9124,8 +9200,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "sudoingX",
-      "likes": 0,
-      "reposts": 0
+      "likes": 1,
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Other",
     "tags": [
@@ -9160,7 +9237,8 @@
     "x_post": {
       "author": "TeksEdge",
       "likes": 12,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Gemma",
     "tags": [
@@ -9192,7 +9270,8 @@
     "x_post": {
       "author": "TeksEdge",
       "likes": 12,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Gemma",
     "tags": [
@@ -9240,7 +9319,7 @@
     "engine": "Strata",
     "hardware": "RTX 5090 32GB（限 450W）+ Ryzen 7 9800X3D + 60.5GB DDR5",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "bench.sh --long 中位：聊天解码 202.1 / agent 解码 223.8 tok/s；prefill 4K/16K/32K = 4,473 / 6,656 / 6,827 tok/s",
     "tok_s": 202.1,
@@ -9299,7 +9378,7 @@
     "engine": "Strata",
     "hardware": "RTX 5090 32GB + 189.6GB RAM + 9950X（Windows）",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "262K：解码 120.6 / 冷 prefill 1,550；512K（YaRN 2）：126.3 / 3,045 tok/s（3 次中位）",
     "tok_s": 120.6,
@@ -9329,7 +9408,7 @@
     "engine": "Infernix",
     "hardware": "RTX 5090 32GB + 189.6GB RAM + 9950X（Windows）",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "262K：解码 149.0 / 冷 prefill 3,548；512K（YaRN 2）：137.0 / 3,497 tok/s（3 次中位）",
     "tok_s": 149.0,
@@ -9655,7 +9734,8 @@
     "x_post": {
       "author": "GreenBitAI",
       "likes": 0,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -9674,7 +9754,7 @@
     "engine": "llama.cpp",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "短上下文解码 ~208 tok/s；258K：解码 127、prefill 3.6K tok/s、TTFT 72 s（新鲜提示，3 次中位）；DSpark 草稿在 llama.cpp 上各长度都更慢",
     "tok_s": 208,
@@ -9687,8 +9767,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "Blackwellboy",
-      "likes": 0,
-      "reposts": 0
+      "likes": 3,
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Other",
     "tags": [
@@ -9709,7 +9790,7 @@
     "engine": "vLLM",
     "hardware": "RTX 5090",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "短上下文解码 ~143 tok/s；258K：解码 112、prefill 5.9K tok/s、TTFT 43 s；DSpark 草稿 4K 时 224 tok/s，约 16K 起反而更慢，192K 仅 8 tok/s（新鲜提示，3 次中位；装草稿后单张 5090 只放得下 192K）",
     "tok_s": 143,
@@ -9722,8 +9803,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "Blackwellboy",
-      "likes": 0,
-      "reposts": 0
+      "likes": 3,
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Other",
     "tags": [
@@ -9757,7 +9839,8 @@
     "x_post": {
       "author": "coffeecup2020",
       "likes": 2,
-      "reposts": 0
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -9790,8 +9873,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "coffeecup2020",
-      "likes": 0,
-      "reposts": 0
+      "likes": 1,
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -9823,8 +9907,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "Oluwaphilemon1",
-      "likes": 7,
-      "reposts": 2
+      "likes": 9,
+      "reposts": 2,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -9858,8 +9943,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "yibie",
-      "likes": 19,
-      "reposts": 0
+      "likes": 25,
+      "reposts": 0,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -9890,8 +9976,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "yuanhao",
-      "likes": 12,
-      "reposts": 0
+      "likes": 29,
+      "reposts": 3,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [],
@@ -9919,8 +10006,9 @@
     "date": "2026-10-15",
     "x_post": {
       "author": "0xBakeer",
-      "likes": 17,
-      "reposts": 3
+      "likes": 22,
+      "reposts": 5,
+      "as_of": "2026-10-16"
     },
     "model_family": "Qwen",
     "tags": [
@@ -10242,7 +10330,7 @@
     "engine": "Strata",
     "hardware": "RTX 5090 + 64GB RAM",
     "hardware_family": "NVIDIA 消费级",
-    "hardware_cost_text": "$5,400–6,995（新卡，2026-10-11）",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
     "hardware_cost_usd": 5400,
     "metric": "Strata 0.1.43.1：--resident-budget 解码 151 tok/s vs --resident-experts 139（后者 prefill 快 1.6×）",
     "tok_s": 151,
