@@ -6,9 +6,10 @@ Offline: python3 scripts/update_x_metrics.py --posts posts.json --users users.js
 (--posts / --users take saved X API v2 responses with public_metrics.)
 Then re-run gen_readme.py, gen_recipe_pages.py and gen_site.py."""
 import argparse, datetime, json, os, re, urllib.parse, urllib.request
+import gen_watchlist
 from pathlib import Path
 R = Path(__file__).resolve().parent.parent
-RECIPES, SOURCES, WATCH = R/'data/recipes.json', R/'data/sources.json', R/'docs/watchlist.md'
+RECIPES, SOURCES, WATCH = R/'data/recipes.json', R/'data/sources.json', gen_watchlist.WATCH
 API = 'https://api.x.com/2'
 
 def post_id(url):
@@ -55,16 +56,6 @@ def apply_users(sources, users, as_of):
     sources['note'] = re.sub(r'Follower counts from X API on \d{4}-\d{2}-\d{2}', 'Follower counts from X API on ' + as_of, sources['note'])
     return n
 
-def render_watchlist(text, sources, as_of):
-    text = re.sub(r'Generated from `data/sources.json` \(\d{4}-\d{2}-\d{2}\)', f'Generated from `data/sources.json` ({as_of})', text)
-    f = {s['url']: s['followers'] for s in sources['sources'] if s.get('followers') is not None}
-    def row(line):
-        cells = line.split(' | ')
-        m = re.search(r'\]\((https://x\.com/[^)]+)\)', cells[1]) if len(cells) > 3 else None
-        if m and m.group(1) in f: cells[3] = str(f[m.group(1)])
-        return ' | '.join(cells)
-    return '\n'.join(row(l) if l.startswith('| ') else l for l in text.split('\n'))
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--posts'); ap.add_argument('--users')
@@ -84,6 +75,6 @@ def main():
         nu = apply_users(sources, users, a.as_of)
         print(f'followers: {nu} sources updated from {len(users)}/{len(names)} accounts')
         SOURCES.write_text(json.dumps(sources, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-        WATCH.write_text(render_watchlist(WATCH.read_text(encoding='utf-8'), sources, a.as_of), encoding='utf-8')
+        WATCH.write_text(gen_watchlist.render(sources), encoding='utf-8')
 
 if __name__ == '__main__': main()

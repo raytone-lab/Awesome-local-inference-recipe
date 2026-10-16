@@ -1123,8 +1123,8 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M3 Ultra 256GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "二手约 $8,299–9,999（搜索摘要，2026-10）",
-    "hardware_cost_usd": 8299,
+    "hardware_cost_text": "$5,599（28C/60C · 256GB；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_usd": 5599,
     "metric": "102 单流；8 流 134（stock oMLX 25）",
     "tok_s": null,
     "concurrency": "8 流",
@@ -1141,7 +1141,7 @@
     "en": {
       "quant": "fused-kernel oMLX branch",
       "concurrency": "8 streams",
-      "hardware_cost_text": "used about $8,299–9,999 (search snippet, 2026-10)",
+      "hardware_cost_text": "$5,599 (28C/60C · 256GB; Apple US launch price, 2025-03, 1TB; discontinued)",
       "source_note": "@yume_arasaki roundup"
     }
   },
@@ -1731,8 +1731,8 @@
     "engine": "TensorFold",
     "hardware": "Mac Studio M3 Ultra",
     "hardware_family": "Mac",
-    "hardware_cost_text": "二手约 $8,299–9,999（搜索摘要）",
-    "hardware_cost_usd": 8299,
+    "hardware_cost_text": "内存未注明；Apple 美国首发价 $3,999（96GB）/ $5,599（256GB）/ $9,499（512GB，32C/80C），2025-03，1TB；已停产",
+    "hardware_cost_usd": null,
     "metric": "代码 125；散文 51（1.0.5 约 20）",
     "tok_s": null,
     "concurrency": null,
@@ -1750,7 +1750,7 @@
     "metric_en": "code 125; prose 51 (1.0.5 about 20)",
     "en": {
       "quant": "TensorFold 1.0.7 (drafting also works in sampling mode)",
-      "hardware_cost_text": "used about $8,299–9,999 (search snippet)",
+      "hardware_cost_text": "memory not stated; Apple US launch price $3,999 (96GB) / $5,599 (256GB) / $9,499 (512GB, 32C/80C), 2025-03, 1TB; discontinued",
       "source_note": "@VRAMCalculator relaying release notes"
     }
   },
@@ -2757,8 +2757,8 @@
     "engine": "MLX",
     "hardware": "M3 Ultra 512GB / M5 Max 128GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "M3 Ultra 512GB 二手 $16k–25k（搜索摘要）",
-    "hardware_cost_usd": 16000,
+    "hardware_cost_text": "M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_usd": 9499,
     "metric": "~14.6 / 15（SSD 流式）、25（RDMA 张量并行）",
     "tok_s": null,
     "concurrency": null,
@@ -2776,7 +2776,7 @@
     "source_id": "src-502d0f3dd0",
     "metric_en": "~14.6 / 15 (SSD streaming), 25 (RDMA tensor parallel)",
     "en": {
-      "hardware_cost_text": "M3 Ultra 512GB used $16k–25k (search snippet)",
+      "hardware_cost_text": "M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
       "source_note": "@yume_arasaki roundup"
     }
   },
@@ -2824,8 +2824,8 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M3 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；512GB 二手价未核实",
-    "hardware_cost_usd": null,
+    "hardware_cost_text": "$9,499（32C/80C · 512GB，512GB 须配 32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_usd": 9499,
     "metric": "短提示 70；代码 98；4K 59.0 → 256K 38.6；16K PP 1,143",
     "tok_s": null,
     "concurrency": "3 路同时：合计 39.9（单路 38.4）",
@@ -2848,7 +2848,7 @@
       "quant": "oMLX 0.7.0.dev2 · oQ4e · MTP depth 3 (same as above, for comparison)",
       "context": "256K measured (first token 245 s)",
       "concurrency": "3 streams at once: total 39.9 (single stream 38.4)",
-      "hardware_cost_text": "discontinued; 512GB used price not verified",
+      "hardware_cost_text": "$9,499 (32C/80C · 512GB, 512GB requires 32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
       "source_note": "MacStories (Viticci) review"
     }
   },
@@ -2893,8 +2893,8 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M3 Ultra",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
-    "hardware_cost_usd": 5649,
+    "hardware_cost_text": "内存未注明；Apple 美国首发价 $3,999（96GB）/ $5,599（256GB）/ $9,499（512GB，32C/80C），2025-03，1TB；已停产",
+    "hardware_cost_usd": null,
     "metric": "97.1 tok/s 解码；~1,131 PP（未缓存）",
     "tok_s": 97.1,
     "concurrency": null,
@@ -2915,7 +2915,7 @@
     "en": {
       "quant": "4-bit MTP (oMLX PR / OMP)",
       "context": "23K tested",
-      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+      "hardware_cost_text": "memory not stated; Apple US launch price $3,999 (96GB) / $5,599 (256GB) / $9,499 (512GB, 32C/80C), 2025-03, 1TB; discontinued"
     }
   },
   {
@@ -2926,8 +2926,8 @@
     "engine": "TensorFold",
     "hardware": "Mac Studio M3 Ultra",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
-    "hardware_cost_usd": 5649,
+    "hardware_cost_text": "内存未注明；Apple 美国首发价 $3,999（96GB）/ $5,599（256GB）/ $9,499（512GB，32C/80C），2025-03，1TB；已停产",
+    "hardware_cost_usd": null,
     "metric": "峰值 130 tok/s（0.3.4 为 128）",
     "tok_s": 130.0,
     "concurrency": null,
@@ -2945,7 +2945,7 @@
     "metric_en": "peak 130 tok/s (0.3.4 was 128)",
     "en": {
       "context": "64K+ long-context test",
-      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+      "hardware_cost_text": "memory not stated; Apple US launch price $3,999 (96GB) / $5,599 (256GB) / $9,499 (512GB, 32C/80C), 2025-03, 1TB; discontinued"
     }
   },
   {
@@ -2956,8 +2956,8 @@
     "engine": "ds4 (DwarfStar)",
     "hardware": "Mac Studio M3 Ultra",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
-    "hardware_cost_usd": 5649,
+    "hardware_cost_text": "内存未注明；Apple 美国首发价 $3,999（96GB）/ $5,599（256GB）/ $9,499（512GB，32C/80C），2025-03，1TB；已停产",
+    "hardware_cost_usd": null,
     "metric": "65 tok/s（演示视频）",
     "tok_s": 65.0,
     "concurrency": null,
@@ -2978,7 +2978,7 @@
     "en": {
       "quant": "DwarfStar (ds4) · Q2 · Metal PR branch",
       "context": "PP still >1,000 at 262K (@0xBakeer)",
-      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)",
+      "hardware_cost_text": "memory not stated; Apple US launch price $3,999 (96GB) / $5,599 (256GB) / $9,499 (512GB, 32C/80C), 2025-03, 1TB; discontinued",
       "source_note": "@ivanfioravanti (author)"
     }
   },
@@ -3079,7 +3079,7 @@
     "engine": "oMLX",
     "hardware": "M3 Ultra / M5 Max",
     "hardware_family": "Mac",
-    "hardware_cost_text": null,
+    "hardware_cost_text": "内存未注明；Apple 美国首发价 $3,999（96GB）/ $5,599（256GB）/ $9,499（512GB，32C/80C），2025-03，1TB；已停产",
     "hardware_cost_usd": null,
     "metric": "M3U 32K prefill 396 → 636 tok/s；M5 Max 8 请求首 token 7.41 → 5.75 s",
     "tok_s": null,
@@ -3100,7 +3100,8 @@
     "en": {
       "quant": "oMLX 0.7.1.dev1 (expert offload / batched prefill)",
       "concurrency": "8 requests (0.4 s apart)",
-      "source_note": "oMLX release notes (@jundotkim)"
+      "source_note": "oMLX release notes (@jundotkim)",
+      "hardware_cost_text": "memory not stated; Apple US launch price $3,999 (96GB) / $5,599 (256GB) / $9,499 (512GB, 32C/80C), 2025-03, 1TB; discontinued"
     }
   },
   {
@@ -3367,8 +3368,8 @@
     "engine": "Unspecified",
     "hardware": "Mac Studio M3 Ultra 96GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
-    "hardware_cost_usd": 5649,
+    "hardware_cost_text": "$3,999（28C/60C · 96GB；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_usd": 3999,
     "metric": "21.51 tok/s（比无草稿快 63%）；峰值 58.09GB",
     "tok_s": 21.51,
     "concurrency": null,
@@ -3390,7 +3391,7 @@
     "metric_en": "21.51 tok/s (63% faster than no draft); peak 58.09GB",
     "en": {
       "quant": "BF16 + native MTP",
-      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+      "hardware_cost_text": "$3,999 (28C/60C · 96GB; Apple US launch price, 2025-03, 1TB; discontinued)"
     }
   },
   {
@@ -3563,8 +3564,8 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M3 Ultra 256GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
-    "hardware_cost_usd": 5649,
+    "hardware_cost_text": "$5,599（28C/60C · 256GB；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_usd": 5599,
     "metric": "1 路 57.2；2 路合计 113.5；4 路合计 73.4（倒退）",
     "tok_s": null,
     "concurrency": "1 / 2 / 4 路",
@@ -3583,7 +3584,7 @@
     "metric_en": "1 stream 57.2; 2 streams total 113.5; 4 streams total 73.4 (regression)",
     "en": {
       "concurrency": "1 / 2 / 4 streams",
-      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+      "hardware_cost_text": "$5,599 (28C/60C · 256GB; Apple US launch price, 2025-03, 1TB; discontinued)"
     }
   },
   {
@@ -3594,8 +3595,8 @@
     "engine": "DFlash",
     "hardware": "Mac Studio M3 Ultra",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
-    "hardware_cost_usd": 5649,
+    "hardware_cost_text": "内存未注明；Apple 美国首发价 $3,999（96GB）/ $5,599（256GB）/ $9,499（512GB，32C/80C），2025-03，1TB；已停产",
+    "hardware_cost_usd": null,
     "metric": "251 tok/s",
     "tok_s": 251.0,
     "concurrency": null,
@@ -3612,7 +3613,7 @@
     ],
     "source_id": "src-77c9e0b22f",
     "en": {
-      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)",
+      "hardware_cost_text": "memory not stated; Apple US launch price $3,999 (96GB) / $5,599 (256GB) / $9,499 (512GB, 32C/80C), 2025-03, 1TB; discontinued",
       "source_note": "@tinybluedev (one-sentence post: only states 251 tok/s, with no quantization, RAM, or context, and no reproduction; downgraded to claimed after verification on 2026-10-16)"
     }
   },
@@ -3686,8 +3687,8 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M3 Ultra",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
-    "hardware_cost_usd": 5649,
+    "hardware_cost_text": "内存未注明；Apple 美国首发价 $3,999（96GB）/ $5,599（256GB）/ $9,499（512GB，32C/80C），2025-03，1TB；已停产",
+    "hardware_cost_usd": null,
     "metric": "31.3 → 40.6 tok/s（+30%）",
     "tok_s": 40.6,
     "concurrency": null,
@@ -3703,7 +3704,7 @@
     "metric_en": "31.3 → 40.6 tok/s (+30%)",
     "en": {
       "quant": "oMLX 0.7.1.dev1 fused decode kernel",
-      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)",
+      "hardware_cost_text": "memory not stated; Apple US launch price $3,999 (96GB) / $5,599 (256GB) / $9,499 (512GB, 32C/80C), 2025-03, 1TB; discontinued",
       "source_note": "oMLX release notes (@jundotkim)"
     }
   },
@@ -3715,8 +3716,8 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M3 Ultra",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
-    "hardware_cost_usd": 5649,
+    "hardware_cost_text": "内存未注明；Apple 美国首发价 $3,999（96GB）/ $5,599（256GB）/ $9,499（512GB，32C/80C），2025-03，1TB；已停产",
+    "hardware_cost_usd": null,
     "metric": "8 路同时：合计 78 tok/s、首 token 均 <1.6 s、26 s 全部完成；oMLX 第 8 个请求等 43 s；单路 +12%",
     "tok_s": null,
     "concurrency": "8 路",
@@ -3735,7 +3736,7 @@
     "en": {
       "quant": "MLX 4-bit · TensorFold 0.6.2 vs oMLX (sequential processing)",
       "concurrency": "8 streams",
-      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+      "hardware_cost_text": "memory not stated; Apple US launch price $3,999 (96GB) / $5,599 (256GB) / $9,499 (512GB, 32C/80C), 2025-03, 1TB; discontinued"
     }
   },
   {
@@ -3746,8 +3747,8 @@
     "engine": "Unspecified",
     "hardware": "Mac Studio M3 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；512GB 二手价未核实",
-    "hardware_cost_usd": null,
+    "hardware_cost_text": "$9,499（32C/80C · 512GB，512GB 须配 32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_usd": 9499,
     "metric": "14.58 tok/s 生成；145.86 PP",
     "tok_s": 14.58,
     "concurrency": null,
@@ -3767,7 +3768,7 @@
     "metric_en": "14.58 tok/s generation; 145.86 PP",
     "en": {
       "model": "GLM-5.3 (744B full, not Flash)",
-      "hardware_cost_text": "discontinued; 512GB used price not verified"
+      "hardware_cost_text": "$9,499 (32C/80C · 512GB, 512GB requires 32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)"
     }
   },
   {
@@ -3778,8 +3779,8 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M3 Ultra",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
-    "hardware_cost_usd": 5649,
+    "hardware_cost_text": "内存未注明；Apple 美国首发价 $3,999（96GB）/ $5,599（256GB）/ $9,499（512GB，32C/80C），2025-03，1TB；已停产",
+    "hardware_cost_usd": null,
     "metric": "约 6 → 33.0 tok/s（32K 6.17→33.0；64K 5.58→33.0）",
     "tok_s": 33.0,
     "concurrency": null,
@@ -3800,7 +3801,7 @@
     "en": {
       "quant": "oMLX native V4.1 + MTP + Engram SSD offload",
       "context": "64K test, decode does not drop with context",
-      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+      "hardware_cost_text": "memory not stated; Apple US launch price $3,999 (96GB) / $5,599 (256GB) / $9,499 (512GB, 32C/80C), 2025-03, 1TB; discontinued"
     }
   },
   {
@@ -3811,8 +3812,8 @@
     "engine": "MLX",
     "hardware": "2× Mac Studio M3 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；512GB 二手价未核实",
-    "hardware_cost_usd": null,
+    "hardware_cost_text": "≈$18,998（2×$9,499，32C/80C · 512GB；Apple 美国首发价，2025-03，1TB；已停产；计算值）",
+    "hardware_cost_usd": 18998,
     "metric": "40–66 tok/s 解码（接受率 70–81%）；~1,100 PP",
     "tok_s": 40.0,
     "concurrency": null,
@@ -3832,7 +3833,7 @@
     "metric_en": "40–66 tok/s decode (acceptance rate 70–81%); ~1,100 PP",
     "en": {
       "quant": "Self-developed MLX port · TP=2 · TB5 RDMA · DSpark",
-      "hardware_cost_text": "discontinued; 512GB used price not verified"
+      "hardware_cost_text": "≈$18,998 (2×$9,499, 32C/80C · 512GB; Apple US launch price, 2025-03, 1TB; discontinued; calculated)"
     }
   },
   {
@@ -3876,8 +3877,8 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M3 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；512GB 二手价未核实",
-    "hardware_cost_usd": null,
+    "hardware_cost_text": "$9,499（32C/80C · 512GB，512GB 须配 32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_usd": 9499,
     "metric": "35（oMLX，Viticci）；ds4 短 35.5 / 长 26.6；PP 448.8",
     "tok_s": null,
     "concurrency": null,
@@ -3895,7 +3896,7 @@
     "metric_en": "35 (oMLX, Viticci); ds4 short 35.5 / long 26.6; PP 448.8",
     "en": {
       "model": "DeepSeek-V4-Flash (V4, not 4.1)",
-      "hardware_cost_text": "discontinued; 512GB used price not verified",
+      "hardware_cost_text": "$9,499 (32C/80C · 512GB, 512GB requires 32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
       "source_note": "@yume_arasaki roundup source"
     }
   },
@@ -9178,8 +9179,8 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M3 Ultra",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
-    "hardware_cost_usd": 5649,
+    "hardware_cost_text": "内存未注明；Apple 美国首发价 $3,999（96GB）/ $5,599（256GB）/ $9,499（512GB，32C/80C），2025-03，1TB；已停产",
+    "hardware_cost_usd": null,
     "metric": "23k 上下文整体解码 97.1 tok/s；无缓存预填充约 1,131 tok/s",
     "tok_s": 97.1,
     "concurrency": null,
@@ -9208,7 +9209,7 @@
     "metric_en": "23k context overall decode 97.1 tok/s; uncached prefill about 1,131 tok/s",
     "en": {
       "engine_note": "oMLX (author's PR) + MTP",
-      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)"
+      "hardware_cost_text": "memory not stated; Apple US launch price $3,999 (96GB) / $5,599 (256GB) / $9,499 (512GB, 32C/80C), 2025-03, 1TB; discontinued"
     }
   },
   {
@@ -11513,8 +11514,8 @@
     "engine": "gbx",
     "hardware": "Mac Studio M3 Ultra（内存未注明）",
     "hardware_family": "Mac",
-    "hardware_cost_text": "已停产；翻新 96GB 起 $5,649；256GB 二手约 $8,299–9,999（搜索摘要）",
-    "hardware_cost_usd": 5649,
+    "hardware_cost_text": "内存未注明；Apple 美国首发价 $3,999（96GB）/ $5,599（256GB）/ $9,499（512GB，32C/80C），2025-03，1TB；已停产",
+    "hardware_cost_usd": null,
     "metric": "gbx 120.5 / omlx 93.3 / Ollama 88.2 / mlx-vlm 82.0 / mlx-lm 76.3 tok/s 解码；开投机解码 gbx 176 vs omlx 156（厂商对比，引擎版本未注明）",
     "tok_s": 120.5,
     "concurrency": null,
@@ -11541,7 +11542,7 @@
     "metric_en": "gbx 120.5 / omlx 93.3 / Ollama 88.2 / mlx-vlm 82.0 / mlx-lm 76.3 tok/s decode; with speculative decoding on gbx 176 vs omlx 156 (vendor comparison, engine versions not stated)",
     "en": {
       "hardware": "Mac Studio M3 Ultra (RAM not stated)",
-      "hardware_cost_text": "discontinued; refurbished 96GB from $5,649; 256GB used about $8,299–9,999 (search snippet)",
+      "hardware_cost_text": "memory not stated; Apple US launch price $3,999 (96GB) / $5,599 (256GB) / $9,499 (512GB, 32C/80C), 2025-03, 1TB; discontinued",
       "source_note": "@GreenBitAI (gbx engine team) on X; the 25 GB budget / SSD cold-read data post in the same thread 2110450746483171594 says Same 105 GB model, which does not match 35B-A3B 8-bit (~35–37 GB), not counted"
     }
   },
@@ -12514,8 +12515,8 @@
     "engine": "MLX",
     "hardware": "Mac Studio M3 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "512GB 二手价未核实（文章为 512GB 配置）",
-    "hardware_cost_usd": null,
+    "hardware_cost_text": "$9,499（32C/80C · 512GB，512GB 须配 32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_usd": 9499,
     "metric": "解码 4.95 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 4.95,
     "concurrency": null,
@@ -12527,7 +12528,7 @@
     "date": "2026-10-15",
     "metric_en": "decode 4.95 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "512GB used price unverified (article uses 512GB config)",
+      "hardware_cost_text": "$9,499 (32C/80C · 512GB, 512GB requires 32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -12646,8 +12647,8 @@
     "engine": "MLX",
     "hardware": "Mac Studio M3 Ultra 512GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "512GB 二手价未核实（文章为 512GB 配置）",
-    "hardware_cost_usd": null,
+    "hardware_cost_text": "$9,499（32C/80C · 512GB，512GB 须配 32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_usd": 9499,
     "metric": "解码 12.46 tok/s（Table 3，~8K ctx，128 gen）",
     "tok_s": 12.46,
     "concurrency": null,
@@ -12659,7 +12660,7 @@
     "date": "2026-10-15",
     "metric_en": "decode 12.46 tok/s (Table 3, ~8K ctx, 128 gen)",
     "en": {
-      "hardware_cost_text": "512GB used price unverified (article uses 512GB config)",
+      "hardware_cost_text": "$9,499 (32C/80C · 512GB, 512GB requires 32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
       "source_note": "Apple MLX distributed inference article Table 3 (~8K ctx, 128 gen)",
       "context": "~8K"
     },
@@ -13147,8 +13148,8 @@
     "engine": "Rapid-MLX",
     "hardware": "Mac Studio M3 Ultra 256GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "二手约 $8,299–9,999（搜索摘要，2026-10）",
-    "hardware_cost_usd": 8299,
+    "hardware_cost_text": "$5,599（28C/60C · 256GB；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_usd": 5599,
     "metric": "43.4 tok/s 生成；330.8 tok/s 预填充（8K 提示）；TTFT 中位数 24.66s",
     "tok_s": 43.4,
     "concurrency": "单路（B=1）",
@@ -13170,7 +13171,7 @@
       "concurrency": "Single stream (B=1)",
       "context": "8K prompt + 256-token output",
       "source_note": "Rapid-MLX official benchmark (0.13.4, median of 3 requests, prefix cache cleared each run; peak memory 27.1 GB observed up to 32K)",
-      "hardware_cost_text": "used about $8,299–9,999 (search snippet, 2026-10)"
+      "hardware_cost_text": "$5,599 (28C/60C · 256GB; Apple US launch price, 2025-03, 1TB; discontinued)"
     },
     "source_id": "src-f328862fff"
   },
@@ -13182,8 +13183,8 @@
     "engine": "Rapid-MLX",
     "hardware": "Mac Studio M3 Ultra 256GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "二手约 $8,299–9,999（搜索摘要，2026-10）",
-    "hardware_cost_usd": 8299,
+    "hardware_cost_text": "$5,599（28C/60C · 256GB；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_usd": 5599,
     "metric": "23.0 tok/s 生成；867.9 tok/s 预填充（8K 提示）；TTFT 中位数 9.40s",
     "tok_s": 23.0,
     "concurrency": "单路（B=1）",
@@ -13203,7 +13204,7 @@
       "concurrency": "Single stream (B=1)",
       "context": "8K prompt + 256-token output",
       "source_note": "Rapid-MLX official benchmark (0.13.4, median of 3 requests, prefix cache cleared each run; peak memory 148.1 GB observed up to 32K)",
-      "hardware_cost_text": "used about $8,299–9,999 (search snippet, 2026-10)",
+      "hardware_cost_text": "$5,599 (28C/60C · 256GB; Apple US launch price, 2025-03, 1TB; discontinued)",
       "model": "Qwen3.8-Flash-Next (180B/6B active)"
     },
     "source_id": "src-f328862fff"
@@ -13216,8 +13217,8 @@
     "engine": "Rapid-MLX",
     "hardware": "Mac Studio M3 Ultra 256GB",
     "hardware_family": "Mac",
-    "hardware_cost_text": "二手约 $8,299–9,999（搜索摘要，2026-10）",
-    "hardware_cost_usd": 8299,
+    "hardware_cost_text": "$5,599（28C/60C · 256GB；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_usd": 5599,
     "metric": "27.8 tok/s 生成；359.6 tok/s 预填充（8K 提示）；TTFT 中位数 22.78s",
     "tok_s": 27.8,
     "concurrency": "单路（B=1）",
@@ -13237,7 +13238,7 @@
       "concurrency": "Single stream (B=1)",
       "context": "8K prompt + 256-token output",
       "source_note": "Rapid-MLX official benchmark (0.13.4, median of 3 requests, prefix cache cleared each run; peak memory 195.6 GB observed up to 32K)",
-      "hardware_cost_text": "used about $8,299–9,999 (search snippet, 2026-10)",
+      "hardware_cost_text": "$5,599 (28C/60C · 256GB; Apple US launch price, 2025-03, 1TB; discontinued)",
       "model": "GLM-5.3-Flash (320B/18B active)"
     },
     "source_id": "src-f328862fff"

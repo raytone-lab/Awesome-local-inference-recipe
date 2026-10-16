@@ -60,8 +60,9 @@ class UpdateXMetrics(unittest.TestCase):
         self.assertEqual(self.u.apply_users(src, [{'username': 'mia', 'public_metrics': {'followers_count': 77}}], '2026-10-16'), 1)
         self.assertEqual((src['sources'][0]['followers'], src['updated'], src['followers_as_of']), (77, '2026-10-16', '2026-10-16'))
         self.assertIn('2026-10-16', src['note'])
-        md = 'Generated from `data/sources.json` (2026-10-14). x\n| A | [Mia](https://x.com/Mia) | X | 1 | f |'
-        out = self.u.render_watchlist(md, src, '2026-10-16')
+        for s in src['sources']: s.update(name='n', platform='X', tier='A', focus='f', why='w', sample_post=s['url'])
+        import gen_watchlist
+        out = gen_watchlist.render(src)
         self.assertIn('(2026-10-16)', out); self.assertIn('| X | 77 |', out)
 
 if __name__ == '__main__': unittest.main()
