@@ -22,3 +22,7 @@ const GLOSS=[['草稿','draft'],['实测','measured'],['自称','self-reported']
 window.glossEn=s=>{if(typeof s!='string'||!CJK.test(s))return s;for(const[a,b]of GLOSS)s=s.split(a).join(b);return s.replace(/[\u3000-\u303f\u3040-\u30ff\u3400-\u9fff\uff00-\uffef]+/g,'').replace(/\s{2,}/g,' ').trim()};
 window.localizeRecipe=(r,lang)=>{if(lang!='en')return r;const o={...r,_src:r};for(const k of EN_FIELDS)o[k]=r.en&&r.en[k]!=null?r.en[k]:glossEn(r[k]);o.metric=r.metric_en||glossEn(r.metric);return o};
 })();
+
+// Data enum values shown as text: 'Unspecified' / 'Other' are English placeholders in the data, so zh-CN shows them translated.
+const DISPLAY_VALUES={'zh-CN':{Unspecified:'未注明',Other:'其他'}};
+window.displayValue=(x,lang)=>((DISPLAY_VALUES[lang]||{})[x])||x;

@@ -5,7 +5,7 @@ CJK = re.compile(r'[\u3000-\u303f\u3040-\u30ff\u3400-\u9fff\uff00-\uffef]+')
 LANG_NAMES = {'中文', '简体中文', '日本語'}
 DATA_ENUMS = {'官方', '实测', '转述', '宣称', 'NVIDIA 消费级', '消费级', '二手数据中心卡', '其他'}
 SIMPLIFIED_ONLY = set('这们说时实为对务从无与样产发进过还经开关见让认请读选显传标单张门问间题须记设试详语论谁调质运连适钟错长阅难页顺预领风飞马验级络统维缓据')
-EN_FIELDS = ['quant', 'model', 'hardware', 'context', 'concurrency', 'engine_note', 'hardware_cost_text', 'source_note', 'launch_command', 'metric']
+EN_FIELDS = ['engine', 'model_family', 'quant', 'model', 'hardware', 'context', 'concurrency', 'engine_note', 'hardware_cost_text', 'source_note', 'launch_command', 'metric']
 
 def visible(html):
     html = re.sub(r'<(script|style)\b.*?</\1>', '', html, flags=re.S)
@@ -91,7 +91,9 @@ class ChineseAndJapaneseUI(unittest.TestCase):
                 s = (R/p).read_text(encoding='utf-8'); self.assertIn(brand, s, p.name); self.assertNotIn('Local Inference Recipes</a>', s, p.name)
 
     def test_japanese_pages_have_no_simplified_chinese(self):
-        for p in (R/'guides'/'ja').glob('*.html'):
+        pages = [*(R/'guides'/'ja').glob('*.html'), *(R/'recipes').glob('*.ja.md'), R/'README.ja.md', *(R/'hw').glob('*ja*'), *(R/'model').glob('*ja*')]
+        self.assertGreater(len(pages), 10)
+        for p in pages:
             t = visible(p.read_text(encoding='utf-8')).replace('简体中文', '')
             self.assertEqual(sorted({c for c in t if c in SIMPLIFIED_ONLY}), [], p.name)
         ja = lang_blocks((R/'speed.html').read_text(encoding='utf-8'))['ja']
@@ -101,10 +103,22 @@ class SpeedPage(unittest.TestCase):
     def setUp(self): self.s = (R/'speed.html').read_text(encoding='utf-8')
 
     def test_lanes_are_sorted_ascending_after_every_relabel(self):
-        self.assertTrue(re.search(r"(?s)function label\(\)\{.*?sortLanes\(\)\}", self.s))
-        fn = re.search(r'const laneOrder=.*?;\n', self.s).group(0)
-        order = json.loads(subprocess.run(['node', '-e', "const $=()=>({value:'%s'});const sl2r=v=>v;const rateOf=L=>L.r==='c'?sl2r(+$('cr').value):L.r;" % 35 + fn + "process.stdout.write(JSON.stringify(laneOrder([5,10,20,50,100,200,500,'c'].map(r=>({r}))).map(rateOf)))"], capture_output=True, text=True, check=True).stdout)
-        self.assertEqual(order, sorted(order)); self.assertEqual(order.index(35), 3)
+        label = re.search(r'function label\(\)\{.*?\n  sortLanes\(\)\}', self.s, re.S)
+        self.assertIsNotNone(label, 'label() must re-sort the lanes after updating rates')
+        page = ''.join(re.search(p, self.s, re.S).group(0) for p in (r'const SMIN=.*?;\n', r'const rateOf=.*?;\n', r'const laneOrder=.*?;\n'))
+        for custom in (3, 35, 50, 800):
+            js = "const _cr={value:String(%d)};const $=()=>_cr;" % 0 + page + "_cr.value=String(r2sl(%d));" % custom + "process.stdout.write(JSON.stringify(laneOrder([5,10,20,50,100,200,500,'c'].map(r=>({r}))).map(L=>[rateOf(L),L.r==='c'])))"
+            order = json.loads(subprocess.run(['node', '-e', js], capture_output=True, text=True, check=True).stdout)
+            rates = [x for x, _ in order]
+            self.assertEqual(rates, sorted(rates), custom)
+            cus = [x for x, c in order if c]
+            self.assertEqual(len(cus), 1); self.assertLess(abs(cus[0] / custom - 1), 0.01, custom)
+            ties = [i for i, (x, c) in enumerate(order) if x == cus[0]]
+            self.assertTrue(order[ties[-1]][1], 'custom lane goes after a fixed lane of the same rate')
+
+    def test_embed_tiers_are_the_fixed_ascending_set(self):
+        self.assertIn("const RATES=EMBED?[10,20,50,100,200,500]:[5,10,20,50,100,200,500]", self.s)
+        self.assertIn("for(const r of EMBED?RATES:[...RATES,'c'])", self.s)
 
     def test_local_picks_are_measured_single_stream_and_localized(self):
         fn = re.search(r'function localPicks\(rc,lang\)\{.*?\n', self.s).group(0)
