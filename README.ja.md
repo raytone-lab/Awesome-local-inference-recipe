@@ -20,14 +20,14 @@
 
 ### 注目の記録
 
-| 記録               | モデル · エンジン                   | ハードウェア                                                | 結果               | 出典                                                                       |
-| ---------------- | ---------------------------- | ----------------------------------------------------- | ---------------- | ------------------------------------------------------------------------ |
-| Mac で最速          | Qwen3.6-35B-A3B · DFlash     | Mac Studio M3 Ultra · 約 5,649 ドル（最小構成価格、検証機のメモリは不明）   | **251 tok/s** ✅  | [出典](https://x.com/tinybluedev/status/2089910202606764530)               |
-| RTX 5090 1 枚で最速  | Qwen3.8-Flash-Next · Strata  | RTX 5090 + 256GB RAM · 約 5,400 ドル（GPU のみ、256GB RAM 別） | **176 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483) |
-| AMD で最速          | Qwen3.8-Flash-Next · Strata  | AMD Radeon AI PRO R9700 · 約 1,600 ドル                  | **100 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376) |
-| 中古データセンター GPU    | Qwen3.8-Flash-Next · Strata  | 2× Tesla V100 32GB PCIe                               | **120 tok/s** ✅  | [@rewin123](https://x.com/rewin123/status/2108669905616736529)           |
-| DGX Spark 1 台で最速 | Qwen3.8-Flash-Next · ExLlama | 1× DGX Spark · 約 6,950 ドル                             | **71.7 tok/s** ✅ | [出典](https://x.com/yume_arasaki/status/2101741448811229219)              |
-| いちばん安い構成         | Qwen3.8-Flash-Next · Strata  | Tesla P40 24GB · 約 405 ドル                             | **30 tok/s** ✅   | [出典](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md)    |
+| 記録               | モデル · エンジン                      | ハードウェア                                                   | 結果               | 出典                                                                       |
+| ---------------- | ------------------------------- | -------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------ |
+| Mac で最速          | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra · 約 5,649 ドル（ピーク値、最小構成価格、検証機のメモリは不明） | **130 tok/s** ✅  | [出典](https://x.com/ivanfioravanti/status/2104183112611614780)            |
+| RTX 5090 1 枚で最速  | Qwen3.8-Flash-Next · Strata     | RTX 5090 + 256GB RAM · 約 5,400 ドル（GPU のみ、256GB RAM 別）    | **176 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483) |
+| AMD で最速          | Qwen3.8-Flash-Next · Strata     | AMD Radeon AI PRO R9700 · 約 1,600 ドル                     | **100 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376) |
+| 中古データセンター GPU    | Qwen3.8-Flash-Next · Strata     | 2× Tesla V100 32GB PCIe                                  | **120 tok/s** ✅  | [@rewin123](https://x.com/rewin123/status/2108669905616736529)           |
+| DGX Spark 1 台で最速 | Qwen3.8-Flash-Next · ExLlama    | 1× DGX Spark · 約 6,950 ドル                                | **71.7 tok/s** ✅ | [出典](https://x.com/yume_arasaki/status/2101741448811229219)              |
+| いちばん安い構成         | Qwen3.8-Flash-Next · Strata     | Tesla P40 24GB · 約 405 ドル                                | **30 tok/s** ✅   | [出典](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md)    |
 
 <sub>1 ストリームの生成速度で、いずれも出典からの引用です。価格は公開されている最安のハードウェア価格。✅ = 投稿者本人の実測。</sub>
 
@@ -35,7 +35,7 @@
 
 - [凡例](#凡例)
 - [よくある質問](#よくある質問)
-- [今月の注目](#今月の注目)
+- [X で話題のレシピ](#x-で話題のレシピ)
 - [モデルファミリー別](#モデルファミリー別)
 - [エンジン別](#エンジン別)
 - [第 1 段階 · 2,500 ドルまで](#第-1-段階--2500-ドルまで)
@@ -70,7 +70,7 @@
 実測最速：**120.8 tok/s** — Qwen3.8-Flash-Next · Strata、RTX 3090 24GB + 64GB RAM（✅ 実測、日付不明、[出典](https://x.com/needmorevram/status/2105050786938118599)）。このハードウェアのレシピ 10 件、うち実測 3 件。
 
 **Mac Studio M3 Ultra でローカル LLM はどれくらい速い？**  
-実測最速：**251 tok/s** — Qwen3.6-35B-A3B · DFlash、Mac Studio M3 Ultra（✅ 実測、日付不明、[出典](https://x.com/tinybluedev/status/2089910202606764530)）。このハードウェアのレシピ 16 件、うち実測 8 件。
+実測最速：**130 tok/s** — Qwen3.8-Flash-Next · TensorFold、Mac Studio M3 Ultra（✅ 実測、日付不明、[出典](https://x.com/ivanfioravanti/status/2104183112611614780)）。このハードウェアのレシピ 16 件、うち実測 7 件。
 
 **NVIDIA DGX Spark 1 台でローカル LLM はどれくらい速い？**  
 実測最速：**95 tok/s** — Qwen3.6-35B-A3B · vLLM、1× DGX Spark（✅ 実測、2026-07-29、[出典](https://x.com/MiaAI_lab/status/2082573590529204458)）。このハードウェアのレシピ 28 件、うち実測 15 件。
@@ -82,17 +82,17 @@
 実測最速：**162 tok/s** — LFM2.5-24B-A2B · llama.cpp、RTX 5060 Ti 16GB（✅ 実測、2026-10-15、[出典](https://x.com/niklaslenz_ai/status/2110469931011612895)）。この予算内のレシピ 46 件、うち実測 20 件。
 
 
-## 今月の注目
+## X で話題のレシピ
 
-2026-09-15〜10-15 に X で反応が多かったレシピ投稿（いいね + リポスト×3 の順）。
+X で反応が多かったレシピ投稿（いいね + リポスト×3 の順。1 投稿 1 件、「主張のみ」は除外。数値は 2026-10-16 時点）。
 
 - **DeepSeek-V4.1-Flash** — 2× DGX Spark → **29 tok/s** ✅ [@0xSero](https://x.com/0xSero/status/2106373861818224907) ♥2470
 - **Qwen3.8-Flash-Next** · vLLM — 1× DGX Spark → **48.7 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2101339268203380857) ♥800
-- **GLM-5.3-Flash EXL3 4-bit** · TensorFold — 2× DGX Spark → **60.4 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2105598458547646875) ♥683
-- **Qwen3.8-Flash-Next** — RTX 3090 24GB + 64GB DDR4/5 + 100GB NVMe → **64 tok/s** 📣 [@0xSero](https://x.com/0xSero/status/2104865431659892934) ♥686
-- **Qwen3.8-Flash-Next** · Strata — RTX 5090 32GB → **204 tok/s** ✅ [@niklaslenz_ai](https://x.com/niklaslenz_ai/status/2110132306061013386) ♥469
+- **GLM-5.3-Flash EXL3 4-bit** · TensorFold — 2× DGX Spark → **60.4 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2105598458547646875) ♥684
+- **Ternary Bonsai 2 27B** — RTX 3060 12GB → **50 tok/s** ✅ [@sudoingX](https://x.com/sudoingX/status/2110451458302943383) ♥741
+- **Qwen3.8-Flash-Next** · Strata — RTX 5090 32GB → **204 tok/s** ✅ [@niklaslenz_ai](https://x.com/niklaslenz_ai/status/2110132306061013386) ♥487
 - **Qwen3.8-Flash-Next** · TensorFold — 1× DGX Spark → **64.4 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2108203605685596490) ♥386
-- **DeepSeek-V4-Flash (0731 GA)** — 2× DGX Spark → **82 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2083326111144906836) ♥368
+- **DeepSeek-V4-Flash (0731 GA)** — 2× DGX Spark → **82 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2083326111144906836) ♥367
 - **Qwen3.8-27B** · vLLM — RTX 5090 32GB → **147 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2088734058842878037) ♥381
 
 ## モデルファミリー別
@@ -212,7 +212,7 @@
 - **Qwen3.6-35B-A3B** · sparkinfer `sparkinfer v0.4.4` — RTX 5090 → **512 tok/s** 📣 [出典](https://x.com/kysstalol/status/2105042922643321008)
 - **LFM2.5-24B-A2B** · llama.cpp `Q4` — RTX 5090 32GB → **351.5 tok/s** ✅ [出典](https://x.com/niklaslenz_ai/status/2110469931011612895)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 5090 32GB → **283 tok/s** 📣 [出典](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2) · [手順](recipes/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.ja.md)
-- **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** ✅ [出典](https://x.com/tinybluedev/status/2089910202606764530)
+- **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** 📣 [出典](https://x.com/tinybluedev/status/2089910202606764530)
 - **MiniCPM-V 4.7 35B-A3B** · llama.cpp `Q4_K_M` — RTX 5090 → **208 tok/s** ✅ [出典](https://x.com/Blackwellboy/status/2110717843121881380)
 - **Qwen3.8-Flash-Next** · Strata `ISTA-DASLab GSQ-RCO GGUF IQ…` — RTX 5090 32GB → **204 tok/s** ✅ [出典](https://x.com/niklaslenz_ai/status/2110132306061013386)
 - **Qwen3.8-Flash-Next** · Strata `GSQ RCO IQ3_XXS` — RTX 5090 32GB+ Ryzen 7 9800X3D + 60.5GB DDR5 → **202.1 tok/s** ✅ [出典](https://github.com/Niko1221/Strata/pull/2165)
@@ -306,33 +306,33 @@
 
 | プロジェクト                                                        | ⭐ Star | ライブ                                                                                             | 最終 push    | 概要                                                                                      |
 | ------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------- | ---------- | --------------------------------------------------------------------------------------- |
-| [llama.cpp](https://github.com/ggml-org/llama.cpp)            | 131.0k | ![stars](https://img.shields.io/github/stars/ggml-org/llama.cpp?style=flat&label=)              | 2026-10-13 | GGUF の定番エンジン（CPU/CUDA/ROCm/Vulkan/Metal）。                                               |
-| [vLLM](https://github.com/vllm-project/vllm)                  | 93.7k  | ![stars](https://img.shields.io/github/stars/vllm-project/vllm?style=flat&label=)               | 2026-10-13 | 高スループットな推論サーバー。Spark での MTP や同時実行のレシピに使われています。                                          |
-| [SGLang](https://github.com/sgl-project/sglang)               | 37.1k  | ![stars](https://img.shields.io/github/stars/sgl-project/sglang?style=flat&label=)              | 2026-10-13 | 推論サービング用フレームワーク。DGX Spark で DFlash2 と組み合わせて使われています。                                     |
-| [MLX](https://github.com/ml-explore/mlx)                      | 28.8k  | ![stars](https://img.shields.io/github/stars/ml-explore/mlx?style=flat&label=)                  | 2026-10-13 | Apple の配列フレームワーク。Mac のレシピの多くはこれがベース。                                                    |
-| [Strata](https://github.com/Niko1221/Strata)                  | 23.5k  | ![stars](https://img.shields.io/github/stars/Niko1221/Strata?style=flat&label=)                 | 2026-10-12 | MoE のエキスパートを VRAM・RAM・SSD に分けて載せる推論エンジン。12〜24GB の GPU 向けで、ここの Flash-Next レシピの多くが使っています。 |
-| [oMLX](https://github.com/jundot/omlx)                        | 22.8k  | ![stars](https://img.shields.io/github/stars/jundot/omlx?style=flat&label=)                     | 2026-10-13 | Apple Silicon 向けの MLX サーバー。連続バッチ処理と、KV/SSD の階層キャッシュに対応。                                 |
+| [llama.cpp](https://github.com/ggml-org/llama.cpp)            | 131.3k | ![stars](https://img.shields.io/github/stars/ggml-org/llama.cpp?style=flat&label=)              | 2026-10-16 | GGUF の定番エンジン（CPU/CUDA/ROCm/Vulkan/Metal）。                                               |
+| [vLLM](https://github.com/vllm-project/vllm)                  | 93.9k  | ![stars](https://img.shields.io/github/stars/vllm-project/vllm?style=flat&label=)               | 2026-10-16 | 高スループットな推論サーバー。Spark での MTP や同時実行のレシピに使われています。                                          |
+| [SGLang](https://github.com/sgl-project/sglang)               | 37.2k  | ![stars](https://img.shields.io/github/stars/sgl-project/sglang?style=flat&label=)              | 2026-10-16 | 推論サービング用フレームワーク。DGX Spark で DFlash2 と組み合わせて使われています。                                     |
+| [MLX](https://github.com/ml-explore/mlx)                      | 28.8k  | ![stars](https://img.shields.io/github/stars/ml-explore/mlx?style=flat&label=)                  | 2026-10-16 | Apple の配列フレームワーク。Mac のレシピの多くはこれがベース。                                                    |
+| [Strata](https://github.com/Niko1221/Strata)                  | 25.7k  | ![stars](https://img.shields.io/github/stars/Niko1221/Strata?style=flat&label=)                 | 2026-10-14 | MoE のエキスパートを VRAM・RAM・SSD に分けて載せる推論エンジン。12〜24GB の GPU 向けで、ここの Flash-Next レシピの多くが使っています。 |
+| [oMLX](https://github.com/jundot/omlx)                        | 22.9k  | ![stars](https://img.shields.io/github/stars/jundot/omlx?style=flat&label=)                     | 2026-10-15 | Apple Silicon 向けの MLX サーバー。連続バッチ処理と、KV/SSD の階層キャッシュに対応。                                 |
 | [DFlash / DFlash 2](https://github.com/z-lab/dflash)          | 6.2k   | ![stars](https://img.shields.io/github/stars/z-lab/dflash?style=flat&label=)                    | 2026-08-18 | ブロック拡散による投機的デコーディング。DFlash 2 は Qwen3.8-27B 用のドラフトモデルを提供。                                |
-| [LightX2V](https://github.com/ModelTC/LightX2V)               | 2.9k   | ![stars](https://img.shields.io/github/stars/ModelTC/LightX2V?style=flat&label=)                | 2026-10-13 | 動画生成の推論フレームワーク。RTX 5090 での MiniMax H3 の結果あり。                                            |
-| [TensorFold](https://github.com/ashhart/TensorFold)           | 1.3k   | ![stars](https://img.shields.io/github/stars/ashhart/TensorFold?style=flat&label=)              | 2026-10-12 | OpenAI 互換 API の MoE ランタイム。投機的デコーディング付きで、ComfyUI の MiniMax H3 にも使われています。                 |
-| [halogen](https://github.com/peonist-ai/halogen-flash-server) | 954    | ![stars](https://img.shields.io/github/stars/peonist-ai/halogen-flash-server?style=flat&label=) | 2026-10-13 | Strix Halo 向けにチューニングされた Flash-Next サーバー。                                                |
-| [dflash-mlx](https://github.com/bstnxbt/dflash-mlx)           | 788    | ![stars](https://img.shields.io/github/stars/bstnxbt/dflash-mlx?style=flat&label=)              | 2026-08-20 | Apple Silicon（MLX）で動く DFlash 投機的デコーディング。                                                |
+| [LightX2V](https://github.com/ModelTC/LightX2V)               | 2.9k   | ![stars](https://img.shields.io/github/stars/ModelTC/LightX2V?style=flat&label=)                | 2026-10-16 | 動画生成の推論フレームワーク。RTX 5090 での MiniMax H3 の結果あり。                                            |
+| [TensorFold](https://github.com/ashhart/TensorFold)           | 1.3k   | ![stars](https://img.shields.io/github/stars/ashhart/TensorFold?style=flat&label=)              | 2026-10-14 | OpenAI 互換 API の MoE ランタイム。投機的デコーディング付きで、ComfyUI の MiniMax H3 にも使われています。                 |
+| [halogen](https://github.com/peonist-ai/halogen-flash-server) | 1.0k   | ![stars](https://img.shields.io/github/stars/peonist-ai/halogen-flash-server?style=flat&label=) | 2026-10-15 | Strix Halo 向けにチューニングされた Flash-Next サーバー。                                                |
+| [dflash-mlx](https://github.com/bstnxbt/dflash-mlx)           | 789    | ![stars](https://img.shields.io/github/stars/bstnxbt/dflash-mlx?style=flat&label=)              | 2026-08-20 | Apple Silicon（MLX）で動く DFlash 投機的デコーディング。                                                |
 | [FastH3](https://haoailab.com/blogs/fasth3-rtx/)              | —      | *（サイト・ブログ）*                                                                                     | —          | Hao AI Lab による 8 ステップ蒸留版 MiniMax H3。RTX 向け（ブログ）。                                        |
 
-<sub>⭐ スナップショットは `scripts/update_stars.py` で 2026-10-13T14:44Z（UTC）に更新 · 「ライブ」バッジは表示時に shields.io が描画します。</sub>
+<sub>⭐ スナップショットは `scripts/update_stars.py` で 2026-10-16T07:01Z（UTC）に更新 · 「ライブ」バッジは表示時に shields.io が描画します。</sub>
 
 ## 関連リスト・ベンチマーク
 
 | プロジェクト                                                                      | ⭐ Star | ライブ                                                                                             | 最終 push    | 概要                             |
 | --------------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------- | ---------- | ------------------------------ |
 | [Awesome-LLM-Inference](https://github.com/xlite-dev/Awesome-LLM-Inference) | 5.5k   | ![stars](https://img.shields.io/github/stars/xlite-dev/Awesome-LLM-Inference?style=flat&label=) | 2026-08-14 | 推論分野の論文とコードのまとめ。               |
-| [awesome-local-llm](https://github.com/rafska/awesome-local-llm)            | 3.0k   | ![stars](https://img.shields.io/github/stars/rafska/awesome-local-llm?style=flat&label=)        | 2026-10-12 | ローカル LLM のプラットフォームとツールのまとめ。    |
-| [LocalScore](https://github.com/cjpais/LocalScore)                          | 134    | ![stars](https://img.shields.io/github/stars/cjpais/LocalScore?style=flat&label=)               | 2026-10-09 | 1 GPU 向けの標準化されたベンチマーク CLI。     |
+| [awesome-local-llm](https://github.com/rafska/awesome-local-llm)            | 3.0k   | ![stars](https://img.shields.io/github/stars/rafska/awesome-local-llm?style=flat&label=)        | 2026-10-14 | ローカル LLM のプラットフォームとツールのまとめ。    |
+| [LocalScore](https://github.com/cjpais/LocalScore)                          | 135    | ![stars](https://img.shields.io/github/stars/cjpais/LocalScore?style=flat&label=)               | 2026-10-09 | 1 GPU 向けの標準化されたベンチマーク CLI。     |
 | [llamabench.ai](https://llamabench.ai/)                                     | —      | *（サイト・ブログ）*                                                                                     | —          | llama.cpp のベンチ結果を、起動コマンド付きで掲載。 |
 | [llamaperf](https://llamaperf.com/leaderboard)                              | —      | *（サイト・ブログ）*                                                                                     | —          | コミュニティ投稿のリーダーボード（中央値で表示）。      |
 | [canirun.ai](https://canirun.ai/)                                           | —      | *（サイト・ブログ）*                                                                                     | —          | 手持ちのハードでモデルが動くか、どれくらいの速度かを推定。  |
 
-<sub>⭐ スナップショットは `scripts/update_stars.py` で 2026-10-13T14:44Z（UTC）に更新 · 「ライブ」バッジは表示時に shields.io が描画します。</sub>
+<sub>⭐ スナップショットは `scripts/update_stars.py` で 2026-10-16T07:01Z（UTC）に更新 · 「ライブ」バッジは表示時に shields.io が描画します。</sub>
 
 ## コントリビュート
 

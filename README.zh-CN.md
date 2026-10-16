@@ -20,14 +20,14 @@
 
 ### 亮点数据
 
-| 记录              | 模型 · 引擎                      | 硬件                                                | 结果               | 来源                                                                       |
-| --------------- | ---------------------------- | ------------------------------------------------- | ---------------- | ------------------------------------------------------------------------ |
-| Mac 最快          | Qwen3.6-35B-A3B · DFlash     | Mac Studio M3 Ultra · 约 $5,649（起步配置价格，原帖未注明测试机内存） | **251 tok/s** ✅  | [来源](https://x.com/tinybluedev/status/2089910202606764530)               |
-| 单张 RTX 5090 最快  | Qwen3.8-Flash-Next · Strata  | RTX 5090 + 256GB RAM · 约 $5,400（仅显卡，不含 256GB 内存）  | **176 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483) |
-| AMD 最快          | Qwen3.8-Flash-Next · Strata  | AMD Radeon AI PRO R9700 · 约 $1,600                | **100 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376) |
-| 二手数据中心卡         | Qwen3.8-Flash-Next · Strata  | 2× Tesla V100 32GB PCIe（无 NVLink）                 | **120 tok/s** ✅  | [@rewin123](https://x.com/rewin123/status/2108669905616736529)           |
-| 单台 DGX Spark 最快 | Qwen3.8-Flash-Next · ExLlama | 1× DGX Spark · 约 $6,950                           | **71.7 tok/s** ✅ | [来源](https://x.com/yume_arasaki/status/2101741448811229219)              |
-| 最便宜的配置          | Qwen3.8-Flash-Next · Strata  | Tesla P40 24GB（二手） · 约 $405                       | **30 tok/s** ✅   | [来源](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md)    |
+| 记录              | 模型 · 引擎                         | 硬件                                                   | 结果               | 来源                                                                       |
+| --------------- | ------------------------------- | ---------------------------------------------------- | ---------------- | ------------------------------------------------------------------------ |
+| Mac 最快          | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra · 约 $5,649（峰值；起步配置价格，原帖未注明测试机内存） | **130 tok/s** ✅  | [来源](https://x.com/ivanfioravanti/status/2104183112611614780)            |
+| 单张 RTX 5090 最快  | Qwen3.8-Flash-Next · Strata     | RTX 5090 + 256GB RAM · 约 $5,400（仅显卡，不含 256GB 内存）     | **176 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483) |
+| AMD 最快          | Qwen3.8-Flash-Next · Strata     | AMD Radeon AI PRO R9700 · 约 $1,600                   | **100 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376) |
+| 二手数据中心卡         | Qwen3.8-Flash-Next · Strata     | 2× Tesla V100 32GB PCIe（无 NVLink）                    | **120 tok/s** ✅  | [@rewin123](https://x.com/rewin123/status/2108669905616736529)           |
+| 单台 DGX Spark 最快 | Qwen3.8-Flash-Next · ExLlama    | 1× DGX Spark · 约 $6,950                              | **71.7 tok/s** ✅ | [来源](https://x.com/yume_arasaki/status/2101741448811229219)              |
+| 最便宜的配置          | Qwen3.8-Flash-Next · Strata     | Tesla P40 24GB（二手） · 约 $405                          | **30 tok/s** ✅   | [来源](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md)    |
 
 <sub>单路生成速度，均摘自来源；价格为公开的最低硬件价格。✅ = 发帖人实测。</sub>
 
@@ -35,7 +35,7 @@
 
 - [图例](#图例)
 - [快速问答](#快速问答)
-- [本月热门](#本月热门)
+- [X 上的热门配方](#x-上的热门配方)
 - [按模型系列浏览](#按模型系列浏览)
 - [按引擎浏览](#按引擎浏览)
 - [第 1 档 · 2,500 美元以内](#第-1-档--2500-美元以内)
@@ -70,7 +70,7 @@
 实测最快：**120.8 tok/s**，Qwen3.8-Flash-Next · Strata，硬件 单 RTX 3090 24GB + 64GB RAM（RAM 见同作者前帖）（✅ 实测，日期未注明，[来源](https://x.com/needmorevram/status/2105050786938118599)）。该硬件共 10 条配方，其中实测 3 条。
 
 **Mac Studio M3 Ultra 跑本地大模型有多快？**  
-实测最快：**251 tok/s**，Qwen3.6-35B-A3B · DFlash，硬件 Mac Studio M3 Ultra（✅ 实测，日期未注明，[来源](https://x.com/tinybluedev/status/2089910202606764530)）。该硬件共 16 条配方，其中实测 8 条。
+实测最快：**130 tok/s**，Qwen3.8-Flash-Next · TensorFold，硬件 Mac Studio M3 Ultra（✅ 实测，日期未注明，[来源](https://x.com/ivanfioravanti/status/2104183112611614780)）。该硬件共 16 条配方，其中实测 7 条。
 
 **一台 NVIDIA DGX Spark 跑本地大模型有多快？**  
 实测最快：**95 tok/s**，Qwen3.6-35B-A3B · vLLM，硬件 1× DGX Spark（✅ 实测，2026-07-29，[来源](https://x.com/MiaAI_lab/status/2082573590529204458)）。该硬件共 28 条配方，其中实测 15 条。
@@ -82,17 +82,17 @@
 实测最快：**162 tok/s**，LFM2.5-24B-A2B · llama.cpp，硬件 RTX 5060 Ti 16GB（✅ 实测，2026-10-15，[来源](https://x.com/niklaslenz_ai/status/2110469931011612895)）。该预算内共 46 条配方，其中实测 20 条。
 
 
-## 本月热门
+## X 上的热门配方
 
-X 上互动最多的配方帖，2026-09-15 至 10-15（按 点赞 + 3×转发 排序）。
+X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只列一次，不含“宣称”条目；互动数截至 2026-10-16）。
 
 - **DeepSeek-V4.1-Flash** — 2× DGX Spark → **29 tok/s** ✅ [@0xSero](https://x.com/0xSero/status/2106373861818224907) ♥2470
 - **Qwen3.8-Flash-Next** · vLLM — 1× DGX Spark → **48.7 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2101339268203380857) ♥800
-- **GLM-5.3-Flash EXL3 4-bit** · TensorFold — 2× DGX Spark → **60.4 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2105598458547646875) ♥683
-- **Qwen3.8-Flash-Next** — RTX 3090 24GB + 64GB DDR4/5 + 100GB NVMe → **64 tok/s** 📣 [@0xSero](https://x.com/0xSero/status/2104865431659892934) ♥686
-- **Qwen3.8-Flash-Next** · Strata — RTX 5090 32GB + 系统内存（部分卸载） → **204 tok/s** ✅ [@niklaslenz_ai](https://x.com/niklaslenz_ai/status/2110132306061013386) ♥469
+- **GLM-5.3-Flash EXL3 4-bit** · TensorFold — 2× DGX Spark → **60.4 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2105598458547646875) ♥684
+- **Ternary Bonsai 2 27B（heretic 去拒答）** — RTX 3060 12GB → **50 tok/s** ✅ [@sudoingX](https://x.com/sudoingX/status/2110451458302943383) ♥741
+- **Qwen3.8-Flash-Next** · Strata — RTX 5090 32GB + 系统内存（部分卸载） → **204 tok/s** ✅ [@niklaslenz_ai](https://x.com/niklaslenz_ai/status/2110132306061013386) ♥487
 - **Qwen3.8-Flash-Next** · TensorFold — 1× DGX Spark → **64.4 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2108203605685596490) ♥386
-- **DeepSeek-V4-Flash (0731 GA)** — 2× DGX Spark → **82 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2083326111144906836) ♥368
+- **DeepSeek-V4-Flash (0731 GA)** — 2× DGX Spark → **82 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2083326111144906836) ♥367
 - **Qwen3.8-27B** · vLLM — RTX 5090 32GB → **147 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2088734058842878037) ♥381
 
 ## 按模型系列浏览
@@ -212,7 +212,7 @@ X 上互动最多的配方帖，2026-09-15 至 10-15（按 点赞 + 3×转发 �
 - **Qwen3.6-35B-A3B** · sparkinfer `sparkinfer v0.4.4（Blackwell…` — RTX 5090 → **512 tok/s** 📣 [来源](https://x.com/kysstalol/status/2105042922643321008)
 - **LFM2.5-24B-A2B** · llama.cpp `Q4（14.5 GB）` — RTX 5090 32GB → **351.5 tok/s** ✅ [来源](https://x.com/niklaslenz_ai/status/2110469931011612895)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2（INT8=on）` — RTX 5090 32GB → **283 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2) · [指南](recipes/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.zh-CN.md)
-- **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** ✅ [来源](https://x.com/tinybluedev/status/2089910202606764530)
+- **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** 📣 [来源](https://x.com/tinybluedev/status/2089910202606764530)
 - **MiniCPM-V 4.7 35B-A3B** · llama.cpp `Q4_K_M` — RTX 5090 → **208 tok/s** ✅ [来源](https://x.com/Blackwellboy/status/2110717843121881380)
 - **Qwen3.8-Flash-Next** · Strata `ISTA-DASLab GSQ-RCO GGUF IQ…` — RTX 5090 32GB + 系统内存（部分卸载） → **204 tok/s** ✅ [来源](https://x.com/niklaslenz_ai/status/2110132306061013386)
 - **Qwen3.8-Flash-Next** · Strata `GSQ RCO IQ3_XXS` — RTX 5090 32GB（限 450W）+ Ryzen 7 9800X3D + 60.5GB DDR5 → **202.1 tok/s** ✅ [来源](https://github.com/Niko1221/Strata/pull/2165)
@@ -306,33 +306,33 @@ X 上互动最多的配方帖，2026-09-15 至 10-15（按 点赞 + 3×转发 �
 
 | 项目                                                            | ⭐ Star | 实时                                                                                              | 最后推送       | 简介                                                             |
 | ------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------- | ---------- | -------------------------------------------------------------- |
-| [llama.cpp](https://github.com/ggml-org/llama.cpp)            | 131.0k | ![stars](https://img.shields.io/github/stars/ggml-org/llama.cpp?style=flat&label=)              | 2026-10-13 | 基准 GGUF 引擎，支持 CPU/CUDA/ROCm/Vulkan/Metal。                      |
-| [vLLM](https://github.com/vllm-project/vllm)                  | 93.7k  | ![stars](https://img.shields.io/github/stars/vllm-project/vllm?style=flat&label=)               | 2026-10-13 | 高吞吐推理服务；Spark 上的 MTP 和多路并发配方。                                  |
-| [SGLang](https://github.com/sgl-project/sglang)               | 37.1k  | ![stars](https://img.shields.io/github/stars/sgl-project/sglang?style=flat&label=)              | 2026-10-13 | 推理服务框架；DGX Spark 上与 DFlash2 搭配。                                |
-| [MLX](https://github.com/ml-explore/mlx)                      | 28.8k  | ![stars](https://img.shields.io/github/stars/ml-explore/mlx?style=flat&label=)                  | 2026-10-13 | Apple 的数组框架，多数 Mac 配方基于它。                                      |
-| [Strata](https://github.com/Niko1221/Strata)                  | 23.5k  | ![stars](https://img.shields.io/github/stars/Niko1221/Strata?style=flat&label=)                 | 2026-10-12 | 把 MoE 专家拆到显存、内存和 SSD 的推理引擎，面向 12–24GB 显卡；本库多数 Flash-Next 配方用它。 |
-| [oMLX](https://github.com/jundot/omlx)                        | 22.8k  | ![stars](https://img.shields.io/github/stars/jundot/omlx?style=flat&label=)                     | 2026-10-13 | Apple Silicon 上的 MLX 推理服务，支持连续批处理和分层 KV/SSD 缓存。                |
+| [llama.cpp](https://github.com/ggml-org/llama.cpp)            | 131.3k | ![stars](https://img.shields.io/github/stars/ggml-org/llama.cpp?style=flat&label=)              | 2026-10-16 | 基准 GGUF 引擎，支持 CPU/CUDA/ROCm/Vulkan/Metal。                      |
+| [vLLM](https://github.com/vllm-project/vllm)                  | 93.9k  | ![stars](https://img.shields.io/github/stars/vllm-project/vllm?style=flat&label=)               | 2026-10-16 | 高吞吐推理服务；Spark 上的 MTP 和多路并发配方。                                  |
+| [SGLang](https://github.com/sgl-project/sglang)               | 37.2k  | ![stars](https://img.shields.io/github/stars/sgl-project/sglang?style=flat&label=)              | 2026-10-16 | 推理服务框架；DGX Spark 上与 DFlash2 搭配。                                |
+| [MLX](https://github.com/ml-explore/mlx)                      | 28.8k  | ![stars](https://img.shields.io/github/stars/ml-explore/mlx?style=flat&label=)                  | 2026-10-16 | Apple 的数组框架，多数 Mac 配方基于它。                                      |
+| [Strata](https://github.com/Niko1221/Strata)                  | 25.7k  | ![stars](https://img.shields.io/github/stars/Niko1221/Strata?style=flat&label=)                 | 2026-10-14 | 把 MoE 专家拆到显存、内存和 SSD 的推理引擎，面向 12–24GB 显卡；本库多数 Flash-Next 配方用它。 |
+| [oMLX](https://github.com/jundot/omlx)                        | 22.9k  | ![stars](https://img.shields.io/github/stars/jundot/omlx?style=flat&label=)                     | 2026-10-15 | Apple Silicon 上的 MLX 推理服务，支持连续批处理和分层 KV/SSD 缓存。                |
 | [DFlash / DFlash 2](https://github.com/z-lab/dflash)          | 6.2k   | ![stars](https://img.shields.io/github/stars/z-lab/dflash?style=flat&label=)                    | 2026-08-18 | 块扩散投机解码；DFlash 2 提供 Qwen3.8-27B 草稿模型。                          |
-| [LightX2V](https://github.com/ModelTC/LightX2V)               | 2.9k   | ![stars](https://img.shields.io/github/stars/ModelTC/LightX2V?style=flat&label=)                | 2026-10-13 | 视频生成推理框架，有 5090 上的 MiniMax H3 结果。                              |
-| [TensorFold](https://github.com/ashhart/TensorFold)           | 1.3k   | ![stars](https://img.shields.io/github/stars/ashhart/TensorFold?style=flat&label=)              | 2026-10-12 | 兼容 OpenAI 接口的 MoE 运行时，带投机解码；也用于 ComfyUI 里的 MiniMax H3。         |
-| [halogen](https://github.com/peonist-ai/halogen-flash-server) | 954    | ![stars](https://img.shields.io/github/stars/peonist-ai/halogen-flash-server?style=flat&label=) | 2026-10-13 | 针对 Strix Halo 调优的 Flash-Next 服务。                               |
-| [dflash-mlx](https://github.com/bstnxbt/dflash-mlx)           | 788    | ![stars](https://img.shields.io/github/stars/bstnxbt/dflash-mlx?style=flat&label=)              | 2026-08-20 | Apple Silicon（MLX）上的 DFlash 投机解码。                              |
+| [LightX2V](https://github.com/ModelTC/LightX2V)               | 2.9k   | ![stars](https://img.shields.io/github/stars/ModelTC/LightX2V?style=flat&label=)                | 2026-10-16 | 视频生成推理框架，有 5090 上的 MiniMax H3 结果。                              |
+| [TensorFold](https://github.com/ashhart/TensorFold)           | 1.3k   | ![stars](https://img.shields.io/github/stars/ashhart/TensorFold?style=flat&label=)              | 2026-10-14 | 兼容 OpenAI 接口的 MoE 运行时，带投机解码；也用于 ComfyUI 里的 MiniMax H3。         |
+| [halogen](https://github.com/peonist-ai/halogen-flash-server) | 1.0k   | ![stars](https://img.shields.io/github/stars/peonist-ai/halogen-flash-server?style=flat&label=) | 2026-10-15 | 针对 Strix Halo 调优的 Flash-Next 服务。                               |
+| [dflash-mlx](https://github.com/bstnxbt/dflash-mlx)           | 789    | ![stars](https://img.shields.io/github/stars/bstnxbt/dflash-mlx?style=flat&label=)              | 2026-08-20 | Apple Silicon（MLX）上的 DFlash 投机解码。                              |
 | [FastH3](https://haoailab.com/blogs/fasth3-rtx/)              | —      | *（网站/博客）*                                                                                       | —          | Hao AI Lab 的 8 步蒸馏版 MiniMax H3，面向 RTX 显卡（博客）。                  |
 
-<sub>⭐ 快照由 `scripts/update_stars.py` 更新于 2026-10-13T14:44Z（UTC）· 「实时」徽章由 shields.io 在打开页面时实时渲染。</sub>
+<sub>⭐ 快照由 `scripts/update_stars.py` 更新于 2026-10-16T07:01Z（UTC）· 「实时」徽章由 shields.io 在打开页面时实时渲染。</sub>
 
 ## 相关榜单与清单
 
 | 项目                                                                          | ⭐ Star | 实时                                                                                              | 最后推送       | 简介                      |
 | --------------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------- | ---------- | ----------------------- |
 | [Awesome-LLM-Inference](https://github.com/xlite-dev/Awesome-LLM-Inference) | 5.5k   | ![stars](https://img.shields.io/github/stars/xlite-dev/Awesome-LLM-Inference?style=flat&label=) | 2026-08-14 | 推理方向论文与代码合集。            |
-| [awesome-local-llm](https://github.com/rafska/awesome-local-llm)            | 3.0k   | ![stars](https://img.shields.io/github/stars/rafska/awesome-local-llm?style=flat&label=)        | 2026-10-12 | 本地大模型平台与工具目录。           |
-| [LocalScore](https://github.com/cjpais/LocalScore)                          | 134    | ![stars](https://img.shields.io/github/stars/cjpais/LocalScore?style=flat&label=)               | 2026-10-09 | 标准化的单卡跑分 CLI。           |
+| [awesome-local-llm](https://github.com/rafska/awesome-local-llm)            | 3.0k   | ![stars](https://img.shields.io/github/stars/rafska/awesome-local-llm?style=flat&label=)        | 2026-10-14 | 本地大模型平台与工具目录。           |
+| [LocalScore](https://github.com/cjpais/LocalScore)                          | 135    | ![stars](https://img.shields.io/github/stars/cjpais/LocalScore?style=flat&label=)               | 2026-10-09 | 标准化的单卡跑分 CLI。           |
 | [llamabench.ai](https://llamabench.ai/)                                     | —      | *（网站/博客）*                                                                                       | —          | llama.cpp 跑分结果，附完整启动命令。 |
 | [llamaperf](https://llamaperf.com/leaderboard)                              | —      | *（网站/博客）*                                                                                       | —          | 社区自报排行榜（给中位数）。          |
 | [canirun.ai](https://canirun.ai/)                                           | —      | *（网站/博客）*                                                                                       | —          | 估算模型能否在你的硬件上运行、跑多快。     |
 
-<sub>⭐ 快照由 `scripts/update_stars.py` 更新于 2026-10-13T14:44Z（UTC）· 「实时」徽章由 shields.io 在打开页面时实时渲染。</sub>
+<sub>⭐ 快照由 `scripts/update_stars.py` 更新于 2026-10-16T07:01Z（UTC）· 「实时」徽章由 shields.io 在打开页面时实时渲染。</sub>
 
 ## 参与贡献
 

@@ -13,4 +13,6 @@ window.costKind=r=>{if(r.hardware_cost_usd==null)return null;const h=r.hardware|
  return 'sys'};
 // Rows whose metric says 自称 ("self-reported") are filed as 实测 but have no log behind them; keep them out of "measured" rankings until the data is fixed.
 window.selfReported=r=>/自称/.test(r.metric||'');
+// Home-page "Popular on X": likes + 3×reposts, one card per post, 宣称 (claimed) rows left out.
+window.hotPosts=(D,n)=>{const seen=new Set();return D.filter(r=>r.x_post&&r.source_level!='宣称').sort((a,b)=>(b.x_post.likes+3*b.x_post.reposts)-(a.x_post.likes+3*a.x_post.reposts)).filter(r=>!seen.has(r.source_url)&&seen.add(r.source_url)).slice(0,n)};
 })();

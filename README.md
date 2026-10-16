@@ -20,14 +20,14 @@
 
 ### Headline numbers
 
-| Record                   | Model · engine               | Hardware                                                                           | Result           | Source                                                                    |
-| ------------------------ | ---------------------------- | ---------------------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------- |
-| Fastest on a Mac         | Qwen3.6-35B-A3B · DFlash     | Mac Studio M3 Ultra · ≈ $5,649 (base config price; test machine memory not stated) | **251 tok/s** ✅  | [source](https://x.com/tinybluedev/status/2089910202606764530)            |
-| Fastest on one RTX 5090  | Qwen3.8-Flash-Next · Strata  | RTX 5090 + 256GB RAM · ≈ $5,400 (card only, excl. 256GB RAM)                       | **176 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483)  |
-| Fastest on AMD           | Qwen3.8-Flash-Next · Strata  | AMD Radeon AI PRO R9700 · ≈ $1,600                                                 | **100 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376)  |
-| Used datacenter GPUs     | Qwen3.8-Flash-Next · Strata  | 2× Tesla V100 32GB PCIe                                                            | **120 tok/s** ✅  | [@rewin123](https://x.com/rewin123/status/2108669905616736529)            |
-| Fastest on one DGX Spark | Qwen3.8-Flash-Next · ExLlama | 1× DGX Spark · ≈ $6,950                                                            | **71.7 tok/s** ✅ | [source](https://x.com/yume_arasaki/status/2101741448811229219)           |
-| Cheapest rig in the list | Qwen3.8-Flash-Next · Strata  | Tesla P40 24GB · ≈ $405                                                            | **30 tok/s** ✅   | [source](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md) |
+| Record                   | Model · engine                  | Hardware                                                                                        | Result           | Source                                                                    |
+| ------------------------ | ------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------- |
+| Fastest on a Mac         | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra · ≈ $5,649 (peak figure; base config price, test machine memory not stated) | **130 tok/s** ✅  | [source](https://x.com/ivanfioravanti/status/2104183112611614780)         |
+| Fastest on one RTX 5090  | Qwen3.8-Flash-Next · Strata     | RTX 5090 + 256GB RAM · ≈ $5,400 (card only, excl. 256GB RAM)                                    | **176 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483)  |
+| Fastest on AMD           | Qwen3.8-Flash-Next · Strata     | AMD Radeon AI PRO R9700 · ≈ $1,600                                                              | **100 tok/s** ✅  | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376)  |
+| Used datacenter GPUs     | Qwen3.8-Flash-Next · Strata     | 2× Tesla V100 32GB PCIe                                                                         | **120 tok/s** ✅  | [@rewin123](https://x.com/rewin123/status/2108669905616736529)            |
+| Fastest on one DGX Spark | Qwen3.8-Flash-Next · ExLlama    | 1× DGX Spark · ≈ $6,950                                                                         | **71.7 tok/s** ✅ | [source](https://x.com/yume_arasaki/status/2101741448811229219)           |
+| Cheapest rig in the list | Qwen3.8-Flash-Next · Strata     | Tesla P40 24GB · ≈ $405                                                                         | **30 tok/s** ✅   | [source](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md) |
 
 <sub>Single-stream generation speed, copied from each source; prices are the lowest published hardware price. ✅ = measured by the poster.</sub>
 
@@ -35,7 +35,7 @@
 
 - [Legend](#legend)
 - [Quick answers](#quick-answers)
-- [Hot This Month](#hot-this-month)
+- [Popular on X](#popular-on-x)
 - [Browse by Model Family](#browse-by-model-family)
 - [Browse by Engine](#browse-by-engine)
 - [Tier 1 · up to $2.5k](#tier-1--up-to-25k)
@@ -70,7 +70,7 @@ Fastest measured: **121 tok/s** — Qwen3.8-27B · DFlash on RTX 4090 24GB (✅ 
 Fastest measured: **120.8 tok/s** — Qwen3.8-Flash-Next · Strata on RTX 3090 24GB + 64GB RAM (✅ measured, date not stated, [source](https://x.com/needmorevram/status/2105050786938118599)). 10 recipe(s) for this hardware, 3 measured.
 
 **How fast is a Mac Studio M3 Ultra for local LLMs?**  
-Fastest measured: **251 tok/s** — Qwen3.6-35B-A3B · DFlash on Mac Studio M3 Ultra (✅ measured, date not stated, [source](https://x.com/tinybluedev/status/2089910202606764530)). 16 recipe(s) for this hardware, 8 measured.
+Fastest measured: **130 tok/s** — Qwen3.8-Flash-Next · TensorFold on Mac Studio M3 Ultra (✅ measured, date not stated, [source](https://x.com/ivanfioravanti/status/2104183112611614780)). 16 recipe(s) for this hardware, 7 measured.
 
 **How fast is one NVIDIA DGX Spark for local LLMs?**  
 Fastest measured: **95 tok/s** — Qwen3.6-35B-A3B · vLLM on 1× DGX Spark (✅ measured, 2026-07-29, [source](https://x.com/MiaAI_lab/status/2082573590529204458)). 28 recipe(s) for this hardware, 15 measured.
@@ -82,17 +82,17 @@ Fastest measured: **61 tok/s** — Qwen3.8-Flash-Next · llama.cpp (vahpetr fork
 Fastest measured: **162 tok/s** — LFM2.5-24B-A2B · llama.cpp on RTX 5060 Ti 16GB (✅ measured, 2026-10-15, [source](https://x.com/niklaslenz_ai/status/2110469931011612895)). 46 recipe(s) in this budget, 20 measured.
 
 
-## Hot This Month
+## Popular on X
 
-Most-engaged recipe posts on X, 2026-09-15 → 10-15 (likes + 3×reposts).
+Most-engaged recipe posts on X (likes + 3×reposts; one entry per post, claimed-only results left out; counts as of 2026-10-16).
 
 - **DeepSeek-V4.1-Flash** — 2× DGX Spark → **29 tok/s** ✅ [@0xSero](https://x.com/0xSero/status/2106373861818224907) ♥2470
 - **Qwen3.8-Flash-Next** · vLLM — 1× DGX Spark → **48.7 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2101339268203380857) ♥800
-- **GLM-5.3-Flash EXL3 4-bit** · TensorFold — 2× DGX Spark → **60.4 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2105598458547646875) ♥683
-- **Qwen3.8-Flash-Next** — RTX 3090 24GB + 64GB DDR4/5 + 100GB NVMe → **64 tok/s** 📣 [@0xSero](https://x.com/0xSero/status/2104865431659892934) ♥686
-- **Qwen3.8-Flash-Next** · Strata — RTX 5090 32GB → **204 tok/s** ✅ [@niklaslenz_ai](https://x.com/niklaslenz_ai/status/2110132306061013386) ♥469
+- **GLM-5.3-Flash EXL3 4-bit** · TensorFold — 2× DGX Spark → **60.4 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2105598458547646875) ♥684
+- **Ternary Bonsai 2 27B** — RTX 3060 12GB → **50 tok/s** ✅ [@sudoingX](https://x.com/sudoingX/status/2110451458302943383) ♥741
+- **Qwen3.8-Flash-Next** · Strata — RTX 5090 32GB → **204 tok/s** ✅ [@niklaslenz_ai](https://x.com/niklaslenz_ai/status/2110132306061013386) ♥487
 - **Qwen3.8-Flash-Next** · TensorFold — 1× DGX Spark → **64.4 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2108203605685596490) ♥386
-- **DeepSeek-V4-Flash (0731 GA)** — 2× DGX Spark → **82 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2083326111144906836) ♥368
+- **DeepSeek-V4-Flash (0731 GA)** — 2× DGX Spark → **82 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2083326111144906836) ♥367
 - **Qwen3.8-27B** · vLLM — RTX 5090 32GB → **147 tok/s** ✅ [@MiaAI_lab](https://x.com/MiaAI_lab/status/2088734058842878037) ♥381
 
 ## Browse by Model Family
@@ -212,7 +212,7 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 - **Qwen3.6-35B-A3B** · sparkinfer `sparkinfer v0.4.4` — RTX 5090 → **512 tok/s** 📣 [source](https://x.com/kysstalol/status/2105042922643321008)
 - **LFM2.5-24B-A2B** · llama.cpp `Q4` — RTX 5090 32GB → **351.5 tok/s** ✅ [source](https://x.com/niklaslenz_ai/status/2110469931011612895)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 5090 32GB → **283 tok/s** 📣 [source](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2) · [guide](recipes/hf-eschalabs-qwen3-6-35b-a3b-escha-w2-1.md)
-- **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** ✅ [source](https://x.com/tinybluedev/status/2089910202606764530)
+- **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** 📣 [source](https://x.com/tinybluedev/status/2089910202606764530)
 - **MiniCPM-V 4.7 35B-A3B** · llama.cpp `Q4_K_M` — RTX 5090 → **208 tok/s** ✅ [source](https://x.com/Blackwellboy/status/2110717843121881380)
 - **Qwen3.8-Flash-Next** · Strata `ISTA-DASLab GSQ-RCO GGUF IQ…` — RTX 5090 32GB → **204 tok/s** ✅ [source](https://x.com/niklaslenz_ai/status/2110132306061013386)
 - **Qwen3.8-Flash-Next** · Strata `GSQ RCO IQ3_XXS` — RTX 5090 32GB+ Ryzen 7 9800X3D + 60.5GB DDR5 → **202.1 tok/s** ✅ [source](https://github.com/Niko1221/Strata/pull/2165)
@@ -306,33 +306,33 @@ Multi-card builds priced per card, Macs without a listed price, and other rows w
 
 | Project                                                       | ⭐ Stars | Live                                                                                            | Last push  | What                                                                                                    |
 | ------------------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------- |
-| [llama.cpp](https://github.com/ggml-org/llama.cpp)            | 131.0k  | ![stars](https://img.shields.io/github/stars/ggml-org/llama.cpp?style=flat&label=)              | 2026-10-13 | The baseline GGUF engine (CPU/CUDA/ROCm/Vulkan/Metal).                                                  |
-| [vLLM](https://github.com/vllm-project/vllm)                  | 93.7k   | ![stars](https://img.shields.io/github/stars/vllm-project/vllm?style=flat&label=)               | 2026-10-13 | High-throughput server; MTP and multi-stream recipes on Spark.                                          |
-| [SGLang](https://github.com/sgl-project/sglang)               | 37.1k   | ![stars](https://img.shields.io/github/stars/sgl-project/sglang?style=flat&label=)              | 2026-10-13 | Serving framework; paired with DFlash2 on DGX Spark.                                                    |
-| [MLX](https://github.com/ml-explore/mlx)                      | 28.8k   | ![stars](https://img.shields.io/github/stars/ml-explore/mlx?style=flat&label=)                  | 2026-10-13 | Apple's array framework behind most Mac recipes.                                                        |
-| [Strata](https://github.com/Niko1221/Strata)                  | 23.5k   | ![stars](https://img.shields.io/github/stars/Niko1221/Strata?style=flat&label=)                 | 2026-10-12 | MoE engine that splits experts across GPU, RAM and SSD for 12–24GB cards; most Flash-Next recipes here. |
-| [oMLX](https://github.com/jundot/omlx)                        | 22.8k   | ![stars](https://img.shields.io/github/stars/jundot/omlx?style=flat&label=)                     | 2026-10-13 | Apple Silicon MLX server with continuous batching and tiered KV/SSD cache.                              |
+| [llama.cpp](https://github.com/ggml-org/llama.cpp)            | 131.3k  | ![stars](https://img.shields.io/github/stars/ggml-org/llama.cpp?style=flat&label=)              | 2026-10-16 | The baseline GGUF engine (CPU/CUDA/ROCm/Vulkan/Metal).                                                  |
+| [vLLM](https://github.com/vllm-project/vllm)                  | 93.9k   | ![stars](https://img.shields.io/github/stars/vllm-project/vllm?style=flat&label=)               | 2026-10-16 | High-throughput server; MTP and multi-stream recipes on Spark.                                          |
+| [SGLang](https://github.com/sgl-project/sglang)               | 37.2k   | ![stars](https://img.shields.io/github/stars/sgl-project/sglang?style=flat&label=)              | 2026-10-16 | Serving framework; paired with DFlash2 on DGX Spark.                                                    |
+| [MLX](https://github.com/ml-explore/mlx)                      | 28.8k   | ![stars](https://img.shields.io/github/stars/ml-explore/mlx?style=flat&label=)                  | 2026-10-16 | Apple's array framework behind most Mac recipes.                                                        |
+| [Strata](https://github.com/Niko1221/Strata)                  | 25.7k   | ![stars](https://img.shields.io/github/stars/Niko1221/Strata?style=flat&label=)                 | 2026-10-14 | MoE engine that splits experts across GPU, RAM and SSD for 12–24GB cards; most Flash-Next recipes here. |
+| [oMLX](https://github.com/jundot/omlx)                        | 22.9k   | ![stars](https://img.shields.io/github/stars/jundot/omlx?style=flat&label=)                     | 2026-10-15 | Apple Silicon MLX server with continuous batching and tiered KV/SSD cache.                              |
 | [DFlash / DFlash 2](https://github.com/z-lab/dflash)          | 6.2k    | ![stars](https://img.shields.io/github/stars/z-lab/dflash?style=flat&label=)                    | 2026-08-18 | Block-diffusion speculative decoding; DFlash 2 drafts for Qwen3.8-27B.                                  |
-| [LightX2V](https://github.com/ModelTC/LightX2V)               | 2.9k    | ![stars](https://img.shields.io/github/stars/ModelTC/LightX2V?style=flat&label=)                | 2026-10-13 | Video generation inference framework; MiniMax H3 results on a 5090.                                     |
-| [TensorFold](https://github.com/ashhart/TensorFold)           | 1.3k    | ![stars](https://img.shields.io/github/stars/ashhart/TensorFold?style=flat&label=)              | 2026-10-12 | OpenAI-compatible MoE runtime with speculative decoding; also used for MiniMax H3 in ComfyUI.           |
-| [halogen](https://github.com/peonist-ai/halogen-flash-server) | 954     | ![stars](https://img.shields.io/github/stars/peonist-ai/halogen-flash-server?style=flat&label=) | 2026-10-13 | Flash-Next server tuned for Strix Halo.                                                                 |
-| [dflash-mlx](https://github.com/bstnxbt/dflash-mlx)           | 788     | ![stars](https://img.shields.io/github/stars/bstnxbt/dflash-mlx?style=flat&label=)              | 2026-08-20 | DFlash speculative decoding for MLX on Apple Silicon.                                                   |
+| [LightX2V](https://github.com/ModelTC/LightX2V)               | 2.9k    | ![stars](https://img.shields.io/github/stars/ModelTC/LightX2V?style=flat&label=)                | 2026-10-16 | Video generation inference framework; MiniMax H3 results on a 5090.                                     |
+| [TensorFold](https://github.com/ashhart/TensorFold)           | 1.3k    | ![stars](https://img.shields.io/github/stars/ashhart/TensorFold?style=flat&label=)              | 2026-10-14 | OpenAI-compatible MoE runtime with speculative decoding; also used for MiniMax H3 in ComfyUI.           |
+| [halogen](https://github.com/peonist-ai/halogen-flash-server) | 1.0k    | ![stars](https://img.shields.io/github/stars/peonist-ai/halogen-flash-server?style=flat&label=) | 2026-10-15 | Flash-Next server tuned for Strix Halo.                                                                 |
+| [dflash-mlx](https://github.com/bstnxbt/dflash-mlx)           | 789     | ![stars](https://img.shields.io/github/stars/bstnxbt/dflash-mlx?style=flat&label=)              | 2026-08-20 | DFlash speculative decoding for MLX on Apple Silicon.                                                   |
 | [FastH3](https://haoailab.com/blogs/fasth3-rtx/)              | —       | *(site/blog)*                                                                                   | —          | Hao AI Lab's 8-step distilled MiniMax H3 for RTX cards (blog).                                          |
 
-<sub>⭐ Snapshot updated 2026-10-13T14:44Z (UTC) by `scripts/update_stars.py` · *Live* badges are rendered by shields.io at view time.</sub>
+<sub>⭐ Snapshot updated 2026-10-16T07:01Z (UTC) by `scripts/update_stars.py` · *Live* badges are rendered by shields.io at view time.</sub>
 
 ## Related Lists & Benchmarks
 
 | Project                                                                     | ⭐ Stars | Live                                                                                            | Last push  | What                                                       |
 | --------------------------------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------- | ---------- | ---------------------------------------------------------- |
 | [Awesome-LLM-Inference](https://github.com/xlite-dev/Awesome-LLM-Inference) | 5.5k    | ![stars](https://img.shields.io/github/stars/xlite-dev/Awesome-LLM-Inference?style=flat&label=) | 2026-08-14 | Inference papers with code.                                |
-| [awesome-local-llm](https://github.com/rafska/awesome-local-llm)            | 3.0k    | ![stars](https://img.shields.io/github/stars/rafska/awesome-local-llm?style=flat&label=)        | 2026-10-12 | Directory of local LLM platforms and tools.                |
-| [LocalScore](https://github.com/cjpais/LocalScore)                          | 134     | ![stars](https://img.shields.io/github/stars/cjpais/LocalScore?style=flat&label=)               | 2026-10-09 | Standardized single-GPU benchmark CLI.                     |
+| [awesome-local-llm](https://github.com/rafska/awesome-local-llm)            | 3.0k    | ![stars](https://img.shields.io/github/stars/rafska/awesome-local-llm?style=flat&label=)        | 2026-10-14 | Directory of local LLM platforms and tools.                |
+| [LocalScore](https://github.com/cjpais/LocalScore)                          | 135     | ![stars](https://img.shields.io/github/stars/cjpais/LocalScore?style=flat&label=)               | 2026-10-09 | Standardized single-GPU benchmark CLI.                     |
 | [llamabench.ai](https://llamabench.ai/)                                     | —       | *(site/blog)*                                                                                   | —          | llama.cpp results with full launch commands.               |
 | [llamaperf](https://llamaperf.com/leaderboard)                              | —       | *(site/blog)*                                                                                   | —          | Community-reported leaderboard (medians).                  |
 | [canirun.ai](https://canirun.ai/)                                           | —       | *(site/blog)*                                                                                   | —          | Estimates whether and how fast a model fits your hardware. |
 
-<sub>⭐ Snapshot updated 2026-10-13T14:44Z (UTC) by `scripts/update_stars.py` · *Live* badges are rendered by shields.io at view time.</sub>
+<sub>⭐ Snapshot updated 2026-10-16T07:01Z (UTC) by `scripts/update_stars.py` · *Live* badges are rendered by shields.io at view time.</sub>
 
 ## Contributing
 
