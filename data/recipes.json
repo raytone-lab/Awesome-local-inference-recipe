@@ -3079,7 +3079,7 @@
     "engine": "oMLX",
     "hardware": "M3 Ultra / M5 Max",
     "hardware_family": "Mac",
-    "hardware_cost_text": "内存未注明；Apple 美国首发价 $3,999（96GB）/ $5,599（256GB）/ $9,499（512GB，32C/80C），2025-03，1TB；已停产",
+    "hardware_cost_text": "M3 Ultra 内存未注明；Apple 美国首发价 $3,999（96GB）/ $5,599（256GB）/ $9,499（512GB，32C/80C），2025-03，1TB；已停产；M5 Max 价格未注明",
     "hardware_cost_usd": null,
     "metric": "M3U 32K prefill 396 → 636 tok/s；M5 Max 8 请求首 token 7.41 → 5.75 s",
     "tok_s": null,
@@ -3101,7 +3101,7 @@
       "quant": "oMLX 0.7.1.dev1 (expert offload / batched prefill)",
       "concurrency": "8 requests (0.4 s apart)",
       "source_note": "oMLX release notes (@jundotkim)",
-      "hardware_cost_text": "memory not stated; Apple US launch price $3,999 (96GB) / $5,599 (256GB) / $9,499 (512GB, 32C/80C), 2025-03, 1TB; discontinued"
+      "hardware_cost_text": "M3 Ultra memory not stated; Apple US launch price $3,999 (96GB) / $5,599 (256GB) / $9,499 (512GB, 32C/80C), 2025-03, 1TB; discontinued; M5 Max price not stated"
     }
   },
   {
@@ -3112,7 +3112,7 @@
     "engine": "oMLX",
     "hardware": "Mac Studio M5 Ultra 256GB / M3 Ultra 512GB / RTX 5090",
     "hardware_family": "Mac",
-    "hardware_cost_text": "M5 Ultra $9,499（64C/256GB）/ $10,799（80C/256GB）；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）",
+    "hardware_cost_text": "M5 Ultra $9,499（64C/256GB）/ $10,799（80C/256GB）；M3 Ultra 512GB：$9,499（32C/80C；Apple 美国首发价，2025-03，1TB；已停产）；RTX 5090 价格未注明",
     "hardware_cost_usd": 9499,
     "metric": "6K 提示：48 / 31 / 59 tok/s；PP 1,701 / 414 / 3,031；256K：24.3 / 15.0 / 30.0（5090 需 8-bit KV）",
     "tok_s": null,
@@ -3134,7 +3134,7 @@
     "en": {
       "quant": "oMLX · oQ4e (MTP off) vs RTX 5090 LM Studio Q4_K_M",
       "context": "256K (on 5090 with default 16-bit KV, 256K did not finish in 10 minutes)",
-      "hardware_cost_text": "M5 Ultra $9,499 (64C/256GB) / $10,799 (80C/256GB); M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued)",
+      "hardware_cost_text": "M5 Ultra $9,499 (64C/256GB) / $10,799 (80C/256GB); M3 Ultra 512GB: $9,499 (32C/80C; Apple US launch price, 2025-03, 1TB; discontinued); RTX 5090 price not stated",
       "source_note": "MacStories (Viticci) review"
     }
   },

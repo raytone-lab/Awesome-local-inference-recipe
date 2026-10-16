@@ -20,14 +20,14 @@
 
 ### Headline numbers
 
-| Record                   | Model · engine                  | Hardware                                                                                                        | Result          | Source                                                                    |
-| ------------------------ | ------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------- | ------------------------------------------------------------------------- |
-| Fastest on a Mac         | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra (peak figure; test machine memory not stated, so no single price; launch price from $3,999) | **130 tok/s** ✅ | [source](https://x.com/ivanfioravanti/status/2104183112611614780)         |
-| Fastest on one RTX 5090  | Qwen3.8-Flash-Next · Strata     | RTX 5090 + 256GB RAM · ≈ $5,400 (card only, excl. 256GB RAM; street price, MSRP $1,999)                         | **176 tok/s** ✅ | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483)  |
-| Fastest on AMD           | Qwen3.8-Flash-Next · Strata     | AMD Radeon AI PRO R9700 · ≈ $1,600                                                                              | **100 tok/s** ✅ | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376)  |
-| Used datacenter GPUs     | Qwen3.8-Flash-Next · Strata     | 2× Tesla V100 32GB PCIe                                                                                         | **120 tok/s** ✅ | [@rewin123](https://x.com/rewin123/status/2108669905616736529)            |
-| Fastest on one DGX Spark | Qwen3.6-35B-A3B · vLLM          | 1× DGX Spark · ≈ $6,950                                                                                         | **95 tok/s** ✅  | [@MiaAI_lab](https://x.com/MiaAI_lab/status/2082573590529204458)          |
-| Cheapest rig in the list | Qwen3.8-Flash-Next · Strata     | Tesla P40 24GB · ≈ $405                                                                                         | **30 tok/s** ✅  | [source](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md) |
+| Record                   | Model · engine                  | Hardware                                                                                                                              | Result          | Source                                                                    |
+| ------------------------ | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ------------------------------------------------------------------------- |
+| Fastest on a Mac         | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra (peak figure; test machine memory not stated, so no single price; launch price $3,999–$9,499 depending on memory) | **130 tok/s** ✅ | [source](https://x.com/ivanfioravanti/status/2104183112611614780)         |
+| Fastest on one RTX 5090  | Qwen3.8-Flash-Next · Strata     | RTX 5090 + 256GB RAM · ≈ $5,400 (card only, excl. 256GB RAM; street price, MSRP $1,999)                                               | **176 tok/s** ✅ | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483)  |
+| Fastest on AMD           | Qwen3.8-Flash-Next · Strata     | AMD Radeon AI PRO R9700 · ≈ $1,600                                                                                                    | **100 tok/s** ✅ | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376)  |
+| Used datacenter GPUs     | Qwen3.8-Flash-Next · Strata     | 2× Tesla V100 32GB PCIe                                                                                                               | **120 tok/s** ✅ | [@rewin123](https://x.com/rewin123/status/2108669905616736529)            |
+| Fastest on one DGX Spark | Qwen3.6-35B-A3B · vLLM          | 1× DGX Spark · ≈ $6,950                                                                                                               | **95 tok/s** ✅  | [@MiaAI_lab](https://x.com/MiaAI_lab/status/2082573590529204458)          |
+| Cheapest rig in the list | Qwen3.8-Flash-Next · Strata     | Tesla P40 24GB · ≈ $405                                                                                                               | **30 tok/s** ✅  | [source](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md) |
 
 <sub>Single-stream generation speed, copied from each source; prices are the lowest published hardware price. ✅ = measured by the poster.</sub>
 
@@ -304,7 +304,7 @@ Engine names are normalized (`scripts/normalize_engines.py`); original strings a
 
 ## Cost Not Published
 
-Multi-card builds priced per card, Macs without a listed price, and other rows without a single published price · 152 recipes. Top text recipes by tok/s:
+Multi-card builds priced per card, Macs whose memory (and so price) is not stated, and other rows without a single published price · 152 recipes. Top text recipes by tok/s:
 
 - **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** 📣 [source](https://x.com/tinybluedev/status/2089910202606764530)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 5080 16GB → **212 tok/s** 📣 [source](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)

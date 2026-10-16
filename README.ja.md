@@ -20,14 +20,14 @@
 
 ### 注目の記録
 
-| 記録               | モデル · エンジン                      | ハードウェア                                                                 | 結果              | 出典                                                                       |
-| ---------------- | ------------------------------- | ---------------------------------------------------------------------- | --------------- | ------------------------------------------------------------------------ |
-| Mac で最速          | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra（ピーク値。検証機のメモリが不明なため価格は 1 つに決まらない。発売時価格は $3,999 から）  | **130 tok/s** ✅ | [出典](https://x.com/ivanfioravanti/status/2104183112611614780)            |
-| RTX 5090 1 枚で最速  | Qwen3.8-Flash-Next · Strata     | RTX 5090 + 256GB RAM · 約 5,400 ドル（GPU のみ、256GB RAM 別。実売価格、MSRP $1,999） | **176 tok/s** ✅ | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483) |
-| AMD で最速          | Qwen3.8-Flash-Next · Strata     | AMD Radeon AI PRO R9700 · 約 1,600 ドル                                   | **100 tok/s** ✅ | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376) |
-| 中古データセンター GPU    | Qwen3.8-Flash-Next · Strata     | 2× Tesla V100 32GB PCIe                                                | **120 tok/s** ✅ | [@rewin123](https://x.com/rewin123/status/2108669905616736529)           |
-| DGX Spark 1 台で最速 | Qwen3.6-35B-A3B · vLLM          | 1× DGX Spark · 約 6,950 ドル                                              | **95 tok/s** ✅  | [@MiaAI_lab](https://x.com/MiaAI_lab/status/2082573590529204458)         |
-| いちばん安い構成         | Qwen3.8-Flash-Next · Strata     | Tesla P40 24GB · 約 405 ドル                                              | **30 tok/s** ✅  | [出典](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md)    |
+| 記録               | モデル · エンジン                      | ハードウェア                                                                          | 結果              | 出典                                                                       |
+| ---------------- | ------------------------------- | ------------------------------------------------------------------------------- | --------------- | ------------------------------------------------------------------------ |
+| Mac で最速          | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra（ピーク値。検証機のメモリが不明なため価格は 1 つに決まらない。発売時価格はメモリにより $3,999〜$9,499） | **130 tok/s** ✅ | [出典](https://x.com/ivanfioravanti/status/2104183112611614780)            |
+| RTX 5090 1 枚で最速  | Qwen3.8-Flash-Next · Strata     | RTX 5090 + 256GB RAM · 約 5,400 ドル（GPU のみ、256GB RAM 別。実売価格、MSRP $1,999）          | **176 tok/s** ✅ | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483) |
+| AMD で最速          | Qwen3.8-Flash-Next · Strata     | AMD Radeon AI PRO R9700 · 約 1,600 ドル                                            | **100 tok/s** ✅ | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376) |
+| 中古データセンター GPU    | Qwen3.8-Flash-Next · Strata     | 2× Tesla V100 32GB PCIe                                                         | **120 tok/s** ✅ | [@rewin123](https://x.com/rewin123/status/2108669905616736529)           |
+| DGX Spark 1 台で最速 | Qwen3.6-35B-A3B · vLLM          | 1× DGX Spark · 約 6,950 ドル                                                       | **95 tok/s** ✅  | [@MiaAI_lab](https://x.com/MiaAI_lab/status/2082573590529204458)         |
+| いちばん安い構成         | Qwen3.8-Flash-Next · Strata     | Tesla P40 24GB · 約 405 ドル                                                       | **30 tok/s** ✅  | [出典](https://github.com/Niko1221/Strata/blob/main/docs/OLDER_GPUS.md)    |
 
 <sub>1 ストリームの生成速度で、いずれも出典からの引用です。価格は公開されている最安のハードウェア価格。✅ = 投稿者本人の実測。</sub>
 
@@ -304,7 +304,7 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 
 ## 価格非公開
 
-1 枚単位で価格が出ているマルチ GPU 構成、価格の記載がない Mac など、単一の公開価格がないレシピ · 152 件。tok/s 上位のテキストレシピ：
+1 枚単位で価格が出ているマルチ GPU 構成、メモリ（＝価格）が不明な Mac など、単一の公開価格がないレシピ · 152 件。tok/s 上位のテキストレシピ：
 
 - **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** 📣 [出典](https://x.com/tinybluedev/status/2089910202606764530)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 5080 16GB → **212 tok/s** 📣 [出典](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)

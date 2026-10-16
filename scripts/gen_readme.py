@@ -23,7 +23,7 @@ L = {
    cats={'text':'📝 Text','image':'🖼️ Image','video-audio':'🎬 Video & Audio'},
    fam='Browse by Model Family', famdesc='Click a family to open the explorer pre-filtered. Tags: {tags}.', hwidx='Browse by Hardware', hwdesc='Recipe count and the fastest measured single-stream tok/s for each device (multi-GPU rigs: fastest measured on any rig). Links open the hardware page, or the explorer pre-filtered when a device has fewer than {m} recipes.', th4='| Family | Device (recipes · ⚡ fastest measured tok/s) |', engidx='Browse by Engine', engdesc='Engine names are normalized (`scripts/normalize_engines.py`); original strings are kept in `engine_note`.', th2='| Family | Recipes | Text | Image | Video & Audio |', th3='| Engine | Recipes |',
    hot='Popular on X', hotdesc='Most-engaged recipe posts on X (likes + 3×reposts; one entry per post, claimed-only results left out; counts as of {asof}).',
-   unk='Cost Not Published', unkdesc='Multi-card builds priced per card, Macs without a listed price, and other rows without a single published price · {n} recipes. Top text recipes by tok/s:',
+   unk='Cost Not Published', unkdesc='Multi-card builds priced per card, Macs whose memory (and so price) is not stated, and other rows without a single published price · {n} recipes. Top text recipes by tok/s:',
    guide='guide', gsuf='.md', more='…and {n} more in the [explorer](explore.html).', all='…browse all {n} in the [explorer](explore.html).', count='{n} recipes',
    src='source', see='see source', legend='Legend', eng='Engines & Tools', rel='Related Lists & Benchmarks', contrib='Contributing', lic='License',
    th='| Project | ⭐ Stars | Live | Last push | What |', site='*(site/blog)*', desc='desc',
@@ -34,7 +34,7 @@ L = {
    cats={'text':'📝 文字','image':'🖼️ 图像','video-audio':'🎬 影音'},
    fam='按模型系列浏览', famdesc='点击系列名即可打开已筛选的配方库。标签：{tags}。', hwidx='按硬件浏览', hwdesc='每种设备的配方数，以及实测最快的单路 tok/s（多卡组合取任一组合的实测最快值）。点击打开该硬件页面；配方不足 {m} 条的设备会打开已筛选的配方库。', th4='| 类别 | 设备（配方数 · ⚡ 实测最快 tok/s） |', engidx='按引擎浏览', engdesc='引擎名已统一（`scripts/normalize_engines.py`），原始写法保留在 `engine_note` 字段。', th2='| 系列 | 配方数 | 文字 | 图像 | 影音 |', th3='| 引擎 | 配方数 |',
    hot='X 上的热门配方', hotdesc='X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只列一次，不含“宣称”条目；互动数截至 {asof}）。',
-   unk='价格未公开', unkdesc='按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 {n} 条。按 tok/s 排名靠前的文字配方：',
+   unk='价格未公开', unkdesc='按张计价的多卡组合、未注明内存（因而无法定价）的 Mac 以及其他没有单一公开价格的配方 · 共 {n} 条。按 tok/s 排名靠前的文字配方：',
    guide='指南', gsuf='.zh-CN.md', more='……另有 {n} 条，见 [配方库](explore.html)。', all='……全部 {n} 条见 [配方库](explore.html)。', count='共 {n} 条',
    src='来源', see='见来源', legend='图例', eng='引擎与工具', rel='相关榜单与清单', contrib='参与贡献', lic='许可证',
    th='| 项目 | ⭐ Star | 实时 | 最后推送 | 简介 |', site='*（网站/博客）*', desc='desc_zh',
@@ -45,7 +45,7 @@ L = {
    cats={'text':'📝 テキスト','image':'🖼️ 画像','video-audio':'🎬 動画・音声'},
    fam='モデルファミリー別', famdesc='ファミリー名をクリックすると、絞り込み済みのエクスプローラーが開きます。タグ：{tags}。', hwidx='ハードウェア別', hwdesc='デバイスごとのレシピ数と、実測で最速の 1 ストリーム tok/s（マルチ GPU は全構成中の実測最速）。クリックでハードウェアページを開きます。レシピが {m} 件未満のデバイスは、絞り込み済みのエクスプローラーが開きます。', th4='| 分類 | デバイス（レシピ数 · ⚡ 実測最速 tok/s） |', engidx='エンジン別', engdesc='エンジン名は表記を統一しています（`scripts/normalize_engines.py`）。元の表記は `engine_note` に残しています。', th2='| ファミリー | レシピ数 | テキスト | 画像 | 動画・音声 |', th3='| エンジン | レシピ数 |',
    hot='X で話題のレシピ', hotdesc='X で反応が多かったレシピ投稿（いいね + リポスト×3 の順。1 投稿 1 件、「主張のみ」は除外。数値は {asof} 時点）。',
-   unk='価格非公開', unkdesc='1 枚単位で価格が出ているマルチ GPU 構成、価格の記載がない Mac など、単一の公開価格がないレシピ · {n} 件。tok/s 上位のテキストレシピ：',
+   unk='価格非公開', unkdesc='1 枚単位で価格が出ているマルチ GPU 構成、メモリ（＝価格）が不明な Mac など、単一の公開価格がないレシピ · {n} 件。tok/s 上位のテキストレシピ：',
    guide='手順', gsuf='.ja.md', more='…ほか {n} 件は[エクスプローラー](explore.html)で。', all='…全 {n} 件は[エクスプローラー](explore.html)で見られます。', count='{n} 件',
    src='出典', see='出典を参照', legend='凡例', eng='エンジンとツール', rel='関連リスト・ベンチマーク', contrib='コントリビュート', lic='ライセンス',
    th='| プロジェクト | ⭐ Star | ライブ | 最終 push | 概要 |', site='*（サイト・ブログ）*', desc='desc_ja',
@@ -121,7 +121,7 @@ HL = {
    alt='棒グラフ：モデル規模別（Dense ≥27B・大型 MoE 総 ≥100B・中型 MoE 総 <100B／アクティブ ≥5B・小型 MoE アクティブ <5B、アクティブパラメータ表示、公式パラメータカードのあるモデルのみ）に、ハードウェア $1,000 あたりの tok/s で並べた実測テキスト構成（ハードウェア分類で色分け）', cost='約 {c:,} ドル'),
 }
 PNOTE = {'x-006':{'en':'card only, excl. 256GB RAM; street price, MSRP $1,999','zh':'仅显卡，不含 256GB 内存；街价，MSRP $1,999','ja':'GPU のみ、256GB RAM 別。実売価格、MSRP $1,999'},
- 'text-092':{'en':'peak figure; test machine memory not stated, so no single price; launch price from $3,999','zh':'峰值；原帖未注明测试机内存，无法给出单一价格；首发价 $3,999 起','ja':'ピーク値。検証機のメモリが不明なため価格は 1 つに決まらない。発売時価格は $3,999 から'}}
+ 'text-092':{'en':'peak figure; test machine memory not stated, so no single price; launch price $3,999–$9,499 depending on memory','zh':'峰值；原帖未注明测试机内存，无法给出单一价格；首发价按内存为 $3,999–$9,499','ja':'ピーク値。検証機のメモリが不明なため価格は 1 つに決まらない。発売時価格はメモリにより $3,999〜$9,499'}}
 def hero(lang, E):
     H=HL[lang]; T=L[lang]; byid={r['id']:r for r in D}
     n={c:sum(r['category']==c for r in D) for c in ('text','image','video-audio')}

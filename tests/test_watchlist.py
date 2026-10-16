@@ -17,7 +17,7 @@ class Watchlist(unittest.TestCase):
         rows = table_rows(self.md)
         self.assertEqual(len(rows), len(self.src['sources']))
         for s in self.src['sources']:
-            self.assertIn(f"]({s['url']})", self.md, s['name'])
+            self.assertIn(f"]({gen_watchlist.link_target(s['url'])})", self.md, s['name'])
     def test_rows_sorted_by_tier_and_pipes_escaped(self):
         out = gen_watchlist.render({'updated': '2026-01-01', 'sources': [
             {'tier': 'C', 'name': 'c', 'url': 'u1', 'platform': 'X', 'followers': None, 'focus': 'a|b', 'why': 'w', 'sample_post': 's'},
