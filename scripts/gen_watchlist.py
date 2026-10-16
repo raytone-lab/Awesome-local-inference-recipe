@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-"""Render docs/watchlist.md from data/sources.json (every source, sorted by tier).
-Run: python3 scripts/gen_watchlist.py"""
 import json
 from pathlib import Path
 R = Path(__file__).resolve().parent.parent
@@ -15,10 +13,13 @@ HEADER = ('# Recipe sources to watch / 重点跟踪来源\n\n'
 def cell(v):
     return str(v).replace('|', '\\|').replace('\n', ' ')
 
+def link_target(url):
+    return cell(url).replace(' ', '%20').replace('(', '%28').replace(')', '%29')
+
 def row(s):
     followers = '—' if s.get('followers') is None else s['followers']
-    return (f"| {s['tier']} | [{cell(s['name'])}]({s['url']}) | {s['platform']} | {followers} | "
-            f"{cell(s['focus'])} | {cell(s['why'])} | [link]({s['sample_post']}) |")
+    return (f"| {cell(s['tier'])} | [{cell(s['name'])}]({link_target(s['url'])}) | {cell(s['platform'])} | {followers} | "
+            f"{cell(s['focus'])} | {cell(s['why'])} | [link]({link_target(s['sample_post'])}) |")
 
 def render(sources):
     ordered = sorted(sources['sources'], key=lambda s: TIER_ORDER[s['tier']])

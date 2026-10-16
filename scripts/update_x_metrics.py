@@ -6,10 +6,11 @@ Offline: python3 scripts/update_x_metrics.py --posts posts.json --users users.js
 (--posts / --users take saved X API v2 responses with public_metrics.)
 Then re-run gen_readme.py, gen_recipe_pages.py and gen_site.py."""
 import argparse, datetime, json, os, re, urllib.parse, urllib.request
-import gen_watchlist
 from pathlib import Path
+import gen_watchlist
 R = Path(__file__).resolve().parent.parent
-RECIPES, SOURCES, WATCH = R/'data/recipes.json', R/'data/sources.json', gen_watchlist.WATCH
+RECIPES = R/'data/recipes.json'
+SOURCES, WATCH = gen_watchlist.SOURCES, gen_watchlist.WATCH
 API = 'https://api.x.com/2'
 
 def post_id(url):

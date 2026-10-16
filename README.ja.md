@@ -22,7 +22,7 @@
 
 | 記録               | モデル · エンジン                      | ハードウェア                                                                 | 結果              | 出典                                                                       |
 | ---------------- | ------------------------------- | ---------------------------------------------------------------------- | --------------- | ------------------------------------------------------------------------ |
-| Mac で最速          | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra（ピーク値、最小構成価格、検証機のメモリは不明）                            | **130 tok/s** ✅ | [出典](https://x.com/ivanfioravanti/status/2104183112611614780)            |
+| Mac で最速          | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra（ピーク値。検証機のメモリが不明なため価格は 1 つに決まらない。発売時価格は $3,999 から）  | **130 tok/s** ✅ | [出典](https://x.com/ivanfioravanti/status/2104183112611614780)            |
 | RTX 5090 1 枚で最速  | Qwen3.8-Flash-Next · Strata     | RTX 5090 + 256GB RAM · 約 5,400 ドル（GPU のみ、256GB RAM 別。実売価格、MSRP $1,999） | **176 tok/s** ✅ | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483) |
 | AMD で最速          | Qwen3.8-Flash-Next · Strata     | AMD Radeon AI PRO R9700 · 約 1,600 ドル                                   | **100 tok/s** ✅ | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376) |
 | 中古データセンター GPU    | Qwen3.8-Flash-Next · Strata     | 2× Tesla V100 32GB PCIe                                                | **120 tok/s** ✅ | [@rewin123](https://x.com/rewin123/status/2108669905616736529)           |
@@ -266,7 +266,7 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 
 ## 第 3 段階 · 7,000〜14,000 ドル
 
-*DGX Spark 2 台、Mac Studio Ultra* · 36 件
+*DGX Spark 2 台、Mac Studio Ultra* · 35 件
 
 
 **📝 テキスト**
@@ -281,7 +281,7 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 - **GLM-5.3-Flash EXL3 4-bit** · TensorFold `EXL3 4-bit` — 2× DGX Spark → **60.4 tok/s** ✅ [出典](https://x.com/MiaAI_lab/status/2105598458547646875)
 - **DeepSeek-V4.1-Flash** · vLLM `EXL3 2–5 bit` — 2× DGX Spark → **57.9 tok/s** ✅ [出典](https://x.com/sudoingX/status/2109957456709472609)
 - **Qwen3.8-Flash-Next** · vLLM `GPTQ-INT4 · int8 KV` — 6× RTX 3090 + 7950X + 187GB RAM → **57.6 tok/s** ✅ [出典](https://www.reddit.com/r/LocalLLaMA/comments/1x3wjzf/qwen38flashnext_on_six_3090s_with_vllm_7_users_at/)
-- *…ほか 26 件は[エクスプローラー](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html)で。*
+- *…ほか 25 件は[エクスプローラー](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html)で。*
 
 ## 第 4 段階 · 14,000〜30,000 ドル
 
@@ -304,7 +304,7 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 
 ## 価格非公開
 
-1 枚単位で価格が出ているマルチ GPU 構成、価格の記載がない Mac など、単一の公開価格がないレシピ · 151 件。tok/s 上位のテキストレシピ：
+1 枚単位で価格が出ているマルチ GPU 構成、価格の記載がない Mac など、単一の公開価格がないレシピ · 152 件。tok/s 上位のテキストレシピ：
 
 - **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** 📣 [出典](https://x.com/tinybluedev/status/2089910202606764530)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2` — RTX 5080 16GB → **212 tok/s** 📣 [出典](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
@@ -318,7 +318,7 @@ X で反応が多かったレシピ投稿（いいね + リポスト×3 の順�
 - **Qwen3.8-27B** · vLLM `vLLM` — CMP 170HX → **147 tok/s** 🔁 [出典](https://x.com/LFrefman/status/2101572845017178243)
 - **Qwen3.8-27B** · Splash `Splash` — Mac M5 Max → **144 tok/s** 🏛️ [出典](https://x.com/zhijianliu/status/2101102949158302001)
 - **Qwen3.8-Flash-Next** · TensorFold `TensorFold 0.3.4.x + PR 29/…` — Mac Studio M3 Ultra → **130 tok/s** ✅ [出典](https://x.com/ivanfioravanti/status/2104183112611614780)
-- *…全 151 件は[エクスプローラー](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html)で見られます。*
+- *…全 152 件は[エクスプローラー](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html)で見られます。*
 
 
 ## エンジンとツール

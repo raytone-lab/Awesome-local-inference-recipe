@@ -22,7 +22,7 @@
 
 | 记录              | 模型 · 引擎                         | 硬件                                                              | 结果              | 来源                                                                       |
 | --------------- | ------------------------------- | --------------------------------------------------------------- | --------------- | ------------------------------------------------------------------------ |
-| Mac 最快          | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra（峰值；起步配置价格，原帖未注明测试机内存）                       | **130 tok/s** ✅ | [来源](https://x.com/ivanfioravanti/status/2104183112611614780)            |
+| Mac 最快          | Qwen3.8-Flash-Next · TensorFold | Mac Studio M3 Ultra（峰值；原帖未注明测试机内存，无法给出单一价格；首发价 $3,999 起）        | **130 tok/s** ✅ | [来源](https://x.com/ivanfioravanti/status/2104183112611614780)            |
 | 单张 RTX 5090 最快  | Qwen3.8-Flash-Next · Strata     | RTX 5090 + 256GB RAM · 约 $5,400（仅显卡，不含 256GB 内存；街价，MSRP $1,999） | **176 tok/s** ✅ | [@TechPractice1](https://x.com/TechPractice1/status/2105087037363884483) |
 | AMD 最快          | Qwen3.8-Flash-Next · Strata     | AMD Radeon AI PRO R9700 · 约 $1,600                              | **100 tok/s** ✅ | [@TechPractice1](https://x.com/TechPractice1/status/2105338176055509376) |
 | 二手数据中心卡         | Qwen3.8-Flash-Next · Strata     | 2× Tesla V100 32GB PCIe（无 NVLink）                               | **120 tok/s** ✅ | [@rewin123](https://x.com/rewin123/status/2108669905616736529)           |
@@ -266,7 +266,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 
 ## 第 3 档 · 7,000–14,000 美元
 
-*双 Spark、Mac Studio Ultra* · 共 36 条
+*双 Spark、Mac Studio Ultra* · 共 35 条
 
 
 **📝 文字**
@@ -281,7 +281,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 - **GLM-5.3-Flash EXL3 4-bit** · TensorFold `EXL3 4-bit` — 2× DGX Spark → **60.4 tok/s** ✅ [来源](https://x.com/MiaAI_lab/status/2105598458547646875)
 - **DeepSeek-V4.1-Flash（sudoingX 2.7-bit 专家混合位宽）** · vLLM `EXL3 专家 2–5 bit（均 2.7）` — 2× DGX Spark → **57.9 tok/s** ✅ [来源](https://x.com/sudoingX/status/2109957456709472609)
 - **Qwen3.8-Flash-Next** · vLLM `GPTQ-INT4 · int8 KV` — 6× RTX 3090 + 7950X + 187GB RAM（4 卡走 Thunderbolt） → **57.6 tok/s** ✅ [来源](https://www.reddit.com/r/LocalLLaMA/comments/1x3wjzf/qwen38flashnext_on_six_3090s_with_vllm_7_users_at/)
-- *……另有 26 条，见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html)。*
+- *……另有 25 条，见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html)。*
 
 ## 第 4 档 · 14,000–30,000 美元
 
@@ -304,7 +304,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 
 ## 价格未公开
 
-按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 151 条。按 tok/s 排名靠前的文字配方：
+按张计价的多卡组合、未标价格的 Mac 以及其他没有单一公开价格的配方 · 共 152 条。按 tok/s 排名靠前的文字配方：
 
 - **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** 📣 [来源](https://x.com/tinybluedev/status/2089910202606764530)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2（16GB 配方）` — RTX 5080 16GB → **212 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
@@ -318,7 +318,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 - **Qwen3.8-27B** · vLLM `vLLM 等（Reddit u/tonnyygama）` — CMP 170HX（解锁 64GB 矿卡） → **147 tok/s** 🔁 [来源](https://x.com/LFrefman/status/2101572845017178243)
 - **Qwen3.8-27B** · Splash `Splash` — Mac M5 Max → **144 tok/s** 🏛️ [来源](https://x.com/zhijianliu/status/2101102949158302001)
 - **Qwen3.8-Flash-Next** · TensorFold `TensorFold 0.3.4.x + PR 29/…` — Mac Studio M3 Ultra → **130 tok/s** ✅ [来源](https://x.com/ivanfioravanti/status/2104183112611614780)
-- *……全部 151 条见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html)。*
+- *……全部 152 条见 [配方库](https://raytone-lab.github.io/awesome-local-inference-recipes/explore.html)。*
 
 
 ## 引擎与工具

@@ -121,7 +121,7 @@ HL = {
    alt='棒グラフ：モデル規模別（Dense ≥27B・大型 MoE 総 ≥100B・中型 MoE 総 <100B／アクティブ ≥5B・小型 MoE アクティブ <5B、アクティブパラメータ表示、公式パラメータカードのあるモデルのみ）に、ハードウェア $1,000 あたりの tok/s で並べた実測テキスト構成（ハードウェア分類で色分け）', cost='約 {c:,} ドル'),
 }
 PNOTE = {'x-006':{'en':'card only, excl. 256GB RAM; street price, MSRP $1,999','zh':'仅显卡，不含 256GB 内存；街价，MSRP $1,999','ja':'GPU のみ、256GB RAM 別。実売価格、MSRP $1,999'},
- 'text-092':{'en':'peak figure; base config price, test machine memory not stated','zh':'峰值；起步配置价格，原帖未注明测试机内存','ja':'ピーク値、最小構成価格、検証機のメモリは不明'}}
+ 'text-092':{'en':'peak figure; test machine memory not stated, so no single price; launch price from $3,999','zh':'峰值；原帖未注明测试机内存，无法给出单一价格；首发价 $3,999 起','ja':'ピーク値。検証機のメモリが不明なため価格は 1 つに決まらない。発売時価格は $3,999 から'}}
 def hero(lang, E):
     H=HL[lang]; T=L[lang]; byid={r['id']:r for r in D}
     n={c:sum(r['category']==c for r in D) for c in ('text','image','video-audio')}

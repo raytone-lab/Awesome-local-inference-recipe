@@ -19,4 +19,11 @@ for(const r of D){
   if(r.category!=='text'&&r.tags&&(r.tags.includes('MoE')||r.tags.includes('dense')))e('MoE/dense tag on non-text');
   if(r.hardware_cost_usd!=null&&r.hardware_cost_usd>30000)console.warn(`[${r.id}] warn: cost > $30k`);
 }
-console.log(err?`✗ ${err} errors`:`✓ ${D.length} recipes valid`);process.exit(err?1:0);
+const SRC=JSON.parse(fs.readFileSync(new URL('../data/sources.json',import.meta.url))).sources;
+for(const s of SRC){
+  const e=m=>{err++;console.error(`[source ${s.name}] ${m}`)};
+  for(const k of ['name','platform','url','focus','why','sample_post','tier']) if(typeof s[k]!=='string'||!s[k])e(`missing ${k}`);
+  if(!['A','B','C'].includes(s.tier))e(`tier not in A/B/C: ${s.tier}`);
+  if(s.followers!==null&&typeof s.followers!=='number')e('followers must be number or null');
+}
+console.log(err?`✗ ${err} errors`:`✓ ${D.length} recipes, ${SRC.length} sources valid`);process.exit(err?1:0);
