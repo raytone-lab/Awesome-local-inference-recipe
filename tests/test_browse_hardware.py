@@ -5,10 +5,12 @@ R = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(R/'scripts'))
 import hardware_index as hi
 PAGES = 'https://raytone-lab.github.io/awesome-local-inference-recipes/'
+EXPLORER_DEFAULT_BUDGET = int(re.search(r'id="budget"[^>]*value="(\d+)"', (R/'explore.html').read_text(encoding='utf-8')).group(1))
 README = {'en': 'README.md', 'zh': 'README.zh-CN.md', 'ja': 'README.ja.md'}
 
 def explorer_count(D, link):
     q = re.search(r'[?&]q=([^&]+)', link); t = re.search(r'[?&]tag=([^&]+)', link)
+    D = [r for r in D if r['hardware_cost_usd'] is None or r['hardware_cost_usd'] <= EXPLORER_DEFAULT_BUDGET]
     if t: return sum(unquote(t.group(1)) in r['tags'] for r in D)
     return sum(unquote(q.group(1)).lower() in hi.explorer_text(r) for r in D)
 
