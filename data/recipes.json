@@ -13246,5 +13246,218 @@
       "model": "GLM-5.3-Flash (320B/18B active)"
     },
     "source_id": "src-f328862fff"
+  },
+  {
+    "id": "text-141",
+    "category": "text",
+    "model": "Muse Spark Open 816B-A42B",
+    "quant": "Unsloth UD-IQ1_M（约 2.05 bit/参数，194.6 GiB）· KV q8_0 · RPC 按层切分",
+    "engine": "llama.cpp",
+    "hardware": "2× DGX Spark（GB10，200GbE RoCE）",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "≈$13,900（2×$6,950，2026-10-11）",
+    "hardware_cost_usd": 13900,
+    "metric": "单流 decode 约 7 tok/s（28 tok 提示 7.01；650 tok 6.88；9,146 tok 6.76）；加载约 10 分 48 秒；prefill 短提示 ~26、9K 提示 ~263 tok/s；并发 4 槽合计约 14–16 tok/s",
+    "tok_s": 7.01,
+    "concurrency": null,
+    "context": "32K（UD-IQ1_M；UD-IQ2_XXS 仅约 8K）",
+    "launch_command": null,
+    "source_url": "https://x.com/wei_wang/status/2111430275683021105",
+    "source_note": "@wei_wang 实测长文（两台 Spark RPC）",
+    "source_level": "实测",
+    "date": "2026-10-17",
+    "measured_by": "wei_wang",
+    "x_post": {
+      "author": "wei_wang",
+      "likes": 3,
+      "reposts": 0,
+      "as_of": "2026-10-17"
+    },
+    "metric_en": "single-stream decode ~7 tok/s (28-tok prompt 7.01; 650-tok 6.88; 9,146-tok 6.76); load ~10m48s; prefill ~26 tok/s short / ~263 tok/s at 9K; 4 concurrent slots ~14–16 tok/s combined",
+    "en": {
+      "quant": "Unsloth UD-IQ1_M (~2.05 bit/param, 194.6 GiB) · KV q8_0 · RPC layer split",
+      "hardware": "2× DGX Spark (GB10, 200GbE RoCE)",
+      "hardware_cost_text": "≈$13,900 (2×$6,950, 2026-10-11)",
+      "context": "32K (UD-IQ1_M; UD-IQ2_XXS only ~8K)",
+      "source_note": "@wei_wang measured long-form write-up (two Sparks over RPC)"
+    },
+    "model_family": "Other",
+    "tags": [
+      "1bit",
+      "8bit",
+      "MoE",
+      "multi-GPU"
+    ],
+    "source_id": "src-02af66f29b"
+  },
+  {
+    "id": "text-142",
+    "category": "text",
+    "model": "Nemotron 3.5 Bolt 74B-A9B",
+    "quant": "IQ2 24GB GGUF + LiLiCorr 草稿（k=7）",
+    "engine": "llama.cpp",
+    "hardware": "1× DGX Spark",
+    "hardware_family": "DGX Spark",
+    "hardware_cost_text": "$6,950（128GB，2026-10-11）",
+    "hardware_cost_usd": 6950,
+    "metric": "greedy 解码均值 80.4 tok/s（数学 108.2 / 代码 81.2 / 摘要 69.6 / 散文 62.6；4 任务）；采样 74.1；262K 上下文；131K 提示仍约 70 tok/s；无投机 38.3",
+    "tok_s": 80.4,
+    "concurrency": null,
+    "context": "262K",
+    "launch_command": null,
+    "source_url": "https://github.com/sxuff/nemotron-3.5-bolt-gb10",
+    "source_note": "sxuff/nemotron-3.5-bolt-gb10 README（钉扎 commit/哈希；基于 NVIDIA 公开配方）",
+    "source_level": "实测",
+    "date": "2026-10-17",
+    "measured_by": "sxuff",
+    "metric_en": "greedy decode mean 80.4 tok/s (math 108.2 / code 81.2 / summary 69.6 / prose 62.6; 4 tasks); sampling 74.1; 262K context; ~70 tok/s still at 131K prompt; 38.3 without speculation",
+    "en": {
+      "quant": "IQ2 24GB GGUF + LiLiCorr draft (k=7)",
+      "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
+      "context": "262K",
+      "source_note": "sxuff/nemotron-3.5-bolt-gb10 README (pinned commit/hash; based on NVIDIA public recipe)"
+    },
+    "model_family": "Other",
+    "tags": [
+      "2bit",
+      "MoE",
+      "long-context",
+      "speculative"
+    ],
+    "source_id": "src-ae52f5c516"
+  },
+  {
+    "id": "text-143",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "UD-Q4_K_M · DFlash2 草稿（n=7）· Vulkan + Intel FA prefill",
+    "engine": "llama.cpp",
+    "hardware": "Intel Arc Pro B60 24GB（Ryzen 7 3700X + 32GB DDR4，Windows 11）",
+    "hardware_family": "其他",
+    "hardware_cost_text": "A$999（PCCaseGear OEM Passive，含 GST，2026-10-10）；ASRock Creator 约 A$1,240（gpuprix 2026-10-07）",
+    "hardware_cost_usd": null,
+    "metric": "单请求 decode 均值 53.3 tok/s（7 个编码任务 47–58，64K KV）；eval-suite 吞吐 42.3 tok/s；stock 无草稿约 16；32K prefill 420 tok/s（Intel FA）",
+    "tok_s": 53.3,
+    "concurrency": null,
+    "context": "64K（配置上限；常用约 57–61K）",
+    "launch_command": null,
+    "source_url": "https://github.com/edagher92-coder/arc-llm-lab",
+    "source_note": "arc-llm-lab README（附 raw logs；2026-10-17 还发布桌面争用 field report）",
+    "source_level": "实测",
+    "date": "2026-10-17",
+    "measured_by": "edagher92-coder",
+    "metric_en": "single-request decode mean 53.3 tok/s (7 coding tasks 47–58, 64K KV); eval-suite throughput 42.3 tok/s; stock without draft ~16; 32K prefill 420 tok/s (Intel FA)",
+    "en": {
+      "quant": "UD-Q4_K_M · DFlash2 draft (n=7) · Vulkan + Intel FA prefill",
+      "hardware": "Intel Arc Pro B60 24GB (Ryzen 7 3700X + 32GB DDR4, Windows 11)",
+      "hardware_cost_text": "A$999 (PCCaseGear OEM Passive, incl. GST, 2026-10-10); ASRock Creator ~A$1,240 (gpuprix 2026-10-07)",
+      "context": "64K (config max; typically ~57–61K in use)",
+      "source_note": "arc-llm-lab README (raw logs attached; also published desktop-contention field report on 2026-10-17)"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense",
+      "speculative"
+    ],
+    "source_id": "src-be7b355dd1"
+  },
+  {
+    "id": "text-144",
+    "category": "text",
+    "model": "Qwen 3.5 9B",
+    "quant": "Q4_K_M（5.3 GB）· Vulkan",
+    "engine": "llama.cpp",
+    "hardware": "PS5 Slim（破解，GPU 共享内存约 11.4 GB 给模型）",
+    "hardware_family": "其他",
+    "hardware_cost_text": null,
+    "hardware_cost_usd": null,
+    "metric": "55 tok/s（项目 README 建议表）",
+    "tok_s": 55,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://github.com/cobanov/PS5LM",
+    "source_note": "PS5LM README 建议型号表（官方项目页）",
+    "source_level": "官方",
+    "date": "2026-10-17",
+    "metric_en": "55 tok/s (project README recommended-model table)",
+    "en": {
+      "quant": "Q4_K_M (5.3 GB) · Vulkan",
+      "hardware": "PS5 Slim (jailbroken; ~11.4 GB GPU shared memory for the model)",
+      "source_note": "PS5LM README recommended-model table (official project page)"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense"
+    ],
+    "source_id": "src-0342f39bef"
+  },
+  {
+    "id": "text-145",
+    "category": "text",
+    "model": "Qwen 3.5 0.8B",
+    "quant": "Q4_K_M（0.5 GB）· Vulkan",
+    "engine": "llama.cpp",
+    "hardware": "PS5 Slim（破解）",
+    "hardware_family": "其他",
+    "hardware_cost_text": null,
+    "hardware_cost_usd": null,
+    "metric": "207 tok/s（项目 README 建议表）",
+    "tok_s": 207,
+    "concurrency": null,
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://github.com/cobanov/PS5LM",
+    "source_note": "PS5LM README 建议型号表（官方项目页）",
+    "source_level": "官方",
+    "date": "2026-10-17",
+    "metric_en": "207 tok/s (project README recommended-model table)",
+    "en": {
+      "quant": "Q4_K_M (0.5 GB) · Vulkan",
+      "hardware": "PS5 Slim (jailbroken)",
+      "source_note": "PS5LM README recommended-model table (official project page)"
+    },
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "dense"
+    ],
+    "source_id": "src-0342f39bef"
+  },
+  {
+    "id": "text-146",
+    "category": "text",
+    "model": "Kolibri-1 78B-A3.46B",
+    "quant": "Q4_K_M（45 GiB）",
+    "engine": "llama.cpp",
+    "hardware": "4× A800",
+    "hardware_family": "二手数据中心卡",
+    "hardware_cost_text": null,
+    "hardware_cost_usd": null,
+    "metric": "tg512 生成 106.01 tok/s；pp2048 2558.18 tok/s（上游作者转换测试）",
+    "tok_s": 106.01,
+    "concurrency": null,
+    "context": "官方验证至 1,048,576；服务建议 ≤262,144",
+    "launch_command": null,
+    "source_url": "https://7minai.com/news/kolibri-1-llama-cpp-b11709-gguf/",
+    "source_note": "7minAI 汇总 llama.cpp b11709 / PR #30673；数字来自上游作者转换测试",
+    "source_level": "官方",
+    "date": "2026-10-17",
+    "metric_en": "tg512 generation 106.01 tok/s; pp2048 2558.18 tok/s (upstream author conversion test)",
+    "en": {
+      "quant": "Q4_K_M (45 GiB)",
+      "context": "officially verified to 1,048,576; serving recommended ≤262,144",
+      "source_note": "7minAI summary of llama.cpp b11709 / PR #30673; numbers from upstream author conversion test"
+    },
+    "model_family": "Other",
+    "tags": [
+      "4bit",
+      "MoE",
+      "long-context",
+      "multi-GPU"
+    ],
+    "source_id": "src-9b9b94725f"
   }
 ]
