@@ -121,7 +121,6 @@ class ChineseAndJapaneseUI(unittest.TestCase):
         ph = lambda s: set(re.findall(r'\{[A-Za-z_]+\}', str(s)))
         for f in ['i18n.js', 'app.js', 'landing.js', 'submit.html', 'speed.html']:
             b = lang_blocks((R/f).read_text(encoding='utf-8'))
-            # Compare via evaluating language objects with node for nested safety on flat string values only
             import json, subprocess
             js = r"""
 const fs=require('fs');
