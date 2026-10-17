@@ -116,6 +116,41 @@ class ChineseAndJapaneseUI(unittest.TestCase):
         ja = lang_blocks((R/'speed.html').read_text(encoding='utf-8'))['ja']
         self.assertEqual(sorted({c for c in ja if c in SIMPLIFIED_ONLY}), [], 'speed.html ja dictionary')
 
+    def test_placeholder_sets_match_across_langs(self):
+        import re
+        ph = lambda s: set(re.findall(r'\{[A-Za-z_]+\}', str(s)))
+        for f in ['i18n.js', 'app.js', 'landing.js', 'submit.html', 'speed.html']:
+            b = lang_blocks((R/f).read_text(encoding='utf-8'))
+            # Compare via evaluating language objects with node for nested safety on flat string values only
+            import json, subprocess
+            js = r"""
+const fs=require('fs');
+function dictEnd(s,i){let d=0,q=null;for(let j=i;j<s.length;j++){const c=s[j];if(q){if(c==='\\'){j++;continue;}if(c===q)q=null;}else if(c==="'"||c==='\"'||c==='`')q=c;else if(c==='{')d++;else if(c==='}'){d--;if(!d)return j+1;}}return s.length;}
+const t=fs.readFileSync(process.argv[1],'utf8');
+const marker=t.includes('I18N_ADD(')?'I18N_ADD(':(t.includes('const S=')?'const S=':'const I18N=');
+const brace=t.indexOf('{', t.indexOf(marker));
+const obj=Function('return('+t.slice(brace,dictEnd(t,brace))+')')();
+const langs=Object.keys(obj).filter(k=>typeof obj[k]==='object');
+const ph=s=>[...new Set(String(s).match(/\{[a-zA-Z_]+\}/g)||[])].sort();
+const bad=[];
+const base=obj.en||obj['zh-CN'];
+for(const lang of langs){
+  if(lang==='en')continue;
+  for(const k of Object.keys(base)){
+    if(!(k in obj[lang]))continue;
+    const a=ph(base[k]), b=ph(obj[lang][k]);
+    if(a.join()!=b.join() && typeof base[k]==='string' && typeof obj[lang][k]==='string') bad.push(lang+'.'+k+':en['+a+'] vs['+b+']');
+  }
+}
+process.stdout.write(JSON.stringify(bad));
+"""
+            bad = json.loads(subprocess.run(['node','-e',js,str(R/f)], capture_output=True, text=True, check=True).stdout)
+            self.assertEqual(bad, [], f)
+
+    def test_japanese_localize_recipe_has_no_cjk(self):
+        bad = node("const out=[];for(const r of D){const o=localizeRecipe(r,'ja');for(const k of %s)if(typeof o[k]=='string'&&/[\u3000-\u303f\u3040-\u30ff\u3400-\u9fff\uff00-\uffef]/.test(o[k]))out.push(r.id+' '+k)}process.stdout.write(JSON.stringify(out))" % __import__('json').dumps(EN_FIELDS))
+        self.assertEqual(bad, [])
+
 class SpeedPage(unittest.TestCase):
     def setUp(self): self.s = (R/'speed.html').read_text(encoding='utf-8')
 
