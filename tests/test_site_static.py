@@ -54,17 +54,24 @@ class GuidesIndexI18n(unittest.TestCase):
             for hl in ('en', 'zh-CN', 'ja', 'x-default'):
                 self.assertIn(f'hreflang="{hl}"', s, rel)
 
-    def test_english_index_keeps_en_primary_parens(self):
+    def test_english_index_links_translations_in_parens(self):
         s = (R/'guides/index.html').read_text(encoding='utf-8')
         self.assertRegex(s, r'<a href="[^"]+\.html">[^<]+</a> \(<a href="zh-CN/[^"]+">中文</a> · <a href="ja/[^"]+">日本語</a>\)')
         self.assertNotIn('(English', s)
 
     def test_zh_ja_guide_back_and_nav_stay_in_language(self):
         for lang, back, nav in [('zh-CN', '返回列表', '指南'), ('ja', '一覧に戻る', 'ガイド')]:
-            g = next(p for p in (R/'guides'/lang).glob('*.html') if p.name != 'index.html')
-            s = g.read_text(encoding='utf-8')
-            self.assertIn(f'href="../../guides/{lang}/index.html">← {back}</a>', s, g.name)
-            self.assertIn(f'href="../../guides/{lang}/index.html">{nav}</a>', s, g.name)
+            for g in (R/'guides'/lang).glob('*.html'):
+                if g.name == 'index.html': continue
+                s = g.read_text(encoding='utf-8')
+                self.assertIn(f'href="../../guides/{lang}/index.html">← {back}</a>', s, g.name)
+                self.assertIn(f'href="../../guides/{lang}/index.html">{nav}</a>', s, g.name)
+
+    def test_index_relative_hrefs_resolve(self):
+        for idx in [R/'guides/index.html', R/'guides/zh-CN/index.html', R/'guides/ja/index.html']:
+            for href in re.findall(r'href="([^"]+)"', idx.read_text(encoding='utf-8')):
+                if href.startswith(('http', '#', 'mailto')): continue
+                self.assertTrue((idx.parent / href).resolve().exists(), f'{idx.name} -> {href}')
 
 if __name__ == '__main__':
     unittest.main()

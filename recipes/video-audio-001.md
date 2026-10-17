@@ -2,7 +2,7 @@
 
 **English** | [简体中文](video-audio-001.zh-CN.md) | [日本語](video-audio-001.ja.md) · [← All recipes](../README.md)
 
-> Source level: **🏛️ Official** · Date: 2026-10-06 · Numbers are quoted from the source and have not been re-run by this repo.
+> Source level: **🏛️ Official** · Date: 2026-10-06 · Numbers come from the source. This repo did not measure them again.
 
 ## Hardware
 
@@ -12,7 +12,7 @@
 ## Model
 
 - FastH3 V2 (MiniMax H3 8-step distillation) · `NVFP4`
-- Download: not published, see source
+- Download: not published. See the source
 
 ## Engine
 
@@ -20,7 +20,7 @@
 
 ## Launch command
 
-Command not published — see source.
+Command not published. See the source.
 
 ## Key parameters
 
@@ -34,9 +34,9 @@ Command not published — see source.
 
 ## Caveats
 
-- Speed varies with drivers, engine version, context length and prompt length.
+- Speed changes with drivers, engine version, context length, and prompt length.
 
 ## Source & attribution
 
 - [https://haoailab.com/blogs/fasth3-rtx/](https://haoailab.com/blogs/fasth3-rtx/)
-- Credit to the original author; this page only summarizes and links. Data under CC BY 4.0.
+- Credit to the original author. This page only summarizes and links. Data under CC BY 4.0.

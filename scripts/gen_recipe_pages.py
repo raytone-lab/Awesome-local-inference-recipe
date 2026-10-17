@@ -18,7 +18,19 @@ ENGINE_URL = {
  'Halogen':'https://github.com/peonist-ai/halogen-flash-server','ComfyUI':'https://github.com/comfyanonymous/ComfyUI'}
 LV = {'官方':('🏛️ Official','🏛️ 官方','🏛️ 公式'),'实测':('✅ Measured','✅ 实测','✅ 実測'),'转述':('🔁 Relayed','🔁 转述','🔁 伝聞'),'宣称':('📣 Claimed','📣 宣称','📣 主張')}
 HWF_JA = {'NVIDIA 消费级':'NVIDIA コンシューマー','二手数据中心卡':'中古データセンター GPU','其他':'その他'}
-JA = {'Source level':'出典レベル','Date':'日付','Numbers are quoted from the source and have not been re-run by this repo.':'数値は出典からの引用で、このリポジトリでは再計測していません。','Hardware':'ハードウェア','Reference cost':'参考価格','Model':'モデル','Download':'ダウンロード','Engine':'エンジン','install:':'インストール：','Note':'備考','Launch command':'起動コマンド','Excerpt from the source (contains `...`/placeholders); see the source for full arguments.':'出典からの抜粋です（`...` やプレースホルダーを含みます）。全引数は出典を参照してください。','Command not published — see source.':'コマンドは公開されていません。出典を参照してください。','Key parameters':'主なパラメータ','Context':'コンテキスト','Concurrency':'同時実行','Tags':'タグ','Expected speed':'想定速度','Caveats':'注意点','Not a first-hand measurement (claimed/relayed); your results may differ.':'本人による実測ではありません（主張・伝聞）。実際の速度は異なる場合があります。','Speed varies with drivers, engine version, context length and prompt length.':'速度はドライバー、エンジンのバージョン、コンテキスト長、プロンプト長によって変わります。','Source & attribution':'出典とクレジット','Credit to the original author; this page only summarizes and links. Data under CC BY 4.0.':'権利は元の投稿者にあります。このページは要約とリンクのみです。データは CC BY 4.0。'}
+JA = {
+ 'Source level':'出典レベル','Date':'日付',
+ 'Numbers come from the source. This repo did not measure them again.':'数値は出典からの引用です。このリポジトリでは再計測していません。',
+ 'Hardware':'ハードウェア','Reference cost':'参考価格','Model':'モデル','Download':'ダウンロード','Engine':'エンジン',
+ 'install:':'インストール：','Note':'備考','Launch command':'起動コマンド',
+ 'Excerpt from the source (includes `...` or placeholders). See the source for full arguments.':'出典からの抜粋です（`...` またはプレースホルダーを含みます）。全引数は出典を参照してください。',
+ 'Command not published. See the source.':'コマンドは公開されていません。出典を参照してください。',
+ 'Key parameters':'主なパラメータ','Context':'コンテキスト','Concurrency':'同時実行','Tags':'タグ','Expected speed':'想定速度','Caveats':'注意点',
+ 'Not a first-hand measurement (claimed or relayed). Your results can differ.':'本人による実測ではありません（主張または伝聞）。実際の速度は異なる場合があります。',
+ 'Speed changes with drivers, engine version, context length, and prompt length.':'速度はドライバー、エンジンのバージョン、コンテキスト長、プロンプト長によって変わります。',
+ 'Source & attribution':'出典とクレジット',
+ 'Credit to the original author. This page only summarizes and links. Data under CC BY 4.0.':'権利は元の投稿者にあります。このページは要約とリンクのみです。データは CC BY 4.0。'}
+
 SUF = {'en':'.md','zh':'.zh-CN.md','ja':'.ja.md'}
 def switch(base, cur):
     names = [('en','English'),('zh','简体中文'),('ja','日本語')]
@@ -36,7 +48,7 @@ def page(r, lang):
     Z = lang == 'zh'; T = (lambda s: s) if Z else en
     F = lambda k: r.get(k) if Z else ((r.get('en') or {}).get(k) or en(r.get(k)))
     lvl = LV.get(r['source_level'], ('','',''))[{'en':0,'zh':1,'ja':2}[lang]]
-    na = '未公开，见来源' if Z else ('未公開（出典を参照）' if lang=='ja' else 'not published, see source')
+    na = '未公开。见来源' if Z else ('未公開。出典を参照' if lang=='ja' else 'not published. See the source')
     repo = hf_repo(r); eu = engine_url(r.get('engine'))
     if Z: metric = r.get('metric')
     else: metric = r.get('metric_en') or (f"{r['tok_s']} tok/s (generation)" if r.get('tok_s') else None)
@@ -49,7 +61,7 @@ def page(r, lang):
     L.append(f"{switch(r['id'], lang)} · [← {({'zh':'返回列表','ja':'一覧に戻る'}).get(lang,'All recipes')}](../{other})")
     L.append('')
     h = (lambda zh, e: zh if Z else (JA[e] if lang=='ja' else e))
-    L.append(f"> {h('来源等级','Source level')}: **{lvl}** · {h('日期','Date')}: {r.get('date') or '—'} · {h('数字均摘自来源，未经本仓库复测。','Numbers are quoted from the source and have not been re-run by this repo.')}")
+    L.append(f"> {h('来源等级','Source level')}: **{lvl}** · {h('日期','Date')}: {r.get('date') or '—'} · {h('数字来自来源。本仓库未复测。','Numbers come from the source. This repo did not measure them again.')}")
     L.append('')
     L.append(f"## {h('硬件','Hardware')}\n")
     L.append(f"- {F('hardware') or r['hardware']} ({r['hardware_family'] if Z else (HWF_JA if lang=='ja' else HWF).get(r['hardware_family'], r['hardware_family'])})")
@@ -65,8 +77,8 @@ def page(r, lang):
     L.append(f"## {h('启动命令','Launch command')}\n")
     if cmd and T(cmd):
         L.append(f"```bash\n{cmd if Z else T(cmd)}\n```")
-        if '...' in cmd or '<' in cmd: L.append(f"\n{h('命令为来源中的节选（含 `...`/占位符），完整参数请看来源。','Excerpt from the source (contains `...`/placeholders); see the source for full arguments.')}")
-    else: L.append(f"{h('命令未公开，请参考来源。','Command not published — see source.')}")
+        if '...' in cmd or '<' in cmd: L.append(f"\n{h('命令为来源节选（含 `...` 或占位符）。完整参数见来源。','Excerpt from the source (includes `...` or placeholders). See the source for full arguments.')}")
+    else: L.append(f"{h('命令未公开。见来源。','Command not published. See the source.')}")
     L.append('')
     L.append(f"## {h('关键参数','Key parameters')}\n")
     L.append(f"- {h('上下文','Context')}: {F('context') or '—'}")
@@ -77,21 +89,21 @@ def page(r, lang):
     L.append(f"- {metric or na} ({lvl})\n")
     L.append(f"## {h('注意事项','Caveats')}\n")
     cav = []
-    if r['source_level'] in ('宣称','转述'): cav.append(h('非一手实测（宣称/转述），实际速度可能不同。','Not a first-hand measurement (claimed/relayed); your results may differ.'))
+    if r['source_level'] in ('宣称','转述'): cav.append(h('非一手实测（宣称或转述）。实际速度可能不同。','Not a first-hand measurement (claimed or relayed). Your results can differ.'))
     if Z and r.get('source_note'): cav.append(r['source_note'].split('; 原文')[0][:200])
-    cav.append(h('速度随驱动、引擎版本、上下文长度和提示长度变化。','Speed varies with drivers, engine version, context length and prompt length.'))
+    cav.append(h('速度随驱动、引擎版本、上下文长度和提示长度变化。','Speed changes with drivers, engine version, context length, and prompt length.'))
     L += [f'- {c}' for c in cav]; L.append('')
     L.append(f"## {h('来源与致谢','Source & attribution')}\n")
     who = (r.get('x_post') or {}).get('author')
     L.append(f"- [{r['source_url']}]({r['source_url']})" + (f" — @{who}" if who else ''))
-    L.append(f"- {h('版权归原作者；本页仅摘要并链接。数据以 CC BY 4.0 发布。','Credit to the original author; this page only summarizes and links. Data under CC BY 4.0.')}")
+    L.append(f"- {h('版权归原作者。本页仅摘要并链接。数据以 CC BY 4.0 发布。','Credit to the original author. This page only summarizes and links. Data under CC BY 4.0.')}")
     return '\n'.join(L) + '\n'
 def main():
     out = R/'recipes'; out.mkdir(exist_ok=True)
     for f in out.glob('*.md'): f.unlink()
-    idx_en = ['# Recipe guides', '', switch('README','en'), '', 'Step-by-step pages for a first batch of well-sourced recipes. New here? Read [Getting started](../docs/getting-started.md).', '', '| Recipe | Hardware | Level |', '|---|---|---|']
+    idx_en = ['# Recipe guides', '', switch('README','en'), '', 'Step-by-step pages for a first set of well-sourced recipes. New here? Read [Getting started](../docs/getting-started.md).', '', '| Recipe | Hardware | Level |', '|---|---|---|']
     idx_zh = ['# 配方指南', '', switch('README','zh'), '', '首批来源可靠配方的分步页面。第一次来？先看 [入门指南](../docs/getting-started.zh-CN.md)。', '', '| 配方 | 硬件 | 来源等级 |', '|---|---|---|']
-    idx_ja = ['# レシピガイド', '', switch('README','ja'), '', '出典のしっかりしたレシピを、手順付きでまとめた最初のページ群です。初めての方は[はじめに](../docs/getting-started.ja.md)をどうぞ。', '', '| レシピ | ハードウェア | 出典レベル |', '|---|---|---|']
+    idx_ja = ['# レシピガイド', '', switch('README','ja'), '', '出典のしっかりしたレシピを手順付きでまとめた最初のページです。初めての方は[はじめに](../docs/getting-started.ja.md)をどうぞ。', '', '| レシピ | ハードウェア | 出典レベル |', '|---|---|---|']
     for i in GUIDES:
         r = D[i]
         (out/f'{i}.md').write_text(page(r, 'en')); (out/f'{i}.zh-CN.md').write_text(page(r, 'zh')); (out/f'{i}.ja.md').write_text(page(r, 'ja'))

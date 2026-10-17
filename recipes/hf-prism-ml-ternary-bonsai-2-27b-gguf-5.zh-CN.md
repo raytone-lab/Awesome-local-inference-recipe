@@ -2,12 +2,12 @@
 
 [English](hf-prism-ml-ternary-bonsai-2-27b-gguf-5.md) | **简体中文** | [日本語](hf-prism-ml-ternary-bonsai-2-27b-gguf-5.ja.md) · [← 返回列表](../README.zh-CN.md)
 
-> 来源等级: **📣 宣称** · 日期: 2026-09-16 · 数字均摘自来源，未经本仓库复测。
+> 来源等级: **📣 宣称** · 日期: 2026-09-16 · 数字来自来源。本仓库未复测。
 
 ## 硬件
 
 - MacBook M5 Pro (Mac)
-- 参考价格: 未公开，见来源
+- 参考价格: 未公开。见来源
 
 ## 模型
 
@@ -25,7 +25,7 @@
 llama-cli ... -ngl 99 -fa on -c 32768（需 PrismML llama.cpp fork，原生 llama.cpp 不可用）
 ```
 
-命令为来源中的节选（含 `...`/占位符），完整参数请看来源。
+命令为来源节选（含 `...` 或占位符）。完整参数见来源。
 
 ## 关键参数
 
@@ -39,11 +39,11 @@ llama-cli ... -ngl 99 -fa on -c 32768（需 PrismML llama.cpp fork，原生 llam
 
 ## 注意事项
 
-- 非一手实测（宣称/转述），实际速度可能不同。
+- 非一手实测（宣称或转述）。实际速度可能不同。
 - HF 模型卡（作者自报）; 需 PrismML llama.cpp fork（原版 llama.cpp 不可用）
 - 速度随驱动、引擎版本、上下文长度和提示长度变化。
 
 ## 来源与致谢
 
 - [https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf](https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf)
-- 版权归原作者；本页仅摘要并链接。数据以 CC BY 4.0 发布。
+- 版权归原作者。本页仅摘要并链接。数据以 CC BY 4.0 发布。
