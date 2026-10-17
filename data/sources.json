@@ -355,11 +355,11 @@
     {
       "name": "achyudh/llama.cpp Adaptive KV",
       "platform": "GitHub",
-      "url": "https://github.com/achyudh/llama.cpp/tree/feature/adaptive-kv-stream-rocm",
+      "url": "https://github.com/achyudh/llama.cpp/tree/bd063a49a",
       "followers": null,
       "focus": "Adaptive KV Streaming + RDNA4/ROCm；9070 XT 上 262k 上下文 Qwen3.8-27B 基准表",
       "why": "作者自测表写明上下文阶梯、MTP on/off、prefill/decode 与 commit",
-      "sample_post": "https://github.com/achyudh/llama.cpp/tree/feature/adaptive-kv-stream-rocm",
+      "sample_post": "https://github.com/achyudh/llama.cpp/tree/bd063a49a",
       "tier": "B"
     }
   ],
