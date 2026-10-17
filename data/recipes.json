@@ -13459,5 +13459,114 @@
       "multi-GPU"
     ],
     "source_id": "src-9b9b94725f"
+  },
+  {
+    "id": "text-147",
+    "category": "text",
+    "model": "Qwen3.8-27B",
+    "quant": "IQ4_XS（ASCII-condensed ~12.6 GiB）· KV Q8_0/Q4_0 · Adaptive KV Streaming + MTP",
+    "engine": "llama.cpp (achyudh Adaptive KV Streaming fork)",
+    "hardware": "AMD RX 9070 XT 16GB（gfx1201，PCIe 5.0 x16，ROCm 7.2.3）",
+    "hardware_family": "AMD",
+    "hardware_cost_text": "≈$975（eBay 中位，vramglass 表）",
+    "hardware_cost_usd": 975,
+    "metric": "Fork+MTP 解码：71.83@1k / 86.51@4k / 81.11@16k / 72.89@65k / 78.60@131k / 31.08@262k tok/s；无 MTP：36.53→9.50；prefill 1,368→586（262k）；贪婪 T=0，128 输出 token",
+    "tok_s": 86.51,
+    "concurrency": "单路（-np 1）",
+    "context": "262144",
+    "launch_command": null,
+    "source_url": "https://github.com/achyudh/llama.cpp/tree/feature/adaptive-kv-stream-rocm",
+    "source_note": "achyudh Adaptive KV Streaming fork README 基准表（commit bd063a49a；Reddit 同作者帖 1x89ptz）",
+    "source_level": "实测",
+    "date": "2026-10-17",
+    "measured_by": "achyudh / bottlestreet3d",
+    "metric_en": "Fork+MTP decode: 71.83@1k / 86.51@4k / 81.11@16k / 72.89@65k / 78.60@131k / 31.08@262k tok/s; without MTP: 36.53→9.50; prefill 1,368→586 (262k); greedy T=0, 128 output tokens",
+    "en": {
+      "quant": "IQ4_XS (ASCII-condensed ~12.6 GiB) · KV Q8_0/Q4_0 · Adaptive KV Streaming + MTP",
+      "hardware": "AMD RX 9070 XT 16GB (gfx1201, PCIe 5.0 x16, ROCm 7.2.3)",
+      "hardware_cost_text": "≈$975 (eBay median, vramglass table)",
+      "concurrency": "Single stream (-np 1)",
+      "context": "262144",
+      "source_note": "achyudh Adaptive KV Streaming fork README benchmark table (commit bd063a49a; same author's Reddit post 1x89ptz)"
+    },
+    "source_id": "src-ac488775b2",
+    "engine_fork": "achyudh Adaptive KV Streaming",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "8bit",
+      "dense",
+      "long-context",
+      "speculative",
+      "MTP",
+      "offload"
+    ]
+  },
+  {
+    "id": "text-148",
+    "category": "text",
+    "model": "gpt-oss-20b",
+    "quant": "Q4_K_M",
+    "engine": "llama.cpp",
+    "hardware": "RTX 5090 32GB（主机 EPYC 7543 + 945GB RAM；llm-speed 签名跑分）",
+    "hardware_family": "NVIDIA 消费级",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
+    "hardware_cost_usd": 5400,
+    "metric": "chat-short 解码 324.2 tok/s；prefill 586.8；TTFT 282.9 ms（suite-v1，batch=1）",
+    "tok_s": 324.2,
+    "concurrency": "单路",
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://llm-speed.com/r/r_dwp5fgdapmw",
+    "source_note": "llm-speed 2026-10-17.3 签名跑分（workload=chat-short，llama.cpp 1268eda）",
+    "source_level": "实测",
+    "date": "2026-10-17",
+    "measured_by": "llm-speed",
+    "metric_en": "chat-short decode 324.2 tok/s; prefill 586.8; TTFT 282.9 ms (suite-v1, batch=1)",
+    "en": {
+      "hardware": "RTX 5090 32GB (host EPYC 7543 + 945GB RAM; llm-speed signed run)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "concurrency": "Single stream",
+      "source_note": "llm-speed 2026-10-17.3 signed run (workload=chat-short, llama.cpp 1268eda)"
+    },
+    "source_id": "src-434fdc593e",
+    "model_family": "gpt-oss",
+    "tags": [
+      "4bit"
+    ]
+  },
+  {
+    "id": "text-149",
+    "category": "text",
+    "model": "Qwen3-Coder-30B-A3B-Instruct",
+    "quant": "Q4_K_M",
+    "engine": "llama.cpp",
+    "hardware": "RTX 5090 32GB（主机 EPYC 7543 + 945GB RAM；llm-speed 签名跑分）",
+    "hardware_family": "NVIDIA 消费级",
+    "hardware_cost_text": "$5,400–6,995（新卡街价，2026-10-11；MSRP $1,999）",
+    "hardware_cost_usd": 5400,
+    "metric": "chat-short 解码 304.9 tok/s；prefill 514.5；TTFT 213.8 ms（suite-v1，batch=1）",
+    "tok_s": 304.9,
+    "concurrency": "单路",
+    "context": null,
+    "launch_command": null,
+    "source_url": "https://llm-speed.com/r/r_vsype4pm1ko",
+    "source_note": "llm-speed 2026-10-17.3 签名跑分（workload=chat-short，llama.cpp 1268eda）",
+    "source_level": "实测",
+    "date": "2026-10-17",
+    "measured_by": "llm-speed",
+    "metric_en": "chat-short decode 304.9 tok/s; prefill 514.5; TTFT 213.8 ms (suite-v1, batch=1)",
+    "en": {
+      "hardware": "RTX 5090 32GB (host EPYC 7543 + 945GB RAM; llm-speed signed run)",
+      "hardware_cost_text": "$5,400–6,995 (new card street price, 2026-10-11; MSRP $1,999)",
+      "concurrency": "Single stream",
+      "source_note": "llm-speed 2026-10-17.3 signed run (workload=chat-short, llama.cpp 1268eda)"
+    },
+    "source_id": "src-a265d334d1",
+    "model_family": "Qwen",
+    "tags": [
+      "4bit",
+      "MoE"
+    ]
   }
 ]
