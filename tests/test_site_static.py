@@ -68,10 +68,28 @@ class GuidesIndexI18n(unittest.TestCase):
                 self.assertIn(f'href="../../guides/{lang}/index.html">{nav}</a>', s, g.name)
 
     def test_index_relative_hrefs_resolve(self):
-        for idx in [R/'guides/index.html', R/'guides/zh-CN/index.html', R/'guides/ja/index.html']:
-            for href in re.findall(r'href="([^"]+)"', idx.read_text(encoding='utf-8')):
+        for page in (R/'guides').rglob('*.html'):
+            for href in re.findall(r'href="([^"]+)"', page.read_text(encoding='utf-8')):
                 if href.startswith(('http', '#', 'mailto')): continue
-                self.assertTrue((idx.parent / href).resolve().exists(), f'{idx.name} -> {href}')
+                path = href.split('#', 1)[0].split('?', 1)[0]
+                if not path: continue
+                self.assertTrue((page.parent / path).resolve().exists(), f'{page.relative_to(R)} -> {href}')
+
+
+    def test_landing_relative_hrefs_resolve(self):
+        for page in list((R/'hw').rglob('*.html')) + list((R/'model').rglob('*.html')):
+            for href in re.findall(r'href="([^"]+)"', page.read_text(encoding='utf-8')):
+                if href.startswith(('http', '#', 'mailto')): continue
+                path = href.split('#', 1)[0].split('?', 1)[0]
+                if not path: continue
+                self.assertTrue((page.parent / path).resolve().exists(), f'{page.relative_to(R)} -> {href}')
+
+    def test_landing_pages_exist_in_three_langs(self):
+        for kind in ('hw', 'model'):
+            en = {p.name for p in (R/kind).glob('*.html')}
+            for lang in ('zh-CN', 'ja'):
+                got = {p.name for p in (R/kind/lang).glob('*.html')}
+                self.assertEqual(en, got, f'{kind}/{lang}')
 
 if __name__ == '__main__':
     unittest.main()

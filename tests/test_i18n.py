@@ -76,6 +76,12 @@ class ChineseAndJapaneseUI(unittest.TestCase):
         b = lang_blocks((R/'speed.html').read_text(encoding='utf-8'))
         self.assertEqual(keys(b['en']) - keys(b['ja']), set(), 'speed.html ja')
 
+    def test_every_english_ui_key_has_a_japanese_string(self):
+        for f in ['i18n.js', 'app.js', 'landing.js', 'submit.html', 'speed.html']:
+            b = lang_blocks((R/f).read_text(encoding='utf-8'))
+            self.assertIn('ja', b, f)
+            self.assertEqual(keys(b['en']) - keys(b['ja']), set(), f)
+
     def test_static_markup_keys_exist_in_chinese(self):
         zh = set()
         for f in ['i18n.js', 'app.js', 'landing.js', 'submit.html']: zh |= keys(lang_blocks((R/f).read_text(encoding='utf-8'))['zh-CN'])
@@ -85,13 +91,24 @@ class ChineseAndJapaneseUI(unittest.TestCase):
         sp = keys(lang_blocks((R/'speed.html').read_text(encoding='utf-8'))['zh-CN'])
         for k in re.findall(r'data-(?:t|i18n)="([^"]+)"', (R/'speed.html').read_text(encoding='utf-8')): self.assertIn(k, sp, f'speed.html: {k}')
 
+    def test_static_zh_ja_landing_chrome(self):
+        for lang, brand, nav in [('zh-CN', '本地推理配方', '指南'), ('ja', 'ローカル推論レシピ', 'ガイド')]:
+            samples = list((R/'hw'/lang).glob('*.html'))[:2] + list((R/'model'/lang).glob('*.html'))[:2]
+            self.assertTrue(samples, lang)
+            for p in samples:
+                s = p.read_text(encoding='utf-8')
+                self.assertIn(brand, s, p.name)
+                self.assertIn(f'guides/{lang}/index.html', s, p.name)
+                self.assertNotIn('Local Inference Recipes</a>', s, p.name)
+
     def test_static_chinese_and_japanese_guide_chrome(self):
         for lang, brand in [('zh-CN', '本地推理配方'), ('ja', 'ローカル推論レシピ')]:
             for p in (R/'guides'/lang).glob('*.html'):
                 s = (R/p).read_text(encoding='utf-8'); self.assertIn(brand, s, p.name); self.assertNotIn('Local Inference Recipes</a>', s, p.name)
 
     def test_japanese_pages_have_no_simplified_chinese(self):
-        pages = [*(R/'guides'/'ja').glob('*.html'), *(R/'recipes').glob('*.ja.md'), R/'README.ja.md', *(R/'hw').glob('*ja*'), *(R/'model').glob('*ja*')]
+        pages = [*(R/'guides'/'ja').rglob('*.html'), *(R/'recipes').glob('*.ja.md'), R/'README.ja.md',
+                 *(R/'hw'/'ja').glob('*.html'), *(R/'model'/'ja').glob('*.html')]
         self.assertGreater(len(pages), 10)
         for p in pages:
             t = visible(p.read_text(encoding='utf-8')).replace('简体中文', '')

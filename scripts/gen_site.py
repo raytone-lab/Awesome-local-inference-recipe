@@ -140,32 +140,115 @@ def landing(kind, key, name, rows, qterm=None):
     rows = sorted(rows, key=lambda r: (r['source_level'] != '实测', -(r.get('tok_s') or 0), r['id']))
     meas = [r for r in rows if meas_text(r) and single(r)]
     nmeas = sum(1 for r in rows if r['source_level'] == '实测' and not selfrep(r))
-    nrec = lambda n: f'{n} recipe' + ('' if n == 1 else 's')
     dates = sorted(r['date'] for r in rows if r.get('date'))
-    q = f'{name}: local inference speed (tok/s), sourced' if kind=='model' else f'Setups with {name}: local inference speed (tok/s), sourced'
-    if meas:
-        b = max(meas, key=lambda r: (r['tok_s'], r['id']))
-        eng = '' if b['engine'] == 'Unspecified' else f' on {e(b["engine"])}'
-        summ = (f'As of {ASOF}, this dataset has <b>{nrec(len(rows))}</b> for {e(name)}, {nmeas} of them measured by the poster. '
-                f'The fastest measured single-device, single-stream text result is <b>{b["tok_s"]:g} tok/s</b> with {e(fen(b, "model"))}{eng} ({e(fen(b, "hardware"))}; '
-                f'Measured{", " + e(b["date"]) if b.get("date") else ""}; <a href="{e(b["source_url"])}" rel="nofollow noopener">source</a>).')
-    else:
-        summ = (f'As of {ASOF}, this dataset has <b>{nrec(len(rows))}</b> for {e(name)}, {nmeas} of them measured by the poster'
-                + ('.' if nmeas else '; none is first-hand yet, so treat the numbers below as official, claimed or relayed.')
-                + (' These are image / video / audio results, so speed is given in the metric column rather than as tok/s.' if all(r['category'] != 'text' for r in rows) else ''))
-    if dates: summ += (f' {len(dates)} of the entries carry a date' + (f' ({dates[0]}).' if dates[0] == dates[-1] else f', from {dates[0]} to {dates[-1]}.'))
-    t = ['<table><thead><tr><th>Model</th><th>Engine</th><th>Hardware</th><th>tok/s</th><th>Metric</th><th>Source level</th><th>Date</th><th>Source</th></tr></thead><tbody>']
-    for r in rows:
-        tok = '' if r.get('tok_s') is None else f"{r['tok_s']:g}"
-        t.append(f'<tr><td>{e(fen(r, "model"))}</td><td>{e(r["engine"])}</td><td>{e(fen(r, "hardware"))}</td><td class="n">{tok}</td><td>{e(met_en(r) or "")}</td><td>{LV.get(r["source_level"], "")}{" (self-reported)" if selfrep(r) else ""}</td><td>{e(r.get("date") or "")}</td><td><a href="{e(r["source_url"])}" rel="nofollow noopener">link</a></td></tr>')
-    t.append('</tbody></table>')
-    note = '<p class="na">Numbers come from each source. This project did not measure them again. Models and settings differ between rows. Source levels: Official = project or vendor; Measured = the poster ran it; Relayed = second-hand; Claimed = prediction or no reproduction details.</p>'
-    qs = e({'hw': f'explore.html?q={quote(qterm or name)}', 'model': f'explore.html?family={quote(key)}'}[kind])
-    body = f'<h1>{e(q)}</h1>\n<p>{summ}</p>\n<p><a href="../{qs}">Filter these in the explorer →</a></p>\n' + ''.join(t) + note
-    canon = f'{PAGES}{kind}/{slug(key) if kind=="model" else key}.html'
     noidx = len(rows) < MIN_ROWS
-    write(R/kind/f'{slug(key) if kind=="model" else key}.html', shell(q, re.sub('<[^>]+>', '', summ)[:300], canon, body, 1, 'en', None, noidx))
-    return canon, noidx, len(rows)
+    file = slug(key) if kind == 'model' else key
+    LC = {
+        'en': dict(
+            nrec=lambda n: f'{n} recipe' + ('' if n == 1 else 's'),
+            q=(f'{name}: local inference speed (tok/s), sourced' if kind == 'model'
+               else f'Setups with {name}: local inference speed (tok/s), sourced'),
+            th=('Model', 'Engine', 'Hardware', 'tok/s', 'Metric', 'Source level', 'Date', 'Source'),
+            link='link', selfrep=' (self-reported)', filter_='Filter these in the explorer →',
+            note='Numbers come from each source. This project did not measure them again. Models and settings differ between rows. Source levels: Official = project or vendor; Measured = the poster ran it; Relayed = second-hand; Claimed = prediction or no reproduction details.',
+            lv=LV, lab=lambda r, k: fen(r, k) if k != 'engine' else r.get('engine'),
+            met=lambda r: met_en(r) or '',
+            summ=None),
+        'zh-CN': dict(
+            nrec=lambda n: f'{n} 条配方',
+            q=(f'{name}：本地推理速度（tok/s），均有出处' if kind == 'model'
+               else f'{name} 相关配置：本地推理速度（tok/s），均有出处'),
+            th=('模型', '引擎', '硬件', 'tok/s', '指标', '来源等级', '日期', '来源'),
+            link='链接', selfrep='（自称）', filter_='在配方库中筛选这些 →',
+            note='数字来自各条来源。本项目未复测。各行方的模型与设置不同。来源等级：官方 = 项目方或厂商；实测 = 发帖人亲测；转述 = 二手；宣称 = 预测或无复现细节。',
+            lv={k: k for k in LV}, lab=lambda r, k: r.get(k) if k != 'engine' else r.get('engine'),
+            met=lambda r: r.get('metric') or '',
+            summ=None),
+        'ja': dict(
+            nrec=lambda n: f'{n} 件のレシピ',
+            q=(f'{name}：ローカル推論速度（tok/s）、出典付き' if kind == 'model'
+               else f'{name} の構成：ローカル推論速度（tok/s）、出典付き'),
+            th=('モデル', 'エンジン', 'ハードウェア', 'tok/s', '指標', '出典レベル', '日付', '出典'),
+            link='リンク', selfrep='（自己申告）', filter_='エクスプローラーで絞り込む →',
+            note='数値は各出典のものです。本プロジェクトでは再計測していません。行ごとにモデルと設定が異なります。出典レベル：公式 = プロジェクトまたはベンダー；実測 = 投稿者が実行；伝聞 = 二次情報；主張 = 予測または再現手順なし。',
+            lv=LVL['ja'], lab=lambda r, k: fen(r, k) if k != 'engine' else r.get('engine'),
+            met=lambda r: met_en(r) or '',
+            summ=None),
+    }
+    # Build per-lang summaries (STE short sentences)
+    for lang, C in LC.items():
+        n = C['nrec'](len(rows))
+        if lang == 'en':
+            if meas:
+                b = max(meas, key=lambda r: (r['tok_s'], r['id']))
+                eng = '' if b['engine'] == 'Unspecified' else f' on {e(b["engine"])}'
+                summ = (f'As of {ASOF}, this dataset has <b>{n}</b> for {e(name)}. {nmeas} are measured by the poster. '
+                        f'Fastest measured single-device, single-stream text result: <b>{b["tok_s"]:g} tok/s</b> with {e(fen(b, "model"))}{eng} ({e(fen(b, "hardware"))}; '
+                        f'Measured{", " + e(b["date"]) if b.get("date") else ""}; <a href="{e(b["source_url"])}" rel="nofollow noopener">source</a>).')
+            else:
+                summ = (f'As of {ASOF}, this dataset has <b>{n}</b> for {e(name)}. {nmeas} are measured by the poster'
+                        + ('.' if nmeas else '. None is first-hand yet. Treat the numbers below as official, claimed, or relayed.')
+                        + (' These are image, video, or audio results. Speed is in the metric column, not tok/s.' if all(r['category'] != 'text' for r in rows) else ''))
+            if dates:
+                summ += (f' {len(dates)} entries have a date' + (f' ({dates[0]}).' if dates[0] == dates[-1] else f', from {dates[0]} to {dates[-1]}.'))
+        elif lang == 'zh-CN':
+            if meas:
+                b = max(meas, key=lambda r: (r['tok_s'], r['id']))
+                eng = '' if b['engine'] == 'Unspecified' else f'，引擎 {e(b["engine"])}'
+                summ = (f'截至 {ASOF}，本数据集中 {e(name)} 有 <b>{n}</b>，其中发帖人实测 {nmeas} 条。'
+                        f'单机单流文字最快实测：<b>{b["tok_s"]:g} tok/s</b>，模型 {e(b.get("model") or "")}{eng}（{e(b.get("hardware") or "")}；'
+                        f'实测{", " + e(b["date"]) if b.get("date") else ""}；<a href="{e(b["source_url"])}" rel="nofollow noopener">来源</a>）。')
+            else:
+                summ = (f'截至 {ASOF}，本数据集中 {e(name)} 有 <b>{n}</b>，发帖人实测 {nmeas} 条'
+                        + ('。' if nmeas else '。尚无一手实测，下列数字请按官方、宣称或转述理解。')
+                        + (' 这些是图像 / 视频 / 音频结果，速度见指标列，而非 tok/s。' if all(r['category'] != 'text' for r in rows) else ''))
+            if dates:
+                summ += (f' 其中 {len(dates)} 条有日期' + (f'（{dates[0]}）。' if dates[0] == dates[-1] else f'，从 {dates[0]} 到 {dates[-1]}。'))
+        else:  # ja
+            if meas:
+                b = max(meas, key=lambda r: (r['tok_s'], r['id']))
+                eng = '' if b['engine'] == 'Unspecified' else f'、エンジン {e(b["engine"])}'
+                summ = (f'{ASOF} 時点で、このデータセットの {e(name)} は <b>{n}</b> です。投稿者実測は {nmeas} 件です。'
+                        f'単一デバイス・単一流のテキスト実測の最速は <b>{b["tok_s"]:g} tok/s</b>（{e(fen(b, "model"))}{eng}、{e(fen(b, "hardware"))}；'
+                        f'実測{", " + e(b["date"]) if b.get("date") else ""}；<a href="{e(b["source_url"])}" rel="nofollow noopener">出典</a>）。')
+            else:
+                summ = (f'{ASOF} 時点で、このデータセットの {e(name)} は <b>{n}</b> です。投稿者実測は {nmeas} 件です'
+                        + ('。' if nmeas else '。一手の実測はまだありません。以下は公式・主張・伝聞として読んでください。')
+                        + (' 画像・動画・音声の結果です。速度は tok/s ではなく指標列にあります。' if all(r['category'] != 'text' for r in rows) else ''))
+            if dates:
+                summ += (f' 日付のあるエントリは {len(dates)} 件' + (f'（{dates[0]}）。' if dates[0] == dates[-1] else f'（{dates[0]}〜{dates[-1]}）。'))
+        C['summ'] = summ
+
+    SWITCH = {'en': 'English', 'zh-CN': '简体中文', 'ja': '日本語'}
+    canons = []
+    for lang in ORDER:
+        C = LC[lang]
+        depth = 1 if lang == 'en' else 2
+        up = '../' * depth
+        # language switcher
+        sw = []
+        for hl in ORDER:
+            href = (file + '.html') if hl == lang else ((('' if lang == 'en' else '../') + PRE[hl] + file + '.html'))
+            sw.append(f'<b>{SWITCH[hl]}</b>' if hl == lang else f'<a href="{href}">{SWITCH[hl]}</a>')
+        switch = '<p>' + ' | '.join(sw) + '</p>'
+        thead = ''.join(f'<th>{h}</th>' for h in C['th'])
+        t = [f'<table><thead><tr>{thead}</tr></thead><tbody>']
+        for r in rows:
+            tok = '' if r.get('tok_s') is None else f"{r['tok_s']:g}"
+            model = C['lab'](r, 'model'); hw = C['lab'](r, 'hardware'); eng = C['lab'](r, 'engine')
+            lv = C['lv'].get(r['source_level'], '') + (C['selfrep'] if selfrep(r) else '')
+            t.append(f'<tr><td>{e(model)}</td><td>{e(eng)}</td><td>{e(hw)}</td><td class="n">{tok}</td><td>{e(C["met"](r))}</td><td>{e(lv)}</td><td>{e(r.get("date") or "")}</td><td><a href="{e(r["source_url"])}" rel="nofollow noopener">{C["link"]}</a></td></tr>')
+        t.append('</tbody></table>')
+        qs = e({'hw': f'explore.html?q={quote(qterm or name)}', 'model': f'explore.html?family={quote(key)}'}[kind])
+        body = (switch + '<h1>' + e(C['q']) + '</h1>\n<p>' + C['summ'] + '</p>\n<p><a href="'
+                + up + qs + '">' + C['filter_'] + '</a></p>\n' + ''.join(t)
+                + '<p class="na">' + C['note'] + '</p>')
+        canon = f'{PAGES}{kind}/{PRE[lang]}{file}.html'
+        alts = [(hl, f'{PAGES}{kind}/{PRE[hl]}{file}.html') for hl in ORDER]
+        alts.append(('x-default', f'{PAGES}{kind}/{file}.html'))
+        write(R/kind/f'{PRE[lang]}{file}.html', shell(C['q'], re.sub('<[^>]+>', '', C['summ'])[:300], canon, body, depth, lang, alts, noidx))
+        canons.append(canon)
+    return canons[0], noidx, len(rows), canons
 
 def main():
     for d in ('guides', 'hw', 'model'):
@@ -174,11 +257,14 @@ def main():
     pages = []
     for key, name, rx, qt in HW:
         rows = [r for r in D if re.search(rx, r['hardware'])]
-        if rows: pages.append(('hw', key, name) + landing('hw', key, name, rows, qt))
+        if rows:
+            en_c, noidx, n, all_c = landing('hw', key, name, rows, qt)
+            pages.append(('hw', key, name, en_c, noidx, n, all_c))
     fams = sorted({r['model_family'] for r in D if r['model_family'] != 'Other'})
     for f in fams:
         rows = [r for r in D if r['model_family'] == f]
-        pages.append(('model', f, f) + landing('model', f, f, rows))
+        en_c, noidx, n, all_c = landing('model', f, f, rows)
+        pages.append(('model', f, f, en_c, noidx, n, all_c))
     li = lambda items: '<ul>' + ''.join(items) + '</ul>'
     byid = {r['id']: r for r in D}
     LANG_LABEL = {'en': 'English', 'zh-CN': '中文', 'ja': '日本語'}
@@ -241,17 +327,18 @@ def main():
             href = index_rel_href(rid, lang, lang)
             if not href: continue
             g.append(f'<li><a href="{href}">{guide_label(byid[rid], lang)}</a> {guide_alts(rid, lang)}</li>')
-        hwl = [f'<li><a href="{up}{k}/{key}.html">{e(n)}</a> — {meta["n"](c)}</li>'
-               for k, key, n, _, noidx, c in pages if k == 'hw' and not noidx]
-        ml = [f'<li><a href="{up}{k}/{slug(key)}.html">{e(n)}</a> — {meta["n"](c)}</li>'
-              for k, key, n, _, noidx, c in pages if k == 'model' and not noidx]
+        hwl = [f'<li><a href="{up}{k}/{PRE[lang]}{key}.html">{e(n)}</a> — {meta["n"](c)}</li>'
+               for k, key, n, _, noidx, c, _ in pages if k == 'hw' and not noidx]
+        ml = [f'<li><a href="{up}{k}/{PRE[lang]}{slug(key)}.html">{e(n)}</a> — {meta["n"](c)}</li>'
+              for k, key, n, _, noidx, c, _ in pages if k == 'model' and not noidx]
         body = (index_switch(lang) + f'<h1>{meta["h1"]}</h1><p>{meta["intro"]}</p>'
                 f'<h2>{meta["h_g"]}</h2>{li(g)}<h2 id="by-hardware">{meta["h_hw"]}</h2>{li(hwl)}<h2>{meta["h_m"]}</h2>{li(ml)}')
         canon = f'{PAGES}guides/{PRE[lang]}index.html'
         write(R/'guides'/f'{PRE[lang]}index.html', shell(meta['title'], meta['desc'], canon, body, depth, lang, idx_alts))
         idx_urls.append(canon)
     explore(None)
-    urls = [PAGES, PAGES+'explore.html', PAGES+'speed.html', PAGES+'submit.html'] + idx_urls + gurls + [c for *_, c, noidx, n in pages if not noidx]
+    land_urls = [u for *_, noidx, _n, all_c in pages if not noidx for u in all_c]
+    urls = [PAGES, PAGES+'explore.html', PAGES+'speed.html', PAGES+'submit.html'] + idx_urls + gurls + land_urls
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sm += [f'<url><loc>{e(u)}</loc><lastmod>{ASOF}</lastmod></url>' for u in urls]
     sm.append('</urlset>')
