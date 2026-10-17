@@ -186,8 +186,12 @@ def landing(kind, key, name, rows, qterm=None):
                         f'Fastest measured single-device, single-stream text result: <b>{b["tok_s"]:g} tok/s</b> with {e(fen(b, "model"))}{eng} ({e(fen(b, "hardware"))}; '
                         f'Measured{", " + e(b["date"]) if b.get("date") else ""}; <a href="{e(b["source_url"])}" rel="nofollow noopener">source</a>).')
             else:
-                summ = (f'As of {ASOF}, this dataset has <b>{n}</b> for {e(name)}. '
-                        f'None is first-hand yet. Treat the numbers below as official, claimed, or relayed.')
+                if nmeas:
+                    nmeas_s = f'{nmeas} measured by the poster.' if nmeas != 1 else '1 measured by the poster.'
+                    summ = f'As of {ASOF}, this dataset has <b>{n}</b> for {e(name)}. {nmeas_s}'
+                else:
+                    summ = (f'As of {ASOF}, this dataset has <b>{n}</b> for {e(name)}. '
+                            f'None is first-hand yet. Treat the numbers below as official, claimed, or relayed.')
                 if all(r['category'] != 'text' for r in rows):
                     summ += ' These are image, video, or audio results. Speed is in the metric column, not tok/s.'
             if dates:
@@ -199,7 +203,7 @@ def landing(kind, key, name, rows, qterm=None):
                 eng = '' if b['engine'] == 'Unspecified' else f'，引擎 {e(b["engine"])}'
                 summ = (f'截至 {ASOF}，本数据集中 {e(name)} 有 <b>{n}</b>，其中发帖人实测 {nmeas} 条。'
                         f'单机单流文字最快实测：<b>{b["tok_s"]:g} tok/s</b>，模型 {e(b.get("model") or "")}{eng}（{e(b.get("hardware") or "")}；'
-                        f'实测{'；' + e(b['date']) if b.get('date') else ''}；<a href="{e(b["source_url"])}" rel="nofollow noopener">来源</a>）。')
+                        f"实测{'；' + e(b['date']) if b.get('date') else ''}；<a href=\"{e(b['source_url'])}\" rel=\"nofollow noopener\">来源</a>）。")
             else:
                 summ = (f'截至 {ASOF}，本数据集中 {e(name)} 有 <b>{n}</b>，发帖人实测 {nmeas} 条'
                         + ('。' if nmeas else '。尚无一手实测，下列数字请按官方、宣称或转述理解。')
@@ -214,8 +218,11 @@ def landing(kind, key, name, rows, qterm=None):
                         f'単一デバイス・シングルストリームのテキスト実測の最速は <b>{b["tok_s"]:g} tok/s</b>（{e(fen(b, "model"))}{eng}、{e(fen(b, "hardware"))}；'
                         f'実測{"；" + e(b["date"]) if b.get("date") else ""}；<a href="{e(b["source_url"])}" rel="nofollow noopener">出典</a>）。')
             else:
-                summ = (f'{ASOF} 時点で、このデータセットの {e(name)} は <b>{n}</b> です。'
-                        f'投稿者自身の実測はまだありません。以下は公式・主張・伝聞として読んでください。')
+                if nmeas:
+                    summ = f'{ASOF} 時点で、このデータセットの {e(name)} は <b>{n}</b> です。投稿者実測は {nmeas} 件です。'
+                else:
+                    summ = (f'{ASOF} 時点で、このデータセットの {e(name)} は <b>{n}</b> です。'
+                            f'投稿者自身の実測はまだありません。以下は公式・主張・伝聞として読んでください。')
                 if all(r['category'] != 'text' for r in rows):
                     summ += '画像・動画・音声の結果です。速度は tok/s ではなく指標列にあります。'
             if dates:
