@@ -175,7 +175,6 @@ def landing(kind, key, name, rows, qterm=None):
             met=lambda r: met_en(r) or '',
             summ=None),
     }
-    # Build per-lang summaries (STE short sentences)
     for lang, C in LC.items():
         n = C['nrec'](len(rows))
         if lang == 'en':
