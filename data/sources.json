@@ -341,6 +341,26 @@
       "why": "固定模型和硬件对比多个引擎，条件写得清楚",
       "sample_post": "https://demietrich.com/blog/q3.8fn_engine_comparison/",
       "tier": "B"
+    },
+    {
+      "name": "llm-speed.com",
+      "platform": "Web",
+      "url": "https://llm-speed.com/data",
+      "followers": null,
+      "focus": "签名 CLI 本地 LLM 跑分（chat-short / chat-long / agent-trace / concurrent-decode）",
+      "why": "固定 suite、带 run_url 与版本号的实测数据，CC BY 4.0；适合交叉核对",
+      "sample_post": "https://llm-speed.com/r/r_dwp5fgdapmw",
+      "tier": "B"
+    },
+    {
+      "name": "achyudh/llama.cpp Adaptive KV",
+      "platform": "GitHub",
+      "url": "https://github.com/achyudh/llama.cpp/tree/bd063a49a",
+      "followers": null,
+      "focus": "Adaptive KV Streaming + RDNA4/ROCm；9070 XT 上 262k 上下文 Qwen3.8-27B 基准表",
+      "why": "作者自测表写明上下文阶梯、MTP on/off、prefill/decode 与 commit",
+      "sample_post": "https://github.com/achyudh/llama.cpp/tree/bd063a49a",
+      "tier": "B"
     }
   ],
   "followers_as_of": "2026-10-16"
