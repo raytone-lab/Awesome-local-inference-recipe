@@ -113,8 +113,8 @@
   "pushed_at": "2026-10-17T04:15:24Z",
   "url": "https://github.com/Kablex/ComfyUI-Ref2VA-VSA",
   "archived": false,
-  "desc_zh": "ComfyUI 节点：把 FastVideo VSA 门控接到 MiniMax H3 Ref2VA；作者 RTX 4090 基准约 650s（50 步稠密）→ 暖机约 72s（4 步 VSA+Turbo）。",
-  "desc_ja": "ComfyUI ノード：FastVideo の VSA ゲートを MiniMax H3 Ref2VA に移植。作者 RTX 4090 基準はネイティブ約 650s（50 ステップ稠密）→ ウォーム約 72s（4 ステップ VSA+Turbo）。"
+  "desc_zh": "ComfyUI 节点：把 FastVideo VSA 门控接到 MiniMax H3 Ref2VA；作者 RTX 4090 基准约 650s（50 步稠密）→ 预热约 72s（4 步 VSA+Turbo）。",
+  "desc_ja": "ComfyUI ノード：FastVideo の VSA ゲートを MiniMax H3 Ref2VA に移植。作者 RTX 4090 基準はネイティブ約 650s（50 ステップのデンス）→ ウォームアップ約 72s（4 ステップ VSA+Turbo）。"
  },
  {
   "name": "ComfyUI-VDN-H3",

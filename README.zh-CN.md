@@ -221,7 +221,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 - **MiniMax H3（turbo）** · ComfyUI `ComfyUI` — RTX 4090 → 5 s 片段 ~91 s；15 s ~8 分钟；960×544×5s 约 50 s ✅ [来源](https://x.com/yume_arasaki/status/2097790831323427046)
 - **MiniMax H3** · ComfyUI `ComfyUI` — RTX 3090 → 11 s 视频 13 分钟 ✅ [来源](https://x.com/natehalko/status/2103538997146611890)
 - **ACE-Step 1.5（音乐）** — RTX 3090 → 整首歌 <10 s（宣传帖） 🔁 [来源](https://x.com/simplifyinAI/status/2091935190335754493)
-- **MiniMax H3 Ref2VA（VSA + Turbo 4 步）** · ComfyUI `INT8 DiT（pruned Ref2VA）+ NV…` — RTX 4090 24GB → 1344×768×5.16s（24 fps / 124 帧）：暖机墙钟约 72 s（首跑约 95.2 s）；峰值显存约 13.5 GB。同… 🏛️ [来源](https://github.com/Kablex/ComfyUI-Ref2VA-VSA)
+- **MiniMax H3 Ref2VA（VSA + Turbo 4 步）** · ComfyUI `INT8 DiT（pruned Ref2VA）+ NV…` — RTX 4090 24GB → 1344×768×5.16s（24 fps / 124 帧）：预热墙钟约 72 s（首跑约 95.2 s）；峰值显存约 13.5 GB。同… 🏛️ [来源](https://github.com/Kablex/ComfyUI-Ref2VA-VSA)
 
 ## 第 2 档 · 2,500–7,000 美元
 
@@ -347,7 +347,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 | [halogen](https://github.com/peonist-ai/halogen-flash-server)      | 1.0k   | ![stars](https://img.shields.io/github/stars/peonist-ai/halogen-flash-server?style=flat&label=) | 2026-10-15 | 针对 Strix Halo 调优的 Flash-Next 服务。                                                                        |
 | [Project Maya](https://github.com/mw00/project-maya)               | 928    | ![stars](https://img.shields.io/github/stars/mw00/project-maya?style=flat&label=)               | 2026-10-16 | 在 1–16 张 NVIDIA 或 AMD 显卡上运行 GLM-5.3-Flash（仓库标注为 321B MoE），含引擎、服务、仪表盘和量化工具。                              |
 | [dflash-mlx](https://github.com/bstnxbt/dflash-mlx)                | 789    | ![stars](https://img.shields.io/github/stars/bstnxbt/dflash-mlx?style=flat&label=)              | 2026-08-20 | Apple Silicon（MLX）上的 DFlash 投机解码。                                                                       |
-| [ComfyUI-Ref2VA-VSA](https://github.com/Kablex/ComfyUI-Ref2VA-VSA) | 672    | ![stars](https://img.shields.io/github/stars/Kablex/ComfyUI-Ref2VA-VSA?style=flat&label=)       | 2026-10-17 | ComfyUI 节点：把 FastVideo VSA 门控接到 MiniMax H3 Ref2VA；作者 RTX 4090 基准约 650s（50 步稠密）→ 暖机约 72s（4 步 VSA+Turbo）。 |
+| [ComfyUI-Ref2VA-VSA](https://github.com/Kablex/ComfyUI-Ref2VA-VSA) | 672    | ![stars](https://img.shields.io/github/stars/Kablex/ComfyUI-Ref2VA-VSA?style=flat&label=)       | 2026-10-17 | ComfyUI 节点：把 FastVideo VSA 门控接到 MiniMax H3 Ref2VA；作者 RTX 4090 基准约 650s（50 步稠密）→ 预热约 72s（4 步 VSA+Turbo）。 |
 | [VDN-H3](https://github.com/OpenVDN/vdn-minimax-h3)                | 617    | ![stars](https://img.shields.io/github/stars/OpenVDN/vdn-minimax-h3?style=flat&label=)          | 2026-10-05 | 在 MiniMax H3 上的 Video Delta Net 混合注意力（窗口 softmax + 线性适配器），面向 T2VA / I2VA / Ref2VA 类任务。                  |
 | [janas](https://github.com/prabanta-dev/janas)                     | 423    | ![stars](https://img.shields.io/github/stars/prabanta-dev/janas?style=flat&label=)              | 2026-10-14 | 纯 C 写的推理引擎，可在 CPU 或 GPU 上运行比内存还大的模型；项目自称 32GB 笔记本跑 Qwen3-Next-80B 可达 37 tok/s（带 draft）。                 |
 | [ComfyUI-VDN-H3](https://github.com/Saganaki22/ComfyUI-VDN-H3)     | 241    | ![stars](https://img.shields.io/github/stars/Saganaki22/ComfyUI-VDN-H3?style=flat&label=)       | 2026-09-12 | MiniMax H3 上 VDN-H3 混合注意力的 ComfyUI 节点。                                                                  |
