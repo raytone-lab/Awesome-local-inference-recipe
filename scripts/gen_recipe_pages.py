@@ -48,7 +48,7 @@ def page(r, lang):
     Z = lang == 'zh'; T = (lambda s: s) if Z else en
     F = lambda k: r.get(k) if Z else ((r.get('en') or {}).get(k) or en(r.get(k)))
     lvl = LV.get(r['source_level'], ('','',''))[{'en':0,'zh':1,'ja':2}[lang]]
-    na = '未公开。见来源' if Z else ('未公開。出典を参照' if lang=='ja' else 'not published. See the source')
+    na = '未公开。见来源' if Z else ('未公開。出典を参照' if lang=='ja' else 'Not published. See the source.')
     repo = hf_repo(r); eu = engine_url(r.get('engine'))
     if Z: metric = r.get('metric')
     else: metric = r.get('metric_en') or (f"{r['tok_s']} tok/s (generation)" if r.get('tok_s') else None)

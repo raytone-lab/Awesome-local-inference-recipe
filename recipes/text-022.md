@@ -12,7 +12,7 @@
 ## Model
 
 - Qwen3.8-Flash-Next · `Cruz exllamav3 fork · EXL3 3.05bpw · draft depth 5 · 8-bit KV`
-- Download: not published. See the source
+- Download: Not published. See the source.
 
 ## Engine
 

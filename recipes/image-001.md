@@ -12,7 +12,7 @@
 ## Model
 
 - Qwen-Image 2.1 (7B + 8B text encoder) · `official Comfy-Org INT8 · ComfyUI`
-- Download: not published. See the source
+- Download: Not published. See the source.
 
 ## Engine
 

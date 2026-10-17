@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Static, crawlable parts of the Pages site (no JS needed to read them). Source of truth: data/recipes.json + recipes/*.md.
 - explore.html: full static fallback table
-- guides/<id>.html, guides/zh-CN/<id>.html, guides/ja/<id>.html: recipe guides rendered from recipes/*.md, self-canonical + hreflang
+- guides/<id>.html (+ zh-CN/ ja/): recipe guides from recipes/*.md; matching index.html per language; self-canonical + hreflang
 - hw/<slug>.html, model/<slug>.html: landing pages
 - sitemap.xml
 Run: python3 scripts/gen_site.py"""
@@ -204,9 +204,8 @@ def main():
     def guide_alts(rid, cur):
         bits = []
         for hl in ORDER:
-            if hl == cur: continue
+            if hl == cur or resolve_lang(rid, hl) != hl: continue
             href = index_rel_href(rid, cur, hl)
-            if not href: continue
             bits.append(f'<a href="{href}">{LANG_LABEL[hl]}</a>')
         return ('(' + ' · '.join(bits) + ')') if bits else ''
     def guide_label(r, lang):

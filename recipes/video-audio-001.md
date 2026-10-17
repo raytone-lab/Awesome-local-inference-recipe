@@ -12,7 +12,7 @@
 ## Model
 
 - FastH3 V2 (MiniMax H3 8-step distillation) · `NVFP4`
-- Download: not published. See the source
+- Download: Not published. See the source.
 
 ## Engine
 

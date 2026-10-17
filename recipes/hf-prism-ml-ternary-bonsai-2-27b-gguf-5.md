@@ -7,7 +7,7 @@
 ## Hardware
 
 - MacBook M5 Pro (Mac)
-- Reference cost: not published. See the source
+- Reference cost: Not published. See the source.
 
 ## Model
 

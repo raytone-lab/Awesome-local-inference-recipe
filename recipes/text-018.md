@@ -7,12 +7,12 @@
 ## Hardware
 
 - V100 32GB + RTX 5060 Ti 16GB + 32GB DDR5 (Used datacenter GPU)
-- Reference cost: not published. See the source
+- Reference cost: Not published. See the source.
 
 ## Model
 
 - Qwen3.8-Flash-Next Abliterated · `Strata`
-- Download: not published. See the source
+- Download: Not published. See the source.
 
 ## Engine
 
