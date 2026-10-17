@@ -3,7 +3,7 @@
 - explore.html: full static fallback table
 - guides/<id>.html, guides/zh-CN/<id>.html, guides/ja/<id>.html: recipe guides rendered from recipes/*.md, self-canonical + hreflang
 - hw/<slug>.html, model/<slug>.html: landing pages
-- guides/index.html: crawlable index of guides and landing pages
+- guides/index.html, guides/zh-CN/index.html, guides/ja/index.html: crawlable indexes of guides and landing pages
 - sitemap.xml
 Run: python3 scripts/gen_site.py"""
 import json, re, html
@@ -88,13 +88,14 @@ CHROME = {'en': ('Explore', 'Guides', 'Data as of', 'Local Inference Recipes', '
 LANGS = [('en', '', '.md', 'en'), ('zh-CN', 'zh-CN/', '.zh-CN.md', 'zh-CN'), ('ja', 'ja/', '.ja.md', 'ja')]
 def shell(title, desc, canon, body, depth, lang='en', alts=None, noindex=False):
     up = '../'*depth
+    gidx = 'guides/' + ('' if lang == 'en' else lang + '/') + 'index.html'
     alt = ''.join(f'<link rel="alternate" hreflang="{hl}" href="{u}">' for hl, u in (alts or []))
     return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)}</title><meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{canon}">{alt}{'<meta name="robots" content="noindex,follow">' if noindex else ''}
 <meta property="og:type" content="article"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{canon}"><meta property="og:image" content="{PAGES}docs/og.png"><meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="{up}style.css"><script src="{up}theme.js"></script></head><body>
-<header class="site-hd"><div class="hd-in"><a class="brand" href="{up}index.html">⚡ {CHROME[lang][3]}</a><nav class="static-links"><a href="{up}explore.html">{CHROME[lang][0]}</a> · <a href="{up}guides/index.html">{CHROME[lang][1]}</a> · <a href="{REPO}">GitHub</a></nav></div></header>
+<header class="site-hd"><div class="hd-in"><a class="brand" href="{up}index.html">⚡ {CHROME[lang][3]}</a><nav class="static-links"><a href="{up}explore.html">{CHROME[lang][0]}</a> · <a href="{up}{gidx}">{CHROME[lang][1]}</a> · <a href="{REPO}">GitHub</a></nav></div></header>
 <main class="doc static-page">
 {body}
 </main><footer class="site-ft"><div class="ft-in">{CHROME[lang][2]} {ASOF} · <a href="{REPO}">GitHub</a> · {CHROME[lang][4]}</div></footer></body></html>
@@ -115,7 +116,10 @@ def guides():
                 if m and not u.startswith('../'):
                     tgt = {'' : '', '.zh-CN': 'zh-CN/', '.ja': 'ja/'}[m.group(2) or '']
                     return '../'*depth + 'guides/' + tgt + m.group(1) + '.html'
-                if u.startswith('../README'): return '../'*depth + 'guides/index.html'
+                if u.startswith('../README'):
+                    sm = re.match(r'^\.\./README(\.zh-CN|\.ja)?\.md$', u)
+                    rpre = {None: '', '.zh-CN': 'zh-CN/', '.ja': 'ja/'}[(sm.group(1) if sm else None)]
+                    return '../'*depth + 'guides/' + rpre + 'index.html'
                 if u.startswith('../'): return f'{REPO}/blob/main/' + u[3:]
                 return u
             text = src.read_text(encoding='utf-8')
@@ -176,14 +180,49 @@ def main():
         pages.append(('model', f, f) + landing('model', f, f, rows))
     li = lambda items: '<ul>' + ''.join(items) + '</ul>'
     byid = {r['id']: r for r in D}
-    g = [f'<li><a href="{rid}.html">{e(fen(byid[rid], "model"))} · {e(fen(byid[rid], "hardware"))}</a> (<a href="zh-CN/{rid}.html">中文</a> · <a href="ja/{rid}.html">日本語</a>)</li>' for rid in ids if rid in byid]
-    hwl = [f'<li><a href="../{k}/{(slug(key) if k=="model" else key)}.html">{e(n)}</a> — {c} recipes</li>' for k, key, n, _, noidx, c in pages if k == 'hw' and not noidx]
-    ml = [f'<li><a href="../{k}/{slug(key)}.html">{e(n)}</a> — {c} recipes</li>' for k, key, n, _, noidx, c in pages if k == 'model' and not noidx]
-    body = (f'<h1>Local inference recipe guides, hardware and model pages</h1><p>Static pages generated from the dataset (as of {ASOF}). Every number links to its source.</p>'
-            f'<h2>Recipe guides</h2>{li(g)}<h2 id="by-hardware">By hardware</h2>{li(hwl)}<h2>By model family</h2>{li(ml)}')
-    write(R/'guides/index.html', shell('Recipe guides · Local Inference Recipes', 'Step-by-step local inference recipe guides plus per-hardware and per-model speed pages, every number sourced.', f'{PAGES}guides/index.html', body, 1))
+    IDX = {
+        'en': dict(pre='', depth=1, title='Recipe guides · Local Inference Recipes',
+                   desc='Step-by-step local inference recipe guides plus per-hardware and per-model speed pages, every number sourced.',
+                   h1='Local inference recipe guides, hardware and model pages',
+                   intro=f'Static pages generated from the dataset (as of {ASOF}). Every number links to its source.',
+                   h_g='Recipe guides', h_hw='By hardware', h_m='By model family', n=lambda c: f'{c} recipes',
+                   switch=lambda: '<p><b>English</b> | <a href="zh-CN/index.html">简体中文</a> | <a href="ja/index.html">日本語</a></p>',
+                   label=lambda r: f'{e(fen(r, "model"))} · {e(fen(r, "hardware"))}',
+                   alts=lambda rid: f'(<a href="zh-CN/{rid}.html">中文</a> · <a href="ja/{rid}.html">日本語</a>)',
+                   hw_href=lambda k, key: f'../{k}/{(slug(key) if k=="model" else key)}.html'),
+        'zh-CN': dict(pre='zh-CN/', depth=2, title='配方指南 · 本地推理配方',
+                   desc='分步本地推理配方指南，以及按硬件、按模型的速度页面；每个数字都有出处。',
+                   h1='本地推理配方指南、硬件与模型页面',
+                   intro=f'由数据集生成的静态页面（截至 {ASOF}）。每个数字都链到来源。',
+                   h_g='配方指南', h_hw='按硬件', h_m='按模型系列', n=lambda c: f'{c} 条',
+                   switch=lambda: '<p><a href="../index.html">English</a> | <b>简体中文</b> | <a href="../ja/index.html">日本語</a></p>',
+                   label=lambda r: f'{e(r.get("model") or "")} · {e(r.get("hardware") or "")}',
+                   alts=lambda rid: f'(<a href="../{rid}.html">English</a> · <a href="../ja/{rid}.html">日本語</a>)',
+                   hw_href=lambda k, key: f'../../{k}/{(slug(key) if k=="model" else key)}.html'),
+        'ja': dict(pre='ja/', depth=2, title='レシピガイド · ローカル推論レシピ',
+                   desc='手順付きのローカル推論レシピガイドと、ハードウェア別・モデル別の速度ページ。数値はすべて出典付き。',
+                   h1='ローカル推論レシピガイド、ハードウェアとモデルのページ',
+                   intro=f'データセットから生成した静的ページ（時点 {ASOF}）。すべての数値に出典へのリンクがあります。',
+                   h_g='レシピガイド', h_hw='ハードウェア別', h_m='モデル系列別', n=lambda c: f'{c} 件',
+                   switch=lambda: '<p><a href="../index.html">English</a> | <a href="../zh-CN/index.html">简体中文</a> | <b>日本語</b></p>',
+                   label=lambda r: f'{e(fen(r, "model"))} · {e(fen(r, "hardware"))}',
+                   alts=lambda rid: f'(<a href="../{rid}.html">English</a> · <a href="../zh-CN/{rid}.html">中文</a>)',
+                   hw_href=lambda k, key: f'../../{k}/{(slug(key) if k=="model" else key)}.html'),
+    }
+    idx_alts = [(hl, f'{PAGES}guides/{"" if hl=="en" else hl+"/"}index.html') for hl in ('en', 'zh-CN', 'ja')]
+    idx_alts.append(('x-default', f'{PAGES}guides/index.html'))
+    idx_urls = []
+    for lang, meta in IDX.items():
+        g = [f'<li><a href="{rid}.html">{meta["label"](byid[rid])}</a> {meta["alts"](rid)}</li>' for rid in ids if rid in byid]
+        hwl = [f'<li><a href="{meta["hw_href"](k, key)}">{e(n)}</a> — {meta["n"](c)}</li>' for k, key, n, _, noidx, c in pages if k == 'hw' and not noidx]
+        ml = [f'<li><a href="{meta["hw_href"](k, key)}">{e(n)}</a> — {meta["n"](c)}</li>' for k, key, n, _, noidx, c in pages if k == 'model' and not noidx]
+        body = (meta['switch']() + f'<h1>{meta["h1"]}</h1><p>{meta["intro"]}</p>'
+                f'<h2>{meta["h_g"]}</h2>{li(g)}<h2 id="by-hardware">{meta["h_hw"]}</h2>{li(hwl)}<h2>{meta["h_m"]}</h2>{li(ml)}')
+        canon = f'{PAGES}guides/{meta["pre"]}index.html'
+        write(R/'guides'/f'{meta["pre"]}index.html', shell(meta['title'], meta['desc'], canon, body, meta['depth'], lang, idx_alts))
+        idx_urls.append(canon)
     explore(None)
-    urls = [PAGES, PAGES+'explore.html', PAGES+'speed.html', PAGES+'submit.html', PAGES+'guides/index.html'] + gurls + [c for *_, c, noidx, n in pages if not noidx]
+    urls = [PAGES, PAGES+'explore.html', PAGES+'speed.html', PAGES+'submit.html'] + idx_urls + gurls + [c for *_, c, noidx, n in pages if not noidx]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sm += [f'<url><loc>{e(u)}</loc><lastmod>{ASOF}</lastmod></url>' for u in urls]
     sm.append('</urlset>')
