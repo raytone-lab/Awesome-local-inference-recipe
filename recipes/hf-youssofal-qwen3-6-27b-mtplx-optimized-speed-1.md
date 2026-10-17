@@ -2,12 +2,12 @@
 
 **English** | [简体中文](hf-youssofal-qwen3-6-27b-mtplx-optimized-speed-1.zh-CN.md) | [日本語](hf-youssofal-qwen3-6-27b-mtplx-optimized-speed-1.ja.md) · [← All recipes](../README.md)
 
-> Source level: **📣 Claimed** · Date: 2026-05-03 · Numbers are quoted from the source and have not been re-run by this repo.
+> Source level: **📣 Claimed** · Date: 2026-05-03 · Numbers come from the source. This repo did not measure them again.
 
 ## Hardware
 
 - MacBook M5 Max (Mac)
-- Reference cost: not published, see source
+- Reference cost: Not published. See the source.
 
 ## Model
 
@@ -37,10 +37,10 @@ brew install youssofal/mtplx/mtplx && mtplx start
 
 ## Caveats
 
-- Not a first-hand measurement (claimed/relayed); your results may differ.
-- Speed varies with drivers, engine version, context length and prompt length.
+- Not a first-hand measurement (claimed or relayed). Your results can differ.
+- Speed changes with drivers, engine version, context length, and prompt length.
 
 ## Source & attribution
 
 - [https://huggingface.co/Youssofal/Qwen3.6-27B-MTPLX-Optimized-Speed](https://huggingface.co/Youssofal/Qwen3.6-27B-MTPLX-Optimized-Speed)
-- Credit to the original author; this page only summarizes and links. Data under CC BY 4.0.
+- Credit to the original author. This page only summarizes and links. Data under CC BY 4.0.

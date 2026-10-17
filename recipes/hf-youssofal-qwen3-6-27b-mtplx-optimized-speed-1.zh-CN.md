@@ -2,12 +2,12 @@
 
 [English](hf-youssofal-qwen3-6-27b-mtplx-optimized-speed-1.md) | **简体中文** | [日本語](hf-youssofal-qwen3-6-27b-mtplx-optimized-speed-1.ja.md) · [← 返回列表](../README.zh-CN.md)
 
-> 来源等级: **📣 宣称** · 日期: 2026-05-03 · 数字均摘自来源，未经本仓库复测。
+> 来源等级: **📣 宣称** · 日期: 2026-05-03 · 数字来自来源。本仓库未复测。
 
 ## 硬件
 
 - MacBook M5 Max (Mac)
-- 参考价格: 未公开，见来源
+- 参考价格: 未公开。见来源
 
 ## 模型
 
@@ -37,11 +37,11 @@ brew install youssofal/mtplx/mtplx && mtplx start
 
 ## 注意事项
 
-- 非一手实测（宣称/转述），实际速度可能不同。
+- 非一手实测（宣称或转述）。实际速度可能不同。
 - HF 模型卡（作者自报）; 关思考模式，draft 温度 0.70，fanmax；内存未写
 - 速度随驱动、引擎版本、上下文长度和提示长度变化。
 
 ## 来源与致谢
 
 - [https://huggingface.co/Youssofal/Qwen3.6-27B-MTPLX-Optimized-Speed](https://huggingface.co/Youssofal/Qwen3.6-27B-MTPLX-Optimized-Speed)
-- 版权归原作者；本页仅摘要并链接。数据以 CC BY 4.0 发布。
+- 版权归原作者。本页仅摘要并链接。数据以 CC BY 4.0 发布。

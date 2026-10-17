@@ -2,12 +2,12 @@
 
 [English](hf-ddalcu-qwen3-8-flash-next-mlx-serve-mixed-4-8bit-1.md) | **简体中文** | [日本語](hf-ddalcu-qwen3-8-flash-next-mlx-serve-mixed-4-8bit-1.ja.md) · [← 返回列表](../README.zh-CN.md)
 
-> 来源等级: **📣 宣称** · 日期: 2026-08-27 · 数字均摘自来源，未经本仓库复测。
+> 来源等级: **📣 宣称** · 日期: 2026-08-27 · 数字来自来源。本仓库未复测。
 
 ## 硬件
 
 - Mac Studio/MBP M4 Max 128GB (Mac)
-- 参考价格: 未公开，见来源
+- 参考价格: 未公开。见来源
 
 ## 模型
 
@@ -37,11 +37,11 @@ mlx-serve --model ddalcu/Qwen3.8-Flash-Next-MLX-Serve-mixed-4-8bit --serve
 
 ## 注意事项
 
-- 非一手实测（宣称/转述），实际速度可能不同。
+- 非一手实测（宣称或转述）。实际速度可能不同。
 - HF 模型卡（作者自报）; 开 --mtp 78 tok/s（code +41%，prose 略慢）；数值为约值
 - 速度随驱动、引擎版本、上下文长度和提示长度变化。
 
 ## 来源与致谢
 
 - [https://huggingface.co/ddalcu/Qwen3.8-Flash-Next-MLX-Serve-mixed-4-8bit](https://huggingface.co/ddalcu/Qwen3.8-Flash-Next-MLX-Serve-mixed-4-8bit)
-- 版权归原作者；本页仅摘要并链接。数据以 CC BY 4.0 发布。
+- 版权归原作者。本页仅摘要并链接。数据以 CC BY 4.0 发布。

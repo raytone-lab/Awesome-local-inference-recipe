@@ -2,7 +2,7 @@
 
 **English** | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
-Step-by-step pages for a first batch of well-sourced recipes. New here? Read [Getting started](../docs/getting-started.md).
+Step-by-step pages for a first set of well-sourced recipes. New here? Read [Getting started](../docs/getting-started.md).
 
 | Recipe | Hardware | Level |
 |---|---|---|
