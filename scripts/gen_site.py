@@ -3,7 +3,6 @@
 - explore.html: full static fallback table
 - guides/<id>.html, guides/zh-CN/<id>.html, guides/ja/<id>.html: recipe guides rendered from recipes/*.md, self-canonical + hreflang
 - hw/<slug>.html, model/<slug>.html: landing pages
-- guides/[lang/]index.html: crawlable indexes of guides and landing pages
 - sitemap.xml
 Run: python3 scripts/gen_site.py"""
 import json, re, html
@@ -87,6 +86,7 @@ LVL = {'en': LV, 'zh-CN': {k: k for k in LV}, 'ja': {'官方': '公式', '实测
 CHROME = {'en': ('Explore', 'Guides', 'Data as of', 'Local Inference Recipes', 'data CC BY 4.0'), 'zh-CN': ('配方库', '指南', '数据截至', '本地推理配方', '数据 CC BY 4.0'), 'ja': ('エクスプローラー', 'ガイド', 'データ時点', 'ローカル推論レシピ', 'データ CC BY 4.0')}
 LANGS = [('en', '', '.md', 'en'), ('zh-CN', 'zh-CN/', '.zh-CN.md', 'zh-CN'), ('ja', 'ja/', '.ja.md', 'ja')]
 PRE = {hl: pre for _, pre, _, hl in LANGS}
+ORDER = [hl for *_, hl in LANGS]
 SUF2PRE = {'': '', '.zh-CN': 'zh-CN/', '.ja': 'ja/'}
 def shell(title, desc, canon, body, depth, lang='en', alts=None, noindex=False):
     up = '../'*depth
@@ -108,7 +108,7 @@ def guides():
     available = {rid: {hl for _, pre, suf, hl in LANGS if (R/'recipes'/f'{rid}{suf}').exists()} for rid in ids}
     urls = []
     for rid in ids:
-        alts = [(hl, f'{PAGES}guides/{PRE[hl]}{rid}.html') for hl in ('en', 'zh-CN', 'ja') if hl in available[rid]]
+        alts = [(hl, f'{PAGES}guides/{PRE[hl]}{rid}.html') for hl in ORDER if hl in available[rid]]
         alts.append(('x-default', f'{PAGES}guides/{rid}.html'))
         for lang, pre, suf, hl in LANGS:
             src = R/'recipes'/f'{rid}{suf}'
@@ -183,27 +183,31 @@ def main():
     byid = {r['id']: r for r in D}
     LANG_LABEL = {'en': 'English', 'zh-CN': '中文', 'ja': '日本語'}
     SWITCH_LABEL = {'en': 'English', 'zh-CN': '简体中文', 'ja': '日本語'}
+    def resolve_lang(rid, want):
+        have = available.get(rid, set())
+        if want in have: return want
+        for hl in ORDER:
+            if hl in have: return hl
+        return None
+    def index_rel_href(rid, cur, want):
+        tgt = resolve_lang(rid, want)
+        if tgt is None: return None
+        prefix = '' if cur == 'en' else '../'
+        if tgt == cur: return f'{rid}.html'
+        return prefix + PRE[tgt] + f'{rid}.html'
     def index_switch(cur):
         parts = []
-        for hl in ('en', 'zh-CN', 'ja'):
-            href = ('index.html' if hl == cur else
-                    ('../index.html' if cur != 'en' and hl == 'en' else
-                     (f'{hl}/index.html' if cur == 'en' else f'../{hl}/index.html')))
+        for hl in ORDER:
+            href = 'index.html' if hl == cur else (('' if cur == 'en' else '../') + PRE[hl] + 'index.html')
             parts.append(f'<b>{SWITCH_LABEL[hl]}</b>' if hl == cur else f'<a href="{href}">{SWITCH_LABEL[hl]}</a>')
         return '<p>' + ' | '.join(parts) + '</p>'
-    def guide_href(rid, cur, want):
-        """Relative href from guides/{cur}/index.html to a guide in want; fall back to en."""
-        tgt = want if want in available.get(rid, ()) else ('en' if 'en' in available.get(rid, ()) else next(iter(available.get(rid, ()) or ['en'])))
-        if cur == 'en':
-            return ('' if tgt == 'en' else PRE[tgt]) + f'{rid}.html'
-        if tgt == cur:
-            return f'{rid}.html'
-        return '../' + ('' if tgt == 'en' else PRE[tgt]) + f'{rid}.html'
     def guide_alts(rid, cur):
         bits = []
-        for hl in ('en', 'zh-CN', 'ja'):
-            if hl == cur or hl not in available.get(rid, ()): continue
-            bits.append(f'<a href="{guide_href(rid, cur, hl)}">{LANG_LABEL[hl]}</a>')
+        for hl in ORDER:
+            if hl == cur: continue
+            href = index_rel_href(rid, cur, hl)
+            if not href: continue
+            bits.append(f'<a href="{href}">{LANG_LABEL[hl]}</a>')
         return ('(' + ' · '.join(bits) + ')') if bits else ''
     def guide_label(r, lang):
         if lang == 'zh-CN':
@@ -218,22 +222,26 @@ def main():
         'zh-CN': dict(title='配方指南 · 本地推理配方',
                    desc='分步配方指南，以及按硬件、按模型的速度页面。每个数字都有出处。',
                    h1='配方指南、硬件页面与模型页面',
-                   intro=f'由数据集生成的静态页面（截至 {ASOF}）。每个数字都链接到来源。',
+                   intro=f'由数据集生成的页面（截至 {ASOF}）。每个数字都链接到来源。',
                    h_g='配方指南', h_hw='按硬件', h_m='按模型系列', n=lambda c: f'{c} 条'),
         'ja': dict(title='レシピガイド · ローカル推論レシピ',
                    desc='手順付きレシピガイドと、ハードウェア別・モデル別の速度ページ。数値はすべて出典付きです。',
                    h1='レシピガイド、ハードウェアページ、モデルページ',
-                   intro=f'データセットから生成した静的ページ（{ASOF} 時点）。すべての数値に出典へのリンクがあります。',
+                   intro=f'データセットから生成したページ（{ASOF} 時点）。すべての数値に出典へのリンクがあります。',
                    h_g='レシピガイド', h_hw='ハードウェア別', h_m='モデル系列別', n=lambda c: f'{c} 件'),
     }
-    idx_alts = [(hl, f'{PAGES}guides/{PRE[hl]}index.html') for hl in ('en', 'zh-CN', 'ja')]
+    idx_alts = [(hl, f'{PAGES}guides/{PRE[hl]}index.html') for hl in ORDER]
     idx_alts.append(('x-default', f'{PAGES}guides/index.html'))
     idx_urls = []
     for lang, meta in IDX.items():
         depth = 1 if lang == 'en' else 2
         up = '../' * depth
-        g = [f'<li><a href="{guide_href(rid, lang, lang)}">{guide_label(byid[rid], lang)}</a> {guide_alts(rid, lang)}</li>'
-             for rid in ids if rid in byid and available.get(rid)]
+        g = []
+        for rid in ids:
+            if rid not in byid or not available.get(rid): continue
+            href = index_rel_href(rid, lang, lang)
+            if not href: continue
+            g.append(f'<li><a href="{href}">{guide_label(byid[rid], lang)}</a> {guide_alts(rid, lang)}</li>')
         hwl = [f'<li><a href="{up}{k}/{key}.html">{e(n)}</a> — {meta["n"](c)}</li>'
                for k, key, n, _, noidx, c in pages if k == 'hw' and not noidx]
         ml = [f'<li><a href="{up}{k}/{slug(key)}.html">{e(n)}</a> — {meta["n"](c)}</li>'
@@ -243,7 +251,7 @@ def main():
         canon = f'{PAGES}guides/{PRE[lang]}index.html'
         write(R/'guides'/f'{PRE[lang]}index.html', shell(meta['title'], meta['desc'], canon, body, depth, lang, idx_alts))
         idx_urls.append(canon)
-        explore(None)
+    explore(None)
     urls = [PAGES, PAGES+'explore.html', PAGES+'speed.html', PAGES+'submit.html'] + idx_urls + gurls + [c for *_, c, noidx, n in pages if not noidx]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sm += [f'<url><loc>{e(u)}</loc><lastmod>{ASOF}</lastmod></url>' for u in urls]
