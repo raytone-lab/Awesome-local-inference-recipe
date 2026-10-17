@@ -35,11 +35,31 @@ class SiteStatic(unittest.TestCase):
 
 class LandingWording(unittest.TestCase):
     def test_summary_matches_data(self):
-        import importlib.util
+        import importlib.util, re, sys
+        sys.path.insert(0, str(R/'scripts'))
         spec = importlib.util.spec_from_file_location('gs', R/'scripts/gen_site.py'); gs = importlib.util.module_from_spec(spec); spec.loader.exec_module(gs)
-        for p in list((R/'hw').glob('*.html')) + list((R/'model').glob('*.html')):
-            s = p.read_text(encoding='utf-8')
-            if 'none is first-hand yet' in s: self.assertIn(' 0 of them measured', s, p.name)
+        from hardware_index import HW
+        checks = []
+        for key, name, rx, qt in HW:
+            rows = [r for r in gs.D if re.search(rx, r['hardware'])]
+            if rows: checks.append(('hw', key, rows))
+        for f in sorted({r['model_family'] for r in gs.D if r['model_family'] != 'Other'}):
+            rows = [r for r in gs.D if r['model_family'] == f]
+            checks.append(('model', gs.slug(f), rows))
+        for kind, file, rows in checks:
+            nmeas = sum(1 for r in rows if r['source_level'] == '实测' and not gs.selfrep(r))
+            for lang, none_s, has_s in [
+                ('', 'None is first-hand yet', '1 was measured by the poster' if nmeas == 1 else f'{nmeas} were measured by the poster'),
+                ('zh-CN', '尚无一手实测', f'实测 {nmeas} 条'),
+                ('ja', '投稿者自身の実測はまだありません', f'投稿者実測は {nmeas} 件'),
+            ]:
+                path = R / kind / ((lang + '/') if lang else '') / f'{file}.html'
+                s = path.read_text(encoding='utf-8')
+                if nmeas == 0:
+                    self.assertIn(none_s, s, str(path.relative_to(R)))
+                else:
+                    self.assertNotIn(none_s, s, str(path.relative_to(R)))
+                    self.assertIn(has_s, s, str(path.relative_to(R)))
         for r in gs.D:
             if 'multi-GPU' in r['tags'] or gs.selfrep(r) or gs.COMPARE.search(r['hardware']):
                 self.assertFalse(gs.meas_text(r) and gs.single(r), f"{r['id']}: headline must not cite multi-device, comparison or self-reported rows")

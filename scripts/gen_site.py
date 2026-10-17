@@ -181,13 +181,13 @@ def landing(kind, key, name, rows, qterm=None):
             if meas:
                 b = max(meas, key=lambda r: (r['tok_s'], r['id']))
                 eng = '' if b['engine'] == 'Unspecified' else f' on {e(b["engine"])}'
-                nmeas_s = f'{nmeas} measured by the poster' if nmeas != 1 else '1 measured by the poster'
+                nmeas_s = '1 was measured by the poster' if nmeas == 1 else f'{nmeas} were measured by the poster'
                 summ = (f'As of {ASOF}, this dataset has <b>{n}</b> for {e(name)}. {nmeas_s}. '
                         f'Fastest measured single-device, single-stream text result: <b>{b["tok_s"]:g} tok/s</b> with {e(fen(b, "model"))}{eng} ({e(fen(b, "hardware"))}; '
                         f'Measured{", " + e(b["date"]) if b.get("date") else ""}; <a href="{e(b["source_url"])}" rel="nofollow noopener">source</a>).')
             else:
                 if nmeas:
-                    nmeas_s = f'{nmeas} measured by the poster.' if nmeas != 1 else '1 measured by the poster.'
+                    nmeas_s = '1 was measured by the poster.' if nmeas == 1 else f'{nmeas} were measured by the poster.'
                     summ = f'As of {ASOF}, this dataset has <b>{n}</b> for {e(name)}. {nmeas_s}'
                 else:
                     summ = (f'As of {ASOF}, this dataset has <b>{n}</b> for {e(name)}. '
