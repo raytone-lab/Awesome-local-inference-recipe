@@ -13433,7 +13433,7 @@
     "quant": "Q4_K_M（45 GiB）",
     "engine": "llama.cpp",
     "hardware": "4× A800",
-    "hardware_family": "二手数据中心卡",
+    "hardware_family": "其他",
     "hardware_cost_text": null,
     "hardware_cost_usd": null,
     "metric": "tg512 生成 106.01 tok/s；pp2048 2558.18 tok/s（上游作者转换测试）",
@@ -13442,14 +13442,14 @@
     "context": "报道称验证至 1,048,576；服务建议 ≤262,144",
     "launch_command": null,
     "source_url": "https://7minai.com/news/kolibri-1-llama-cpp-b11709-gguf/",
-    "source_note": "7minAI 汇总 llama.cpp b11709 / PR #30673；数字来自上游作者转换测试（非厂商首发）",
+    "source_note": "数字来自 llama.cpp PR #30673 / b11709 上游作者转换测试，经 7minAI 转述",
     "source_level": "转述",
     "date": "2026-10-17",
     "metric_en": "tg512 generation 106.01 tok/s; pp2048 2558.18 tok/s (upstream author conversion test)",
     "en": {
       "quant": "Q4_K_M (45 GiB)",
       "context": "reported verified to 1,048,576; serving recommended ≤262,144",
-      "source_note": "7minAI summary of llama.cpp b11709 / PR #30673; numbers from upstream author conversion test (not a vendor primary)"
+      "source_note": "numbers from llama.cpp PR #30673 / b11709 upstream author conversion test, relayed by 7minAI"
     },
     "model_family": "Other",
     "tags": [
