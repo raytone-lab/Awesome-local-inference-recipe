@@ -108,25 +108,25 @@
   "name": "ComfyUI-Ref2VA-VSA",
   "repo": "Kablex/ComfyUI-Ref2VA-VSA",
   "section": "engines",
-  "desc": "ComfyUI node: FastVideo VSA gate on MiniMax H3 Ref2VA; author RTX 4090 bench ~650s native → ~72s warm.",
+  "desc": "ComfyUI node: FastVideo VSA gate on MiniMax H3 Ref2VA; author RTX 4090 bench ~650s (50-step dense) → ~72s warm (4-step VSA+Turbo).",
   "stars": 672,
   "pushed_at": "2026-10-17T04:15:24Z",
   "url": "https://github.com/Kablex/ComfyUI-Ref2VA-VSA",
   "archived": false,
-  "desc_zh": "ComfyUI 节点：把 FastVideo VSA gate 接到 MiniMax H3 Ref2VA；作者 RTX 4090 基准约 650s 原生 → 暖机约 72s。",
-  "desc_ja": "ComfyUI ノード：FastVideo の VSA ゲートを MiniMax H3 Ref2VA に移植。作者 RTX 4090 基準はネイティブ約 650s → ウォーム約 72s。"
+  "desc_zh": "ComfyUI 节点：把 FastVideo VSA 门控接到 MiniMax H3 Ref2VA；作者 RTX 4090 基准约 650s（50 步稠密）→ 暖机约 72s（4 步 VSA+Turbo）。",
+  "desc_ja": "ComfyUI ノード：FastVideo の VSA ゲートを MiniMax H3 Ref2VA に移植。作者 RTX 4090 基準はネイティブ約 650s（50 ステップ稠密）→ ウォーム約 72s（4 ステップ VSA+Turbo）。"
  },
  {
   "name": "ComfyUI-VDN-H3",
   "repo": "Saganaki22/ComfyUI-VDN-H3",
   "section": "engines",
-  "desc": "ComfyUI node for VDN-H3 hybrid attention on MiniMax H3 (A/B alternative to Ref2VA-VSA).",
+  "desc": "ComfyUI node for VDN-H3 hybrid attention on MiniMax H3.",
   "stars": 241,
   "pushed_at": "2026-09-12T20:11:05Z",
   "url": "https://github.com/Saganaki22/ComfyUI-VDN-H3",
   "archived": false,
-  "desc_zh": "MiniMax H3 上 VDN-H3 混合注意力的 ComfyUI 节点（可与 Ref2VA-VSA 做 A/B）。",
-  "desc_ja": "MiniMax H3 向け VDN-H3 ハイブリッド注意の ComfyUI ノード（Ref2VA-VSA との A/B 用）。"
+  "desc_zh": "MiniMax H3 上 VDN-H3 混合注意力的 ComfyUI 节点。",
+  "desc_ja": "MiniMax H3 向け VDN-H3 ハイブリッド注意の ComfyUI ノード。"
  },
  {
   "name": "halogen",
