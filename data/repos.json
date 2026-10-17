@@ -81,6 +81,54 @@
   "desc_ja": "動画生成の推論フレームワーク。RTX 5090 での MiniMax H3 の結果あり。"
  },
  {
+  "name": "FastVideo",
+  "repo": "hao-ai-lab/FastVideo",
+  "section": "engines",
+  "desc": "Unified inference and post-training framework for accelerated video generation; upstream of VSA / FastH3.",
+  "stars": 4613,
+  "pushed_at": "2026-10-17T00:26:54Z",
+  "url": "https://github.com/hao-ai-lab/FastVideo",
+  "archived": false,
+  "desc_zh": "统一的加速视频生成推理与后训练框架；VSA / FastH3 的上游。",
+  "desc_ja": "加速動画生成の統一推論・後学習フレームワーク。VSA / FastH3 の上流。"
+ },
+ {
+  "name": "VDN-H3",
+  "repo": "OpenVDN/vdn-minimax-h3",
+  "section": "engines",
+  "desc": "Video Delta Net hybrid attention on MiniMax H3 (windowed softmax + linear adapters) for T2VA / I2VA / Ref2VA-like runs.",
+  "stars": 617,
+  "pushed_at": "2026-10-05T04:45:20Z",
+  "url": "https://github.com/OpenVDN/vdn-minimax-h3",
+  "archived": false,
+  "desc_zh": "在 MiniMax H3 上的 Video Delta Net 混合注意力（窗口 softmax + 线性适配器），面向 T2VA / I2VA / Ref2VA 类任务。",
+  "desc_ja": "MiniMax H3 向け Video Delta Net ハイブリッド注意（窓付き softmax + 線形アダプタ）。T2VA / I2VA / Ref2VA 系。"
+ },
+ {
+  "name": "ComfyUI-Ref2VA-VSA",
+  "repo": "Kablex/ComfyUI-Ref2VA-VSA",
+  "section": "engines",
+  "desc": "ComfyUI node: FastVideo VSA gate on MiniMax H3 Ref2VA; author RTX 4090 bench ~650s (50-step dense) → ~72s warm (4-step VSA+Turbo).",
+  "stars": 672,
+  "pushed_at": "2026-10-17T04:15:24Z",
+  "url": "https://github.com/Kablex/ComfyUI-Ref2VA-VSA",
+  "archived": false,
+  "desc_zh": "ComfyUI 节点：把 FastVideo VSA 门控接到 MiniMax H3 Ref2VA；作者 RTX 4090 基准约 650s（50 步稠密）→ 预热约 72s（4 步 VSA+Turbo）。",
+  "desc_ja": "ComfyUI ノード：FastVideo の VSA ゲートを MiniMax H3 Ref2VA に移植。作者 RTX 4090 基準はネイティブ約 650s（50 ステップのデンス）→ ウォームアップ約 72s（4 ステップ VSA+Turbo）。"
+ },
+ {
+  "name": "ComfyUI-VDN-H3",
+  "repo": "Saganaki22/ComfyUI-VDN-H3",
+  "section": "engines",
+  "desc": "ComfyUI node for VDN-H3 hybrid attention on MiniMax H3.",
+  "stars": 241,
+  "pushed_at": "2026-09-12T20:11:05Z",
+  "url": "https://github.com/Saganaki22/ComfyUI-VDN-H3",
+  "archived": false,
+  "desc_zh": "MiniMax H3 上 VDN-H3 混合注意力的 ComfyUI 节点。",
+  "desc_ja": "MiniMax H3 向け VDN-H3 ハイブリッド注意の ComfyUI ノード。"
+ },
+ {
   "name": "halogen",
   "repo": "peonist-ai/halogen-flash-server",
   "section": "engines",
