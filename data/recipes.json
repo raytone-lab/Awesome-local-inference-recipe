@@ -13306,7 +13306,7 @@
     "context": "262K",
     "launch_command": null,
     "source_url": "https://github.com/sxuff/nemotron-3.5-bolt-gb10",
-    "source_note": "sxuff/nemotron-3.5-bolt-gb10 README（钉扎 commit/哈希；基于 NVIDIA 公开配方）",
+    "source_note": "sxuff/nemotron-3.5-bolt-gb10 README（钉扎 commit/哈希）",
     "source_level": "实测",
     "date": "2026-10-17",
     "measured_by": "sxuff",
@@ -13315,7 +13315,7 @@
       "quant": "IQ2 24GB GGUF + LiLiCorr draft (k=7)",
       "hardware_cost_text": "$6,950 (128GB, 2026-10-11)",
       "context": "262K",
-      "source_note": "sxuff/nemotron-3.5-bolt-gb10 README (pinned commit/hash; based on NVIDIA public recipe)"
+      "source_note": "sxuff/nemotron-3.5-bolt-gb10 README (pinned commit/hash)"
     },
     "model_family": "Other",
     "tags": [
@@ -13365,7 +13365,7 @@
   {
     "id": "text-144",
     "category": "text",
-    "model": "Qwen 3.5 9B",
+    "model": "Qwen3.5-9B",
     "quant": "Q4_K_M（5.3 GB）· Vulkan",
     "engine": "llama.cpp",
     "hardware": "PS5 Slim（破解，GPU 共享内存约 11.4 GB 给模型）",
@@ -13378,14 +13378,14 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://github.com/cobanov/PS5LM",
-    "source_note": "PS5LM README 建议型号表（官方项目页）",
-    "source_level": "官方",
+    "source_note": "PS5LM README 建议型号表（第三方项目页；无独立测速日志）",
+    "source_level": "宣称",
     "date": "2026-10-17",
     "metric_en": "55 tok/s (project README recommended-model table)",
     "en": {
       "quant": "Q4_K_M (5.3 GB) · Vulkan",
       "hardware": "PS5 Slim (jailbroken; ~11.4 GB GPU shared memory for the model)",
-      "source_note": "PS5LM README recommended-model table (official project page)"
+      "source_note": "PS5LM README recommended-model table (third-party project page; no standalone benchmark logs)"
     },
     "model_family": "Qwen",
     "tags": [
@@ -13397,7 +13397,7 @@
   {
     "id": "text-145",
     "category": "text",
-    "model": "Qwen 3.5 0.8B",
+    "model": "Qwen3.5-0.8B",
     "quant": "Q4_K_M（0.5 GB）· Vulkan",
     "engine": "llama.cpp",
     "hardware": "PS5 Slim（破解）",
@@ -13410,14 +13410,14 @@
     "context": null,
     "launch_command": null,
     "source_url": "https://github.com/cobanov/PS5LM",
-    "source_note": "PS5LM README 建议型号表（官方项目页）",
-    "source_level": "官方",
+    "source_note": "PS5LM README 建议型号表（第三方项目页；无独立测速日志）",
+    "source_level": "宣称",
     "date": "2026-10-17",
     "metric_en": "207 tok/s (project README recommended-model table)",
     "en": {
       "quant": "Q4_K_M (0.5 GB) · Vulkan",
       "hardware": "PS5 Slim (jailbroken)",
-      "source_note": "PS5LM README recommended-model table (official project page)"
+      "source_note": "PS5LM README recommended-model table (third-party project page; no standalone benchmark logs)"
     },
     "model_family": "Qwen",
     "tags": [
@@ -13439,17 +13439,17 @@
     "metric": "tg512 生成 106.01 tok/s；pp2048 2558.18 tok/s（上游作者转换测试）",
     "tok_s": 106.01,
     "concurrency": null,
-    "context": "官方验证至 1,048,576；服务建议 ≤262,144",
+    "context": "报道称验证至 1,048,576；服务建议 ≤262,144",
     "launch_command": null,
     "source_url": "https://7minai.com/news/kolibri-1-llama-cpp-b11709-gguf/",
-    "source_note": "7minAI 汇总 llama.cpp b11709 / PR #30673；数字来自上游作者转换测试",
-    "source_level": "官方",
+    "source_note": "7minAI 汇总 llama.cpp b11709 / PR #30673；数字来自上游作者转换测试（非厂商首发）",
+    "source_level": "转述",
     "date": "2026-10-17",
     "metric_en": "tg512 generation 106.01 tok/s; pp2048 2558.18 tok/s (upstream author conversion test)",
     "en": {
       "quant": "Q4_K_M (45 GiB)",
-      "context": "officially verified to 1,048,576; serving recommended ≤262,144",
-      "source_note": "7minAI summary of llama.cpp b11709 / PR #30673; numbers from upstream author conversion test"
+      "context": "reported verified to 1,048,576; serving recommended ≤262,144",
+      "source_note": "7minAI summary of llama.cpp b11709 / PR #30673; numbers from upstream author conversion test (not a vendor primary)"
     },
     "model_family": "Other",
     "tags": [

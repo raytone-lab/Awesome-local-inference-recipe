@@ -309,7 +309,7 @@ X 上互动最多的配方帖（按 点赞 + 3×转发 排序；同一帖子只�
 - **Qwen3.6-35B-A3B** · DFlash `DFlash 2` — Mac Studio M3 Ultra → **251 tok/s** 📣 [来源](https://x.com/tinybluedev/status/2089910202606764530)
 - **Qwen3.6-35B-A3B-Escha-W2** · SGLang `Escha W2（16GB 配方）` — RTX 5080 16GB → **212 tok/s** 📣 [来源](https://huggingface.co/EschaLabs/Qwen3.6-35B-A3B-Escha-W2)
 - **Qwen3.6-35B-A3B** · Splash `Splash` — Mac M5 Pro 48GB → **210 tok/s** 🔁 [来源](https://x.com/TeksEdge/status/2101735798567764421)
-- **Qwen 3.5 0.8B** · llama.cpp `Q4_K_M（0.5 GB）· Vulkan` — PS5 Slim（破解） → **207 tok/s** 🏛️ [来源](https://github.com/cobanov/PS5LM)
+- **Qwen3.5-0.8B** · llama.cpp `Q4_K_M（0.5 GB）· Vulkan` — PS5 Slim（破解） → **207 tok/s** 📣 [来源](https://github.com/cobanov/PS5LM)
 - **Qwen3.6-35B-A3B** · oMLX `oMLX 0.7.1.dev1 融合解码内核` — Mac M5 Max → **205 tok/s** 🏛️ [来源](https://x.com/jundotkim/status/2108584837590495246)
 - **LFM2.5-24B-A2B** `Q4_K_M` — Apple M5 Max → **184 tok/s** 📣 [来源](https://x.com/TeksEdge/status/2110061971064438960)
 - **Qwen3.8-27B** · ninfer `NVFP4（Quasar）· MTP 4` — 2× Tesla V100 16GB（无 NVLink） → **180 tok/s** 🏛️ [来源](https://www.reddit.com/r/LocalLLM/comments/1x5u4yf/)
